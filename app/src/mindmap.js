@@ -30,16 +30,17 @@ function shortDoc(u){ try{ const x=new URL(u); const seg=x.pathname.split('/').f
 function place(node,colX,cur){
   node._x=colX+(node._depth-1)*INDENT;
   node._w=(COLW-GAP)-(node._depth-1)*INDENT;
-  node._h=(node._depth===2?FEATH:SUBH);
+  node._h=Math.max(node._depth===2?FEATH:SUBH, node._nh||0);
   node._y=cur.y; cur.y+=node._h+VGAP;
   if(!node.collapsed && node.children) node.children.forEach(ch=>place(ch,colX,cur));
 }
 function layout(){
   const pillars=DATA.children; let maxB=0;
+  const pillH=Math.max(PILLH, ...pillars.map(p=>p._nh||0));   // one height for the row, so the pillars stay aligned
   pillars.forEach((p,i)=>{
     const colX=MARGIN+i*COLW;
-    p._depth=1; p._x=colX; p._y=PILLY; p._w=COLW-GAP; p._h=PILLH;
-    const cur={y:PILLY+PILLH+VGAP};
+    p._depth=1; p._x=colX; p._y=PILLY; p._w=COLW-GAP; p._h=pillH;
+    const cur={y:PILLY+pillH+VGAP};
     if(!p.collapsed && p.children) p.children.forEach(ch=>place(ch,colX,cur));
     p._bottom=cur.y; if(p._bottom>maxB) maxB=p._bottom;
   });
@@ -49,6 +50,31 @@ function layout(){
   return {w:MARGIN+pillars.length*COLW, h:Math.max(maxB,PILLY+180)+MARGIN};
 }
 function visibleNodes(){ const out=[]; (function rec(n){ out.push(n); if(!n.collapsed && n.children) n.children.forEach(rec); })(DATA); return out; }
+
+// a name too long for one line wraps; the node takes the height its text needs
+function nodeInner(n){
+  const hasKids=!!(n.children&&n.children.length);
+  const dot=hasKids?'<span class="ddot"></span>':'';
+  const warn=n.c==='verify'?'<span class="flag warn">⚠</span>':'';
+  const tog=hasKids?`<span class="ptoggle">${n.collapsed?'▸':'▾'}</span>`:'';
+  const chip=n.s?`<span class="chip s-${n.s}">${n.s}</span>`:'';
+  if(n._depth===0) return `<div class="nm">${esc(dn(n.n))}</div>`;
+  if(n._depth===1) return `<div class="nm">${tog}${esc(dn(n.n))}</div>`+
+    `<div class="meta">${n.sub?`<span class="sub">${esc(n.sub)}</span>`:''}<span class="count">${(n.children||[]).length} items</span>${dot}</div>`;
+  if(n._depth===2) return `<div class="nm">${tog}${esc(dn(n.n))}</div><div class="meta">${chip}${warn}${dot}</div>`;
+  return `<div class="nm">${esc(dn(n.n))}</div><div class="meta">${chip}${warn}${dot}</div>`;
+}
+function measureHeights(){
+  const all=Object.values(byId), box=document.createElement('div');
+  box.style.cssText='position:absolute;left:-99999px;top:0;visibility:hidden';
+  box.innerHTML=all.map(n=>{
+    const w=n._depth===0?ROOTW:(COLW-GAP)-Math.max(0,n._depth-1)*INDENT;
+    return `<div class="node d${n._depth}" style="width:${w}px"><div class="nodebox d${n._depth}${n.c==='verify'?' verify':''}" style="height:auto">${nodeInner(n)}</div></div>`;
+  }).join('');
+  document.body.appendChild(box);
+  all.forEach((n,i)=>{ n._nh=box.children[i].firstChild.offsetHeight; });
+  box.remove();
+}
 
 function computeFlags(nodes){
   const q=state.q.trim().toLowerCase();
@@ -85,27 +111,9 @@ function render(){
 
   let fo='';
   nodes.forEach(n=>{
-    const hasKids=!!(n.children&&n.children.length);
     const cls=`node d${n._depth}${n._hit?' hit':''}${n._dim?' dim':''}${n===selNode?' sel':''}`;
-    const dot = hasKids ? '<span class="ddot"></span>' : '';
-    const warn = n.c==='verify' ? '<span class="flag warn">⚠</span>' : '';
-    let inner='';
-    if(n._depth===0){
-      inner=`<div class="nm">${esc(dn(n.n))}</div>`;
-    } else if(n._depth===1){
-      const tog=hasKids?`<span class="ptoggle">${n.collapsed?'▸':'▾'}</span>`:'';
-      inner=`<div class="nm">${tog}${esc(dn(n.n))}</div>`+
-            `<div class="meta">${n.sub?`<span class="sub">${esc(n.sub)}</span>`:''}<span class="count">${(n.children||[]).length} items</span>${dot}</div>`;
-    } else if(n._depth===2){
-      const tog=hasKids?`<span class="ptoggle">${n.collapsed?'▸':'▾'}</span>`:'';
-      inner=`<div class="nm">${tog}${esc(dn(n.n))}</div>`+
-            `<div class="meta">${n.s?`<span class="chip s-${n.s}">${n.s}</span>`:''}${warn}${dot}</div>`;
-    } else {
-      inner=`<div class="nm">${esc(dn(n.n))}</div>`+
-            `<div class="meta">${n.s?`<span class="chip s-${n.s}">${n.s}</span>`:''}${warn}${dot}</div>`;
-    }
     fo+=`<foreignObject class="${cls}" x="${n._x}" y="${n._y}" width="${n._w}" height="${n._h}" data-id="${n.id}">`+
-        `<div xmlns="http://www.w3.org/1999/xhtml" class="nodebox d${n._depth}${n.c==='verify'?' verify':''}">${inner}</div>`+
+        `<div xmlns="http://www.w3.org/1999/xhtml" class="nodebox d${n._depth}${n.c==='verify'?' verify':''}">${nodeInner(n)}</div>`+
         `</foreignObject>`;
   });
 
@@ -326,7 +334,7 @@ window.addEventListener('resize',()=>{ sizePanel(); render(); });
 // ---- tabs: swap the active tree ----
 function loadTree(key){
   DATA = TREES[key] || TREES.ai;
-  initTree();
+  initTree(); measureHeights();
   selNode=null; state.q=''; state.newOnly=false; state.hideVerify=false;
   btnFocus.disabled=true;
   const s=document.getElementById('search'); if(s) s.value='';
@@ -521,3 +529,4 @@ btnBack.onclick=backToStory;
 document.addEventListener('keydown',e=>{ if(e.key==='Escape' && storyReturn && !document.body.classList.contains('story-mode')) backToStory(); });
 window.addEventListener('popstate',()=>{ if(storyReturn) backToStory(); });
 loadTree('ai');
+document.fonts.ready.then(()=>{ measureHeights(); render(); });   // measure again once DM Sans is loaded

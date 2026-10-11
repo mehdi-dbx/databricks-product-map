@@ -56,7 +56,7 @@
   .link.toverify{stroke-dasharray:3 5;stroke:rgba(255,54,33,0.4);}
 
   .nodebox{height:100%;display:flex;flex-direction:column;justify-content:center;gap:3px;padding:5px 13px;background:var(--surface);border:1px solid var(--border);border-radius:12px;cursor:pointer;overflow:hidden;box-shadow:0 1px 4px rgba(27,49,57,0.06);transition:box-shadow .16s,border-color .16s,opacity .16s,background .16s;}
-  .nodebox .nm{font-weight:700;font-size:0.9rem;line-height:1.12;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .nodebox .nm{font-weight:700;font-size:0.9rem;line-height:1.12;overflow-wrap:anywhere;}
   .nodebox .meta{display:flex;align-items:center;gap:5px;}
   .nodebox .sub{font-size:0.68rem;color:var(--text3);font-weight:500;}
   /* root */
@@ -67,7 +67,7 @@
   .d1 .nodebox:hover{background:var(--red-dim);border-color:var(--red);box-shadow:0 4px 14px rgba(255,54,33,0.14);}
   .d1 .nodebox .nm{font-size:1rem;font-weight:700;}
   /* feature = capsule, red Databricks outline */
-  .d2 .nodebox{flex-direction:row;align-items:center;gap:8px;padding:0 7px 0 16px;border:1px solid var(--red);border-radius:999px;background:#fff;box-shadow:0 2px 7px rgba(255,54,33,0.1);}
+  .d2 .nodebox{flex-direction:row;align-items:center;gap:8px;padding:7px 7px 7px 16px;border:1px solid var(--red);border-radius:999px;background:#fff;box-shadow:0 2px 7px rgba(255,54,33,0.1);}
   .d2 .nodebox .nm{flex:1 1 auto;font-weight:600;font-size:0.98rem;}
   .d2 .nodebox .meta{flex:none;margin-left:auto;}
   .d2 .nodebox:hover{background:var(--red-dim);border-color:var(--red);box-shadow:0 5px 16px rgba(255,54,33,0.2);}
@@ -118,7 +118,7 @@
   @media (max-width:720px){ .nav-sub,.nav-title em,#hint{display:none;} .tool input[type=search]{width:120px;} }
 
   /* sub-feature mini-capsule (d3) + toggles + panel meta */
-  .d3 .nodebox{flex-direction:row;align-items:center;gap:6px;padding:0 9px 0 12px;border:1px solid rgba(255,54,33,0.5);border-radius:999px;background:#fff;box-shadow:0 1px 4px rgba(255,54,33,0.07);}
+  .d3 .nodebox{flex-direction:row;align-items:center;gap:6px;padding:6px 9px 6px 12px;border:1px solid rgba(255,54,33,0.5);border-radius:999px;background:#fff;box-shadow:0 1px 4px rgba(255,54,33,0.07);}
   .d3 .nodebox .nm{flex:1 1 auto;font-weight:500;font-size:0.8rem;}
   .d3 .nodebox .meta{flex:none;margin-left:auto;}
   .d3 .nodebox:hover{background:var(--red-dim);border-color:var(--red);}
@@ -144,7 +144,7 @@
   #btnToggle .lvl{font-family:'DM Mono',monospace;font-weight:700;font-size:0.84rem;pointer-events:none;}
 
   /* deeper DS levels (d4/d5/d6) match the AI sub-feature mini-capsule look & font */
-  .d4 .nodebox, .d5 .nodebox, .d6 .nodebox{flex-direction:row;align-items:center;gap:6px;padding:0 9px 0 12px;border:1px solid rgba(255,54,33,0.5);border-radius:999px;background:#fff;box-shadow:0 1px 4px rgba(255,54,33,0.07);}
+  .d4 .nodebox, .d5 .nodebox, .d6 .nodebox{flex-direction:row;align-items:center;gap:6px;padding:6px 9px 6px 12px;border:1px solid rgba(255,54,33,0.5);border-radius:999px;background:#fff;box-shadow:0 1px 4px rgba(255,54,33,0.07);}
   .d4 .nodebox .nm, .d5 .nodebox .nm, .d6 .nodebox .nm{flex:1 1 auto;font-weight:500;font-size:0.8rem;}
   .d4 .nodebox .meta, .d5 .nodebox .meta, .d6 .nodebox .meta{flex:none;margin-left:auto;}
   .d4 .nodebox:hover, .d5 .nodebox:hover, .d6 .nodebox:hover{background:var(--red-dim);border-color:var(--red);}
@@ -7343,16 +7343,17 @@ function shortDoc(u){ try{ const x=new URL(u); const seg=x.pathname.split('/').f
 function place(node,colX,cur){
   node._x=colX+(node._depth-1)*INDENT;
   node._w=(COLW-GAP)-(node._depth-1)*INDENT;
-  node._h=(node._depth===2?FEATH:SUBH);
+  node._h=Math.max(node._depth===2?FEATH:SUBH, node._nh||0);
   node._y=cur.y; cur.y+=node._h+VGAP;
   if(!node.collapsed && node.children) node.children.forEach(ch=>place(ch,colX,cur));
 }
 function layout(){
   const pillars=DATA.children; let maxB=0;
+  const pillH=Math.max(PILLH, ...pillars.map(p=>p._nh||0));   // one height for the row, so the pillars stay aligned
   pillars.forEach((p,i)=>{
     const colX=MARGIN+i*COLW;
-    p._depth=1; p._x=colX; p._y=PILLY; p._w=COLW-GAP; p._h=PILLH;
-    const cur={y:PILLY+PILLH+VGAP};
+    p._depth=1; p._x=colX; p._y=PILLY; p._w=COLW-GAP; p._h=pillH;
+    const cur={y:PILLY+pillH+VGAP};
     if(!p.collapsed && p.children) p.children.forEach(ch=>place(ch,colX,cur));
     p._bottom=cur.y; if(p._bottom>maxB) maxB=p._bottom;
   });
@@ -7362,6 +7363,31 @@ function layout(){
   return {w:MARGIN+pillars.length*COLW, h:Math.max(maxB,PILLY+180)+MARGIN};
 }
 function visibleNodes(){ const out=[]; (function rec(n){ out.push(n); if(!n.collapsed && n.children) n.children.forEach(rec); })(DATA); return out; }
+
+// a name too long for one line wraps; the node takes the height its text needs
+function nodeInner(n){
+  const hasKids=!!(n.children&&n.children.length);
+  const dot=hasKids?'<span class="ddot"></span>':'';
+  const warn=n.c==='verify'?'<span class="flag warn">⚠</span>':'';
+  const tog=hasKids?`<span class="ptoggle">${n.collapsed?'▸':'▾'}</span>`:'';
+  const chip=n.s?`<span class="chip s-${n.s}">${n.s}</span>`:'';
+  if(n._depth===0) return `<div class="nm">${esc(dn(n.n))}</div>`;
+  if(n._depth===1) return `<div class="nm">${tog}${esc(dn(n.n))}</div>`+
+    `<div class="meta">${n.sub?`<span class="sub">${esc(n.sub)}</span>`:''}<span class="count">${(n.children||[]).length} items</span>${dot}</div>`;
+  if(n._depth===2) return `<div class="nm">${tog}${esc(dn(n.n))}</div><div class="meta">${chip}${warn}${dot}</div>`;
+  return `<div class="nm">${esc(dn(n.n))}</div><div class="meta">${chip}${warn}${dot}</div>`;
+}
+function measureHeights(){
+  const all=Object.values(byId), box=document.createElement('div');
+  box.style.cssText='position:absolute;left:-99999px;top:0;visibility:hidden';
+  box.innerHTML=all.map(n=>{
+    const w=n._depth===0?ROOTW:(COLW-GAP)-Math.max(0,n._depth-1)*INDENT;
+    return `<div class="node d${n._depth}" style="width:${w}px"><div class="nodebox d${n._depth}${n.c==='verify'?' verify':''}" style="height:auto">${nodeInner(n)}</div></div>`;
+  }).join('');
+  document.body.appendChild(box);
+  all.forEach((n,i)=>{ n._nh=box.children[i].firstChild.offsetHeight; });
+  box.remove();
+}
 
 function computeFlags(nodes){
   const q=state.q.trim().toLowerCase();
@@ -7398,27 +7424,9 @@ function render(){
 
   let fo='';
   nodes.forEach(n=>{
-    const hasKids=!!(n.children&&n.children.length);
     const cls=`node d${n._depth}${n._hit?' hit':''}${n._dim?' dim':''}${n===selNode?' sel':''}`;
-    const dot = hasKids ? '<span class="ddot"></span>' : '';
-    const warn = n.c==='verify' ? '<span class="flag warn">⚠</span>' : '';
-    let inner='';
-    if(n._depth===0){
-      inner=`<div class="nm">${esc(dn(n.n))}</div>`;
-    } else if(n._depth===1){
-      const tog=hasKids?`<span class="ptoggle">${n.collapsed?'▸':'▾'}</span>`:'';
-      inner=`<div class="nm">${tog}${esc(dn(n.n))}</div>`+
-            `<div class="meta">${n.sub?`<span class="sub">${esc(n.sub)}</span>`:''}<span class="count">${(n.children||[]).length} items</span>${dot}</div>`;
-    } else if(n._depth===2){
-      const tog=hasKids?`<span class="ptoggle">${n.collapsed?'▸':'▾'}</span>`:'';
-      inner=`<div class="nm">${tog}${esc(dn(n.n))}</div>`+
-            `<div class="meta">${n.s?`<span class="chip s-${n.s}">${n.s}</span>`:''}${warn}${dot}</div>`;
-    } else {
-      inner=`<div class="nm">${esc(dn(n.n))}</div>`+
-            `<div class="meta">${n.s?`<span class="chip s-${n.s}">${n.s}</span>`:''}${warn}${dot}</div>`;
-    }
     fo+=`<foreignObject class="${cls}" x="${n._x}" y="${n._y}" width="${n._w}" height="${n._h}" data-id="${n.id}">`+
-        `<div xmlns="http://www.w3.org/1999/xhtml" class="nodebox d${n._depth}${n.c==='verify'?' verify':''}">${inner}</div>`+
+        `<div xmlns="http://www.w3.org/1999/xhtml" class="nodebox d${n._depth}${n.c==='verify'?' verify':''}">${nodeInner(n)}</div>`+
         `</foreignObject>`;
   });
 
@@ -7639,7 +7647,7 @@ window.addEventListener('resize',()=>{ sizePanel(); render(); });
 // ---- tabs: swap the active tree ----
 function loadTree(key){
   DATA = TREES[key] || TREES.ai;
-  initTree();
+  initTree(); measureHeights();
   selNode=null; state.q=''; state.newOnly=false; state.hideVerify=false;
   btnFocus.disabled=true;
   const s=document.getElementById('search'); if(s) s.value='';
@@ -7834,6 +7842,7 @@ btnBack.onclick=backToStory;
 document.addEventListener('keydown',e=>{ if(e.key==='Escape' && storyReturn && !document.body.classList.contains('story-mode')) backToStory(); });
 window.addEventListener('popstate',()=>{ if(storyReturn) backToStory(); });
 loadTree('ai');
+document.fonts.ready.then(()=>{ measureHeights(); render(); });   // measure again once DM Sans is loaded
 
 </script>
 </body>

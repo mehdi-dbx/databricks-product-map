@@ -46,7 +46,7 @@
   .link.toverify{stroke-dasharray:3 5;stroke:rgba(255,54,33,0.4);}
 
   .nodebox{height:100%;display:flex;flex-direction:column;justify-content:center;gap:3px;padding:5px 13px;background:var(--surface);border:1px solid var(--border);border-radius:12px;cursor:pointer;overflow:hidden;box-shadow:0 1px 4px rgba(27,49,57,0.06);transition:box-shadow .16s,border-color .16s,opacity .16s,background .16s;}
-  .nodebox .nm{font-weight:700;font-size:0.9rem;line-height:1.12;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .nodebox .nm{font-weight:700;font-size:0.9rem;line-height:1.12;overflow-wrap:anywhere;}
   .nodebox .meta{display:flex;align-items:center;gap:5px;}
   .nodebox .sub{font-size:0.68rem;color:var(--text3);font-weight:500;}
   /* root */
@@ -57,7 +57,7 @@
   .d1 .nodebox:hover{background:var(--red-dim);border-color:var(--red);box-shadow:0 4px 14px rgba(255,54,33,0.14);}
   .d1 .nodebox .nm{font-size:1rem;font-weight:700;}
   /* feature = capsule, red Databricks outline */
-  .d2 .nodebox{flex-direction:row;align-items:center;gap:8px;padding:0 7px 0 16px;border:1px solid var(--red);border-radius:999px;background:#fff;box-shadow:0 2px 7px rgba(255,54,33,0.1);}
+  .d2 .nodebox{flex-direction:row;align-items:center;gap:8px;padding:7px 7px 7px 16px;border:1px solid var(--red);border-radius:999px;background:#fff;box-shadow:0 2px 7px rgba(255,54,33,0.1);}
   .d2 .nodebox .nm{flex:1 1 auto;font-weight:600;font-size:0.98rem;}
   .d2 .nodebox .meta{flex:none;margin-left:auto;}
   .d2 .nodebox:hover{background:var(--red-dim);border-color:var(--red);box-shadow:0 5px 16px rgba(255,54,33,0.2);}
@@ -108,7 +108,7 @@
   @media (max-width:720px){ .nav-sub,.nav-title em,#hint{display:none;} .tool input[type=search]{width:120px;} }
 
   /* sub-feature mini-capsule (d3) + toggles + panel meta */
-  .d3 .nodebox{flex-direction:row;align-items:center;gap:6px;padding:0 9px 0 12px;border:1px solid rgba(255,54,33,0.5);border-radius:999px;background:#fff;box-shadow:0 1px 4px rgba(255,54,33,0.07);}
+  .d3 .nodebox{flex-direction:row;align-items:center;gap:6px;padding:6px 9px 6px 12px;border:1px solid rgba(255,54,33,0.5);border-radius:999px;background:#fff;box-shadow:0 1px 4px rgba(255,54,33,0.07);}
   .d3 .nodebox .nm{flex:1 1 auto;font-weight:500;font-size:0.8rem;}
   .d3 .nodebox .meta{flex:none;margin-left:auto;}
   .d3 .nodebox:hover{background:var(--red-dim);border-color:var(--red);}
@@ -134,7 +134,7 @@
   #btnToggle .lvl{font-family:'DM Mono',monospace;font-weight:700;font-size:0.84rem;pointer-events:none;}
 
   /* deeper DS levels (d4/d5/d6) match the AI sub-feature mini-capsule look & font */
-  .d4 .nodebox, .d5 .nodebox, .d6 .nodebox{flex-direction:row;align-items:center;gap:6px;padding:0 9px 0 12px;border:1px solid rgba(255,54,33,0.5);border-radius:999px;background:#fff;box-shadow:0 1px 4px rgba(255,54,33,0.07);}
+  .d4 .nodebox, .d5 .nodebox, .d6 .nodebox{flex-direction:row;align-items:center;gap:6px;padding:6px 9px 6px 12px;border:1px solid rgba(255,54,33,0.5);border-radius:999px;background:#fff;box-shadow:0 1px 4px rgba(255,54,33,0.07);}
   .d4 .nodebox .nm, .d5 .nodebox .nm, .d6 .nodebox .nm{flex:1 1 auto;font-weight:500;font-size:0.8rem;}
   .d4 .nodebox .meta, .d5 .nodebox .meta, .d6 .nodebox .meta{flex:none;margin-left:auto;}
   .d4 .nodebox:hover, .d5 .nodebox:hover, .d6 .nodebox:hover{background:var(--red-dim);border-color:var(--red);}
