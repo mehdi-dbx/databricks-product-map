@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Databricks Ecosystem Trees</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'><path d='M1.155,4.93v.512L9,9.868l7.006-3.957,0,1.6L9,11.491,1.55,7.258l-.395.22V10.54L9,14.955l7.006-3.942,0,1.586L9,16.581,1.55,12.347l-.395.22v.519L9,17.5l7.845-4.414V10.021l-.4-.218L9,14.036,1.992,10.054V8.476L9,12.414,16.845,8V4.978l-.4-.219L9,8.993,2.352,5.215,9,1.46l5.476,3.094.479-.269V3.863L9,.5Z' fill='%23ff3621'/></svg>">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+{{STYLES}}
+</style>
+</head>
+<body>
+
+<nav>
+  <svg class="dbx-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><path d="M1.155,4.93v.512L9,9.868l7.006-3.957,0,1.6L9,11.491,1.55,7.258l-.395.22V10.54L9,14.955l7.006-3.942,0,1.586L9,16.581,1.55,12.347l-.395.22v.519L9,17.5l7.845-4.414V10.021l-.4-.218L9,14.036,1.992,10.054V8.476L9,12.414,16.845,8V4.978l-.4-.219L9,8.993,2.352,5.215,9,1.46l5.476,3.094.479-.269V3.863L9,.5Z" fill="#ff3621"/></svg>
+  <span class="dbx-word">databricks</span>
+  <div class="nav-sep"></div>
+  <div class="nav-tabs" id="navTabs">
+    <button class="navtab active" data-tree="ai">AI Ecosystem <em>Tree</em></button>
+    <button class="navtab" data-tree="ds">Data Science <em>Tree</em></button>
+    <button class="navtab" data-tree="story">Data &amp; AI <em>Story</em></button>
+    <button class="navtab" data-tree="decks"><em>Decks</em></button>
+  </div>
+  <div class="nav-spacer"></div>
+  <label class="navmode" id="navMode" title="Internal view: also show where competitors lead">
+    <span class="setlbl">Internal</span>
+    <span class="modesw"><input type="checkbox" id="modeTg"><span class="mtrack"></span><span class="mknob"></span></span>
+  </label>
+  <div class="nav-sep"></div>
+  <div class="tool">
+    <div class="searchwrap"><input type="search" id="search" placeholder="Search features…" autocomplete="off"><div id="storyResults" hidden></div></div>
+    <button class="icbtn" id="btnNew" data-tip="DAIS" aria-label="DAIS"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .962 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.962 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg></button>
+    <button class="icbtn" id="btnVerify" data-tip="Hide to-verify" aria-label="Hide to-verify"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></svg></button>
+    <button class="icbtn" id="btnToggle" data-tip="Expand all" aria-label="Toggle expand/collapse"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-6"/><path d="M12 8V2"/><path d="M4 12H2"/><path d="M10 12H8"/><path d="M16 12h-2"/><path d="M22 12h-2"/><path d="m15 19-3 3-3-3"/><path d="m15 5-3-3-3 3"/></svg></button>
+    <button class="icbtn" id="btnZoomOut" data-tip="Zoom out" aria-label="Zoom out"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="8" x2="14" y1="11" y2="11"/></svg></button>
+    <button class="icbtn" id="btnZoomIn" data-tip="Zoom in" aria-label="Zoom in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/><line x1="11" x2="11" y1="8" y2="14"/><line x1="8" x2="14" y1="11" y2="11"/></svg></button>
+    <button class="icbtn" id="btnFocus" data-tip="Focus selected" aria-label="Center and zoom on the selected block" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="2" x2="5" y1="12" y2="12"/><line x1="19" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="5"/><line x1="12" x2="12" y1="19" y2="22"/><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/></svg></button>
+    <button class="icbtn" id="btnReset" data-tip="Reset view" aria-label="Reset view"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button>
+  </div>
+</nav>
+
+<div id="stage"><svg id="svg"><g id="viewport"></g></svg></div>
+<div id="storyView"></div>
+<div id="decksView"><div class="decks">
+{{DECKS}}
+</div></div>
+<button id="backToStory" hidden>← Back to story · <span id="btsCh"></span></button>
+<div id="storyNav">
+  <button class="snav" id="storyPrev" title="Previous slide" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg></button>
+  <button class="snav" id="storyNext" title="Next slide" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+</div>
+
+<div id="panel">
+  <button class="pclose" id="pclose" aria-label="Collapse panel" title="Collapse"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 6 5 5 5-5"/><path d="m7 13 5 5 5-5"/></svg></button>
+  <div class="phead">
+    <div class="pname" id="pname"></div>
+    <div class="prow" id="prow"></div>
+  </div>
+  <div class="ptabs" id="ptabs">
+    <button class="ptab active" data-pane="overview">Overview</button>
+    <button class="ptab" data-pane="landscape" id="ptabLandscape" hidden>Landscape</button>
+  </div>
+  <div class="pbody">
+    <div class="ppane active" id="pane-overview"></div>
+    <div class="ppane" id="pane-landscape"></div>
+  </div>
+</div>
+<button id="panelTab" aria-label="Open details" title="Details"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 11-5-5-5 5"/><path d="m17 18-5-5-5 5"/></svg></button>
+
+<div id="legend">
+  <div class="ltitle">Status</div>
+  <div class="lgrow">
+    <span class="chip s-GA">GA</span>
+    <span class="chip s-PuP">PuP</span>
+    <span class="chip s-Beta">Beta</span>
+    <span class="chip s-PrivPreview">Priv</span>
+    <span class="chip s-Announced">Announced</span>
+    <span class="chip s-Legacy">Legacy</span>
+  </div>
+  <div class="ltitle" style="margin-top:4px">Confidence</div>
+  <div class="lgrow"><span class="conf verify">⚠ to verify</span><span style="color:var(--red);font-weight:700">✦ DAIS</span></div>
+  <div class="lgrow" style="font-size:0.7rem;color:var(--text3)">Dashed border / grey link = public-only, verify before customer use.</div>
+</div>
+<div id="hint">click node = expand + details · scroll = zoom · drag = pan</div>
+
+<script>
+{{SCRIPT}}
+</script>
+</body>
+</html>

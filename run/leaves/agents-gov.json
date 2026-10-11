@@ -1,0 +1,217 @@
+[
+  {
+    "n": "Agents / Agent Bricks",
+    "children": [
+      {
+        "n": "AI Functions",
+        "s": "GA",
+        "c": "ok",
+        "new": true,
+        "note": "SQL- & pipeline-native AI for batch transformation of data and documents.",
+        "docs": ["https://docs.databricks.com/aws/en/large-language-models/ai-functions", "https://databricks.com/blog/introducing-aidecide-make-fast-decisions-your-governed-data"],
+        "since": "GA · ai_decide & faster ai_extract new (Sep–Oct 2026)",
+        "deck": null,
+        "children": [
+          { "n": "ai_parse_document", "note": "Parse PDFs / contracts / invoices into structured data." },
+          { "n": "ai_extract", "note": "Entity / field extraction — 2.3× faster at equal cost (Oct 2 2026)." },
+          { "n": "ai_classify · ai_summarize · ai_translate", "note": "Core text transforms over governed data." },
+          { "n": "ai_gen · ai_mask · ai_query", "note": "Generation, PII masking, and model query directly in SQL." },
+          { "n": "ai_decide", "s": "Beta", "new": true, "note": "Fast, low-cost routing / classification / eval (Sep 30 2026)." }
+        ]
+      },
+      {
+        "n": "Custom Agents",
+        "s": "GA",
+        "c": "ok",
+        "new": true,
+        "note": "Code-first; LangGraph / Agno / CrewAI / Claude Code SDK / OpenAI SDK; Agent Server + DurableAgentServer; agent.toml. CLI Beta.",
+        "docs": ["https://docs.databricks.com/aws/en/generative-ai/agent-framework/build-agents", "https://databricks.com/blog/agent-bricks-dais-2026"],
+        "since": "GA · Agent Bricks CLI Beta (Sep 29 2026)",
+        "deck": null,
+        "children": [
+          { "n": "Multi-framework harness support", "note": "Claude SDK, OpenAI, LangGraph, Agno, CrewAI, custom frameworks." },
+          { "n": "Agent Server & DurableAgentServer", "note": "Crash-recoverable, background execution, state persistence." },
+          { "n": "agent.toml configuration", "note": "Declarative model access, memory, tools, tracing, deployment." },
+          { "n": "CLI tooling (Beta)", "note": "Scaffolding, local dev, deployment integration (Sep 29 2026)." },
+          { "n": "Automatic tracing & MLflow", "note": "Built-in observability for tool calls, tokens, latency." },
+          { "n": "Managed model & data access", "note": "Foundation Model APIs, UC-governed data, MCP tools." }
+        ]
+      },
+      {
+        "n": "Managed memory & sessions",
+        "s": "Beta",
+        "c": "ok",
+        "new": true,
+        "note": "Lakebase-backed, cross-session, semantic search (Sep 16).",
+        "docs": ["https://docs.databricks.com/aws/en/release-notes/product/2026/september", "https://docs.databricks.com/aws/en/agents/manage/agent-memory"],
+        "since": "Beta (Sep 16 2026)",
+        "deck": null,
+        "children": [
+          { "n": "Lakebase backend", "note": "Serverless PostgreSQL persistence for long-term memory." },
+          { "n": "Semantic search", "note": "Vector similarity search over past conversations & context." },
+          { "n": "Cross-session persistence", "note": "Memory retained across agent invocations and users." },
+          { "n": "SQL interface", "note": "Query & manage memory tables via standard SQL." },
+          { "n": "Multi-agent compatible", "note": "Shared memory for orchestrated multi-agent workflows." }
+        ]
+      },
+      {
+        "n": "Databricks Sandbox",
+        "s": "Beta",
+        "c": "ok",
+        "note": "Isolated serverless code execution, scoped UC access.",
+        "docs": ["https://developers.databricks.com/docs/agents/sandbox", "https://docs.databricks.com/aws/en/agents/deploy/"],
+        "since": "Beta",
+        "deck": null,
+        "children": [
+          { "n": "Serverless compute", "note": "On-demand 4vCPU, 8GB RAM, scale-to-zero isolation." },
+          { "n": "Language support", "note": "Python, Node.js, CLI tools; persistent /home/sandbox-agent." },
+          { "n": "UC-scoped data access", "note": "Agents interact only with permitted tables & secrets." },
+          { "n": "Egress control (configurable)", "note": "Unrestricted outbound by default; customize per policy." },
+          { "n": "Tool execution isolation", "note": "Generated code runs safely without machine-wide impact." }
+        ]
+      },
+      {
+        "n": "Supervisor Agent",
+        "s": "Legacy",
+        "c": "ok",
+        "note": "GA but legacy — Custom Agents / Genie Agents preferred. Multi-agent orchestration, user-scoped auth.",
+        "docs": ["https://docs.databricks.com/aws/en/agents/agent-bricks/multi-agent-supervisor"],
+        "since": "GA (Legacy; transition to Custom Agents)",
+        "deck": null,
+        "children": [
+          { "n": "Multi-agent routing", "note": "Route requests across specialized agents, tools, endpoints." },
+          { "n": "User-scoped access control", "note": "Users only reach data & tools they're authorized for." },
+          { "n": "Endpoint orchestration", "note": "Integrate Model Serving, AI Search, Genie Agents, Knowledge Assistant." },
+          { "n": "Tool orchestration", "note": "Coordinate UC functions, MCP services, web search, sandboxed code." },
+          { "n": "Legacy status note", "note": "Recommended alternative: Custom Agents for new development." }
+        ]
+      },
+      {
+        "n": "Knowledge Assistant",
+        "s": "Legacy",
+        "c": "ok",
+        "note": "GA but legacy — Genie Agents preferred. Document-grounded, Instructed Retriever, citations.",
+        "docs": ["https://docs.databricks.com/aws/en/agents/agent-bricks/knowledge-assistant"],
+        "since": "GA (Legacy; recommend Genie Agents)",
+        "deck": null,
+        "children": [
+          { "n": "Document ingestion & sync", "note": "Managed pipeline for PDFs, web, databases; auto-sync." },
+          { "n": "Instructed Retriever", "note": "Specialized retrieval optimized for QA & grounding." },
+          { "n": "Citation generation", "note": "Traces retrieved chunks to source with confidence." },
+          { "n": "SME feedback & examples", "note": "Fine-tune answers with subject-matter expert interactions." },
+          { "n": "Endpoint & SDK management", "note": "Expose as REST API; managed via SDKs & dashboards." },
+          { "n": "Legacy note", "note": "Migrate to Genie Agents or Custom Agents + AI Search." }
+        ]
+      },
+      {
+        "n": "Omnigent",
+        "s": "Beta",
+        "c": "ok",
+        "new": true,
+        "note": "Agent meta-harness (Claude / Codex / Cursor / custom); managed = workspace identity + Gateway + Sandbox (CEL policies). OSS Apache-2.0.",
+        "docs": ["https://omnigent.ai", "https://docs.databricks.com/aws/en/omnigent/"],
+        "since": "OSS (Jun 13 2026 Apache-2.0) · Managed Beta",
+        "deck": null,
+        "children": [
+          { "n": "Multi-framework composition", "note": "Compose agents from Claude, Cursor, Codex, Pi, custom harnesses." },
+          { "n": "Portable YAML definitions", "note": "Framework-agnostic agent specs; run locally or managed." },
+          { "n": "Unified policy layer", "note": "CEL-based policies for permissions, cost, logging, safety." },
+          { "n": "Sandbox integration", "note": "Managed version uses Databricks Sandbox for code execution." },
+          { "n": "Multi-interface access", "note": "Web UI, terminal, mobile, APIs; shared live sessions." },
+          { "n": "Shared governance", "note": "workspace identity + UC + Gateway controls across agents." }
+        ]
+      },
+      {
+        "n": "Agent evaluation & monitoring",
+        "s": "GA",
+        "c": "ok",
+        "note": "Traces → Review Apps → datasets → LLM judges → dashboards (MLflow).",
+        "docs": ["https://docs.databricks.com/aws/en/mlflow3/genai/", "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor/", "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/expert-feedback/label-existing-traces"],
+        "since": "GA (MLflow 3.x + Review Apps)",
+        "deck": "eval-flywheel-databricks-genai-agent-demo",
+        "children": [
+          { "n": "MLflow tracing", "note": "End-to-end spans for agents, RAG, LLMs; OpenTelemetry-compatible." },
+          { "n": "8 built-in LLM judges", "note": "Correctness, relevance, safety, RAG-specific (retrieval, grounding, sufficiency)." },
+          { "n": "Custom scorers", "note": "Code-based deterministic checks + guidelines for domain rules." },
+          { "n": "Review Apps", "note": "Web UI for experts to label live chats & existing traces." },
+          { "n": "Evaluation datasets", "note": "Create labeled datasets from traces for model improvement." },
+          { "n": "Production monitoring", "note": "Continuous quality, safety, latency tracking with dashboards." }
+        ]
+      }
+    ]
+  },
+  {
+    "n": "Governance for AI",
+    "children": [
+      {
+        "n": "Unity Catalog for AI assets",
+        "s": "GA",
+        "c": "ok",
+        "note": "Governs tables, models, agents, UC functions (tools), MCP services, connections, skills, credentials; RLAC/ABAC, lineage, audit.",
+        "docs": ["https://docs.databricks.com/aws/en/data-governance/unity-catalog/"],
+        "since": "GA (extended for AI at DAIS 2026)",
+        "deck": "data-ai-governance-full-deck",
+        "children": [
+          { "n": "Unified asset registry", "note": "Three-level namespace (catalog.schema.asset) for all AI/data objects." },
+          { "n": "Permission controls", "note": "GRANT/REVOKE, row/column-level filters (RLAC), attribute-based (ABAC)." },
+          { "n": "Versioning & aliases", "note": "Model versions, stage aliases (Champion/staging/prod) with promotion workflows." },
+          { "n": "Lineage & audit", "note": "Track data/model dependencies, audit trail of access & changes." },
+          { "n": "Cross-workspace discovery", "note": "Share models, agents, functions across Databricks workspaces." },
+          { "n": "Business semantics layer", "note": "Domains, glossaries, Genie Ontology foundation for governance." }
+        ]
+      },
+      {
+        "n": "Unity AI Gateway",
+        "s": "GA",
+        "c": "ok",
+        "new": true,
+        "note": "Runtime control plane for all AI traffic — models, agents, tools, MCP.",
+        "docs": ["https://docs.databricks.com/aws/en/ai-gateway/ai-governance", "https://www.databricks.com/blog/ai-gateway-governance-layer-agentic-ai"],
+        "since": "Renamed from AI Gateway @ DAIS 2026 · docs GA Sep 2026",
+        "deck": "unity-ai-gateway-product-deck-l200",
+        "children": [
+          { "n": "Routing & Smart Routing", "note": "Model selection, fallbacks, rate limits." },
+          { "n": "Guardrails", "s": "Beta", "note": "PII redaction, injection detection, allow / deny / approval (Service Policies)." },
+          { "n": "Cost & budgets", "note": "Attribution by user / team / project / endpoint / model / tag; usage blocking." },
+          { "n": "Asset governance", "note": "Models, MCP, UC functions, connections as UC securables; on-behalf-of execution." },
+          { "n": "Observability", "note": "System tables (tokens, latency, errors, identity) + optional payload logging to Delta." },
+          { "n": "Multi-provider", "note": "One policy over hosted, external & external-MCP models." }
+        ]
+      },
+      {
+        "n": "Review Apps",
+        "s": "GA",
+        "c": "ok",
+        "note": "Human-in-the-loop labeling of traces / chat for eval datasets.",
+        "docs": ["https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/expert-feedback/label-existing-traces"],
+        "since": "GA",
+        "deck": null,
+        "children": [
+          { "n": "Chat UI review interface", "note": "Experts interact with deployed agents; provide immediate feedback." },
+          { "n": "Trace labeling", "note": "Label existing MLflow traces with ratings, classifications, expectations." },
+          { "n": "Feedback collection", "note": "Capture expert ratings, correctness marks, safety assessments." },
+          { "n": "Eval dataset creation", "note": "Convert labeled traces into training data for LLM judges & scorers." },
+          { "n": "Integration with MLflow", "note": "Feedback stored as MLflow assessments; linked to traces & models." },
+          { "n": "Live & batch workflows", "note": "Review live interactions or review existing trace archives." }
+        ]
+      },
+      {
+        "n": "DASF v3.0",
+        "s": "Announced",
+        "c": "ok",
+        "note": "AI Security Framework: 97 risks / 73 controls; Agentic extension (35 risks, 6 controls, 13 components). Published Mar 2026.",
+        "docs": ["https://databricks.com/blog/agentic-ai-security-new-risks-and-controls-databricks-ai-security-framework-dasf-v30"],
+        "since": "v3.0 published Mar 20 2026 · Agentic extension Mar 11 2026",
+        "deck": "databricks-ai-governance-framework-dais-presentation",
+        "children": [
+          { "n": "Risk taxonomy (97 total)", "note": "Comprehensive catalog of AI security risks; 35 new agentic-specific." },
+          { "n": "Control framework (73 total)", "note": "Mapped controls to mitigate risks; 6 new agentic controls." },
+          { "n": "Least-privilege tool access", "note": "UC permissions + scoped data access restrict agent tool use." },
+          { "n": "Human oversight patterns", "note": "Required approval loops for high-stakes agent actions." },
+          { "n": "Sandboxing & isolation", "note": "Databricks Sandbox + CEL policies for agent code execution." },
+          { "n": "Guardrails & observability", "note": "Gateway guardrails (PII, injection) + MLflow tracing for audit trail." }
+        ]
+      }
+    ]
+  }
+]

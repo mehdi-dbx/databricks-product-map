@@ -1,0 +1,243 @@
+[
+  {
+    "tree": "ds-tree.json",
+    "pillar": "Feature engineering",
+    "capsule": "Feature Store",
+    "solves": [
+      {
+        "axis": "Training/serving",
+        "problem": "Features computed differently at training vs inference cause **skew** in production",
+        "solution": "**Unified** feature computation ensures consistency across pipeline"
+      },
+      {
+        "axis": "Feature management",
+        "problem": "Teams **duplicate** features across projects wasting resources",
+        "solution": "**Shared** feature registry enables centralized reuse"
+      },
+      {
+        "axis": "Lineage",
+        "problem": "No visibility into feature **origins** and dependencies",
+        "solution": "Automatic **lineage** tracking connects features to data sources"
+      },
+      {
+        "axis": "Governance",
+        "problem": "Ungoverned **access** to features across teams",
+        "solution": "Unity Catalog integration provides **access control** and compliance"
+      },
+      {
+        "axis": "Application complexity",
+        "problem": "Apps must handle **complex** client-side feature lookup logic",
+        "solution": "**Automated** feature lookups reduce application code burden"
+      },
+      {
+        "axis": "Serving latency",
+        "problem": "Offline features become **stale** between batch updates",
+        "solution": "Real-time mode with **sub-second** online serving keeps data fresh"
+      }
+    ],
+    "sources": [
+      "https://docs.databricks.com/en/machine-learning/feature-store/index.html"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ds-tree.json",
+    "pillar": "Experimentation & AutoML",
+    "capsule": "MLflow",
+    "solves": [
+      {
+        "axis": "Reproducibility",
+        "problem": "Experiments are not **reproducible** without tracked parameters and code versions",
+        "solution": "**Centralized** experiment tracking logs all parameters, metrics, and artifacts"
+      },
+      {
+        "axis": "Collaboration",
+        "problem": "Teams work in **isolation** with scattered metrics and results",
+        "solution": "**Unified** model repository enables comparison and knowledge sharing"
+      },
+      {
+        "axis": "Cross-workspace governance",
+        "problem": "No **visibility** into models across workspaces",
+        "solution": "Unity Catalog integration enables **cross-workspace** model access and discovery"
+      },
+      {
+        "axis": "Model versioning",
+        "problem": "Manual **version** management creates inconsistency and confusion",
+        "solution": "**Standardized** model format ensures compatibility across tools"
+      },
+      {
+        "axis": "Debugging & observability",
+        "problem": "Agent/LLM behavior is **opaque** with no intermediate step visibility",
+        "solution": "MLflow Tracing **records** inputs, outputs, and metadata for each step"
+      },
+      {
+        "axis": "Cost control",
+        "problem": "**Untracked** resource usage leads to unexpected costs",
+        "solution": "**Observable** model operations enable cost monitoring and optimization"
+      }
+    ],
+    "sources": [
+      "https://docs.databricks.com/en/mlflow/index.html"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ds-tree.json",
+    "pillar": "Experimentation & AutoML",
+    "capsule": "AutoML",
+    "solves": [
+      {
+        "axis": "Algorithm selection",
+        "problem": "Data scientists manually **search** through algorithms causing delays",
+        "solution": "**Automated** model search finds best algorithm without manual tuning"
+      },
+      {
+        "axis": "Hyperparameter tuning",
+        "problem": "Hyperparameter optimization is **tedious** and often incomplete",
+        "solution": "**Distributed** hyperparameter search across scikit-learn, XGBoost, LightGBM"
+      },
+      {
+        "axis": "Time-to-model",
+        "problem": "Manual experimentation is **slow** delaying model deployment",
+        "solution": "**End-to-end** automation handles data prep, training, and evaluation"
+      },
+      {
+        "axis": "Transparency",
+        "problem": "AutoML results are **black boxes** without visibility into how models work",
+        "solution": "**Glass-box** approach generates source code notebooks for review and modification"
+      },
+      {
+        "axis": "Model explainability",
+        "problem": "Feature importance is **unclear** limiting model interpretability",
+        "solution": "**Shapley value** calculations provide feature impact analysis in generated notebooks"
+      },
+      {
+        "axis": "Problem coverage",
+        "problem": "Limited to specific **problem types** requiring multiple tools",
+        "solution": "**Multi-domain** support for classification, regression, and time series"
+      }
+    ],
+    "sources": [
+      "https://docs.databricks.com/en/machine-learning/automl/index.html"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ds-tree.json",
+    "pillar": "Training & compute",
+    "capsule": "Distributed training & GPU",
+    "solves": [
+      {
+        "axis": "Memory constraints",
+        "problem": "Data/models exceeding **single-machine** memory cannot train locally",
+        "solution": "**Distributed** scaling across GPU workers handles any dataset size"
+      },
+      {
+        "axis": "Code complexity",
+        "problem": "Distributed training code is **complex** and difficult to write correctly",
+        "solution": "**Managed** abstractions (DeepSpeed, TorchDistributor, Ray) hide distribution details"
+      },
+      {
+        "axis": "Communication overhead",
+        "problem": "Inter-node communication causes **performance** degradation at scale",
+        "solution": "**Optimized** pipeline parallelism in DeepSpeed reduces communication costs"
+      },
+      {
+        "axis": "Training scalability",
+        "problem": "Single-machine training has **limited** throughput and speed",
+        "solution": "**Multi-GPU** cluster training enables large-scale model development"
+      },
+      {
+        "axis": "Infrastructure management",
+        "problem": "Manual **GPU** provisioning and cluster configuration is error-prone",
+        "solution": "**Integrated** Databricks Runtime ML infrastructure handles resource allocation"
+      }
+    ],
+    "sources": [
+      "https://docs.databricks.com/en/machine-learning/train-model/distributed-training/index.html"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ds-tree.json",
+    "pillar": "Deploy & serve",
+    "capsule": "Model Serving & batch inference",
+    "solves": [
+      {
+        "axis": "Infrastructure fragmentation",
+        "problem": "Models scattered across **multiple** serving platforms creates operational chaos",
+        "solution": "**Unified** interface for real-time and batch inference across all model types"
+      },
+      {
+        "axis": "Operational overhead",
+        "problem": "Manual endpoint scaling and management is **time-consuming** and reactive",
+        "solution": "**Automatic** serverless compute scales on demand reducing infrastructure overhead"
+      },
+      {
+        "axis": "Governance & visibility",
+        "problem": "No **central** visibility or control over deployed models",
+        "solution": "**Centralized** endpoint management with permission controls and usage monitoring"
+      },
+      {
+        "axis": "Throughput reliability",
+        "problem": "Low query throughput **limits** production workload capacity",
+        "solution": "Supports **25K+ QPS** enabling high-volume production inference"
+      },
+      {
+        "axis": "Latency performance",
+        "problem": "High overhead **latency** degrades end-user experience",
+        "solution": "**Sub-50ms** overhead latency ensures responsive applications"
+      },
+      {
+        "axis": "Cost efficiency",
+        "problem": "Over-provisioned infrastructure drives **unnecessary** costs",
+        "solution": "**Pay-per-token** pricing with automatic scaling optimizes cost efficiency"
+      }
+    ],
+    "sources": [
+      "https://docs.databricks.com/en/machine-learning/model-serving/index.html"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ds-tree.json",
+    "pillar": "Deploy & serve",
+    "capsule": "Model Registry & governance",
+    "solves": [
+      {
+        "axis": "Model discovery",
+        "problem": "No **cross-workspace** visibility means models are repeatedly recreated",
+        "solution": "**Unified** three-level namespace enables model discovery across workspaces"
+      },
+      {
+        "axis": "Version management",
+        "problem": "Inflexible **stage** promotion creates deployment bottlenecks",
+        "solution": "**Mutable aliases** enable flexible version references and decoupled deployments"
+      },
+      {
+        "axis": "Lineage tracking",
+        "problem": "**Lost** lineage between models and training data complicates debugging",
+        "solution": "Automatic **lineage** graphs track model-to-table relationships via mlflow.log_input()"
+      },
+      {
+        "axis": "Access control",
+        "problem": "Scattered **permissions** across teams creates security gaps",
+        "solution": "**Centralized** UC privilege system enforces role-based model access"
+      },
+      {
+        "axis": "Duplication prevention",
+        "problem": "Teams **duplicate** model efforts due to lack of discoverability",
+        "solution": "**Searchable** model registry reduces redundant work and accelerates reuse"
+      },
+      {
+        "axis": "Compliance & audit",
+        "problem": "No **audit** trail for regulatory compliance and debugging",
+        "solution": "**Tracked** version history with metadata provides compliance evidence"
+      }
+    ],
+    "sources": [
+      "https://docs.databricks.com/en/machine-learning/manage-model-lifecycle/index.html"
+    ],
+    "confidence": "ok"
+  }
+]

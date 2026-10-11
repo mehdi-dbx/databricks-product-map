@@ -1,0 +1,405 @@
+[
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle"
+  ],
+  "note": "Databricks AI Platform manages the end-to-end ML lifecycle from features and training to serving and governance."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Feature Store"
+  ],
+  "note": "Feature Store manages governed features for training and serving, with an online store on Lakebase."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Feature Store",
+   "Unity Catalog sync"
+  ],
+  "note": "Unity Catalog governs feature metadata to enable discovery, lineage tracking, and cross-workspace sharing."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Model Serving"
+  ],
+  "note": "Model Serving provides serverless endpoints with pay-per-token, provisioned throughput, and batch billing."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Model Serving",
+   "Custom model endpoints"
+  ],
+  "note": "Deploys any custom model behind a serverless endpoint that scales to high request volumes."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Model Serving",
+   "Foundation model hosting"
+  ],
+  "note": "Foundation models including Llama, Qwen, Gemini and GPT are hosted on Databricks."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Model Serving",
+   "Feature Store lookup"
+  ],
+  "note": "Provides real-time feature enrichment during inference by serving features directly from Feature Store."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "AI Runtime — serverless GPU"
+  ],
+  "note": "Serverless GPU access for fine-tuning, distributed training, and batch inference with A10 and H100 instances."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "AI Runtime — serverless GPU",
+   "Notebooks / Jobs integration"
+  ],
+  "note": "Provides GPU access in notebooks and jobs for interactive and batch workloads."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow 3 for GenAI"
+  ],
+  "note": "MLflow provides end-to-end tracing for 30+ frameworks, LLM-based evaluation, and production monitoring."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow 3 for GenAI",
+   "End-to-end tracing"
+  ],
+  "note": "Automatically traces agent and LLM calls across 30+ frameworks using OpenTelemetry-compatible instrumentation."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow 3 for GenAI",
+   "LLM judges & evals"
+  ],
+  "note": "Evaluates LLM outputs using LLM judges that score safety, correctness, and relevance."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow 3 for GenAI",
+   "Production observability"
+  ],
+  "note": "Monitors production metrics including quality, safety, and latency with alerting."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow Model Registry"
+  ],
+  "note": "Manages model versions, aliases for production stages, and Unity Catalog lineage."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow Model Registry",
+   "MLflow lineage tracking"
+  ],
+  "note": "Tracks data lineage through training and models to inference for full provenance visibility."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow Prompt Registry",
+   "Configuration co-storage"
+  ],
+  "note": "Stores model parameters, temperature settings, and prompts together for reproducibility."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow Prompt Registry",
+   "Retrieval & comparison"
+  ],
+  "note": "Retrieves versioned prompts via API for side-by-side comparison to review prompt evolution."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "AutoML",
+   "MLflow tracking integration"
+  ],
+  "note": "Logs AutoML trials to MLflow with metrics, parameters, and generated notebooks."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "AI Search (ex-Vector Search)"
+  ],
+  "note": "AI Search combines vector and keyword search with reranking, Delta sync, and citation tracking."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "AI Search (ex-Vector Search)",
+   "Delta Sync & citations"
+  ],
+  "note": "Automatically synchronizes search indexes from Delta tables and attributes results with source citations."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Model fine-tuning",
+   "QLoRA fine-tuning"
+  ],
+  "note": "QLoRA uses 4-bit quantized adapters to reduce GPU memory while maintaining comparable model quality."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Model fine-tuning",
+   "Full fine-tuning"
+  ],
+  "note": "Retrains complete model weights, requiring substantial GPU memory for gradients and optimizer state."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agentic Data Management"
+  ],
+  "note": "Agentic Data Management automates data classification, quality monitoring, and anomaly detection within a governed lakehouse."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agentic Data Management",
+   "Classification / profiling / monitoring"
+  ],
+  "note": "Provides AI-driven data classification and quality monitoring integrated with Unity Catalog."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agentic Data Management",
+   "Classification / profiling / monitoring",
+   "Data profiling"
+  ],
+  "note": "Automatically profiles schema, distributions, and data quality indicators."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agentic Data Management",
+   "Anomaly detection & remediation"
+  ],
+  "note": "Detects anomalies in data with automated remediation capabilities that are still emerging."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Real-time & transactional AI",
+   "Lakehouse//RT"
+  ],
+  "note": "Lakehouse//RT provides serverless SQL query execution for real-time analytics on Delta and Iceberg tables."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Real-time & transactional AI",
+   "Lakehouse//RT",
+   "Reyden query engine"
+  ],
+  "note": "Executes SQL queries with millisecond-scale latency for real-time analytics."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Real-time & transactional AI",
+   "Lakehouse//RT",
+   "SELECT-only mode"
+  ],
+  "note": "Provides read-only SQL access while transactional writes go through Lakebase."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Real-time & transactional AI",
+   "LTAP"
+  ],
+  "note": "LTAP combines transactional processing and analytics in a unified lakehouse platform."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Real-time & transactional AI",
+   "LTAP",
+   "Unified storage foundation"
+  ],
+  "note": "Stores data once to eliminate synchronization pipelines and dual writes."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Real-time & transactional AI",
+   "LTAP",
+   "Cost optimization"
+  ],
+  "note": "Eliminates data redundancy to simplify architecture and reduce operations overhead."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "CustomerLake"
+  ],
+  "note": "CustomerLake delivers agentic capabilities for customer profiles, identity resolution, and campaign management."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "CustomerLake",
+   "Customer 360 profiles"
+  ],
+  "note": "Unifies customer identity across behavioral, transactional, and operational data sources."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "CustomerLake",
+   "Identity resolution"
+  ],
+  "note": "Matches customers across data sources using deterministic, probabilistic, and agent-assisted techniques."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "CustomerLake",
+   "Reverse ETL activation"
+  ],
+  "note": "Activates customer audiences to data destinations including Adobe, Meta and Braze."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "CustomerLake",
+   "UC governance"
+  ],
+  "note": "Uses Lakehouse storage with Unity Catalog permissions governing data access."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "Lakewatch"
+  ],
+  "note": "Lakewatch provides agentic security information and event management with Panther integration."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "Lakewatch",
+   "Cross-source correlation"
+  ],
+  "note": "Correlates security events with business context and IT logs for unified threat assessment."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "Lakewatch",
+   "Panther integration"
+  ],
+  "note": "Panther was acquired by Databricks in 2026 to integrate over 100 prebuilt security connectors."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "Row Zero / Genie ZeroOps"
+  ],
+  "note": "Row Zero integrates spreadsheets with Genie for automated data remediation and ML-driven insights."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "Row Zero / Genie ZeroOps",
+   "⚠ unverified"
+  ],
+  "note": "This feature is public-only, verify status and naming before customer use."
+ }
+]

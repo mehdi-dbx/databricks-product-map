@@ -1,0 +1,50 @@
+[
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Genie / AI.BI family",
+  "capsule": "Genie One",
+  "note": "Unified cross-asset BI assistant; memory GA + MCP server GA (Sep); free for named users to Jan 31 2027."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Genie / AI.BI family",
+  "capsule": "Genie Agents",
+  "note": "No-code domain agents (ex-Genie Spaces, renamed Jul 2026); limits up to 50 sources / 200k conversations (Sep 10)."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Genie / AI.BI family",
+  "capsule": "AI/BI Dashboards (Lakeview)",
+  "note": "AI-assisted authoring, dashboard-level Genie, metric views."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Genie / AI.BI family",
+  "capsule": "Genie Ontology",
+  "note": "Learned business-context layer grounding Genie answers."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Genie / AI.BI family",
+  "capsule": "Genie App Builder",
+  "note": "NL to Databricks App (Sep 23); needs admin governed agentic app-building and App Spaces."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Developer productivity",
+  "capsule": "Databricks Apps + App Spaces",
+  "note": "Serverless Streamlit / Gradio / React / FastAPI; app vs user-principal auth; UC telemetry; App Spaces governance."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Developer productivity",
+  "capsule": "AI Dev Kit + internal coding agents (Isaac)",
+  "note": "Scaffolding, UC-governed MCPs; internal proof point (25x spend growth, $400/mo baseline)."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Developer productivity",
+  "capsule": "Genie Code",
+  "note": "Notebook / SQL / pipeline / dashboard assistant (ex-Databricks Assistant); pay-as-you-go (150 DBU free/mo); Genie Code CLI Beta (Oct 6)."
+ }
+]

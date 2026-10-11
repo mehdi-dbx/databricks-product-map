@@ -1,0 +1,56 @@
+[
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Foundation Models & LLM access",
+  "capsule": "Foundation Model APIs",
+  "note": "Multi-provider (Anthropic, OpenAI, Google, Meta, Qwen, Grok, Kimi, GLM, DeepSeek…); pay-per-token / priority / provisioned throughput."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Foundation Models & LLM access",
+  "capsule": "External model services",
+  "note": "Governed access to externally hosted models via UC Connections + Gateway."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Governance for AI",
+  "capsule": "Unity Catalog for AI assets",
+  "note": "Governs tables, models, agents, UC functions (tools), MCP services, connections, skills, credentials; RLAC/ABAC, lineage, audit."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Governance for AI",
+  "capsule": "Review Apps",
+  "note": "Human-in-the-loop labeling of traces / chat for eval datasets."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Real-time & transactional AI",
+  "capsule": "Lakehouse//RT",
+  "note": "Serverless low-latency SQL (\"Reyden\" engine) on Delta/Iceberg; read-only. Public-only — verify name & status."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Real-time & transactional AI",
+  "capsule": "LTAP",
+  "note": "Lake Transactional-Analytical Processing unifying Lakebase + lakehouse. Public-only — verify."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Domain-specific AI",
+  "capsule": "CustomerLake",
+  "note": "Agentic CDP (Customer 360, identity resolution, campaign agents). Public-only — verify."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Domain-specific AI",
+  "capsule": "Lakewatch",
+  "note": "Agentic SIEM; linked to Panther acquisition. Public-only — verify."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Domain-specific AI",
+  "capsule": "Row Zero / Genie ZeroOps",
+  "note": "Governed spreadsheets into Genie / ML auto-remediation. Single-source — verify."
+ }
+]

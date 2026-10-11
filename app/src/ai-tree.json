@@ -1,0 +1,3712 @@
+{
+ "n": "Databricks AI",
+ "children": [
+  {
+   "n": "AI Platform / ML lifecycle",
+   "sub": "Mosaic AI",
+   "children": [
+    {
+     "n": "Feature Store",
+     "s": "GA",
+     "c": "ok",
+     "note": "Feature Store manages governed features for training and serving, with an online store on Lakebase.",
+     "children": [
+      {
+       "n": "Online Feature Store on Lakebase",
+       "note": "Real-time feature lookup with sub-ms latency.",
+       "type": "primitive"
+      },
+      {
+       "n": "Point-in-time joins",
+       "note": "Training data prep without train/serving skew.",
+       "type": "primitive"
+      },
+      {
+       "n": "Unity Catalog sync",
+       "note": "Unity Catalog governs feature metadata to enable discovery, lineage tracking, and cross-workspace sharing.",
+       "type": "primitive"
+      },
+      {
+       "n": "Feature Views (Public Preview)",
+       "note": "Databricks-managed declarative feature computation layer for enabling simplified authoring over manual tables.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/feature-store"
+     ],
+     "since": "GA",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Consistency",
+       "problem": "features computed differently at **training vs inference**",
+       "solution": "unified feature logic at **both stages**"
+      },
+      {
+       "axis": "Governance",
+       "problem": "features **scattered** across systems",
+       "solution": "centralized **UC-backed** registry"
+      },
+      {
+       "axis": "Reusability",
+       "problem": "features **recreated** per project",
+       "solution": "**discoverable** shared library"
+      },
+      {
+       "axis": "Real-time",
+       "problem": "**manual** feature lookups costly",
+       "solution": "**online store** with millisecond latency"
+      },
+      {
+       "axis": "Quality",
+       "problem": "training data **point-in-time errors** common",
+       "solution": "**point-in-time-correct** dataset joins"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "Model Serving",
+     "s": "GA",
+     "c": "ok",
+     "note": "Model Serving provides serverless endpoints with pay-per-token, provisioned throughput, and batch billing.",
+     "children": [
+      {
+       "n": "Custom model endpoints",
+       "note": "Deploys any custom model behind a serverless endpoint that scales to high request volumes.",
+       "type": "primitive"
+      },
+      {
+       "n": "Foundation model hosting",
+       "note": "Foundation models including Llama, Qwen, Gemini and GPT are hosted on Databricks.",
+       "type": "primitive"
+      },
+      {
+       "n": "Pay-per-token & provisioned",
+       "note": "Token-based or dedicated throughput pricing.",
+       "type": "primitive"
+      },
+      {
+       "n": "Feature Store lookup",
+       "note": "Provides real-time feature enrichment during inference by serving features directly from Feature Store.",
+       "type": "primitive"
+      },
+      {
+       "n": "External model serving",
+       "note": "Route to OpenAI, Anthropic, Google externally.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/model-serving",
+      "https://docs.databricks.com/aws/en/machine-learning/model-serving/foundation-model-overview"
+     ],
+     "since": "GA",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Deployment",
+       "problem": "**multiple** serving systems per provider",
+       "solution": "**unified** control plane and REST API"
+      },
+      {
+       "axis": "Scaling",
+       "problem": "manual infrastructure **provisioning**",
+       "solution": "**serverless** auto-scaling to demand"
+      },
+      {
+       "axis": "Governance",
+       "problem": "**fragmented** model access control",
+       "solution": "**centralized** UC/Gateway governance"
+      },
+      {
+       "axis": "Integration",
+       "problem": "**separate** queries for features and models",
+       "solution": "integrated **feature lookup** in serving"
+      },
+      {
+       "axis": "Cost",
+       "problem": "idle compute **wastes** spend",
+       "solution": "**pay-per-token** with scale-to-zero"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "AI Runtime — serverless GPU",
+     "s": "PuP",
+     "c": "ok",
+     "note": "Serverless GPU access for fine-tuning, distributed training, and batch inference with A10 and H100 instances.",
+     "children": [
+      {
+       "n": "A10 & H100 GPUs",
+       "note": "On-demand NVIDIA compute, pay-per-minute scale-to-zero.",
+       "type": "primitive"
+      },
+      {
+       "n": "LoRA / QLoRA fine-tuning",
+       "note": "Efficient parameter-efficient adaptation.",
+       "type": "primitive"
+      },
+      {
+       "n": "Distributed training (DDP/FSDP)",
+       "note": "Multi-GPU and multi-node training scaling using PyTorch DDP, FSDP, or DeepSpeed frameworks.",
+       "type": "primitive"
+      },
+      {
+       "n": "vLLM & Ray batch inference",
+       "note": "High-throughput batch LLM workloads using vLLM serving and Ray Data distributed parallelization.",
+       "type": "primitive"
+      },
+      {
+       "n": "Notebooks / Jobs integration",
+       "note": "Provides GPU access in notebooks and jobs for interactive and batch workloads.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/ai-runtime"
+     ],
+     "since": "Public Preview (Mar 19 2026)",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Access",
+       "problem": "GPU **scarcity** delays training",
+       "solution": "**on-demand** serverless GPU provisioning"
+      },
+      {
+       "axis": "Cost",
+       "problem": "overprovisioned GPUs **idle**",
+       "solution": "**scale-to-zero** when not in use"
+      },
+      {
+       "axis": "Efficiency",
+       "problem": "data pipeline **optimization manual**",
+       "solution": "fault-tolerant **UC-streaming** loaders"
+      },
+      {
+       "axis": "Distributed",
+       "problem": "multi-GPU setup **complex**",
+       "solution": "**Ray integration** for distributed training"
+      },
+      {
+       "axis": "Observability",
+       "problem": "GPU usage and training **visibility poor**",
+       "solution": "MLflow + log **streaming** built-in"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "MLflow 3 for GenAI",
+     "s": "GA",
+     "c": "ok",
+     "note": "MLflow provides end-to-end tracing for 30+ frameworks, LLM-based evaluation, and production monitoring.",
+     "children": [
+      {
+       "n": "End-to-end tracing",
+       "note": "Automatically traces agent and LLM calls across 30+ frameworks using OpenTelemetry-compatible instrumentation.",
+       "type": "primitive"
+      },
+      {
+       "n": "LLM judges & evals",
+       "note": "Evaluates LLM outputs using LLM judges that score safety, correctness, and relevance.",
+       "type": "primitive"
+      },
+      {
+       "n": "Production observability",
+       "note": "Monitors production metrics including quality, safety, and latency with alerting.",
+       "type": "primitive"
+      },
+      {
+       "n": "Delta table backend",
+       "note": "Scalable governance-ready evaluation storage.",
+       "type": "primitive"
+      },
+      {
+       "n": "Review Apps integration",
+       "note": "Human-in-the-loop labeling for eval datasets.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/mlflow3/genai",
+      "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/overview",
+      "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor"
+     ],
+     "since": "GA",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Tracing",
+       "problem": "agentic chains **opaque** to operators",
+       "solution": "**end-to-end** request tracing (OTel, 30+ frameworks)"
+      },
+      {
+       "axis": "Evaluation",
+       "problem": "LLM quality hard to **measure** consistently",
+       "solution": "**LLM-judge** and custom scorer framework"
+      },
+      {
+       "axis": "Monitoring",
+       "problem": "**blind** production agents and models",
+       "solution": "automatic request/response **logging** with trace context"
+      },
+      {
+       "axis": "Cost",
+       "problem": "LLM spend **opaque** per request",
+       "solution": "**traced tokens** enable cost attribution"
+      },
+      {
+       "axis": "Debugging",
+       "problem": "failures **hard to isolate** in chains",
+       "solution": "granular **intermediate step** visibility"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "MLflow Model Registry",
+     "s": "GA",
+     "c": "ok",
+     "note": "Manages model versions, aliases for production stages, and Unity Catalog lineage.",
+     "children": [
+      {
+       "n": "Model versioning",
+       "note": "Immutable version history with metadata.",
+       "type": "primitive"
+      },
+      {
+       "n": "Aliases (Champion/staging/prod)",
+       "note": "Mutable pointers for promotion workflows.",
+       "type": "primitive"
+      },
+      {
+       "n": "Unity Catalog governance",
+       "note": "Permissions, audit logs, cross-workspace sharing.",
+       "type": "primitive"
+      },
+      {
+       "n": "MLflow lineage tracking",
+       "note": "Tracks data lineage through training and models to inference for full provenance visibility.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/mlflow"
+     ],
+     "since": "GA",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Versioning",
+       "problem": "model versions **untracked** over time",
+       "solution": "**chronological** version history per model"
+      },
+      {
+       "axis": "Promotion",
+       "problem": "manual stage **transitions** error-prone",
+       "solution": "**alias**- and **tag**-based promotion with deployment jobs"
+      },
+      {
+       "axis": "Lineage",
+       "problem": "model origin and ancestors **unclear**",
+       "solution": "UC-backed **experiment lineage** tracking"
+      },
+      {
+       "axis": "Collaboration",
+       "problem": "model changes and decisions **undocumented**",
+       "solution": "built-in **comments** and **tags** system"
+      },
+      {
+       "axis": "Automation",
+       "problem": "promotion workflows **manual and slow**",
+       "solution": "**model update triggers** and deployment jobs for workflows"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "MLflow Prompt Registry",
+     "s": "GA",
+     "c": "ok",
+     "note": "Versioned prompts, staging/prod aliases.",
+     "children": [
+      {
+       "n": "Prompt versioning",
+       "note": "Immutable prompt versions with metadata.",
+       "type": "primitive"
+      },
+      {
+       "n": "Staging / production aliases",
+       "note": "Mutable named references enabling safe prompt promotion through deployment pipelines and workflows.",
+       "type": "primitive"
+      },
+      {
+       "n": "Configuration co-storage",
+       "note": "Stores model parameters, temperature settings, and prompts together for reproducibility.",
+       "type": "primitive"
+      },
+      {
+       "n": "Retrieval & comparison",
+       "note": "Retrieves versioned prompts via API for side-by-side comparison to review prompt evolution.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://mlflow.org/docs/latest/genai/prompt-registry/"
+     ],
+     "since": "GA",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Versioning",
+       "problem": "prompt changes **untracked** over time",
+       "solution": "version **history** per prompt"
+      },
+      {
+       "axis": "Deployment",
+       "problem": "staging/prod prompts **diverge**",
+       "solution": "**alias-based** stage control"
+      },
+      {
+       "axis": "Reusability",
+       "problem": "prompts **scattered** across notebooks",
+       "solution": "centralized prompt **registry**"
+      },
+      {
+       "axis": "Governance",
+       "problem": "prompt access **uncontrolled**",
+       "solution": "UC **permissions** on prompts"
+      },
+      {
+       "axis": "Reproducibility",
+       "problem": "model outputs **hard to replicate**",
+       "solution": "frozen prompt **versions** per run"
+      }
+     ],
+     "solves_conf": "verify"
+    },
+    {
+     "n": "AutoML",
+     "s": "GA",
+     "c": "ok",
+     "note": "Automated hyperparameter tuning and model selection for tabular classification and regression tasks.",
+     "children": [
+      {
+       "n": "Tabular classification",
+       "note": "Binary and multi-class classification with automated feature engineering and hyperparameter optimization tasks.",
+       "type": "primitive"
+      },
+      {
+       "n": "Tabular regression",
+       "note": "Automated numerical prediction via feature engineering and hyperparameter tuning for regression tasks.",
+       "type": "primitive"
+      },
+      {
+       "n": "Feature engineering",
+       "note": "Automated data prep and feature selection.",
+       "type": "primitive"
+      },
+      {
+       "n": "Hyperparameter tuning",
+       "note": "Automated model selection & optimization.",
+       "type": "primitive"
+      },
+      {
+       "n": "MLflow tracking integration",
+       "note": "Logs AutoML trials to MLflow with metrics, parameters, and generated notebooks.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/train-model/automl"
+     ],
+     "since": "GA",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Algorithm",
+       "problem": "manual **testing** multiple algorithms tedious",
+       "solution": "automated **selection** (XGBoost, LightGBM, RF)"
+      },
+      {
+       "axis": "Tuning",
+       "problem": "hyperparameter search **time-consuming**",
+       "solution": "distributed **optimization** automated"
+      },
+      {
+       "axis": "Data",
+       "problem": "manual data **cleaning** and prep needed",
+       "solution": "automated **data preparation** pipeline"
+      },
+      {
+       "axis": "Reproducibility",
+       "problem": "model selections **opaque** to teams",
+       "solution": "generated **trial notebooks** for review"
+      },
+      {
+       "axis": "Speed",
+       "problem": "ML iteration **slow** and manual",
+       "solution": "**end-to-end** automation from data to model"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "AI Search (ex-Vector Search)",
+     "s": "GA",
+     "c": "ok",
+     "note": "AI Search combines vector and keyword search with reranking, Delta sync, and citation tracking.",
+     "children": [
+      {
+       "n": "Vector search (ANN HNSW)",
+       "note": "Semantic similarity search using HNSW algorithm with L2 distance metric on embeddings.",
+       "type": "primitive"
+      },
+      {
+       "n": "BM25 keyword search",
+       "note": "Full-text keyword search using Okapi BM25 ranking algorithm across searchable text columns.",
+       "type": "primitive"
+      },
+      {
+       "n": "Hybrid fusion (RRF)",
+       "note": "Combines vector and keyword search results via Reciprocal Rank Fusion normalization approach.",
+       "type": "primitive"
+      },
+      {
+       "n": "Optional reranking",
+       "note": "Second-pass document reranking to refine overall search quality beyond initial retrieval results.",
+       "type": "primitive"
+      },
+      {
+       "n": "Delta Sync & citations",
+       "note": "Automatically synchronizes search indexes from Delta tables and attributes results with source citations.",
+       "type": "primitive"
+      },
+      {
+       "n": "Unity Catalog governance",
+       "note": "Governs search indexes with UC permissions, encryption (AES-256), and access control policies.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/ai-search/ai-search"
+     ],
+     "since": "GA",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Retrieval",
+       "problem": "**manual** embedding and index management",
+       "solution": "automatic **embedding** computation + Delta sync"
+      },
+      {
+       "axis": "Search",
+       "problem": "**single-mode** search (vector only)",
+       "solution": "**hybrid** search (vector + BM25 + rerank)"
+      },
+      {
+       "axis": "Scale",
+       "problem": "vector indices **slow to maintain** at scale",
+       "solution": "auto-sync from **Delta tables**"
+      },
+      {
+       "axis": "Governance",
+       "problem": "embeddings **uncontrolled** and opaque",
+       "solution": "UC **lineage** and **citations** built-in"
+      },
+      {
+       "axis": "Performance",
+       "problem": "search **latency** grows with scale",
+       "solution": "**storage-optimized** endpoints (1B+ vectors)"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "Model fine-tuning",
+     "s": "PuP",
+     "c": "ok",
+     "note": "Efficient model adaptation via QLoRA, LoRA, and full fine-tuning on serverless GPUs.",
+     "children": [
+      {
+       "n": "LoRA fine-tuning",
+       "note": "Efficient parameter-efficient adaptation.",
+       "type": "primitive"
+      },
+      {
+       "n": "QLoRA fine-tuning",
+       "note": "QLoRA uses 4-bit quantized adapters to reduce GPU memory while maintaining comparable model quality.",
+       "type": "primitive"
+      },
+      {
+       "n": "Full fine-tuning",
+       "note": "Retrains complete model weights, requiring substantial GPU memory for gradients and optimizer state.",
+       "type": "primitive"
+      },
+      {
+       "n": "RL fine-tuning",
+       "note": "Reinforcement learning where model supports.",
+       "type": "primitive"
+      },
+      {
+       "n": "AI Runtime GPU integration",
+       "note": "Serverless A10 (24GB) and H100 (80GB per GPU) compute for fine-tuning tasks.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/ai-runtime/"
+     ],
+     "since": "GA",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Memory",
+       "problem": "full fine-tune requires **large GPU memory**",
+       "solution": "**QLoRA/LoRA** parameter efficiency"
+      },
+      {
+       "axis": "Cost",
+       "problem": "fine-tuning **expensive** with full GPU",
+       "solution": "serverless GPU **pay-per-minute** model"
+      },
+      {
+       "axis": "Speed",
+       "problem": "model adaptation **slow** with full training",
+       "solution": "**low-rank** matrices enable fast updates"
+      },
+      {
+       "axis": "Flexibility",
+       "problem": "**one approach** for all use cases",
+       "solution": "choose **QLoRA/LoRA/full** per need"
+      },
+      {
+       "axis": "Integration",
+       "problem": "fine-tuned models **isolated** from serving",
+       "solution": "integrate with **MLflow** and **Model Serving**"
+      }
+     ],
+     "solves_conf": "verify"
+    }
+   ],
+   "note": "Databricks AI Platform manages the end-to-end ML lifecycle from features and training to serving and governance."
+  },
+  {
+   "n": "Foundation Models & LLM access",
+   "children": [
+    {
+     "n": "Foundation Model APIs",
+     "s": "GA",
+     "c": "ok",
+     "note": "Foundation Model APIs include Anthropic Claude, OpenAI GPT, and Google Gemini with pay-per-token and provisioned throughput pricing.",
+     "children": [
+      {
+       "n": "Anthropic Claude family",
+       "note": "Claude models range from Haiku to Opus including Sonnet and Fable.",
+       "type": "primitive"
+      },
+      {
+       "n": "OpenAI GPT models",
+       "note": "OpenAI GPT models include current versions, legacy support, and open-source variants.",
+       "type": "primitive"
+      },
+      {
+       "n": "Google Gemini & Gemma",
+       "note": "Google Gemini and Gemma models are available for language, multimodal and image-generation tasks.",
+       "type": "primitive"
+      },
+      {
+       "n": "Meta Llama & OSS",
+       "note": "Meta Llama models and community open-source models are available for deployment.",
+       "type": "primitive"
+      },
+      {
+       "n": "Regional providers",
+       "note": "Regional providers including Qwen, GLM, and Kimi offer market-specific models.",
+       "type": "primitive"
+      },
+      {
+       "n": "Pay-per-token / priority / provisioned",
+       "note": "Three consumption models: pay-per-token (entry), priority (low-latency), provisioned on-demand/reserved throughput.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis",
+      "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis/supported-models"
+     ],
+     "since": "GA",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Provider choice",
+       "problem": "Vendor **lock-in** to single model provider",
+       "solution": "**Multi-provider** unified API (Anthropic, OpenAI, Google, Meta, Qwen, Grok, others)"
+      },
+      {
+       "axis": "Cost management",
+       "problem": "Unpredictable token **spend** growth",
+       "solution": "**Provisioned throughput** (on-demand or reserved) + **priority** mode pricing"
+      },
+      {
+       "axis": "Production reliability",
+       "problem": "**Unavailable** endpoints during peak usage",
+       "solution": "**SLA-backed** capacity with reserved or on-demand provisioning"
+      },
+      {
+       "axis": "Model evaluation",
+       "problem": "**Fragmented** testing across providers",
+       "solution": "**Unified endpoint** for A/B testing and model swapping"
+      },
+      {
+       "axis": "Deployment strategy",
+       "problem": "**Expensive** pay-per-token for production",
+       "solution": "**Flexibility** to move between pricing tiers without code changes"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "Model versions",
+     "s": "GA",
+     "c": "verify",
+     "note": "Model versions provides availability, retirement, and lifecycle information for foundation models on Databricks.",
+     "children": [
+      {
+       "n": "Live supported-models matrix",
+       "note": "The supported-models matrix lists real-time model availability by region.",
+       "type": "primitive"
+      },
+      {
+       "n": "Provider version tracking",
+       "note": "Anthropic, OpenAI, Google publish new versions weekly.",
+       "type": "primitive"
+      },
+      {
+       "n": "Retirement schedules",
+       "note": "Gemini 2.5 models retired October 2 and DeepSeek V4 Flash retires November 5.",
+       "type": "primitive"
+      },
+      {
+       "n": "Model rollover updates",
+       "note": "Tracks major model updates like Claude 5 to 5.5 and GPT-5 to GPT-6 transitions.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis/supported-models"
+     ],
+     "since": "GA",
+     "deck": null,
+     "type": "family"
+    },
+    {
+     "n": "External model services",
+     "s": "GA",
+     "c": "ok",
+     "note": "Databricks governs access to externally hosted models through Unity Catalog and the Gateway.",
+     "children": [
+      {
+       "n": "External provider routing",
+       "note": "Routes requests to OpenAI, Anthropic, and Google hosted endpoints.",
+       "type": "primitive"
+      },
+      {
+       "n": "UC Connections auth",
+       "note": "Credential management & scoped token refresh.",
+       "type": "primitive"
+      },
+      {
+       "n": "Unity Gateway control",
+       "note": "Rate limits, cost attribution, audit logging.",
+       "type": "primitive"
+      },
+      {
+       "n": "Fallback routing",
+       "note": "Fallback routing selects alternative external models when a provider is unavailable.",
+       "type": "primitive"
+      },
+      {
+       "n": "Cost attribution by team",
+       "note": "Cost attribution tracks external API spending per team with Gateway-enforced usage controls.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/model-serving/foundation-model-overview",
+      "https://docs.databricks.com/aws/en/machine-learning/model-serving"
+     ],
+     "since": "GA",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Credential management",
+       "problem": "API keys **scattered** across code and team members",
+       "solution": "**Centralized** encryption, secure storage, and rotation via AI Gateway"
+      },
+      {
+       "axis": "Access control",
+       "problem": "**Ungoverned** external API calls bypass security",
+       "solution": "**Unified serving endpoint** with permission enforcement"
+      },
+      {
+       "axis": "Usage tracking",
+       "problem": "**Blind** to external model spending",
+       "solution": "**Rate limiting** + **usage tracking** through AI Gateway"
+      },
+      {
+       "axis": "Traffic routing",
+       "problem": "**Imbalanced** load across providers",
+       "solution": "**Traffic routing** policies per external model (percentage-based)"
+      },
+      {
+       "axis": "Audit compliance",
+       "problem": "External model access **unaudited**",
+       "solution": "**Unity Catalog** integration for governance and audit logs"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "Model lifecycle churn (Oct)",
+     "s": "Announced",
+     "c": "verify",
+     "note": "Model lifecycle churn tracks the October 2026 retirements and deprecations of foundation models.",
+     "children": [
+      {
+       "n": "Gemini 2.5 Pro/Flash (retired Oct 2)",
+       "note": "Gemini 2.5 Pro and Flash retired October 2, 2026 with migration to Gemini 3.1 or 3.5 recommended.",
+       "type": "primitive"
+      },
+      {
+       "n": "GLM 5.2 (legacy as of Oct 6)",
+       "note": "GLM from Zhipu AI became legacy as of October 6, 2026.",
+       "type": "primitive"
+      },
+      {
+       "n": "DeepSeek V4 (0731) retirement (Nov 5)",
+       "note": "DeepSeek V4 Flash retiring November 5, 2026 with V4.1 available as a replacement.",
+       "type": "primitive"
+      },
+      {
+       "n": "Model matrix versioning",
+       "note": "Consult supported-models page monthly for changes.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis/supported-models"
+     ],
+     "since": "Announced",
+     "deck": null,
+     "type": "concept"
+    }
+   ],
+   "note": "Databricks foundation models from Anthropic, OpenAI, and Google support pay-per-token and provisioned throughput pricing."
+  },
+  {
+   "n": "Agents / Agent Bricks",
+   "children": [
+    {
+     "n": "AI Functions",
+     "s": "GA",
+     "c": "ok",
+     "new": true,
+     "note": "SQL- & pipeline-native AI for batch transformation of data and documents.",
+     "docs": [
+      "https://docs.databricks.com/aws/en/large-language-models/ai-functions",
+      "https://databricks.com/blog/introducing-aidecide-make-fast-decisions-your-governed-data"
+     ],
+     "since": "GA · ai_decide & faster ai_extract new (Sep–Oct 2026)",
+     "deck": null,
+     "children": [
+      {
+       "n": "ai_parse_document",
+       "note": "Extracts structured data from documents like PDFs and contracts.",
+       "type": "primitive"
+      },
+      {
+       "n": "ai_extract",
+       "note": "Efficiently extracts entities and fields from unstructured data.",
+       "type": "primitive"
+      },
+      {
+       "n": "ai_classify · ai_summarize · ai_translate",
+       "note": "Core text transforms over governed data.",
+       "type": "primitive"
+      },
+      {
+       "n": "ai_gen · ai_mask · ai_query",
+       "note": "Generation, PII masking, and model query directly in SQL.",
+       "type": "primitive"
+      },
+      {
+       "n": "ai_decide",
+       "s": "Beta",
+       "new": true,
+       "note": "Routes, classifies, and evaluates data efficiently.",
+       "type": "primitive"
+      }
+     ],
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Integration",
+       "problem": "**external** AI services require data export",
+       "solution": "**native** functions run inside data platform"
+      },
+      {
+       "axis": "Structure",
+       "problem": "model output is **unstructured** for downstream use",
+       "solution": "**schema-enforced** results support pipelines"
+      },
+      {
+       "axis": "Scale",
+       "problem": "**manual** batch splitting and parallelization",
+       "solution": "**automatic** parallelization and scaling"
+      },
+      {
+       "axis": "Governance",
+       "problem": "data **leaves** workspace for inference",
+       "solution": "data **stays** in Unity Catalog"
+      },
+      {
+       "axis": "Engineering",
+       "problem": "build **separate** OCR, NLP, JSON pipelines",
+       "solution": "**unified** AI functions in SQL"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "Custom Agents",
+     "s": "GA",
+     "c": "ok",
+     "new": true,
+     "note": "Build agents using code-first frameworks like LangGraph or CrewAI with agent.toml configuration.",
+     "docs": [
+      "https://docs.databricks.com/aws/en/generative-ai/agent-framework/build-agents",
+      "https://databricks.com/blog/agent-bricks-dais-2026"
+     ],
+     "since": "GA · Agent Bricks CLI Beta (Sep 29 2026)",
+     "deck": null,
+     "children": [
+      {
+       "n": "Multi-framework harness support",
+       "note": "Supports Claude SDK and OpenAI SDK with integration to other frameworks.",
+       "type": "primitive"
+      },
+      {
+       "n": "Agent Server & DurableAgentServer",
+       "note": "Crash-recoverable, background execution, state persistence.",
+       "type": "primitive"
+      },
+      {
+       "n": "agent.toml configuration",
+       "note": "Declaratively configure agents with model selection, memory, and tools.",
+       "type": "primitive"
+      },
+      {
+       "n": "CLI tooling (Beta)",
+       "note": "Scaffolding, local dev, deployment integration (Sep 29 2026).",
+       "type": "primitive"
+      },
+      {
+       "n": "Automatic tracing & MLflow",
+       "note": "Built-in observability for tool calls, tokens, latency.",
+       "type": "primitive"
+      },
+      {
+       "n": "Managed model & data access",
+       "note": "Foundation Model APIs, UC-governed data, MCP tools.",
+       "type": "primitive"
+      }
+     ],
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Control",
+       "problem": "**fixed** orchestration patterns",
+       "solution": "**custom** agent logic and workflows"
+      },
+      {
+       "axis": "Framework",
+       "problem": "**predetermined** framework choice",
+       "solution": "**choose** LangGraph, LangChain, OpenAI SDK"
+      },
+      {
+       "axis": "Tooling",
+       "problem": "**limited** integrations to external systems",
+       "solution": "**MCP servers, UC functions, APIs** available"
+      },
+      {
+       "axis": "State",
+       "problem": "**manual** session and memory management",
+       "solution": "**managed** memory via Lakebase"
+      },
+      {
+       "axis": "Deployment",
+       "problem": "**external** deployment and monitoring tools",
+       "solution": "**integrated** governance, tracing, evaluation"
+      },
+      {
+       "axis": "Model",
+       "problem": "**fixed** model selection",
+       "solution": "**choose** any model per use case"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "Managed memory & sessions",
+     "s": "Beta",
+     "c": "ok",
+     "new": true,
+     "note": "Lakebase-backed, cross-session, semantic search (Sep 16).",
+     "docs": [
+      "https://docs.databricks.com/aws/en/release-notes/product/2026/september",
+      "https://docs.databricks.com/aws/en/agents/agent-memory/managed-memory"
+     ],
+     "since": "Beta (Sep 16 2026)",
+     "deck": null,
+     "children": [
+      {
+       "n": "Lakebase backend",
+       "note": "Serverless PostgreSQL persistence for long-term memory.",
+       "type": "primitive"
+      },
+      {
+       "n": "Semantic search",
+       "note": "Vector similarity search over past conversations & context.",
+       "type": "primitive"
+      },
+      {
+       "n": "Cross-session persistence",
+       "note": "Memory retained across agent invocations and users.",
+       "type": "primitive"
+      },
+      {
+       "n": "SQL interface",
+       "note": "Query & manage memory tables via standard SQL.",
+       "type": "primitive"
+      },
+      {
+       "n": "Multi-agent compatible",
+       "note": "Shared memory for orchestrated multi-agent workflows.",
+       "type": "primitive"
+      }
+     ],
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Persistence",
+       "problem": "no **memory** across separate conversations",
+       "solution": "**semantic search** retrieves past context"
+      },
+      {
+       "axis": "Continuity",
+       "problem": "users repeat **instructions** in each session",
+       "solution": "agents **recall** learned preferences"
+      },
+      {
+       "axis": "Personalization",
+       "problem": "agents **start fresh** each conversation",
+       "solution": "responses **adapt** to user history"
+      },
+      {
+       "axis": "Sharing",
+       "problem": "**siloed** memory per agent",
+       "solution": "**shared** memory accessible across agents"
+      },
+      {
+       "axis": "Scale",
+       "problem": "**limited** conversation context window",
+       "solution": "**long-term** Lakebase-backed storage"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "Databricks Sandbox",
+     "s": "Beta",
+     "c": "ok",
+     "note": "Isolated serverless code execution, scoped UC access.",
+     "docs": [
+      "https://docs.databricks.com/aws/en/compute/serverless/sandbox",
+      "https://docs.databricks.com/aws/en/agents/deploy/"
+     ],
+     "since": "Beta",
+     "deck": null,
+     "children": [
+      {
+       "n": "Serverless compute",
+       "note": "On-demand 4vCPU, 8GB RAM, scale-to-zero isolation.",
+       "type": "primitive"
+      },
+      {
+       "n": "Language support",
+       "note": "Supports Python, Node.js, and shell scripts with persistent storage.",
+       "type": "primitive"
+      },
+      {
+       "n": "UC-scoped data access",
+       "note": "Agents interact only with permitted tables & secrets.",
+       "type": "primitive"
+      },
+      {
+       "n": "Egress (unrestricted, not configurable)",
+       "note": "Allows unrestricted outbound network egress; egress cannot be configured.",
+       "type": "primitive"
+      },
+      {
+       "n": "Tool execution isolation",
+       "note": "Generated code runs safely without machine-wide impact.",
+       "type": "primitive"
+      }
+     ],
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Safety",
+       "problem": "**untrusted** AI-generated code poses risk",
+       "solution": "**isolated** execution environment"
+      },
+      {
+       "axis": "Access",
+       "problem": "code has **unrestricted** access to data",
+       "solution": "**scoped UC access** via policies"
+      },
+      {
+       "axis": "Provisioning",
+       "problem": "**manual** cluster setup required",
+       "solution": "**serverless** on-demand infrastructure"
+      },
+      {
+       "axis": "Latency",
+       "problem": "cluster **startup** time blocks execution",
+       "solution": "**low-latency** sandbox provisioning"
+      },
+      {
+       "axis": "Ingress",
+       "problem": "**open** inbound connections to sandbox",
+       "solution": "**default-closed** ingress protection"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "Supervisor Agent",
+     "s": "Legacy",
+     "c": "ok",
+     "note": "Orchestrates Model Serving endpoints and tool integrations with user-scoped auth.",
+     "docs": [
+      "https://docs.databricks.com/aws/en/agents/agent-bricks/multi-agent-supervisor"
+     ],
+     "since": "GA (Legacy; transition to Custom Agents)",
+     "deck": null,
+     "children": [
+      {
+       "n": "Multi-agent routing",
+       "note": "Route requests across specialized agents, tools, endpoints.",
+       "type": "primitive"
+      },
+      {
+       "n": "User-scoped access control",
+       "note": "Users only reach data & tools they're authorized for.",
+       "type": "primitive"
+      },
+      {
+       "n": "Endpoint orchestration",
+       "note": "Integrates Model Serving, AI Search, and Genie Agents.",
+       "type": "primitive"
+      },
+      {
+       "n": "Tool orchestration",
+       "note": "Coordinates UC functions, MCP services, and sandboxed code execution.",
+       "type": "primitive"
+      },
+      {
+       "n": "Legacy status note",
+       "note": "Recommended alternative: Custom Agents for new development.",
+       "type": "primitive"
+      }
+     ],
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Coordination",
+       "problem": "**manual** routing between agents",
+       "solution": "**AI-orchestrated** task delegation"
+      },
+      {
+       "axis": "Scale",
+       "problem": "single agent **insufficient** for complex tasks",
+       "solution": "coordinate **up to 50 agents**"
+      },
+      {
+       "axis": "Integration",
+       "problem": "**fragmented** tool ecosystems",
+       "solution": "**unified** orchestration layer"
+      },
+      {
+       "axis": "Results",
+       "problem": "**disconnected** responses from subagents",
+       "solution": "**synthesized** comprehensive solutions"
+      },
+      {
+       "axis": "Authority",
+       "problem": "**bypass** user data access controls",
+       "solution": "**user-scoped** authorization enforced"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "Knowledge Assistant",
+     "s": "Legacy",
+     "c": "ok",
+     "note": "Answers questions grounded in documents with citations.",
+     "docs": [
+      "https://docs.databricks.com/aws/en/agents/agent-bricks/knowledge-assistant"
+     ],
+     "since": "GA (Legacy; recommend Genie Agents)",
+     "deck": null,
+     "children": [
+      {
+       "n": "Document ingestion & sync",
+       "note": "Ingests PDFs, web content, and database sources with automatic synchronization.",
+       "type": "primitive"
+      },
+      {
+       "n": "Instructed Retriever",
+       "note": "Specialized retrieval optimized for QA & grounding.",
+       "type": "primitive"
+      },
+      {
+       "n": "Citation generation",
+       "note": "Traces retrieved chunks to source with confidence.",
+       "type": "primitive"
+      },
+      {
+       "n": "SME feedback & examples",
+       "note": "Fine-tune answers with subject-matter expert interactions.",
+       "type": "primitive"
+      },
+      {
+       "n": "Endpoint & SDK management",
+       "note": "Exposes the assistant as a REST API managed via SDKs and dashboards.",
+       "type": "primitive"
+      },
+      {
+       "n": "Legacy note",
+       "note": "Migrate to Genie Agents or to Custom Agents with AI Search.",
+       "type": "primitive"
+      }
+     ],
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Accuracy",
+       "problem": "traditional RAG **hallucinations** misground",
+       "solution": "**Instructed Retriever** keeps answers grounded"
+      },
+      {
+       "axis": "Quality",
+       "problem": "**generic** retrieval misses document intent",
+       "solution": "**high-quality** document-native answers"
+      },
+      {
+       "axis": "Citations",
+       "problem": "sources **missing** or **false**",
+       "solution": "**grounded** source attribution"
+      },
+      {
+       "axis": "Setup",
+       "problem": "complex RAG **engineering** required",
+       "solution": "**minutes** to deploy chatbot"
+      },
+      {
+       "axis": "Feedback",
+       "problem": "no way to **refine** retriever behavior",
+       "solution": "**natural-language** guidelines improve results"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "Omnigent",
+     "s": "Beta",
+     "c": "ok",
+     "new": true,
+     "note": "Omnigent unifies agent development across Claude, Codex, and Cursor with managed infrastructure and policies.",
+     "docs": [
+      "https://omnigent.ai",
+      "https://docs.databricks.com/aws/en/omnigent/"
+     ],
+     "since": "OSS (Jun 13 2026 Apache-2.0) · Managed Beta",
+     "deck": null,
+     "children": [
+      {
+       "n": "Multi-framework composition",
+       "note": "Compose agents from Claude, Cursor, and Codex frameworks.",
+       "type": "primitive"
+      },
+      {
+       "n": "Portable YAML definitions",
+       "note": "Defines agents in framework-agnostic YAML for local or managed execution.",
+       "type": "primitive"
+      },
+      {
+       "n": "Unified policy layer",
+       "note": "Enforces stateful contextual policies (built-in, plus custom Python policies in open source) for permissions, cost, and safety.",
+       "type": "primitive"
+      },
+      {
+       "n": "Sandbox integration",
+       "note": "Managed version uses Databricks Sandbox for code execution.",
+       "type": "primitive"
+      },
+      {
+       "n": "Multi-interface access",
+       "note": "Provides access via web UI, terminal, and mobile APIs with shared sessions.",
+       "type": "primitive"
+      },
+      {
+       "n": "Shared governance",
+       "note": "Applies workspace identity, Unity Catalog, and Gateway controls across agents.",
+       "type": "primitive"
+      }
+     ],
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Fragmentation",
+       "problem": "each agent harness **isolated** ecosystem",
+       "solution": "**unified** interface across harnesses"
+      },
+      {
+       "axis": "Switching",
+       "problem": "**rewrite** code to change agents",
+       "solution": "**common API** switches between harnesses"
+      },
+      {
+       "axis": "Context",
+       "problem": "**manual** copying of content between tools",
+       "solution": "**automatic** context sharing"
+      },
+      {
+       "axis": "Governance",
+       "problem": "**no centralized** control mechanism",
+       "solution": "**contextual policies** at meta layer"
+      },
+      {
+       "axis": "Collaboration",
+       "problem": "agents operate in **isolation**",
+       "solution": "**live session sharing** for teamwork"
+      }
+     ],
+     "solves_conf": "verify"
+    },
+    {
+     "n": "Agent evaluation & monitoring",
+     "s": "GA",
+     "c": "ok",
+     "note": "Collects execution traces, applies LLM judges, and displays evaluation dashboards.",
+     "docs": [
+      "https://docs.databricks.com/aws/en/mlflow3/genai/",
+      "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor/",
+      "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/expert-feedback/label-existing-traces"
+     ],
+     "since": "GA (MLflow 3.x + Review Apps)",
+     "deck": "eval-flywheel-databricks-genai-agent-demo",
+     "children": [
+      {
+       "n": "MLflow tracing",
+       "note": "Traces end-to-end execution for agents, RAG systems, and LLMs with OpenTelemetry compatibility.",
+       "type": "primitive"
+      },
+      {
+       "n": "8 built-in LLM judges",
+       "note": "Scores agent outputs for correctness, relevance, and safety.",
+       "type": "primitive"
+      },
+      {
+       "n": "Custom scorers",
+       "note": "Implements code-based deterministic checks and guidelines for domain rules.",
+       "type": "primitive"
+      },
+      {
+       "n": "Review Apps",
+       "note": "Web UI for experts to label live chats & existing traces.",
+       "type": "primitive"
+      },
+      {
+       "n": "Evaluation datasets",
+       "note": "Create labeled datasets from traces for model improvement.",
+       "type": "primitive"
+      },
+      {
+       "n": "Production monitoring",
+       "note": "Continuous quality, safety, latency tracking with dashboards.",
+       "type": "primitive"
+      }
+     ],
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Quality",
+       "problem": "no **metrics** on response quality",
+       "solution": "**LLM judges** score each trace"
+      },
+      {
+       "axis": "Evaluation",
+       "problem": "**manual** review of traces",
+       "solution": "**programmatic** batch evaluation runs"
+      },
+      {
+       "axis": "Production",
+       "problem": "**blind** to production agent quality",
+       "solution": "**automated** monitoring on live traffic"
+      },
+      {
+       "axis": "Feedback",
+       "problem": "slow **iteration** without clear signals",
+       "solution": "**traces** carry scorer feedback"
+      },
+      {
+       "axis": "Comparison",
+       "problem": "can't **compare** agent versions",
+       "solution": "**evaluation runs** tracked per version"
+      }
+     ],
+     "solves_conf": "ok"
+    }
+   ],
+   "note": "Databricks Agents is an end-to-end platform for building and operating secure, observable agents."
+  },
+  {
+   "n": "Governance for AI",
+   "children": [
+    {
+     "n": "Unity Catalog for AI assets",
+     "s": "GA",
+     "c": "ok",
+     "note": "Unity Catalog for AI assets provides role-based access control, lineage tracking, and audit trails for models and agents.",
+     "docs": [
+      "https://docs.databricks.com/aws/en/data-governance/unity-catalog/"
+     ],
+     "since": "GA (extended for AI at DAIS 2026)",
+     "deck": "data-ai-governance-full-deck",
+     "children": [
+      {
+       "n": "Unified asset registry",
+       "note": "Three-level namespace (catalog.schema.asset) for all AI/data objects.",
+       "type": "primitive"
+      },
+      {
+       "n": "Permission controls",
+       "note": "GRANT/REVOKE, row/column-level filters (RLAC), attribute-based (ABAC).",
+       "type": "primitive"
+      },
+      {
+       "n": "Versioning & aliases",
+       "note": "Model versions track stage aliases and support promotion workflows to production.",
+       "type": "primitive"
+      },
+      {
+       "n": "Lineage & audit",
+       "note": "Track data/model dependencies, audit trail of access & changes.",
+       "type": "primitive"
+      },
+      {
+       "n": "Cross-workspace discovery",
+       "note": "Share models, agents, functions across Databricks workspaces.",
+       "type": "primitive"
+      },
+      {
+       "n": "Business semantics layer",
+       "note": "Domains, glossaries, Genie Ontology foundation for governance.",
+       "type": "primitive"
+      }
+     ],
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Asset governance",
+       "problem": "AI models, agents, functions **ungoverned** individually",
+       "solution": "UC governs **all asset types**: models, agents, UC functions (tools), MCP services, connections, credentials"
+      },
+      {
+       "axis": "Access control",
+       "problem": "Inconsistent **permission** enforcement across assets",
+       "solution": "**RLAC/ABAC** with role and attribute-based policies"
+      },
+      {
+       "axis": "Lineage tracking",
+       "problem": "Unknown **dependencies** between models and data",
+       "solution": "**Lineage** visibility showing data→model→agent flows"
+      },
+      {
+       "axis": "Audit compliance",
+       "problem": "**Unaudited** access to production AI assets",
+       "solution": "**Audit logs** for all access, modification, and usage events"
+      },
+      {
+       "axis": "Credential security",
+       "problem": "External credentials **scattered** and unmanaged",
+       "solution": "UC manages **connections** + **credentials** with encryption at rest"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "Unity Gateway",
+     "s": "GA",
+     "c": "ok",
+     "new": true,
+     "note": "Unity Gateway controls all AI traffic for models, agents, and custom tools.",
+     "docs": [
+      "https://docs.databricks.com/aws/en/ai-gateway/ai-governance",
+      "https://www.databricks.com/blog/ai-gateway-governance-layer-agentic-ai"
+     ],
+     "since": "Renamed from AI Gateway Apr 15 2026 · GA Aug 4 2026",
+     "deck": "unity-ai-gateway-product-deck-l200",
+     "children": [
+      {
+       "n": "Routing & Smart Routing",
+       "note": "Model selection, fallbacks, rate limits.",
+       "type": "primitive"
+      },
+      {
+       "n": "Guardrails",
+       "s": "Beta",
+       "note": "Guardrails enforce PII redaction, injection detection, and approval policies on AI requests.",
+       "type": "primitive"
+      },
+      {
+       "n": "Cost & budgets",
+       "note": "Budgets and cost tracking attribute usage by user, team, or project with enforcement of spending limits.",
+       "type": "primitive"
+      },
+      {
+       "n": "Asset governance",
+       "note": "Asset governance treats models, MCP, and UC functions as Unity Catalog securables.",
+       "type": "primitive"
+      },
+      {
+       "n": "Observability",
+       "note": "Observability logs tokens, latency, and errors to system tables for audit and troubleshooting.",
+       "type": "primitive"
+      },
+      {
+       "n": "Multi-provider",
+       "note": "One policy over hosted, external & external-MCP models.",
+       "type": "primitive"
+      }
+     ],
+     "solves": [
+      {
+       "axis": "Access",
+       "problem": "**self-managed** per provider",
+       "solution": "**one control plane** fronts every provider"
+      },
+      {
+       "axis": "Visibility",
+       "problem": "**no central view** of who calls what",
+       "solution": "usage tracked **per user and team**"
+      },
+      {
+       "axis": "Cost",
+       "problem": "**spend** grows unchecked",
+       "solution": "**budgets** cap spend centrally"
+      },
+      {
+       "axis": "Guardrails",
+       "problem": "**no guardrails** on prompts and responses",
+       "solution": "**policies** applied on every request"
+      },
+      {
+       "axis": "Audit",
+       "problem": "**no audit** for compliance",
+       "solution": "every request and response **logged**"
+      }
+     ],
+     "matrix": {
+      "home": "unity-gateway",
+      "updated": "2026-10",
+      "sources": "docs/competitors/",
+      "legend": {
+       "ga": {
+        "symbol": "✓",
+        "label": "GA"
+       },
+       "beta": {
+        "symbol": "β",
+        "label": "beta"
+       },
+       "partial": {
+        "symbol": "~",
+        "label": "partial"
+       },
+       "none": {
+        "symbol": "✕",
+        "label": "none"
+       },
+       "unverified": {
+        "symbol": "?",
+        "label": "unverified"
+       }
+      },
+      "competitors": [
+       {
+        "id": "unity-gateway",
+        "name": "Unity Gateway",
+        "home": true
+       },
+       {
+        "id": "portkey",
+        "name": "Portkey"
+       },
+       {
+        "id": "bedrock",
+        "name": "AWS Bedrock"
+       },
+       {
+        "id": "gcp",
+        "name": "Google Cloud"
+       },
+       {
+        "id": "azure",
+        "name": "Azure"
+       },
+       {
+        "id": "kong",
+        "name": "Kong"
+       },
+       {
+        "id": "mulesoft",
+        "name": "MuleSoft"
+       },
+       {
+        "id": "litellm",
+        "name": "LiteLLM"
+       },
+       {
+        "id": "cloudflare",
+        "name": "Cloudflare"
+       },
+       {
+        "id": "bifrost",
+        "name": "Bifrost"
+       }
+      ],
+      "groups": [
+       {
+        "label": "Core gateway",
+        "capabilities": [
+         {
+          "label": "Multi-provider routing",
+          "cells": {
+           "unity-gateway": {
+            "status": "ga"
+           },
+           "portkey": {
+            "status": "ga"
+           },
+           "bedrock": {
+            "status": "none"
+           },
+           "gcp": {
+            "status": "beta"
+           },
+           "azure": {
+            "status": "ga"
+           },
+           "kong": {
+            "status": "ga"
+           },
+           "mulesoft": {
+            "status": "ga"
+           },
+           "litellm": {
+            "status": "ga"
+           },
+           "cloudflare": {
+            "status": "ga"
+           },
+           "bifrost": {
+            "status": "ga"
+           }
+          }
+         },
+         {
+          "label": "Semantic caching",
+          "cells": {
+           "unity-gateway": {
+            "status": "none"
+           },
+           "portkey": {
+            "status": "ga",
+            "emphasis": true
+           },
+           "bedrock": {
+            "status": "none"
+           },
+           "gcp": {
+            "status": "ga"
+           },
+           "azure": {
+            "status": "ga"
+           },
+           "kong": {
+            "status": "ga"
+           },
+           "mulesoft": {
+            "status": "ga"
+           },
+           "litellm": {
+            "status": "ga"
+           },
+           "cloudflare": {
+            "status": "none"
+           },
+           "bifrost": {
+            "status": "ga"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "label": "Governance & access",
+        "capabilities": [
+         {
+          "label": "Data-catalog tie",
+          "cells": {
+           "unity-gateway": {
+            "status": "ga",
+            "note": "Unity Catalog",
+            "emphasis": true
+           },
+           "portkey": {
+            "status": "none"
+           },
+           "bedrock": {
+            "status": "none"
+           },
+           "gcp": {
+            "status": "partial",
+            "note": "24h-lagged"
+           },
+           "azure": {
+            "status": "none"
+           },
+           "kong": {
+            "status": "beta"
+           },
+           "mulesoft": {
+            "status": "partial"
+           },
+           "litellm": {
+            "status": "none"
+           },
+           "cloudflare": {
+            "status": "none"
+           },
+           "bifrost": {
+            "status": "none"
+           }
+          }
+         },
+         {
+          "label": "Zero-egress / data-local",
+          "cells": {
+           "unity-gateway": {
+            "status": "ga",
+            "note": "ai_query()",
+            "emphasis": true
+           },
+           "portkey": {
+            "status": "none"
+           },
+           "bedrock": {
+            "status": "none"
+           },
+           "gcp": {
+            "status": "none"
+           },
+           "azure": {
+            "status": "none"
+           },
+           "kong": {
+            "status": "partial"
+           },
+           "mulesoft": {
+            "status": "partial"
+           },
+           "litellm": {
+            "status": "partial"
+           },
+           "cloudflare": {
+            "status": "none"
+           },
+           "bifrost": {
+            "status": "partial"
+           }
+          }
+         }
+        ]
+       },
+       {
+        "label": "Observability & cost",
+        "capabilities": [
+         {
+          "label": "Hard spend caps",
+          "cells": {
+           "unity-gateway": {
+            "status": "ga"
+           },
+           "portkey": {
+            "status": "ga"
+           },
+           "bedrock": {
+            "status": "none"
+           },
+           "gcp": {
+            "status": "partial",
+            "note": "token-quota"
+           },
+           "azure": {
+            "status": "beta",
+            "note": "TPM"
+           },
+           "kong": {
+            "status": "ga"
+           },
+           "mulesoft": {
+            "status": "ga"
+           },
+           "litellm": {
+            "status": "ga"
+           },
+           "cloudflare": {
+            "status": "none"
+           },
+           "bifrost": {
+            "status": "unverified",
+            "soft": true
+           }
+          }
+         }
+        ]
+       },
+       {
+        "label": "Agents & MCP",
+        "capabilities": [
+         {
+          "label": "A2A / multi-agent governance",
+          "cells": {
+           "unity-gateway": {
+            "status": "beta"
+           },
+           "portkey": {
+            "status": "beta"
+           },
+           "bedrock": {
+            "status": "partial"
+           },
+           "gcp": {
+            "status": "partial"
+           },
+           "azure": {
+            "status": "partial"
+           },
+           "kong": {
+            "status": "ga",
+            "emphasis": true
+           },
+           "mulesoft": {
+            "status": "ga",
+            "emphasis": true
+           },
+           "litellm": {
+            "status": "ga"
+           },
+           "cloudflare": {
+            "status": "none"
+           },
+           "bifrost": {
+            "status": "partial"
+           }
+          }
+         }
+        ]
+       }
+      ],
+      "verdicts": [
+       {
+        "dimension": "Data-catalog governance",
+        "home": "Unity Catalog, one plane for data and AI",
+        "field": "no tie; GCP partial, 24h-delayed",
+        "winner": "home"
+       },
+       {
+        "dimension": "Data proximity",
+        "home": "zero-egress batch + open-model hosting",
+        "field": "every call egresses to a provider",
+        "winner": "home"
+       },
+       {
+        "dimension": "Cost enforcement",
+        "home": "hard caps + queryable chargeback",
+        "field": "hyperscalers alert-only; pure-plays enforce",
+        "winner": "home"
+       },
+       {
+        "dimension": "Caching & routing",
+        "home": "no semantic cache; Smart Routing (β)",
+        "field": "semantic cache + latency routing widespread",
+        "winner": "field"
+       },
+       {
+        "dimension": "Agent orchestration",
+        "home": "governance GA; orchestration/A2A β",
+        "field": "MuleSoft and Kong lead (A2A GA)",
+        "winner": "field"
+       }
+      ]
+     },
+     "type": "feature"
+    },
+    {
+     "n": "Review Apps",
+     "s": "GA",
+     "c": "ok",
+     "note": "Review Apps enable human-in-the-loop labeling of traces and chat interactions for eval datasets.",
+     "docs": [
+      "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/expert-feedback/label-existing-traces"
+     ],
+     "since": "GA",
+     "deck": null,
+     "children": [
+      {
+       "n": "Chat UI review interface",
+       "note": "Chat UI enables experts to interact with deployed agents and provide feedback for evaluation.",
+       "type": "primitive"
+      },
+      {
+       "n": "Trace labeling",
+       "note": "Label existing MLflow traces with ratings, classifications, expectations.",
+       "type": "primitive"
+      },
+      {
+       "n": "Feedback collection",
+       "note": "Capture expert ratings, correctness marks, safety assessments.",
+       "type": "primitive"
+      },
+      {
+       "n": "Eval dataset creation",
+       "note": "Convert labeled traces into training data for LLM judges & scorers.",
+       "type": "primitive"
+      },
+      {
+       "n": "Integration with MLflow",
+       "note": "Feedback is stored as MLflow assessments linked to traces and models.",
+       "type": "primitive"
+      },
+      {
+       "n": "Live & batch workflows",
+       "note": "Review live interactions or review existing trace archives.",
+       "type": "primitive"
+      }
+     ],
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Quality feedback",
+       "problem": "Agent quality **subjective** without ground truth",
+       "solution": "**Expert assessments** attached to MLflow traces with structured labels"
+      },
+      {
+       "axis": "Eval dataset creation",
+       "problem": "Manual **spreadsheet** labeling disconnected from traces",
+       "solution": "**Trace-linked** assessments promoted directly into evaluation datasets"
+      },
+      {
+       "axis": "Live testing",
+       "problem": "Testing **without feedback loop** or expert input",
+       "solution": "**Chat UI** for experts to test agents live and attach immediate feedback"
+      },
+      {
+       "axis": "Automated evaluation",
+       "problem": "LLM judges **misaligned** with expert expectations",
+       "solution": "Ground truth from experts used to **train and align** judges"
+      },
+      {
+       "axis": "Reproducibility",
+       "problem": "Eval **criteria drift** across labeling sessions",
+       "solution": "**Versioned** labeling schemas and assessments stored on traces"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "DASF v3.0",
+     "s": "GA",
+     "c": "ok",
+     "note": "Databricks AI Security Framework v3.0 catalogs 97 risks with 73 controls, including 35 agentic-specific risks.",
+     "docs": [
+      "https://databricks.com/blog/agentic-ai-security-new-risks-and-controls-databricks-ai-security-framework-dasf-v30"
+     ],
+     "since": "v3.0 with Agentic AI Extension published Mar 20 2026",
+     "deck": "databricks-ai-governance-framework-dais-presentation",
+     "children": [
+      {
+       "n": "Risk taxonomy (97 total)",
+       "note": "Risk taxonomy comprehensively catalogs AI security risks, with 35 agentic-specific additions.",
+       "type": "primitive"
+      },
+      {
+       "n": "Control framework (73 total)",
+       "note": "Control framework maps controls to mitigate risks, with 6 new agentic-specific controls.",
+       "type": "primitive"
+      },
+      {
+       "n": "Least-privilege tool access",
+       "note": "Least-privilege tool access uses UC permissions and scoped data access to restrict agent capabilities.",
+       "type": "primitive"
+      },
+      {
+       "n": "Human oversight patterns",
+       "note": "Required approval loops for high-stakes agent actions.",
+       "type": "primitive"
+      },
+      {
+       "n": "Sandboxing & isolation",
+       "note": "Sandboxing and isolation restrict agent code execution using Databricks Sandbox and CEL policies.",
+       "type": "primitive"
+      },
+      {
+       "n": "Guardrails & observability",
+       "note": "Gateway guardrails and MLflow tracing provide PII redaction, injection detection, and audit trails.",
+       "type": "primitive"
+      }
+     ],
+     "type": "concept"
+    }
+   ],
+   "note": "Governance for AI centralizes permissions, budgets, and asset controls through Unity Catalog and Unity Gateway."
+  },
+  {
+   "n": "Genie / AI.BI family",
+   "children": [
+    {
+     "n": "Genie One",
+     "s": "GA",
+     "c": "ok",
+     "new": true,
+     "note": "Genie One provides cross-asset BI assistance with memory and MCP server access for named users.",
+     "children": [
+      {
+       "n": "Discovery and natural-language QA",
+       "note": "Discovery enables cross-asset analytics through conversational prompts with automatic SQL generation.",
+       "type": "primitive"
+      },
+      {
+       "n": "Memory (GA Sep 2026)",
+       "note": "Retains user preferences, reporting conventions, search history across sessions.",
+       "type": "primitive"
+      },
+      {
+       "n": "Business tool connectors",
+       "note": "Business tool connectors link Genie One to Google Workspace, M365, and Slack.",
+       "type": "primitive"
+      },
+      {
+       "n": "Public web search (Beta)",
+       "note": "External citations and research context for analytical queries.",
+       "type": "primitive"
+      },
+      {
+       "n": "Multi-interface access",
+       "note": "Genie One is accessible on web, mobile, Slack and MCP.",
+       "type": "primitive"
+      },
+      {
+       "n": "MCP Server (GA Sep 2026)",
+       "note": "Genie One is accessible to Claude, ChatGPT, Cursor and MCP Inspector.",
+       "type": "primitive"
+      },
+      {
+       "n": "Free tier through Jan 31 2027",
+       "note": "Genie One is free for named users through January 31, 2027, while service-principal usage remains billable.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/genie-one/",
+      "https://databricks.com/blog/introducing-genie-one-genie-ontology-and-genie-agents",
+      "https://docs.databricks.com/aws/en/ai-bi/release-notes/2026"
+     ],
+     "since": "GA - memory and MCP Server new (Sep 2026)",
+     "deck": "genie-customer-story-slides",
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Access",
+       "problem": "Business users **blocked** by technical Databricks interface",
+       "solution": "Simplified, non-technical **front door** with natural language chat"
+      },
+      {
+       "axis": "Self-service",
+       "problem": "Analyst **dependency** for every data question",
+       "solution": "Users **answer** ad-hoc questions directly without SQL or waiting"
+      },
+      {
+       "axis": "Discovery",
+       "problem": "Hard to find **relevant** dashboards, agents, or data assets",
+       "solution": "Unified search and **routing** to appropriate assets and agents"
+      },
+      {
+       "axis": "Trust",
+       "problem": "Generic AI answers lack **grounding** in authoritative data",
+       "solution": "Answers **cited** from governed enterprise sources with permissions respected"
+      },
+      {
+       "axis": "Collaboration",
+       "problem": "Insights remain **disconnected** from business workflows and apps",
+       "solution": "Integrated **documents**, scheduling, and app embedding for action"
+      },
+      {
+       "axis": "Governance",
+       "problem": "Cross-workspace data access requires **manual** control",
+       "solution": "Account-level Genie One with **automatic** row/column/source permissions"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "Genie Agents",
+     "s": "GA",
+     "c": "ok",
+     "new": true,
+     "note": "Genie Agents enable no-code domain-specific assistants with limits up to 50 sources and 200,000 conversations.",
+     "children": [
+      {
+       "n": "Domain-specific agents",
+       "note": "Scoped to tables, business semantics, verified answers per domain.",
+       "type": "primitive"
+      },
+      {
+       "n": "Agent mode and management APIs",
+       "note": "Agent mode supports iframe embedding, dashboard integration, and API-first management for Genie Agents.",
+       "type": "primitive"
+      },
+      {
+       "n": "Deeper analysis (Sep 2026)",
+       "note": "Enhanced multi-step reasoning and context handling.",
+       "type": "primitive"
+      },
+      {
+       "n": "File reasoning (Sep 2026)",
+       "note": "Parse, reason, and answer questions over uploaded documents.",
+       "type": "primitive"
+      },
+      {
+       "n": "Governance boundaries (50 sources / 200k conversations)",
+       "note": "Per-agent limits optimized for performance and cost.",
+       "type": "primitive"
+      },
+      {
+       "n": "Example SQL and verified answers",
+       "note": "Domain expert-curated grounding, linked to UC tables.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/genie-one/",
+      "https://docs.databricks.com/aws/en/ai-bi/release-notes/2026"
+     ],
+     "since": "GA (Jul 2026) - limits increased (Sep 10 2026)",
+     "deck": "genie-battlecard",
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Coverage",
+       "problem": "Dashboards answer only **predefined** questions",
+       "solution": "Agent-based **follow-up** and ad-hoc analysis beyond dashboard scope"
+      },
+      {
+       "axis": "Accuracy",
+       "problem": "Metrics defined **inconsistently** across teams and dashboards",
+       "solution": "Curated **semantic context** with shared metric definitions and business rules"
+      },
+      {
+       "axis": "Reasoning",
+       "problem": "Complex \"why\" and \"what-if\" analysis **fragmented** across tools",
+       "solution": "Agent mode with **multi-step** investigation, hypotheses, and explainable reports"
+      },
+      {
+       "axis": "Expertise",
+       "problem": "Business knowledge **trapped** with subject-matter experts",
+       "solution": "Domain experts **encode** logic once, shared as reusable agents"
+      },
+      {
+       "axis": "Integration",
+       "problem": "Analytics **isolated** from business applications and workflows",
+       "solution": "Agents **embedded** in external apps, APIs, chatbots, and frameworks"
+      },
+      {
+       "axis": "Governance",
+       "problem": "AI answers raise data access and **compliance** concerns",
+       "solution": "Unity Catalog **permissions** automatically applied per user"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "AI/BI Dashboards (Lakeview)",
+     "s": "GA",
+     "c": "ok",
+     "note": "AI-assisted authoring, dashboard-level Genie, metric views.",
+     "children": [
+      {
+       "n": "AI-assisted authoring",
+       "note": "Lakeview provides AI suggestions for filters, relationships, and visualizations in a drag-and-drop editor.",
+       "type": "primitive"
+      },
+      {
+       "n": "Dashboard-level Genie",
+       "note": "Natural-language questions answered over visual data and metrics.",
+       "type": "primitive"
+      },
+      {
+       "n": "Metric views (GA)",
+       "note": "Metric views define governed, reusable metric definitions in Unity Catalog that are computed at query time.",
+       "type": "primitive"
+      },
+      {
+       "n": "External embedding (GA)",
+       "note": "Embed dashboards in external applications and portals.",
+       "type": "primitive"
+      },
+      {
+       "n": "Sharing and subscriptions",
+       "note": "Sharing and subscriptions enable scheduled delivery, shared access, and audit trails.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/dashboards",
+      "https://docs.databricks.com/aws/en/ai-bi/release-notes/2026"
+     ],
+     "since": "GA; metric views GA (2026)",
+     "deck": "aibi-dashboards-genie-faqs",
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Speed",
+       "problem": "Dashboard **authoring slow** with manual SQL and visualization configuration",
+       "solution": "AI-assisted **workflow** plans steps from table discovery to layout"
+      },
+      {
+       "axis": "Accessibility",
+       "problem": "High **SQL barrier** for dashboard creation",
+       "solution": "Natural language **prompts** (\"show revenue by region as bar chart\") generate dashboards"
+      },
+      {
+       "axis": "Visualization",
+       "problem": "Authors struggle to **choose** the right chart type and configuration",
+       "solution": "Agent **recommends** and auto-configures appropriate visualization"
+      },
+      {
+       "axis": "Data prep",
+       "problem": "Joining tables and creating **calculated metrics** is error-prone and slow",
+       "solution": "Agent **executes** table joins, aggregations, and metric creation on request"
+      },
+      {
+       "axis": "Iteration",
+       "problem": "Troubleshooting and **refining** dashboards requires specialist skills",
+       "solution": "Agent **identifies** errors and refines interactively with author approval"
+      },
+      {
+       "axis": "Breadth",
+       "problem": "Self-service BI **blocked** by specialist dependency",
+       "solution": "Analysts and business users **move** from question to governed dashboard independently"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "Genie Ontology",
+     "s": "PuP",
+     "c": "ok",
+     "note": "Learned business-context layer grounding Genie answers.",
+     "children": [
+      {
+       "n": "Learned business context",
+       "note": "Learned business context captures metric definitions, terminology, and calculated business semantics.",
+       "type": "primitive"
+      },
+      {
+       "n": "Grounding layer for AI",
+       "note": "Improves Genie One, Genie Agents, and downstream agents answer quality.",
+       "type": "primitive"
+      },
+      {
+       "n": "Operationalization (Sep 2026)",
+       "note": "Integration improvements for AI agent embedding and use.",
+       "type": "primitive"
+      },
+      {
+       "n": "Entity relationships",
+       "note": "Connections across tables, business semantics, lineage tracking.",
+       "type": "primitive"
+      },
+      {
+       "n": "UC semantics foundation",
+       "note": "Built on Unity Catalog governance and metadata.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://databricks.com/blog/introducing-genie-one-genie-ontology-and-genie-agents"
+     ],
+     "since": "Public Preview - operationalization (Sep 2026)",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Consistency",
+       "problem": "Metrics defined **differently** across dashboards, queries, and teams",
+       "solution": "Canonical **Unity Catalog Metric Views** define each KPI once, governed globally"
+      },
+      {
+       "axis": "Authority",
+       "problem": "Genie may **choose** obsolete or draft definitions over trusted sources",
+       "solution": "OntoRank **scores** sources by certification, usage, and freshness"
+      },
+      {
+       "axis": "Context",
+       "problem": "Business definitions **fragmented** across dashboards, SQL, docs, chat, tickets",
+       "solution": "Unified **business-context layer** combines modeled and learned context"
+      },
+      {
+       "axis": "Trust",
+       "problem": "AI answers **lack grounding** in authoritative business definitions",
+       "solution": "Genie **uses** certified metrics and Pages in answering, with governance applied"
+      },
+      {
+       "axis": "Coverage",
+       "problem": "Only critical metrics are **formally defined**; long tail of context is scattered",
+       "solution": "Ontology **learns** context from existing assets (dashboards, queries, pipelines)"
+      },
+      {
+       "axis": "Permissions",
+       "problem": "Ontology snippets may **leak** access to data users cannot see",
+       "solution": "Context inherits **Unity Catalog permissions** at retrieval time per user"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "Genie App Builder",
+     "s": "Beta",
+     "c": "ok",
+     "new": true,
+     "note": "Genie App Builder generates Databricks Apps from natural language descriptions with governance.",
+     "children": [
+      {
+       "n": "Natural-language app generation",
+       "note": "Natural-language app generation converts prompts to Databricks App code for analytics applications.",
+       "type": "primitive"
+      },
+      {
+       "n": "Requires governed agentic app-building admin enablement",
+       "note": "Workspace admins must enable governed agentic app-building for Genie App Builder.",
+       "type": "primitive"
+      },
+      {
+       "n": "Scale-to-zero serverless",
+       "note": "Scale-to-zero serverless automatically deploys and scales apps without infrastructure management.",
+       "type": "primitive"
+      },
+      {
+       "n": "Read-only template support",
+       "note": "Safe default template for data-driven, query-focused apps.",
+       "type": "primitive"
+      },
+      {
+       "n": "Free during Beta (pricing TBD)",
+       "note": "Genie App Builder is free during Beta, with pricing to be announced at general availability.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/dev-tools/databricks-apps/genie-app-builder",
+      "https://databricks.com/blog/genie-app-builder-deploy-apps-natural-language-prompts"
+     ],
+     "since": "Beta (Sep 23 2026)",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Speed",
+       "problem": "App **development slow** with traditional coding workflows",
+       "solution": "Natural language **converts** idea to working Databricks App in minutes"
+      },
+      {
+       "axis": "Accessibility",
+       "problem": "App building **requires** software engineering or Streamlit/React expertise",
+       "solution": "No-code **agents** build fully functional apps from natural language"
+      },
+      {
+       "axis": "Governance",
+       "problem": "Rapid **agentic app-building** risks uncontrolled deployment and resource use",
+       "solution": "Admin-**governed** agentic app-building and App Spaces framework"
+      },
+      {
+       "axis": "Iteration",
+       "problem": "App **modifications** require developer involvement and redeployment cycles",
+       "solution": "Agent-assisted **refinement** allows rapid, iterative app evolution"
+      },
+      {
+       "axis": "Integration",
+       "problem": "Apps built **outside** native Databricks platform lack seamless data access",
+       "solution": "Native Databricks App integrates **UC, SQL, and Databricks features** natively"
+      }
+     ],
+     "solves_conf": "verify"
+    }
+   ],
+   "note": "Unified interface enabling business users to explore data and deploy analytics through natural language, visual dashboards, and domain-specific agents."
+  },
+  {
+   "n": "Developer productivity",
+   "children": [
+    {
+     "n": "Databricks Apps + App Spaces",
+     "s": "GA",
+     "c": "ok",
+     "note": "Databricks Apps hosts interactive data and AI apps on Databricks, governed by Unity Catalog.",
+     "children": [
+      {
+       "n": "Serverless hosting",
+       "note": "Hosts interactive applications like Streamlit and Gradio serverlessly.",
+       "type": "primitive"
+      },
+      {
+       "n": "App Spaces governance (Beta)",
+       "note": "Role-based access, resource controls, entitlement scoping.",
+       "type": "primitive"
+      },
+      {
+       "n": "Scale-to-zero execution",
+       "note": "Auto-scales applications to zero after idle timeout for cost optimization.",
+       "type": "primitive"
+      },
+      {
+       "n": "Deployment (Git, CLI, UI)",
+       "note": "CI/CD integration, automatic deployments via GitHub Actions.",
+       "type": "primitive"
+      },
+      {
+       "n": "Observability and telemetry",
+       "note": "UC export, production monitoring, agent tracing via MLflow.",
+       "type": "primitive"
+      },
+      {
+       "n": "App principal vs user principal auth",
+       "note": "Choose shared resources or user-scoped entitlements per app.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/dev-tools/databricks-apps/",
+      "https://databricks.com/blog/introducing-databricks-apps-and-app-spaces"
+     ],
+     "since": "GA; App Spaces (Jun 2026)",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Infrastructure",
+       "problem": "Apps require **separate infrastructure** outside Databricks platform",
+       "solution": "**Serverless Databricks Apps** eliminate external hosting costs and complexity"
+      },
+      {
+       "axis": "Governance",
+       "problem": "App-level access control and **audit trails** difficult to implement",
+       "solution": "App Spaces provide **admin governance** framework for app access and deployment"
+      },
+      {
+       "axis": "Authentication",
+       "problem": "Apps require **separate identity management** and secrets handling",
+       "solution": "Native **OAuth and UC integration** with app vs user-principal auth options"
+      },
+      {
+       "axis": "Data access",
+       "problem": "Apps **isolated** from governed data lake",
+       "solution": "Native **Unity Catalog integration** for permissions-aware data access"
+      },
+      {
+       "axis": "Framework choice",
+       "problem": "Locked into **single framework** or complex multi-stack management",
+       "solution": "Support for **Streamlit, Gradio, React, FastAPI** in one platform"
+      },
+      {
+       "axis": "Deployment",
+       "problem": "Apps **difficult to move** across workspaces and environments",
+       "solution": "Apps **seamlessly deployable** across workspaces with native migration"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "AI Dev Kit + internal coding agents (Isaac)",
+     "c": "ok",
+     "new": true,
+     "note": "AI Dev Kit provides scaffolding and unified UC-governed tools for agent development.",
+     "children": [
+      {
+       "n": "Scaffolding templates",
+       "note": "Project initialization, tool setup, framework integrations.",
+       "type": "primitive"
+      },
+      {
+       "n": "UC-governed MCPs",
+       "note": "Internal tools registered as Unity Catalog securables.",
+       "type": "primitive"
+      },
+      {
+       "n": "$400/mo baseline cost",
+       "note": "Databricks internal cost baseline per developer with Isaac.",
+       "type": "primitive"
+      },
+      {
+       "n": "25x spend growth YTD",
+       "note": "Internal adoption metric showing productivity return on investment.",
+       "type": "primitive"
+      },
+      {
+       "n": "Multi-model support",
+       "note": "Supports Claude, Codex, and Cursor with custom integrations.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/release-notes/product/2026/october"
+     ],
+     "since": "Open source (Field Engineering); Genie Code CLI Beta (Oct 6 2026)",
+     "deck": "how-databricks-runs-coding-agents-deep-distillation-ai-dev-tools-isaac-uc-governed-mcps",
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Governance",
+       "problem": "MCPs used by agents create **vendor lock-in** and uncontrolled integrations",
+       "solution": "UC-**governed MCPs** provide central control and audit trail for agent tools"
+      },
+      {
+       "axis": "Integration",
+       "problem": "Developers must **manually scaffold** agents and MCP configurations",
+       "solution": "AI Dev Kit provides **templates and scaffolding** for rapid agent setup"
+      },
+      {
+       "axis": "Cost",
+       "problem": "Agent spending grows **uncontrolled** without visibility or budgeting",
+       "solution": "Internal proof point: **Governance enables 25x spend growth** at predictable $400/mo baseline"
+      },
+      {
+       "axis": "Development speed",
+       "problem": "Building production-grade agents **time-consuming** and error-prone",
+       "solution": "Scaffolding and **best-practice templates** accelerate agent development"
+      },
+      {
+       "axis": "Security",
+       "problem": "Agent-MCP integrations **lack audit** and compliance tracking",
+       "solution": "Unity Catalog **audit trail** for all MCP calls and agent activities"
+      }
+     ],
+     "solves_conf": "verify"
+    },
+    {
+     "n": "Genie Code",
+     "s": "GA",
+     "c": "ok",
+     "new": true,
+     "note": "Genie Code is an AI assistant for notebooks and SQL with pay-per-use pricing.",
+     "children": [
+      {
+       "n": "Notebook code generation",
+       "note": "Generates, explains, and optimizes Python and SQL code.",
+       "type": "primitive"
+      },
+      {
+       "n": "Agent mode (GA Mar 2026)",
+       "note": "Multi-step autonomous assistance across cells with error iteration.",
+       "type": "primitive"
+      },
+      {
+       "n": "Document intelligence (Sep 2026)",
+       "note": "Parses, classifies, and extracts data from documents like PDFs and contracts.",
+       "type": "primitive"
+      },
+      {
+       "n": "Pay-per-use pricing (150 DBU free/mo)",
+       "note": "Charges per use with 150 DBU monthly free tier instead of unlimited.",
+       "type": "primitive"
+      },
+      {
+       "n": "CLI (Beta Oct 6)",
+       "note": "Provides terminal-based coding assistance in shell environments.",
+       "type": "primitive"
+      },
+      {
+       "n": "Dashboard authoring",
+       "note": "AI-assisted Lakeview dashboard creation and metric-view definition.",
+       "type": "primitive"
+      },
+      {
+       "n": "UC metadata integration",
+       "note": "Smart table/column discovery for data context and relevance.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/genie-code/",
+      "https://docs.databricks.com/aws/en/release-notes/product/2026/october",
+      "https://databricks.com/blog/genie-code-autonomous-ai-coding-assistant"
+     ],
+     "since": "GA (Mar 2026) - pay-as-you-go with 150 free DBU/month; CLI Beta (Oct 6 2026)",
+     "deck": "genie-code-faq-internal",
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Speed",
+       "problem": "Writing **SQL and pipelines slow** and repetitive",
+       "solution": "Genie Code **generates SQL and code** from natural language prompts"
+      },
+      {
+       "axis": "Coverage",
+       "problem": "Developers must **context-switch** between notebook, SQL, pipeline, dashboard tools",
+       "solution": "Single **unified assistant** for notebook, SQL, pipeline, dashboard authoring"
+      },
+      {
+       "axis": "Productivity",
+       "problem": "Boilerplate **code writing** blocks rapid iteration",
+       "solution": "Agent **scaffolds and generates** foundation, reducing manual coding"
+      },
+      {
+       "axis": "Accessibility",
+       "problem": "Non-expert developers **struggle** with SQL and pipeline optimization",
+       "solution": "Assistant **explains and generates** optimized SQL and pipeline logic"
+      },
+      {
+       "axis": "Cost",
+       "problem": "**No clear pricing** or budget controls for coding assistance",
+       "solution": "Pay-as-you-go model with **150 DBU free/month** baseline"
+      },
+      {
+       "axis": "Availability",
+       "problem": "Coding assistant **not accessible** from command line or CI/CD workflows",
+       "solution": "Genie Code **CLI Beta** (Oct 6) enables agent-assisted development in terminal"
+      }
+     ],
+     "solves_conf": "ok"
+    }
+   ],
+   "note": "Serverless multi-framework app platform enabling rapid deployment of data applications with built-in governance, OAuth authentication, and GitHub Actions CI/CD."
+  },
+  {
+   "n": "MCP integration",
+   "children": [
+    {
+     "n": "Managed MCP servers",
+     "s": "Beta",
+     "c": "ok",
+     "new": true,
+     "note": "Managed MCP servers provide governed agent access to Databricks services including analytics, search, and SQL.",
+     "children": [
+      {
+       "n": "Genie One MCP (GA Sep 2026)",
+       "note": "Genie One MCP enables natural-language analytics for Claude, ChatGPT, and Cursor through model context protocol.",
+       "type": "primitive",
+       "s": "GA"
+      },
+      {
+       "n": "Genie Agent MCP",
+       "note": "Genie Agent MCP provides scoped analytics access for domain-specific agents with agent-level isolation.",
+       "type": "primitive"
+      },
+      {
+       "n": "AI Search MCP",
+       "note": "AI Search MCP enables agents to retrieve information from unstructured documents using hybrid search.",
+       "type": "primitive"
+      },
+      {
+       "n": "Databricks SQL MCP",
+       "note": "Databricks SQL MCP lets agents execute SQL for data-engineering and developer workflows.",
+       "type": "primitive"
+      },
+      {
+       "n": "Unity Catalog Functions MCP",
+       "note": "Unity Catalog Functions MCP exposes governed UC functions as MCP tools for composable operations.",
+       "type": "primitive"
+      },
+      {
+       "n": "Sandbox MCP (Beta)",
+       "note": "Python, SQL, or shell execution via the system.ai.sandbox MCP (Beta); system.ai.python_exec through the functions MCP is legacy.",
+       "type": "primitive"
+      },
+      {
+       "n": "Unity Gateway governance",
+       "note": "Unity Gateway governance applies policies, rate limits, and audit logging to all MCP traffic.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/agents/mcp-tools/managed-mcp",
+      "https://docs.databricks.com/aws/en/release-notes/product/2026/september"
+     ],
+     "since": "Genie One MCP GA (Sep 25 2026); other Databricks-provided MCPs Beta",
+     "deck": "unity-ai-gateway-product-deck-l200",
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Integration",
+       "problem": "Custom **connectors** per tool",
+       "solution": "**Standard** MCP endpoints"
+      },
+      {
+       "axis": "Security",
+       "problem": "Credential **sprawl** across agents",
+       "solution": "**Centralized** auth (OBO)"
+      },
+      {
+       "axis": "Governance",
+       "problem": "Agent access **uncontrolled**",
+       "solution": "**Unity Catalog** enforces grants"
+      },
+      {
+       "axis": "Development",
+       "problem": "Building server **infrastructure**",
+       "solution": "Databricks **operates** it"
+      },
+      {
+       "axis": "Business logic",
+       "problem": "Agents **infer** context",
+       "solution": "Genie **Ontology** grounds queries"
+      },
+      {
+       "axis": "Observability",
+       "problem": "Tool usage **hidden**",
+       "solution": "**Audit** via Unity Gateway"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "External connectors",
+     "s": "GA",
+     "c": "ok",
+     "new": true,
+     "note": "External connectors provide governed agent access to cloud services including Google Workspace, Microsoft 365, and GitHub.",
+     "children": [
+      {
+       "n": "Google Workspace (GA Sep 2026)",
+       "note": "Google Workspace MCPs provide governed access to Drive, Gmail, and Calendar, including write actions (Beta).",
+       "type": "primitive"
+      },
+      {
+       "n": "Microsoft 365 (GA Sep 2026)",
+       "note": "Microsoft 365 MCP provides per-user OAuth access to SharePoint, Teams, and Outlook.",
+       "type": "primitive"
+      },
+      {
+       "n": "Atlassian (GA Sep 2026)",
+       "note": "Atlassian MCP enables agents to access and search Jira issues and Confluence pages.",
+       "type": "primitive"
+      },
+      {
+       "n": "Slack (GA Sep 2026)",
+       "note": "Slack MCP provides governed access to channels, messages, and files, including write actions (Beta).",
+       "type": "primitive"
+      },
+      {
+       "n": "GitHub (GA Sep 2026)",
+       "note": "GitHub MCP enables agents to read and write files, issues, and pull requests in authorized repositories.",
+       "type": "primitive"
+      },
+      {
+       "n": "Glean (Beta)",
+       "note": "Glean MCP enables agents to search and retrieve information from internal knowledge bases.",
+       "type": "primitive"
+      },
+      {
+       "n": "Meta Ads MCP (Oct 6 2026)",
+       "note": "Campaign intelligence, customer insights, audience data.",
+       "type": "primitive"
+      },
+      {
+       "n": "Per-user OAuth",
+       "note": "Per-user OAuth implements governed access through Unity Catalog and Gateway with audit logging.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/genie-one/external-sources",
+      "https://databricks.com/blog/introducing-mcp-connectors-databricks"
+     ],
+     "since": "GA (Sep 2026); Meta Ads (Oct 6 2026)",
+     "deck": null,
+     "type": "family"
+    },
+    {
+     "n": "MCP Services + custom MCP",
+     "s": "GA",
+     "c": "ok",
+     "note": "MCP Services lets you register external MCPs as governed assets and deploy custom MCPs as Databricks Apps.",
+     "children": [
+      {
+       "n": "Register external MCP as UC securable",
+       "note": "Registering external MCPs as UC securables applies unified governance to MCP assets.",
+       "type": "primitive"
+      },
+      {
+       "n": "UC Connections for credentials",
+       "note": "UC Connections manages credentials including OAuth tokens and API keys with unified governance.",
+       "type": "primitive"
+      },
+      {
+       "n": "Custom MCP as Databricks App",
+       "note": "Custom MCP as Databricks App lets you deploy stateless MCP servers with scale-to-zero hosting.",
+       "type": "primitive"
+      },
+      {
+       "n": "Route through Unity Gateway",
+       "note": "Routing through Unity Gateway enables policies and rate limiting with full observability.",
+       "type": "primitive"
+      },
+      {
+       "n": "Multi-provider tool composition",
+       "note": "Combine internal UC functions plus external MCPs in agent workflows.",
+       "type": "primitive"
+      },
+      {
+       "n": "DurableAgentServer support",
+       "note": "DurableAgentServer support provides crash-recoverable agent state for MCP-based tools.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/agents/mcp-tools/mcp-services",
+      "https://docs.databricks.com/aws/en/agents/mcp-tools/use-mcp-in-agents"
+     ],
+     "since": "GA",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Customization",
+       "problem": "No **native** integrations available",
+       "solution": "**Register** external MCPs"
+      },
+      {
+       "axis": "Deployment",
+       "problem": "Where to **host** MCP server",
+       "solution": "Databricks **Apps** runtime"
+      },
+      {
+       "axis": "Registration",
+       "problem": "Ungoverned **tool** exposure",
+       "solution": "**UC securable** model"
+      },
+      {
+       "axis": "Development",
+       "problem": "Build from **scratch** each time",
+       "solution": "Starter **templates** included"
+      },
+      {
+       "axis": "Existing APIs",
+       "problem": "REST APIs not **toolified**",
+       "solution": "OpenAPI **spec** to MCP"
+      }
+     ],
+     "solves_conf": "ok"
+    }
+   ],
+   "note": "MCP integration lets agents access governed data and services through protocol-based managed connectors."
+  },
+  {
+   "n": "Data foundation for AI",
+   "children": [
+    {
+     "n": "Lakehouse / Delta Lake",
+     "s": "GA",
+     "c": "ok",
+     "note": "Delta Lake provides open ACID transactions for both batch and streaming data workloads.",
+     "children": [
+      {
+       "n": "Open ACID format",
+       "note": "Transaction support and data consistency foundation.",
+       "type": "primitive"
+      },
+      {
+       "n": "Schema enforcement",
+       "note": "Schema enforcement validates incoming data against defined schemas to prevent quality drift.",
+       "type": "primitive"
+      },
+      {
+       "n": "Batch & streaming ingestion",
+       "note": "Scalable append/insert at any throughput.",
+       "type": "primitive"
+      },
+      {
+       "n": "Governed metadata layer",
+       "note": "Governed metadata layer tracks data lineage and versioning through Unity Catalog for consistent access control.",
+       "type": "primitive"
+      },
+      {
+       "n": "Multi-cloud support",
+       "note": "Multi-cloud support deploys Delta Lake across AWS, Azure, and GCP with unified governance.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/lakehouse"
+     ],
+     "since": "GA (foundational)",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Consistency",
+       "problem": "Data **corruption** mid-stream",
+       "solution": "**ACID** transactions"
+      },
+      {
+       "axis": "Schema",
+       "problem": "Enforcement **breaks** on change",
+       "solution": "**Evolution** supported"
+      },
+      {
+       "axis": "Workloads",
+       "problem": "**Separate** stores for batch/stream",
+       "solution": "**Unified** ingestion layer"
+      },
+      {
+       "axis": "Format",
+       "problem": "**Proprietary** or complex formats",
+       "solution": "**Open** Delta standard"
+      },
+      {
+       "axis": "Reliability",
+       "problem": "Transactional **inconsistency**",
+       "solution": "Consistency **guaranteed**"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "Lakeflow",
+     "s": "GA",
+     "c": "ok",
+     "note": "Lakeflow provides data ingestion, orchestration, and transformation components for building data pipelines.",
+     "children": [
+      {
+       "n": "Lakeflow Connect",
+       "note": "Lakeflow Connect automates data ingestion from diverse sources including databases and SaaS.",
+       "type": "primitive"
+      },
+      {
+       "n": "Lakeflow Pipelines",
+       "note": "Batch and streaming SQL/Python transformation.",
+       "type": "primitive"
+      },
+      {
+       "n": "Lakeflow Designer",
+       "s": "GA",
+       "note": "Lakeflow Designer provides a visual canvas with natural language interface for building data transformations.",
+       "type": "primitive"
+      },
+      {
+       "n": "Lakeflow Jobs",
+       "note": "Lakeflow Jobs orchestrates and monitors data, analytics, and AI workflows.",
+       "type": "primitive"
+      },
+      {
+       "n": "Genie Code integration",
+       "note": "Genie Code integration enables natural language descriptions of transformations and AI function enrichment.",
+       "type": "primitive"
+      },
+      {
+       "n": "Delta output",
+       "note": "All pipelines produce UC-governed Delta tables.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/data-engineering"
+     ],
+     "since": "Connect/Pipelines/Jobs GA; Designer GA (Jun 16 2026)",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Ingestion",
+       "problem": "Manual **connector** code",
+       "solution": "**Managed** Connect service"
+      },
+      {
+       "axis": "Transformation",
+       "problem": "Pipeline **orchestration** complex",
+       "solution": "**Declarative** Pipelines"
+      },
+      {
+       "axis": "Authoring",
+       "problem": "SQL/Python **required** for ETL",
+       "solution": "**Visual** Designer (no-code)"
+      },
+      {
+       "axis": "Intelligence",
+       "problem": "Workflows **hardcoded** manually",
+       "solution": "Genie **Code** NL generation"
+      },
+      {
+       "axis": "Orchestration",
+       "problem": "Job dependencies **manual**",
+       "solution": "**Automatic** execution order"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "Lakebase — serverless Postgres",
+     "s": "GA",
+     "c": "ok",
+     "note": "Lakebase provides serverless PostgreSQL storage for agent state and application data with Unity Catalog integration.",
+     "children": [
+      {
+       "n": "Serverless compute/storage separation",
+       "note": "Auto-scale, scale-to-zero, pay-per-minute.",
+       "type": "primitive"
+      },
+      {
+       "n": "Database branching",
+       "note": "Dev/test isolation and point-in-time recovery.",
+       "type": "primitive"
+      },
+      {
+       "n": "High availability & backups",
+       "note": "Automatic replication, failover, point-in-time restore.",
+       "type": "primitive"
+      },
+      {
+       "n": "Unity Catalog synchronization",
+       "note": "Unity Catalog synchronization enables bidirectional sync between Postgres tables and Delta Lake.",
+       "type": "primitive"
+      },
+      {
+       "n": "Agent memory backend",
+       "note": "Cross-session semantic search, conversation state persistence.",
+       "type": "primitive"
+      },
+      {
+       "n": "Online feature store",
+       "note": "Low-latency feature lookups for real-time inference.",
+       "type": "primitive"
+      },
+      {
+       "n": "PostgreSQL compatibility",
+       "note": "Standard Postgres protocol and ecosystem.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/oltp/projects"
+     ],
+     "since": "GA Jan 22, 2026; UC sync GA Jan 2026",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Agent state",
+       "problem": "Session memory **external** to DB",
+       "solution": "**Native** long/short-term store"
+      },
+      {
+       "axis": "Features",
+       "problem": "Online/offline **mismatch**",
+       "solution": "**Low-latency** serving"
+      },
+      {
+       "axis": "Governance",
+       "problem": "App data **ungoverned**",
+       "solution": "**UC-synced** tables"
+      },
+      {
+       "axis": "Dev workflow",
+       "problem": "Prod data **in** test env",
+       "solution": "Git-like **branches**"
+      },
+      {
+       "axis": "Reliability",
+       "problem": "Single-point **failure**",
+       "solution": "**High availability** (99.99% SLA)"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "Lakebase Search",
+     "s": "GA",
+     "c": "ok",
+     "new": true,
+     "note": "Lakebase Search combines vector and keyword search within PostgreSQL without requiring a separate vector database.",
+     "children": [
+      {
+       "n": "Vector search (IVF + RaBitQ)",
+       "note": "IVF partitioning with RaBitQ quantization for approximate nearest-neighbor similarity, scaling past 1 billion vectors.",
+       "type": "primitive"
+      },
+      {
+       "n": "BM25 keyword search",
+       "note": "Full-text term relevance for product names, identifiers.",
+       "type": "primitive"
+      },
+      {
+       "n": "Hybrid search (RRF)",
+       "note": "Hybrid search using Reciprocal Rank Fusion merges semantic and keyword results for comprehensive results.",
+       "type": "primitive"
+      },
+      {
+       "n": "Configurable tokenization",
+       "note": "Custom token rules for domain-specific text prep.",
+       "type": "primitive"
+      },
+      {
+       "n": "Native Postgres integration",
+       "note": "Native Postgres integration co-locates search and application memory without requiring external vector stores.",
+       "type": "primitive"
+      },
+      {
+       "n": "Metadata filtering",
+       "note": "Filter results by column predicates before ranking.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/oltp/projects/lakebase-search"
+     ],
+     "since": "GA Sept 18, 2026",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Search",
+       "problem": "Semantic or keyword **separately**",
+       "solution": "**Hybrid** vector+BM25"
+      },
+      {
+       "axis": "Integration",
+       "problem": "Separate **vector DB** required",
+       "solution": "Native **Postgres** functions"
+      },
+      {
+       "axis": "Ranking",
+       "problem": "Merging **results** manually",
+       "solution": "**RRF** ranking via SQL (documented example)"
+      },
+      {
+       "axis": "Storage",
+       "problem": "Vector data **replicated** elsewhere",
+       "solution": "**Single source** of truth"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "Predictive Optimization",
+     "s": "GA",
+     "c": "ok",
+     "note": "Predictive Optimization automatically tunes Delta tables on Unity Catalog using ROI-based optimization.",
+     "children": [
+      {
+       "n": "Automated OPTIMIZE",
+       "note": "Merge small files based on workload cost-benefit analysis.",
+       "type": "primitive"
+      },
+      {
+       "n": "Automatic VACUUM",
+       "note": "Automatic VACUUM removes old table versions to optimize storage without manual intervention.",
+       "type": "primitive"
+      },
+      {
+       "n": "Workload pattern analysis",
+       "note": "Query replay to predict future access patterns.",
+       "type": "primitive"
+      },
+      {
+       "n": "ROI-driven clustering",
+       "note": "Propose and apply clustering where cost savings exceed overhead.",
+       "type": "primitive"
+      },
+      {
+       "n": "Zero-configuration operation",
+       "note": "No manual cost-threshold tuning required.",
+       "type": "primitive"
+      },
+      {
+       "n": "Audit trail",
+       "note": "Audit trail stores optimization decisions in system.storage.predictive_optimization_operations_history.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/optimizations/predictive-optimization"
+     ],
+     "since": "GA",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Maintenance",
+       "problem": "Manual **OPTIMIZE** scheduling",
+       "solution": "**ROI-driven** auto-running"
+      },
+      {
+       "axis": "Clustering",
+       "problem": "Clustering keys **hand-tuned**",
+       "solution": "**Automatic** key selection"
+      },
+      {
+       "axis": "Efficiency",
+       "problem": "Maintenance **overtunes** tables",
+       "solution": "**Query-aware** decisions"
+      },
+      {
+       "axis": "Scope",
+       "problem": "Only **UC managed** eligible",
+       "solution": "**Universal** UC support"
+      },
+      {
+       "axis": "Operations",
+       "problem": "Maintenance job **overhead**",
+       "solution": "**Serverless** compute"
+      }
+     ],
+     "solves_conf": "ok"
+    }
+   ],
+   "note": "Databricks Data Foundation for AI builds on Delta Lake to provide governed, scalable data infrastructure."
+  },
+  {
+   "n": "Agentic Data Management",
+   "sub": "FY27 internal block",
+   "children": [
+    {
+     "n": "Classification / profiling / monitoring",
+     "s": "GA",
+     "c": "ok",
+     "note": "Provides AI-driven data classification and quality monitoring integrated with Unity Catalog.",
+     "children": [
+      {
+       "n": "Data classification",
+       "note": "Automated discovery and labeling of sensitive/regulated columns.",
+       "type": "primitive"
+      },
+      {
+       "n": "PII tagging",
+       "note": "Mark personal identifiable information for access control.",
+       "type": "primitive"
+      },
+      {
+       "n": "Data profiling",
+       "note": "Automatically profiles schema, distributions, and data quality indicators.",
+       "type": "primitive"
+      },
+      {
+       "n": "Lakehouse Monitoring",
+       "note": "Baseline trust signals and data-quality metrics over time.",
+       "type": "primitive"
+      },
+      {
+       "n": "Data-quality monitoring",
+       "note": "Continuous AI-driven anomaly detection and alerts.",
+       "type": "primitive"
+      },
+      {
+       "n": "UC integration",
+       "note": "Classification tags feed row/column-level access policies.",
+       "type": "primitive"
+      },
+      {
+       "n": "Automated remediation signals",
+       "note": "Agents recommend or execute fixes for quality issues.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/data-governance/unity-catalog/"
+     ],
+     "since": "GA (part of Agentic Data Management; integrated with UC)",
+     "deck": null,
+     "type": "family"
+    },
+    {
+     "n": "Anomaly detection & remediation",
+     "s": "PuP",
+     "c": "ok",
+     "note": "Detects anomalies in data with automated remediation capabilities that are still emerging.",
+     "children": [
+      {
+       "n": "Anomaly detection",
+       "note": "Identify unusual changes in data, pipeline behavior, system performance.",
+       "type": "primitive"
+      },
+      {
+       "n": "Statistical baselines",
+       "note": "Establish normal ranges for metrics before flagging outliers.",
+       "type": "primitive"
+      },
+      {
+       "n": "Genie Code monitoring",
+       "note": "Investigate anomalies in Lakeflow Pipelines via natural language.",
+       "type": "primitive"
+      },
+      {
+       "n": "Multi-signal correlation",
+       "note": "Cross-table pattern analysis to avoid false positives.",
+       "type": "primitive"
+      },
+      {
+       "n": "Automated diagnostics",
+       "note": "Root-cause analysis for data/pipeline failures.",
+       "type": "primitive"
+      },
+      {
+       "n": "Proposed remediation",
+       "note": "Suggest SQL/code fixes for detected issues.",
+       "type": "primitive"
+      },
+      {
+       "n": "Governed execution",
+       "note": "Remediation actions subject to approval and UC permissions.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://docs.databricks.com/aws/en/data-governance/unity-catalog/"
+     ],
+     "since": "Public Preview (anomaly detection); automated remediation not documented",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Monitoring",
+       "problem": "Data freshness **invisible**",
+       "solution": "**Automatic** anomaly detection"
+      },
+      {
+       "axis": "Coverage",
+       "problem": "Deep **profiling** schemas slow",
+       "solution": "**Schema-wide** monitoring"
+      },
+      {
+       "axis": "Remediation",
+       "problem": "Repairs **manual** and risky",
+       "solution": "**Orchestrated** via Lakeflow Jobs"
+      },
+      {
+       "axis": "Alerting",
+       "problem": "No **notification** channels",
+       "solution": "Email/Slack/**Webhook** integration"
+      },
+      {
+       "axis": "Governance",
+       "problem": "Repair **policies** undocumented",
+       "solution": "Allowlist + **audit** trail"
+      }
+     ],
+     "solves_conf": "verify"
+    }
+   ],
+   "note": "Agentic Data Management automates data classification, quality monitoring, and anomaly detection within a governed lakehouse."
+  },
+  {
+   "n": "Real-time & transactional AI",
+   "children": [
+    {
+     "n": "Lakehouse//RT",
+     "s": "Beta",
+     "c": "verify",
+     "note": "Lakehouse//RT provides serverless SQL query execution for real-time analytics on Delta and Iceberg tables.",
+     "children": [
+      {
+       "n": "Reyden query engine",
+       "note": "Executes SQL queries with millisecond-scale latency for real-time analytics.",
+       "type": "primitive"
+      },
+      {
+       "n": "Delta/Iceberg compatibility",
+       "note": "Read open formats directly without copying to proprietary format.",
+       "type": "primitive"
+      },
+      {
+       "n": "High-concurrency optimization",
+       "note": "Sub-100ms queries at 12,000 QPS on analytical benchmarks.",
+       "type": "primitive"
+      },
+      {
+       "n": "SELECT-only mode",
+       "note": "Provides read-only SQL access while transactional writes go through Lakebase.",
+       "type": "primitive"
+      },
+      {
+       "n": "Unity Catalog governance",
+       "note": "Fine-grained access control inherited from lakehouse asset permissions.",
+       "type": "primitive"
+      },
+      {
+       "n": "Vectorized execution",
+       "note": "SIMD-optimized query processing for analytical workloads.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://databricks.com/blog/introducing-lakehousert-real-time-performance-unified-lakehouse"
+     ],
+     "since": "Announced June 16 DAIS 2026; Beta (current)",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Query latency",
+       "problem": "BI and dashboard queries **slow** (seconds)",
+       "solution": "**Sub-100ms** SQL responses via Reyden engine (as low as 10ms on small datasets)"
+      },
+      {
+       "axis": "Data freshness",
+       "problem": "Copied serving data **stale** vs operational source",
+       "solution": "Queries run **live** on governed Delta/Iceberg lakehouse tables"
+      },
+      {
+       "axis": "Infrastructure cost",
+       "problem": "**Separate** OLAP warehouse + operational copy",
+       "solution": "**Single lakehouse** source for all SQL workloads (read-only)"
+      },
+      {
+       "axis": "Concurrency",
+       "problem": "Dashboard users **bottleneck** shared warehouse",
+       "solution": "Handles **12,000 QPS** with fully asynchronous execution model"
+      },
+      {
+       "axis": "SQL coverage",
+       "problem": "Limited analytical SQL supported",
+       "solution": "**ANSI SQL** on Delta and Apache Iceberg (read-only mode)"
+      }
+     ],
+     "solves_conf": "verify"
+    },
+    {
+     "n": "LTAP",
+     "s": "Announced",
+     "c": "verify",
+     "note": "LTAP combines transactional processing and analytics in a unified lakehouse platform.",
+     "children": [
+      {
+       "n": "Lakebase transactional layer",
+       "note": "Serverless Postgres for ACID transactions and application state.",
+       "type": "primitive"
+      },
+      {
+       "n": "Lakehouse analytical layer",
+       "note": "Delta/Iceberg analytics on same underlying storage.",
+       "type": "primitive"
+      },
+      {
+       "n": "Unified storage foundation",
+       "note": "Stores data once to eliminate synchronization pipelines and dual writes.",
+       "type": "primitive"
+      },
+      {
+       "n": "Shared governance layer",
+       "note": "Unity Catalog policies govern both transactional and analytical access.",
+       "type": "primitive"
+      },
+      {
+       "n": "Automatic synchronization",
+       "note": "Changes in Postgres visible to analytics queries without manual ETL.",
+       "type": "primitive"
+      },
+      {
+       "n": "Cost optimization",
+       "note": "Eliminates data redundancy to simplify architecture and reduce operations overhead.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://databricks.com/company/newsroom/press-releases/databricks-launches-ltap-first-lake-transactionalanalytical"
+     ],
+     "since": "Announced June 16, 2026; availability cloud/region-dependent",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Sync infrastructure",
+       "problem": "**Replication pipelines** needed between operational DB and warehouse",
+       "solution": "**Shared lake storage** (Parquet, Delta, Iceberg) eliminates sync"
+      },
+      {
+       "axis": "Data consistency",
+       "problem": "**Eventual consistency** lag between operational and analytical",
+       "solution": "**Transactionally consistent** analytical reads at Postgres LSN"
+      },
+      {
+       "axis": "Operational simplicity",
+       "problem": "Maintain **two systems** (Postgres + Warehouse)",
+       "solution": "**One logical dataset** across Lakebase (transactional) + Lakehouse//RT (analytical)"
+      },
+      {
+       "axis": "Cost efficiency",
+       "problem": "Data **duplication** and replication overhead",
+       "solution": "Row-to-columnar **conversion** at storage layer (not on Postgres compute)"
+      },
+      {
+       "axis": "Real-time analytics",
+       "problem": "**Stale** operational data in analytics",
+       "solution": "Lakehouse//RT merges recent Postgres changes with lake for live results"
+      }
+     ],
+     "solves_conf": "verify"
+    }
+   ],
+   "note": "Low-latency Reyden query engine delivering millisecond performance on Delta and Iceberg data without duplication or separate serving infrastructure."
+  },
+  {
+   "n": "Domain-specific AI",
+   "children": [
+    {
+     "n": "CustomerLake",
+     "s": "PrivPreview",
+     "c": "verify",
+     "note": "CustomerLake delivers agentic capabilities for customer profiles, identity resolution, and campaign management.",
+     "children": [
+      {
+       "n": "Customer 360 profiles",
+       "note": "Unifies customer identity across behavioral, transactional, and operational data sources.",
+       "type": "primitive"
+      },
+      {
+       "n": "Identity resolution",
+       "note": "Matches customers across data sources using deterministic, probabilistic, and agent-assisted techniques.",
+       "type": "primitive"
+      },
+      {
+       "n": "Audience segmentation",
+       "note": "Natural-language Genie-based exploration and dynamic cohorts.",
+       "type": "primitive"
+      },
+      {
+       "n": "Profile Agents",
+       "note": "Agentic continuous updates to customer profiles based on new signals.",
+       "type": "primitive"
+      },
+      {
+       "n": "Campaign Agents",
+       "note": "Autonomous personalized engagement (\"infinity campaigns\") across channels.",
+       "type": "primitive"
+      },
+      {
+       "n": "Reverse ETL activation",
+       "note": "Activates customer audiences to data destinations including Adobe, Meta and Braze.",
+       "type": "primitive"
+      },
+      {
+       "n": "UC governance",
+       "note": "Uses Lakehouse storage with Unity Catalog permissions governing data access.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://databricks.com/blog/introducing-customerlake-agentic-cdp"
+     ],
+     "since": "Private Preview June 16, 2026 (DAIS); no public GA date announced",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Customer insight",
+       "problem": "Customer data **fragmented** across systems",
+       "solution": "**Customer 360** profiles unifying transactions, behavior, engagement"
+      },
+      {
+       "axis": "Identity resolution",
+       "problem": "Duplicate customer records create **fragmentation**",
+       "solution": "**AI-assisted** identity matching (deterministic, probabilistic, ML-based)"
+      },
+      {
+       "axis": "Campaign automation",
+       "problem": "**Manual** audience segmentation and activation",
+       "solution": "**Campaign agents** for audience creation, activation, and optimization"
+      },
+      {
+       "axis": "Governance",
+       "problem": "Customer data **ungoverned** with no lineage",
+       "solution": "Embedded in lakehouse with **Unity Catalog** governance and audit"
+      },
+      {
+       "axis": "Real-time personalization",
+       "problem": "**Batch** profile lookups delay personalization",
+       "solution": "**Real-time profile API** with predictive models for instant attributes"
+      }
+     ],
+     "solves_conf": "verify"
+    },
+    {
+     "n": "Lakewatch",
+     "s": "PrivPreview",
+     "c": "verify",
+     "note": "Lakewatch provides agentic security information and event management with Panther integration.",
+     "children": [
+      {
+       "n": "Cross-source correlation",
+       "note": "Correlates security events with business context and IT logs for unified threat assessment.",
+       "type": "primitive"
+      },
+      {
+       "n": "OCSF standardized telemetry",
+       "note": "Normalize logs from multi-vendor sources for correlation at scale.",
+       "type": "primitive"
+      },
+      {
+       "n": "AI-assisted threat hunting",
+       "note": "Natural-language Genie queries over petabyte-scale security data.",
+       "type": "primitive"
+      },
+      {
+       "n": "Detection engineering automation",
+       "note": "Agentic rule authoring, normalization, triage (detection-as-code).",
+       "type": "primitive"
+      },
+      {
+       "n": "Agent-assisted investigation",
+       "note": "Context gathering, alert triage, summarization for SOC analysts.",
+       "type": "primitive"
+      },
+      {
+       "n": "Panther integration",
+       "note": "Panther was acquired by Databricks in 2026 to integrate over 100 prebuilt security connectors.",
+       "type": "primitive"
+      },
+      {
+       "n": "Petabyte-scale retention",
+       "note": "Long-term historical analysis in cost-efficient cloud storage.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [
+      "https://databricks.com/blog/databricks-enters-security-market-launch-lakewatch-new-agentic-siem"
+     ],
+     "since": "Private Preview March 24, 2026; Panther acquisition completed Aug 3, 2026",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Data unification",
+       "problem": "Security telemetry **siloed** in separate SIEM vendors",
+       "solution": "**Unified** security, IT, and business data on lakehouse with UC governance"
+      },
+      {
+       "axis": "AI-driven automation",
+       "problem": "**Manual** threat hunting and incident triage",
+       "solution": "**Autonomous agents** for investigation, rule authoring, and data normalization"
+      },
+      {
+       "axis": "Data scale",
+       "problem": "Logs **deleted** for cost; limited retention capacity",
+       "solution": "**Unlimited** petabyte-scale ingestion and retention (object storage economics)"
+      },
+      {
+       "axis": "Detection management",
+       "problem": "Detections **scattered** across tools; hard to version and test",
+       "solution": "**Detection-as-Code** with version control and automated testing"
+      },
+      {
+       "axis": "Query performance",
+       "problem": "**Slow** log searches across large datasets",
+       "solution": "**Sub-second** queries across billions of records for rapid investigations"
+      },
+      {
+       "axis": "Log normalization",
+       "problem": "**Heterogeneous** log formats from diverse sources",
+       "solution": "**Automatic OCSF** mapping (Open Cybersecurity Schema Framework)"
+      }
+     ],
+     "solves_conf": "ok"
+    },
+    {
+     "n": "Row Zero / Genie ZeroOps",
+     "s": "Announced",
+     "c": "verify",
+     "note": "Row Zero integrates spreadsheets with Genie for automated data remediation and ML-driven insights.",
+     "children": [
+      {
+       "n": "⚠ unverified",
+       "note": "This feature is public-only, verify status and naming before customer use.",
+       "type": "primitive"
+      }
+     ],
+     "docs": [],
+     "since": "Announced",
+     "deck": null,
+     "type": "feature",
+     "solves": [
+      {
+       "axis": "Spreadsheet + data",
+       "problem": "Analysis **disconnected** from governed data source",
+       "solution": "**Row Zero** spreadsheets with live **Genie** integration to import queries as formulas"
+      },
+      {
+       "axis": "Analysis automation",
+       "problem": "**Manual** scenario modeling and calculations in spreadsheets",
+       "solution": "Genie turns natural-language questions into SQL; Row Zero formats results live"
+      },
+      {
+       "axis": "Ops automation",
+       "problem": "**Manual** fix validation and approval for operational changes",
+       "solution": "**Genie ZeroOps** agent investigates, proposes fixes in sandbox, requires human approval"
+      },
+      {
+       "axis": "Governance",
+       "problem": "Spreadsheet analysis **ungoverned** and unaudited",
+       "solution": "Integrated with **Unity Catalog**; governs data access and audit trail"
+      },
+      {
+       "axis": "Speed-to-insight",
+       "problem": "**Slow** manual spreadsheet-based analytics workflows",
+       "solution": "**AI-assisted** formula generation; instant data refresh from lakehouse"
+      }
+     ],
+     "solves_conf": "verify"
+    }
+   ],
+   "note": "Industry-tailored agentic solutions for marketing (CustomerLake CDP, agents) and security (Lakewatch SIEM) embedded with lakehouse governance."
+  }
+ ]
+}

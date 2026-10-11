@@ -1,0 +1,331 @@
+[
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "Protocol-based managed server connectors enabling agents to access governed Databricks SQL, AI Search, Genie agents, and Unity Catalog functions.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Genie One, Genie Agent, AI Search, Databricks SQL, UC Functions, Code Interpreter (GA Sep).",
+  "violations": [
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers",
+   "Genie One MCP (GA Sep 2026)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Natural-language analytics from Claude, ChatGPT, Cursor, MCP Inspector.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers",
+   "Genie Agent MCP"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Scoped analytics for specific domain agents; agent-level isolation.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers",
+   "AI Search MCP"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Retrieval over unstructured documents; hybrid search access.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers",
+   "Databricks SQL MCP"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Execute SQL; developer and data-engineering workflows.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers",
+   "Unity Catalog Functions MCP"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Expose UC functions as tools; composable data operations.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers",
+   "Unity Gateway governance"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "All traffic routed through Gateway; policies, rate limits, audit enforced.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors"
+  ],
+  "depth": 2,
+  "type": "family",
+  "note": "Google Workspace, M365, Atlassian, Slack, GitHub; Glean (Beta); Meta Ads (Oct 6).",
+  "violations": [
+   "semicolon pile",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "Google Workspace (GA Sep 2026)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Drive, Gmail, Calendar; read-only operations.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "Microsoft 365 (GA Sep 2026)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "SharePoint, Teams, Outlook, Calendar; OAuth per-user.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "Atlassian (GA Sep 2026)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Jira, Confluence; issue/page access and search.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "Slack (GA Sep 2026)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Channels, messages, files; read-only operations.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "GitHub (GA Sep 2026)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "File/issue/PR writes; private-repo setup required.",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "Glean (Beta)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Search-only; internal knowledge base retrieval.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "Per-user OAuth"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "UC + Gateway governance; audit logging, data access control.",
+  "violations": [
+   "semicolon pile",
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "MCP Services + custom MCP"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Register external MCP servers as UC securables; custom MCP as a Databricks App.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "MCP Services + custom MCP",
+   "Register external MCP as UC securable"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Asset governance, permissions, audit; same UC controls as other assets.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "MCP Services + custom MCP",
+   "UC Connections for credentials"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "OAuth tokens, API keys, governed access; unified secrets management.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "MCP Services + custom MCP",
+   "Custom MCP as Databricks App"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Deploy your own stateless MCP server; scale-to-zero hosting.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "MCP Services + custom MCP",
+   "Route through Unity Gateway"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Policies, cost attribution, observability, rate limits.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "MCP Services + custom MCP",
+   "DurableAgentServer support"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Crash-recoverable agent state; MCP as agent tool provider.",
+  "violations": [
+   "semicolon pile"
+  ]
+ }
+]

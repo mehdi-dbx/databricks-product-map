@@ -1,0 +1,221 @@
+[
+  {
+    "n": "Model Serving & Batch Inference",
+    "s": "GA",
+    "c": "ok",
+    "note": "Real-time endpoints, batch scoring, and SQL-native model serving for custom & foundation models; serverless & provisioned capacity.",
+    "children": [
+      {
+        "n": "Model Serving Endpoints",
+        "s": "GA",
+        "c": "ok",
+        "note": "Managed REST endpoints for real-time inference; serverless & provisioned options; integrates with UC models.",
+        "docs": ["https://docs.databricks.com/aws/en/machine-learning/model-serving/"],
+        "since": "GA"
+      },
+      {
+        "n": "Batch Inference (Spark UDF)",
+        "s": "GA",
+        "c": "ok",
+        "note": "Distributed scoring of UC models via Spark user-defined functions; scale-to-production batch jobs.",
+        "docs": ["https://docs.databricks.com/aws/en/machine-learning/model-serving/"],
+        "since": "GA"
+      },
+      {
+        "n": "ai_query (SQL Batch Scoring)",
+        "s": "GA",
+        "c": "ok",
+        "note": "SQL function for large-scale batch inference; custom & foundation models; Runtime 15.4 LTS+ or 18.2 recommended.",
+        "docs": ["https://docs.databricks.com/aws/en/sql/language-manual/functions/ai_query"],
+        "since": "GA (mid-2026)"
+      },
+      {
+        "n": "Triton Serving (GPU Batching)",
+        "s": "Beta",
+        "c": "ok",
+        "note": "Throughput-optimized GPU batching; dynamic concurrent request batching for eligible custom models.",
+        "docs": ["https://docs.databricks.com/aws/en/machine-learning/model-serving/serve-triton"],
+        "since": "Beta (mid-2026)"
+      },
+      {
+        "n": "Feature Serving Integration",
+        "c": "ok",
+        "note": "Real-time feature lookup during inference; Online Feature Store with sub-ms latency via Lakebase.",
+        "docs": ["https://docs.databricks.com/aws/en/machine-learning/feature-store/online-workflows"],
+        "since": "GA (Feb 2026)"
+      },
+      {
+        "n": "Provisioned Throughput",
+        "c": "ok",
+        "note": "Dedicated capacity for sustained workloads; higher consistency, lower latency vs. pay-per-token.",
+        "docs": ["https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis/"],
+        "since": "GA"
+      },
+      {
+        "n": "Inference Table Logging",
+        "c": "ok",
+        "note": "Automatic request/response payload capture for monitoring; Gateway-supported format (legacy retired Apr 30, 2026).",
+        "docs": ["https://docs.databricks.com/aws/en/machine-learning/model-serving/inference-tables"],
+        "since": "GA (Gateway format post-Apr 2026)"
+      }
+    ],
+    "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/model-serving/",
+      "https://docs.databricks.com/aws/en/sql/language-manual/functions/ai_query",
+      "https://docs.databricks.com/aws/en/machine-learning/model-serving/serve-triton",
+      "https://docs.databricks.com/aws/en/jobs/",
+      "https://docs.databricks.com/aws/en/machine-learning/feature-store/online-workflows"
+    ],
+    "since": "GA; Triton Beta (mid-2026); ai_query GA (mid-2026)",
+    "deck": null
+  },
+  {
+    "n": "Model Registry & Lifecycle Governance",
+    "s": "GA",
+    "c": "ok",
+    "note": "MLflow Model Registry in Unity Catalog with versioning, staged promotion (Champion/Challenger), lineage, and cross-workspace sharing.",
+    "children": [
+      {
+        "n": "Model Versioning",
+        "s": "GA",
+        "c": "ok",
+        "note": "Immutable version history; each version retains metadata, parameters, metrics, artifacts, signature.",
+        "docs": ["https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/"],
+        "since": "GA"
+      },
+      {
+        "n": "Aliases & Stage Promotion",
+        "s": "GA",
+        "c": "ok",
+        "note": "Mutable pointers (Champion, staging, prod); flexible promotion workflows without renaming.",
+        "docs": ["https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/"],
+        "since": "GA"
+      },
+      {
+        "n": "Unity Catalog Governance",
+        "s": "GA",
+        "c": "ok",
+        "note": "Fine-grained permissions (EXECUTE), audit logs, lineage tracking, cross-workspace discovery via UC namespace.",
+        "docs": ["https://docs.databricks.com/aws/en/data-governance/unity-catalog/"],
+        "since": "GA (UC 2023–2026)"
+      },
+      {
+        "n": "Training Data Lineage",
+        "s": "GA",
+        "c": "ok",
+        "note": "Automatic capture of upstream UC datasets via mlflow.log_input(); visible after model registration.",
+        "docs": ["https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/"],
+        "since": "GA"
+      },
+      {
+        "n": "Model Lineage (E2E)",
+        "c": "ok",
+        "note": "Complete provenance: data → training run → model version → inference; UC lineage system integration.",
+        "docs": ["https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage"],
+        "since": "GA"
+      },
+      {
+        "n": "Model Permissions & Sharing",
+        "c": "ok",
+        "note": "Catalog/schema-level access; per-model EXECUTE privileges; cross-workspace sharing within account.",
+        "docs": ["https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/"],
+        "since": "GA"
+      },
+      {
+        "n": "Deployment Gates & Webhooks",
+        "c": "ok",
+        "note": "Scheduled transitions via Lakeflow Jobs; model registry events trigger CI/CD pipelines (GitHub Actions, Azure DevOps).",
+        "docs": ["https://docs.databricks.com/aws/en/jobs/"],
+        "since": "GA (Jobs infrastructure)"
+      }
+    ],
+    "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/",
+      "https://docs.databricks.com/aws/en/mlflow/",
+      "https://docs.databricks.com/aws/en/data-governance/unity-catalog/",
+      "https://docs.databricks.com/aws/en/jobs/"
+    ],
+    "since": "GA (unified with UC 2023–2026); MLflow 3.x enhancements 2024–2026",
+    "deck": "dsml-l100200-pitch-deck-godsml"
+  },
+  {
+    "n": "Monitoring & Evaluation",
+    "s": "GA",
+    "c": "ok",
+    "note": "Lakehouse Monitoring (Data Profiling) for drift detection; inference profiling; MLflow evaluation with LLM judges & custom scorers.",
+    "children": [
+      {
+        "n": "Inference Tables",
+        "s": "GA",
+        "c": "ok",
+        "note": "Logging of model serving request/response payloads; Gateway-supported format; legacy format deprecated Apr 30, 2026.",
+        "docs": ["https://docs.databricks.com/aws/en/machine-learning/model-serving/inference-tables"],
+        "since": "GA (Gateway format post-Apr 2026)"
+      },
+      {
+        "n": "Data Profiling (Lakehouse Monitoring)",
+        "s": "GA",
+        "c": "ok",
+        "note": "Automated calculation of data-quality metrics; baseline & consecutive comparisons; rebranded mid-2026.",
+        "docs": ["https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/"],
+        "since": "GA (rebranded mid-2026)"
+      },
+      {
+        "n": "Inference Profiling",
+        "s": "GA",
+        "c": "ok",
+        "note": "Application of quality metrics to inference logs; model-performance metrics (accuracy, F1, MSE, RMSE) for classification & regression.",
+        "docs": ["https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/monitor-output"],
+        "since": "GA"
+      },
+      {
+        "n": "Drift Detection",
+        "s": "GA",
+        "c": "ok",
+        "note": "Numeric (KS test, Wasserstein, PSI) & categorical (chi-square, total variation, Jensen–Shannon) drift tests on predictions & features.",
+        "docs": ["https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/monitor-output"],
+        "since": "GA"
+      },
+      {
+        "n": "Monitoring Dashboards & Alerts",
+        "s": "GA",
+        "c": "ok",
+        "note": "Auto-generated profile-metrics tables; Lakeview visualization & configurable alerting on quality/drift metrics.",
+        "docs": ["https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/"],
+        "since": "GA"
+      },
+      {
+        "n": "MLflow Evaluation (LLM Judges)",
+        "s": "GA",
+        "c": "ok",
+        "note": "8 built-in judges (correctness, relevance, safety, retrieval quality); custom scorers; deterministic + heuristic evaluation.",
+        "docs": ["https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor/"],
+        "since": "GA (Aug–Sep 2026)"
+      },
+      {
+        "n": "Production Monitoring",
+        "s": "GA",
+        "c": "ok",
+        "note": "Reuse evaluation scorers on sampled production traffic; combine with human feedback via Review Apps; continuous quality tracking.",
+        "docs": ["https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor/"],
+        "since": "GA"
+      },
+      {
+        "n": "Quality Incident Management",
+        "c": "ok",
+        "note": "Alert rules, anomaly detection, incident notifications; integration with Lakeflow Jobs for remediation pipelines.",
+        "docs": ["https://docs.databricks.com/aws/en/jobs/"],
+        "since": "GA (Jobs infrastructure)"
+      }
+    ],
+    "docs": [
+      "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/",
+      "https://docs.databricks.com/aws/en/machine-learning/model-serving/inference-tables",
+      "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor/",
+      "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/",
+      "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/monitor-output"
+    ],
+    "since": "GA (Lakehouse Monitoring 2023, rebranded 2026); MLflow eval 2024–2026",
+    "deck": null
+  }
+]

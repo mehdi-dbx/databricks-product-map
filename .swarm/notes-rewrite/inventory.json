@@ -1,0 +1,5730 @@
+[
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "End-to-end ML platform combining feature management, model serving, training, and governance under Mosaic AI.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Feature Store"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Governed features; online store on Lakebase; UC-synced.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Feature Store",
+   "Unity Catalog sync"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Governs features with UC metadata; enables discovery, lineage tracking, and cross-workspace sharing.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Model Serving"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Serverless endpoints (custom/foundation/external); pay-per-token, provisioned throughput, batch; Gateway-governed.",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Model Serving",
+   "Custom model endpoints"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Deploy any model; ~300K QPS per endpoint.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Model Serving",
+   "Foundation model hosting"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Llama, Qwen, Gemini, GPT; on Databricks platform.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Model Serving",
+   "Feature Store lookup"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Real-time feature enrichment during inference; enables consistent feature serving from Feature Store.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "AI Runtime — serverless GPU"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "A10/H100; LoRA/QLoRA fine-tune, distributed training, vLLM/Ray batch. Exact GA vs preview: verify.",
+  "violations": [
+   "semicolon pile",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "AI Runtime — serverless GPU",
+   "Notebooks / Jobs integration"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Seamless GPU access in familiar dev environments.",
+  "violations": [
+   "marketing word (seamless)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow 3 for GenAI"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Tracing (OTel, 30+ frameworks), evaluation (LLM judges + custom scorers), production monitoring, Delta/UC backend.",
+  "violations": [
+   "plus-joined list",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow 3 for GenAI",
+   "End-to-end tracing"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Agent & LLM spans; 30+ framework auto-instrumentation; OpenTelemetry-compatible.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow 3 for GenAI",
+   "LLM judges & evals"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Safety, correctness, relevance, retrieval quality scorers.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow 3 for GenAI",
+   "Production observability"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Traffic sampling, quality/safety/latency tracking, alerts.",
+  "violations": [
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow Model Registry"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Versioning, aliases (Champion/staging/prod), UC lineage.",
+  "violations": [
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow Model Registry",
+   "MLflow lineage tracking"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Data → training → model → inference provenance.",
+  "violations": [
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow Prompt Registry",
+   "Configuration co-storage"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Bind model params + temperature + prompt together.",
+  "violations": [
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow Prompt Registry",
+   "Retrieval & comparison"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Load versioned prompts via API; side-by-side diff comparison for prompt evolution review.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "AutoML",
+   "MLflow tracking integration"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Automatic trial logging to MLflow experiment; tracks metrics, parameters, and generated notebooks.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "AI Search (ex-Vector Search)"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Vector + BM25 + hybrid (RRF) + reranking; Delta Sync; UC-governed; citations.",
+  "violations": [
+   "semicolon pile",
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "AI Search (ex-Vector Search)",
+   "Delta Sync & citations"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Auto-sync from tables; retrieve + attribute sources.",
+  "violations": [
+   "semicolon pile",
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Model fine-tuning",
+   "QLoRA fine-tuning"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "4-bit quantized adapter training; reduces memory while achieving comparable results to full fine-tuning.",
+  "violations": [
+   "semicolon pile",
+   "no capital start"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Model fine-tuning",
+   "Full fine-tuning"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Complete model weight retraining; requires substantial GPU memory for gradients and optimizer state.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "Multi-provider LLM access (Anthropic, OpenAI, Google, Meta, regional); pay-per-token, priority, provisioned throughput.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (6 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Foundation Model APIs"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Multi-provider (Anthropic, OpenAI, Google, Meta, Qwen, Grok, Kimi, GLM, DeepSeek…); pay-per-token / priority / provisioned throughput.",
+  "violations": [
+   "semicolon pile",
+   "slash list",
+   "enumeration (8 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Foundation Model APIs",
+   "Anthropic Claude family"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Haiku, Sonnet, Fable, Opus across versions.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Foundation Model APIs",
+   "OpenAI GPT models"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "GPT-6 variants (Sol/Luna/Astra), GPT-5 family, legacy models; OSS variants (120B/20B) available.",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Foundation Model APIs",
+   "Google Gemini & Gemma"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Gemini 3.8/3.7/3.6 Flash/Pro variants, Gemini 3.1 Pro/Flash; Gemma 3 embeddings.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Foundation Model APIs",
+   "Meta Llama & OSS"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Llama 4 Maverick, 3.3, 3.1; community models.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Foundation Model APIs",
+   "Regional providers"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Qwen (Alibaba), GLM (Zhipu), Kimi (Moonshot), Grok, DeepSeek.",
+  "violations": [
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Model versions"
+  ],
+  "depth": 2,
+  "type": "family",
+  "note": "Exact version numbers from public web almost certainly drifted — verify against the live supported-models matrix.",
+  "violations": [
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Model versions",
+   "Live supported-models matrix"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Databricks docs page; real-time availability per region.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Model versions",
+   "Retirement schedules"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Oct 2: Gemini 2.5 Pro/Flash retired; Oct 6: GLM legacy; Nov 5: DeepSeek V4 Flash.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Model versions",
+   "Model rollover updates"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Claude 5.5 → Claude 6, GPT-5 → GPT-6 cycles.",
+  "violations": [
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "External model services"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Governed access to externally hosted models via UC Connections + Gateway.",
+  "violations": [
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "External model services",
+   "External provider routing"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "OpenAI, Anthropic, Google, Meta hosted endpoints.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "External model services",
+   "Fallback routing"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Model selection with failover between external providers; governed by Unity Gateway policies.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "External model services",
+   "Cost attribution by team"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Track external API spend per user, team, project, endpoint; usage blocking via Gateway.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Model lifecycle churn (Oct)"
+  ],
+  "depth": 2,
+  "type": "concept",
+  "note": "Gemini 2.5 retirement, GLM legacy, DeepSeek schedule — public-only dates.",
+  "violations": [
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Model lifecycle churn (Oct)",
+   "Gemini 2.5 Pro/Flash (retired Oct 2)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Gemini 2.5 Pro/Flash retired Oct 2 2026; migrate to Gemini 3.1 Pro or 3.5 Flash.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Model lifecycle churn (Oct)",
+   "GLM 5.2 (legacy as of Oct 6)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Zhipu AI LLM; migrate for new workloads.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Model lifecycle churn (Oct)",
+   "DeepSeek V4 (0731) retirement (Nov 5)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "DeepSeek V4 Flash (0731) retiring Nov 5 2026; V4.1 available; verify matrix for updates.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "End-to-end platform for building, deploying, and operating agents with secure code execution, managed memory, tool integration, and production observability.",
+  "violations": [
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "AI Functions",
+   "ai_parse_document"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Parse PDFs / contracts / invoices into structured data.",
+  "violations": [
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "AI Functions",
+   "ai_extract"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Entity / field extraction — 2.3× faster at equal cost (Oct 2 2026).",
+  "violations": [
+   "slash list",
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "AI Functions",
+   "ai_decide"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Fast, low-cost routing / classification / eval (Sep 30 2026).",
+  "violations": [
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Custom Agents"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Code-first; LangGraph / Agno / CrewAI / Claude Code SDK / OpenAI SDK; Agent Server + DurableAgentServer; agent.toml. CLI Beta.",
+  "violations": [
+   "semicolon pile",
+   "slash list",
+   "plus-joined list",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Custom Agents",
+   "Multi-framework harness support"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Claude SDK, OpenAI, LangGraph, Agno, CrewAI, custom frameworks.",
+  "violations": [
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Custom Agents",
+   "agent.toml configuration"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Declarative model access, memory, tools, tracing, deployment.",
+  "violations": [
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Databricks Sandbox",
+   "Language support"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Python, Node.js, CLI tools; persistent /home/sandbox-agent.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Databricks Sandbox",
+   "Egress control (configurable)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Unrestricted outbound by default; customize per policy.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Supervisor Agent"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "GA but legacy — Custom Agents / Genie Agents preferred. Multi-agent orchestration, user-scoped auth.",
+  "violations": [
+   "slash list",
+   "dash/arrow splice",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Supervisor Agent",
+   "Endpoint orchestration"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Integrate Model Serving, AI Search, Genie Agents, Knowledge Assistant.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Supervisor Agent",
+   "Tool orchestration"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Coordinate UC functions, MCP services, web search, sandboxed code.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Knowledge Assistant"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "GA but legacy — Genie Agents preferred. Document-grounded, Instructed Retriever, citations.",
+  "violations": [
+   "dash/arrow splice",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Knowledge Assistant",
+   "Document ingestion & sync"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Managed pipeline for PDFs, web, databases; auto-sync.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Knowledge Assistant",
+   "Endpoint & SDK management"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Expose as REST API; managed via SDKs & dashboards.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Knowledge Assistant",
+   "Legacy note"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Migrate to Genie Agents or Custom Agents + AI Search.",
+  "violations": [
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Omnigent"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Agent meta-harness (Claude / Codex / Cursor / custom); managed = workspace identity + Gateway + Sandbox (CEL policies). OSS Apache-2.0.",
+  "violations": [
+   "semicolon pile",
+   "slash list",
+   "plus-joined list",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Omnigent",
+   "Multi-framework composition"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Compose agents from Claude, Cursor, Codex, Pi, custom harnesses.",
+  "violations": [
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Omnigent",
+   "Portable YAML definitions"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Framework-agnostic agent specs; run locally or managed.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Omnigent",
+   "Unified policy layer"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "CEL-based policies for permissions, cost, logging, safety.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Omnigent",
+   "Multi-interface access"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Web UI, terminal, mobile, APIs; shared live sessions.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Omnigent",
+   "Shared governance"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "workspace identity + UC + Gateway controls across agents.",
+  "violations": [
+   "plus-joined list",
+   "no capital start"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Agent evaluation & monitoring"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Traces → Review Apps → datasets → LLM judges → dashboards (MLflow).",
+  "violations": [
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Agent evaluation & monitoring",
+   "MLflow tracing"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "End-to-end spans for agents, RAG, LLMs; OpenTelemetry-compatible.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Agent evaluation & monitoring",
+   "8 built-in LLM judges"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Correctness, relevance, safety, RAG-specific (retrieval, grounding, sufficiency).",
+  "violations": [
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Agent evaluation & monitoring",
+   "Custom scorers"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Code-based deterministic checks + guidelines for domain rules.",
+  "violations": [
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "Central control plane (Unity AI Gateway) routing all AI requests with permissions enforcement, budget management, usage tracking, and asset governance.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "Unity Catalog for AI assets"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Governs tables, models, agents, UC functions (tools), MCP services, connections, skills, credentials; RLAC/ABAC, lineage, audit.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (9 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "Unity Catalog for AI assets",
+   "Versioning & aliases"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Model versions, stage aliases (Champion/staging/prod) with promotion workflows.",
+  "violations": [
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "Unity AI Gateway"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Runtime control plane for all AI traffic — models, agents, tools, MCP.",
+  "violations": [
+   "dash/arrow splice",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "Unity AI Gateway",
+   "Guardrails"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "PII redaction, injection detection, allow / deny / approval (Service Policies).",
+  "violations": [
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "Unity AI Gateway",
+   "Cost & budgets"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Attribution by user / team / project / endpoint / model / tag; usage blocking.",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "Unity AI Gateway",
+   "Asset governance"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Models, MCP, UC functions, connections as UC securables; on-behalf-of execution.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "Unity AI Gateway",
+   "Observability"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "System tables (tokens, latency, errors, identity) + optional payload logging to Delta.",
+  "violations": [
+   "plus-joined list",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "Review Apps"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Human-in-the-loop labeling of traces / chat for eval datasets.",
+  "violations": [
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "Review Apps",
+   "Chat UI review interface"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Experts interact with deployed agents; provide immediate feedback.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "Review Apps",
+   "Integration with MLflow"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Feedback stored as MLflow assessments; linked to traces & models.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "DASF v3.0"
+  ],
+  "depth": 2,
+  "type": "concept",
+  "note": "AI Security Framework: 97 risks / 73 controls; Agentic extension (35 risks, 6 controls, 13 components). Published Mar 2026.",
+  "violations": [
+   "semicolon pile",
+   "slash list",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "DASF v3.0",
+   "Risk taxonomy (97 total)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Comprehensive catalog of AI security risks; 35 new agentic-specific.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "DASF v3.0",
+   "Control framework (73 total)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Mapped controls to mitigate risks; 6 new agentic controls.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "DASF v3.0",
+   "Least-privilege tool access"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "UC permissions + scoped data access restrict agent tool use.",
+  "violations": [
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "DASF v3.0",
+   "Sandboxing & isolation"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Databricks Sandbox + CEL policies for agent code execution.",
+  "violations": [
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "DASF v3.0",
+   "Guardrails & observability"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Gateway guardrails (PII, injection) + MLflow tracing for audit trail.",
+  "violations": [
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie One"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Unified cross-asset BI assistant; memory GA + MCP server GA (Sep); free for named users to Jan 31 2027.",
+  "violations": [
+   "semicolon pile",
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie One",
+   "Discovery and natural-language QA"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Cross-asset analytics from conversational prompts; SQL generation.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie One",
+   "Business tool connectors"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Google Workspace, M365, Atlassian, Slack, GitHub; per-user OAuth.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie One",
+   "Multi-interface access"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Web, mobile (PuP), macOS (Beta), Slack, Teams, MCP clients.",
+  "violations": [
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie One",
+   "MCP Server (GA Sep 2026)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Genie One accessible to Claude, ChatGPT, Cursor, MCP Inspector.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie One",
+   "Free tier through Jan 31 2027"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Named-user free; service-principal usage remains billable.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie Agents"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "No-code domain agents (ex-Genie Spaces, renamed Jul 2026); limits up to 50 sources / 200k conversations (Sep 10).",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie Agents",
+   "Agent mode and management APIs"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "GA; iframe embedding, dashboard integration, API-first control.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "AI/BI Dashboards (Lakeview)",
+   "AI-assisted authoring"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Suggestions for filters, relationships, visualizations; drag-and-drop builder.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "AI/BI Dashboards (Lakeview)",
+   "Metric views (GA)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Pre-computed, versioned KPIs; performance optimized for analytics.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "AI/BI Dashboards (Lakeview)",
+   "Sharing and subscriptions"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Scheduled delivery, shared access, audit trail, collaborative features.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie Ontology",
+   "Learned business context"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Metric definitions, terminology, calculations, inferred business semantics.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie App Builder"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "NL to Databricks App (Sep 23); needs admin governed agentic app-building and App Spaces.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie App Builder",
+   "Natural-language app generation"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Prompt to Databricks App code; NL-to-code for analytics apps.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie App Builder",
+   "Requires governed agentic app-building admin enablement"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Workspace admin must enable feature; App Spaces governance required.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie App Builder",
+   "Scale-to-zero serverless"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Automatic deployment and scaling; no infrastructure management.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie App Builder",
+   "Free during Beta (pricing TBD)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "No cost during Beta; pricing model to be announced at GA.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "Databricks Apps + App Spaces"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Serverless Streamlit / Gradio / React / FastAPI; app vs user-principal auth; UC telemetry; App Spaces governance.",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "Databricks Apps + App Spaces",
+   "Serverless hosting"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Streamlit, Gradio, React, FastAPI, Flask; multi-framework support.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "Databricks Apps + App Spaces",
+   "Scale-to-zero execution"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "30-min idle timeout; cost-optimized auto-scaling to zero.",
+  "violations": [
+   "semicolon pile",
+   "no capital start"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "AI Dev Kit + internal coding agents (Isaac)"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Scaffolding, UC-governed MCPs; internal proof point (25x spend growth, $400/mo baseline).",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "AI Dev Kit + internal coding agents (Isaac)",
+   "25x spend growth YTD"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Internal adoption signal; productivity ROI measure.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "AI Dev Kit + internal coding agents (Isaac)",
+   "Multi-model support"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Claude, Codex, Cursor, custom harness integration.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "AI Dev Kit + internal coding agents (Isaac)",
+   "CLI tooling (Beta Oct 6)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Terminal-first development; notebook and CLI workflows.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "Genie Code"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Notebook / SQL / pipeline / dashboard assistant (ex-Databricks Assistant); pay-as-you-go (150 DBU free/mo); Genie Code CLI Beta (Oct 6).",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "Genie Code",
+   "Notebook code generation"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Python/SQL/PySpark generation, explanation, optimization, refactoring.",
+  "violations": [
+   "slash list",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "Genie Code",
+   "Document intelligence (Sep 2026)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "End-to-end PDF/contract/invoice parsing, classification, extraction, validation.",
+  "violations": [
+   "slash list",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "Genie Code",
+   "Pay-per-use pricing (150 DBU free/mo)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Metered from Jul 8 2026; no longer unlimited free tier.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "Genie Code",
+   "CLI (Beta Oct 6)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Terminal-based coding agent; Genie Code in shell environment.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "Protocol-based managed server connectors enabling agents to access governed Databricks SQL, AI Search, Genie agents, and Unity Catalog functions.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Genie One, Genie Agent, AI Search, Databricks SQL, UC Functions, Code Interpreter (GA Sep).",
+  "violations": [
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers",
+   "Genie One MCP (GA Sep 2026)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Natural-language analytics from Claude, ChatGPT, Cursor, MCP Inspector.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers",
+   "Genie Agent MCP"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Scoped analytics for specific domain agents; agent-level isolation.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers",
+   "AI Search MCP"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Retrieval over unstructured documents; hybrid search access.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers",
+   "Databricks SQL MCP"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Execute SQL; developer and data-engineering workflows.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers",
+   "Unity Catalog Functions MCP"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Expose UC functions as tools; composable data operations.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers",
+   "Unity Gateway governance"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "All traffic routed through Gateway; policies, rate limits, audit enforced.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors"
+  ],
+  "depth": 2,
+  "type": "family",
+  "note": "Google Workspace, M365, Atlassian, Slack, GitHub; Glean (Beta); Meta Ads (Oct 6).",
+  "violations": [
+   "semicolon pile",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "Google Workspace (GA Sep 2026)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Drive, Gmail, Calendar; read-only operations.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "Microsoft 365 (GA Sep 2026)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "SharePoint, Teams, Outlook, Calendar; OAuth per-user.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "Atlassian (GA Sep 2026)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Jira, Confluence; issue/page access and search.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "Slack (GA Sep 2026)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Channels, messages, files; read-only operations.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "GitHub (GA Sep 2026)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "File/issue/PR writes; private-repo setup required.",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "Glean (Beta)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Search-only; internal knowledge base retrieval.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "Per-user OAuth"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "UC + Gateway governance; audit logging, data access control.",
+  "violations": [
+   "semicolon pile",
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "MCP Services + custom MCP"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Register external MCP servers as UC securables; custom MCP as a Databricks App.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "MCP Services + custom MCP",
+   "Register external MCP as UC securable"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Asset governance, permissions, audit; same UC controls as other assets.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "MCP Services + custom MCP",
+   "UC Connections for credentials"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "OAuth tokens, API keys, governed access; unified secrets management.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "MCP Services + custom MCP",
+   "Custom MCP as Databricks App"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Deploy your own stateless MCP server; scale-to-zero hosting.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "MCP Services + custom MCP",
+   "Route through Unity Gateway"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Policies, cost attribution, observability, rate limits.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "MCP Services + custom MCP",
+   "DurableAgentServer support"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Crash-recoverable agent state; MCP as agent tool provider.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "Open ACID Delta Lake lakehouse with trusted data, schema enforcement, governed metadata, multi-cloud deployment.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakehouse / Delta Lake"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Open ACID format; transaction support, data consistency, batch/streaming ingestion foundation.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakehouse / Delta Lake",
+   "Schema enforcement"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Delta validates incoming data against defined schemas; prevents quality drift.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakehouse / Delta Lake",
+   "Governed metadata layer"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Unity Catalog lineage tracking, versioning, audit trail; consistent governance.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakehouse / Delta Lake",
+   "Multi-cloud support"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Deploy Delta Lake on AWS, Azure, GCP; unified governance across cloud platforms.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakeflow"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Connect / Pipelines / Jobs (GA) + Designer (Public Preview, NL via Genie Code).",
+  "violations": [
+   "slash list",
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakeflow",
+   "Lakeflow Connect"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Managed ingestion from databases, SaaS, files, streaming.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakeflow",
+   "Lakeflow Designer"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Visual + NL canvas for no-code data prep; produces production code. Status: Public Preview.",
+  "violations": [
+   "semicolon pile",
+   "plus-joined list",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakeflow",
+   "Lakeflow Jobs"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Orchestration and monitoring for data/analytics/AI workflows.",
+  "violations": [
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakeflow",
+   "Genie Code integration"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "NL transformation descriptions; AI Functions for enrichment.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakebase — serverless Postgres"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Agent memory/state, online feature store, branching, HA; UC-synced (GA since Jan 2026).",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakebase — serverless Postgres",
+   "Unity Catalog synchronization"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Sync Postgres tables ↔ Delta; bidirectional governance.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakebase Search"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Vector + BM25 + hybrid inside Postgres (Sept 28), no separate vector DB.",
+  "violations": [
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakebase Search",
+   "Hybrid search (RRF)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Reciprocal Rank Fusion merging semantic + keyword results.",
+  "violations": [
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakebase Search",
+   "Native Postgres integration"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "No separate vector DB; co-locate memory and search.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Predictive Optimization"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "ROI-based OPTIMIZE / VACUUM / ANALYZE / clustering on UC managed tables.",
+  "violations": [
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Predictive Optimization",
+   "Automatic VACUUM"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Remove old versions; optimize storage without manual tuning.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Predictive Optimization",
+   "Audit trail"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "system.storage.predictive_optimization_operations_history tracks decisions.",
+  "violations": [
+   "no capital start"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agentic Data Management"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "Automated data classification, profiling, quality monitoring, and agentic anomaly detection with remediation capabilities within the governed lakehouse.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agentic Data Management",
+   "Classification / profiling / monitoring"
+  ],
+  "depth": 2,
+  "type": "family",
+  "note": "AI-driven, UC-integrated: data classification, Lakehouse Monitoring, data-quality monitoring.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agentic Data Management",
+   "Classification / profiling / monitoring",
+   "Data profiling"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Automated schema inspection, distributions, nulls, cardinality analysis.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agentic Data Management",
+   "Anomaly detection & remediation"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Anomaly detection + automated remediation (remediation still emerging).",
+  "violations": [
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Real-time & transactional AI",
+   "Lakehouse//RT"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Serverless low-latency SQL (\"Reyden\" engine) on Delta/Iceberg; read-only. Public-only — verify name & status.",
+  "violations": [
+   "semicolon pile",
+   "dash/arrow splice",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Real-time & transactional AI",
+   "Lakehouse//RT",
+   "Reyden query engine"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Proprietary low-latency SQL execution; millisecond-scale latency.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Real-time & transactional AI",
+   "Lakehouse//RT",
+   "SELECT-only mode"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Read-only design; transactional writes via Lakebase.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Real-time & transactional AI",
+   "LTAP"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Lake Transactional-Analytical Processing unifying Lakebase + lakehouse. Public-only — verify.",
+  "violations": [
+   "plus-joined list",
+   "dash/arrow splice",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Real-time & transactional AI",
+   "LTAP",
+   "Unified storage foundation"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Single copy of data; eliminate sync pipelines and dual writes.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Real-time & transactional AI",
+   "LTAP",
+   "Cost optimization"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "No redundancy; simplified architecture reduces operations overhead.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "CustomerLake"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Agentic CDP (Customer 360, identity resolution, campaign agents). Public-only — verify.",
+  "violations": [
+   "dash/arrow splice",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "CustomerLake",
+   "Customer 360 profiles"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Unified identity from behavior, transactions, engagement, operations data.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "CustomerLake",
+   "Identity resolution"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Deterministic + probabilistic + agent-assisted multi-source matching.",
+  "violations": [
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "CustomerLake",
+   "Reverse ETL activation"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Activate audiences to Adobe, Meta, Braze, Iterable, LiveRamp, Trade Desk.",
+  "violations": [
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "CustomerLake",
+   "UC governance"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Lakehouse-backed; Unity Catalog permissions govern data access.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "Lakewatch"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Agentic SIEM; linked to Panther acquisition. Public-only — verify.",
+  "violations": [
+   "semicolon pile",
+   "dash/arrow splice",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "Lakewatch",
+   "Cross-source correlation"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Security events + business context + IT logs → unified threat view.",
+  "violations": [
+   "plus-joined list",
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "Lakewatch",
+   "Panther integration"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Databricks acquired Panther Aug 11 2026; 100+ prebuilt connectors.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "Row Zero / Genie ZeroOps"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Governed spreadsheets into Genie / ML auto-remediation. Single-source — verify.",
+  "violations": [
+   "slash list",
+   "dash/arrow splice",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "Row Zero / Genie ZeroOps",
+   "⚠ unverified"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Public-only; confirm name/status before customer use.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "Interactive exploration and preparation of data and candidate models using notebooks, Genie, EDA, and Feature Store; outputs validated approach and reproducible pipeline.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Multi-language notebooks (Python/SQL/R/Scala)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "IDE with syntax highlighting, IntelliSense, cell-based execution, keyboard shortcuts; supports Python, SQL, R, and Scala for flexible development workflows.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (6 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Real-time coauthoring & live editing"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Multiple users edit same cells simultaneously with live cursor visibility; persistent chat context across page navigation; email notifications on comment activity.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Comments & mentions with AI"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Code-section highlighting with comments; user mentions via @mention; Genie Code integration for AI explanations/suggestions directly in comment threads.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Databricks Repos (Git version control)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Native Git integration with branch management, commit tracking, merge conflict resolution; notebooks and files versioned in Git; supports CI/CD workflows.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Interactive widgets & parameterization"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Notebook widgets enable interactive input parameters for dashboards and reports; dbutils.widgets module for programmatic parameter management.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Interactive widgets & parameterization",
+   "Widget input controls"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Dropdown, text input, slider, and multi-select widgets for user interaction.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Interactive widgets & parameterization",
+   "Programmatic parameter management"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "dbutils.widgets module for dynamic parameter retrieval and validation in code.",
+  "violations": [
+   "no capital start"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "In-notebook Genie Code (AI assistant)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Chat pane for code generation, debugging, multi-step workflows; works with Unity Catalog tables/columns/lineage; generates and executes code directly in cells.",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "In-notebook Genie Code (AI assistant)",
+   "Unity Catalog integration"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Genie understands table schemas, columns, lineage; respects UC permissions in generated code.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Built-in visualization & dashboards"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Automatic data visualization; built-in plotting libraries (matplotlib, plotly); point-and-click visualization editor; shareable interactive dashboards from notebook results.",
+  "violations": [
+   "too long (173>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Built-in visualization & dashboards",
+   "Chart type support"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Line, scatter, bar, time-series, and other standard chart types for data visualization.",
+  "violations": [
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Built-in visualization & dashboards",
+   "Interactive plotly features"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Hover tooltips, zoom, pan, and drill-down capabilities in rendered charts.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Interactive notebook table features"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Search/filter functionality in result tables; built-in column statistics; point-and-click chart creation from table data; Genie Code assistance for filtering.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Interactive notebook table features",
+   "Built-in column statistics"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Display min, max, mean, null counts, and distinct values for each column.",
+  "violations": [
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "Databricks SQL for exploratory queries"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Serverless SQL with Delta Lake; dashboards, materialized views, streaming tables for ad-hoc analytical exploration; result visualization and export.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "Spark DataFrames & pandas API"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "PySpark and pandas-compatible APIs for distributed processing; pyspark.pandas for seamless scaling from pandas to distributed workloads.",
+  "violations": [
+   "semicolon pile",
+   "marketing word (seamless)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "Automated data profiling (dbutils.data.summarize)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Programmatic profiling of Spark/pandas DataFrames; summary statistics with configurable precision modes (~5% or ~0.0001% error); accessible from Python/Scala/R.",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "One-click data profile generation"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Built-in profiling showing histograms, distributions, null counts, and summary statistics for numeric, string, and date columns; accessible via + menu in result tables.",
+  "violations": [
+   "semicolon pile",
+   "plus-joined list",
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "One-click data profile generation",
+   "Summary statistics"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Display mean, median, stddev, min, max for numeric columns.",
+  "violations": [
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "Lakeflow Designer (no-code visual ETL)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Drag-and-drop canvas for filtering, joining, aggregating, reshaping; natural language operator generation via Genie Code; backed by executable SQL/Spark code; Git-versionable.",
+  "violations": [
+   "too long (175>170)",
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "Lakeflow Designer (no-code visual ETL)",
+   "Joining operators"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Connect multiple data sources with join type selection (inner, left, right, full).",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "Automated data cleaning operations"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Duplicate removal (drop_duplicates), missing value handling (fillna), date reformatting (pd.to_datetime); standard Pandas/Spark methods; Genie Code assists with NL prompts.",
+  "violations": [
+   "too long (172>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "Catalog Explorer & AI-assisted discovery"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "LLM-powered search for tables/models/functions; lineage tracking; data quality indicators; natural language prompt-driven table exploration (Public Preview).",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "Visualization toolkit (matplotlib/plotly/seaborn)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Multiple chart types (line, scatter, bar, time-series); built-in rendering via display(); plotly interactive features; Lakeview dashboard embedding for nested analytics.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "Visualization toolkit (matplotlib/plotly/seaborn)",
+   "Chart types"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Line, scatter, bar, time-series, histograms, heatmaps, and other standard types.",
+  "violations": [
+   "enumeration (6 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "Visualization toolkit (matplotlib/plotly/seaborn)",
+   "Interactive plotly features"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Hover tooltips, zoom, pan, export capabilities in rendered visualizations.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Feature engineering"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "Governed creation, storage, and serving of reusable features for training and inference; enables point-in-time correctness and consistent feature logic.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Feature engineering",
+   "Feature Store",
+   "Feature tables (Delta-backed with UC governance)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Any Delta table with primary key constraint serves as feature table; three-level UC namespace (catalog.schema.table); supports incremental updates via merge mode; versioning via delta commits.",
+  "violations": [
+   "too long (192>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Feature engineering",
+   "Feature Store",
+   "Feature Views (managed materialization)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Declarative feature definitions with automatic pipeline management; supports batch (scheduled), streaming (Kafka/CDF), and hybrid modes; FeatureEngineeringClient orchestrates compute.",
+  "violations": [
+   "too long (183>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Feature engineering",
+   "Feature Store",
+   "On-demand features (request-time computation)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Python UDFs governed by UC; computed at training/serving time; eliminates pre-materialization overhead; automatic integration with Model Serving; handles missing values gracefully.",
+  "violations": [
+   "too long (180>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Feature engineering",
+   "Feature Store",
+   "Point-in-time joins (training data prep)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Constructs training datasets with feature values at specific historical moments; eliminates train/serving skew; create_training_set API with temporal correctness guarantees.",
+  "violations": [
+   "too long (173>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Feature engineering",
+   "Feature Store",
+   "Online Feature Store (Lakebase-powered)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Sub-millisecond latency lookup via managed PostgreSQL; read replicas (up to 3) for distributed query load; automatic sync from offline tables (triggered/continuous/snapshot modes).",
+  "violations": [
+   "too long (180>170)",
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Feature engineering",
+   "Feature Store",
+   "Feature serving endpoints"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "REST endpoints for direct feature retrieval; Model Serving integration with automatic feature lookup; applies dynamic feature resolution and retrieval during inference requests.",
+  "violations": [
+   "too long (177>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Feature engineering",
+   "Feature Store",
+   "Feature discovery & tagging"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Key-value tagging for categorization; Features UI search by name/comments/tags; cross-workspace sharing within metastore; Catalog Explorer integration for lineage visualization.",
+  "violations": [
+   "too long (177>170)",
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Feature engineering",
+   "Feature Store",
+   "Feature lineage & model dependencies"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Automatic capture via log_model(); tracks feature tables, functions, and models used in training; lineage graph in Catalog Explorer; governance via Unity Catalog permissions.",
+  "violations": [
+   "too long (174>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Feature engineering",
+   "Feature Store",
+   "Feature lineage & model dependencies",
+   "Lineage visualization"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Interactive graph in Catalog Explorer showing data → features → models → serving.",
+  "violations": [
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "Model development through iterative experimentation, hyperparameter tuning, AutoML, and MLflow tracking to identify and validate production candidates.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "MLflow",
+   "MLflow Tracking"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Log parameters, metrics, artifacts, and tags across training runs; organize with experiments; compare runs in notebook UI (Delta/UC backend).",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "MLflow",
+   "MLflow Tracking",
+   "Runs"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Individual executions of model code; each logs parameters, metrics, artifacts, tags.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "MLflow",
+   "Autologging (Framework Integration)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Automatic capture from scikit-learn, XGBoost, TensorFlow, PyTorch, LightGBM; configurable via mlflow.autolog(); requires explicit enabling on serverless compute.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "MLflow",
+   "Logged Models (MLflow 3.x)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "First-class model entities with versioning, signature inference, metrics, parameters, and lineage tracking across training/staging/prod.",
+  "violations": [
+   "slash list",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "MLflow",
+   "LLM Evaluation (Judges)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "8 built-in judges (correctness, relevance, safety, groundedness, completeness, fluency, tool-call quality, RAG sufficiency) + human feedback loops.",
+  "violations": [
+   "plus-joined list",
+   "enumeration (7 commas)",
+   "no capital start"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "MLflow",
+   "Custom Scorers (Code-based)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Define Python evaluation logic using @scorer decorator; deterministic checks, custom metrics, or domain-specific heuristics without LLM overhead.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "MLflow",
+   "Prompt Registry"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Version prompts with immutable history; stage aliases (champion/staging/prod) for promotion workflows; bind model params and temperature together.",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "MLflow",
+   "MLflow Traces"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Capture end-to-end agent execution: prompts, model calls, retrievals, tool invocations, errors, latency; OpenTelemetry-compatible for debugging/monitoring.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "AutoML",
+   "Classification"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Binary & multiclass prediction via decision trees, random forests, logistic regression, XGBoost, LightGBM; stratified train/val/test splits (60/20/20).",
+  "violations": [
+   "semicolon pile",
+   "slash list",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "AutoML",
+   "Classification",
+   "Random forests"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Ensemble of trees for robust classification performance.",
+  "violations": [
+   "marketing word (robust)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "AutoML",
+   "Regression"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Continuous value prediction via trees, linear regression, XGBoost, LightGBM with automated hyperparameter tuning and evaluation metrics (R², MAE, RMSE).",
+  "violations": [
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "AutoML",
+   "Regression",
+   "Random forests"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Ensemble of regression trees for robust predictions.",
+  "violations": [
+   "marketing word (robust)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "AutoML",
+   "Forecasting (Classic Compute)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Time-series predictions via Prophet or Auto-ARIMA on classic Databricks clusters; configurable forecast horizon, external regressors via Feature Store.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "AutoML",
+   "Forecasting (Serverless, Public Preview)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Prophet, Auto-ARIMA, and DeepAR on managed serverless GPU infrastructure; no cluster provisioning required.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "AutoML",
+   "Glass-Box Generated Notebooks"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Editable trial code for every model trained; inspect data exploration, preprocessing, feature engineering, training logic, SHAP analysis; reproducible and customizable.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "AutoML",
+   "SHAP Explainability"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Feature importance and impact analysis via SHAP Shapley values; disabled by default (memory-intensive); enable with shap_enabled=True in notebooks.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "AutoML",
+   "Data Preparation & Feature Selection"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Automatic semantic type detection, missing-value imputation, column inclusion/exclusion, categorical encoding; supported types: numeric, categorical, text, dates, arrays.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (7 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "AutoML",
+   "AutoML Python API"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Programmatic interface (databricks.automl.classify/regress/forecast) with full control: exclude_cols, imputers, time_col, split_col, feature_store_lookups.",
+  "violations": [
+   "slash list",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Training & compute",
+   "Distributed training & GPU",
+   "ML Runtime (Pre-configured GPU Clusters)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Cluster runtime with PyTorch (2.12.0), scikit-learn (1.7.2), XGBoost (3.2.0), TensorFlow (legacy on Runtime 17.3 LTS only), GPU drivers; Spark MLlib support.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Training & compute",
+   "Distributed training & GPU",
+   "AI Runtime (Serverless GPU)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Managed serverless GPU compute: 1×A10 (24 GB), 1×H100 (80 GB), or 8×H100 (per GPU). Pay-per-minute, scale-to-zero. Notebook and CLI access. Public Preview status Oct 2026.",
+  "violations": [
+   "too long (171>170)",
+   "enumeration (3 commas)",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Training & compute",
+   "Distributed training & GPU",
+   "Ray Train"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Framework-agnostic distributed training orchestration; multi-GPU/multi-node support for PyTorch, TensorFlow; integrates with Ray Data and Ray Tune for end-to-end pipelines.",
+  "violations": [
+   "too long (172>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Training & compute",
+   "Distributed training & GPU",
+   "Ray Tune (Hyperparameter Search)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Distributed parallel hyperparameter trials with ASHA early stopping; per-trial GPU reservations; integrates with MLflow for experiment tracking and child-run logging.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Training & compute",
+   "Distributed training & GPU",
+   "TorchDistributor (PyTorch on Spark)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Launcher for distributed PyTorch via Spark cluster resources; wraps torch.distributed.run; minimal migration from existing DDP code; Spark 3.4+ / Runtime 13.0 ML+.",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Training & compute",
+   "Distributed training & GPU",
+   "Spark MLlib (Distributed Classical ML)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Distributed classification, regression, clustering, collaborative filtering; pyspark.ml API for scalable ML on massive datasets; dimensionality reduction and feature engineering.",
+  "violations": [
+   "too long (178>170)",
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Training & compute",
+   "Distributed training & GPU",
+   "DeepSpeed (Memory & Scale Optimization)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "ZeRO sharding (stages 1-3), optimizer/gradient partitioning, CPU offload; via TorchDistributor on classic compute or AI Runtime; Llama 2 7B fine-tuning examples provided.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Training & compute",
+   "Distributed training & GPU",
+   "DeepSpeed (Memory & Scale Optimization)",
+   "ZeRO stages (1-3)"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Stage 1: optimizer sharding; Stage 2: gradient sharding; Stage 3: parameter sharding for extreme scale.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Training & compute",
+   "Distributed training & GPU",
+   "DeepSpeed (Memory & Scale Optimization)",
+   "Gradient partitioning"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Distribute gradients across workers; each worker computes a subset.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Training & compute",
+   "Distributed training & GPU",
+   "@distributed API (Serverless Single-Node)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Notebook decorator for single-node multi-GPU training (DDP, FSDP, DeepSpeed); serverless execution on AI Runtime; replaces TorchDistributor for compatible workloads without Spark.",
+  "violations": [
+   "too long (179>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "Productionization of validated models through real-time REST endpoints and batch inference; unified governance and automated promotion via Bundles and CI/CD.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Real-time serving endpoints"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Managed REST API endpoints with serverless auto-scaling, supporting >25K QPS with <50ms latency overhead; routes requests to UC-registered models with automatic monitoring.",
+  "violations": [
+   "too long (172>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Real-time serving endpoints",
+   "Auto-scaling to meet demand"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Endpoints automatically scale up or down based on traffic; serverless infrastructure handles provisioning.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Batch inference via ai_query"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "SQL function for large-scale batch scoring of custom & foundation models; integrates with Lakeflow jobs for scheduled batch pipelines; supports streaming table updates.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Batch inference via ai_query",
+   "SQL-based scoring function"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "ai_query() SQL function invoked on entire tables for batch-scale predictions; compatible with Lakeflow pipelines.",
+  "violations": [
+   "semicolon pile",
+   "no capital start"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Batch inference via ai_query",
+   "Custom model batch scoring"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Score custom UC-registered models across large tables; Spark distributed execution.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Batch inference via ai_query",
+   "Streaming table integration"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Batch inference updates streaming tables; compatible with Lakeflow Jobs triggers.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Batch inference via Spark UDFs"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Distributed scoring using custom Python/MLflow models registered in UC; scales across Spark cluster resources; alternative to ai_query for complex transformations.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Batch inference via Spark UDFs",
+   "Custom Python UDFs for scoring"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Define scoring logic as PySpark UDFs; executed distributedly across cluster.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Batch inference via Spark UDFs",
+   "UC-registered model serving"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Load UC models in UDFs; model versions and lineage tracked automatically.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Batch inference via Spark UDFs",
+   "Spark cluster resource scaling"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Leverage cluster auto-scaling for batch inference performance.",
+  "violations": [
+   "marketing word (leverage)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Express deployments (fast registration)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Pre-packages model artifacts & dependencies during MLflow registration (requires Env 3+, MLflow 3.12+); skips container build; max 200 GB model size; supports CPU & GPU.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Express deployments (fast registration)",
+   "Model artifact packaging at registration"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Artifacts packaged when model is registered; eliminates build-time delays.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Express deployments (fast registration)",
+   "Dependency pre-packaging and restoration"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Extra dependencies installed in notebook are captured and restored during serving; ensures dev-to-prod consistency.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Express deployments (fast registration)",
+   "Container build skipping"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Express deployments skip Docker image build entirely; eliminates build failures and acceleration path.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Express deployments (fast registration)",
+   "200 GB environment size limit"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Maximum packaged model size boundary; covers most production models and dependencies.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Express deployments (fast registration)",
+   "CPU and GPU compute support"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Register from serverless CPU or GPU; serve on matching compute type; compute consistency guaranteed.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Provisioned throughput (foundation models)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Dedicated inference capacity for foundation models (Llama, Mistral, Qwen); 1-3 month reservations; model-unit-based sizing; supports fine-tuned variants.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Provisioned throughput (foundation models)",
+   "Model-unit-based pricing"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Sizing based on model units; pricing depends on model size and reservation term.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Provisioned throughput (foundation models)",
+   "1-3 month reservation terms"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Flexible commitment periods (1, 2, or 3 months); cost optimization for sustained loads.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Triton GPU batching"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "NVIDIA Triton-backed throughput optimization via dynamic request batching on GPU endpoints; requires batch-friendly models and explicit enablement; improves throughput at trade-off of per-request latency.",
+  "violations": [
+   "too long (204>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Triton GPU batching",
+   "GPU endpoint optimization"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "GPU-specific throughput gains; trades per-request latency for higher aggregate throughput.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Triton GPU batching",
+   "Batch-friendly model requirement"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Models must support vectorized inference; not all architectures benefit from batching.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Triton GPU batching",
+   "Explicit enablement and configuration"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Batching is opt-in; requires explicit configuration during endpoint creation.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Feature serving integration"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Automatic feature lookup from online store during inference; pre-defined FeatureSpec endpoints for sub-ms latency; integrates model serving with Lakebase online feature store.",
+  "violations": [
+   "too long (175>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Feature serving integration",
+   "Online store REST endpoints"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Dedicated REST APIs for feature retrieval; sub-millisecond latency via Lakebase.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Feature serving integration",
+   "Lakebase-backed online store"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Managed PostgreSQL infrastructure with automatic scaling (CU_1, CU_2, CU_4, CU_8).",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Feature serving integration",
+   "Read replicas (up to 3 + primary)"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "High-availability configuration with up to 3 read replicas; 4 compute instances total.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Traffic splitting & A/B testing"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Route traffic between multiple models on one endpoint (e.g., 90% Champion / 10% Challenger); configurable splits enable online evaluation and gradual rollouts without endpoint restart.",
+  "violations": [
+   "too long (184>170)",
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Traffic splitting & A/B testing",
+   "Champion/Challenger pattern"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Run production (Champion) and candidate (Challenger) models in parallel; measure performance.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Traffic splitting & A/B testing",
+   "Configurable traffic splits"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Define split percentages (e.g., 90/10, 80/20); adjust without redeploying endpoint.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Traffic splitting & A/B testing",
+   "Online evaluation capability"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Compare real production metrics across models; statistically validate improvements.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Traffic splitting & A/B testing",
+   "Gradual rollouts without restart"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Incrementally increase Challenger traffic; revert if issues detected; no endpoint downtime.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Model versioning"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Immutable version history with automatic signatures; each version captures metadata, parameters, metrics, artifacts, source run; enables rollback and audit trails.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Model versioning",
+   "Immutable version history"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Each model version is immutable; complete audit trail of all versions ever registered.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Model versioning",
+   "Automatic model signatures"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "MLflow captures input schema and output schema automatically; prevents signature mismatches.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Model versioning",
+   "Source run tracking"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Links model version to originating MLflow run; enables traceability to training code and data.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Model versioning",
+   "Version-based rollback capability"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Revert to any prior version; serve previous model without code changes via alias update.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Aliases & stage promotion"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Mutable pointers (Champion, Staging, Prod aliases) to model versions; decouples promotion logic from inference code; enables A/B testing without code changes.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Aliases & stage promotion",
+   "Mutable pointers (Champion, Staging, Prod)"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Create named aliases that point to specific versions; update alias without changing code.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Aliases & stage promotion",
+   "Decoupled promotion logic"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Inference code references alias (e.g., 'Champion'); alias points to version; decouple deployment from serving.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Aliases & stage promotion",
+   "Stage-based promotion workflow"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Promote versions through stages (Staging → Prod); approval gates via governed tags.",
+  "violations": [
+   "semicolon pile",
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Aliases & stage promotion",
+   "A/B testing without code changes"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Use traffic splits and Champion/Challenger aliases; no serving-code modification.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Aliases & stage promotion",
+   "Zero-downtime alias updates"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Update alias to point to new version; no endpoint restarts or serving interruption.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Unity Catalog governance"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Three-level namespace (catalog.schema.model); fine-grained permissions (CREATE, EXECUTE, APPLY TAG); audit logging; cross-workspace discovery and access control.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Unity Catalog governance",
+   "Three-level namespace (catalog.schema.model)"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Models organized as catalog.schema.model; enables multi-tenant organization and discovery.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Unity Catalog governance",
+   "Models as FUNCTION securables"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Models treated as FUNCTION objects in UC; inherits FUNCTION permission model.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Unity Catalog governance",
+   "Audit logging"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "system.access.audit table records all model access, creation, modification actions.",
+  "violations": [
+   "no capital start"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Unity Catalog governance",
+   "Cross-workspace discovery and access control"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Models accessible across workspaces via metastore binding; catalog-level visibility control.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Training data lineage"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Auto-capture of upstream UC datasets via mlflow.log_input(); visible in model-version pages; enables compliance traceability and data-to-model dependency tracking.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Training data lineage",
+   "Auto-capture via mlflow.log_input()"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Explicit logging of training datasets; captured during mlflow.log_model().",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Training data lineage",
+   "Upstream UC dataset tracking"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Links model version to specific UC tables used for training; full 3-level namespace.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Training data lineage",
+   "Model-version page visibility"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Lineage displayed on model version page in UC UI; searchable and filterable.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Training data lineage",
+   "Compliance traceability"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Complete audit trail from data source → training → model; supports compliance audits.",
+  "violations": [
+   "semicolon pile",
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Model lineage visualization"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Interactive graph in Catalog Explorer showing data → features → training run → model version → serving; column-level lineage supported; tracks feature-engineering dependencies.",
+  "violations": [
+   "too long (176>170)",
+   "semicolon pile",
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Model lineage visualization",
+   "Interactive Catalog Explorer graph"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Visual lineage graph with clickable nodes; drill into dependencies.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Model lineage visualization",
+   "Data → features → training → model → serving chain"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Full chain from source data through feature tables, training, model, to serving endpoints.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Model lineage visualization",
+   "Column-level lineage"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Track which input columns flow to which output columns; fine-grained data provenance.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Model lineage visualization",
+   "Downstream consumption visibility"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "View which endpoints and jobs consume a given model; reverse-dependency queries.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Tags & metadata management"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Custom tags and governed tags on models/versions; governance tags support approval workflows; enables classification, compliance labeling, and discovery.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Tags & metadata management",
+   "Governed tags with approval workflows"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Tags with predefined values and approval gates; enforces compliance policies.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Tags & metadata management",
+   "Classification and lifecycle labeling"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Tag models as 'sensitive', 'prod', 'deprecated', etc.; drive automated actions.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Tags & metadata management",
+   "Compliance tagging support"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "HIPAA, GDPR, PCI labels; enables compliance reporting and access policies.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Tags & metadata management",
+   "Discoverable via search"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Filter and search models by tags; enables self-service model discovery.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Cross-workspace sharing"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Models accessible across workspaces via same UC metastore; catalog-binding configuration controls workspace visibility; enables shared MLOps practices across teams.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Cross-workspace sharing",
+   "Workspace visibility control"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Configure workspace-to-catalog bindings; restrict access if needed.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Cross-workspace sharing",
+   "Unified permissions model"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Same UC permissions apply across all workspaces; no per-workspace duplication.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Deployment jobs with approvals"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "New model versions auto-trigger deployment jobs; reviewers approve via governed tags; integrates MLflow 3 with Lakeflow Jobs for gated production promotion.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Deployment jobs with approvals",
+   "Governed tag-based reviewer approval"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Deployment jobs wait for governed tag approval; specifies reviewers and approval conditions.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Deployment jobs with approvals",
+   "Lakeflow Jobs integration"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Deployment defined as DAG task; supports complex orchestration and conditionals.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Deployment jobs with approvals",
+   "Gated production promotion"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Prevents unauthorized production deployments; enforces change control.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "Production monitoring, data/model quality evaluation, CI/CD automation, and continuous improvement—closing the loop between deployment and retraining.",
+  "violations": [
+   "dash/arrow splice",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Inference Tables"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "AI Gateway-enabled payload logging to Unity Catalog Delta tables; captures request/response for debugging, model quality analysis, and compliance audits. Legacy format deprecated Apr 30, 2026.",
+  "violations": [
+   "too long (192>170)",
+   "semicolon pile",
+   "enumeration (3 commas)",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Data Profiling (Lakehouse Monitoring)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Automated calculation of quality metrics (null counts, distinct values, min/max, quantiles, standard deviation, frequent values) with baseline and consecutive-window comparisons.",
+  "violations": [
+   "too long (178>170)",
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Data Profiling (Lakehouse Monitoring)",
+   "Snapshot profiles"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Single-point-in-time profiling of table state; captures baseline metrics for comparison with future windows; creates reference profile for anomaly detection.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Data Profiling (Lakehouse Monitoring)",
+   "Timeseries profiles"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Consecutive sliding-window profiling over time; tracks metric evolution across commits; enables trend detection and comparative window analysis.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Data Profiling (Lakehouse Monitoring)",
+   "Inference profiles"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Profile tracking for model inference requests captured in inference tables; monitors prediction payload distribution and output characteristics over time.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Drift Detection"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Numeric drift tests (Kolmogorov–Smirnov, Wasserstein distance, PSI) and categorical drift tests (chi-square, total variation, Jensen–Shannon) on predictions and features; baseline or consecutive-window comparisons.",
+  "violations": [
+   "too long (214>170)",
+   "semicolon pile",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Drift Detection",
+   "Numeric drift tests"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Three statistical tests for continuous distributions: Kolmogorov–Smirnov (KS) test for shape differences, Wasserstein distance for distribution shift magnitude, Population Stability Index (PSI) for category distribution stability.",
+  "violations": [
+   "too long (230>170)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Drift Detection",
+   "Categorical drift tests"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Three statistical tests for discrete distributions: chi-square test for independence, total variation distance (TV) for probability mass differences, Jensen–Shannon (JS) divergence for symmetric KL divergence.",
+  "violations": [
+   "too long (209>170)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Custom Metrics"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Define aggregate metrics (raw table columns), derived metrics (computed from aggregates), and drift metrics (time-window or baseline comparisons); minimize recomputation by layering.",
+  "violations": [
+   "too long (182>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Custom Metrics",
+   "Aggregate metrics"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Direct computations from raw table columns (count, min, max, mean, stddev, distinct, null_count); reusable base layer for derived metrics.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (6 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Custom Metrics",
+   "Derived metrics"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Computed from aggregate metrics using custom SQL expressions; enables domain-specific KPIs and composite quality indicators.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Custom Metrics",
+   "Drift metrics"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Comparison of current window metrics against baseline or previous window; detects statistical shifts in aggregate and derived metrics.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Monitoring Dashboards & Alerts"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Auto-generated profile-metrics tables; Lakeview visualization; configurable Databricks SQL alerts on quality/drift metrics with email, webhook, Slack, or PagerDuty notifications.",
+  "violations": [
+   "too long (178>170)",
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Monitoring Dashboards & Alerts",
+   "Lakeview dashboards"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Interactive visualizations of profile metrics and drift results; pre-built dashboard templates for quality monitoring; supports custom parameterization.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Monitoring Dashboards & Alerts",
+   "SQL alerts"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Databricks SQL alert rules triggered on metric thresholds or anomaly detection; configurable refresh intervals and escalation logic.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Monitoring Dashboards & Alerts",
+   "Notification channels"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Multi-channel alert delivery: email, webhook (HTTP POST), Slack (channels, direct messages), PagerDuty integration for on-call escalation.",
+  "violations": [
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "MLflow Evaluation (LLM Judges)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "8 built-in LLM judges (Correctness, RelevanceToQuery, RetrievalRelevance, etc.) for GenAI; custom LLM and code-based scorers; deterministic + heuristic evaluation; reusable across dev and production.",
+  "violations": [
+   "too long (199>170)",
+   "semicolon pile",
+   "plus-joined list",
+   "enumeration (3 commas)",
+   "no capital start"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Production Monitoring"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Run evaluation scorers on sampled production traffic; collect human feedback via Review Apps; combine with LLM judges for continuous quality, safety, and latency tracking with dashboards.",
+  "violations": [
+   "too long (187>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "MLOps Stacks"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Official reference templates combining ML code, bundle configuration, and CI/CD workflows for GitHub Actions / Azure DevOps; implements dev → staging → prod workflow with PR-triggered tests.",
+  "violations": [
+   "too long (190>170)",
+   "semicolon pile",
+   "slash list",
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Declarative Automation Bundles (DABs)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Infrastructure-as-code in YAML for ML projects; defines jobs, pipelines, experiments, models, endpoints, permissions; centralized configuration management for reproducible deployments.",
+  "violations": [
+   "too long (184>170)",
+   "semicolon pile",
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Declarative Automation Bundles (DABs)",
+   "Jobs resources"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Define Lakeflow Jobs in bundle YAML; specify triggers, tasks, runtime config, and dependencies for orchestrated ML workflows.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Declarative Automation Bundles (DABs)",
+   "Pipelines resources"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Define Lakeflow Pipelines (DLT) in bundle config; declarative ETL pipelines with SQL/Python code and quality expectations.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Declarative Automation Bundles (DABs)",
+   "Models resources"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Define model registry entries and aliases in bundles; bind models to experiment runs, enable versioning, and manage stage promotion workflows.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Declarative Automation Bundles (DABs)",
+   "Experiments resources"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Define MLflow experiment configuration in bundle YAML; organize tracking experiments across workspaces.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Declarative Automation Bundles (DABs)",
+   "Endpoints resources"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Define model serving endpoints in bundle config; manage scaling, traffic splitting, and feature serving integration.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Declarative Automation Bundles (DABs)",
+   "Permissions resources"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Define fine-grained access control for all resources in bundle; grant roles (viewer, editor, owner) to users and groups at object level.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Lakeflow Jobs (formerly Workflows)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "DAG-based orchestration with task dependencies, serverless execution, up to 1000 tasks per job; supports repair runs and complex control flow across multiple tasks.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Job Triggers"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Cron schedules, Delta table updates, file arrivals, model-registry events (Beta), continuous loops, and API-triggered runs; multi-trigger per job (Beta) with up to five triggers.",
+  "violations": [
+   "too long (178>170)",
+   "semicolon pile",
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Job Triggers",
+   "Cron schedule triggers"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Time-based job execution via cron expressions; supports UTC or workspace timezone configuration.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Job Triggers",
+   "Delta table triggers"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Job runs initiated on Delta table commit detection; combines with file triggers for data-arrival workflows.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Job Triggers",
+   "File arrival triggers"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Triggers on cloud object storage path events (S3, ADLS, GCS); supports wildcard patterns for flexible file detection.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Job Triggers",
+   "Model registry event triggers"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Triggers on model-related events: transition to production, new version registered, or tag changes; enables automated deployment pipelines (Beta).",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Job Triggers",
+   "Continuous loop triggers"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Job that continuously runs in a loop with configured interval; minimal latency between completions.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Job Triggers",
+   "API-triggered runs"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Manual job execution via REST API or UI; supports dynamic parameter passing at run time.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Lakeflow Pipelines (formerly DLT)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Declarative ETL with SQL/Python support, auto-scaling, and built-in data quality expectations; three violation policies (Warn/Drop/Fail) with different row-handling behavior.",
+  "violations": [
+   "too long (174>170)",
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Lakeflow Pipelines (formerly DLT)",
+   "SQL declarative mode"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Native DLT SQL syntax for table and view definitions; automatic dependency inference and incremental computation.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Lakeflow Pipelines (formerly DLT)",
+   "Python declarative mode"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "@table and @view decorators for Python functions; enables complex imperative logic within declarative pipeline framework.",
+  "violations": [
+   "semicolon pile",
+   "no capital start"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Lakeflow Pipelines (formerly DLT)",
+   "Quality expectations policies"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Row-handling policies on quality constraint violations: Warn (log only), Drop (skip row), Fail (halt pipeline); supports delta.quality expectations metadata.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Git Integration & Repos (Git Folders)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Native Git version control (now called Git Folders); multi-branch support, merge conflict resolution, notebook versioning, and CI/CD automation via Repos API.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "CI/CD with GitHub Actions & Azure DevOps"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Workflow templates for bundle validation, testing, deployment across dev/staging/prod; integrates with MLOps Stacks for automated release management.",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Terraform Support (Databricks Provider)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Infrastructure-as-code for workspace, catalogs, clusters, permissions; manages resources at account and workspace levels; separate from bundle layer; production-grade support.",
+  "violations": [
+   "too long (175>170)",
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Languages & libraries"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "Python, SQL, R, Scala with preinstalled ML frameworks—scikit-learn, XGBoost, PyTorch, Ray, Spark MLlib—on Databricks Runtimes and serverless compute.",
+  "violations": [
+   "dash/arrow splice",
+   "enumeration (7 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Languages & libraries",
+   "DS languages & frameworks"
+  ],
+  "depth": 2,
+  "type": "family",
+  "note": "Python, R, Spark, Ray and deep-learning frameworks.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Languages & libraries",
+   "DS languages & frameworks",
+   "Python Ecosystem"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Core ML libraries preinstalled on ML runtimes: pandas (data manipulation), scikit-learn (algorithms), XGBoost/LightGBM (boosting), statsmodels (statistics).",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Languages & libraries",
+   "DS languages & frameworks",
+   "Python Ecosystem",
+   "pandas"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Data manipulation and analysis library; Runtime 19 ML includes 2.3.3; cornerstone of single-node analytics and feature engineering.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Languages & libraries",
+   "DS languages & frameworks",
+   "Python Ecosystem",
+   "scikit-learn"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Classification, regression, clustering, feature engineering; Runtime 19 ML includes 1.7.2; top-tier support for traditional ML workflows.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Languages & libraries",
+   "DS languages & frameworks",
+   "Python Ecosystem",
+   "XGBoost"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Gradient boosting library; Runtime 19 ML includes 3.2.0; production-grade boosting for tabular data at scale.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Languages & libraries",
+   "DS languages & frameworks",
+   "Python Ecosystem",
+   "LightGBM"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Fast gradient boosting; Runtime 19 ML includes 4.6.0; community-integrated alternative to XGBoost with memory efficiency.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Languages & libraries",
+   "DS languages & frameworks",
+   "Python Ecosystem",
+   "statsmodels"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Statistical modeling and hypothesis testing; available on ML runtimes; complementary to scikit-learn for classical statistics.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Languages & libraries",
+   "DS languages & frameworks",
+   "R Support"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Multi-language runtime support via %r magic command in notebooks; requires dedicated compute (not standard/serverless). SparkR deprecated in Runtime 16.0+; migrate to sparklyr.",
+  "violations": [
+   "too long (176>170)",
+   "semicolon pile",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Languages & libraries",
+   "DS languages & frameworks",
+   "PySpark (Spark Python API)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Distributed data processing framework; core Databricks compute engine for parallel DataFrame operations on massive datasets; supported on serverless, standard, and dedicated compute.",
+  "violations": [
+   "too long (182>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Languages & libraries",
+   "DS languages & frameworks",
+   "Spark MLlib"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Distributed ML library built on Apache Spark; classification, regression, clustering, collaborative filtering; pyspark.ml API for scalable ML pipelines on distributed data.",
+  "violations": [
+   "too long (172>170)",
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Languages & libraries",
+   "DS languages & frameworks",
+   "Ray (Distributed Computing)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Framework-agnostic distributed computing for hyperparameter tuning (Ray Tune), distributed training (Ray Train), and data processing; integrates PyTorch, TensorFlow, Hugging Face.",
+  "violations": [
+   "too long (179>170)",
+   "semicolon pile",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Languages & libraries",
+   "DS languages & frameworks",
+   "Deep Learning Frameworks"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "PyTorch (top-tier GA support 2026; 2.12.0 on Runtime 19 ML) and TensorFlow (legacy; removed from Runtime 18.0+; available on Runtime 17.3 LTS with 2.19.0).",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Languages & libraries",
+   "DS languages & frameworks",
+   "Deep Learning Frameworks",
+   "PyTorch"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Top-tier GPU-native deep learning framework; CPU and GPU builds preinstalled on ML runtimes; Runtime 19 ML includes 2.12.0.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Languages & libraries",
+   "DS languages & frameworks",
+   "Deep Learning Frameworks",
+   "TensorFlow"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Legacy framework; removed from Runtime 19 ML; available on Runtime 17.3 LTS (2.19.0); open-source TensorFlow incompatible with latest CUDA; slated for removal.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Languages & libraries",
+   "DS languages & frameworks",
+   "pandas API on Spark"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Spark DataFrames with pandas-compatible API; seamless scaling from single-node pandas to distributed pyspark.pandas for data engineering workflows.",
+  "violations": [
+   "semicolon pile",
+   "marketing word (seamless)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Languages & libraries",
+   "DS languages & frameworks",
+   "Spark NLP (Community Library)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "NLP library by John Snow Labs; tokenization, NER, embeddings, text processing on Spark; community-integrated for production-grade NLP at scale; available via Partner Connect.",
+  "violations": [
+   "too long (174>170)",
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ }
+]

@@ -1,0 +1,217 @@
+[
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration"
+  ],
+  "note": "MCP integration lets agents access governed data and services through protocol-based managed connectors."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers"
+  ],
+  "note": "Managed MCP servers provide governed agent access to Databricks services including analytics, search, and SQL."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers",
+   "Genie One MCP (GA Sep 2026)"
+  ],
+  "note": "Genie One MCP enables natural-language analytics for Claude, ChatGPT, and Cursor through model context protocol."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers",
+   "Genie Agent MCP"
+  ],
+  "note": "Genie Agent MCP provides scoped analytics access for domain-specific agents with agent-level isolation."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers",
+   "AI Search MCP"
+  ],
+  "note": "AI Search MCP enables agents to retrieve information from unstructured documents using hybrid search."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers",
+   "Databricks SQL MCP"
+  ],
+  "note": "Databricks SQL MCP lets agents execute SQL for data-engineering and developer workflows."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers",
+   "Unity Catalog Functions MCP"
+  ],
+  "note": "Unity Catalog Functions MCP exposes governed UC functions as MCP tools for composable operations."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "Managed MCP servers",
+   "Unity Gateway governance"
+  ],
+  "note": "Unity Gateway governance applies policies, rate limits, and audit logging to all MCP traffic."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors"
+  ],
+  "note": "External connectors provide governed agent access to cloud services including Google Workspace, Microsoft 365, and GitHub."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "Google Workspace (GA Sep 2026)"
+  ],
+  "note": "Google Workspace MCP provides read-only access to Drive, Gmail, and Calendar through governed connectors."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "Microsoft 365 (GA Sep 2026)"
+  ],
+  "note": "Microsoft 365 MCP provides per-user OAuth access to SharePoint, Teams, and Outlook."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "Atlassian (GA Sep 2026)"
+  ],
+  "note": "Atlassian MCP enables agents to access and search Jira issues and Confluence pages."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "Slack (GA Sep 2026)"
+  ],
+  "note": "Slack MCP provides read-only access to channels, messages, and files through governed connectors."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "GitHub (GA Sep 2026)"
+  ],
+  "note": "GitHub MCP enables agents to read and write files, issues, and pull requests in authorized repositories."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "Glean (Beta)"
+  ],
+  "note": "Glean MCP enables agents to search and retrieve information from internal knowledge bases."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "External connectors",
+   "Per-user OAuth"
+  ],
+  "note": "Per-user OAuth implements governed access through Unity Catalog and Gateway with audit logging."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "MCP Services + custom MCP"
+  ],
+  "note": "MCP Services lets you register external MCPs as governed assets and deploy custom MCPs as Databricks Apps."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "MCP Services + custom MCP",
+   "Register external MCP as UC securable"
+  ],
+  "note": "Registering external MCPs as UC securables applies unified governance to MCP assets."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "MCP Services + custom MCP",
+   "UC Connections for credentials"
+  ],
+  "note": "UC Connections manages credentials including OAuth tokens and API keys with unified governance."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "MCP Services + custom MCP",
+   "Custom MCP as Databricks App"
+  ],
+  "note": "Custom MCP as Databricks App lets you deploy stateless MCP servers with scale-to-zero hosting."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "MCP Services + custom MCP",
+   "Route through Unity Gateway"
+  ],
+  "note": "Routing through Unity Gateway enables policies and rate limiting with full observability."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "MCP integration",
+   "MCP Services + custom MCP",
+   "DurableAgentServer support"
+  ],
+  "note": "DurableAgentServer support provides crash-recoverable agent state for MCP-based tools."
+ }
+]

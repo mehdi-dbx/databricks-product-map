@@ -1,0 +1,293 @@
+[
+  {
+    "tree": "ai-tree.json",
+    "pillar": "MCP integration",
+    "capsule": "Managed MCP servers",
+    "solves": [
+      {
+        "axis": "Integration",
+        "problem": "Custom **connectors** per tool",
+        "solution": "**Standard** MCP endpoints"
+      },
+      {
+        "axis": "Security",
+        "problem": "Credential **sprawl** across agents",
+        "solution": "**Centralized** auth (OBO)"
+      },
+      {
+        "axis": "Governance",
+        "problem": "Agent access **uncontrolled**",
+        "solution": "**Unity Catalog** enforces grants"
+      },
+      {
+        "axis": "Development",
+        "problem": "Building server **infrastructure**",
+        "solution": "Databricks **operates** it"
+      },
+      {
+        "axis": "Business logic",
+        "problem": "Agents **infer** context",
+        "solution": "Genie **Ontology** grounds queries"
+      },
+      {
+        "axis": "Observability",
+        "problem": "Tool usage **hidden**",
+        "solution": "**Audit** via Unity Gateway"
+      }
+    ],
+    "sources": [
+      "Glean: managed MCP servers benefits (centralized governance, OBO auth, UC integration)",
+      "Glean: managed MCP servers challenges (credential management, authorization, monitoring)"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "MCP integration",
+    "capsule": "MCP Services + custom MCP",
+    "solves": [
+      {
+        "axis": "Customization",
+        "problem": "No **native** integrations available",
+        "solution": "**Register** external MCPs"
+      },
+      {
+        "axis": "Deployment",
+        "problem": "Where to **host** MCP server",
+        "solution": "Databricks **Apps** runtime"
+      },
+      {
+        "axis": "Registration",
+        "problem": "Ungoverned **tool** exposure",
+        "solution": "**UC securable** model"
+      },
+      {
+        "axis": "Development",
+        "problem": "Build from **scratch** each time",
+        "solution": "Starter **templates** included"
+      },
+      {
+        "axis": "Existing APIs",
+        "problem": "REST APIs not **toolified**",
+        "solution": "OpenAPI **spec** to MCP"
+      }
+    ],
+    "sources": [
+      "WebFetch: Custom MCP servers on Databricks (Starter template, REST API, existing servers)",
+      "WebFetch: MCP registration and connection (mcp- prefix, OAuth, CAN USE permissions)"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Data foundation for AI",
+    "capsule": "Lakehouse / Delta Lake",
+    "solves": [
+      {
+        "axis": "Consistency",
+        "problem": "Data **corruption** mid-stream",
+        "solution": "**ACID** transactions"
+      },
+      {
+        "axis": "Schema",
+        "problem": "Enforcement **breaks** on change",
+        "solution": "**Evolution** supported"
+      },
+      {
+        "axis": "Workloads",
+        "problem": "**Separate** stores for batch/stream",
+        "solution": "**Unified** ingestion layer"
+      },
+      {
+        "axis": "Format",
+        "problem": "**Proprietary** or complex formats",
+        "solution": "**Open** Delta standard"
+      },
+      {
+        "axis": "Reliability",
+        "problem": "Transactional **inconsistency**",
+        "solution": "Consistency **guaranteed**"
+      }
+    ],
+    "sources": [
+      "WebFetch: Lakehouse architecture and Delta Lake (ACID, schema evolution, batch/streaming, medallion pattern)"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Data foundation for AI",
+    "capsule": "Lakeflow",
+    "solves": [
+      {
+        "axis": "Ingestion",
+        "problem": "Manual **connector** code",
+        "solution": "**Managed** Connect service"
+      },
+      {
+        "axis": "Transformation",
+        "problem": "Pipeline **orchestration** complex",
+        "solution": "**Declarative** Pipelines"
+      },
+      {
+        "axis": "Authoring",
+        "problem": "SQL/Python **required** for ETL",
+        "solution": "**Visual** Designer (no-code)"
+      },
+      {
+        "axis": "Intelligence",
+        "problem": "Workflows **hardcoded** manually",
+        "solution": "Genie **Code** NL generation"
+      },
+      {
+        "axis": "Orchestration",
+        "problem": "Job dependencies **manual**",
+        "solution": "**Automatic** execution order"
+      }
+    ],
+    "sources": [
+      "Glean: Lakeflow components (Connect, Pipelines, Jobs, Designer, Genie Code integration)",
+      "Glean: Lakeflow Designer and natural language support"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Data foundation for AI",
+    "capsule": "Lakebase — serverless Postgres",
+    "solves": [
+      {
+        "axis": "Agent state",
+        "problem": "Session memory **external** to DB",
+        "solution": "**Native** long/short-term store"
+      },
+      {
+        "axis": "Features",
+        "problem": "Online/offline **mismatch**",
+        "solution": "**Low-latency** serving"
+      },
+      {
+        "axis": "Governance",
+        "problem": "App data **ungoverned**",
+        "solution": "**UC-synced** tables"
+      },
+      {
+        "axis": "Dev workflow",
+        "problem": "Prod data **in** test env",
+        "solution": "Git-like **branches**"
+      },
+      {
+        "axis": "Reliability",
+        "problem": "Single-point **failure**",
+        "solution": "**High availability** (99.99% SLA)"
+      }
+    ],
+    "sources": [
+      "Glean: Lakebase capabilities (agent state, feature store, branching, HA, UC-synced)"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Data foundation for AI",
+    "capsule": "Lakebase Search",
+    "solves": [
+      {
+        "axis": "Search",
+        "problem": "Semantic or keyword **separately**",
+        "solution": "**Hybrid** vector+BM25"
+      },
+      {
+        "axis": "Integration",
+        "problem": "Separate **vector DB** required",
+        "solution": "Native **Postgres** functions"
+      },
+      {
+        "axis": "Ranking",
+        "problem": "Merging **results** manually",
+        "solution": "**RRF** ranking built-in"
+      },
+      {
+        "axis": "Storage",
+        "problem": "Vector data **replicated** elsewhere",
+        "solution": "**Single source** of truth"
+      }
+    ],
+    "sources": [
+      "Web search: Lakebase Search GA September 18, 2026 (lakebase_vector, lakebase_text, RRF hybrid)"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Data foundation for AI",
+    "capsule": "Predictive Optimization",
+    "solves": [
+      {
+        "axis": "Maintenance",
+        "problem": "Manual **OPTIMIZE** scheduling",
+        "solution": "**ROI-driven** auto-running"
+      },
+      {
+        "axis": "Clustering",
+        "problem": "Clustering keys **hand-tuned**",
+        "solution": "**Automatic** key selection"
+      },
+      {
+        "axis": "Efficiency",
+        "problem": "Maintenance **overtunes** tables",
+        "solution": "**Query-aware** decisions"
+      },
+      {
+        "axis": "Scope",
+        "problem": "Only **UC managed** eligible",
+        "solution": "**Universal** UC support"
+      },
+      {
+        "axis": "Operations",
+        "problem": "Maintenance job **overhead**",
+        "solution": "**Serverless** compute"
+      }
+    ],
+    "sources": [
+      "Web search: Predictive Optimization (OPTIMIZE/VACUUM/ANALYZE/clustering auto, liquid clustering, ROI-based)"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Agentic Data Management",
+    "capsule": "Anomaly detection & remediation",
+    "solves": [
+      {
+        "axis": "Monitoring",
+        "problem": "Data freshness **invisible**",
+        "solution": "**Automatic** anomaly detection"
+      },
+      {
+        "axis": "Coverage",
+        "problem": "Deep **profiling** schemas slow",
+        "solution": "**Schema-wide** monitoring"
+      },
+      {
+        "axis": "Remediation",
+        "problem": "Repairs **manual** and risky",
+        "solution": "**Orchestrated** via Lakeflow Jobs"
+      },
+      {
+        "axis": "Alerting",
+        "problem": "No **notification** channels",
+        "solution": "Email/Slack/**Webhook** integration"
+      },
+      {
+        "axis": "Governance",
+        "problem": "Repair **policies** undocumented",
+        "solution": "Allowlist + **audit** trail"
+      }
+    ],
+    "sources": [
+      "Web search: Anomaly detection and remediation (monitoring freshness/completeness, event-driven/job-driven remediation, Lakeflow Jobs orchestration)"
+    ],
+    "confidence": "verify"
+  }
+]

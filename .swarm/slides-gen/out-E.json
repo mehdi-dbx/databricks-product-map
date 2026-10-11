@@ -1,0 +1,337 @@
+[
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Foundation Models & LLM access",
+    "capsule": "Foundation Model APIs",
+    "solves": [
+      {
+        "axis": "Provider choice",
+        "problem": "Vendor **lock-in** to single model provider",
+        "solution": "**Multi-provider** unified API (Anthropic, OpenAI, Google, Meta, Qwen, Grok, others)"
+      },
+      {
+        "axis": "Cost management",
+        "problem": "Unpredictable token **spend** growth",
+        "solution": "**Provisioned throughput** (on-demand or reserved) + **priority** mode pricing"
+      },
+      {
+        "axis": "Production reliability",
+        "problem": "**Unavailable** endpoints during peak usage",
+        "solution": "**SLA-backed** capacity with reserved or on-demand provisioning"
+      },
+      {
+        "axis": "Model evaluation",
+        "problem": "**Fragmented** testing across providers",
+        "solution": "**Unified endpoint** for A/B testing and model swapping"
+      },
+      {
+        "axis": "Deployment strategy",
+        "problem": "**Expensive** pay-per-token for production",
+        "solution": "**Flexibility** to move between pricing tiers without code changes"
+      }
+    ],
+    "sources": [
+      "https://docs.databricks.com/en/generative-ai/foundation-models/index.html"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Foundation Models & LLM access",
+    "capsule": "External model services",
+    "solves": [
+      {
+        "axis": "Credential management",
+        "problem": "API keys **scattered** across code and team members",
+        "solution": "**Centralized** encryption, secure storage, and rotation via AI Gateway"
+      },
+      {
+        "axis": "Access control",
+        "problem": "**Ungoverned** external API calls bypass security",
+        "solution": "**Unified serving endpoint** with permission enforcement"
+      },
+      {
+        "axis": "Usage tracking",
+        "problem": "**Blind** to external model spending",
+        "solution": "**Rate limiting** + **usage tracking** through AI Gateway"
+      },
+      {
+        "axis": "Traffic routing",
+        "problem": "**Imbalanced** load across providers",
+        "solution": "**Traffic routing** policies per external model (percentage-based)"
+      },
+      {
+        "axis": "Audit compliance",
+        "problem": "External model access **unaudited**",
+        "solution": "**Unity Catalog** integration for governance and audit logs"
+      }
+    ],
+    "sources": [
+      "https://docs.databricks.com/en/generative-ai/external-models/index.html"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Governance for AI",
+    "capsule": "Unity Catalog for AI assets",
+    "solves": [
+      {
+        "axis": "Asset governance",
+        "problem": "AI models, agents, functions **ungoverned** individually",
+        "solution": "UC governs **all asset types**: models, agents, UC functions (tools), MCP services, connections, credentials"
+      },
+      {
+        "axis": "Access control",
+        "problem": "Inconsistent **permission** enforcement across assets",
+        "solution": "**RLAC/ABAC** with role and attribute-based policies"
+      },
+      {
+        "axis": "Lineage tracking",
+        "problem": "Unknown **dependencies** between models and data",
+        "solution": "**Lineage** visibility showing data→model→agent flows"
+      },
+      {
+        "axis": "Audit compliance",
+        "problem": "**Unaudited** access to production AI assets",
+        "solution": "**Audit logs** for all access, modification, and usage events"
+      },
+      {
+        "axis": "Credential security",
+        "problem": "External credentials **scattered** and unmanaged",
+        "solution": "UC manages **connections** + **credentials** with encryption at rest"
+      }
+    ],
+    "sources": [
+      "https://docs.databricks.com/en/mlflow/index.html",
+      "https://docs.databricks.com/en/admin/unity-catalog/index.html"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Governance for AI",
+    "capsule": "Review Apps",
+    "solves": [
+      {
+        "axis": "Quality feedback",
+        "problem": "Agent quality **subjective** without ground truth",
+        "solution": "**Expert assessments** attached to MLflow traces with structured labels"
+      },
+      {
+        "axis": "Eval dataset creation",
+        "problem": "Manual **spreadsheet** labeling disconnected from traces",
+        "solution": "**Trace-linked** assessments promoted directly into evaluation datasets"
+      },
+      {
+        "axis": "Live testing",
+        "problem": "Testing **without feedback loop** or expert input",
+        "solution": "**Chat UI** for experts to test agents live and attach immediate feedback"
+      },
+      {
+        "axis": "Automated evaluation",
+        "problem": "LLM judges **misaligned** with expert expectations",
+        "solution": "Ground truth from experts used to **train and align** judges"
+      },
+      {
+        "axis": "Reproducibility",
+        "problem": "Eval **criteria drift** across labeling sessions",
+        "solution": "**Versioned** labeling schemas and assessments stored on traces"
+      }
+    ],
+    "sources": [
+      "Glean AI: Review Apps for MLflow evaluation and human feedback"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Real-time & transactional AI",
+    "capsule": "Lakehouse//RT",
+    "solves": [
+      {
+        "axis": "Query latency",
+        "problem": "BI and dashboard queries **slow** (seconds)",
+        "solution": "**Sub-100ms** SQL responses via Reyden engine (as low as 10ms on small datasets)"
+      },
+      {
+        "axis": "Data freshness",
+        "problem": "Copied serving data **stale** vs operational source",
+        "solution": "Queries run **live** on governed Delta/Iceberg lakehouse tables"
+      },
+      {
+        "axis": "Infrastructure cost",
+        "problem": "**Separate** OLAP warehouse + operational copy",
+        "solution": "**Single lakehouse** source for all SQL workloads (read-only)"
+      },
+      {
+        "axis": "Concurrency",
+        "problem": "Dashboard users **bottleneck** shared warehouse",
+        "solution": "Handles **12,000 QPS** with fully asynchronous execution model"
+      },
+      {
+        "axis": "SQL coverage",
+        "problem": "Limited analytical SQL supported",
+        "solution": "**ANSI SQL** on Delta and Apache Iceberg (read-only mode)"
+      }
+    ],
+    "sources": [
+      "Web search: Databricks Lakehouse Real-Time Reyden low-latency SQL (June 2026 announcement)",
+      "https://docs.databricks.com/gcp/en/compute/sql-warehouse/real-time"
+    ],
+    "confidence": "verify"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Real-time & transactional AI",
+    "capsule": "LTAP",
+    "solves": [
+      {
+        "axis": "Sync infrastructure",
+        "problem": "**Replication pipelines** needed between operational DB and warehouse",
+        "solution": "**Shared lake storage** (Parquet, Delta, Iceberg) eliminates sync"
+      },
+      {
+        "axis": "Data consistency",
+        "problem": "**Eventual consistency** lag between operational and analytical",
+        "solution": "**Transactionally consistent** analytical reads at Postgres LSN"
+      },
+      {
+        "axis": "Operational simplicity",
+        "problem": "Maintain **two systems** (Postgres + Warehouse)",
+        "solution": "**One logical dataset** across Lakebase (transactional) + Lakehouse//RT (analytical)"
+      },
+      {
+        "axis": "Cost efficiency",
+        "problem": "Data **duplication** and replication overhead",
+        "solution": "Row-to-columnar **conversion** at storage layer (not on Postgres compute)"
+      },
+      {
+        "axis": "Real-time analytics",
+        "problem": "**Stale** operational data in analytics",
+        "solution": "Lakehouse//RT merges recent Postgres changes with lake for live results"
+      }
+    ],
+    "sources": [
+      "Web search: Databricks LTAP Lake Transactional Analytical Processing (June 2026 announcement)",
+      "https://docs.databricks.com/aws/en/oltp/projects/ltap-overview"
+    ],
+    "confidence": "verify"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Domain-specific AI",
+    "capsule": "CustomerLake",
+    "solves": [
+      {
+        "axis": "Customer insight",
+        "problem": "Customer data **fragmented** across systems",
+        "solution": "**Customer 360** profiles unifying transactions, behavior, engagement"
+      },
+      {
+        "axis": "Identity resolution",
+        "problem": "Duplicate customer records create **fragmentation**",
+        "solution": "**AI-assisted** identity matching (deterministic, probabilistic, ML-based)"
+      },
+      {
+        "axis": "Campaign automation",
+        "problem": "**Manual** audience segmentation and activation",
+        "solution": "**Campaign agents** for audience creation, activation, and optimization"
+      },
+      {
+        "axis": "Governance",
+        "problem": "Customer data **ungoverned** with no lineage",
+        "solution": "Embedded in lakehouse with **Unity Catalog** governance and audit"
+      },
+      {
+        "axis": "Real-time personalization",
+        "problem": "**Batch** profile lookups delay personalization",
+        "solution": "**Real-time profile API** with predictive models for instant attributes"
+      }
+    ],
+    "sources": [
+      "Web search: Databricks CustomerLake CDP customer data platform (June 2026 announcement)",
+      "https://www.databricks.com/product/customerlake-cdp"
+    ],
+    "confidence": "verify"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Domain-specific AI",
+    "capsule": "Lakewatch",
+    "solves": [
+      {
+        "axis": "Data unification",
+        "problem": "Security telemetry **siloed** in separate SIEM vendors",
+        "solution": "**Unified** security, IT, and business data on lakehouse with UC governance"
+      },
+      {
+        "axis": "AI-driven automation",
+        "problem": "**Manual** threat hunting and incident triage",
+        "solution": "**Autonomous agents** for investigation, rule authoring, and data normalization"
+      },
+      {
+        "axis": "Data scale",
+        "problem": "Logs **deleted** for cost; limited retention capacity",
+        "solution": "**Unlimited** petabyte-scale ingestion and retention (object storage economics)"
+      },
+      {
+        "axis": "Detection management",
+        "problem": "Detections **scattered** across tools; hard to version and test",
+        "solution": "**Detection-as-Code** with version control and automated testing"
+      },
+      {
+        "axis": "Query performance",
+        "problem": "**Slow** log searches across large datasets",
+        "solution": "**Sub-second** queries across billions of records for rapid investigations"
+      },
+      {
+        "axis": "Log normalization",
+        "problem": "**Heterogeneous** log formats from diverse sources",
+        "solution": "**Automatic OCSF** mapping (Open Cybersecurity Schema Framework)"
+      }
+    ],
+    "sources": [
+      "Web search: Databricks Lakewatch agentic SIEM",
+      "https://www.databricks.com/product/lakewatch"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Domain-specific AI",
+    "capsule": "Row Zero / Genie ZeroOps",
+    "solves": [
+      {
+        "axis": "Spreadsheet + data",
+        "problem": "Analysis **disconnected** from governed data source",
+        "solution": "**Row Zero** spreadsheets with live **Genie** integration to import queries as formulas"
+      },
+      {
+        "axis": "Analysis automation",
+        "problem": "**Manual** scenario modeling and calculations in spreadsheets",
+        "solution": "Genie turns natural-language questions into SQL; Row Zero formats results live"
+      },
+      {
+        "axis": "Ops automation",
+        "problem": "**Manual** fix validation and approval for operational changes",
+        "solution": "**Genie ZeroOps** agent investigates, proposes fixes in sandbox, requires human approval"
+      },
+      {
+        "axis": "Governance",
+        "problem": "Spreadsheet analysis **ungoverned** and unaudited",
+        "solution": "Integrated with **Unity Catalog**; governs data access and audit trail"
+      },
+      {
+        "axis": "Speed-to-insight",
+        "problem": "**Slow** manual spreadsheet-based analytics workflows",
+        "solution": "**AI-assisted** formula generation; instant data refresh from lakehouse"
+      }
+    ],
+    "sources": [
+      "Web search: Databricks Row Zero Genie ZeroOps AI automation (Sept 2026 acquisition announcement)",
+      "Web search: Databricks acquisition Row Zero September 2026"
+    ],
+    "confidence": "verify"
+  }
+]

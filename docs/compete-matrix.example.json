@@ -1,0 +1,168 @@
+{
+  "schemaVersion": "1.0",
+  "feature": "AI Gateway",
+  "featurePath": ["Governance & Platform", "AI Gateway"],
+  "home": "unity-gateway",
+  "updated": "2026-10",
+  "sources": "docs/competitors/",
+
+  "legend": {
+    "ga":         { "symbol": "✓", "label": "native / GA" },
+    "beta":       { "symbol": "β", "label": "beta / preview" },
+    "partial":    { "symbol": "~", "label": "partial / depends" },
+    "none":       { "symbol": "✕", "label": "not offered" },
+    "unverified": { "symbol": "?", "label": "unverified" }
+  },
+
+  "segments": [
+    { "id": "true-fight",    "label": "True fight",       "note": "direct head-to-head" },
+    { "id": "platform",      "label": "Platform context", "note": "cloud-native stacks" },
+    { "id": "complementary", "label": "Coexistence",      "note": "run alongside, not instead" },
+    { "id": "diy-oss",       "label": "DIY & OSS" },
+    { "id": "non-compete",   "label": "Not a competitor", "note": "different buyer" }
+  ],
+
+  "competitors": [
+    { "id": "unity-gateway", "name": "Unity Gateway", "home": true },
+    { "id": "portkey",       "name": "Portkey",       "segment": "true-fight",    "vendor": "PANW" },
+    { "id": "bedrock",       "name": "AWS Bedrock",   "segment": "true-fight" },
+    { "id": "gcp",           "name": "Google Cloud",  "segment": "platform" },
+    { "id": "azure",         "name": "Azure",         "segment": "platform" },
+    { "id": "kong",          "name": "Kong",          "segment": "complementary" },
+    { "id": "mulesoft",      "name": "MuleSoft",      "segment": "complementary" },
+    { "id": "litellm",       "name": "LiteLLM",       "segment": "diy-oss" },
+    { "id": "cloudflare",    "name": "Cloudflare",    "segment": "non-compete" },
+    { "id": "bifrost",       "name": "Bifrost",       "segment": "diy-oss",       "vendor": "Maxim AI" }
+  ],
+
+  "groups": [
+    {
+      "id": "core",
+      "label": "Core gateway",
+      "capabilities": [
+        {
+          "id": "multi-provider-routing",
+          "label": "Multi-provider routing",
+          "cells": {
+            "unity-gateway": { "status": "ga" },
+            "portkey": { "status": "ga" },
+            "bedrock": { "status": "none" },
+            "gcp": { "status": "beta" },
+            "azure": { "status": "ga" },
+            "kong": { "status": "ga" },
+            "mulesoft": { "status": "ga" },
+            "litellm": { "status": "ga" },
+            "cloudflare": { "status": "ga" },
+            "bifrost": { "status": "ga" }
+          }
+        },
+        {
+          "id": "semantic-caching",
+          "label": "Semantic caching",
+          "cells": {
+            "unity-gateway": { "status": "none" },
+            "portkey": { "status": "ga", "emphasis": true },
+            "bedrock": { "status": "none" },
+            "gcp": { "status": "ga" },
+            "azure": { "status": "ga" },
+            "kong": { "status": "ga" },
+            "mulesoft": { "status": "ga" },
+            "litellm": { "status": "ga" },
+            "cloudflare": { "status": "none" },
+            "bifrost": { "status": "ga" }
+          }
+        }
+      ]
+    },
+    {
+      "id": "governance",
+      "label": "Governance & access",
+      "capabilities": [
+        {
+          "id": "data-catalog-tie",
+          "label": "Data-catalog tie",
+          "cells": {
+            "unity-gateway": { "status": "ga", "note": "Unity Catalog", "emphasis": true },
+            "portkey": { "status": "none" },
+            "bedrock": { "status": "none" },
+            "gcp": { "status": "partial", "note": "24h-lagged" },
+            "azure": { "status": "none" },
+            "kong": { "status": "beta" },
+            "mulesoft": { "status": "partial" },
+            "litellm": { "status": "none" },
+            "cloudflare": { "status": "none" },
+            "bifrost": { "status": "none" }
+          }
+        },
+        {
+          "id": "zero-egress",
+          "label": "Zero-egress / data-local",
+          "cells": {
+            "unity-gateway": { "status": "ga", "note": "ai_query()", "emphasis": true },
+            "portkey": { "status": "none" },
+            "bedrock": { "status": "none" },
+            "gcp": { "status": "none" },
+            "azure": { "status": "none" },
+            "kong": { "status": "partial" },
+            "mulesoft": { "status": "partial" },
+            "litellm": { "status": "partial" },
+            "cloudflare": { "status": "none" },
+            "bifrost": { "status": "partial" }
+          }
+        }
+      ]
+    },
+    {
+      "id": "cost",
+      "label": "Observability & cost",
+      "capabilities": [
+        {
+          "id": "hard-spend-caps",
+          "label": "Hard spend caps",
+          "cells": {
+            "unity-gateway": { "status": "ga" },
+            "portkey": { "status": "ga" },
+            "bedrock": { "status": "none" },
+            "gcp": { "status": "partial", "note": "token-quota" },
+            "azure": { "status": "beta", "note": "TPM" },
+            "kong": { "status": "ga" },
+            "mulesoft": { "status": "ga" },
+            "litellm": { "status": "ga" },
+            "cloudflare": { "status": "none" },
+            "bifrost": { "status": "unverified", "soft": true }
+          }
+        }
+      ]
+    },
+    {
+      "id": "agents",
+      "label": "Agents & MCP",
+      "capabilities": [
+        {
+          "id": "a2a-governance",
+          "label": "A2A / multi-agent governance",
+          "cells": {
+            "unity-gateway": { "status": "beta" },
+            "portkey": { "status": "beta" },
+            "bedrock": { "status": "partial" },
+            "gcp": { "status": "partial" },
+            "azure": { "status": "partial" },
+            "kong": { "status": "ga", "emphasis": true },
+            "mulesoft": { "status": "ga", "emphasis": true },
+            "litellm": { "status": "ga" },
+            "cloudflare": { "status": "none" },
+            "bifrost": { "status": "partial" }
+          }
+        }
+      ]
+    }
+  ],
+
+  "verdicts": [
+    { "dimension": "Data-catalog governance", "home": "Unity Catalog, one plane for data and AI", "field": "no tie; GCP partial and 24h-delayed", "winner": "home" },
+    { "dimension": "Data proximity", "home": "zero-egress batch + open-model hosting", "field": "every call egresses to a provider", "winner": "home" },
+    { "dimension": "Cost enforcement", "home": "hard caps + queryable chargeback", "field": "hyperscalers alert-only; pure-plays enforce", "winner": "home" },
+    { "dimension": "Caching & routing", "home": "no semantic cache; cost/quality Smart Routing (beta)", "field": "semantic cache + latency routing widespread", "winner": "field" },
+    { "dimension": "Agent orchestration", "home": "governance GA; orchestration/A2A beta", "field": "MuleSoft and Kong lead (A2A GA)", "winner": "field" }
+  ]
+}

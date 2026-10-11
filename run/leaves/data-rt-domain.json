@@ -1,0 +1,227 @@
+[
+  {
+    "n": "Data foundation for AI",
+    "children": [
+      {
+        "n": "Lakehouse / Delta Lake",
+        "s": "GA",
+        "c": "ok",
+        "note": "Open ACID format; trusted data for AI.",
+        "children": [
+          { "n": "Open ACID format", "note": "Transaction support and data consistency foundation." },
+          { "n": "Schema enforcement", "note": "Prevents data quality drift." },
+          { "n": "Batch & streaming ingestion", "note": "Scalable append/insert at any throughput." },
+          { "n": "Governed metadata layer", "note": "Lineage, versioning, audit trail." },
+          { "n": "Multi-cloud support", "note": "AWS, Azure, GCP deployment options." }
+        ],
+        "docs": ["https://docs.databricks.com/aws/en/lakehouse"],
+        "since": "GA (foundational)",
+        "deck": null
+      },
+      {
+        "n": "Lakeflow",
+        "s": "GA",
+        "c": "ok",
+        "note": "Connect / Pipelines / Jobs (GA) + Designer (Public Preview, NL via Genie Code).",
+        "children": [
+          { "n": "Lakeflow Connect", "note": "Managed ingestion from databases, SaaS, files, streaming." },
+          { "n": "Lakeflow Pipelines", "note": "Batch and streaming SQL/Python transformation." },
+          { "n": "Lakeflow Designer", "s": "Public Preview", "note": "Visual + NL canvas for no-code data prep; produces production code." },
+          { "n": "Lakeflow Jobs", "note": "Orchestration and monitoring for data/analytics/AI workflows." },
+          { "n": "Genie Code integration", "note": "NL transformation descriptions; AI Functions for enrichment." },
+          { "n": "Delta output", "note": "All pipelines produce UC-governed Delta tables." }
+        ],
+        "docs": ["https://docs.databricks.com/aws/en/data-engineering"],
+        "since": "Connect/Pipelines/Jobs GA; Designer Public Preview",
+        "deck": null
+      },
+      {
+        "n": "Lakebase — serverless Postgres",
+        "s": "GA",
+        "c": "ok",
+        "note": "Agent memory/state, online feature store, branching, HA; UC-synced (GA since Jan 2026).",
+        "children": [
+          { "n": "Serverless compute/storage separation", "note": "Auto-scale, scale-to-zero, pay-per-minute." },
+          { "n": "Database branching", "note": "Dev/test isolation and point-in-time recovery." },
+          { "n": "High availability & backups", "note": "Automatic replication, failover, point-in-time restore." },
+          { "n": "Unity Catalog synchronization", "note": "Sync Postgres tables ↔ Delta; bidirectional governance." },
+          { "n": "Agent memory backend", "note": "Cross-session semantic search, conversation state persistence." },
+          { "n": "Online feature store", "note": "Low-latency feature lookups for real-time inference." },
+          { "n": "PostgreSQL compatibility", "note": "Standard Postgres protocol and ecosystem." }
+        ],
+        "docs": ["https://docs.databricks.com/aws/en/oltp/projects"],
+        "since": "GA Jan 22, 2026; UC sync GA Jan 2026",
+        "deck": null
+      },
+      {
+        "n": "Lakebase Search",
+        "s": "GA",
+        "c": "ok",
+        "new": true,
+        "note": "Vector + BM25 + hybrid inside Postgres (Sept 28), no separate vector DB.",
+        "children": [
+          { "n": "Vector search (HNSW)", "note": "Hierarchical Navigable Small World indexing for semantic similarity." },
+          { "n": "BM25 keyword search", "note": "Full-text term relevance for product names, identifiers." },
+          { "n": "Hybrid search (RRF)", "note": "Reciprocal Rank Fusion merging semantic + keyword results." },
+          { "n": "Configurable tokenization", "note": "Custom token rules for domain-specific text prep." },
+          { "n": "Native Postgres integration", "note": "No separate vector DB; co-locate memory and search." },
+          { "n": "Metadata filtering", "note": "Filter results by column predicates before ranking." }
+        ],
+        "docs": ["https://docs.databricks.com/aws/en/oltp/projects/lakebase-search"],
+        "since": "GA Sept 28, 2026",
+        "deck": null
+      },
+      {
+        "n": "Predictive Optimization",
+        "s": "GA",
+        "c": "ok",
+        "note": "ROI-based OPTIMIZE / VACUUM / ANALYZE / clustering on UC managed tables.",
+        "children": [
+          { "n": "Automated OPTIMIZE", "note": "Merge small files based on workload cost-benefit analysis." },
+          { "n": "Automatic VACUUM", "note": "Remove old versions; optimize storage without manual tuning." },
+          { "n": "Workload pattern analysis", "note": "Query replay to predict future access patterns." },
+          { "n": "ROI-driven clustering", "note": "Propose and apply clustering where cost savings exceed overhead." },
+          { "n": "Zero-configuration operation", "note": "No manual cost-threshold tuning required." },
+          { "n": "Audit trail", "note": "system.storage.predictive_optimization_operations_history tracks decisions." }
+        ],
+        "docs": ["https://docs.databricks.com/aws/en/optimizations/predictive-optimization"],
+        "since": "GA",
+        "deck": null
+      }
+    ]
+  },
+  {
+    "n": "Agentic Data Management",
+    "sub": "FY27 internal block",
+    "children": [
+      {
+        "n": "Classification / profiling / monitoring",
+        "s": "GA",
+        "c": "ok",
+        "note": "AI-driven, UC-integrated: data classification, Lakehouse Monitoring, data-quality monitoring.",
+        "children": [
+          { "n": "Data classification", "note": "Automated discovery and labeling of sensitive/regulated columns." },
+          { "n": "PII tagging", "note": "Mark personal identifiable information for access control." },
+          { "n": "Data profiling", "note": "Automated schema inspection, distributions, nulls, cardinality analysis." },
+          { "n": "Lakehouse Monitoring", "note": "Baseline trust signals and data-quality metrics over time." },
+          { "n": "Data-quality monitoring", "note": "Continuous AI-driven anomaly detection and alerts." },
+          { "n": "UC integration", "note": "Classification tags feed row/column-level access policies." },
+          { "n": "Automated remediation signals", "note": "Agents recommend or execute fixes for quality issues." }
+        ],
+        "docs": ["https://docs.databricks.com/aws/en/data-governance/unity-catalog/"],
+        "since": "GA (part of Agentic Data Management; integrated with UC)",
+        "deck": null
+      },
+      {
+        "n": "Anomaly detection & remediation",
+        "s": "PuP",
+        "c": "ok",
+        "note": "Anomaly detection + automated remediation (remediation still emerging).",
+        "children": [
+          { "n": "Anomaly detection", "note": "Identify unusual changes in data, pipeline behavior, system performance." },
+          { "n": "Statistical baselines", "note": "Establish normal ranges for metrics before flagging outliers." },
+          { "n": "Genie Code monitoring", "note": "Investigate anomalies in Lakeflow Pipelines via natural language." },
+          { "n": "Multi-signal correlation", "note": "Cross-table pattern analysis to avoid false positives." },
+          { "n": "Automated diagnostics", "note": "Root-cause analysis for data/pipeline failures." },
+          { "n": "Proposed remediation", "note": "Suggest SQL/code fixes for detected issues." },
+          { "n": "Governed execution", "note": "Remediation actions subject to approval and UC permissions." }
+        ],
+        "docs": [],
+        "since": "GA (anomaly detection); Emerging (automated remediation)",
+        "deck": null
+      }
+    ]
+  },
+  {
+    "n": "Real-time & transactional AI",
+    "children": [
+      {
+        "n": "Lakehouse//RT",
+        "s": "Beta",
+        "c": "verify",
+        "note": "Serverless low-latency SQL (\"Reyden\" engine) on Delta/Iceberg; read-only. Public-only — verify name & status.",
+        "children": [
+          { "n": "Reyden query engine", "note": "Proprietary low-latency SQL execution; millisecond-scale latency." },
+          { "n": "Delta/Iceberg compatibility", "note": "Read open formats directly without copying to proprietary format." },
+          { "n": "High-concurrency optimization", "note": "Sub-100ms queries at 12,000 QPS on analytical benchmarks." },
+          { "n": "SELECT-only mode", "note": "Read-only design; transactional writes via Lakebase." },
+          { "n": "Unity Catalog governance", "note": "Fine-grained access control inherited from lakehouse asset permissions." },
+          { "n": "Vectorized execution", "note": "SIMD-optimized query processing for analytical workloads." }
+        ],
+        "docs": ["https://databricks.com/blog/introducing-lakehousert-real-time-performance-unified-lakehouse"],
+        "since": "Announced June 16 DAIS 2026; Beta (current)",
+        "deck": null
+      },
+      {
+        "n": "LTAP",
+        "s": "Announced",
+        "c": "verify",
+        "note": "Lake Transactional-Analytical Processing unifying Lakebase + lakehouse. Public-only — verify.",
+        "children": [
+          { "n": "Lakebase transactional layer", "note": "Serverless Postgres for ACID transactions and application state." },
+          { "n": "Lakehouse analytical layer", "note": "Delta/Iceberg analytics on same underlying storage." },
+          { "n": "Unified storage foundation", "note": "Single copy of data; eliminate sync pipelines and dual writes." },
+          { "n": "Shared governance layer", "note": "Unity Catalog policies govern both transactional and analytical access." },
+          { "n": "Automatic synchronization", "note": "Changes in Postgres visible to analytics queries without manual ETL." },
+          { "n": "Cost optimization", "note": "No redundancy; simplified architecture reduces operations overhead." }
+        ],
+        "docs": ["https://databricks.com/company/newsroom/press-releases/databricks-launches-ltap-first-lake-transactionalanalytical"],
+        "since": "Announced June 16, 2026; availability cloud/region-dependent",
+        "deck": null
+      }
+    ]
+  },
+  {
+    "n": "Domain-specific AI",
+    "children": [
+      {
+        "n": "CustomerLake",
+        "s": "PrivPreview",
+        "c": "verify",
+        "note": "Agentic CDP (Customer 360, identity resolution, campaign agents). Public-only — verify.",
+        "children": [
+          { "n": "Customer 360 profiles", "note": "Unified identity from behavior, transactions, engagement, operations data." },
+          { "n": "Identity resolution", "note": "Deterministic + probabilistic + agent-assisted multi-source matching." },
+          { "n": "Audience segmentation", "note": "Natural-language Genie-based exploration and dynamic cohorts." },
+          { "n": "Profile Agents", "note": "Agentic continuous updates to customer profiles based on new signals." },
+          { "n": "Campaign Agents", "note": "Autonomous personalized engagement (\"infinity campaigns\") across channels." },
+          { "n": "Reverse ETL activation", "note": "Activate audiences to Adobe, Meta, Braze, Iterable, LiveRamp, Trade Desk." },
+          { "n": "UC governance", "note": "Lakehouse-backed; Unity Catalog permissions govern data access." }
+        ],
+        "docs": ["https://databricks.com/blog/introducing-customerlake-agentic-cdp"],
+        "since": "Private Preview June 16, 2026 (DAIS); no public GA date announced",
+        "deck": null
+      },
+      {
+        "n": "Lakewatch",
+        "s": "PrivPreview",
+        "c": "verify",
+        "note": "Agentic SIEM; linked to Panther acquisition. Public-only — verify.",
+        "children": [
+          { "n": "Cross-source correlation", "note": "Security events + business context + IT logs → unified threat view." },
+          { "n": "OCSF standardized telemetry", "note": "Normalize logs from multi-vendor sources for correlation at scale." },
+          { "n": "AI-assisted threat hunting", "note": "Natural-language Genie queries over petabyte-scale security data." },
+          { "n": "Detection engineering automation", "note": "Agentic rule authoring, normalization, triage (detection-as-code)." },
+          { "n": "Agent-assisted investigation", "note": "Context gathering, alert triage, summarization for SOC analysts." },
+          { "n": "Panther integration", "note": "Databricks acquired Panther Aug 11 2026; 100+ prebuilt connectors." },
+          { "n": "Petabyte-scale retention", "note": "Long-term historical analysis in cost-efficient cloud storage." }
+        ],
+        "docs": ["https://databricks.com/blog/databricks-enters-security-market-launch-lakewatch-new-agentic-siem"],
+        "since": "Private Preview March 24, 2026; Panther acquisition completed Aug 11, 2026",
+        "deck": null
+      },
+      {
+        "n": "Row Zero / Genie ZeroOps",
+        "s": "Announced",
+        "c": "verify",
+        "note": "Governed spreadsheets into Genie / ML auto-remediation. Single-source — verify.",
+        "children": [
+          { "n": "⚠ unverified", "note": "Public-only; confirm name/status before customer use." }
+        ],
+        "docs": [],
+        "since": "Announced",
+        "deck": null
+      }
+    ]
+  }
+]

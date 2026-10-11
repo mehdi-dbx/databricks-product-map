@@ -1,0 +1,369 @@
+[
+  {
+    "n": "Monitoring & evaluation",
+    "s": "GA",
+    "c": "ok",
+    "note": "Data/model quality monitoring, drift detection, and evaluation.",
+    "docs": [
+      "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/",
+      "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor/",
+      "https://docs.databricks.com/aws/en/machine-learning/model-serving/monitor-diagnose-endpoints"
+    ],
+    "children": [
+      {
+        "n": "Inference Tables",
+        "note": "AI Gateway-enabled payload logging to Unity Catalog Delta tables; captures request/response for debugging, model quality analysis, and compliance audits. Legacy format deprecated Apr 30, 2026.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/ai-gateway/inference-tables-beta",
+          "https://docs.databricks.com/aws/en/machine-learning/model-serving/inference-tables"
+        ]
+      },
+      {
+        "n": "Data Profiling (Lakehouse Monitoring)",
+        "note": "Automated calculation of quality metrics (null counts, distinct values, min/max, quantiles, standard deviation, frequent values) with baseline and consecutive-window comparisons.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/"
+        ],
+        "children": [
+          {
+            "n": "Snapshot profiles",
+            "note": "Single-point-in-time profiling of table state; captures baseline metrics for comparison with future windows; creates reference profile for anomaly detection."
+          },
+          {
+            "n": "Timeseries profiles",
+            "note": "Consecutive sliding-window profiling over time; tracks metric evolution across commits; enables trend detection and comparative window analysis."
+          },
+          {
+            "n": "Inference profiles",
+            "note": "Profile tracking for model inference requests captured in inference tables; monitors prediction payload distribution and output characteristics over time."
+          }
+        ]
+      },
+      {
+        "n": "Drift Detection",
+        "note": "Numeric drift tests (Kolmogorov–Smirnov, Wasserstein distance, PSI) and categorical drift tests (chi-square, total variation, Jensen–Shannon) on predictions and features; baseline or consecutive-window comparisons.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/monitor-output"
+        ],
+        "children": [
+          {
+            "n": "Numeric drift tests",
+            "note": "Three statistical tests for continuous distributions: Kolmogorov–Smirnov (KS) test for shape differences, Wasserstein distance for distribution shift magnitude, Population Stability Index (PSI) for category distribution stability."
+          },
+          {
+            "n": "Categorical drift tests",
+            "note": "Three statistical tests for discrete distributions: chi-square test for independence, total variation distance (TV) for probability mass differences, Jensen–Shannon (JS) divergence for symmetric KL divergence."
+          }
+        ]
+      },
+      {
+        "n": "Anomaly Detection",
+        "note": "Automatic monitoring of table freshness (learns commit patterns, flags late updates) and completeness (predicts row-volume bounds, flags drops) using historical patterns.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+        ]
+      },
+      {
+        "n": "Custom Metrics",
+        "note": "Define aggregate metrics (raw table columns), derived metrics (computed from aggregates), and drift metrics (time-window or baseline comparisons); minimize recomputation by layering.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/custom-metrics"
+        ],
+        "children": [
+          {
+            "n": "Aggregate metrics",
+            "note": "Direct computations from raw table columns (count, min, max, mean, stddev, distinct, null_count); reusable base layer for derived metrics."
+          },
+          {
+            "n": "Derived metrics",
+            "note": "Computed from aggregate metrics using custom SQL expressions; enables domain-specific KPIs and composite quality indicators."
+          },
+          {
+            "n": "Drift metrics",
+            "note": "Comparison of current window metrics against baseline or previous window; detects statistical shifts in aggregate and derived metrics."
+          }
+        ]
+      },
+      {
+        "n": "Monitoring Dashboards & Alerts",
+        "note": "Auto-generated profile-metrics tables; Lakeview visualization; configurable Databricks SQL alerts on quality/drift metrics with email, webhook, Slack, or PagerDuty notifications.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/monitor-alerts"
+        ],
+        "children": [
+          {
+            "n": "Lakeview dashboards",
+            "note": "Interactive visualizations of profile metrics and drift results; pre-built dashboard templates for quality monitoring; supports custom parameterization."
+          },
+          {
+            "n": "SQL alerts",
+            "note": "Databricks SQL alert rules triggered on metric thresholds or anomaly detection; configurable refresh intervals and escalation logic."
+          },
+          {
+            "n": "Notification channels",
+            "note": "Multi-channel alert delivery: email, webhook (HTTP POST), Slack (channels, direct messages), PagerDuty integration for on-call escalation."
+          }
+        ]
+      },
+      {
+        "n": "MLflow Evaluation (LLM Judges)",
+        "note": "8 built-in LLM judges (Correctness, RelevanceToQuery, RetrievalRelevance, etc.) for GenAI; custom LLM and code-based scorers; deterministic + heuristic evaluation; reusable across dev and production.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor/concepts/judges",
+          "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor/"
+        ]
+      },
+      {
+        "n": "Production Monitoring",
+        "note": "Run evaluation scorers on sampled production traffic; collect human feedback via Review Apps; combine with LLM judges for continuous quality, safety, and latency tracking with dashboards.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor/production-monitoring",
+          "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/"
+        ]
+      }
+    ],
+    "since": "GA; rebranded mid-2026"
+  },
+  {
+    "n": "MLOps & CI/CD",
+    "s": "GA",
+    "c": "ok",
+    "note": "Automation, bundles, and pipelines from dev to prod.",
+    "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-stacks",
+      "https://docs.databricks.com/aws/en/dev-tools/bundles/",
+      "https://docs.databricks.com/aws/en/jobs/",
+      "https://docs.databricks.com/aws/en/dev-tools/ci-cd/"
+    ],
+    "children": [
+      {
+        "n": "MLOps Stacks",
+        "note": "Official reference templates combining ML code, bundle configuration, and CI/CD workflows for GitHub Actions / Azure DevOps; implements dev → staging → prod workflow with PR-triggered tests.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-stacks"
+        ]
+      },
+      {
+        "n": "Declarative Automation Bundles (DABs)",
+        "note": "Infrastructure-as-code in YAML for ML projects; defines jobs, pipelines, experiments, models, endpoints, permissions; centralized configuration management for reproducible deployments.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/dev-tools/bundles/",
+          "https://docs.databricks.com/aws/en/dev-tools/bundles/settings"
+        ],
+        "children": [
+          {
+            "n": "Jobs resources",
+            "note": "Define Lakeflow Jobs in bundle YAML; specify triggers, tasks, runtime config, and dependencies for orchestrated ML workflows."
+          },
+          {
+            "n": "Pipelines resources",
+            "note": "Define Lakeflow Pipelines (DLT) in bundle config; declarative ETL pipelines with SQL/Python code and quality expectations."
+          },
+          {
+            "n": "Models resources",
+            "note": "Define model registry entries and aliases in bundles; bind models to experiment runs, enable versioning, and manage stage promotion workflows."
+          },
+          {
+            "n": "Experiments resources",
+            "note": "Define MLflow experiment configuration in bundle YAML; organize tracking experiments across workspaces."
+          },
+          {
+            "n": "Endpoints resources",
+            "note": "Define model serving endpoints in bundle config; manage scaling, traffic splitting, and feature serving integration."
+          },
+          {
+            "n": "Permissions resources",
+            "note": "Define fine-grained access control for all resources in bundle; grant roles (viewer, editor, owner) to users and groups at object level."
+          }
+        ]
+      },
+      {
+        "n": "Lakeflow Jobs (formerly Workflows)",
+        "note": "DAG-based orchestration with task dependencies, serverless execution, up to 1000 tasks per job; supports repair runs and complex control flow across multiple tasks.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/jobs/"
+        ]
+      },
+      {
+        "n": "Job Triggers",
+        "note": "Cron schedules, Delta table updates, file arrivals, model-registry events (Beta), continuous loops, and API-triggered runs; multi-trigger per job (Beta) with up to five triggers.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/jobs/triggers",
+          "https://docs.databricks.com/aws/en/jobs/model-update-triggers"
+        ],
+        "children": [
+          {
+            "n": "Cron schedule triggers",
+            "note": "Time-based job execution via cron expressions; supports UTC or workspace timezone configuration."
+          },
+          {
+            "n": "Delta table triggers",
+            "note": "Job runs initiated on Delta table commit detection; combines with file triggers for data-arrival workflows."
+          },
+          {
+            "n": "File arrival triggers",
+            "note": "Triggers on cloud object storage path events (S3, ADLS, GCS); supports wildcard patterns for flexible file detection."
+          },
+          {
+            "n": "Model registry event triggers",
+            "note": "Triggers on model-related events: transition to production, new version registered, or tag changes; enables automated deployment pipelines (Beta)."
+          },
+          {
+            "n": "Continuous loop triggers",
+            "note": "Job that continuously runs in a loop with configured interval; minimal latency between completions."
+          },
+          {
+            "n": "API-triggered runs",
+            "note": "Manual job execution via REST API or UI; supports dynamic parameter passing at run time."
+          }
+        ]
+      },
+      {
+        "n": "Lakeflow Pipelines (formerly DLT)",
+        "note": "Declarative ETL with SQL/Python support, auto-scaling, and built-in data quality expectations; three violation policies (Warn/Drop/Fail) with different row-handling behavior.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/ldp/",
+          "https://docs.databricks.com/aws/en/ldp/expectations"
+        ],
+        "children": [
+          {
+            "n": "SQL declarative mode",
+            "note": "Native DLT SQL syntax for table and view definitions; automatic dependency inference and incremental computation."
+          },
+          {
+            "n": "Python declarative mode",
+            "note": "@table and @view decorators for Python functions; enables complex imperative logic within declarative pipeline framework."
+          },
+          {
+            "n": "Quality expectations policies",
+            "note": "Row-handling policies on quality constraint violations: Warn (log only), Drop (skip row), Fail (halt pipeline); supports delta.quality expectations metadata."
+          }
+        ]
+      },
+      {
+        "n": "Git Integration & Repos (Git Folders)",
+        "note": "Native Git version control (now called Git Folders); multi-branch support, merge conflict resolution, notebook versioning, and CI/CD automation via Repos API.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/repos/",
+          "https://docs.databricks.com/aws/en/repos/ci-cd"
+        ]
+      },
+      {
+        "n": "CI/CD with GitHub Actions & Azure DevOps",
+        "note": "Workflow templates for bundle validation, testing, deployment across dev/staging/prod; integrates with MLOps Stacks for automated release management.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/dev-tools/ci-cd/",
+          "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-workflow"
+        ]
+      },
+      {
+        "n": "Terraform Support (Databricks Provider)",
+        "note": "Infrastructure-as-code for workspace, catalogs, clusters, permissions; manages resources at account and workspace levels; separate from bundle layer; production-grade support.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/dev-tools/terraform/",
+          "https://registry.terraform.io/providers/databricks/databricks/latest"
+        ]
+      }
+    ],
+    "since": "GA; continuously maintained"
+  },
+  {
+    "n": "DS languages & frameworks",
+    "s": "GA",
+    "c": "ok",
+    "note": "Python, R, Spark, Ray and deep-learning frameworks.",
+    "docs": [
+      "https://docs.databricks.com/aws/en/release-notes/runtime/19ml",
+      "https://docs.databricks.com/aws/en/machine-learning/databricks-runtime-ml",
+      "https://docs.databricks.com/aws/en/machine-learning/ray"
+    ],
+    "children": [
+      {
+        "n": "Python Ecosystem",
+        "note": "Core ML libraries preinstalled on ML runtimes: pandas (data manipulation), scikit-learn (algorithms), XGBoost/LightGBM (boosting), statsmodels (statistics).",
+        "docs": [
+          "https://docs.databricks.com/aws/en/release-notes/runtime/19ml",
+          "https://docs.databricks.com/aws/en/machine-learning/databricks-runtime-ml"
+        ],
+        "children": [
+          {
+            "n": "pandas",
+            "note": "Data manipulation and analysis library; Runtime 19 ML includes 2.3.3; cornerstone of single-node analytics and feature engineering."
+          },
+          {
+            "n": "scikit-learn",
+            "note": "Classification, regression, clustering, feature engineering; Runtime 19 ML includes 1.7.2; top-tier support for traditional ML workflows."
+          },
+          {
+            "n": "XGBoost",
+            "note": "Gradient boosting library; Runtime 19 ML includes 3.2.0; production-grade boosting for tabular data at scale."
+          },
+          {
+            "n": "LightGBM",
+            "note": "Fast gradient boosting; Runtime 19 ML includes 4.6.0; community-integrated alternative to XGBoost with memory efficiency."
+          },
+          {
+            "n": "statsmodels",
+            "note": "Statistical modeling and hypothesis testing; available on ML runtimes; complementary to scikit-learn for classical statistics."
+          }
+        ]
+      },
+      {
+        "n": "R Support",
+        "note": "Multi-language runtime support via %r magic command in notebooks; requires dedicated compute (not standard/serverless). SparkR deprecated in Runtime 16.0+; migrate to sparklyr.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/notebooks/notebooks-code",
+          "https://docs.databricks.com/aws/en/sparkr"
+        ]
+      },
+      {
+        "n": "PySpark (Spark Python API)",
+        "note": "Distributed data processing framework; core Databricks compute engine for parallel DataFrame operations on massive datasets; supported on serverless, standard, and dedicated compute."
+      },
+      {
+        "n": "Spark MLlib",
+        "note": "Distributed ML library built on Apache Spark; classification, regression, clustering, collaborative filtering; pyspark.ml API for scalable ML pipelines on distributed data."
+      },
+      {
+        "n": "Ray (Distributed Computing)",
+        "note": "Framework-agnostic distributed computing for hyperparameter tuning (Ray Tune), distributed training (Ray Train), and data processing; integrates PyTorch, TensorFlow, Hugging Face.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/machine-learning/ray"
+        ]
+      },
+      {
+        "n": "Deep Learning Frameworks",
+        "note": "PyTorch (top-tier GA support 2026; 2.12.0 on Runtime 19 ML) and TensorFlow (legacy; removed from Runtime 18.0+; available on Runtime 17.3 LTS with 2.19.0).",
+        "docs": [
+          "https://docs.databricks.com/aws/en/release-notes/runtime/19ml",
+          "https://docs.databricks.com/aws/en/machine-learning/databricks-runtime-ml-maintenance"
+        ],
+        "children": [
+          {
+            "n": "PyTorch",
+            "note": "Top-tier GPU-native deep learning framework; CPU and GPU builds preinstalled on ML runtimes; Runtime 19 ML includes 2.12.0."
+          },
+          {
+            "n": "TensorFlow",
+            "note": "Legacy framework; removed from Runtime 19 ML; available on Runtime 17.3 LTS (2.19.0); open-source TensorFlow incompatible with latest CUDA; slated for removal."
+          }
+        ]
+      },
+      {
+        "n": "pandas API on Spark",
+        "note": "Spark DataFrames with pandas-compatible API; seamless scaling from single-node pandas to distributed pyspark.pandas for data engineering workflows.",
+        "docs": [
+          "https://spark.apache.org/docs/latest/api/python/reference/pyspark.pandas/"
+        ]
+      },
+      {
+        "n": "Spark NLP (Community Library)",
+        "note": "NLP library by John Snow Labs; tokenization, NER, embeddings, text processing on Spark; community-integrated for production-grade NLP at scale; available via Partner Connect.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/machine-learning/reference-solutions/natural-language-processing"
+        ]
+      }
+    ],
+    "since": "GA; preinstalled on ML runtimes"
+  }
+]

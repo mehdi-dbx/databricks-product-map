@@ -1,0 +1,460 @@
+[
+  {
+    "n": "Model Serving & batch inference",
+    "s": "GA",
+    "c": "ok",
+    "note": "Real-time and batch inference on governed models.",
+    "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/model-serving/",
+      "https://docs.databricks.com/aws/en/machine-learning/model-inference"
+    ],
+    "children": [
+      {
+        "n": "Real-time serving endpoints",
+        "s": "GA",
+        "note": "Managed REST API endpoints with serverless auto-scaling, supporting >25K QPS with <50ms latency overhead; routes requests to UC-registered models with automatic monitoring.",
+        "children": [
+          {
+            "n": "Custom models (scikit-learn, XGBoost, PyTorch, Hugging Face)",
+            "note": "MLflow-packaged models deployed to REST endpoints with automatic containerization and monitoring."
+          },
+          {
+            "n": "Foundation models (Llama, Claude, Mistral, Qwen)",
+            "note": "Databricks-hosted foundation models with pay-per-token or provisioned throughput pricing."
+          },
+          {
+            "n": "External models (OpenAI, Anthropic, via AI Gateway)",
+            "note": "Third-party provider models accessible through unified governance and rate limiting."
+          },
+          {
+            "n": "Auto-scaling to meet demand",
+            "note": "Endpoints automatically scale up or down based on traffic; serverless infrastructure handles provisioning."
+          },
+          {
+            "n": "High throughput capability (>25K QPS)",
+            "note": "Supports over 25 thousand queries per second with <50ms latency overhead for peak loads."
+          }
+        ]
+      },
+      {
+        "n": "Batch inference via ai_query",
+        "s": "GA",
+        "note": "SQL function for large-scale batch scoring of custom & foundation models; integrates with Lakeflow jobs for scheduled batch pipelines; supports streaming table updates.",
+        "children": [
+          {
+            "n": "SQL-based scoring function",
+            "note": "ai_query() SQL function invoked on entire tables for batch-scale predictions; compatible with Lakeflow pipelines."
+          },
+          {
+            "n": "Custom model batch scoring",
+            "note": "Score custom UC-registered models across large tables; Spark distributed execution."
+          },
+          {
+            "n": "Foundation model batch scoring",
+            "note": "Score foundation models (Llama, Claude) in batch mode with pay-per-token pricing."
+          },
+          {
+            "n": "Managed scaling and retries",
+            "note": "Automatic resource scaling and fault-tolerant retry logic for large batch jobs."
+          },
+          {
+            "n": "Streaming table integration",
+            "note": "Batch inference updates streaming tables; compatible with Lakeflow Jobs triggers."
+          }
+        ]
+      },
+      {
+        "n": "Batch inference via Spark UDFs",
+        "s": "GA",
+        "note": "Distributed scoring using custom Python/MLflow models registered in UC; scales across Spark cluster resources; alternative to ai_query for complex transformations.",
+        "children": [
+          {
+            "n": "Custom Python UDFs for scoring",
+            "note": "Define scoring logic as PySpark UDFs; executed distributedly across cluster."
+          },
+          {
+            "n": "UC-registered model serving",
+            "note": "Load UC models in UDFs; model versions and lineage tracked automatically."
+          },
+          {
+            "n": "Spark cluster resource scaling",
+            "note": "Leverage cluster auto-scaling for batch inference performance."
+          },
+          {
+            "n": "Complex transformation support",
+            "note": "UDFs support custom preprocessing, post-processing, and multi-model inference logic."
+          }
+        ]
+      },
+      {
+        "n": "Express deployments (fast registration)",
+        "s": "GA",
+        "note": "Pre-packages model artifacts & dependencies during MLflow registration (requires Env 3+, MLflow 3.12+); skips container build; max 200 GB model size; supports CPU & GPU.",
+        "children": [
+          {
+            "n": "Model artifact packaging at registration",
+            "note": "Artifacts packaged when model is registered; eliminates build-time delays."
+          },
+          {
+            "n": "Dependency pre-packaging and restoration",
+            "note": "Extra dependencies installed in notebook are captured and restored during serving; ensures dev-to-prod consistency."
+          },
+          {
+            "n": "Container build skipping",
+            "note": "Express deployments skip Docker image build entirely; eliminates build failures and acceleration path."
+          },
+          {
+            "n": "200 GB environment size limit",
+            "note": "Maximum packaged model size boundary; covers most production models and dependencies."
+          },
+          {
+            "n": "CPU and GPU compute support",
+            "note": "Register from serverless CPU or GPU; serve on matching compute type; compute consistency guaranteed."
+          }
+        ]
+      },
+      {
+        "n": "Provisioned throughput (foundation models)",
+        "s": "GA",
+        "note": "Dedicated inference capacity for foundation models (Llama, Mistral, Qwen); 1-3 month reservations; model-unit-based sizing; supports fine-tuned variants.",
+        "children": [
+          {
+            "n": "Dedicated inference capacity",
+            "note": "Reserved compute for consistent, high-throughput foundation model inference."
+          },
+          {
+            "n": "Model-unit-based pricing",
+            "note": "Sizing based on model units; pricing depends on model size and reservation term."
+          },
+          {
+            "n": "1-3 month reservation terms",
+            "note": "Flexible commitment periods (1, 2, or 3 months); cost optimization for sustained loads."
+          },
+          {
+            "n": "Fine-tuned model support",
+            "note": "Apply provisioned throughput to fine-tuned variants of foundation models."
+          },
+          {
+            "n": "Lower latency vs pay-per-token",
+            "note": "Dedicated capacity provides more consistent, predictable latency than on-demand."
+          }
+        ]
+      },
+      {
+        "n": "Triton GPU batching",
+        "s": "Beta",
+        "note": "NVIDIA Triton-backed throughput optimization via dynamic request batching on GPU endpoints; requires batch-friendly models and explicit enablement; improves throughput at trade-off of per-request latency.",
+        "children": [
+          {
+            "n": "Dynamic request batching",
+            "note": "Triton combines multiple concurrent requests into batches before GPU execution."
+          },
+          {
+            "n": "GPU endpoint optimization",
+            "note": "GPU-specific throughput gains; trades per-request latency for higher aggregate throughput."
+          },
+          {
+            "n": "Batch-friendly model requirement",
+            "note": "Models must support vectorized inference; not all architectures benefit from batching."
+          },
+          {
+            "n": "Explicit enablement and configuration",
+            "note": "Batching is opt-in; requires explicit configuration during endpoint creation."
+          },
+          {
+            "n": "Latency-throughput trade-off",
+            "note": "Batching increases per-request latency but improves overall throughput and GPU utilization."
+          }
+        ]
+      },
+      {
+        "n": "Feature serving integration",
+        "s": "GA",
+        "note": "Automatic feature lookup from online store during inference; pre-defined FeatureSpec endpoints for sub-ms latency; integrates model serving with Lakebase online feature store.",
+        "children": [
+          {
+            "n": "Online store REST endpoints",
+            "note": "Dedicated REST APIs for feature retrieval; sub-millisecond latency via Lakebase."
+          },
+          {
+            "n": "Sub-millisecond latency lookup",
+            "note": "PostgreSQL (Lakebase) backing ensures low-latency feature access for real-time serving."
+          },
+          {
+            "n": "Automatic feature resolution",
+            "note": "Models serving features automatically resolves feature names and retrieves from online store."
+          },
+          {
+            "n": "Lakebase-backed online store",
+            "note": "Managed PostgreSQL infrastructure with automatic scaling (CU_1, CU_2, CU_4, CU_8)."
+          },
+          {
+            "n": "Read replicas (up to 3 + primary)",
+            "note": "High-availability configuration with up to 3 read replicas; 4 compute instances total."
+          },
+          {
+            "n": "Sync modes: TRIGGERED, CONTINUOUS, SNAPSHOT",
+            "note": "TRIGGERED (scheduled/API), CONTINUOUS (streaming), SNAPSHOT (one-time) synchronization from offline tables."
+          }
+        ]
+      },
+      {
+        "n": "Traffic splitting & A/B testing",
+        "s": "GA",
+        "note": "Route traffic between multiple models on one endpoint (e.g., 90% Champion / 10% Challenger); configurable splits enable online evaluation and gradual rollouts without endpoint restart.",
+        "children": [
+          {
+            "n": "Champion/Challenger pattern",
+            "note": "Run production (Champion) and candidate (Challenger) models in parallel; measure performance."
+          },
+          {
+            "n": "Configurable traffic splits",
+            "note": "Define split percentages (e.g., 90/10, 80/20); adjust without redeploying endpoint."
+          },
+          {
+            "n": "Online evaluation capability",
+            "note": "Compare real production metrics across models; statistically validate improvements."
+          },
+          {
+            "n": "Gradual rollouts without restart",
+            "note": "Incrementally increase Challenger traffic; revert if issues detected; no endpoint downtime."
+          },
+          {
+            "n": "Model alias-based routing",
+            "note": "Use mutable aliases (Champion, Staging) to control which versions receive traffic."
+          }
+        ]
+      }
+    ],
+    "since": "GA"
+  },
+  {
+    "n": "Model Registry & governance",
+    "s": "GA",
+    "c": "ok",
+    "note": "Model versioning, aliases, and lineage in Unity Catalog.",
+    "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/",
+      "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage"
+    ],
+    "children": [
+      {
+        "n": "Model versioning",
+        "s": "GA",
+        "note": "Immutable version history with automatic signatures; each version captures metadata, parameters, metrics, artifacts, source run; enables rollback and audit trails.",
+        "children": [
+          {
+            "n": "Immutable version history",
+            "note": "Each model version is immutable; complete audit trail of all versions ever registered."
+          },
+          {
+            "n": "Automatic model signatures",
+            "note": "MLflow captures input schema and output schema automatically; prevents signature mismatches."
+          },
+          {
+            "n": "Metadata capture (parameters, metrics, artifacts)",
+            "note": "Each version records training parameters, evaluation metrics, and model artifacts."
+          },
+          {
+            "n": "Source run tracking",
+            "note": "Links model version to originating MLflow run; enables traceability to training code and data."
+          },
+          {
+            "n": "Version-based rollback capability",
+            "note": "Revert to any prior version; serve previous model without code changes via alias update."
+          }
+        ]
+      },
+      {
+        "n": "Aliases & stage promotion",
+        "s": "GA",
+        "note": "Mutable pointers (Champion, Staging, Prod aliases) to model versions; decouples promotion logic from inference code; enables A/B testing without code changes.",
+        "children": [
+          {
+            "n": "Mutable pointers (Champion, Staging, Prod)",
+            "note": "Create named aliases that point to specific versions; update alias without changing code."
+          },
+          {
+            "n": "Decoupled promotion logic",
+            "note": "Inference code references alias (e.g., 'Champion'); alias points to version; decouple deployment from serving."
+          },
+          {
+            "n": "Stage-based promotion workflow",
+            "note": "Promote versions through stages (Staging → Prod); approval gates via governed tags."
+          },
+          {
+            "n": "A/B testing without code changes",
+            "note": "Use traffic splits and Champion/Challenger aliases; no serving-code modification."
+          },
+          {
+            "n": "Zero-downtime alias updates",
+            "note": "Update alias to point to new version; no endpoint restarts or serving interruption."
+          }
+        ]
+      },
+      {
+        "n": "Unity Catalog governance",
+        "s": "GA",
+        "note": "Three-level namespace (catalog.schema.model); fine-grained permissions (CREATE, EXECUTE, APPLY TAG); audit logging; cross-workspace discovery and access control.",
+        "children": [
+          {
+            "n": "Three-level namespace (catalog.schema.model)",
+            "note": "Models organized as catalog.schema.model; enables multi-tenant organization and discovery."
+          },
+          {
+            "n": "Fine-grained permissions (CREATE, EXECUTE, APPLY TAG)",
+            "note": "Granular access control: who can create versions, execute (inference), and tag models."
+          },
+          {
+            "n": "Models as FUNCTION securables",
+            "note": "Models treated as FUNCTION objects in UC; inherits FUNCTION permission model."
+          },
+          {
+            "n": "Audit logging",
+            "note": "system.access.audit table records all model access, creation, modification actions."
+          },
+          {
+            "n": "Cross-workspace discovery and access control",
+            "note": "Models accessible across workspaces via metastore binding; catalog-level visibility control."
+          }
+        ]
+      },
+      {
+        "n": "Training data lineage",
+        "s": "GA",
+        "note": "Auto-capture of upstream UC datasets via mlflow.log_input(); visible in model-version pages; enables compliance traceability and data-to-model dependency tracking.",
+        "children": [
+          {
+            "n": "Auto-capture via mlflow.log_input()",
+            "note": "Explicit logging of training datasets; captured during mlflow.log_model()."
+          },
+          {
+            "n": "Upstream UC dataset tracking",
+            "note": "Links model version to specific UC tables used for training; full 3-level namespace."
+          },
+          {
+            "n": "Model-version page visibility",
+            "note": "Lineage displayed on model version page in UC UI; searchable and filterable."
+          },
+          {
+            "n": "Compliance traceability",
+            "note": "Complete audit trail from data source → training → model; supports compliance audits."
+          },
+          {
+            "n": "Data-to-model dependency tracking",
+            "note": "Query lineage to find which models depend on a given data source."
+          }
+        ]
+      },
+      {
+        "n": "Model lineage visualization",
+        "s": "GA",
+        "note": "Interactive graph in Catalog Explorer showing data → features → training run → model version → serving; column-level lineage supported; tracks feature-engineering dependencies.",
+        "children": [
+          {
+            "n": "Interactive Catalog Explorer graph",
+            "note": "Visual lineage graph with clickable nodes; drill into dependencies."
+          },
+          {
+            "n": "Data → features → training → model → serving chain",
+            "note": "Full chain from source data through feature tables, training, model, to serving endpoints."
+          },
+          {
+            "n": "Column-level lineage",
+            "note": "Track which input columns flow to which output columns; fine-grained data provenance."
+          },
+          {
+            "n": "Feature engineering dependency tracking",
+            "note": "Explicit capture of feature-table dependencies via FeatureEngineeringClient."
+          },
+          {
+            "n": "Downstream consumption visibility",
+            "note": "View which endpoints and jobs consume a given model; reverse-dependency queries."
+          }
+        ]
+      },
+      {
+        "n": "Tags & metadata management",
+        "s": "GA",
+        "note": "Custom tags and governed tags on models/versions; governance tags support approval workflows; enables classification, compliance labeling, and discovery.",
+        "children": [
+          {
+            "n": "Custom key-value tags",
+            "note": "Arbitrary tags for categorization (e.g., 'team:ds', 'domain:fraud')."
+          },
+          {
+            "n": "Governed tags with approval workflows",
+            "note": "Tags with predefined values and approval gates; enforces compliance policies."
+          },
+          {
+            "n": "Classification and lifecycle labeling",
+            "note": "Tag models as 'sensitive', 'prod', 'deprecated', etc.; drive automated actions."
+          },
+          {
+            "n": "Compliance tagging support",
+            "note": "HIPAA, GDPR, PCI labels; enables compliance reporting and access policies."
+          },
+          {
+            "n": "Discoverable via search",
+            "note": "Filter and search models by tags; enables self-service model discovery."
+          }
+        ]
+      },
+      {
+        "n": "Cross-workspace sharing",
+        "s": "GA",
+        "note": "Models accessible across workspaces via same UC metastore; catalog-binding configuration controls workspace visibility; enables shared MLOps practices across teams.",
+        "children": [
+          {
+            "n": "Same UC metastore access",
+            "note": "All workspaces sharing a metastore can access all models in that metastore."
+          },
+          {
+            "n": "Catalog-binding configuration",
+            "note": "Control which catalogs (and models) are visible to which workspaces."
+          },
+          {
+            "n": "Workspace visibility control",
+            "note": "Configure workspace-to-catalog bindings; restrict access if needed."
+          },
+          {
+            "n": "Shared MLOps practices",
+            "note": "Enforce consistent model governance and serving practices across teams."
+          },
+          {
+            "n": "Unified permissions model",
+            "note": "Same UC permissions apply across all workspaces; no per-workspace duplication."
+          }
+        ]
+      },
+      {
+        "n": "Deployment jobs with approvals",
+        "s": "PuP",
+        "note": "New model versions auto-trigger deployment jobs; reviewers approve via governed tags; integrates MLflow 3 with Lakeflow Jobs for gated production promotion.",
+        "children": [
+          {
+            "n": "Auto-trigger on new model versions",
+            "note": "Model update trigger (Beta) fires Lakeflow Job when version is ready or alias is set."
+          },
+          {
+            "n": "Governed tag-based reviewer approval",
+            "note": "Deployment jobs wait for governed tag approval; specifies reviewers and approval conditions."
+          },
+          {
+            "n": "Lakeflow Jobs integration",
+            "note": "Deployment defined as DAG task; supports complex orchestration and conditionals."
+          },
+          {
+            "n": "Approval gate configuration",
+            "note": "Define approval conditions, reviewer groups, and escalation policies."
+          },
+          {
+            "n": "Gated production promotion",
+            "note": "Prevents unauthorized production deployments; enforces change control."
+          }
+        ]
+      }
+    ],
+    "since": "GA"
+  }
+]

@@ -1,0 +1,192 @@
+[
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks"],
+  "note": "Databricks Agents is an end-to-end platform for building and operating secure, observable agents."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "AI Functions", "ai_parse_document"],
+  "note": "Extracts structured data from documents like PDFs and contracts."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "AI Functions", "ai_extract"],
+  "note": "Efficiently extracts entities and fields from unstructured data."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "AI Functions", "ai_decide"],
+  "note": "Routes, classifies, and evaluates data efficiently."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Custom Agents"],
+  "note": "Build agents using code-first frameworks like LangGraph or CrewAI with agent.toml configuration."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Custom Agents", "Multi-framework harness support"],
+  "note": "Supports Claude SDK and OpenAI SDK with integration to other frameworks."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Custom Agents", "agent.toml configuration"],
+  "note": "Declaratively configure agents with model selection, memory, and tools."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Databricks Sandbox", "Language support"],
+  "note": "Supports Python, Node.js, and shell scripts with persistent storage."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Databricks Sandbox", "Egress control (configurable)"],
+  "note": "Enables unrestricted outbound access by default, customizable via policy."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Supervisor Agent"],
+  "note": "Orchestrates Model Serving endpoints and tool integrations with user-scoped auth."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Supervisor Agent", "Endpoint orchestration"],
+  "note": "Integrates Model Serving, AI Search, and Genie Agents."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Supervisor Agent", "Tool orchestration"],
+  "note": "Coordinates UC functions, MCP services, and sandboxed code execution."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Knowledge Assistant"],
+  "note": "Answers questions grounded in documents with citations."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Knowledge Assistant", "Document ingestion & sync"],
+  "note": "Ingests PDFs, web content, and database sources with automatic synchronization."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Knowledge Assistant", "Endpoint & SDK management"],
+  "note": "Exposes the assistant as a REST API managed via SDKs and dashboards."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Knowledge Assistant", "Legacy note"],
+  "note": "Migrate to Genie Agents or to Custom Agents with AI Search."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Omnigent"],
+  "note": "Omnigent unifies agent development across Claude, Codex, and Cursor with managed infrastructure and policies."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Omnigent", "Multi-framework composition"],
+  "note": "Compose agents from Claude, Cursor, and Codex frameworks."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Omnigent", "Portable YAML definitions"],
+  "note": "Defines agents in framework-agnostic YAML for local or managed execution."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Omnigent", "Unified policy layer"],
+  "note": "Enforces CEL-based policies for permissions, cost, and safety."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Omnigent", "Multi-interface access"],
+  "note": "Provides access via web UI, terminal, and mobile APIs with shared sessions."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Omnigent", "Shared governance"],
+  "note": "Applies workspace identity, Unity Catalog, and Gateway controls across agents."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Agent evaluation & monitoring"],
+  "note": "Collects execution traces, applies LLM judges, and displays evaluation dashboards."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Agent evaluation & monitoring", "MLflow tracing"],
+  "note": "Traces end-to-end execution for agents, RAG systems, and LLMs with OpenTelemetry compatibility."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Agent evaluation & monitoring", "8 built-in LLM judges"],
+  "note": "Scores agent outputs for correctness, relevance, and safety."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Agents / Agent Bricks", "Agent evaluation & monitoring", "Custom scorers"],
+  "note": "Implements code-based deterministic checks and guidelines for domain rules."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Developer productivity", "Databricks Apps + App Spaces"],
+  "note": "Databricks Apps hosts interactive data and AI apps on Databricks, governed by Unity Catalog."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Developer productivity", "Databricks Apps + App Spaces", "Serverless hosting"],
+  "note": "Hosts interactive applications like Streamlit and Gradio serverlessly."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Developer productivity", "Databricks Apps + App Spaces", "Scale-to-zero execution"],
+  "note": "Auto-scales applications to zero after idle timeout for cost optimization."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Developer productivity", "AI Dev Kit + internal coding agents (Isaac)"],
+  "note": "AI Dev Kit provides scaffolding and unified UC-governed tools for agent development."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Developer productivity", "AI Dev Kit + internal coding agents (Isaac)", "25x spend growth YTD"],
+  "note": "Internal adoption metric showing productivity return on investment."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Developer productivity", "AI Dev Kit + internal coding agents (Isaac)", "Multi-model support"],
+  "note": "Supports Claude, Codex, and Cursor with custom integrations."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Developer productivity", "AI Dev Kit + internal coding agents (Isaac)", "CLI tooling (Beta Oct 6)"],
+  "note": "Enables terminal-first development with notebook and CLI workflows."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Developer productivity", "Genie Code"],
+  "note": "Genie Code is an AI assistant for notebooks and SQL with pay-per-use pricing."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Developer productivity", "Genie Code", "Notebook code generation"],
+  "note": "Generates, explains, and optimizes Python and SQL code."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Developer productivity", "Genie Code", "Document intelligence (Sep 2026)"],
+  "note": "Parses, classifies, and extracts data from documents like PDFs and contracts."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Developer productivity", "Genie Code", "Pay-per-use pricing (150 DBU free/mo)"],
+  "note": "Charges per use with 150 DBU monthly free tier instead of unlimited."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": ["Databricks AI", "Developer productivity", "Genie Code", "CLI (Beta Oct 6)"],
+  "note": "Provides terminal-based coding assistance in shell environments."
+ }
+]

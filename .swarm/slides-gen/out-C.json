@@ -1,0 +1,329 @@
+[
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Genie / AI.BI family",
+    "capsule": "Genie One",
+    "solves": [
+      {
+        "axis": "Access",
+        "problem": "Business users **blocked** by technical Databricks interface",
+        "solution": "Simplified, non-technical **front door** with natural language chat"
+      },
+      {
+        "axis": "Self-service",
+        "problem": "Analyst **dependency** for every data question",
+        "solution": "Users **answer** ad-hoc questions directly without SQL or waiting"
+      },
+      {
+        "axis": "Discovery",
+        "problem": "Hard to find **relevant** dashboards, agents, or data assets",
+        "solution": "Unified search and **routing** to appropriate assets and agents"
+      },
+      {
+        "axis": "Trust",
+        "problem": "Generic AI answers lack **grounding** in authoritative data",
+        "solution": "Answers **cited** from governed enterprise sources with permissions respected"
+      },
+      {
+        "axis": "Collaboration",
+        "problem": "Insights remain **disconnected** from business workflows and apps",
+        "solution": "Integrated **documents**, scheduling, and app embedding for action"
+      },
+      {
+        "axis": "Governance",
+        "problem": "Cross-workspace data access requires **manual** control",
+        "solution": "Account-level Genie One with **automatic** row/column/source permissions"
+      }
+    ],
+    "sources": [
+      "Glean: Genie One capabilities and pain points (enterprise data discovery, analyst dependency, metric consistency, permissions)",
+      "Scope note: Free for named users to Jan 31 2027, memory GA + MCP server GA (Sep 2025)"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Genie / AI.BI family",
+    "capsule": "Genie Agents",
+    "solves": [
+      {
+        "axis": "Coverage",
+        "problem": "Dashboards answer only **predefined** questions",
+        "solution": "Agent-based **follow-up** and ad-hoc analysis beyond dashboard scope"
+      },
+      {
+        "axis": "Accuracy",
+        "problem": "Metrics defined **inconsistently** across teams and dashboards",
+        "solution": "Curated **semantic context** with shared metric definitions and business rules"
+      },
+      {
+        "axis": "Reasoning",
+        "problem": "Complex \"why\" and \"what-if\" analysis **fragmented** across tools",
+        "solution": "Agent mode with **multi-step** investigation, hypotheses, and explainable reports"
+      },
+      {
+        "axis": "Expertise",
+        "problem": "Business knowledge **trapped** with subject-matter experts",
+        "solution": "Domain experts **encode** logic once, shared as reusable agents"
+      },
+      {
+        "axis": "Integration",
+        "problem": "Analytics **isolated** from business applications and workflows",
+        "solution": "Agents **embedded** in external apps, APIs, chatbots, and frameworks"
+      },
+      {
+        "axis": "Governance",
+        "problem": "AI answers raise data access and **compliance** concerns",
+        "solution": "Unity Catalog **permissions** automatically applied per user"
+      }
+    ],
+    "sources": [
+      "Glean: Genie Agents domain-specific interfaces, business problem mapping (analyst dependency, metric consistency, knowledge silos, governance)",
+      "Scope note: No-code domain agents (ex-Genie Spaces, renamed Jul 2026); limits up to 50 sources / 200k conversations (Sep 10)"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Genie / AI.BI family",
+    "capsule": "AI/BI Dashboards (Lakeview)",
+    "solves": [
+      {
+        "axis": "Speed",
+        "problem": "Dashboard **authoring slow** with manual SQL and visualization configuration",
+        "solution": "AI-assisted **workflow** plans steps from table discovery to layout"
+      },
+      {
+        "axis": "Accessibility",
+        "problem": "High **SQL barrier** for dashboard creation",
+        "solution": "Natural language **prompts** (\"show revenue by region as bar chart\") generate dashboards"
+      },
+      {
+        "axis": "Visualization",
+        "problem": "Authors struggle to **choose** the right chart type and configuration",
+        "solution": "Agent **recommends** and auto-configures appropriate visualization"
+      },
+      {
+        "axis": "Data prep",
+        "problem": "Joining tables and creating **calculated metrics** is error-prone and slow",
+        "solution": "Agent **executes** table joins, aggregations, and metric creation on request"
+      },
+      {
+        "axis": "Iteration",
+        "problem": "Troubleshooting and **refining** dashboards requires specialist skills",
+        "solution": "Agent **identifies** errors and refines interactively with author approval"
+      },
+      {
+        "axis": "Breadth",
+        "problem": "Self-service BI **blocked** by specialist dependency",
+        "solution": "Analysts and business users **move** from question to governed dashboard independently"
+      }
+    ],
+    "sources": [
+      "WebFetch: Databricks Apps and Lakeview AI-assisted authoring capabilities",
+      "Glean: AI/BI Dashboards and Lakeview problem mapping (technical barrier, slow development, visualization selection, data prep)",
+      "Scope note: AI-assisted authoring, dashboard-level Genie, metric views"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Genie / AI.BI family",
+    "capsule": "Genie Ontology",
+    "solves": [
+      {
+        "axis": "Consistency",
+        "problem": "Metrics defined **differently** across dashboards, queries, and teams",
+        "solution": "Canonical **Unity Catalog Metric Views** define each KPI once, governed globally"
+      },
+      {
+        "axis": "Authority",
+        "problem": "Genie may **choose** obsolete or draft definitions over trusted sources",
+        "solution": "OntoRank **scores** sources by certification, usage, and freshness"
+      },
+      {
+        "axis": "Context",
+        "problem": "Business definitions **fragmented** across dashboards, SQL, docs, chat, tickets",
+        "solution": "Unified **business-context layer** combines modeled and learned context"
+      },
+      {
+        "axis": "Trust",
+        "problem": "AI answers **lack grounding** in authoritative business definitions",
+        "solution": "Genie **uses** certified metrics and Pages in answering, with governance applied"
+      },
+      {
+        "axis": "Coverage",
+        "problem": "Only critical metrics are **formally defined**; long tail of context is scattered",
+        "solution": "Ontology **learns** context from existing assets (dashboards, queries, pipelines)"
+      },
+      {
+        "axis": "Permissions",
+        "problem": "Ontology snippets may **leak** access to data users cannot see",
+        "solution": "Context inherits **Unity Catalog permissions** at retrieval time per user"
+      }
+    ],
+    "sources": [
+      "Glean: Genie Ontology unified business-context layer, metric consistency, authority scoring (OntoRank), permission-aware serving",
+      "Scope note: Learned business-context layer grounding Genie answers"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Genie / AI.BI family",
+    "capsule": "Genie App Builder",
+    "solves": [
+      {
+        "axis": "Speed",
+        "problem": "App **development slow** with traditional coding workflows",
+        "solution": "Natural language **converts** idea to working Databricks App in minutes"
+      },
+      {
+        "axis": "Accessibility",
+        "problem": "App building **requires** software engineering or Streamlit/React expertise",
+        "solution": "No-code **agents** build fully functional apps from natural language"
+      },
+      {
+        "axis": "Governance",
+        "problem": "Rapid **agentic app-building** risks uncontrolled deployment and resource use",
+        "solution": "Admin-**governed** agentic app-building and App Spaces framework"
+      },
+      {
+        "axis": "Iteration",
+        "problem": "App **modifications** require developer involvement and redeployment cycles",
+        "solution": "Agent-assisted **refinement** allows rapid, iterative app evolution"
+      },
+      {
+        "axis": "Integration",
+        "problem": "Apps built **outside** native Databricks platform lack seamless data access",
+        "solution": "Native Databricks App integrates **UC, SQL, and Databricks features** natively"
+      }
+    ],
+    "sources": [
+      "Scope note: NL to Databricks App (Sep 23); needs admin governed agentic app-building and App Spaces",
+      "WebFetch: Databricks Apps serverless deployment and framework capabilities"
+    ],
+    "confidence": "verify"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Developer productivity",
+    "capsule": "Databricks Apps + App Spaces",
+    "solves": [
+      {
+        "axis": "Infrastructure",
+        "problem": "Apps require **separate infrastructure** outside Databricks platform",
+        "solution": "**Serverless Databricks Apps** eliminate external hosting costs and complexity"
+      },
+      {
+        "axis": "Governance",
+        "problem": "App-level access control and **audit trails** difficult to implement",
+        "solution": "App Spaces provide **admin governance** framework for app access and deployment"
+      },
+      {
+        "axis": "Authentication",
+        "problem": "Apps require **separate identity management** and secrets handling",
+        "solution": "Native **OAuth and UC integration** with app vs user-principal auth options"
+      },
+      {
+        "axis": "Data access",
+        "problem": "Apps **isolated** from governed data lake",
+        "solution": "Native **Unity Catalog integration** for permissions-aware data access"
+      },
+      {
+        "axis": "Framework choice",
+        "problem": "Locked into **single framework** or complex multi-stack management",
+        "solution": "Support for **Streamlit, Gradio, React, FastAPI** in one platform"
+      },
+      {
+        "axis": "Deployment",
+        "problem": "Apps **difficult to move** across workspaces and environments",
+        "solution": "Apps **seamlessly deployable** across workspaces with native migration"
+      }
+    ],
+    "sources": [
+      "WebFetch: Databricks Apps serverless deployment, UC integration, OAuth, framework support",
+      "Scope note: Serverless Streamlit / Gradio / React / FastAPI; app vs user-principal auth; UC telemetry; App Spaces governance"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Developer productivity",
+    "capsule": "AI Dev Kit + internal coding agents (Isaac)",
+    "solves": [
+      {
+        "axis": "Governance",
+        "problem": "MCPs used by agents create **vendor lock-in** and uncontrolled integrations",
+        "solution": "UC-**governed MCPs** provide central control and audit trail for agent tools"
+      },
+      {
+        "axis": "Integration",
+        "problem": "Developers must **manually scaffold** agents and MCP configurations",
+        "solution": "AI Dev Kit provides **templates and scaffolding** for rapid agent setup"
+      },
+      {
+        "axis": "Cost",
+        "problem": "Agent spending grows **uncontrolled** without visibility or budgeting",
+        "solution": "Internal proof point: **Governance enables 25x spend growth** at predictable $400/mo baseline"
+      },
+      {
+        "axis": "Development speed",
+        "problem": "Building production-grade agents **time-consuming** and error-prone",
+        "solution": "Scaffolding and **best-practice templates** accelerate agent development"
+      },
+      {
+        "axis": "Security",
+        "problem": "Agent-MCP integrations **lack audit** and compliance tracking",
+        "solution": "Unity Catalog **audit trail** for all MCP calls and agent activities"
+      }
+    ],
+    "sources": [
+      "Scope note: Scaffolding, UC-governed MCPs; internal proof point (25x spend growth, $400/mo baseline)",
+      "Architectural inference from UC governance and MCP patterns"
+    ],
+    "confidence": "verify"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Developer productivity",
+    "capsule": "Genie Code",
+    "solves": [
+      {
+        "axis": "Speed",
+        "problem": "Writing **SQL and pipelines slow** and repetitive",
+        "solution": "Genie Code **generates SQL and code** from natural language prompts"
+      },
+      {
+        "axis": "Coverage",
+        "problem": "Developers must **context-switch** between notebook, SQL, pipeline, dashboard tools",
+        "solution": "Single **unified assistant** for notebook, SQL, pipeline, dashboard authoring"
+      },
+      {
+        "axis": "Productivity",
+        "problem": "Boilerplate **code writing** blocks rapid iteration",
+        "solution": "Agent **scaffolds and generates** foundation, reducing manual coding"
+      },
+      {
+        "axis": "Accessibility",
+        "problem": "Non-expert developers **struggle** with SQL and pipeline optimization",
+        "solution": "Assistant **explains and generates** optimized SQL and pipeline logic"
+      },
+      {
+        "axis": "Cost",
+        "problem": "**No clear pricing** or budget controls for coding assistance",
+        "solution": "Pay-as-you-go model with **150 DBU free/month** baseline"
+      },
+      {
+        "axis": "Availability",
+        "problem": "Coding assistant **not accessible** from command line or CI/CD workflows",
+        "solution": "Genie Code **CLI Beta** (Oct 6) enables agent-assisted development in terminal"
+      }
+    ],
+    "sources": [
+      "Scope note: Notebook / SQL / pipeline / dashboard assistant (ex-Databricks Assistant); pay-as-you-go (150 DBU free/mo); Genie Code CLI Beta (Oct 6)",
+      "Architectural inference from multi-target assistant pattern"
+    ],
+    "confidence": "ok"
+  }
+]

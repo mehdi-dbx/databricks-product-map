@@ -1,0 +1,137 @@
+[
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Training & compute", "Distributed training & GPU", "ML Runtime (Pre-configured GPU Clusters)"],
+    "note": "ML Runtime provides cluster compute with preinstalled GPU drivers and popular ML frameworks like PyTorch for distributed training."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Training & compute", "Distributed training & GPU", "AI Runtime (Serverless GPU)"],
+    "note": "AI Runtime is managed serverless GPU compute with per-minute billing and automatic scaling for notebook and CLI access."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Training & compute", "Distributed training & GPU", "Ray Train"],
+    "note": "Ray Train orchestrates distributed training across GPUs and compute nodes for PyTorch and TensorFlow frameworks."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Training & compute", "Distributed training & GPU", "Ray Tune (Hyperparameter Search)"],
+    "note": "Ray Tune runs distributed hyperparameter search trials with early stopping and MLflow integration for experiment tracking."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Training & compute", "Distributed training & GPU", "TorchDistributor (PyTorch on Spark)"],
+    "note": "TorchDistributor launches distributed PyTorch training on Spark cluster resources with minimal code changes from standard PyTorch."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Training & compute", "Distributed training & GPU", "Spark MLlib (Distributed Classical ML)"],
+    "note": "Spark MLlib provides distributed ML algorithms like classification, regression, and clustering via the pyspark.ml API."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Training & compute", "Distributed training & GPU", "DeepSpeed (Memory & Scale Optimization)"],
+    "note": "DeepSpeed enables memory-efficient scaling of large model training through parameter sharding and CPU offload techniques."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Training & compute", "Distributed training & GPU", "DeepSpeed (Memory & Scale Optimization)", "ZeRO stages (1-3)"],
+    "note": "ZeRO stages partition optimizer state, gradients, and model parameters across workers for memory efficiency at scale."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Training & compute", "Distributed training & GPU", "DeepSpeed (Memory & Scale Optimization)", "Gradient partitioning"],
+    "note": "Gradient partitioning distributes gradients across workers so each worker computes only its subset for memory efficiency."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Training & compute", "Distributed training & GPU", "@distributed API (Serverless Single-Node)"],
+    "note": "The @distributed decorator enables multi-GPU training on serverless AI Runtime without requiring Spark."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Languages & libraries"],
+    "note": "Databricks offers Python, R, SQL and Scala with preinstalled ML frameworks for data science."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Languages & libraries", "DS languages & frameworks"],
+    "note": "Languages and frameworks for data science include Python, R, Spark and Ray."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Languages & libraries", "DS languages & frameworks", "Python Ecosystem"],
+    "note": "The Python Ecosystem provides preinstalled ML libraries including pandas, scikit-learn, and XGBoost."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Languages & libraries", "DS languages & frameworks", "Python Ecosystem", "pandas"],
+    "note": "The pandas library provides data manipulation and analysis on ML Runtimes for analytics and feature engineering."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Languages & libraries", "DS languages & frameworks", "Python Ecosystem", "scikit-learn"],
+    "note": "The scikit-learn library provides algorithms for classification, regression, and clustering on ML Runtimes."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Languages & libraries", "DS languages & frameworks", "Python Ecosystem", "XGBoost"],
+    "note": "XGBoost is a gradient boosting library preinstalled on ML Runtimes for high-performance tabular data classification and regression."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Languages & libraries", "DS languages & frameworks", "Python Ecosystem", "LightGBM"],
+    "note": "LightGBM is a fast gradient boosting library preinstalled on ML Runtimes as a memory-efficient alternative to XGBoost."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Languages & libraries", "DS languages & frameworks", "Python Ecosystem", "statsmodels"],
+    "note": "The statsmodels library provides statistical modeling and hypothesis testing for classical statistical analysis."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Languages & libraries", "DS languages & frameworks", "R Support"],
+    "note": "R Support enables R code in notebooks via the %r magic command on dedicated compute, not serverless."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Languages & libraries", "DS languages & frameworks", "PySpark (Spark Python API)"],
+    "note": "PySpark is the Python API for Apache Spark and enables distributed DataFrame operations for massive-scale data processing."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Languages & libraries", "DS languages & frameworks", "Spark MLlib"],
+    "note": "Spark MLlib provides distributed ML algorithms via pyspark.ml for classification, regression, and clustering on Spark."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Languages & libraries", "DS languages & frameworks", "Ray (Distributed Computing)"],
+    "note": "Ray is a framework-agnostic distributed computing system for hyperparameter tuning, training, and data processing."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Languages & libraries", "DS languages & frameworks", "Deep Learning Frameworks"],
+    "note": "Deep Learning Frameworks include PyTorch with top-tier support and TensorFlow with legacy support on specific Runtimes."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Languages & libraries", "DS languages & frameworks", "Deep Learning Frameworks", "PyTorch"],
+    "note": "PyTorch is a GPU-native deep learning framework with preinstalled CPU and GPU builds on Databricks ML Runtimes."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Languages & libraries", "DS languages & frameworks", "Deep Learning Frameworks", "TensorFlow"],
+    "note": "TensorFlow is a legacy framework available only on Runtime 17.3 LTS and scheduled for removal in future Databricks versions."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Languages & libraries", "DS languages & frameworks", "pandas API on Spark"],
+    "note": "The pandas API on Spark scales pandas-compatible code from single-node to distributed DataFrames for data engineering."
+  },
+  {
+    "tree": "ds-tree.json",
+    "path": ["Databricks Data Science", "Languages & libraries", "DS languages & frameworks", "Spark NLP (Community Library)"],
+    "note": "Spark NLP is a community-integrated NLP library for tokenization, named entity recognition, and embeddings on Spark."
+  }
+]

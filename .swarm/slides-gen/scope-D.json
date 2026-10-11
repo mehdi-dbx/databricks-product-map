@@ -1,0 +1,50 @@
+[
+ {
+  "tree": "ai-tree.json",
+  "pillar": "MCP integration",
+  "capsule": "Managed MCP servers",
+  "note": "Genie One, Genie Agent, AI Search, Databricks SQL, UC Functions, Code Interpreter (GA Sep)."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "MCP integration",
+  "capsule": "MCP Services + custom MCP",
+  "note": "Register external MCP servers as UC securables; custom MCP as a Databricks App."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Data foundation for AI",
+  "capsule": "Lakehouse / Delta Lake",
+  "note": "Open ACID format; transaction support, data consistency, batch/streaming ingestion foundation."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Data foundation for AI",
+  "capsule": "Lakeflow",
+  "note": "Connect / Pipelines / Jobs (GA) + Designer (Public Preview, NL via Genie Code)."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Data foundation for AI",
+  "capsule": "Lakebase — serverless Postgres",
+  "note": "Agent memory/state, online feature store, branching, HA; UC-synced (GA since Jan 2026)."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Data foundation for AI",
+  "capsule": "Lakebase Search",
+  "note": "Vector + BM25 + hybrid inside Postgres (Sept 28), no separate vector DB."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Data foundation for AI",
+  "capsule": "Predictive Optimization",
+  "note": "ROI-based OPTIMIZE / VACUUM / ANALYZE / clustering on UC managed tables."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Agentic Data Management",
+  "capsule": "Anomaly detection & remediation",
+  "note": "Anomaly detection + automated remediation (remediation still emerging)."
+ }
+]

@@ -1,0 +1,246 @@
+[
+  {
+    "n": "Genie / AI.BI family",
+    "children": [
+      {
+        "n": "Genie One",
+        "s": "GA",
+        "c": "ok",
+        "new": true,
+        "note": "Unified cross-asset BI assistant; memory GA + MCP server GA (Sep); free for named users to Jan 31 2027.",
+        "children": [
+          { "n": "Discovery and natural-language QA", "note": "Cross-asset analytics from conversational prompts; SQL generation." },
+          { "n": "Memory (GA Sep 2026)", "note": "Retains user preferences, reporting conventions, search history across sessions." },
+          { "n": "Business tool connectors", "note": "Google Workspace, M365, Atlassian, Slack, GitHub; per-user OAuth." },
+          { "n": "Public web search (Beta)", "note": "External citations and research context for analytical queries." },
+          { "n": "Multi-interface access", "note": "Web, mobile (PuP), macOS (Beta), Slack, Teams, MCP clients." },
+          { "n": "MCP Server (GA Sep 2026)", "note": "Genie One accessible to Claude, ChatGPT, Cursor, MCP Inspector." },
+          { "n": "Free tier through Jan 31 2027", "note": "Named-user free; service-principal usage remains billable." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/genie-one/",
+          "https://databricks.com/blog/introducing-genie-one-genie-ontology-and-genie-agents",
+          "https://docs.databricks.com/aws/en/ai-bi/release-notes/2026"
+        ],
+        "since": "GA - memory and MCP Server new (Sep 2026)",
+        "deck": "genie-customer-story-slides"
+      },
+      {
+        "n": "Genie Agents",
+        "s": "GA",
+        "c": "ok",
+        "new": true,
+        "note": "No-code domain agents (ex-Genie Spaces, renamed Jul 2026); limits up to 50 sources / 200k conversations (Sep 10).",
+        "children": [
+          { "n": "Domain-specific agents", "note": "Scoped to tables, business semantics, verified answers per domain." },
+          { "n": "Agent mode and management APIs", "note": "GA; iframe embedding, dashboard integration, API-first control." },
+          { "n": "Deeper analysis (Sep 2026)", "note": "Enhanced multi-step reasoning and context handling." },
+          { "n": "File reasoning (Sep 2026)", "note": "Parse, reason, and answer questions over uploaded documents." },
+          { "n": "Governance boundaries (50 sources / 200k conversations)", "note": "Per-agent limits optimized for performance and cost." },
+          { "n": "Example SQL and verified answers", "note": "Domain expert-curated grounding, linked to UC tables." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/genie-one/",
+          "https://docs.databricks.com/aws/en/ai-bi/release-notes/2026"
+        ],
+        "since": "GA (Jul 2026) - limits increased (Sep 10 2026)",
+        "deck": "genie-battlecard"
+      },
+      {
+        "n": "Genie Code",
+        "s": "GA",
+        "c": "ok",
+        "new": true,
+        "note": "Notebook / SQL / pipeline / dashboard assistant (ex-Databricks Assistant); pay-as-you-go (150 DBU free/mo); Genie Code CLI Beta (Oct 6).",
+        "children": [
+          { "n": "Notebook code generation", "note": "Python/SQL/PySpark generation, explanation, optimization, refactoring." },
+          { "n": "Agent mode (GA Mar 2026)", "note": "Multi-step autonomous assistance across cells with error iteration." },
+          { "n": "Document intelligence (Sep 2026)", "note": "End-to-end PDF/contract/invoice parsing, classification, extraction, validation." },
+          { "n": "Pay-per-use pricing (150 DBU free/mo)", "note": "Metered from Jul 8 2026; no longer unlimited free tier." },
+          { "n": "CLI (Beta Oct 6)", "note": "Terminal-based coding agent; Genie Code in shell environment." },
+          { "n": "Dashboard authoring", "note": "AI-assisted Lakeview dashboard creation and metric-view definition." },
+          { "n": "UC metadata integration", "note": "Smart table/column discovery for data context and relevance." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/genie-code/",
+          "https://docs.databricks.com/aws/en/release-notes/product/2026/october",
+          "https://databricks.com/blog/genie-code-autonomous-ai-coding-assistant"
+        ],
+        "since": "GA - pay-as-you-go (Jul 8 2026); CLI Beta (Oct 6 2026)",
+        "deck": "genie-code-faq-internal"
+      },
+      {
+        "n": "AI/BI Dashboards (Lakeview)",
+        "s": "GA",
+        "c": "ok",
+        "note": "AI-assisted authoring, dashboard-level Genie, metric views.",
+        "children": [
+          { "n": "AI-assisted authoring", "note": "Suggestions for filters, relationships, visualizations; drag-and-drop builder." },
+          { "n": "Dashboard-level Genie", "note": "Natural-language questions answered over visual data and metrics." },
+          { "n": "Metric views (GA)", "note": "Pre-computed, versioned KPIs; performance optimized for analytics." },
+          { "n": "External embedding (Public Preview)", "note": "Embed dashboards in external applications and portals." },
+          { "n": "Sharing and subscriptions", "note": "Scheduled delivery, shared access, audit trail, collaborative features." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/dashboards",
+          "https://docs.databricks.com/aws/en/ai-bi/release-notes/2026"
+        ],
+        "since": "GA; metric views GA (2026)",
+        "deck": "aibi-dashboards-genie-faqs"
+      },
+      {
+        "n": "Genie Ontology",
+        "s": "PuP",
+        "c": "ok",
+        "note": "Learned business-context layer grounding Genie answers.",
+        "children": [
+          { "n": "Learned business context", "note": "Metric definitions, terminology, calculations, inferred business semantics." },
+          { "n": "Grounding layer for AI", "note": "Improves Genie One, Genie Agents, and downstream agents answer quality." },
+          { "n": "Operationalization (Sep 2026)", "note": "Integration improvements for AI agent embedding and use." },
+          { "n": "Entity relationships", "note": "Connections across tables, business semantics, lineage tracking." },
+          { "n": "UC semantics foundation", "note": "Built on Unity Catalog governance and metadata." }
+        ],
+        "docs": [
+          "https://databricks.com/blog/introducing-genie-one-genie-ontology-and-genie-agents"
+        ],
+        "since": "Public Preview - operationalization (Sep 2026)",
+        "deck": null
+      },
+      {
+        "n": "Genie App Builder",
+        "s": "Beta",
+        "c": "ok",
+        "new": true,
+        "note": "NL to Databricks App (Sep 23); needs admin governed agentic app-building and App Spaces.",
+        "children": [
+          { "n": "Natural-language app generation", "note": "Prompt to Databricks App code; NL-to-code for analytics apps." },
+          { "n": "Requires governed agentic app-building admin enablement", "note": "Workspace admin must enable feature; App Spaces governance required." },
+          { "n": "Scale-to-zero serverless", "note": "Automatic deployment and scaling; no infrastructure management." },
+          { "n": "Read-only template support", "note": "Safe default template for data-driven, query-focused apps." },
+          { "n": "Free during Beta (pricing TBD)", "note": "No cost during Beta; pricing model to be announced at GA." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/dev-tools/databricks-apps/genie-app-builder",
+          "https://databricks.com/blog/genie-app-builder-deploy-apps-natural-language-prompts"
+        ],
+        "since": "Beta (Sep 23 2026)",
+        "deck": null
+      }
+    ]
+  },
+  {
+    "n": "Developer productivity",
+    "children": [
+      {
+        "n": "Databricks Apps + App Spaces",
+        "s": "GA",
+        "c": "ok",
+        "note": "Serverless Streamlit / Gradio / React / FastAPI; app vs user-principal auth; UC telemetry; App Spaces governance.",
+        "children": [
+          { "n": "Serverless hosting", "note": "Streamlit, Gradio, React, FastAPI, Flask; multi-framework support." },
+          { "n": "App Spaces governance (GA)", "note": "Role-based access, resource controls, entitlement scoping." },
+          { "n": "Scale-to-zero execution", "note": "30-min idle timeout; cost-optimized auto-scaling to zero." },
+          { "n": "Deployment (Git, CLI, UI)", "note": "CI/CD integration, automatic deployments via GitHub Actions." },
+          { "n": "Observability and telemetry", "note": "UC export, production monitoring, agent tracing via MLflow." },
+          { "n": "App principal vs user principal auth", "note": "Choose shared resources or user-scoped entitlements per app." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/dev-tools/databricks-apps/",
+          "https://databricks.com/blog/introducing-databricks-apps-and-app-spaces"
+        ],
+        "since": "GA; App Spaces (Jun 2026)",
+        "deck": null
+      },
+      {
+        "n": "AI Dev Kit + internal coding agents (Isaac)",
+        "s": "GA",
+        "c": "ok",
+        "new": true,
+        "note": "Scaffolding, UC-governed MCPs; internal proof point (25x spend growth, $400/mo baseline).",
+        "children": [
+          { "n": "Scaffolding templates", "note": "Project initialization, tool setup, framework integrations." },
+          { "n": "UC-governed MCPs", "note": "Internal tools registered as Unity Catalog securables." },
+          { "n": "$400/mo baseline cost", "note": "Databricks internal cost baseline per developer with Isaac." },
+          { "n": "25x spend growth YTD", "note": "Internal adoption signal; productivity ROI measure." },
+          { "n": "Multi-model support", "note": "Claude, Codex, Cursor, custom harness integration." },
+          { "n": "CLI tooling (Beta Oct 6)", "note": "Terminal-first development; notebook and CLI workflows." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/release-notes/product/2026/october"
+        ],
+        "since": "GA; CLI Beta (Oct 6 2026)",
+        "deck": "how-databricks-runs-coding-agents-deep-distillation-ai-dev-tools-isaac-uc-governed-mcps"
+      }
+    ]
+  },
+  {
+    "n": "MCP integration",
+    "children": [
+      {
+        "n": "Managed MCP servers",
+        "s": "GA",
+        "c": "ok",
+        "new": true,
+        "note": "Genie One, Genie Agent, AI Search, Databricks SQL, UC Functions, Code Interpreter (GA Sep).",
+        "children": [
+          { "n": "Genie One MCP (GA Sep 2026)", "note": "Natural-language analytics from Claude, ChatGPT, Cursor, MCP Inspector." },
+          { "n": "Genie Agent MCP", "note": "Scoped analytics for specific domain agents; agent-level isolation." },
+          { "n": "AI Search MCP", "note": "Retrieval over unstructured documents; hybrid search access." },
+          { "n": "Databricks SQL MCP", "note": "Execute SQL; developer and data-engineering workflows." },
+          { "n": "Unity Catalog Functions MCP", "note": "Expose UC functions as tools; composable data operations." },
+          { "n": "Code Interpreter MCP (GA Sep 2026)", "note": "Python execution via system.ai.python_exec function." },
+          { "n": "Unity Gateway governance", "note": "All traffic routed through Gateway; policies, rate limits, audit enforced." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/agents/mcp-tools/managed-mcp",
+          "https://docs.databricks.com/aws/en/release-notes/product/2026/september"
+        ],
+        "since": "GA (Sep 2026)",
+        "deck": "unity-ai-gateway-product-deck-l200"
+      },
+      {
+        "n": "External connectors",
+        "s": "GA",
+        "c": "ok",
+        "new": true,
+        "note": "Google Workspace, M365, Atlassian, Slack, GitHub; Glean (Beta); Meta Ads (Oct 6).",
+        "children": [
+          { "n": "Google Workspace (GA Sep 2026)", "note": "Drive, Gmail, Calendar; read-only operations." },
+          { "n": "Microsoft 365 (GA Sep 2026)", "note": "SharePoint, Teams, Outlook, Calendar; OAuth per-user." },
+          { "n": "Atlassian (GA Sep 2026)", "note": "Jira, Confluence; issue/page access and search." },
+          { "n": "Slack (GA Sep 2026)", "note": "Channels, messages, files; read-only operations." },
+          { "n": "GitHub (GA Sep 2026)", "note": "File/issue/PR writes; private-repo setup required." },
+          { "n": "Glean (Beta)", "note": "Search-only; internal knowledge base retrieval." },
+          { "n": "Meta Ads MCP (Oct 6 2026)", "note": "Campaign intelligence, customer insights, audience data." },
+          { "n": "Per-user OAuth", "note": "UC + Gateway governance; audit logging, data access control." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/genie-one/external-sources",
+          "https://databricks.com/blog/introducing-mcp-connectors-databricks"
+        ],
+        "since": "GA (Sep 2026); Meta Ads (Oct 6 2026)",
+        "deck": null
+      },
+      {
+        "n": "MCP Services + custom MCP",
+        "s": "GA",
+        "c": "ok",
+        "note": "Register external MCP servers as UC securables; custom MCP as a Databricks App.",
+        "children": [
+          { "n": "Register external MCP as UC securable", "note": "Asset governance, permissions, audit; same UC controls as other assets." },
+          { "n": "UC Connections for credentials", "note": "OAuth tokens, API keys, governed access; unified secrets management." },
+          { "n": "Custom MCP as Databricks App", "note": "Deploy your own stateless MCP server; scale-to-zero hosting." },
+          { "n": "Route through Unity Gateway", "note": "Policies, cost attribution, observability, rate limits." },
+          { "n": "Multi-provider tool composition", "note": "Combine internal UC functions plus external MCPs in agent workflows." },
+          { "n": "DurableAgentServer support", "note": "Crash-recoverable agent state; MCP as agent tool provider." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/agents/mcp-tools/mcp-services",
+          "https://docs.databricks.com/aws/en/agents/mcp-tools/use-mcp-in-agents"
+        ],
+        "since": "GA",
+        "deck": null
+      }
+    ]
+  }
+]

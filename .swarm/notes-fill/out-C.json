@@ -1,0 +1,34 @@
+[
+  {
+    "path": ["Agents / Agent Bricks"],
+    "note": "End-to-end platform for building, deploying, and operating agents with secure code execution, managed memory, tool integration, and production observability."
+  },
+  {
+    "path": ["Governance for AI"],
+    "note": "Central control plane (Unity AI Gateway) routing all AI requests with permissions enforcement, budget management, usage tracking, and asset governance."
+  },
+  {
+    "path": ["Genie / AI.BI family"],
+    "note": "Unified interface enabling business users to explore data and deploy analytics through natural language, visual dashboards, and domain-specific agents."
+  },
+  {
+    "path": ["Developer productivity"],
+    "note": "Serverless multi-framework app platform enabling rapid deployment of data applications with built-in governance, OAuth authentication, and GitHub Actions CI/CD."
+  },
+  {
+    "path": ["MCP integration"],
+    "note": "Protocol-based managed server connectors enabling agents to access governed Databricks SQL, AI Search, Genie agents, and Unity Catalog functions."
+  },
+  {
+    "path": ["Agentic Data Management"],
+    "note": "Automated data classification, profiling, quality monitoring, and agentic anomaly detection with remediation capabilities within the governed lakehouse."
+  },
+  {
+    "path": ["Real-time & transactional AI"],
+    "note": "Low-latency Reyden query engine delivering millisecond performance on Delta and Iceberg data without duplication or separate serving infrastructure."
+  },
+  {
+    "path": ["Domain-specific AI"],
+    "note": "Industry-tailored agentic solutions for marketing (CustomerLake CDP, agents) and security (Lakewatch SIEM) embedded with lakehouse governance."
+  }
+]

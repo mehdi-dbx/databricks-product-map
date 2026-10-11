@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://databricks.local/compete-matrix.schema.json",
+  "title": "Compete matrix",
+  "description": "Generic structure for a competitive capability matrix attached to a Databricks feature. One instance feeds the Landscape tab of a feature's panel. Scoring is fair: it records where the field wins as well as where Databricks wins.",
+  "type": "object",
+  "required": ["feature", "home", "legend", "competitors", "groups"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "type": "string", "description": "Schema version this instance targets." },
+    "feature": { "type": "string", "description": "Tree node this matrix belongs to, by its display name (e.g. \"AI Gateway\")." },
+    "featurePath": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Optional path array (pillar → capsule → …) to bind the matrix to an exact node, same convention as the note-fill merge."
+    },
+    "home": { "type": "string", "description": "The id (from competitors[]) of the Databricks offering = the highlighted home column." },
+    "updated": { "type": "string", "description": "Month/date the data was last verified, e.g. \"2026-10\"." },
+    "sources": { "type": "string", "description": "Where per-cell evidence lives, e.g. \"docs/competitors/\"." },
+
+    "legend": {
+      "type": "object",
+      "description": "Status enum used by every cell. Keys are the status ids; values are how to render them.",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["symbol", "label"],
+        "additionalProperties": false,
+        "properties": {
+          "symbol": { "type": "string", "description": "Glyph shown in the cell, e.g. \"✓\"." },
+          "label": { "type": "string", "description": "Legend text, e.g. \"native / GA\"." }
+        }
+      },
+      "examples": [
+        {
+          "ga": { "symbol": "✓", "label": "native / GA" },
+          "beta": { "symbol": "β", "label": "beta / preview" },
+          "partial": { "symbol": "~", "label": "partial / depends" },
+          "none": { "symbol": "✕", "label": "not offered" },
+          "unverified": { "symbol": "?", "label": "unverified" }
+        }
+      ]
+    },
+
+    "segments": {
+      "type": "array",
+      "description": "How the field is classified relative to the home offering (true fight, platform, complementary, DIY/OSS, non-competitor). Optional but drives grouping/labelling of competitors.",
+      "items": {
+        "type": "object",
+        "required": ["id", "label"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string" },
+          "note": { "type": "string", "description": "One-line gloss, e.g. \"direct head-to-head\"." }
+        }
+      }
+    },
+
+    "competitors": {
+      "type": "array",
+      "description": "Column set. The home offering is one of these with home:true.",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["id", "name"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "description": "Stable key referenced by cells." },
+          "name": { "type": "string", "description": "Column header label." },
+          "home": { "type": "boolean", "description": "True for the Databricks offering (highlighted column)." },
+          "segment": { "type": "string", "description": "Segment id from segments[]." },
+          "vendor": { "type": "string", "description": "Owning vendor if useful (e.g. \"PANW\")." }
+        }
+      }
+    },
+
+    "groups": {
+      "type": "array",
+      "description": "Capability areas, each a block of rows (e.g. Core gateway, Governance, Cost).",
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "capabilities"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string" },
+          "capabilities": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "label", "cells"],
+              "additionalProperties": false,
+              "properties": {
+                "id": { "type": "string" },
+                "label": { "type": "string", "description": "Row label, the capability name." },
+                "cells": {
+                  "type": "object",
+                  "description": "Map of competitor id → cell. A missing competitor id is treated as \"unverified\".",
+                  "additionalProperties": {
+                    "type": "object",
+                    "required": ["status"],
+                    "additionalProperties": false,
+                    "properties": {
+                      "status": { "type": "string", "description": "A key from legend (ga/beta/partial/none/unverified or custom)." },
+                      "note": { "type": "string", "description": "Short qualifier shown on hover or inline, e.g. \"1,600+ models\"." },
+                      "emphasis": { "type": "boolean", "description": "Render as a standout cell (bold) — a notable strength or gap." },
+                      "soft": { "type": "boolean", "description": "Flagged for re-verification before external use." }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "verdicts": {
+      "type": "array",
+      "description": "Optional per-dimension conclusion, mirroring the deck's verdict lines. Honesty required: winner may be \"field\".",
+      "items": {
+        "type": "object",
+        "required": ["dimension", "winner"],
+        "additionalProperties": false,
+        "properties": {
+          "dimension": { "type": "string" },
+          "home": { "type": "string", "description": "What the home offering does on this dimension." },
+          "field": { "type": "string", "description": "What the field does on this dimension." },
+          "winner": { "type": "string", "enum": ["home", "field", "parity"], "description": "Who wins this dimension." }
+        }
+      }
+    }
+  }
+}

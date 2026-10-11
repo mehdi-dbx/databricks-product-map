@@ -1,0 +1,56 @@
+[
+ {
+  "tree": "ai-tree.json",
+  "pillar": "AI Platform / ML lifecycle",
+  "capsule": "Feature Store",
+  "note": "Governed features; online store on Lakebase; UC-synced."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "AI Platform / ML lifecycle",
+  "capsule": "Model Serving",
+  "note": "Serverless endpoints (custom/foundation/external); pay-per-token, provisioned throughput, batch; Gateway-governed."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "AI Platform / ML lifecycle",
+  "capsule": "AI Runtime — serverless GPU",
+  "note": "A10/H100; LoRA/QLoRA fine-tune, distributed training, vLLM/Ray batch. Exact GA vs preview: verify."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "AI Platform / ML lifecycle",
+  "capsule": "MLflow 3 for GenAI",
+  "note": "Tracing (OTel, 30+ frameworks), evaluation (LLM judges + custom scorers), production monitoring, Delta/UC backend."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "AI Platform / ML lifecycle",
+  "capsule": "MLflow Model Registry",
+  "note": "Versioning, aliases (Champion/staging/prod), UC lineage."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "AI Platform / ML lifecycle",
+  "capsule": "MLflow Prompt Registry",
+  "note": "Versioned prompts, staging/prod aliases."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "AI Platform / ML lifecycle",
+  "capsule": "AutoML",
+  "note": "Automated hyperparameter tuning and model selection for tabular classification and regression tasks."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "AI Platform / ML lifecycle",
+  "capsule": "AI Search (ex-Vector Search)",
+  "note": "Vector + BM25 + hybrid (RRF) + reranking; Delta Sync; UC-governed; citations."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "AI Platform / ML lifecycle",
+  "capsule": "Model fine-tuning",
+  "note": "Efficient model adaptation via QLoRA, LoRA, and full fine-tuning on serverless GPUs."
+ }
+]

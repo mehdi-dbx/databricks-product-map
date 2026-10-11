@@ -1,0 +1,727 @@
+[
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "Interactive exploration and preparation of data and candidate models using notebooks, Genie, EDA, and Feature Store; outputs validated approach and reproducible pipeline.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Multi-language notebooks (Python/SQL/R/Scala)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "IDE with syntax highlighting, IntelliSense, cell-based execution, keyboard shortcuts; supports Python, SQL, R, and Scala for flexible development workflows.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (6 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Real-time coauthoring & live editing"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Multiple users edit same cells simultaneously with live cursor visibility; persistent chat context across page navigation; email notifications on comment activity.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Comments & mentions with AI"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Code-section highlighting with comments; user mentions via @mention; Genie Code integration for AI explanations/suggestions directly in comment threads.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Databricks Repos (Git version control)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Native Git integration with branch management, commit tracking, merge conflict resolution; notebooks and files versioned in Git; supports CI/CD workflows.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Interactive widgets & parameterization"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Notebook widgets enable interactive input parameters for dashboards and reports; dbutils.widgets module for programmatic parameter management.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Interactive widgets & parameterization",
+   "Widget input controls"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Dropdown, text input, slider, and multi-select widgets for user interaction.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Interactive widgets & parameterization",
+   "Programmatic parameter management"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "dbutils.widgets module for dynamic parameter retrieval and validation in code.",
+  "violations": [
+   "no capital start"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "In-notebook Genie Code (AI assistant)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Chat pane for code generation, debugging, multi-step workflows; works with Unity Catalog tables/columns/lineage; generates and executes code directly in cells.",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "In-notebook Genie Code (AI assistant)",
+   "Unity Catalog integration"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Genie understands table schemas, columns, lineage; respects UC permissions in generated code.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Built-in visualization & dashboards"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Automatic data visualization; built-in plotting libraries (matplotlib, plotly); point-and-click visualization editor; shareable interactive dashboards from notebook results.",
+  "violations": [
+   "too long (173>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Built-in visualization & dashboards",
+   "Chart type support"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Line, scatter, bar, time-series, and other standard chart types for data visualization.",
+  "violations": [
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Built-in visualization & dashboards",
+   "Interactive plotly features"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Hover tooltips, zoom, pan, and drill-down capabilities in rendered charts.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Interactive notebook table features"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Search/filter functionality in result tables; built-in column statistics; point-and-click chart creation from table data; Genie Code assistance for filtering.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Interactive notebook table features",
+   "Built-in column statistics"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Display min, max, mean, null counts, and distinct values for each column.",
+  "violations": [
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "Databricks SQL for exploratory queries"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Serverless SQL with Delta Lake; dashboards, materialized views, streaming tables for ad-hoc analytical exploration; result visualization and export.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "Spark DataFrames & pandas API"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "PySpark and pandas-compatible APIs for distributed processing; pyspark.pandas for seamless scaling from pandas to distributed workloads.",
+  "violations": [
+   "semicolon pile",
+   "marketing word (seamless)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "Automated data profiling (dbutils.data.summarize)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Programmatic profiling of Spark/pandas DataFrames; summary statistics with configurable precision modes (~5% or ~0.0001% error); accessible from Python/Scala/R.",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "One-click data profile generation"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Built-in profiling showing histograms, distributions, null counts, and summary statistics for numeric, string, and date columns; accessible via + menu in result tables.",
+  "violations": [
+   "semicolon pile",
+   "plus-joined list",
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "One-click data profile generation",
+   "Summary statistics"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Display mean, median, stddev, min, max for numeric columns.",
+  "violations": [
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "Lakeflow Designer (no-code visual ETL)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Drag-and-drop canvas for filtering, joining, aggregating, reshaping; natural language operator generation via Genie Code; backed by executable SQL/Spark code; Git-versionable.",
+  "violations": [
+   "too long (175>170)",
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "Lakeflow Designer (no-code visual ETL)",
+   "Joining operators"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Connect multiple data sources with join type selection (inner, left, right, full).",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "Automated data cleaning operations"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Duplicate removal (drop_duplicates), missing value handling (fillna), date reformatting (pd.to_datetime); standard Pandas/Spark methods; Genie Code assists with NL prompts.",
+  "violations": [
+   "too long (172>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "Catalog Explorer & AI-assisted discovery"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "LLM-powered search for tables/models/functions; lineage tracking; data quality indicators; natural language prompt-driven table exploration (Public Preview).",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "Visualization toolkit (matplotlib/plotly/seaborn)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Multiple chart types (line, scatter, bar, time-series); built-in rendering via display(); plotly interactive features; Lakeview dashboard embedding for nested analytics.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "Visualization toolkit (matplotlib/plotly/seaborn)",
+   "Chart types"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Line, scatter, bar, time-series, histograms, heatmaps, and other standard types.",
+  "violations": [
+   "enumeration (6 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Data prep & EDA",
+   "Visualization toolkit (matplotlib/plotly/seaborn)",
+   "Interactive plotly features"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Hover tooltips, zoom, pan, export capabilities in rendered visualizations.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "Model development through iterative experimentation, hyperparameter tuning, AutoML, and MLflow tracking to identify and validate production candidates.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "MLflow",
+   "MLflow Tracking"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Log parameters, metrics, artifacts, and tags across training runs; organize with experiments; compare runs in notebook UI (Delta/UC backend).",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "MLflow",
+   "MLflow Tracking",
+   "Runs"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Individual executions of model code; each logs parameters, metrics, artifacts, tags.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "MLflow",
+   "Autologging (Framework Integration)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Automatic capture from scikit-learn, XGBoost, TensorFlow, PyTorch, LightGBM; configurable via mlflow.autolog(); requires explicit enabling on serverless compute.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "MLflow",
+   "Logged Models (MLflow 3.x)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "First-class model entities with versioning, signature inference, metrics, parameters, and lineage tracking across training/staging/prod.",
+  "violations": [
+   "slash list",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "MLflow",
+   "LLM Evaluation (Judges)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "8 built-in judges (correctness, relevance, safety, groundedness, completeness, fluency, tool-call quality, RAG sufficiency) + human feedback loops.",
+  "violations": [
+   "plus-joined list",
+   "enumeration (7 commas)",
+   "no capital start"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "MLflow",
+   "Custom Scorers (Code-based)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Define Python evaluation logic using @scorer decorator; deterministic checks, custom metrics, or domain-specific heuristics without LLM overhead.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "MLflow",
+   "Prompt Registry"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Version prompts with immutable history; stage aliases (champion/staging/prod) for promotion workflows; bind model params and temperature together.",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "MLflow",
+   "MLflow Traces"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Capture end-to-end agent execution: prompts, model calls, retrievals, tool invocations, errors, latency; OpenTelemetry-compatible for debugging/monitoring.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "AutoML",
+   "Classification"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Binary & multiclass prediction via decision trees, random forests, logistic regression, XGBoost, LightGBM; stratified train/val/test splits (60/20/20).",
+  "violations": [
+   "semicolon pile",
+   "slash list",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "AutoML",
+   "Classification",
+   "Random forests"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Ensemble of trees for robust classification performance.",
+  "violations": [
+   "marketing word (robust)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "AutoML",
+   "Regression"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Continuous value prediction via trees, linear regression, XGBoost, LightGBM with automated hyperparameter tuning and evaluation metrics (R², MAE, RMSE).",
+  "violations": [
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "AutoML",
+   "Regression",
+   "Random forests"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Ensemble of regression trees for robust predictions.",
+  "violations": [
+   "marketing word (robust)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "AutoML",
+   "Forecasting (Classic Compute)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Time-series predictions via Prophet or Auto-ARIMA on classic Databricks clusters; configurable forecast horizon, external regressors via Feature Store.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "AutoML",
+   "Forecasting (Serverless, Public Preview)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Prophet, Auto-ARIMA, and DeepAR on managed serverless GPU infrastructure; no cluster provisioning required.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "AutoML",
+   "Glass-Box Generated Notebooks"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Editable trial code for every model trained; inspect data exploration, preprocessing, feature engineering, training logic, SHAP analysis; reproducible and customizable.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "AutoML",
+   "SHAP Explainability"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Feature importance and impact analysis via SHAP Shapley values; disabled by default (memory-intensive); enable with shap_enabled=True in notebooks.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "AutoML",
+   "Data Preparation & Feature Selection"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Automatic semantic type detection, missing-value imputation, column inclusion/exclusion, categorical encoding; supported types: numeric, categorical, text, dates, arrays.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (7 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "AutoML",
+   "AutoML Python API"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Programmatic interface (databricks.automl.classify/regress/forecast) with full control: exclude_cols, imputers, time_col, split_col, feature_store_lookups.",
+  "violations": [
+   "slash list",
+   "enumeration (4 commas)"
+  ]
+ }
+]

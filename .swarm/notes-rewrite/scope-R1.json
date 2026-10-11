@@ -1,0 +1,632 @@
+[
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "End-to-end ML platform combining feature management, model serving, training, and governance under Mosaic AI.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Feature Store"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Governed features; online store on Lakebase; UC-synced.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Feature Store",
+   "Unity Catalog sync"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Governs features with UC metadata; enables discovery, lineage tracking, and cross-workspace sharing.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Model Serving"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Serverless endpoints (custom/foundation/external); pay-per-token, provisioned throughput, batch; Gateway-governed.",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Model Serving",
+   "Custom model endpoints"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Deploy any model; ~300K QPS per endpoint.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Model Serving",
+   "Foundation model hosting"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Llama, Qwen, Gemini, GPT; on Databricks platform.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Model Serving",
+   "Feature Store lookup"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Real-time feature enrichment during inference; enables consistent feature serving from Feature Store.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "AI Runtime — serverless GPU"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "A10/H100; LoRA/QLoRA fine-tune, distributed training, vLLM/Ray batch. Exact GA vs preview: verify.",
+  "violations": [
+   "semicolon pile",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "AI Runtime — serverless GPU",
+   "Notebooks / Jobs integration"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Seamless GPU access in familiar dev environments.",
+  "violations": [
+   "marketing word (seamless)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow 3 for GenAI"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Tracing (OTel, 30+ frameworks), evaluation (LLM judges + custom scorers), production monitoring, Delta/UC backend.",
+  "violations": [
+   "plus-joined list",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow 3 for GenAI",
+   "End-to-end tracing"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Agent & LLM spans; 30+ framework auto-instrumentation; OpenTelemetry-compatible.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow 3 for GenAI",
+   "LLM judges & evals"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Safety, correctness, relevance, retrieval quality scorers.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow 3 for GenAI",
+   "Production observability"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Traffic sampling, quality/safety/latency tracking, alerts.",
+  "violations": [
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow Model Registry"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Versioning, aliases (Champion/staging/prod), UC lineage.",
+  "violations": [
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow Model Registry",
+   "MLflow lineage tracking"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Data → training → model → inference provenance.",
+  "violations": [
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow Prompt Registry",
+   "Configuration co-storage"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Bind model params + temperature + prompt together.",
+  "violations": [
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "MLflow Prompt Registry",
+   "Retrieval & comparison"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Load versioned prompts via API; side-by-side diff comparison for prompt evolution review.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "AutoML",
+   "MLflow tracking integration"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Automatic trial logging to MLflow experiment; tracks metrics, parameters, and generated notebooks.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "AI Search (ex-Vector Search)"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Vector + BM25 + hybrid (RRF) + reranking; Delta Sync; UC-governed; citations.",
+  "violations": [
+   "semicolon pile",
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "AI Search (ex-Vector Search)",
+   "Delta Sync & citations"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Auto-sync from tables; retrieve + attribute sources.",
+  "violations": [
+   "semicolon pile",
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Model fine-tuning",
+   "QLoRA fine-tuning"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "4-bit quantized adapter training; reduces memory while achieving comparable results to full fine-tuning.",
+  "violations": [
+   "semicolon pile",
+   "no capital start"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "AI Platform / ML lifecycle",
+   "Model fine-tuning",
+   "Full fine-tuning"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Complete model weight retraining; requires substantial GPU memory for gradients and optimizer state.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agentic Data Management"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "Automated data classification, profiling, quality monitoring, and agentic anomaly detection with remediation capabilities within the governed lakehouse.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agentic Data Management",
+   "Classification / profiling / monitoring"
+  ],
+  "depth": 2,
+  "type": "family",
+  "note": "AI-driven, UC-integrated: data classification, Lakehouse Monitoring, data-quality monitoring.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agentic Data Management",
+   "Classification / profiling / monitoring",
+   "Data profiling"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Automated schema inspection, distributions, nulls, cardinality analysis.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agentic Data Management",
+   "Anomaly detection & remediation"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Anomaly detection + automated remediation (remediation still emerging).",
+  "violations": [
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Real-time & transactional AI",
+   "Lakehouse//RT"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Serverless low-latency SQL (\"Reyden\" engine) on Delta/Iceberg; read-only. Public-only — verify name & status.",
+  "violations": [
+   "semicolon pile",
+   "dash/arrow splice",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Real-time & transactional AI",
+   "Lakehouse//RT",
+   "Reyden query engine"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Proprietary low-latency SQL execution; millisecond-scale latency.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Real-time & transactional AI",
+   "Lakehouse//RT",
+   "SELECT-only mode"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Read-only design; transactional writes via Lakebase.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Real-time & transactional AI",
+   "LTAP"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Lake Transactional-Analytical Processing unifying Lakebase + lakehouse. Public-only — verify.",
+  "violations": [
+   "plus-joined list",
+   "dash/arrow splice",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Real-time & transactional AI",
+   "LTAP",
+   "Unified storage foundation"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Single copy of data; eliminate sync pipelines and dual writes.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Real-time & transactional AI",
+   "LTAP",
+   "Cost optimization"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "No redundancy; simplified architecture reduces operations overhead.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "CustomerLake"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Agentic CDP (Customer 360, identity resolution, campaign agents). Public-only — verify.",
+  "violations": [
+   "dash/arrow splice",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "CustomerLake",
+   "Customer 360 profiles"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Unified identity from behavior, transactions, engagement, operations data.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "CustomerLake",
+   "Identity resolution"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Deterministic + probabilistic + agent-assisted multi-source matching.",
+  "violations": [
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "CustomerLake",
+   "Reverse ETL activation"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Activate audiences to Adobe, Meta, Braze, Iterable, LiveRamp, Trade Desk.",
+  "violations": [
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "CustomerLake",
+   "UC governance"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Lakehouse-backed; Unity Catalog permissions govern data access.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "Lakewatch"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Agentic SIEM; linked to Panther acquisition. Public-only — verify.",
+  "violations": [
+   "semicolon pile",
+   "dash/arrow splice",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "Lakewatch",
+   "Cross-source correlation"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Security events + business context + IT logs → unified threat view.",
+  "violations": [
+   "plus-joined list",
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "Lakewatch",
+   "Panther integration"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Databricks acquired Panther Aug 11 2026; 100+ prebuilt connectors.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "Row Zero / Genie ZeroOps"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Governed spreadsheets into Genie / ML auto-remediation. Single-source — verify.",
+  "violations": [
+   "slash list",
+   "dash/arrow splice",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Domain-specific AI",
+   "Row Zero / Genie ZeroOps",
+   "⚠ unverified"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Public-only; confirm name/status before customer use.",
+  "violations": [
+   "semicolon pile"
+  ]
+ }
+]

@@ -1,0 +1,130 @@
+================================================================================
+DATA SCIENCE CAPSULES DEEP DRILL-DOWN — FINAL REPORT
+================================================================================
+Date: 2026-10-07
+Capsules: MLflow, AutoML, Distributed training & GPU
+Output: /Users/mehdi.lamrani/code/Report/AmadeusAI/run/ds-deep/b.json
+
+================================================================================
+CAPSULE SUMMARIES
+================================================================================
+
+1. MLflow (8 sub-features, 8 substantive notes, 4 real URLs)
+   ────────────────────────────────────────────────────────
+   Sub-features:
+   • MLflow Tracking (params/metrics/artifacts/run comparison)
+   • Autologging (framework-specific: sklearn, XGBoost, TF, PyTorch, LightGBM)
+   • Experiments UI (organization, comparison, nested traces)
+   • Logged Models (MLflow 3.x; first-class entities with versioning)
+   • LLM Evaluation (8 built-in judges; correctness, relevance, safety, etc.)
+   • Custom Scorers (code-based deterministic checks)
+   • Prompt Registry (versioning, aliases, config co-storage)
+   • MLflow Traces (end-to-end agent execution capture; OTel-compatible)
+   
+   Key URLs:
+   - https://docs.databricks.com/aws/en/mlflow/
+   - https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor/
+   - https://docs.databricks.com/aws/en/mlflow3/genai/tracing/overview
+
+2. AutoML (8 sub-features, 8 substantive notes, 5 real URLs)
+   ──────────────────────────────────────────────────────────
+   Sub-features:
+   • Classification (trees, forests, LR, XGBoost, LightGBM)
+   • Regression (trees, linear, XGBoost, LightGBM)
+   • Forecasting — Classic (Prophet, Auto-ARIMA on clusters)
+   • Forecasting — Serverless (Prophet, Auto-ARIMA, DeepAR; Jun 2026 PuP)
+   • Glass-Box Notebooks (editable trial code for all trained models)
+   • SHAP Explainability (feature importance; disabled by default)
+   • Data Preparation (column selection, imputation, semantic type detection)
+   • AutoML Python API (programmatic control via databricks.automl.*)
+   
+   Key URLs:
+   - https://docs.databricks.com/aws/en/machine-learning/automl/
+   - https://docs.databricks.com/aws/en/machine-learning/automl/classification
+   - https://docs.databricks.com/aws/en/machine-learning/train-model/serverless-forecasting
+
+3. Distributed training & GPU (8 sub-features, 8 substantive notes, 5 real URLs)
+   ──────────────────────────────────────────────────────────────────────────────
+   Sub-features:
+   • ML Runtime (GPU clusters; PyTorch 2.12.0, scikit-learn 1.7.2 pre-installed)
+   • AI Runtime (serverless GPU: 1×A10, 1×H100, 8×H100; Jun 2026 PuP)
+   • Ray Train (framework-agnostic multi-GPU/multi-node orchestration)
+   • Ray Tune (distributed HPO with ASHA early stopping; MLflow integration)
+   • TorchDistributor (Spark-based PyTorch launcher; torch.distributed.run wrapper)
+   • Spark MLlib (distributed classical ML; pyspark.ml API)
+   • DeepSpeed (ZeRO sharding, optimizer partitioning, CPU offload)
+   • @distributed API (serverless single-node DDP/FSDP/DeepSpeed decorator)
+   
+   Key URLs:
+   - https://docs.databricks.com/aws/en/machine-learning/databricks-runtime-ml
+   - https://docs.databricks.com/aws/en/machine-learning/ai-runtime/
+   - https://docs.databricks.com/aws/en/machine-learning/train-model/distributed-training/
+
+================================================================================
+METRICS
+================================================================================
+
+Total Capsules:               3
+Total Sub-features:           24 (8 per capsule)
+Total Substantive Notes:      24 (100% coverage)
+Total Real Documentation URLs: 14 (4-5 per capsule)
+Minimum sub-features/capsule: 8 (exceeds 4-8 requirement)
+
+Breakdown by Capsule:
+┌──────────────────────────┬────────┬───────┬─────┐
+│ Capsule                  │ Subs   │ Notes │ URLs│
+├──────────────────────────┼────────┼───────┼─────┤
+│ MLflow                   │ 8      │ 8     │ 4   │
+│ AutoML                   │ 8      │ 8     │ 5   │
+│ Distributed training GPU │ 8      │ 8     │ 5   │
+├──────────────────────────┼────────┼───────┼─────┤
+│ TOTAL                    │ 24     │ 24    │ 14  │
+└──────────────────────────┴────────┴───────┴─────┘
+
+================================================================================
+VALIDATION
+================================================================================
+
+✓ JSON parses successfully
+✓ Capsule names match ds-tree.json exactly
+✓ All sub-features have "n" (label) fields
+✓ All sub-features have "note" fields (grounded, substantive)
+✓ "new" flags applied where substantiated (MLflow 3.x, AI Runtime, etc.)
+✓ All documentation URLs are real docs.databricks.com links
+✓ No fabrication; all features sourced from official documentation
+
+================================================================================
+SOURCE METHODOLOGY
+================================================================================
+
+Search Queries (8 parallel/sequential):
+1. MLflow tracking autologging experiments evaluation model registry
+2. AutoML classification regression forecasting features
+3. Distributed training Ray Train TorchDistributor GPU
+4. MLflow prompt registry traces LLM judges custom scorers
+5. AutoML glass-box SHAP feature selection data prep
+6. Spark MLlib DeepSpeed multi-GPU
+7. Ray Tune hyperparameter distributed trials
+8. AI Runtime serverless GPU H100 A10 fine-tuning
+
+All results cross-referenced against:
+• docs.databricks.com (AWS, Azure, GCP variants)
+• databricks.com/blog (feature announcements)
+• Official product pages
+
+================================================================================
+FLAGGED ITEMS (for verification)
+================================================================================
+
+None. All 24 sub-features substantiated with real documentation links and
+grounded feature descriptions.
+
+================================================================================
+OUTPUT FILES
+================================================================================
+
+Primary:  /Users/mehdi.lamrani/code/Report/AmadeusAI/run/ds-deep/b.json
+Logging:  /Users/mehdi.lamrani/code/Report/AmadeusAI/run/agent-ds-deep-b.md
+Summary:  /Users/mehdi.lamrani/code/Report/AmadeusAI/run/agent-ds-deep-b-summary.txt
+
+================================================================================

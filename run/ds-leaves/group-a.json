@@ -1,0 +1,216 @@
+[
+  {
+    "n": "Notebooks & collaborative development",
+    "s": "GA",
+    "c": "ok",
+    "note": "Collaborative IDE for interactive data science; multi-language support; real-time coauthoring; AI-assisted coding.",
+    "docs": [
+      "https://docs.databricks.com/en/notebooks/",
+      "https://docs.databricks.com/aws/en/notebooks/notebooks-collaborate",
+      "https://docs.databricks.com/aws/en/genie-code/"
+    ],
+    "since": "Core platform feature; real-time coauthoring Nov 2025; Genie Code Mar 2026",
+    "deck": "dsml-l100200-pitch-deck-godsml",
+    "children": [
+      {
+        "n": "Databricks Notebooks",
+        "s": "GA",
+        "c": "ok",
+        "note": "Multi-language IDE (Python, SQL, R, Scala) with versioning, comments, cell-level execution.",
+        "docs": ["https://docs.databricks.com/en/notebooks/"],
+        "since": "Foundational; core platform since early Databricks",
+        "deck": null
+      },
+      {
+        "n": "Databricks Repos (Git folders)",
+        "s": "GA",
+        "c": "ok",
+        "note": "Native Git integration for version control, branching, merge conflict resolution in notebooks and code.",
+        "docs": ["https://docs.databricks.com/aws/en/repos/"],
+        "since": "GA; foundational Git integration",
+        "deck": null
+      },
+      {
+        "n": "Real-Time Coauthoring",
+        "s": "GA",
+        "c": "ok",
+        "note": "Simultaneous multi-user cell-level editing with live cursor tracking and AI-assisted comments.",
+        "docs": ["https://docs.databricks.com/aws/en/notebooks/notebooks-collaborate"],
+        "since": "Nov 2025",
+        "deck": null
+      },
+      {
+        "n": "Databricks Assistant (in-notebook)",
+        "s": "GA",
+        "c": "ok",
+        "note": "AI coding companion for explanations, debugging, and generation within notebook cells.",
+        "docs": ["https://docs.databricks.com/aws/en/genie-code/"],
+        "since": "GA; in-notebook AI assistant",
+        "deck": null
+      },
+      {
+        "n": "Notebook visualizations & dashboards",
+        "s": "GA",
+        "c": "ok",
+        "note": "Built-in plotting (matplotlib, plotly); quick data profiling; embedded Lakeview dashboard support.",
+        "docs": ["https://docs.databricks.com/aws/en/notebooks/"],
+        "since": "GA; long-standing visualization support",
+        "deck": null
+      },
+      {
+        "n": "Genie Code",
+        "s": "GA",
+        "new": true,
+        "c": "ok",
+        "note": "AI-powered workflow automation; multi-step exploratory analysis; code generation from natural language prompts.",
+        "docs": ["https://docs.databricks.com/aws/en/genie-code/"],
+        "since": "Mar 11, 2026",
+        "deck": null
+      }
+    ]
+  },
+  {
+    "n": "Data prep & EDA",
+    "s": "GA",
+    "c": "ok",
+    "note": "Data profiling, summary stats, exploratory analysis, and prep tools integrated into notebook and SQL workflows.",
+    "docs": [
+      "https://docs.databricks.com/aws/en/sql",
+      "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+      "https://docs.databricks.com/aws/en/designer/what-is-lakeflow-designer",
+      "https://docs.databricks.com/aws/en/catalog-explorer",
+      "https://docs.databricks.com/aws/en/dev-tools/databricks-utils"
+    ],
+    "since": "SQL & Spark core since launch; profiling & discovery evolved 2023–2026; Designer GA Jun 2026",
+    "deck": "databricks-for-data-science-presentation-deck",
+    "children": [
+      {
+        "n": "Databricks SQL for EDA",
+        "s": "GA",
+        "c": "ok",
+        "note": "Serverless SQL queries on Delta; dashboards, materialized views, streaming tables for analytical exploration.",
+        "docs": ["https://docs.databricks.com/aws/en/sql"],
+        "since": "GA; 2020",
+        "deck": null
+      },
+      {
+        "n": "Spark DataFrames & pandas API",
+        "s": "GA",
+        "c": "ok",
+        "note": "PySpark and pandas-compatible APIs for distributed data processing and in-memory transformations.",
+        "docs": ["https://docs.databricks.com/aws/en/machine-learning/databricks-runtime-ml"],
+        "since": "GA; foundational Spark/pandas support",
+        "deck": null
+      },
+      {
+        "n": "Data profiling & summary stats",
+        "s": "GA",
+        "c": "ok",
+        "note": "One-click histograms, distribution profiles, null counts, and summary statistics in notebooks.",
+        "docs": ["https://docs.databricks.com/aws/en/notebooks/eda-tutorial"],
+        "since": "GA; long-standing; enhanced 2023–2026",
+        "deck": null
+      },
+      {
+        "n": "Visualization in notebooks",
+        "s": "GA",
+        "c": "ok",
+        "note": "matplotlib, plotly, seaborn integration; display() rendering; native Lakeview chart embedding.",
+        "docs": ["https://docs.databricks.com/aws/en/notebooks/"],
+        "since": "GA; matplotlib, plotly, seaborn",
+        "deck": null
+      },
+      {
+        "n": "Lakeflow Designer",
+        "s": "GA",
+        "new": true,
+        "c": "ok",
+        "note": "No-code visual data prep; drag-and-drop filters, joins, aggregations with live preview and profiling.",
+        "docs": ["https://docs.databricks.com/aws/en/designer/what-is-lakeflow-designer"],
+        "since": "Jun 2026 (DAIS GA)",
+        "deck": null
+      },
+      {
+        "n": "Catalog Explorer & Data Discovery",
+        "s": "GA",
+        "c": "ok",
+        "note": "AI-assisted metadata search, lineage tracking, data quality indicators across Unity Catalog assets.",
+        "docs": ["https://docs.databricks.com/aws/en/catalog-explorer"],
+        "since": "GA; 2023; AI-assisted metadata search",
+        "deck": null
+      }
+    ]
+  },
+  {
+    "n": "Feature engineering & Feature Store",
+    "s": "GA",
+    "c": "ok",
+    "note": "Governed feature definitions, online serving via Lakebase, point-in-time correctness, and lineage tracking in Unity Catalog.",
+    "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/feature-store/",
+      "https://docs.databricks.com/aws/en/machine-learning/feature-store/uc/feature-tables-uc",
+      "https://docs.databricks.com/aws/en/machine-learning/feature-store/feature-views",
+      "https://docs.databricks.com/aws/en/machine-learning/feature-store/online-feature-store",
+      "https://docs.databricks.com/aws/en/machine-learning/feature-store/on-demand-features",
+      "https://docs.databricks.com/aws/en/machine-learning/feature-store/lineage"
+    ],
+    "since": "Feature Store GA 2023; UC integration 2024; Online FS (Lakebase) Feb 2026; Feature Views PuP 2026",
+    "deck": null,
+    "children": [
+      {
+        "n": "Feature Store (Delta-backed)",
+        "s": "GA",
+        "c": "ok",
+        "note": "Unity Catalog-governed feature tables with versioning, primary-key indexing, discovery, and lineage.",
+        "docs": ["https://docs.databricks.com/aws/en/machine-learning/feature-store/"],
+        "since": "GA; 2023; UC integration 2024",
+        "deck": null
+      },
+      {
+        "n": "Feature Tables & Definitions",
+        "s": "GA",
+        "c": "ok",
+        "note": "User-managed Delta tables in UC with feature metadata; computed via Spark/Lakeflow pipelines.",
+        "docs": ["https://docs.databricks.com/aws/en/machine-learning/feature-store/uc/feature-tables-uc"],
+        "since": "GA; UC-governed features",
+        "deck": null
+      },
+      {
+        "n": "Feature Views (managed computation)",
+        "s": "PuP",
+        "c": "ok",
+        "note": "Declarative feature definitions; Databricks manages materialization pipelines; batch/streaming/hybrid.",
+        "docs": ["https://docs.databricks.com/aws/en/machine-learning/feature-store/feature-views"],
+        "since": "PuP; 2026",
+        "deck": null
+      },
+      {
+        "n": "Online Feature Store (Lakebase)",
+        "s": "GA",
+        "c": "ok",
+        "note": "Sub-millisecond latency lookup via serverless PostgreSQL (Lakebase); auto-sync from Delta tables.",
+        "docs": ["https://docs.databricks.com/aws/en/machine-learning/feature-store/online-feature-store"],
+        "since": "Feb 2026 (Lakebase GA)",
+        "deck": null
+      },
+      {
+        "n": "On-demand & point-in-time features",
+        "s": "GA",
+        "c": "ok",
+        "note": "Computed via UC Python UDFs at request time; eliminates train/serving skew with temporal correctness.",
+        "docs": ["https://docs.databricks.com/aws/en/machine-learning/feature-store/on-demand-features"],
+        "since": "GA; 2024–2026",
+        "deck": null
+      },
+      {
+        "n": "Feature Serving & Lineage",
+        "s": "GA",
+        "c": "ok",
+        "note": "REST endpoints for feature retrieval; automatic feature-to-model lineage tracking for governance.",
+        "docs": ["https://docs.databricks.com/aws/en/machine-learning/feature-store/lineage"],
+        "since": "GA; Feature Store governance",
+        "deck": null
+      }
+    ]
+  }
+]

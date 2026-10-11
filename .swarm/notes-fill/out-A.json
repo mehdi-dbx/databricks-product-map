@@ -1,0 +1,86 @@
+[
+  {
+    "path": ["AI Platform / ML lifecycle"],
+    "note": "End-to-end ML platform combining feature management, model serving, training, and governance under Mosaic AI."
+  },
+  {
+    "path": ["AI Platform / ML lifecycle", "AutoML"],
+    "note": "Automated hyperparameter tuning and model selection for tabular classification and regression tasks."
+  },
+  {
+    "path": ["AI Platform / ML lifecycle", "Model fine-tuning"],
+    "note": "Efficient model adaptation via QLoRA, LoRA, and full fine-tuning on serverless GPUs."
+  },
+  {
+    "path": ["AI Platform / ML lifecycle", "Feature Store", "Unity Catalog sync"],
+    "note": "Governs features with UC metadata; enables discovery, lineage tracking, and cross-workspace sharing."
+  },
+  {
+    "path": ["AI Platform / ML lifecycle", "Feature Store", "Feature Views (Public Preview)"],
+    "note": "Databricks-managed declarative feature computation layer for enabling simplified authoring over manual tables."
+  },
+  {
+    "path": ["AI Platform / ML lifecycle", "Model Serving", "Feature Store lookup"],
+    "note": "Real-time feature enrichment during inference; enables consistent feature serving from Feature Store."
+  },
+  {
+    "path": ["AI Platform / ML lifecycle", "AI Runtime — serverless GPU", "Distributed training (DDP/FSDP)"],
+    "note": "Multi-GPU and multi-node training scaling using PyTorch DDP, FSDP, or DeepSpeed frameworks."
+  },
+  {
+    "path": ["AI Platform / ML lifecycle", "AI Runtime — serverless GPU", "vLLM & Ray batch inference"],
+    "note": "High-throughput batch LLM workloads using vLLM serving and Ray Data distributed parallelization."
+  },
+  {
+    "path": ["AI Platform / ML lifecycle", "MLflow Prompt Registry", "Staging / production aliases"],
+    "note": "Mutable named references enabling safe prompt promotion through deployment pipelines and workflows."
+  },
+  {
+    "path": ["AI Platform / ML lifecycle", "MLflow Prompt Registry", "Retrieval & comparison"],
+    "note": "Load versioned prompts via API; side-by-side diff comparison for prompt evolution review."
+  },
+  {
+    "path": ["AI Platform / ML lifecycle", "AutoML", "Tabular classification"],
+    "note": "Binary and multi-class classification with automated feature engineering and hyperparameter optimization tasks."
+  },
+  {
+    "path": ["AI Platform / ML lifecycle", "AutoML", "Tabular regression"],
+    "note": "Automated numerical prediction via feature engineering and hyperparameter tuning for regression tasks."
+  },
+  {
+    "path": ["AI Platform / ML lifecycle", "AutoML", "MLflow tracking integration"],
+    "note": "Automatic trial logging to MLflow experiment; tracks metrics, parameters, and generated notebooks."
+  },
+  {
+    "path": ["AI Platform / ML lifecycle", "AI Search (ex-Vector Search)", "Vector search (ANN HNSW)"],
+    "note": "Semantic similarity search using HNSW algorithm with L2 distance metric on embeddings."
+  },
+  {
+    "path": ["AI Platform / ML lifecycle", "AI Search (ex-Vector Search)", "BM25 keyword search"],
+    "note": "Full-text keyword search using Okapi BM25 ranking algorithm across searchable text columns."
+  },
+  {
+    "path": ["AI Platform / ML lifecycle", "AI Search (ex-Vector Search)", "Hybrid fusion (RRF)"],
+    "note": "Combines vector and keyword search results via Reciprocal Rank Fusion normalization approach."
+  },
+  {
+    "path": ["AI Platform / ML lifecycle", "AI Search (ex-Vector Search)", "Optional reranking"],
+    "note": "Second-pass document reranking to refine overall search quality beyond initial retrieval results."
+  },
+  {
+    "path": ["AI Platform / ML lifecycle", "AI Search (ex-Vector Search)", "Unity Catalog governance"],
+    "note": "Governs search indexes with UC permissions, encryption (AES-256), and access control policies."
+  },
+  {
+    "path": ["AI Platform / ML lifecycle", "Model fine-tuning", "QLoRA fine-tuning"],
+    "note": "4-bit quantized adapter training; reduces memory while achieving comparable results to full fine-tuning."
+  },
+  {
+    "path": ["AI Platform / ML lifecycle", "Model fine-tuning", "Full fine-tuning"],
+    "note": "Complete model weight retraining; requires substantial GPU memory for gradients and optimizer state."
+  },
+  {
+    "path": ["AI Platform / ML lifecycle", "Model fine-tuning", "AI Runtime GPU integration"],
+    "note": "Serverless A10 (24GB) and H100 (80GB per GPU) compute for fine-tuning tasks."
+  }
+]

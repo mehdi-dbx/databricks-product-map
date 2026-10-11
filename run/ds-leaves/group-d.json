@@ -1,0 +1,284 @@
+[
+  {
+    "n": "MLOps & CI/CD",
+    "s": "GA",
+    "c": "ok",
+    "note": "Production ML workflows with orchestration, IaC, and CI/CD automation for end-to-end model lifecycle.",
+    "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-stacks",
+      "https://docs.databricks.com/aws/en/dev-tools/bundles/",
+      "https://docs.databricks.com/aws/en/jobs/",
+      "https://docs.databricks.com/aws/en/dev-tools/ci-cd/",
+      "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-workflow"
+    ],
+    "since": "GA (Workflows 2022; DABs 2023; MLOps Stacks 2022; CI/CD 2023; rebranded 2026)",
+    "deck": "mlops-on-databricks-end-to-end-manufacturing-tutorial",
+    "children": [
+      {
+        "n": "MLOps Stacks",
+        "s": "GA",
+        "c": "ok",
+        "note": "Official reference templates combining ML code, bundle configuration, and GitHub Actions CI/CD workflows.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-stacks"
+        ],
+        "since": "2022 (official release; continuously maintained)"
+      },
+      {
+        "n": "Declarative Automation Bundles (DABs)",
+        "s": "GA",
+        "c": "ok",
+        "note": "Infrastructure-as-code (YAML) for ML projects: defines jobs, pipelines, experiments, models, endpoints, permissions.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/dev-tools/bundles/"
+        ],
+        "since": "2023 (GA; Asset Bundles rebranded 2026)"
+      },
+      {
+        "n": "Lakeflow Jobs (formerly Workflows)",
+        "s": "GA",
+        "c": "ok",
+        "note": "DAG-based orchestration with task dependencies, serverless execution, up to 1000 tasks per job, repair runs.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/jobs/"
+        ],
+        "since": "2022 (Workflows); rebranded Lakeflow Jobs 2026"
+      },
+      {
+        "n": "Job Triggers",
+        "s": "GA (Scheduled/Table/File); Beta (Model-Update; Multi-trigger)",
+        "c": "ok",
+        "note": "Multiple scheduling modes: cron, Delta table updates, file arrival, model-registry events, continuous loops.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/jobs/triggers"
+        ],
+        "since": "Scheduled/Table/File GA (2022+); Model-Update Beta 2026"
+      },
+      {
+        "n": "Lakeflow Pipelines (formerly DLT)",
+        "s": "GA",
+        "c": "ok",
+        "note": "Declarative ETL workflows with SQL/Python support, auto-scaling, built-in data quality checks and expectations.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/ldp/"
+        ],
+        "since": "2022 (Delta Live Tables GA); rebranded Lakeflow 2026"
+      },
+      {
+        "n": "Git Integration & Repos",
+        "s": "GA",
+        "c": "ok",
+        "note": "Native Git version control in Databricks: multi-branch support, merge conflict resolution, notebook versioning.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/repos/"
+        ],
+        "since": "2021 (native Git integration)"
+      },
+      {
+        "n": "CI/CD with GitHub Actions & Azure DevOps",
+        "s": "GA",
+        "c": "ok",
+        "note": "Workflow templates for bundle validation, testing, deployment across dev/staging/prod environments.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/dev-tools/ci-cd/",
+          "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-workflow"
+        ],
+        "since": "2023 (Declarative CI/CD patterns)"
+      },
+      {
+        "n": "Terraform Support (Databricks Provider)",
+        "s": "GA",
+        "c": "ok",
+        "note": "Infrastructure-as-code for workspace, catalogs, clusters, permissions; separate from bundle layer, extensible.",
+        "docs": [
+          "https://registry.terraform.io/providers/databricks/databricks/latest"
+        ],
+        "since": "2020+ (provider); mature production support 2024+"
+      }
+    ]
+  },
+  {
+    "n": "DS languages, libraries & frameworks",
+    "s": "GA",
+    "c": "ok",
+    "note": "Core programming languages and ML libraries (Python, R) with distributed frameworks (Spark, Ray) and deep learning support (PyTorch, TensorFlow).",
+    "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/databricks-runtime-ml",
+      "https://docs.databricks.com/aws/en/release-notes/runtime/19ml",
+      "https://docs.databricks.com/aws/en/machine-learning/ray",
+      "https://spark.apache.org/docs/latest/ml-guide.html",
+      "https://docs.databricks.com/aws/en/machine-learning/reference-solutions/natural-language-processing"
+    ],
+    "since": "GA (core languages, runtimes 2019+; libraries continuously updated; PyTorch top-tier 2026; TensorFlow legacy Runtime 17.3 LTS)",
+    "deck": null,
+    "children": [
+      {
+        "n": "Python Ecosystem",
+        "s": "GA",
+        "c": "ok",
+        "note": "Core language with ML libraries: pandas (data), scikit-learn (algorithms), XGBoost/LightGBM (boosting), statsmodels (statistics).",
+        "docs": [
+          "https://docs.databricks.com/aws/en/release-notes/runtime/19ml"
+        ],
+        "since": "Preinstalled on ML runtimes; core support 2019+",
+        "children": [
+          {
+            "n": "pandas",
+            "s": "GA",
+            "c": "ok",
+            "note": "Data manipulation and analysis; preinstalled on ML runtimes.",
+            "docs": [
+              "https://docs.databricks.com/aws/en/release-notes/runtime/19ml"
+            ],
+            "since": "Foundational; preinstalled on all ML runtimes"
+          },
+          {
+            "n": "scikit-learn",
+            "s": "GA",
+            "c": "ok",
+            "note": "Classification, regression, clustering, feature engineering; Runtime 19 ML includes 1.7.2.",
+            "docs": [
+              "https://docs.databricks.com/aws/en/release-notes/runtime/19ml"
+            ],
+            "since": "Top-tier support 2026; version 1.7.2 in Runtime 19 ML"
+          },
+          {
+            "n": "XGBoost",
+            "s": "GA",
+            "c": "ok",
+            "note": "Gradient boosting library; Runtime 19 ML includes 3.2.0.",
+            "docs": [
+              "https://docs.databricks.com/aws/en/release-notes/runtime/19ml"
+            ],
+            "since": "Preinstalled ML runtime; version 3.2.0 in Runtime 19 ML"
+          },
+          {
+            "n": "LightGBM",
+            "s": "GA",
+            "c": "ok",
+            "note": "Fast gradient boosting; production-grade boosting alternative to XGBoost.",
+            "docs": [
+              "https://docs.databricks.com/aws/en/machine-learning/"
+            ],
+            "since": "Supported on ML runtimes; community library integration"
+          },
+          {
+            "n": "statsmodels",
+            "s": "GA",
+            "c": "ok",
+            "note": "Statistical modeling and hypothesis testing; complementary to scikit-learn.",
+            "docs": [
+              "https://docs.databricks.com/aws/en/machine-learning/"
+            ],
+            "since": "Available on ML runtimes"
+          }
+        ]
+      },
+      {
+        "n": "R Support",
+        "s": "GA",
+        "c": "verify",
+        "note": "Multi-language runtime support; Databricks Notebooks with %r magic command and R libraries integration.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/notebooks/",
+          "https://docs.databricks.com/aws/en/machine-learning/databricks-runtime-ml"
+        ],
+        "since": "Multi-language support foundational; R runtime support 2019+"
+      },
+      {
+        "n": "PySpark (Spark Python API)",
+        "s": "GA",
+        "c": "ok",
+        "note": "Distributed data processing framework; core Databricks compute engine for parallel DataFrame operations at scale.",
+        "docs": [
+          "https://spark.apache.org/docs/latest/api/python/",
+          "https://docs.databricks.com/aws/en/compute/"
+        ],
+        "since": "Foundational; Apache Spark core library"
+      },
+      {
+        "n": "Spark MLlib",
+        "s": "GA",
+        "c": "ok",
+        "note": "Scalable ML library built on Apache Spark; distributed algorithms, pipelines, cross-validation; pyspark.ml API.",
+        "docs": [
+          "https://spark.apache.org/docs/latest/ml-guide.html"
+        ],
+        "since": "Foundational; Apache Spark ML library core"
+      },
+      {
+        "n": "Deep Learning Frameworks",
+        "s": "GA (PyTorch); Legacy (TensorFlow on Runtime 17.3 LTS)",
+        "c": "ok",
+        "note": "PyTorch (2.12.0, top-tier support on Runtime 19 ML) and TensorFlow (removed from Runtime 18.0+; available on older LTS).",
+        "docs": [
+          "https://docs.databricks.com/aws/en/release-notes/runtime/19ml",
+          "https://docs.databricks.com/aws/en/machine-learning/databricks-runtime-ml-maintenance"
+        ],
+        "since": "PyTorch GA top-tier 2026; TensorFlow deprecated 2024+ (Runtime 18.0+)",
+        "children": [
+          {
+            "n": "PyTorch",
+            "s": "GA",
+            "c": "ok",
+            "note": "Top-tier GPU-native deep learning framework; CPU and GPU builds preinstalled on ML runtimes.",
+            "docs": [
+              "https://docs.databricks.com/aws/en/release-notes/runtime/19ml"
+            ],
+            "since": "Top-tier support 2026; version 2.12.0 in Runtime 19 ML"
+          },
+          {
+            "n": "TensorFlow",
+            "s": "Legacy",
+            "c": "ok",
+            "note": "Legacy framework; removed from Runtime 19 ML; available on Runtime 17.3 LTS (2.19.0).",
+            "docs": [
+              "https://docs.databricks.com/aws/en/machine-learning/databricks-runtime-ml-maintenance"
+            ],
+            "since": "Deprecated from Runtime 18.0+ (2024); LTS support 17.3 until Oct 2028"
+          }
+        ]
+      },
+      {
+        "n": "Ray (Distributed Computing)",
+        "s": "GA",
+        "c": "ok",
+        "note": "Distributed computing framework for hyperparameter tuning, distributed training (Ray Train/Tune), data processing.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/machine-learning/ray"
+        ],
+        "since": "GA on Databricks 2023; Ray integration 2022+"
+      },
+      {
+        "n": "pandas API on Spark",
+        "s": "GA",
+        "c": "ok",
+        "note": "Spark DataFrames with pandas-compatible API (koalas); seamless scaling from pandas to distributed.",
+        "docs": [
+          "https://spark.apache.org/docs/latest/api/python/reference/pyspark.pandas/"
+        ],
+        "since": "GA; koalas → pyspark.pandas API evolution"
+      },
+      {
+        "n": "Spark NLP (Community Library)",
+        "s": "GA",
+        "c": "ok",
+        "note": "NLP library by John Snow Labs; tokenization, NER, embeddings, text processing on Spark; community-integrated.",
+        "docs": [
+          "https://docs.databricks.com/aws/en/machine-learning/reference-solutions/natural-language-processing"
+        ],
+        "since": "Community integration; production-grade library"
+      },
+      {
+        "n": "Visual NLP / Spark OCR (Commercial)",
+        "s": "Commercial (Partner Integration)",
+        "c": "ok",
+        "note": "Commercial extension by John Snow Labs: document OCR, layout analysis, table extraction for enterprise NLP.",
+        "docs": [
+          "https://nlp.johnsnowlabs.com/docs/en/ocr"
+        ],
+        "since": "Partner offering; commercial license required"
+      }
+    ]
+  }
+]

@@ -1,0 +1,57 @@
+[
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Real-time coauthoring & live editing",
+   "Simultaneous cell editing"
+  ],
+  "note": "Lets two or more users edit the same cell at the same time, with conflict resolution."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "In-notebook Genie Code (AI assistant)",
+   "Multi-step workflow orchestration"
+  ],
+  "note": "Plans and runs multi-step data tasks across notebook cells on its own."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Develop & explore",
+   "Notebooks & collaboration",
+   "Built-in visualization & dashboards",
+   "Point-and-click visualization editor"
+  ],
+  "note": "Configures chart axes, aggregations and styling in a point-and-click editor, without code."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Experimentation & AutoML",
+   "MLflow",
+   "Prompt Registry",
+   "Configuration binding"
+  ],
+  "note": "Binds model parameters such as temperature to a registered prompt."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Triton GPU batching",
+   "Dynamic request batching"
+  ],
+  "note": "Triton groups concurrent requests into batches before running them on the GPU."
+ }
+]

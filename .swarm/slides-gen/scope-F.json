@@ -1,0 +1,38 @@
+[
+ {
+  "tree": "ds-tree.json",
+  "pillar": "Feature engineering",
+  "capsule": "Feature Store",
+  "note": "Governed feature engineering, storage, and online/offline serving."
+ },
+ {
+  "tree": "ds-tree.json",
+  "pillar": "Experimentation & AutoML",
+  "capsule": "MLflow",
+  "note": "Experiment tracking, autologging, and model management."
+ },
+ {
+  "tree": "ds-tree.json",
+  "pillar": "Experimentation & AutoML",
+  "capsule": "AutoML",
+  "note": "Automated model search with glass-box generated notebooks."
+ },
+ {
+  "tree": "ds-tree.json",
+  "pillar": "Training & compute",
+  "capsule": "Distributed training & GPU",
+  "note": "Scale training across GPUs and clusters."
+ },
+ {
+  "tree": "ds-tree.json",
+  "pillar": "Deploy & serve",
+  "capsule": "Model Serving & batch inference",
+  "note": "Real-time and batch inference on governed models."
+ },
+ {
+  "tree": "ds-tree.json",
+  "pillar": "Deploy & serve",
+  "capsule": "Model Registry & governance",
+  "note": "Model versioning, aliases, and lineage in Unity Catalog."
+ }
+]

@@ -1,0 +1,249 @@
+[
+  {
+    "n": "AI Platform / ML lifecycle",
+    "sub": "Mosaic AI",
+    "children": [
+      {
+        "n": "Feature Store",
+        "s": "GA",
+        "c": "ok",
+        "note": "Governed features; online store on Lakebase; UC-synced.",
+        "children": [
+          { "n": "Online Feature Store on Lakebase", "note": "Real-time feature lookup with sub-ms latency." },
+          { "n": "Point-in-time joins", "note": "Training data prep without train/serving skew." },
+          { "n": "Unity Catalog sync", "note": "Feature governance, discovery, lineage." },
+          { "n": "Feature Views (Public Preview)", "note": "Databricks-managed computation layer." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/machine-learning/feature-store"
+        ],
+        "since": "GA",
+        "deck": null
+      },
+      {
+        "n": "Model Serving",
+        "s": "GA",
+        "c": "ok",
+        "note": "Serverless endpoints (custom/foundation/external); pay-per-token, provisioned throughput, batch; Gateway-governed.",
+        "children": [
+          { "n": "Custom model endpoints", "note": "Deploy any model; ~300K QPS per endpoint." },
+          { "n": "Foundation model hosting", "note": "Llama, Qwen, Gemini, GPT; on Databricks platform." },
+          { "n": "Pay-per-token & provisioned", "note": "Token-based or dedicated throughput pricing." },
+          { "n": "Feature Store lookup", "note": "Real-time inference feature enrichment." },
+          { "n": "External model serving", "note": "Route to OpenAI, Anthropic, Google externally." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/machine-learning/model-serving",
+          "https://docs.databricks.com/aws/en/machine-learning/model-serving/foundation-model-overview"
+        ],
+        "since": "GA",
+        "deck": null
+      },
+      {
+        "n": "AI Runtime — serverless GPU",
+        "s": "GA",
+        "c": "ok",
+        "note": "A10/H100; LoRA/QLoRA fine-tune, distributed training, vLLM/Ray batch. Exact GA vs preview: verify.",
+        "children": [
+          { "n": "A10 & H100 GPUs", "note": "On-demand NVIDIA compute, pay-per-minute scale-to-zero." },
+          { "n": "LoRA / QLoRA fine-tuning", "note": "Efficient parameter-efficient adaptation." },
+          { "n": "Distributed training (DDP/FSDP)", "note": "Multi-GPU scaling for large models." },
+          { "n": "vLLM & Ray batch inference", "note": "High-throughput batch LLM workloads." },
+          { "n": "Notebooks / Jobs integration", "note": "Seamless GPU access in familiar dev environments." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/machine-learning/ai-runtime"
+        ],
+        "since": "GA",
+        "deck": null
+      },
+      {
+        "n": "MLflow 3 for GenAI",
+        "s": "GA",
+        "c": "ok",
+        "note": "Tracing (OTel, 30+ frameworks), evaluation (LLM judges + custom scorers), production monitoring, Delta/UC backend.",
+        "children": [
+          { "n": "End-to-end tracing", "note": "Agent & LLM spans; 30+ framework auto-instrumentation; OpenTelemetry-compatible." },
+          { "n": "LLM judges & evals", "note": "Safety, correctness, relevance, retrieval quality scorers." },
+          { "n": "Production observability", "note": "Traffic sampling, quality/safety/latency tracking, alerts." },
+          { "n": "Delta table backend", "note": "Scalable governance-ready evaluation storage." },
+          { "n": "Review Apps integration", "note": "Human-in-the-loop labeling for eval datasets." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/mlflow3/genai",
+          "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/overview",
+          "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor"
+        ],
+        "since": "GA",
+        "deck": null
+      },
+      {
+        "n": "MLflow Model Registry",
+        "s": "GA",
+        "c": "ok",
+        "note": "Versioning, aliases (Champion/staging/prod), UC lineage.",
+        "children": [
+          { "n": "Model versioning", "note": "Immutable version history with metadata." },
+          { "n": "Aliases (Champion/staging/prod)", "note": "Mutable pointers for promotion workflows." },
+          { "n": "Unity Catalog governance", "note": "Permissions, audit logs, cross-workspace sharing." },
+          { "n": "MLflow lineage tracking", "note": "Data → training → model → inference provenance." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/mlflow"
+        ],
+        "since": "GA",
+        "deck": null
+      },
+      {
+        "n": "MLflow Prompt Registry",
+        "s": "GA",
+        "c": "ok",
+        "note": "Versioned prompts, staging/prod aliases.",
+        "children": [
+          { "n": "Prompt versioning", "note": "Immutable prompt versions with metadata." },
+          { "n": "Staging / production aliases", "note": "Promote prompts through workflows." },
+          { "n": "Configuration co-storage", "note": "Bind model params + temperature + prompt together." },
+          { "n": "Retrieval & comparison", "note": "Query prompt history across versions." }
+        ],
+        "docs": [
+          "https://mlflow.org/docs/latest/genai/prompt-registry/"
+        ],
+        "since": "GA",
+        "deck": null
+      },
+      {
+        "n": "AutoML",
+        "s": "GA",
+        "c": "ok",
+        "note": "Tabular classification/regression.",
+        "children": [
+          { "n": "Tabular classification", "note": "Binary & multi-class prediction." },
+          { "n": "Tabular regression", "note": "Continuous value prediction." },
+          { "n": "Feature engineering", "note": "Automated data prep and feature selection." },
+          { "n": "Hyperparameter tuning", "note": "Automated model selection & optimization." },
+          { "n": "MLflow tracking integration", "note": "Automatic experiment logging." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/machine-learning/train-model/automl"
+        ],
+        "since": "GA",
+        "deck": null
+      },
+      {
+        "n": "AI Search (ex-Vector Search)",
+        "s": "GA",
+        "c": "ok",
+        "note": "Vector + BM25 + hybrid (RRF) + reranking; Delta Sync; UC-governed; citations.",
+        "children": [
+          { "n": "Vector search (ANN HNSW)", "note": "Semantic similarity with L2 distance." },
+          { "n": "BM25 keyword search", "note": "Full-text lexical matching." },
+          { "n": "Hybrid fusion (RRF)", "note": "Reciprocal Rank Fusion merges results." },
+          { "n": "Optional reranking", "note": "Second-pass ranking improves quality." },
+          { "n": "Delta Sync & citations", "note": "Auto-sync from tables; retrieve + attribute sources." },
+          { "n": "Unity Catalog governance", "note": "Permissions, lineage, audit logging." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/ai-search/ai-search"
+        ],
+        "since": "GA",
+        "deck": null
+      },
+      {
+        "n": "Model fine-tuning",
+        "s": "GA",
+        "c": "ok",
+        "note": "LoRA/QLoRA/full/RL where supported.",
+        "children": [
+          { "n": "LoRA fine-tuning", "note": "Efficient parameter-efficient adaptation." },
+          { "n": "QLoRA fine-tuning", "note": "Quantized LoRA for memory efficiency." },
+          { "n": "Full fine-tuning", "note": "Complete model weight retraining." },
+          { "n": "RL fine-tuning", "note": "Reinforcement learning where model supports." },
+          { "n": "AI Runtime GPU integration", "note": "Dedicated GPU compute for training." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/machine-learning/model-serving/foundation-models/fine-tuning"
+        ],
+        "since": "GA",
+        "deck": null
+      }
+    ]
+  },
+  {
+    "n": "Foundation Models & LLM access",
+    "children": [
+      {
+        "n": "Foundation Model APIs",
+        "s": "GA",
+        "c": "ok",
+        "note": "Multi-provider (Anthropic, OpenAI, Google, Meta, Qwen, Grok, Kimi, GLM, DeepSeek…); pay-per-token / priority / provisioned throughput.",
+        "children": [
+          { "n": "Anthropic Claude family", "note": "Haiku, Sonnet, Fable, Opus across versions." },
+          { "n": "OpenAI GPT models", "note": "GPT-6.1 down to GPT-5.4; OSS variants." },
+          { "n": "Google Gemini & Gemma", "note": "Gemini 3.8/3.7/3.6; Gemma 3 embeddings." },
+          { "n": "Meta Llama & OSS", "note": "Llama 4 Maverick, 3.3, 3.1; community models." },
+          { "n": "Regional providers", "note": "Qwen (Alibaba), GLM (Zhipu), Kimi (Moonshot), Grok, DeepSeek." },
+          { "n": "Pay-per-token / priority / provisioned", "note": "Choose pricing tier per workload." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis",
+          "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis/supported-models"
+        ],
+        "since": "GA",
+        "deck": null
+      },
+      {
+        "n": "Model version numbers",
+        "s": "GA",
+        "c": "verify",
+        "note": "Exact version numbers from public web almost certainly drifted — verify against the live supported-models matrix.",
+        "children": [
+          { "n": "Live supported-models matrix", "note": "Databricks docs page; real-time availability per region." },
+          { "n": "Provider version tracking", "note": "Anthropic, OpenAI, Google publish new versions weekly." },
+          { "n": "Retirement schedules", "note": "Oct 2: Gemini 2.5 Pro/Flash retired; Oct 6: GLM legacy; Nov 5: DeepSeek V4 Flash." },
+          { "n": "Model rollover updates", "note": "Claude 5.5 → Claude 6, GPT-5 → GPT-6 cycles." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis/supported-models"
+        ],
+        "since": "GA",
+        "deck": null
+      },
+      {
+        "n": "External model services",
+        "s": "GA",
+        "c": "ok",
+        "note": "Governed access to externally hosted models via UC Connections + Gateway.",
+        "children": [
+          { "n": "External provider routing", "note": "OpenAI, Anthropic, Google, Meta hosted endpoints." },
+          { "n": "UC Connections auth", "note": "Credential management & scoped token refresh." },
+          { "n": "Unity Gateway control", "note": "Rate limits, cost attribution, audit logging." },
+          { "n": "Fallback routing", "note": "Failover between external providers." },
+          { "n": "Cost attribution by team", "note": "Track external API spend per project." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/machine-learning/model-serving/foundation-model-overview",
+          "https://docs.databricks.com/aws/en/machine-learning/model-serving"
+        ],
+        "since": "GA",
+        "deck": null
+      },
+      {
+        "n": "Model lifecycle churn (Oct)",
+        "s": "Announced",
+        "c": "verify",
+        "note": "Gemini 2.5 retirement, GLM legacy, DeepSeek schedule — public-only dates.",
+        "children": [
+          { "n": "Gemini 2.5 Pro/Flash (retired Oct 2)", "note": "Migrate to Gemini 3.1 Pro / 3.5 Flash." },
+          { "n": "GLM 5.2 (legacy as of Oct 6)", "note": "Zhipu AI LLM; migrate for new workloads." },
+          { "n": "DeepSeek V4 (0731) retirement (Nov 5)", "note": "Flash variant retiring; V4.1 available." },
+          { "n": "Model matrix versioning", "note": "Consult supported-models page monthly for changes." }
+        ],
+        "docs": [
+          "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis/supported-models"
+        ],
+        "since": "Announced",
+        "deck": null
+      }
+    ]
+  }
+]

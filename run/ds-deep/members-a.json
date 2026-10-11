@@ -1,0 +1,482 @@
+[
+  {
+    "n": "Notebooks & collaboration",
+    "s": "GA",
+    "c": "ok",
+    "note": "Collaborative multi-language notebooks, Git folders, and in-notebook assistance.",
+    "docs": [
+      "https://docs.databricks.com/aws/en/notebooks/",
+      "https://docs.databricks.com/aws/en/notebooks/notebooks-collaborate",
+      "https://docs.databricks.com/aws/en/genie-code/",
+      "https://docs.databricks.com/aws/en/repos/"
+    ],
+    "children": [
+      {
+        "n": "Multi-language notebooks (Python/SQL/R/Scala)",
+        "note": "IDE with syntax highlighting, IntelliSense, cell-based execution, keyboard shortcuts; supports Python, SQL, R, and Scala for flexible development workflows."
+      },
+      {
+        "n": "Real-time coauthoring & live editing",
+        "note": "Multiple users edit same cells simultaneously with live cursor visibility; persistent chat context across page navigation; email notifications on comment activity.",
+        "children": [
+          {
+            "n": "Live cursor visibility",
+            "note": "See other users' cursors and selections in real-time across shared notebook cells."
+          },
+          {
+            "n": "Simultaneous cell editing",
+            "note": "Multiple users edit the same cell concurrently with conflict resolution."
+          },
+          {
+            "n": "Persistent chat context",
+            "note": "Collaboration chat maintains context when navigating between notebook pages."
+          }
+        ]
+      },
+      {
+        "n": "Comments & mentions with AI",
+        "note": "Code-section highlighting with comments; user mentions via @mention; Genie Code integration for AI explanations/suggestions directly in comment threads."
+      },
+      {
+        "n": "Databricks Repos (Git version control)",
+        "note": "Native Git integration with branch management, commit tracking, merge conflict resolution; notebooks and files versioned in Git; supports CI/CD workflows.",
+        "children": [
+          {
+            "n": "Branch management",
+            "note": "Create, switch, and delete Git branches for parallel feature development."
+          },
+          {
+            "n": "Commit tracking & history",
+            "note": "View full commit log with messages, authors, and timestamps for version history."
+          },
+          {
+            "n": "Merge conflict resolution",
+            "note": "Visual merge editor for resolving conflicts when combining branches."
+          },
+          {
+            "n": "CI/CD integration",
+            "note": "Git hooks and API support for automated testing and deployment workflows."
+          }
+        ]
+      },
+      {
+        "n": "Interactive widgets & parameterization",
+        "note": "Notebook widgets enable interactive input parameters for dashboards and reports; dbutils.widgets module for programmatic parameter management.",
+        "children": [
+          {
+            "n": "Widget input controls",
+            "note": "Dropdown, text input, slider, and multi-select widgets for user interaction."
+          },
+          {
+            "n": "Programmatic parameter management",
+            "note": "dbutils.widgets module for dynamic parameter retrieval and validation in code."
+          },
+          {
+            "n": "Dashboard parameter binding",
+            "note": "Widgets bind to dashboard filters for interactive report updates."
+          }
+        ]
+      },
+      {
+        "n": "In-notebook Genie Code (AI assistant)",
+        "note": "Chat pane for code generation, debugging, multi-step workflows; works with Unity Catalog tables/columns/lineage; generates and executes code directly in cells.",
+        "children": [
+          {
+            "n": "Code generation from prompts",
+            "note": "AI generates executable Python/SQL code from natural language descriptions."
+          },
+          {
+            "n": "Debugging & error fixing",
+            "note": "Genie analyzes errors and suggests fixes or alternative approaches."
+          },
+          {
+            "n": "Multi-step workflow orchestration",
+            "note": "Plans and executes complex data tasks across multiple cells autonomously."
+          },
+          {
+            "n": "Unity Catalog integration",
+            "note": "Genie understands table schemas, columns, lineage; respects UC permissions in generated code."
+          }
+        ]
+      },
+      {
+        "n": "Built-in visualization & dashboards",
+        "note": "Automatic data visualization; built-in plotting libraries (matplotlib, plotly); point-and-click visualization editor; shareable interactive dashboards from notebook results.",
+        "children": [
+          {
+            "n": "Chart type support",
+            "note": "Line, scatter, bar, time-series, and other standard chart types for data visualization."
+          },
+          {
+            "n": "Interactive plotly features",
+            "note": "Hover tooltips, zoom, pan, and drill-down capabilities in rendered charts."
+          },
+          {
+            "n": "Shareable dashboards",
+            "note": "Publish interactive dashboards from notebook results with preset filters."
+          },
+          {
+            "n": "Point-and-click visualization editor",
+            "note": "GUI for configuring axes, aggregations, and chart options without coding."
+          }
+        ]
+      },
+      {
+        "n": "Interactive notebook table features",
+        "note": "Search/filter functionality in result tables; built-in column statistics; point-and-click chart creation from table data; Genie Code assistance for filtering.",
+        "children": [
+          {
+            "n": "Search & filter in result tables",
+            "note": "Filter rows by column values and search terms directly in result display."
+          },
+          {
+            "n": "Built-in column statistics",
+            "note": "Display min, max, mean, null counts, and distinct values for each column."
+          },
+          {
+            "n": "Point-and-click chart creation",
+            "note": "Generate charts directly from table data without manual visualization setup."
+          },
+          {
+            "n": "Genie-assisted filtering",
+            "note": "Use natural language prompts to filter, sort, or transform result tables."
+          }
+        ]
+      }
+    ],
+    "since": "GA; core Databricks platform since inception; coauthoring GA Nov 2025; Genie Code GA Mar 2026"
+  },
+  {
+    "n": "Data prep & EDA",
+    "s": "GA",
+    "c": "ok",
+    "note": "Exploration and preparation of data for modeling.",
+    "docs": [
+      "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+      "https://docs.databricks.com/aws/en/sql",
+      "https://docs.databricks.com/aws/en/designer/what-is-lakeflow-designer",
+      "https://docs.databricks.com/aws/en/catalog-explorer",
+      "https://docs.databricks.com/aws/en/dev-tools/databricks-utils"
+    ],
+    "children": [
+      {
+        "n": "Databricks SQL for exploratory queries",
+        "note": "Serverless SQL with Delta Lake; dashboards, materialized views, streaming tables for ad-hoc analytical exploration; result visualization and export.",
+        "children": [
+          {
+            "n": "Serverless SQL endpoints",
+            "note": "Auto-scaling SQL execution without dedicated cluster provisioning."
+          },
+          {
+            "n": "Dashboards from SQL results",
+            "note": "Create interactive dashboards and reports from query results."
+          },
+          {
+            "n": "Materialized views",
+            "note": "Pre-computed query results for fast repeated access and analysis."
+          },
+          {
+            "n": "Streaming tables",
+            "note": "Real-time views over Delta change data for live exploration."
+          }
+        ]
+      },
+      {
+        "n": "Spark DataFrames & pandas API",
+        "note": "PySpark and pandas-compatible APIs for distributed processing; pyspark.pandas for seamless scaling from pandas to distributed workloads.",
+        "children": [
+          {
+            "n": "PySpark DataFrame API",
+            "note": "Distributed data manipulation using PySpark SQL and RDD operations."
+          },
+          {
+            "n": "pandas-compatible API (pyspark.pandas)",
+            "note": "Use familiar pandas syntax that automatically scales to distributed Spark jobs."
+          },
+          {
+            "n": "Distributed processing",
+            "note": "Automatic parallelization across cluster resources for large-scale data."
+          }
+        ]
+      },
+      {
+        "n": "Automated data profiling (dbutils.data.summarize)",
+        "note": "Programmatic profiling of Spark/pandas DataFrames; summary statistics with configurable precision modes (~5% or ~0.0001% error); accessible from Python/Scala/R."
+      },
+      {
+        "n": "One-click data profile generation",
+        "note": "Built-in profiling showing histograms, distributions, null counts, and summary statistics for numeric, string, and date columns; accessible via + menu in result tables.",
+        "children": [
+          {
+            "n": "Histogram generation",
+            "note": "Automatic binning and visualization of value distributions."
+          },
+          {
+            "n": "Null count tracking",
+            "note": "Identify and quantify missing values per column."
+          },
+          {
+            "n": "Summary statistics",
+            "note": "Display mean, median, stddev, min, max for numeric columns."
+          }
+        ]
+      },
+      {
+        "n": "Lakeflow Designer (no-code visual ETL)",
+        "note": "Drag-and-drop canvas for filtering, joining, aggregating, reshaping; natural language operator generation via Genie Code; backed by executable SQL/Spark code; Git-versionable.",
+        "children": [
+          {
+            "n": "Filtering operators",
+            "note": "Visually select rows by conditions without writing SQL."
+          },
+          {
+            "n": "Joining operators",
+            "note": "Connect multiple data sources with join type selection (inner, left, right, full)."
+          },
+          {
+            "n": "Aggregation operators",
+            "note": "Group by dimensions and apply metric calculations visually."
+          },
+          {
+            "n": "Reshaping operators",
+            "note": "Pivot, unpivot, and restructure data layout via drag-and-drop."
+          },
+          {
+            "n": "NL operator generation",
+            "note": "Use Genie Code to generate operators from natural language descriptions."
+          }
+        ]
+      },
+      {
+        "n": "Automated data cleaning operations",
+        "note": "Duplicate removal (drop_duplicates), missing value handling (fillna), date reformatting (pd.to_datetime); standard Pandas/Spark methods; Genie Code assists with NL prompts.",
+        "children": [
+          {
+            "n": "Duplicate removal",
+            "note": "Remove or deduplicate rows with identical column values."
+          },
+          {
+            "n": "Missing value handling",
+            "note": "Fill, drop, or interpolate null values with configurable strategies."
+          },
+          {
+            "n": "Date reformatting",
+            "note": "Parse and standardize date/timestamp columns to consistent formats."
+          }
+        ]
+      },
+      {
+        "n": "Catalog Explorer & AI-assisted discovery",
+        "note": "LLM-powered search for tables/models/functions; lineage tracking; data quality indicators; natural language prompt-driven table exploration (Public Preview).",
+        "children": [
+          {
+            "n": "LLM-powered entity search",
+            "note": "Find tables, models, and functions using semantic natural language queries."
+          },
+          {
+            "n": "Lineage tracking",
+            "note": "Visualize data dependencies from source tables through transformations to models."
+          },
+          {
+            "n": "Data quality indicators",
+            "note": "Display quality metrics, freshness, and anomaly flags per table."
+          },
+          {
+            "n": "NL table exploration",
+            "note": "Analyze table contents and discover insights using AI-generated summaries."
+          }
+        ]
+      },
+      {
+        "n": "Visualization toolkit (matplotlib/plotly/seaborn)",
+        "note": "Multiple chart types (line, scatter, bar, time-series); built-in rendering via display(); plotly interactive features; Lakeview dashboard embedding for nested analytics.",
+        "children": [
+          {
+            "n": "Chart types",
+            "note": "Line, scatter, bar, time-series, histograms, heatmaps, and other standard types."
+          },
+          {
+            "n": "Interactive plotly features",
+            "note": "Hover tooltips, zoom, pan, export capabilities in rendered visualizations."
+          },
+          {
+            "n": "Lakeview dashboard embedding",
+            "note": "Embed interactive analytics dashboards within notebook visualizations."
+          }
+        ]
+      }
+    ],
+    "since": "GA; Lakeflow Designer GA Jun 2026; Catalog Explorer AI-assisted search GA 2026; dbutils.data.summarize() experimental mid-2026"
+  },
+  {
+    "n": "Feature Store",
+    "s": "GA",
+    "c": "ok",
+    "note": "Governed feature engineering, storage, and online/offline serving.",
+    "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/feature-store/",
+      "https://docs.databricks.com/aws/en/machine-learning/feature-store/uc/feature-tables-uc",
+      "https://docs.databricks.com/aws/en/machine-learning/feature-store/feature-views",
+      "https://docs.databricks.com/aws/en/machine-learning/feature-store/on-demand-features",
+      "https://docs.databricks.com/aws/en/machine-learning/feature-store/online-feature-store",
+      "https://docs.databricks.com/aws/en/machine-learning/feature-store/lineage"
+    ],
+    "children": [
+      {
+        "n": "Feature tables (Delta-backed with UC governance)",
+        "note": "Any Delta table with primary key constraint serves as feature table; three-level UC namespace (catalog.schema.table); supports incremental updates via merge mode; versioning via delta commits.",
+        "children": [
+          {
+            "n": "Primary key constraints",
+            "note": "Single, composite, or time-series keys define feature table identity."
+          },
+          {
+            "n": "Three-level UC namespace",
+            "note": "Organize features in catalog.schema.table hierarchy for governance."
+          },
+          {
+            "n": "Incremental updates",
+            "note": "Use Delta merge mode for efficient upserts on existing feature rows."
+          },
+          {
+            "n": "Delta versioning",
+            "note": "Automatic commit history enables rollback and historical feature values."
+          }
+        ]
+      },
+      {
+        "n": "Feature Views (managed materialization)",
+        "note": "Declarative feature definitions with automatic pipeline management; supports batch (scheduled), streaming (Kafka/CDF), and hybrid modes; FeatureEngineeringClient orchestrates compute.",
+        "children": [
+          {
+            "n": "Batch materialization",
+            "note": "Scheduled refreshes using cron schedules or Delta table triggers with CDF."
+          },
+          {
+            "n": "Streaming materialization",
+            "note": "Real-time features from Kafka streams or streaming Delta tables via StreamingMode."
+          },
+          {
+            "n": "Time windows",
+            "note": "TumblingWindow, SlidingWindow, RollingWindow for time-series aggregation."
+          },
+          {
+            "n": "Change data feed (CDF) support",
+            "note": "Incremental processing of source table changes for efficient updates."
+          }
+        ]
+      },
+      {
+        "n": "On-demand features (request-time computation)",
+        "note": "Python UDFs governed by UC; computed at training/serving time; eliminates pre-materialization overhead; automatic integration with Model Serving; handles missing values gracefully.",
+        "children": [
+          {
+            "n": "Python UDFs",
+            "note": "Custom functions executed at inference time for dynamic feature computation."
+          },
+          {
+            "n": "UC governance",
+            "note": "On-demand features governed by Unity Catalog permissions and audit logs."
+          },
+          {
+            "n": "Training/serving integration",
+            "note": "Automatic feature evaluation via FeatureFunction in create_training_set and Model Serving."
+          }
+        ]
+      },
+      {
+        "n": "Point-in-time joins (training data prep)",
+        "note": "Constructs training datasets with feature values at specific historical moments; eliminates train/serving skew; create_training_set API with temporal correctness guarantees."
+      },
+      {
+        "n": "Online Feature Store (Lakebase-powered)",
+        "note": "Sub-millisecond latency lookup via managed PostgreSQL; read replicas (up to 3) for distributed query load; automatic sync from offline tables (triggered/continuous/snapshot modes).",
+        "children": [
+          {
+            "n": "Sub-millisecond latency lookup",
+            "note": "PostgreSQL-backed online store for real-time feature retrieval during inference."
+          },
+          {
+            "n": "Read replicas",
+            "note": "Up to 3 replicas for distributing query load and improving availability."
+          },
+          {
+            "n": "Triggered sync mode",
+            "note": "Manual or scheduled API calls to sync incremental changes from offline store."
+          },
+          {
+            "n": "Continuous sync mode",
+            "note": "Streaming pipeline automatically propagates updates from offline to online store."
+          },
+          {
+            "n": "Snapshot sync mode",
+            "note": "One-time bulk transfer of all data from offline to online store."
+          }
+        ]
+      },
+      {
+        "n": "Feature serving endpoints",
+        "note": "REST endpoints for direct feature retrieval; Model Serving integration with automatic feature lookup; applies dynamic feature resolution and retrieval during inference requests.",
+        "children": [
+          {
+            "n": "REST API endpoints",
+            "note": "Direct HTTP endpoints for querying feature vectors by entity ID."
+          },
+          {
+            "n": "Model Serving integration",
+            "note": "Automatic feature lookup during model inference without explicit calls."
+          },
+          {
+            "n": "Dynamic feature resolution",
+            "note": "Combines online and on-demand features for complete feature vectors at serving time."
+          }
+        ]
+      },
+      {
+        "n": "Feature discovery & tagging",
+        "note": "Key-value tagging for categorization; Features UI search by name/comments/tags; cross-workspace sharing within metastore; Catalog Explorer integration for lineage visualization.",
+        "children": [
+          {
+            "n": "Key-value tagging",
+            "note": "Assign custom tags for categorization and discovery filtering."
+          },
+          {
+            "n": "Search by name/tags/comments",
+            "note": "Find features across the catalog using semantic and tag-based search."
+          },
+          {
+            "n": "Cross-workspace sharing",
+            "note": "Share features across workspaces within same Unity Catalog metastore."
+          },
+          {
+            "n": "Catalog Explorer integration",
+            "note": "Visualize feature lineage and dependencies in Catalog Explorer graph."
+          }
+        ]
+      },
+      {
+        "n": "Feature lineage & model dependencies",
+        "note": "Automatic capture via log_model(); tracks feature tables, functions, and models used in training; lineage graph in Catalog Explorer; governance via Unity Catalog permissions.",
+        "children": [
+          {
+            "n": "Automatic capture via log_model()",
+            "note": "MLflow automatically logs features used during model training."
+          },
+          {
+            "n": "Lineage visualization",
+            "note": "Interactive graph in Catalog Explorer showing data → features → models → serving."
+          },
+          {
+            "n": "UC permissions tracking",
+            "note": "Lineage respects and enforces Unity Catalog access controls."
+          },
+          {
+            "n": "Feature-model dependency tracking",
+            "note": "Identify which models depend on each feature for impact analysis."
+          }
+        ]
+      }
+    ],
+    "since": "GA; UC integration evolved 2024–2026; Feature Views PuP 2026; Online Store (Lakebase) GA Feb 2026; Lineage GA 2025–2026"
+  }
+]

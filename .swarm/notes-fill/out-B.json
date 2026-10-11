@@ -1,0 +1,54 @@
+[
+  {
+    "path": ["Foundation Models & LLM access"],
+    "note": "Multi-provider LLM access (Anthropic, OpenAI, Google, Meta, regional); pay-per-token, priority, provisioned throughput."
+  },
+  {
+    "path": ["Data foundation for AI"],
+    "note": "Open ACID Delta Lake lakehouse with trusted data, schema enforcement, governed metadata, multi-cloud deployment."
+  },
+  {
+    "path": ["Foundation Models & LLM access", "Foundation Model APIs", "OpenAI GPT models"],
+    "note": "GPT-6 variants (Sol/Luna/Astra), GPT-5 family, legacy models; OSS variants (120B/20B) available."
+  },
+  {
+    "path": ["Foundation Models & LLM access", "Foundation Model APIs", "Google Gemini & Gemma"],
+    "note": "Gemini 3.8/3.7/3.6 Flash/Pro variants, Gemini 3.1 Pro/Flash; Gemma 3 embeddings."
+  },
+  {
+    "path": ["Foundation Models & LLM access", "Foundation Model APIs", "Pay-per-token / priority / provisioned"],
+    "note": "Three consumption models: pay-per-token (entry), priority (low-latency), provisioned on-demand/reserved throughput."
+  },
+  {
+    "path": ["Foundation Models & LLM access", "External model services", "Fallback routing"],
+    "note": "Model selection with failover between external providers; governed by Unity Gateway policies."
+  },
+  {
+    "path": ["Foundation Models & LLM access", "External model services", "Cost attribution by team"],
+    "note": "Track external API spend per user, team, project, endpoint; usage blocking via Gateway."
+  },
+  {
+    "path": ["Foundation Models & LLM access", "Model lifecycle churn (Oct)", "Gemini 2.5 Pro/Flash (retired Oct 2)"],
+    "note": "Gemini 2.5 Pro/Flash retired Oct 2 2026; migrate to Gemini 3.1 Pro or 3.5 Flash."
+  },
+  {
+    "path": ["Foundation Models & LLM access", "Model lifecycle churn (Oct)", "DeepSeek V4 (0731) retirement (Nov 5)"],
+    "note": "DeepSeek V4 Flash (0731) retiring Nov 5 2026; V4.1 available; verify matrix for updates."
+  },
+  {
+    "path": ["Data foundation for AI", "Lakehouse / Delta Lake"],
+    "note": "Open ACID format; transaction support, data consistency, batch/streaming ingestion foundation."
+  },
+  {
+    "path": ["Data foundation for AI", "Lakehouse / Delta Lake", "Schema enforcement"],
+    "note": "Delta validates incoming data against defined schemas; prevents quality drift."
+  },
+  {
+    "path": ["Data foundation for AI", "Lakehouse / Delta Lake", "Governed metadata layer"],
+    "note": "Unity Catalog lineage tracking, versioning, audit trail; consistent governance."
+  },
+  {
+    "path": ["Data foundation for AI", "Lakehouse / Delta Lake", "Multi-cloud support"],
+    "note": "Deploy Delta Lake on AWS, Azure, GCP; unified governance across cloud platforms."
+  }
+]

@@ -1,0 +1,311 @@
+[
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Agents / Agent Bricks",
+    "capsule": "AI Functions",
+    "solves": [
+      {
+        "axis": "Integration",
+        "problem": "**external** AI services require data export",
+        "solution": "**native** functions run inside data platform"
+      },
+      {
+        "axis": "Structure",
+        "problem": "model output is **unstructured** for downstream use",
+        "solution": "**schema-enforced** results support pipelines"
+      },
+      {
+        "axis": "Scale",
+        "problem": "**manual** batch splitting and parallelization",
+        "solution": "**automatic** parallelization and scaling"
+      },
+      {
+        "axis": "Governance",
+        "problem": "data **leaves** workspace for inference",
+        "solution": "data **stays** in Unity Catalog"
+      },
+      {
+        "axis": "Engineering",
+        "problem": "build **separate** OCR, NLP, JSON pipelines",
+        "solution": "**unified** AI functions in SQL"
+      }
+    ],
+    "sources": [
+      "https://docs.databricks.com/aws/en/large-language-models/ai-functions",
+      "https://docs.databricks.com/aws/en/large-language-models/ai-query",
+      "Glean: AI Functions overview and use cases"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Agents / Agent Bricks",
+    "capsule": "Custom Agents",
+    "solves": [
+      {
+        "axis": "Control",
+        "problem": "**fixed** orchestration patterns",
+        "solution": "**custom** agent logic and workflows"
+      },
+      {
+        "axis": "Framework",
+        "problem": "**predetermined** framework choice",
+        "solution": "**choose** LangGraph, LangChain, OpenAI SDK"
+      },
+      {
+        "axis": "Tooling",
+        "problem": "**limited** integrations to external systems",
+        "solution": "**MCP servers, UC functions, APIs** available"
+      },
+      {
+        "axis": "State",
+        "problem": "**manual** session and memory management",
+        "solution": "**managed** memory via Lakebase"
+      },
+      {
+        "axis": "Deployment",
+        "problem": "**external** deployment and monitoring tools",
+        "solution": "**integrated** governance, tracing, evaluation"
+      },
+      {
+        "axis": "Model",
+        "problem": "**fixed** model selection",
+        "solution": "**choose** any model per use case"
+      }
+    ],
+    "sources": [
+      "Glean: Custom Agents architecture and framework support",
+      "https://docs.databricks.com/aws/en/agents/custom-agents/build-agents",
+      "https://docs.databricks.com/aws/en/agents/custom-agents/agent-bricks-cli"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Agents / Agent Bricks",
+    "capsule": "Managed memory & sessions",
+    "solves": [
+      {
+        "axis": "Persistence",
+        "problem": "no **memory** across separate conversations",
+        "solution": "**semantic search** retrieves past context"
+      },
+      {
+        "axis": "Continuity",
+        "problem": "users repeat **instructions** in each session",
+        "solution": "agents **recall** learned preferences"
+      },
+      {
+        "axis": "Personalization",
+        "problem": "agents **start fresh** each conversation",
+        "solution": "responses **adapt** to user history"
+      },
+      {
+        "axis": "Sharing",
+        "problem": "**siloed** memory per agent",
+        "solution": "**shared** memory accessible across agents"
+      },
+      {
+        "axis": "Scale",
+        "problem": "**limited** conversation context window",
+        "solution": "**long-term** Lakebase-backed storage"
+      }
+    ],
+    "sources": [
+      "https://docs.databricks.com/aws/en/agents/agent-memory/managed-memory",
+      "Glean: Managed agent sessions and persistence",
+      "https://docs.databricks.com/aws/en/agents/custom-agents/stateful-agents"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Agents / Agent Bricks",
+    "capsule": "Databricks Sandbox",
+    "solves": [
+      {
+        "axis": "Safety",
+        "problem": "**untrusted** AI-generated code poses risk",
+        "solution": "**isolated** execution environment"
+      },
+      {
+        "axis": "Access",
+        "problem": "code has **unrestricted** access to data",
+        "solution": "**scoped UC access** via policies"
+      },
+      {
+        "axis": "Provisioning",
+        "problem": "**manual** cluster setup required",
+        "solution": "**serverless** on-demand infrastructure"
+      },
+      {
+        "axis": "Latency",
+        "problem": "cluster **startup** time blocks execution",
+        "solution": "**low-latency** sandbox provisioning"
+      },
+      {
+        "axis": "Ingress",
+        "problem": "**open** inbound connections to sandbox",
+        "solution": "**default-closed** ingress protection"
+      }
+    ],
+    "sources": [
+      "https://docs.databricks.com/aws/en/compute/serverless/sandbox",
+      "Glean: Databricks Sandbox service and isolation",
+      "Glean: Managed code execution for agents"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Agents / Agent Bricks",
+    "capsule": "Supervisor Agent",
+    "solves": [
+      {
+        "axis": "Coordination",
+        "problem": "**manual** routing between agents",
+        "solution": "**AI-orchestrated** task delegation"
+      },
+      {
+        "axis": "Scale",
+        "problem": "single agent **insufficient** for complex tasks",
+        "solution": "coordinate **up to 50 agents**"
+      },
+      {
+        "axis": "Integration",
+        "problem": "**fragmented** tool ecosystems",
+        "solution": "**unified** orchestration layer"
+      },
+      {
+        "axis": "Results",
+        "problem": "**disconnected** responses from subagents",
+        "solution": "**synthesized** comprehensive solutions"
+      },
+      {
+        "axis": "Authority",
+        "problem": "**bypass** user data access controls",
+        "solution": "**user-scoped** authorization enforced"
+      }
+    ],
+    "sources": [
+      "https://docs.databricks.com/aws/en/agents/agent-bricks/multi-agent-supervisor",
+      "Glean: Supervisor Agent orchestration patterns",
+      "https://www.databricks.com/blog/multi-agent-supervisor-architecture-orchestrating-enterprise-ai-scale"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Agents / Agent Bricks",
+    "capsule": "Knowledge Assistant",
+    "solves": [
+      {
+        "axis": "Accuracy",
+        "problem": "traditional RAG **hallucinations** misground",
+        "solution": "**Instructed Retriever** keeps answers grounded"
+      },
+      {
+        "axis": "Quality",
+        "problem": "**generic** retrieval misses document intent",
+        "solution": "**high-quality** document-native answers"
+      },
+      {
+        "axis": "Citations",
+        "problem": "sources **missing** or **false**",
+        "solution": "**grounded** source attribution"
+      },
+      {
+        "axis": "Setup",
+        "problem": "complex RAG **engineering** required",
+        "solution": "**minutes** to deploy chatbot"
+      },
+      {
+        "axis": "Feedback",
+        "problem": "no way to **refine** retriever behavior",
+        "solution": "**natural-language** guidelines improve results"
+      }
+    ],
+    "sources": [
+      "https://docs.databricks.com/aws/en/agents/agent-bricks/knowledge-assistant",
+      "https://www.databricks.com/blog/agent-bricks-knowledge-assistant-now-generally-available-turning-enterprise-knowledge-answers",
+      "Glean: Knowledge Assistant capabilities"
+    ],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Agents / Agent Bricks",
+    "capsule": "Omnigent",
+    "solves": [
+      {
+        "axis": "Fragmentation",
+        "problem": "each agent harness **isolated** ecosystem",
+        "solution": "**unified** interface across harnesses"
+      },
+      {
+        "axis": "Switching",
+        "problem": "**rewrite** code to change agents",
+        "solution": "**common API** switches between harnesses"
+      },
+      {
+        "axis": "Context",
+        "problem": "**manual** copying of content between tools",
+        "solution": "**automatic** context sharing"
+      },
+      {
+        "axis": "Governance",
+        "problem": "**no centralized** control mechanism",
+        "solution": "**contextual policies** at meta layer"
+      },
+      {
+        "axis": "Collaboration",
+        "problem": "agents operate in **isolation**",
+        "solution": "**live session sharing** for teamwork"
+      }
+    ],
+    "sources": [
+      "https://www.databricks.com/blog/introducing-omnigent-meta-harness-combine-control-and-share-your-agents",
+      "Glean: Omnigent agent meta-harness architecture",
+      "Confluence: Omnigent user guide"
+    ],
+    "confidence": "verify"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "Agents / Agent Bricks",
+    "capsule": "Agent evaluation & monitoring",
+    "solves": [
+      {
+        "axis": "Quality",
+        "problem": "no **metrics** on response quality",
+        "solution": "**LLM judges** score each trace"
+      },
+      {
+        "axis": "Evaluation",
+        "problem": "**manual** review of traces",
+        "solution": "**programmatic** batch evaluation runs"
+      },
+      {
+        "axis": "Production",
+        "problem": "**blind** to production agent quality",
+        "solution": "**automated** monitoring on live traffic"
+      },
+      {
+        "axis": "Feedback",
+        "problem": "slow **iteration** without clear signals",
+        "solution": "**traces** carry scorer feedback"
+      },
+      {
+        "axis": "Comparison",
+        "problem": "can't **compare** agent versions",
+        "solution": "**evaluation runs** tracked per version"
+      }
+    ],
+    "sources": [
+      "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor",
+      "https://docs.databricks.com/aws/en/mlflow3/genai",
+      "Glean: Agent evaluation and monitoring architecture"
+    ],
+    "confidence": "ok"
+  }
+]

@@ -1,0 +1,50 @@
+[
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Agents / Agent Bricks",
+  "capsule": "AI Functions",
+  "note": "SQL- & pipeline-native AI for batch transformation of data and documents."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Agents / Agent Bricks",
+  "capsule": "Custom Agents",
+  "note": "Code-first; LangGraph / Agno / CrewAI / Claude Code SDK / OpenAI SDK; Agent Server + DurableAgentServer; agent.toml. CLI Beta."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Agents / Agent Bricks",
+  "capsule": "Managed memory & sessions",
+  "note": "Lakebase-backed, cross-session, semantic search (Sep 16)."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Agents / Agent Bricks",
+  "capsule": "Databricks Sandbox",
+  "note": "Isolated serverless code execution, scoped UC access."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Agents / Agent Bricks",
+  "capsule": "Supervisor Agent",
+  "note": "GA but legacy — Custom Agents / Genie Agents preferred. Multi-agent orchestration, user-scoped auth."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Agents / Agent Bricks",
+  "capsule": "Knowledge Assistant",
+  "note": "GA but legacy — Genie Agents preferred. Document-grounded, Instructed Retriever, citations."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Agents / Agent Bricks",
+  "capsule": "Omnigent",
+  "note": "Agent meta-harness (Claude / Codex / Cursor / custom); managed = workspace identity + Gateway + Sandbox (CEL policies). OSS Apache-2.0."
+ },
+ {
+  "tree": "ai-tree.json",
+  "pillar": "Agents / Agent Bricks",
+  "capsule": "Agent evaluation & monitoring",
+  "note": "Traces → Review Apps → datasets → LLM judges → dashboards (MLflow)."
+ }
+]

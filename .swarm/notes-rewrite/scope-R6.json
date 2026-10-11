@@ -1,0 +1,1131 @@
+[
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "Productionization of validated models through real-time REST endpoints and batch inference; unified governance and automated promotion via Bundles and CI/CD.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Real-time serving endpoints"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Managed REST API endpoints with serverless auto-scaling, supporting >25K QPS with <50ms latency overhead; routes requests to UC-registered models with automatic monitoring.",
+  "violations": [
+   "too long (172>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Real-time serving endpoints",
+   "Auto-scaling to meet demand"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Endpoints automatically scale up or down based on traffic; serverless infrastructure handles provisioning.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Batch inference via ai_query"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "SQL function for large-scale batch scoring of custom & foundation models; integrates with Lakeflow jobs for scheduled batch pipelines; supports streaming table updates.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Batch inference via ai_query",
+   "SQL-based scoring function"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "ai_query() SQL function invoked on entire tables for batch-scale predictions; compatible with Lakeflow pipelines.",
+  "violations": [
+   "semicolon pile",
+   "no capital start"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Batch inference via ai_query",
+   "Custom model batch scoring"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Score custom UC-registered models across large tables; Spark distributed execution.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Batch inference via ai_query",
+   "Streaming table integration"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Batch inference updates streaming tables; compatible with Lakeflow Jobs triggers.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Batch inference via Spark UDFs"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Distributed scoring using custom Python/MLflow models registered in UC; scales across Spark cluster resources; alternative to ai_query for complex transformations.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Batch inference via Spark UDFs",
+   "Custom Python UDFs for scoring"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Define scoring logic as PySpark UDFs; executed distributedly across cluster.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Batch inference via Spark UDFs",
+   "UC-registered model serving"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Load UC models in UDFs; model versions and lineage tracked automatically.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Batch inference via Spark UDFs",
+   "Spark cluster resource scaling"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Leverage cluster auto-scaling for batch inference performance.",
+  "violations": [
+   "marketing word (leverage)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Express deployments (fast registration)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Pre-packages model artifacts & dependencies during MLflow registration (requires Env 3+, MLflow 3.12+); skips container build; max 200 GB model size; supports CPU & GPU.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Express deployments (fast registration)",
+   "Model artifact packaging at registration"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Artifacts packaged when model is registered; eliminates build-time delays.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Express deployments (fast registration)",
+   "Dependency pre-packaging and restoration"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Extra dependencies installed in notebook are captured and restored during serving; ensures dev-to-prod consistency.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Express deployments (fast registration)",
+   "Container build skipping"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Express deployments skip Docker image build entirely; eliminates build failures and acceleration path.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Express deployments (fast registration)",
+   "200 GB environment size limit"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Maximum packaged model size boundary; covers most production models and dependencies.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Express deployments (fast registration)",
+   "CPU and GPU compute support"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Register from serverless CPU or GPU; serve on matching compute type; compute consistency guaranteed.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Provisioned throughput (foundation models)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Dedicated inference capacity for foundation models (Llama, Mistral, Qwen); 1-3 month reservations; model-unit-based sizing; supports fine-tuned variants.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Provisioned throughput (foundation models)",
+   "Model-unit-based pricing"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Sizing based on model units; pricing depends on model size and reservation term.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Provisioned throughput (foundation models)",
+   "1-3 month reservation terms"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Flexible commitment periods (1, 2, or 3 months); cost optimization for sustained loads.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Triton GPU batching"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "NVIDIA Triton-backed throughput optimization via dynamic request batching on GPU endpoints; requires batch-friendly models and explicit enablement; improves throughput at trade-off of per-request latency.",
+  "violations": [
+   "too long (204>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Triton GPU batching",
+   "GPU endpoint optimization"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "GPU-specific throughput gains; trades per-request latency for higher aggregate throughput.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Triton GPU batching",
+   "Batch-friendly model requirement"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Models must support vectorized inference; not all architectures benefit from batching.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Triton GPU batching",
+   "Explicit enablement and configuration"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Batching is opt-in; requires explicit configuration during endpoint creation.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Feature serving integration"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Automatic feature lookup from online store during inference; pre-defined FeatureSpec endpoints for sub-ms latency; integrates model serving with Lakebase online feature store.",
+  "violations": [
+   "too long (175>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Feature serving integration",
+   "Online store REST endpoints"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Dedicated REST APIs for feature retrieval; sub-millisecond latency via Lakebase.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Feature serving integration",
+   "Lakebase-backed online store"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Managed PostgreSQL infrastructure with automatic scaling (CU_1, CU_2, CU_4, CU_8).",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Feature serving integration",
+   "Read replicas (up to 3 + primary)"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "High-availability configuration with up to 3 read replicas; 4 compute instances total.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Traffic splitting & A/B testing"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Route traffic between multiple models on one endpoint (e.g., 90% Champion / 10% Challenger); configurable splits enable online evaluation and gradual rollouts without endpoint restart.",
+  "violations": [
+   "too long (184>170)",
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Traffic splitting & A/B testing",
+   "Champion/Challenger pattern"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Run production (Champion) and candidate (Challenger) models in parallel; measure performance.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Traffic splitting & A/B testing",
+   "Configurable traffic splits"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Define split percentages (e.g., 90/10, 80/20); adjust without redeploying endpoint.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Traffic splitting & A/B testing",
+   "Online evaluation capability"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Compare real production metrics across models; statistically validate improvements.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Serving & batch inference",
+   "Traffic splitting & A/B testing",
+   "Gradual rollouts without restart"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Incrementally increase Challenger traffic; revert if issues detected; no endpoint downtime.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Model versioning"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Immutable version history with automatic signatures; each version captures metadata, parameters, metrics, artifacts, source run; enables rollback and audit trails.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Model versioning",
+   "Immutable version history"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Each model version is immutable; complete audit trail of all versions ever registered.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Model versioning",
+   "Automatic model signatures"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "MLflow captures input schema and output schema automatically; prevents signature mismatches.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Model versioning",
+   "Source run tracking"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Links model version to originating MLflow run; enables traceability to training code and data.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Model versioning",
+   "Version-based rollback capability"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Revert to any prior version; serve previous model without code changes via alias update.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Aliases & stage promotion"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Mutable pointers (Champion, Staging, Prod aliases) to model versions; decouples promotion logic from inference code; enables A/B testing without code changes.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Aliases & stage promotion",
+   "Mutable pointers (Champion, Staging, Prod)"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Create named aliases that point to specific versions; update alias without changing code.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Aliases & stage promotion",
+   "Decoupled promotion logic"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Inference code references alias (e.g., 'Champion'); alias points to version; decouple deployment from serving.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Aliases & stage promotion",
+   "Stage-based promotion workflow"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Promote versions through stages (Staging → Prod); approval gates via governed tags.",
+  "violations": [
+   "semicolon pile",
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Aliases & stage promotion",
+   "A/B testing without code changes"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Use traffic splits and Champion/Challenger aliases; no serving-code modification.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Aliases & stage promotion",
+   "Zero-downtime alias updates"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Update alias to point to new version; no endpoint restarts or serving interruption.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Unity Catalog governance"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Three-level namespace (catalog.schema.model); fine-grained permissions (CREATE, EXECUTE, APPLY TAG); audit logging; cross-workspace discovery and access control.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Unity Catalog governance",
+   "Three-level namespace (catalog.schema.model)"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Models organized as catalog.schema.model; enables multi-tenant organization and discovery.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Unity Catalog governance",
+   "Models as FUNCTION securables"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Models treated as FUNCTION objects in UC; inherits FUNCTION permission model.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Unity Catalog governance",
+   "Audit logging"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "system.access.audit table records all model access, creation, modification actions.",
+  "violations": [
+   "no capital start"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Unity Catalog governance",
+   "Cross-workspace discovery and access control"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Models accessible across workspaces via metastore binding; catalog-level visibility control.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Training data lineage"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Auto-capture of upstream UC datasets via mlflow.log_input(); visible in model-version pages; enables compliance traceability and data-to-model dependency tracking.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Training data lineage",
+   "Auto-capture via mlflow.log_input()"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Explicit logging of training datasets; captured during mlflow.log_model().",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Training data lineage",
+   "Upstream UC dataset tracking"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Links model version to specific UC tables used for training; full 3-level namespace.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Training data lineage",
+   "Model-version page visibility"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Lineage displayed on model version page in UC UI; searchable and filterable.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Training data lineage",
+   "Compliance traceability"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Complete audit trail from data source → training → model; supports compliance audits.",
+  "violations": [
+   "semicolon pile",
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Model lineage visualization"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Interactive graph in Catalog Explorer showing data → features → training run → model version → serving; column-level lineage supported; tracks feature-engineering dependencies.",
+  "violations": [
+   "too long (176>170)",
+   "semicolon pile",
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Model lineage visualization",
+   "Interactive Catalog Explorer graph"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Visual lineage graph with clickable nodes; drill into dependencies.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Model lineage visualization",
+   "Data → features → training → model → serving chain"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Full chain from source data through feature tables, training, model, to serving endpoints.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Model lineage visualization",
+   "Column-level lineage"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Track which input columns flow to which output columns; fine-grained data provenance.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Model lineage visualization",
+   "Downstream consumption visibility"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "View which endpoints and jobs consume a given model; reverse-dependency queries.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Tags & metadata management"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Custom tags and governed tags on models/versions; governance tags support approval workflows; enables classification, compliance labeling, and discovery.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Tags & metadata management",
+   "Governed tags with approval workflows"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Tags with predefined values and approval gates; enforces compliance policies.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Tags & metadata management",
+   "Classification and lifecycle labeling"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Tag models as 'sensitive', 'prod', 'deprecated', etc.; drive automated actions.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Tags & metadata management",
+   "Compliance tagging support"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "HIPAA, GDPR, PCI labels; enables compliance reporting and access policies.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Tags & metadata management",
+   "Discoverable via search"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Filter and search models by tags; enables self-service model discovery.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Cross-workspace sharing"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Models accessible across workspaces via same UC metastore; catalog-binding configuration controls workspace visibility; enables shared MLOps practices across teams.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Cross-workspace sharing",
+   "Workspace visibility control"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Configure workspace-to-catalog bindings; restrict access if needed.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Cross-workspace sharing",
+   "Unified permissions model"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Same UC permissions apply across all workspaces; no per-workspace duplication.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Deployment jobs with approvals"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "New model versions auto-trigger deployment jobs; reviewers approve via governed tags; integrates MLflow 3 with Lakeflow Jobs for gated production promotion.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Deployment jobs with approvals",
+   "Governed tag-based reviewer approval"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Deployment jobs wait for governed tag approval; specifies reviewers and approval conditions.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Deployment jobs with approvals",
+   "Lakeflow Jobs integration"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Deployment defined as DAG task; supports complex orchestration and conditionals.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Deploy & serve",
+   "Model Registry & governance",
+   "Deployment jobs with approvals",
+   "Gated production promotion"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Prevents unauthorized production deployments; enforces change control.",
+  "violations": [
+   "semicolon pile"
+  ]
+ }
+]

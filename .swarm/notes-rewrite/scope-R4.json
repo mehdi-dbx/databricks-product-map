@@ -1,0 +1,513 @@
+[
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "Central control plane (Unity AI Gateway) routing all AI requests with permissions enforcement, budget management, usage tracking, and asset governance.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "Unity Catalog for AI assets"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Governs tables, models, agents, UC functions (tools), MCP services, connections, skills, credentials; RLAC/ABAC, lineage, audit.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (9 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "Unity Catalog for AI assets",
+   "Versioning & aliases"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Model versions, stage aliases (Champion/staging/prod) with promotion workflows.",
+  "violations": [
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "Unity AI Gateway"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Runtime control plane for all AI traffic — models, agents, tools, MCP.",
+  "violations": [
+   "dash/arrow splice",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "Unity AI Gateway",
+   "Guardrails"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "PII redaction, injection detection, allow / deny / approval (Service Policies).",
+  "violations": [
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "Unity AI Gateway",
+   "Cost & budgets"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Attribution by user / team / project / endpoint / model / tag; usage blocking.",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "Unity AI Gateway",
+   "Asset governance"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Models, MCP, UC functions, connections as UC securables; on-behalf-of execution.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "Unity AI Gateway",
+   "Observability"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "System tables (tokens, latency, errors, identity) + optional payload logging to Delta.",
+  "violations": [
+   "plus-joined list",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "Review Apps"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Human-in-the-loop labeling of traces / chat for eval datasets.",
+  "violations": [
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "Review Apps",
+   "Chat UI review interface"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Experts interact with deployed agents; provide immediate feedback.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "Review Apps",
+   "Integration with MLflow"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Feedback stored as MLflow assessments; linked to traces & models.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "DASF v3.0"
+  ],
+  "depth": 2,
+  "type": "concept",
+  "note": "AI Security Framework: 97 risks / 73 controls; Agentic extension (35 risks, 6 controls, 13 components). Published Mar 2026.",
+  "violations": [
+   "semicolon pile",
+   "slash list",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "DASF v3.0",
+   "Risk taxonomy (97 total)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Comprehensive catalog of AI security risks; 35 new agentic-specific.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "DASF v3.0",
+   "Control framework (73 total)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Mapped controls to mitigate risks; 6 new agentic controls.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "DASF v3.0",
+   "Least-privilege tool access"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "UC permissions + scoped data access restrict agent tool use.",
+  "violations": [
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "DASF v3.0",
+   "Sandboxing & isolation"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Databricks Sandbox + CEL policies for agent code execution.",
+  "violations": [
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Governance for AI",
+   "DASF v3.0",
+   "Guardrails & observability"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Gateway guardrails (PII, injection) + MLflow tracing for audit trail.",
+  "violations": [
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie One"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Unified cross-asset BI assistant; memory GA + MCP server GA (Sep); free for named users to Jan 31 2027.",
+  "violations": [
+   "semicolon pile",
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie One",
+   "Discovery and natural-language QA"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Cross-asset analytics from conversational prompts; SQL generation.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie One",
+   "Business tool connectors"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Google Workspace, M365, Atlassian, Slack, GitHub; per-user OAuth.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie One",
+   "Multi-interface access"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Web, mobile (PuP), macOS (Beta), Slack, Teams, MCP clients.",
+  "violations": [
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie One",
+   "MCP Server (GA Sep 2026)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Genie One accessible to Claude, ChatGPT, Cursor, MCP Inspector.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie One",
+   "Free tier through Jan 31 2027"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Named-user free; service-principal usage remains billable.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie Agents"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "No-code domain agents (ex-Genie Spaces, renamed Jul 2026); limits up to 50 sources / 200k conversations (Sep 10).",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie Agents",
+   "Agent mode and management APIs"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "GA; iframe embedding, dashboard integration, API-first control.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "AI/BI Dashboards (Lakeview)",
+   "AI-assisted authoring"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Suggestions for filters, relationships, visualizations; drag-and-drop builder.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "AI/BI Dashboards (Lakeview)",
+   "Metric views (GA)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Pre-computed, versioned KPIs; performance optimized for analytics.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "AI/BI Dashboards (Lakeview)",
+   "Sharing and subscriptions"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Scheduled delivery, shared access, audit trail, collaborative features.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie Ontology",
+   "Learned business context"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Metric definitions, terminology, calculations, inferred business semantics.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie App Builder"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "NL to Databricks App (Sep 23); needs admin governed agentic app-building and App Spaces.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie App Builder",
+   "Natural-language app generation"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Prompt to Databricks App code; NL-to-code for analytics apps.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie App Builder",
+   "Requires governed agentic app-building admin enablement"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Workspace admin must enable feature; App Spaces governance required.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie App Builder",
+   "Scale-to-zero serverless"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Automatic deployment and scaling; no infrastructure management.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Genie / AI.BI family",
+   "Genie App Builder",
+   "Free during Beta (pricing TBD)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "No cost during Beta; pricing model to be announced at GA.",
+  "violations": [
+   "semicolon pile"
+  ]
+ }
+]

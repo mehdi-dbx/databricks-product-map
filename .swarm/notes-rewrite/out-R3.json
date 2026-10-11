@@ -1,0 +1,359 @@
+[
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access"
+  ],
+  "note": "Databricks foundation models from Anthropic, OpenAI, and Google support pay-per-token and provisioned throughput pricing."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Foundation Model APIs"
+  ],
+  "note": "Foundation Model APIs include Anthropic Claude, OpenAI GPT, and Google Gemini with pay-per-token and provisioned throughput pricing."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Foundation Model APIs",
+   "Anthropic Claude family"
+  ],
+  "note": "Claude models range from Haiku to Opus including Sonnet and Fable."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Foundation Model APIs",
+   "OpenAI GPT models"
+  ],
+  "note": "OpenAI GPT models include current versions, legacy support, and open-source variants."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Foundation Model APIs",
+   "Google Gemini & Gemma"
+  ],
+  "note": "Google Gemini and Gemma models are available for language and embedding tasks."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Foundation Model APIs",
+   "Meta Llama & OSS"
+  ],
+  "note": "Meta Llama models and community open-source models are available for deployment."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Foundation Model APIs",
+   "Regional providers"
+  ],
+  "note": "Regional providers including Qwen, GLM, and Kimi offer market-specific models."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Model versions"
+  ],
+  "note": "Model versions provides availability, retirement, and lifecycle information for foundation models on Databricks."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Model versions",
+   "Live supported-models matrix"
+  ],
+  "note": "The supported-models matrix lists real-time model availability by region."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Model versions",
+   "Retirement schedules"
+  ],
+  "note": "Gemini 2.5 models retired October 2 and DeepSeek V4 Flash retires November 5."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Model versions",
+   "Model rollover updates"
+  ],
+  "note": "Tracks major model updates like Claude 5.5 to 6 and GPT-5 to 6 transitions."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "External model services"
+  ],
+  "note": "Databricks governs access to externally hosted models through Unity Catalog and the Gateway."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "External model services",
+   "External provider routing"
+  ],
+  "note": "Routes requests to OpenAI, Anthropic, and Google hosted endpoints."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "External model services",
+   "Fallback routing"
+  ],
+  "note": "Fallback routing selects alternative external models when a provider is unavailable."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "External model services",
+   "Cost attribution by team"
+  ],
+  "note": "Cost attribution tracks external API spending per team with Gateway-enforced usage controls."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Model lifecycle churn (Oct)"
+  ],
+  "note": "Model lifecycle churn tracks the October 2026 retirements and deprecations of foundation models."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Model lifecycle churn (Oct)",
+   "Gemini 2.5 Pro/Flash (retired Oct 2)"
+  ],
+  "note": "Gemini 2.5 Pro and Flash retired October 2, 2026 with migration to Gemini 3.1 or 3.5 recommended."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Model lifecycle churn (Oct)",
+   "GLM 5.2 (legacy as of Oct 6)"
+  ],
+  "note": "GLM from Zhipu AI became legacy as of October 6, 2026."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Foundation Models & LLM access",
+   "Model lifecycle churn (Oct)",
+   "DeepSeek V4 (0731) retirement (Nov 5)"
+  ],
+  "note": "DeepSeek V4 Flash retiring November 5, 2026 with V4.1 available as a replacement."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI"
+  ],
+  "note": "Databricks Data Foundation for AI builds on Delta Lake to provide governed, scalable data infrastructure."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakehouse / Delta Lake"
+  ],
+  "note": "Delta Lake provides open ACID transactions for both batch and streaming data workloads."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakehouse / Delta Lake",
+   "Schema enforcement"
+  ],
+  "note": "Schema enforcement validates incoming data against defined schemas to prevent quality drift."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakehouse / Delta Lake",
+   "Governed metadata layer"
+  ],
+  "note": "Governed metadata layer tracks data lineage and versioning through Unity Catalog for consistent access control."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakehouse / Delta Lake",
+   "Multi-cloud support"
+  ],
+  "note": "Multi-cloud support deploys Delta Lake across AWS, Azure, and GCP with unified governance."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakeflow"
+  ],
+  "note": "Lakeflow provides data ingestion, orchestration, and transformation components for building data pipelines."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakeflow",
+   "Lakeflow Connect"
+  ],
+  "note": "Lakeflow Connect automates data ingestion from diverse sources including databases and SaaS."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakeflow",
+   "Lakeflow Designer"
+  ],
+  "note": "Lakeflow Designer provides a visual canvas with natural language interface for building data transformations."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakeflow",
+   "Lakeflow Jobs"
+  ],
+  "note": "Lakeflow Jobs orchestrates and monitors data, analytics, and AI workflows."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakeflow",
+   "Genie Code integration"
+  ],
+  "note": "Genie Code integration enables natural language descriptions of transformations and AI function enrichment."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakebase — serverless Postgres"
+  ],
+  "note": "Lakebase provides serverless PostgreSQL storage for agent state and application data with Unity Catalog integration."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakebase — serverless Postgres",
+   "Unity Catalog synchronization"
+  ],
+  "note": "Unity Catalog synchronization enables bidirectional sync between Postgres tables and Delta Lake."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakebase Search"
+  ],
+  "note": "Lakebase Search combines vector and keyword search within PostgreSQL without requiring a separate vector database."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakebase Search",
+   "Hybrid search (RRF)"
+  ],
+  "note": "Hybrid search using Reciprocal Rank Fusion merges semantic and keyword results for comprehensive results."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Lakebase Search",
+   "Native Postgres integration"
+  ],
+  "note": "Native Postgres integration co-locates search and application memory without requiring external vector stores."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Predictive Optimization"
+  ],
+  "note": "Predictive Optimization automatically tunes Delta tables on Unity Catalog using ROI-based optimization."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Predictive Optimization",
+   "Automatic VACUUM"
+  ],
+  "note": "Automatic VACUUM removes old table versions to optimize storage without manual intervention."
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Data foundation for AI",
+   "Predictive Optimization",
+   "Audit trail"
+  ],
+  "note": "Audit trail stores optimization decisions in system.storage.predictive_optimization_operations_history."
+ }
+]

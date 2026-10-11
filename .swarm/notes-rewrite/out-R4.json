@@ -1,0 +1,172 @@
+[
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Governance for AI"],
+    "note": "Governance for AI centralizes permissions, budgets, and asset controls through Unity Catalog and Unity AI Gateway."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Governance for AI", "Unity Catalog for AI assets"],
+    "note": "Unity Catalog for AI assets provides role-based access control, lineage tracking, and audit trails for models and agents."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Governance for AI", "Unity Catalog for AI assets", "Versioning & aliases"],
+    "note": "Model versions track stage aliases and support promotion workflows to production."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Governance for AI", "Unity AI Gateway"],
+    "note": "Unity AI Gateway controls all AI traffic for models, agents, and custom tools."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Governance for AI", "Unity AI Gateway", "Guardrails"],
+    "note": "Guardrails enforce PII redaction, injection detection, and approval policies on AI requests."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Governance for AI", "Unity AI Gateway", "Cost & budgets"],
+    "note": "Budgets and cost tracking attribute usage by user, team, or project with enforcement of spending limits."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Governance for AI", "Unity AI Gateway", "Asset governance"],
+    "note": "Asset governance treats models, MCP, and UC functions as Unity Catalog securables."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Governance for AI", "Unity AI Gateway", "Observability"],
+    "note": "Observability logs tokens, latency, and errors to system tables for audit and troubleshooting."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Governance for AI", "Review Apps"],
+    "note": "Review Apps enable human-in-the-loop labeling of traces and chat interactions for eval datasets."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Governance for AI", "Review Apps", "Chat UI review interface"],
+    "note": "Chat UI enables experts to interact with deployed agents and provide feedback for evaluation."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Governance for AI", "Review Apps", "Integration with MLflow"],
+    "note": "Feedback is stored as MLflow assessments linked to traces and models."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Governance for AI", "DASF v3.0"],
+    "note": "Databricks AI Security Framework v3.0 catalogs 97 risks with 73 controls, including 35 agentic-specific risks."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Governance for AI", "DASF v3.0", "Risk taxonomy (97 total)"],
+    "note": "Risk taxonomy comprehensively catalogs AI security risks, with 35 agentic-specific additions."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Governance for AI", "DASF v3.0", "Control framework (73 total)"],
+    "note": "Control framework maps controls to mitigate risks, with 6 new agentic-specific controls."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Governance for AI", "DASF v3.0", "Least-privilege tool access"],
+    "note": "Least-privilege tool access uses UC permissions and scoped data access to restrict agent capabilities."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Governance for AI", "DASF v3.0", "Sandboxing & isolation"],
+    "note": "Sandboxing and isolation restrict agent code execution using Databricks Sandbox and CEL policies."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Governance for AI", "DASF v3.0", "Guardrails & observability"],
+    "note": "Gateway guardrails and MLflow tracing provide PII redaction, injection detection, and audit trails."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Genie / AI.BI family", "Genie One"],
+    "note": "Genie One provides cross-asset BI assistance with memory and MCP server access for named users."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Genie / AI.BI family", "Genie One", "Discovery and natural-language QA"],
+    "note": "Discovery enables cross-asset analytics through conversational prompts with automatic SQL generation."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Genie / AI.BI family", "Genie One", "Business tool connectors"],
+    "note": "Business tool connectors link Genie One to Google Workspace, M365, and Slack."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Genie / AI.BI family", "Genie One", "Multi-interface access"],
+    "note": "Genie One is accessible on web, mobile, Slack and MCP."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Genie / AI.BI family", "Genie One", "MCP Server (GA Sep 2026)"],
+    "note": "Genie One is accessible to Claude, ChatGPT, Cursor and MCP Inspector."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Genie / AI.BI family", "Genie One", "Free tier through Jan 31 2027"],
+    "note": "Genie One is free for named users through January 31, 2027, while service-principal usage remains billable."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Genie / AI.BI family", "Genie Agents"],
+    "note": "Genie Agents enable no-code domain-specific assistants with limits up to 50 sources and 200,000 conversations."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Genie / AI.BI family", "Genie Agents", "Agent mode and management APIs"],
+    "note": "Agent mode supports iframe embedding, dashboard integration, and API-first management for Genie Agents."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Genie / AI.BI family", "AI/BI Dashboards (Lakeview)", "AI-assisted authoring"],
+    "note": "Lakeview provides AI suggestions for filters, relationships, and visualizations in a drag-and-drop editor."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Genie / AI.BI family", "AI/BI Dashboards (Lakeview)", "Metric views (GA)"],
+    "note": "Metric views store pre-computed KPIs with versioning for optimized analytics performance."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Genie / AI.BI family", "AI/BI Dashboards (Lakeview)", "Sharing and subscriptions"],
+    "note": "Sharing and subscriptions enable scheduled delivery, shared access, and audit trails."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Genie / AI.BI family", "Genie Ontology", "Learned business context"],
+    "note": "Learned business context captures metric definitions, terminology, and calculated business semantics."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Genie / AI.BI family", "Genie App Builder"],
+    "note": "Genie App Builder generates Databricks Apps from natural language descriptions with governance."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Genie / AI.BI family", "Genie App Builder", "Natural-language app generation"],
+    "note": "Natural-language app generation converts prompts to Databricks App code for analytics applications."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Genie / AI.BI family", "Genie App Builder", "Requires governed agentic app-building admin enablement"],
+    "note": "Workspace admins must enable governed agentic app-building for Genie App Builder."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Genie / AI.BI family", "Genie App Builder", "Scale-to-zero serverless"],
+    "note": "Scale-to-zero serverless automatically deploys and scales apps without infrastructure management."
+  },
+  {
+    "tree": "ai-tree.json",
+    "path": ["Databricks AI", "Genie / AI.BI family", "Genie App Builder", "Free during Beta (pricing TBD)"],
+    "note": "Genie App Builder is free during Beta, with pricing to be announced at general availability."
+  }
+]

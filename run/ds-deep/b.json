@@ -1,0 +1,145 @@
+[
+  {
+    "n": "MLflow",
+    "s": "GA",
+    "since": "GA (v3.x: Aug-Sep 2026)",
+    "docs": [
+      "https://docs.databricks.com/aws/en/mlflow/",
+      "https://docs.databricks.com/aws/en/mlflow/tracking",
+      "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor/",
+      "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/overview"
+    ],
+    "children": [
+      {
+        "n": "MLflow Tracking",
+        "note": "Log parameters, metrics, artifacts, and tags across training runs; organize with experiments; compare runs in notebook UI (Delta/UC backend)."
+      },
+      {
+        "n": "Autologging (Framework Integration)",
+        "note": "Automatic capture from scikit-learn, XGBoost, TensorFlow, PyTorch, LightGBM; configurable via mlflow.autolog(); requires explicit enabling on serverless compute."
+      },
+      {
+        "n": "Experiments UI",
+        "note": "Web interface for managing experiments, comparing runs across metrics/artifacts, inspecting nested traces from agent/LLM calls."
+      },
+      {
+        "n": "Logged Models (MLflow 3.x)",
+        "new": true,
+        "note": "First-class model entities with versioning, signature inference, metrics, parameters, and lineage tracking across training/staging/prod."
+      },
+      {
+        "n": "LLM Evaluation (Judges)",
+        "new": true,
+        "note": "8 built-in judges (correctness, relevance, safety, groundedness, completeness, fluency, tool-call quality, RAG sufficiency) + human feedback loops."
+      },
+      {
+        "n": "Custom Scorers (Code-based)",
+        "note": "Define Python evaluation logic using @scorer decorator; deterministic checks, custom metrics, or domain-specific heuristics without LLM overhead."
+      },
+      {
+        "n": "Prompt Registry",
+        "note": "Version prompts with immutable history; stage aliases (champion/staging/prod) for promotion workflows; bind model params and temperature together."
+      },
+      {
+        "n": "MLflow Traces",
+        "new": true,
+        "note": "Capture end-to-end agent execution: prompts, model calls, retrievals, tool invocations, errors, latency; OpenTelemetry-compatible for debugging/monitoring."
+      }
+    ]
+  },
+  {
+    "n": "AutoML",
+    "s": "GA",
+    "since": "GA (serverless forecasting: Jun 2026)",
+    "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/automl/",
+      "https://docs.databricks.com/aws/en/machine-learning/automl/classification",
+      "https://docs.databricks.com/aws/en/machine-learning/automl/regression",
+      "https://docs.databricks.com/aws/en/machine-learning/automl/forecasting",
+      "https://docs.databricks.com/aws/en/machine-learning/train-model/serverless-forecasting"
+    ],
+    "children": [
+      {
+        "n": "Classification",
+        "note": "Binary & multiclass prediction via decision trees, random forests, logistic regression, XGBoost, LightGBM; stratified train/val/test splits (60/20/20)."
+      },
+      {
+        "n": "Regression",
+        "note": "Continuous value prediction via trees, linear regression, XGBoost, LightGBM with automated hyperparameter tuning and evaluation metrics (R², MAE, RMSE)."
+      },
+      {
+        "n": "Forecasting (Classic Compute)",
+        "note": "Time-series predictions via Prophet or Auto-ARIMA on classic Databricks clusters; configurable forecast horizon, external regressors via Feature Store."
+      },
+      {
+        "n": "Forecasting (Serverless, Public Preview)",
+        "new": true,
+        "note": "Prophet, Auto-ARIMA, and DeepAR on managed serverless GPU infrastructure; no cluster provisioning required."
+      },
+      {
+        "n": "Glass-Box Generated Notebooks",
+        "note": "Editable trial code for every model trained; inspect data exploration, preprocessing, feature engineering, training logic, SHAP analysis; reproducible and customizable."
+      },
+      {
+        "n": "SHAP Explainability",
+        "note": "Feature importance and impact analysis via SHAP Shapley values; disabled by default (memory-intensive); enable with shap_enabled=True in notebooks."
+      },
+      {
+        "n": "Data Preparation & Feature Selection",
+        "note": "Automatic semantic type detection, missing-value imputation, column inclusion/exclusion, categorical encoding; supported types: numeric, categorical, text, dates, arrays."
+      },
+      {
+        "n": "AutoML Python API",
+        "note": "Programmatic interface (databricks.automl.classify/regress/forecast) with full control: exclude_cols, imputers, time_col, split_col, feature_store_lookups."
+      }
+    ]
+  },
+  {
+    "n": "Distributed training & GPU",
+    "s": "GA",
+    "since": "GA (AI Runtime: Jun 2026 PuP; ML Runtime: foundational)",
+    "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/databricks-runtime-ml",
+      "https://docs.databricks.com/aws/en/machine-learning/ai-runtime/",
+      "https://docs.databricks.com/aws/en/machine-learning/ai-runtime/quickstart",
+      "https://docs.databricks.com/aws/en/machine-learning/train-model/distributed-training/",
+      "https://docs.databricks.com/aws/en/machine-learning/train-model/distributed-training/spark-pytorch-distributor"
+    ],
+    "children": [
+      {
+        "n": "ML Runtime (Pre-configured GPU Clusters)",
+        "note": "Cluster runtime with PyTorch (2.12.0), scikit-learn (1.7.2), XGBoost (3.2.0), TensorFlow (legacy on Runtime 17.3 LTS only), GPU drivers; Spark MLlib support."
+      },
+      {
+        "n": "AI Runtime (Serverless GPU)",
+        "new": true,
+        "note": "Managed serverless GPU compute: 1×A10 (24 GB), 1×H100 (80 GB), or 8×H100 (per GPU). Pay-per-minute, scale-to-zero. Notebook and CLI access. Public Preview status Oct 2026."
+      },
+      {
+        "n": "Ray Train",
+        "note": "Framework-agnostic distributed training orchestration; multi-GPU/multi-node support for PyTorch, TensorFlow; integrates with Ray Data and Ray Tune for end-to-end pipelines."
+      },
+      {
+        "n": "Ray Tune (Hyperparameter Search)",
+        "note": "Distributed parallel hyperparameter trials with ASHA early stopping; per-trial GPU reservations; integrates with MLflow for experiment tracking and child-run logging."
+      },
+      {
+        "n": "TorchDistributor (PyTorch on Spark)",
+        "note": "Launcher for distributed PyTorch via Spark cluster resources; wraps torch.distributed.run; minimal migration from existing DDP code; Spark 3.4+ / Runtime 13.0 ML+."
+      },
+      {
+        "n": "Spark MLlib (Distributed Classical ML)",
+        "note": "Distributed classification, regression, clustering, collaborative filtering; pyspark.ml API for scalable ML on massive datasets; dimensionality reduction and feature engineering."
+      },
+      {
+        "n": "DeepSpeed (Memory & Scale Optimization)",
+        "note": "ZeRO sharding (stages 1-3), optimizer/gradient partitioning, CPU offload; via TorchDistributor on classic compute or AI Runtime; Llama 2 7B fine-tuning examples provided."
+      },
+      {
+        "n": "@distributed API (Serverless Single-Node)",
+        "new": true,
+        "note": "Notebook decorator for single-node multi-GPU training (DDP, FSDP, DeepSpeed); serverless execution on AI Runtime; replaces TorchDistributor for compatible workloads without Spark."
+      }
+    ]
+  }
+]

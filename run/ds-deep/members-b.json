@@ -1,0 +1,295 @@
+[
+  {
+    "n": "MLflow",
+    "s": "GA",
+    "c": "ok",
+    "note": "Experiment tracking, autologging, and model management.",
+    "docs": [
+      "https://docs.databricks.com/aws/en/mlflow/",
+      "https://docs.databricks.com/aws/en/mlflow/tracking",
+      "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor/",
+      "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/overview"
+    ],
+    "children": [
+      {
+        "n": "MLflow Tracking",
+        "note": "Log parameters, metrics, artifacts, and tags across training runs; organize with experiments; compare runs in notebook UI (Delta/UC backend).",
+        "children": [
+          {
+            "n": "Experiments",
+            "note": "Organized collections of runs for comparison and filtering."
+          },
+          {
+            "n": "Runs",
+            "note": "Individual executions of model code; each logs parameters, metrics, artifacts, tags."
+          },
+          {
+            "n": "Parameters",
+            "note": "Model configuration settings and hyperparameters being tested."
+          },
+          {
+            "n": "Metrics",
+            "note": "Performance measurements showing how parameter choices affect model outcomes."
+          },
+          {
+            "n": "Artifacts",
+            "note": "Additional files such as CSV documents, visualizations, or model binaries."
+          }
+        ]
+      },
+      {
+        "n": "Autologging (Framework Integration)",
+        "note": "Automatic capture from scikit-learn, XGBoost, TensorFlow, PyTorch, LightGBM; configurable via mlflow.autolog(); requires explicit enabling on serverless compute.",
+        "children": [
+          {
+            "n": "scikit-learn",
+            "note": "Auto-capture of training parameters, metrics, and model artifacts."
+          },
+          {
+            "n": "XGBoost",
+            "note": "Automatic logging of gradient boosting model training lifecycle."
+          },
+          {
+            "n": "TensorFlow",
+            "note": "Deep learning framework auto-instrumentation (legacy support)."
+          },
+          {
+            "n": "PyTorch",
+            "note": "PyTorch model training parameters, metrics, and checkpoints auto-logged."
+          },
+          {
+            "n": "LightGBM",
+            "note": "Fast gradient boosting library auto-logging with model metadata."
+          }
+        ]
+      },
+      {
+        "n": "Experiments UI",
+        "note": "Web interface for managing experiments, comparing runs across metrics/artifacts, inspecting nested traces from agent/LLM calls."
+      },
+      {
+        "n": "Logged Models (MLflow 3.x)",
+        "new": true,
+        "note": "First-class model entities with versioning, signature inference, metrics, parameters, and lineage tracking across training/staging/prod."
+      },
+      {
+        "n": "LLM Evaluation (Judges)",
+        "new": true,
+        "note": "8 built-in judges (correctness, relevance, safety, groundedness, completeness, fluency, tool-call quality, RAG sufficiency) + human feedback loops."
+      },
+      {
+        "n": "Custom Scorers (Code-based)",
+        "note": "Define Python evaluation logic using @scorer decorator; deterministic checks, custom metrics, or domain-specific heuristics without LLM overhead."
+      },
+      {
+        "n": "Prompt Registry",
+        "note": "Version prompts with immutable history; stage aliases (champion/staging/prod) for promotion workflows; bind model params and temperature together.",
+        "children": [
+          {
+            "n": "Versioning",
+            "note": "Immutable prompt version history with metadata tracking."
+          },
+          {
+            "n": "Stage aliases (champion/staging/prod)",
+            "note": "Mutable pointers for promotion workflows and deployment control."
+          },
+          {
+            "n": "Configuration binding",
+            "note": "Bind model parameters, temperature, and other settings with prompts."
+          }
+        ]
+      },
+      {
+        "n": "MLflow Traces",
+        "new": true,
+        "note": "Capture end-to-end agent execution: prompts, model calls, retrievals, tool invocations, errors, latency; OpenTelemetry-compatible for debugging/monitoring."
+      }
+    ],
+    "since": "GA (v3.x: Aug-Sep 2026)"
+  },
+  {
+    "n": "AutoML",
+    "s": "GA",
+    "c": "ok",
+    "note": "Automated model search with glass-box generated notebooks.",
+    "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/automl/",
+      "https://docs.databricks.com/aws/en/machine-learning/automl/classification",
+      "https://docs.databricks.com/aws/en/machine-learning/automl/regression",
+      "https://docs.databricks.com/aws/en/machine-learning/automl/forecasting",
+      "https://docs.databricks.com/aws/en/machine-learning/train-model/serverless-forecasting"
+    ],
+    "children": [
+      {
+        "n": "Classification",
+        "note": "Binary & multiclass prediction via decision trees, random forests, logistic regression, XGBoost, LightGBM; stratified train/val/test splits (60/20/20).",
+        "children": [
+          {
+            "n": "Decision trees",
+            "note": "Tree-based binary & multiclass prediction for interpretability."
+          },
+          {
+            "n": "Random forests",
+            "note": "Ensemble of trees for robust classification performance."
+          },
+          {
+            "n": "Logistic regression",
+            "note": "Probabilistic linear classifier for binary and multiclass problems."
+          },
+          {
+            "n": "XGBoost",
+            "note": "Gradient boosting for state-of-the-art classification accuracy."
+          },
+          {
+            "n": "LightGBM",
+            "note": "Fast gradient boosting alternative with memory efficiency."
+          }
+        ]
+      },
+      {
+        "n": "Regression",
+        "note": "Continuous value prediction via trees, linear regression, XGBoost, LightGBM with automated hyperparameter tuning and evaluation metrics (R\u00b2, MAE, RMSE).",
+        "children": [
+          {
+            "n": "Decision trees",
+            "note": "Tree-based continuous value prediction for interpretability."
+          },
+          {
+            "n": "Random forests",
+            "note": "Ensemble of regression trees for robust predictions."
+          },
+          {
+            "n": "Linear regression (SGD)",
+            "note": "Stochastic gradient descent-trained linear model for large datasets."
+          },
+          {
+            "n": "XGBoost",
+            "note": "Gradient boosting optimized for regression performance."
+          },
+          {
+            "n": "LightGBM",
+            "note": "Memory-efficient gradient boosting for large regression datasets."
+          }
+        ]
+      },
+      {
+        "n": "Forecasting (Classic Compute)",
+        "note": "Time-series predictions via Prophet or Auto-ARIMA on classic Databricks clusters; configurable forecast horizon, external regressors via Feature Store.",
+        "children": [
+          {
+            "n": "Prophet",
+            "note": "Facebook time-series framework with seasonal decomposition and trend modeling."
+          },
+          {
+            "n": "Auto-ARIMA",
+            "note": "Automated ARIMA model selection and parameter tuning for stationary series."
+          }
+        ]
+      },
+      {
+        "n": "Forecasting (Serverless, Public Preview)",
+        "new": true,
+        "note": "Prophet, Auto-ARIMA, and DeepAR on managed serverless GPU infrastructure; no cluster provisioning required.",
+        "children": [
+          {
+            "n": "Prophet",
+            "note": "Seasonal decomposition and trend extrapolation for time series."
+          },
+          {
+            "n": "Auto-ARIMA",
+            "note": "Automated ARIMA with parameter optimization."
+          },
+          {
+            "n": "DeepAR",
+            "note": "AWS DeepAR deep learning model for complex time-series patterns."
+          }
+        ]
+      },
+      {
+        "n": "Glass-Box Generated Notebooks",
+        "note": "Editable trial code for every model trained; inspect data exploration, preprocessing, feature engineering, training logic, SHAP analysis; reproducible and customizable."
+      },
+      {
+        "n": "SHAP Explainability",
+        "note": "Feature importance and impact analysis via SHAP Shapley values; disabled by default (memory-intensive); enable with shap_enabled=True in notebooks."
+      },
+      {
+        "n": "Data Preparation & Feature Selection",
+        "note": "Automatic semantic type detection, missing-value imputation, column inclusion/exclusion, categorical encoding; supported types: numeric, categorical, text, dates, arrays."
+      },
+      {
+        "n": "AutoML Python API",
+        "note": "Programmatic interface (databricks.automl.classify/regress/forecast) with full control: exclude_cols, imputers, time_col, split_col, feature_store_lookups."
+      }
+    ],
+    "since": "GA (serverless forecasting: Jun 2026)"
+  },
+  {
+    "n": "Distributed training & GPU",
+    "s": "GA",
+    "c": "ok",
+    "note": "Scale training across GPUs and clusters.",
+    "docs": [
+      "https://docs.databricks.com/aws/en/machine-learning/databricks-runtime-ml",
+      "https://docs.databricks.com/aws/en/machine-learning/ai-runtime/",
+      "https://docs.databricks.com/aws/en/machine-learning/ai-runtime/quickstart",
+      "https://docs.databricks.com/aws/en/machine-learning/train-model/distributed-training/",
+      "https://docs.databricks.com/aws/en/machine-learning/train-model/distributed-training/spark-pytorch-distributor"
+    ],
+    "children": [
+      {
+        "n": "ML Runtime (Pre-configured GPU Clusters)",
+        "note": "Cluster runtime with PyTorch (2.12.0), scikit-learn (1.7.2), XGBoost (3.2.0), TensorFlow (legacy on Runtime 17.3 LTS only), GPU drivers; Spark MLlib support."
+      },
+      {
+        "n": "AI Runtime (Serverless GPU)",
+        "new": true,
+        "note": "Managed serverless GPU compute: 1\u00d7A10 (24 GB), 1\u00d7H100 (80 GB), or 8\u00d7H100 (per GPU). Pay-per-minute, scale-to-zero. Notebook and CLI access. Public Preview status Oct 2026."
+      },
+      {
+        "n": "Ray Train",
+        "note": "Framework-agnostic distributed training orchestration; multi-GPU/multi-node support for PyTorch, TensorFlow; integrates with Ray Data and Ray Tune for end-to-end pipelines."
+      },
+      {
+        "n": "Ray Tune (Hyperparameter Search)",
+        "note": "Distributed parallel hyperparameter trials with ASHA early stopping; per-trial GPU reservations; integrates with MLflow for experiment tracking and child-run logging."
+      },
+      {
+        "n": "TorchDistributor (PyTorch on Spark)",
+        "note": "Launcher for distributed PyTorch via Spark cluster resources; wraps torch.distributed.run; minimal migration from existing DDP code; Spark 3.4+ / Runtime 13.0 ML+."
+      },
+      {
+        "n": "Spark MLlib (Distributed Classical ML)",
+        "note": "Distributed classification, regression, clustering, collaborative filtering; pyspark.ml API for scalable ML on massive datasets; dimensionality reduction and feature engineering."
+      },
+      {
+        "n": "DeepSpeed (Memory & Scale Optimization)",
+        "note": "ZeRO sharding (stages 1-3), optimizer/gradient partitioning, CPU offload; via TorchDistributor on classic compute or AI Runtime; Llama 2 7B fine-tuning examples provided.",
+        "children": [
+          {
+            "n": "ZeRO stages (1-3)",
+            "note": "Stage 1: optimizer sharding; Stage 2: gradient sharding; Stage 3: parameter sharding for extreme scale."
+          },
+          {
+            "n": "Optimizer sharding",
+            "note": "Partition optimizer states across GPUs to reduce memory per device."
+          },
+          {
+            "n": "Gradient partitioning",
+            "note": "Distribute gradients across workers; each worker computes a subset."
+          },
+          {
+            "n": "CPU offload",
+            "note": "Offload optimizer and gradient states to CPU memory for further memory savings."
+          }
+        ]
+      },
+      {
+        "n": "@distributed API (Serverless Single-Node)",
+        "new": true,
+        "note": "Notebook decorator for single-node multi-GPU training (DDP, FSDP, DeepSpeed); serverless execution on AI Runtime; replaces TorchDistributor for compatible workloads without Spark."
+      }
+    ],
+    "since": "GA (AI Runtime: Jun 2026 PuP; ML Runtime: foundational)"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "path": ["Develop & explore"],
+    "note": "Interactive exploration and preparation of data and candidate models using notebooks, Genie, EDA, and Feature Store; outputs validated approach and reproducible pipeline."
+  },
+  {
+    "path": ["Feature engineering"],
+    "note": "Governed creation, storage, and serving of reusable features for training and inference; enables point-in-time correctness and consistent feature logic."
+  },
+  {
+    "path": ["Experimentation & AutoML"],
+    "note": "Model development through iterative experimentation, hyperparameter tuning, AutoML, and MLflow tracking to identify and validate production candidates."
+  },
+  {
+    "path": ["Training & compute"],
+    "note": "Managed serverless and GPU infrastructure with distributed frameworks (PyTorch, Ray, DeepSpeed) for scaling model training and fine-tuning workloads."
+  },
+  {
+    "path": ["Deploy & serve"],
+    "note": "Productionization of validated models through real-time REST endpoints and batch inference; unified governance and automated promotion via Bundles and CI/CD."
+  },
+  {
+    "path": ["Operate"],
+    "note": "Production monitoring, data/model quality evaluation, CI/CD automation, and continuous improvement—closing the loop between deployment and retraining."
+  },
+  {
+    "path": ["Languages & libraries"],
+    "note": "Python, SQL, R, Scala with preinstalled ML frameworks—scikit-learn, XGBoost, PyTorch, Ray, Spark MLlib—on Databricks Runtimes and serverless compute."
+  }
+]

@@ -1,0 +1,846 @@
+[
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Feature engineering"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "Governed creation, storage, and serving of reusable features for training and inference; enables point-in-time correctness and consistent feature logic.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Feature engineering",
+   "Feature Store",
+   "Feature tables (Delta-backed with UC governance)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Any Delta table with primary key constraint serves as feature table; three-level UC namespace (catalog.schema.table); supports incremental updates via merge mode; versioning via delta commits.",
+  "violations": [
+   "too long (192>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Feature engineering",
+   "Feature Store",
+   "Feature Views (managed materialization)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Declarative feature definitions with automatic pipeline management; supports batch (scheduled), streaming (Kafka/CDF), and hybrid modes; FeatureEngineeringClient orchestrates compute.",
+  "violations": [
+   "too long (183>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Feature engineering",
+   "Feature Store",
+   "On-demand features (request-time computation)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Python UDFs governed by UC; computed at training/serving time; eliminates pre-materialization overhead; automatic integration with Model Serving; handles missing values gracefully.",
+  "violations": [
+   "too long (180>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Feature engineering",
+   "Feature Store",
+   "Point-in-time joins (training data prep)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Constructs training datasets with feature values at specific historical moments; eliminates train/serving skew; create_training_set API with temporal correctness guarantees.",
+  "violations": [
+   "too long (173>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Feature engineering",
+   "Feature Store",
+   "Online Feature Store (Lakebase-powered)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Sub-millisecond latency lookup via managed PostgreSQL; read replicas (up to 3) for distributed query load; automatic sync from offline tables (triggered/continuous/snapshot modes).",
+  "violations": [
+   "too long (180>170)",
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Feature engineering",
+   "Feature Store",
+   "Feature serving endpoints"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "REST endpoints for direct feature retrieval; Model Serving integration with automatic feature lookup; applies dynamic feature resolution and retrieval during inference requests.",
+  "violations": [
+   "too long (177>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Feature engineering",
+   "Feature Store",
+   "Feature discovery & tagging"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Key-value tagging for categorization; Features UI search by name/comments/tags; cross-workspace sharing within metastore; Catalog Explorer integration for lineage visualization.",
+  "violations": [
+   "too long (177>170)",
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Feature engineering",
+   "Feature Store",
+   "Feature lineage & model dependencies"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Automatic capture via log_model(); tracks feature tables, functions, and models used in training; lineage graph in Catalog Explorer; governance via Unity Catalog permissions.",
+  "violations": [
+   "too long (174>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Feature engineering",
+   "Feature Store",
+   "Feature lineage & model dependencies",
+   "Lineage visualization"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Interactive graph in Catalog Explorer showing data → features → models → serving.",
+  "violations": [
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "Production monitoring, data/model quality evaluation, CI/CD automation, and continuous improvement—closing the loop between deployment and retraining.",
+  "violations": [
+   "dash/arrow splice",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Inference Tables"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "AI Gateway-enabled payload logging to Unity Catalog Delta tables; captures request/response for debugging, model quality analysis, and compliance audits. Legacy format deprecated Apr 30, 2026.",
+  "violations": [
+   "too long (192>170)",
+   "semicolon pile",
+   "enumeration (3 commas)",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Data Profiling (Lakehouse Monitoring)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Automated calculation of quality metrics (null counts, distinct values, min/max, quantiles, standard deviation, frequent values) with baseline and consecutive-window comparisons.",
+  "violations": [
+   "too long (178>170)",
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Data Profiling (Lakehouse Monitoring)",
+   "Snapshot profiles"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Single-point-in-time profiling of table state; captures baseline metrics for comparison with future windows; creates reference profile for anomaly detection.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Data Profiling (Lakehouse Monitoring)",
+   "Timeseries profiles"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Consecutive sliding-window profiling over time; tracks metric evolution across commits; enables trend detection and comparative window analysis.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Data Profiling (Lakehouse Monitoring)",
+   "Inference profiles"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Profile tracking for model inference requests captured in inference tables; monitors prediction payload distribution and output characteristics over time.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Drift Detection"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Numeric drift tests (Kolmogorov–Smirnov, Wasserstein distance, PSI) and categorical drift tests (chi-square, total variation, Jensen–Shannon) on predictions and features; baseline or consecutive-window comparisons.",
+  "violations": [
+   "too long (214>170)",
+   "semicolon pile",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Drift Detection",
+   "Numeric drift tests"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Three statistical tests for continuous distributions: Kolmogorov–Smirnov (KS) test for shape differences, Wasserstein distance for distribution shift magnitude, Population Stability Index (PSI) for category distribution stability.",
+  "violations": [
+   "too long (230>170)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Drift Detection",
+   "Categorical drift tests"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Three statistical tests for discrete distributions: chi-square test for independence, total variation distance (TV) for probability mass differences, Jensen–Shannon (JS) divergence for symmetric KL divergence.",
+  "violations": [
+   "too long (209>170)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Custom Metrics"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Define aggregate metrics (raw table columns), derived metrics (computed from aggregates), and drift metrics (time-window or baseline comparisons); minimize recomputation by layering.",
+  "violations": [
+   "too long (182>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Custom Metrics",
+   "Aggregate metrics"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Direct computations from raw table columns (count, min, max, mean, stddev, distinct, null_count); reusable base layer for derived metrics.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (6 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Custom Metrics",
+   "Derived metrics"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Computed from aggregate metrics using custom SQL expressions; enables domain-specific KPIs and composite quality indicators.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Custom Metrics",
+   "Drift metrics"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Comparison of current window metrics against baseline or previous window; detects statistical shifts in aggregate and derived metrics.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Monitoring Dashboards & Alerts"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Auto-generated profile-metrics tables; Lakeview visualization; configurable Databricks SQL alerts on quality/drift metrics with email, webhook, Slack, or PagerDuty notifications.",
+  "violations": [
+   "too long (178>170)",
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Monitoring Dashboards & Alerts",
+   "Lakeview dashboards"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Interactive visualizations of profile metrics and drift results; pre-built dashboard templates for quality monitoring; supports custom parameterization.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Monitoring Dashboards & Alerts",
+   "SQL alerts"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Databricks SQL alert rules triggered on metric thresholds or anomaly detection; configurable refresh intervals and escalation logic.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Monitoring Dashboards & Alerts",
+   "Notification channels"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Multi-channel alert delivery: email, webhook (HTTP POST), Slack (channels, direct messages), PagerDuty integration for on-call escalation.",
+  "violations": [
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "MLflow Evaluation (LLM Judges)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "8 built-in LLM judges (Correctness, RelevanceToQuery, RetrievalRelevance, etc.) for GenAI; custom LLM and code-based scorers; deterministic + heuristic evaluation; reusable across dev and production.",
+  "violations": [
+   "too long (199>170)",
+   "semicolon pile",
+   "plus-joined list",
+   "enumeration (3 commas)",
+   "no capital start"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "Monitoring & evaluation",
+   "Production Monitoring"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Run evaluation scorers on sampled production traffic; collect human feedback via Review Apps; combine with LLM judges for continuous quality, safety, and latency tracking with dashboards.",
+  "violations": [
+   "too long (187>170)",
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "MLOps Stacks"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Official reference templates combining ML code, bundle configuration, and CI/CD workflows for GitHub Actions / Azure DevOps; implements dev → staging → prod workflow with PR-triggered tests.",
+  "violations": [
+   "too long (190>170)",
+   "semicolon pile",
+   "slash list",
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Declarative Automation Bundles (DABs)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Infrastructure-as-code in YAML for ML projects; defines jobs, pipelines, experiments, models, endpoints, permissions; centralized configuration management for reproducible deployments.",
+  "violations": [
+   "too long (184>170)",
+   "semicolon pile",
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Declarative Automation Bundles (DABs)",
+   "Jobs resources"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Define Lakeflow Jobs in bundle YAML; specify triggers, tasks, runtime config, and dependencies for orchestrated ML workflows.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Declarative Automation Bundles (DABs)",
+   "Pipelines resources"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Define Lakeflow Pipelines (DLT) in bundle config; declarative ETL pipelines with SQL/Python code and quality expectations.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Declarative Automation Bundles (DABs)",
+   "Models resources"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Define model registry entries and aliases in bundles; bind models to experiment runs, enable versioning, and manage stage promotion workflows.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Declarative Automation Bundles (DABs)",
+   "Experiments resources"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Define MLflow experiment configuration in bundle YAML; organize tracking experiments across workspaces.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Declarative Automation Bundles (DABs)",
+   "Endpoints resources"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Define model serving endpoints in bundle config; manage scaling, traffic splitting, and feature serving integration.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Declarative Automation Bundles (DABs)",
+   "Permissions resources"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Define fine-grained access control for all resources in bundle; grant roles (viewer, editor, owner) to users and groups at object level.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Lakeflow Jobs (formerly Workflows)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "DAG-based orchestration with task dependencies, serverless execution, up to 1000 tasks per job; supports repair runs and complex control flow across multiple tasks.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Job Triggers"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Cron schedules, Delta table updates, file arrivals, model-registry events (Beta), continuous loops, and API-triggered runs; multi-trigger per job (Beta) with up to five triggers.",
+  "violations": [
+   "too long (178>170)",
+   "semicolon pile",
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Job Triggers",
+   "Cron schedule triggers"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Time-based job execution via cron expressions; supports UTC or workspace timezone configuration.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Job Triggers",
+   "Delta table triggers"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Job runs initiated on Delta table commit detection; combines with file triggers for data-arrival workflows.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Job Triggers",
+   "File arrival triggers"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Triggers on cloud object storage path events (S3, ADLS, GCS); supports wildcard patterns for flexible file detection.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Job Triggers",
+   "Model registry event triggers"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Triggers on model-related events: transition to production, new version registered, or tag changes; enables automated deployment pipelines (Beta).",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Job Triggers",
+   "Continuous loop triggers"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Job that continuously runs in a loop with configured interval; minimal latency between completions.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Job Triggers",
+   "API-triggered runs"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Manual job execution via REST API or UI; supports dynamic parameter passing at run time.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Lakeflow Pipelines (formerly DLT)"
+  ],
+  "depth": 3,
+  "type": "feature",
+  "note": "Declarative ETL with SQL/Python support, auto-scaling, and built-in data quality expectations; three violation policies (Warn/Drop/Fail) with different row-handling behavior.",
+  "violations": [
+   "too long (174>170)",
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Lakeflow Pipelines (formerly DLT)",
+   "SQL declarative mode"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Native DLT SQL syntax for table and view definitions; automatic dependency inference and incremental computation.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Lakeflow Pipelines (formerly DLT)",
+   "Python declarative mode"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "@table and @view decorators for Python functions; enables complex imperative logic within declarative pipeline framework.",
+  "violations": [
+   "semicolon pile",
+   "no capital start"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Lakeflow Pipelines (formerly DLT)",
+   "Quality expectations policies"
+  ],
+  "depth": 4,
+  "type": "primitive",
+  "note": "Row-handling policies on quality constraint violations: Warn (log only), Drop (skip row), Fail (halt pipeline); supports delta.quality expectations metadata.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Git Integration & Repos (Git Folders)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Native Git version control (now called Git Folders); multi-branch support, merge conflict resolution, notebook versioning, and CI/CD automation via Repos API.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "CI/CD with GitHub Actions & Azure DevOps"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Workflow templates for bundle validation, testing, deployment across dev/staging/prod; integrates with MLOps Stacks for automated release management.",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": [
+   "Databricks Data Science",
+   "Operate",
+   "MLOps & CI/CD",
+   "Terraform Support (Databricks Provider)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Infrastructure-as-code for workspace, catalogs, clusters, permissions; manages resources at account and workspace levels; separate from bundle layer; production-grade support.",
+  "violations": [
+   "too long (175>170)",
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ }
+]

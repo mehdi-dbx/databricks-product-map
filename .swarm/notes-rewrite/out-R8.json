@@ -1,0 +1,232 @@
+[
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore"],
+  "note": "Enables interactive exploration of data and candidate models using notebooks and Genie."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Notebooks & collaboration", "Multi-language notebooks (Python/SQL/R/Scala)"],
+  "note": "Provides a multi-language IDE supporting Python, SQL, R and Scala with syntax highlighting and cell-based execution."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Notebooks & collaboration", "Real-time coauthoring & live editing"],
+  "note": "Enables real-time collaborative editing with simultaneous cell edits, live cursor visibility, and persistent chat."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Notebooks & collaboration", "Comments & mentions with AI"],
+  "note": "Supports code comments with @mentions and AI-powered explanations accessible directly in threads."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Notebooks & collaboration", "Databricks Repos (Git version control)"],
+  "note": "Integrates native Git for notebooks and files with branch management, commit tracking, and CI/CD support."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Notebooks & collaboration", "Interactive widgets & parameterization"],
+  "note": "Provides interactive widgets for parameterizing notebooks with programmatic management via dbutils."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Notebooks & collaboration", "Interactive widgets & parameterization", "Widget input controls"],
+  "note": "Provides interactive widgets including dropdowns and text inputs, sliders, and multi-selects."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Notebooks & collaboration", "Interactive widgets & parameterization", "Programmatic parameter management"],
+  "note": "Retrieve and validate notebook parameters dynamically using the dbutils.widgets module."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Notebooks & collaboration", "In-notebook Genie Code (AI assistant)"],
+  "note": "Generates and executes code through an AI chat interface with Unity Catalog integration for table discovery."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Notebooks & collaboration", "In-notebook Genie Code (AI assistant)", "Unity Catalog integration"],
+  "note": "Genie understands table schemas, columns, and lineage while respecting Unity Catalog permissions."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Notebooks & collaboration", "Built-in visualization & dashboards"],
+  "note": "Create interactive dashboards and visualizations from notebook results with point-and-click editing."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Notebooks & collaboration", "Built-in visualization & dashboards", "Chart type support"],
+  "note": "Supports line, scatter, bar and time-series charts for data visualization."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Notebooks & collaboration", "Built-in visualization & dashboards", "Interactive plotly features"],
+  "note": "Provides hover tooltips, zoom, and pan capabilities for interactive data exploration."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Notebooks & collaboration", "Interactive notebook table features"],
+  "note": "Enables searching, filtering, and chart creation from result tables with column statistics and AI assistance."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Notebooks & collaboration", "Interactive notebook table features", "Built-in column statistics"],
+  "note": "Reports minimum and maximum values, means, and null counts for each column."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Data prep & EDA", "Databricks SQL for exploratory queries"],
+  "note": "Provides serverless SQL execution on Delta Lake with dashboards, materialized views, and streaming tables for analytical exploration."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Data prep & EDA", "Spark DataFrames & pandas API"],
+  "note": "Provides PySpark and pandas-compatible APIs for distributed data processing on Databricks clusters."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Data prep & EDA", "Automated data profiling (dbutils.data.summarize)"],
+  "note": "Profiles Spark and pandas DataFrames with configurable precision modes for summary statistics."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Data prep & EDA", "One-click data profile generation"],
+  "note": "Provides column profiles with histograms, distributions, and summary statistics."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Data prep & EDA", "One-click data profile generation", "Summary statistics"],
+  "note": "Reports key statistics including mean, median, and standard deviation for numeric columns."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Data prep & EDA", "Lakeflow Designer (no-code visual ETL)"],
+  "note": "Lakeflow Designer enables drag-and-drop data transformation with natural language assistance and Git versioning."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Data prep & EDA", "Lakeflow Designer (no-code visual ETL)", "Joining operators"],
+  "note": "Supports inner, left, right and full join types for connecting data sources."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Data prep & EDA", "Automated data cleaning operations"],
+  "note": "Performs duplicate removal, missing value handling, and date reformatting using standard Pandas and Spark methods."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Data prep & EDA", "Catalog Explorer & AI-assisted discovery"],
+  "note": "Enables AI-powered discovery of tables, models, and functions with lineage tracking and data quality indicators."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Data prep & EDA", "Visualization toolkit (matplotlib/plotly/seaborn)"],
+  "note": "Supports matplotlib, plotly, and seaborn for creating interactive visualizations that embed in Lakeview dashboards."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Data prep & EDA", "Visualization toolkit (matplotlib/plotly/seaborn)", "Chart types"],
+  "note": "Includes line, scatter, bar and time-series chart types for data visualization."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Develop & explore", "Data prep & EDA", "Visualization toolkit (matplotlib/plotly/seaborn)", "Interactive plotly features"],
+  "note": "Provides hover tooltips, zoom, and pan capabilities in rendered visualizations."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Experimentation & AutoML"],
+  "note": "Supports iterative model development through experimentation, hyperparameter tuning, and AutoML with MLflow tracking."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Experimentation & AutoML", "MLflow", "MLflow Tracking"],
+  "note": "Logs parameters, metrics, and artifacts across training runs for experiment tracking and comparison."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Experimentation & AutoML", "MLflow", "MLflow Tracking", "Runs"],
+  "note": "Individual training executions that log parameters, metrics, artifacts and tags for experiment tracking."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Experimentation & AutoML", "MLflow", "Autologging (Framework Integration)"],
+  "note": "Automatically captures training metadata from scikit-learn, XGBoost, TensorFlow and PyTorch via mlflow.autolog()."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Experimentation & AutoML", "MLflow", "Logged Models (MLflow 3.x)"],
+  "note": "Represents logged models as first-class entities with versioning, signature inference, and lineage tracking across environments."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Experimentation & AutoML", "MLflow", "LLM Evaluation (Judges)"],
+  "note": "Includes eight evaluation judges for LLM outputs on correctness, safety, groundedness and relevance."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Experimentation & AutoML", "MLflow", "Custom Scorers (Code-based)"],
+  "note": "Define custom Python evaluation functions with deterministic checks and domain-specific metrics using @scorer."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Experimentation & AutoML", "MLflow", "Prompt Registry"],
+  "note": "Versions prompts with immutable history and promotion workflows through stage aliases for champion, staging, and production."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Experimentation & AutoML", "MLflow", "MLflow Traces"],
+  "note": "Captures end-to-end agent execution including prompts, model calls, tool invocations and latency metrics for debugging."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Experimentation & AutoML", "AutoML", "Classification"],
+  "note": "Trains classification models using scikit-learn algorithms, XGBoost, and LightGBM."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Experimentation & AutoML", "AutoML", "Classification", "Random forests"],
+  "note": "Creates ensemble classifiers by combining decision trees."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Experimentation & AutoML", "AutoML", "Regression"],
+  "note": "Performs continuous value prediction using scikit-learn algorithms, XGBoost, and LightGBM."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Experimentation & AutoML", "AutoML", "Regression", "Random forests"],
+  "note": "Creates ensemble regressors by combining regression trees."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Experimentation & AutoML", "AutoML", "Forecasting (Classic Compute)"],
+  "note": "Forecasts time-series using Prophet or Auto-ARIMA on Databricks clusters with configurable horizons and external regressors."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Experimentation & AutoML", "AutoML", "Forecasting (Serverless, Public Preview)"],
+  "note": "Enables time-series forecasting using Prophet, Auto-ARIMA, and DeepAR on managed serverless GPU infrastructure."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Experimentation & AutoML", "AutoML", "Glass-Box Generated Notebooks"],
+  "note": "Generates editable notebooks for each AutoML trial showing data exploration, preprocessing, feature engineering and model training."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Experimentation & AutoML", "AutoML", "SHAP Explainability"],
+  "note": "Analyzes feature importance and impact using SHAP Shapley values, disabled by default to save memory."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Experimentation & AutoML", "AutoML", "Data Preparation & Feature Selection"],
+  "note": "Automatically detects column types, handles missing values, encodes categorical features and selects relevant columns."
+ },
+ {
+  "tree": "ds-tree.json",
+  "path": ["Databricks Data Science", "Experimentation & AutoML", "AutoML", "AutoML Python API"],
+  "note": "Provides programmatic AutoML interface enabling full control over column exclusion, imputation, time column and feature store lookups."
+ }
+]

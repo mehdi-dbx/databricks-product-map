@@ -1,0 +1,128 @@
+[
+  {
+    "tree": "ai-tree.json",
+    "pillar": "AI Platform / ML lifecycle",
+    "capsule": "Feature Store",
+    "solves": [
+      {"axis": "Consistency", "problem": "features computed differently at **training vs inference**", "solution": "unified feature logic at **both stages**"},
+      {"axis": "Governance", "problem": "features **scattered** across systems", "solution": "centralized **UC-backed** registry"},
+      {"axis": "Reusability", "problem": "features **recreated** per project", "solution": "**discoverable** shared library"},
+      {"axis": "Real-time", "problem": "**manual** feature lookups costly", "solution": "**online store** with millisecond latency"},
+      {"axis": "Quality", "problem": "training data **point-in-time errors** common", "solution": "**point-in-time-correct** dataset joins"}
+    ],
+    "sources": ["https://docs.databricks.com/en/machine-learning/feature-store/index.html", "Databricks Feature Store Glean AI Answer"],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "AI Platform / ML lifecycle",
+    "capsule": "Model Serving",
+    "solves": [
+      {"axis": "Deployment", "problem": "**multiple** serving systems per provider", "solution": "**unified** control plane and REST API"},
+      {"axis": "Scaling", "problem": "manual infrastructure **provisioning**", "solution": "**serverless** auto-scaling to demand"},
+      {"axis": "Governance", "problem": "**fragmented** model access control", "solution": "**centralized** UC/Gateway governance"},
+      {"axis": "Integration", "problem": "**separate** queries for features and models", "solution": "integrated **feature lookup** in serving"},
+      {"axis": "Cost", "problem": "idle compute **wastes** spend", "solution": "**pay-per-token** with scale-to-zero"}
+    ],
+    "sources": ["https://docs.databricks.com/en/machine-learning/model-serving/index.html", "Databricks Model Serving Glean AI Answer"],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "AI Platform / ML lifecycle",
+    "capsule": "AI Runtime — serverless GPU",
+    "solves": [
+      {"axis": "Access", "problem": "GPU **scarcity** delays training", "solution": "**on-demand** serverless GPU provisioning"},
+      {"axis": "Cost", "problem": "overprovisioned GPUs **idle**", "solution": "**scale-to-zero** when not in use"},
+      {"axis": "Efficiency", "problem": "data pipeline **optimization manual**", "solution": "fault-tolerant **UC-streaming** loaders"},
+      {"axis": "Distributed", "problem": "multi-GPU setup **complex**", "solution": "**Ray integration** for distributed training"},
+      {"axis": "Observability", "problem": "GPU usage and training **visibility poor**", "solution": "MLflow + log **streaming** built-in"}
+    ],
+    "sources": ["https://docs.databricks.com/en/machine-learning/ai-runtime/index.html"],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "AI Platform / ML lifecycle",
+    "capsule": "MLflow 3 for GenAI",
+    "solves": [
+      {"axis": "Tracing", "problem": "agentic chains **opaque** to operators", "solution": "**end-to-end** request tracing (OTel, 30+ frameworks)"},
+      {"axis": "Evaluation", "problem": "LLM quality hard to **measure** consistently", "solution": "**LLM-judge** and custom scorer framework"},
+      {"axis": "Monitoring", "problem": "**blind** production agents and models", "solution": "automatic request/response **logging** with trace context"},
+      {"axis": "Cost", "problem": "LLM spend **opaque** per request", "solution": "**traced tokens** enable cost attribution"},
+      {"axis": "Debugging", "problem": "failures **hard to isolate** in chains", "solution": "granular **intermediate step** visibility"}
+    ],
+    "sources": ["https://docs.databricks.com/en/mlflow/index.html"],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "AI Platform / ML lifecycle",
+    "capsule": "MLflow Model Registry",
+    "solves": [
+      {"axis": "Versioning", "problem": "model versions **untracked** over time", "solution": "**chronological** version history per model"},
+      {"axis": "Promotion", "problem": "manual stage **transitions** error-prone", "solution": "automated **stage** (Staging/Prod/Archive) moves"},
+      {"axis": "Lineage", "problem": "model origin and ancestors **unclear**", "solution": "UC-backed **experiment lineage** tracking"},
+      {"axis": "Collaboration", "problem": "model changes and decisions **undocumented**", "solution": "built-in **comments** and **tags** system"},
+      {"axis": "Automation", "problem": "promotion workflows **manual and slow**", "solution": "event-driven **webhooks** for workflows"}
+    ],
+    "sources": ["https://docs.databricks.com/en/mlflow/model-registry/index.html"],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "AI Platform / ML lifecycle",
+    "capsule": "MLflow Prompt Registry",
+    "solves": [
+      {"axis": "Versioning", "problem": "prompt changes **untracked** over time", "solution": "version **history** per prompt"},
+      {"axis": "Deployment", "problem": "staging/prod prompts **diverge**", "solution": "**alias-based** stage control"},
+      {"axis": "Reusability", "problem": "prompts **scattered** across notebooks", "solution": "centralized prompt **registry**"},
+      {"axis": "Governance", "problem": "prompt access **uncontrolled**", "solution": "UC **permissions** on prompts"},
+      {"axis": "Reproducibility", "problem": "model outputs **hard to replicate**", "solution": "frozen prompt **versions** per run"}
+    ],
+    "sources": ["Scope note: Versioned prompts, staging/prod aliases"],
+    "confidence": "verify"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "AI Platform / ML lifecycle",
+    "capsule": "AutoML",
+    "solves": [
+      {"axis": "Algorithm", "problem": "manual **testing** multiple algorithms tedious", "solution": "automated **selection** (XGBoost, LightGBM, RF)"},
+      {"axis": "Tuning", "problem": "hyperparameter search **time-consuming**", "solution": "distributed **optimization** automated"},
+      {"axis": "Data", "problem": "manual data **cleaning** and prep needed", "solution": "automated **data preparation** pipeline"},
+      {"axis": "Reproducibility", "problem": "model selections **opaque** to teams", "solution": "generated **trial notebooks** for review"},
+      {"axis": "Speed", "problem": "ML iteration **slow** and manual", "solution": "**end-to-end** automation from data to model"}
+    ],
+    "sources": ["https://docs.databricks.com/en/machine-learning/automl/index.html"],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "AI Platform / ML lifecycle",
+    "capsule": "AI Search (ex-Vector Search)",
+    "solves": [
+      {"axis": "Retrieval", "problem": "**manual** embedding and index management", "solution": "automatic **embedding** computation + Delta sync"},
+      {"axis": "Search", "problem": "**single-mode** search (vector only)", "solution": "**hybrid** search (vector + BM25 + rerank)"},
+      {"axis": "Scale", "problem": "vector indices **slow to maintain** at scale", "solution": "auto-sync from **Delta tables**"},
+      {"axis": "Governance", "problem": "embeddings **uncontrolled** and opaque", "solution": "UC **lineage** and **citations** built-in"},
+      {"axis": "Performance", "problem": "search **latency** grows with scale", "solution": "**storage-optimized** endpoints (1B+ vectors)"}
+    ],
+    "sources": ["https://docs.databricks.com/en/generative-ai/vector-search/index.html"],
+    "confidence": "ok"
+  },
+  {
+    "tree": "ai-tree.json",
+    "pillar": "AI Platform / ML lifecycle",
+    "capsule": "Model fine-tuning",
+    "solves": [
+      {"axis": "Memory", "problem": "full fine-tune requires **large GPU memory**", "solution": "**QLoRA/LoRA** parameter efficiency"},
+      {"axis": "Cost", "problem": "fine-tuning **expensive** with full GPU", "solution": "serverless GPU **pay-per-minute** model"},
+      {"axis": "Speed", "problem": "model adaptation **slow** with full training", "solution": "**low-rank** matrices enable fast updates"},
+      {"axis": "Flexibility", "problem": "**one approach** for all use cases", "solution": "choose **QLoRA/LoRA/full** per need"},
+      {"axis": "Integration", "problem": "fine-tuned models **isolated** from serving", "solution": "integrate with **MLflow** and **Model Serving**"}
+    ],
+    "sources": ["Scope note: QLoRA/LoRA fine-tune, distributed training"],
+    "confidence": "verify"
+  }
+]

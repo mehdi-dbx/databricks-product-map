@@ -1,0 +1,580 @@
+[
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks"
+  ],
+  "depth": 1,
+  "type": null,
+  "note": "End-to-end platform for building, deploying, and operating agents with secure code execution, managed memory, tool integration, and production observability.",
+  "violations": [
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "AI Functions",
+   "ai_parse_document"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Parse PDFs / contracts / invoices into structured data.",
+  "violations": [
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "AI Functions",
+   "ai_extract"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Entity / field extraction — 2.3× faster at equal cost (Oct 2 2026).",
+  "violations": [
+   "slash list",
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "AI Functions",
+   "ai_decide"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Fast, low-cost routing / classification / eval (Sep 30 2026).",
+  "violations": [
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Custom Agents"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Code-first; LangGraph / Agno / CrewAI / Claude Code SDK / OpenAI SDK; Agent Server + DurableAgentServer; agent.toml. CLI Beta.",
+  "violations": [
+   "semicolon pile",
+   "slash list",
+   "plus-joined list",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Custom Agents",
+   "Multi-framework harness support"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Claude SDK, OpenAI, LangGraph, Agno, CrewAI, custom frameworks.",
+  "violations": [
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Custom Agents",
+   "agent.toml configuration"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Declarative model access, memory, tools, tracing, deployment.",
+  "violations": [
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Databricks Sandbox",
+   "Language support"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Python, Node.js, CLI tools; persistent /home/sandbox-agent.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Databricks Sandbox",
+   "Egress control (configurable)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Unrestricted outbound by default; customize per policy.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Supervisor Agent"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "GA but legacy — Custom Agents / Genie Agents preferred. Multi-agent orchestration, user-scoped auth.",
+  "violations": [
+   "slash list",
+   "dash/arrow splice",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Supervisor Agent",
+   "Endpoint orchestration"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Integrate Model Serving, AI Search, Genie Agents, Knowledge Assistant.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Supervisor Agent",
+   "Tool orchestration"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Coordinate UC functions, MCP services, web search, sandboxed code.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Knowledge Assistant"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "GA but legacy — Genie Agents preferred. Document-grounded, Instructed Retriever, citations.",
+  "violations": [
+   "dash/arrow splice",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Knowledge Assistant",
+   "Document ingestion & sync"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Managed pipeline for PDFs, web, databases; auto-sync.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Knowledge Assistant",
+   "Endpoint & SDK management"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Expose as REST API; managed via SDKs & dashboards.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Knowledge Assistant",
+   "Legacy note"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Migrate to Genie Agents or Custom Agents + AI Search.",
+  "violations": [
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Omnigent"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Agent meta-harness (Claude / Codex / Cursor / custom); managed = workspace identity + Gateway + Sandbox (CEL policies). OSS Apache-2.0.",
+  "violations": [
+   "semicolon pile",
+   "slash list",
+   "plus-joined list",
+   "multiple sentences"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Omnigent",
+   "Multi-framework composition"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Compose agents from Claude, Cursor, Codex, Pi, custom harnesses.",
+  "violations": [
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Omnigent",
+   "Portable YAML definitions"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Framework-agnostic agent specs; run locally or managed.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Omnigent",
+   "Unified policy layer"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "CEL-based policies for permissions, cost, logging, safety.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Omnigent",
+   "Multi-interface access"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Web UI, terminal, mobile, APIs; shared live sessions.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Omnigent",
+   "Shared governance"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "workspace identity + UC + Gateway controls across agents.",
+  "violations": [
+   "plus-joined list",
+   "no capital start"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Agent evaluation & monitoring"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Traces → Review Apps → datasets → LLM judges → dashboards (MLflow).",
+  "violations": [
+   "dash/arrow splice"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Agent evaluation & monitoring",
+   "MLflow tracing"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "End-to-end spans for agents, RAG, LLMs; OpenTelemetry-compatible.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Agent evaluation & monitoring",
+   "8 built-in LLM judges"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Correctness, relevance, safety, RAG-specific (retrieval, grounding, sufficiency).",
+  "violations": [
+   "enumeration (5 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Agents / Agent Bricks",
+   "Agent evaluation & monitoring",
+   "Custom scorers"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Code-based deterministic checks + guidelines for domain rules.",
+  "violations": [
+   "plus-joined list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "Databricks Apps + App Spaces"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Serverless Streamlit / Gradio / React / FastAPI; app vs user-principal auth; UC telemetry; App Spaces governance.",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "Databricks Apps + App Spaces",
+   "Serverless hosting"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Streamlit, Gradio, React, FastAPI, Flask; multi-framework support.",
+  "violations": [
+   "semicolon pile",
+   "enumeration (4 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "Databricks Apps + App Spaces",
+   "Scale-to-zero execution"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "30-min idle timeout; cost-optimized auto-scaling to zero.",
+  "violations": [
+   "semicolon pile",
+   "no capital start"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "AI Dev Kit + internal coding agents (Isaac)"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Scaffolding, UC-governed MCPs; internal proof point (25x spend growth, $400/mo baseline).",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "AI Dev Kit + internal coding agents (Isaac)",
+   "25x spend growth YTD"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Internal adoption signal; productivity ROI measure.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "AI Dev Kit + internal coding agents (Isaac)",
+   "Multi-model support"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Claude, Codex, Cursor, custom harness integration.",
+  "violations": [
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "AI Dev Kit + internal coding agents (Isaac)",
+   "CLI tooling (Beta Oct 6)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Terminal-first development; notebook and CLI workflows.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "Genie Code"
+  ],
+  "depth": 2,
+  "type": "feature",
+  "note": "Notebook / SQL / pipeline / dashboard assistant (ex-Databricks Assistant); pay-as-you-go (150 DBU free/mo); Genie Code CLI Beta (Oct 6).",
+  "violations": [
+   "semicolon pile",
+   "slash list"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "Genie Code",
+   "Notebook code generation"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Python/SQL/PySpark generation, explanation, optimization, refactoring.",
+  "violations": [
+   "slash list",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "Genie Code",
+   "Document intelligence (Sep 2026)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "End-to-end PDF/contract/invoice parsing, classification, extraction, validation.",
+  "violations": [
+   "slash list",
+   "enumeration (3 commas)"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "Genie Code",
+   "Pay-per-use pricing (150 DBU free/mo)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Metered from Jul 8 2026; no longer unlimited free tier.",
+  "violations": [
+   "semicolon pile"
+  ]
+ },
+ {
+  "tree": "ai-tree.json",
+  "path": [
+   "Databricks AI",
+   "Developer productivity",
+   "Genie Code",
+   "CLI (Beta Oct 6)"
+  ],
+  "depth": 3,
+  "type": "primitive",
+  "note": "Terminal-based coding agent; Genie Code in shell environment.",
+  "violations": [
+   "semicolon pile"
+  ]
+ }
+]
