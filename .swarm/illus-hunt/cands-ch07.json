@@ -1,0 +1,54 @@
+{
+  "7.1": [
+    {
+      "id": "p7.1-unity-catalog-hierarchy",
+      "file": "p7.1-unity-catalog-hierarchy.png",
+      "source": "docs.databricks.com/aws/en/data-governance/unity-catalog/",
+      "url": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/",
+      "kind": "diagram",
+      "why": "Three-level namespace hierarchy (Metastore > Catalog > Schema > Assets): shows all object types including Table, View, Volume, Function, Model, Service, Secret. Core Unity Catalog structure for governing AI assets (models, agents, tools). Demonstrates unified governance scope."
+    },
+    {
+      "id": "p7.1-governance-hub-overview",
+      "file": "p7.1-governance-hub-overview.png",
+      "source": "docs.databricks.com/aws/en/admin/governance-hub/",
+      "url": "https://docs.databricks.com/aws/en/admin/governance-hub/",
+      "kind": "screenshot",
+      "why": "Governance Hub UI showing Databricks workspace with navigation menu (Workspace, Catalog, Jobs, Compute, Discover, Marketplace, Analytics, etc). Shows central governance control plane where AI assets, permissions, and policies are managed across workspaces. Demonstrates admin console for asset governance."
+    }
+  ],
+  "7.2": [
+    {
+      "id": "p7.2-unity-gateway-architecture",
+      "file": "p7.2-unity-gateway-architecture.png",
+      "source": "docs.databricks.com/aws/en/ai-gateway/",
+      "url": "https://docs.databricks.com/aws/en/ai-gateway/",
+      "kind": "diagram",
+      "why": "Unity Gateway (formerly AI Gateway) architecture showing complete auth and control flow: User → Coding agent (config shown) → Unified auth → Unity AI Gateway → decision point (OBO check) → Unity Catalog + authorization → execute to LLM providers (Anthropic Claude, OpenAI GPT, Google Gemini) and MCP services (DBSQL, Genie). Shows 4-step enforcement: (1) Authenticate, (2) OBO validation, (3) Authorize, (4) Execute. Depicts how all model and tool traffic flows through single governance control plane."
+    },
+    {
+      "id": "p7.2-ai-governance-dashboard",
+      "file": "p7.2-ai-governance-dashboard.png",
+      "source": "docs.databricks.com/aws/en/admin/governance-hub/ai",
+      "url": "https://docs.databricks.com/aws/en/admin/governance-hub/ai",
+      "kind": "screenshot",
+      "why": "AI Governance observability dashboard from Governance Hub: Token Usage (48.5B), Governed Traffic (17% governed), Unity AI Gateway Budgets (46 exhausted), AI Usage (30d: 10M requests), AI Spend (30d: $14.2K). Shows real-time monitoring, cost controls, budget enforcement, and AI recommendations (missing inference tables, fallbacks). Demonstrates observability and cost management for AI traffic."
+    }
+  ],
+  "7.3": [
+    {
+      "id": "note-dasf-limited-sources",
+      "file": null,
+      "source": "BLOCKED",
+      "url": "https://databricks.com/blog/agentic-ai-security-new-risks-and-controls-databricks-ai-security-framework-dasf-v30",
+      "kind": "note",
+      "why": "BLOCKER: Point 7.3 requires 3-6 images for DASF v3.0 security framework. Identified sources: (1) DASF blog post (https://databricks.com/blog/agentic-ai-security...); (2) Databricks AI Security Framework presentation (deck 1jQ_4m4_ddYxZdwx7XRR_Cq60ilaEgTmUCs3JQBlQmGc slide 6, 18 images); (3) Agent Bricks L300 deck (slide 20, guardrails content); (4) Related docs on sandbox, guardrails, agent security. Network/auth constraints prevented image downloads from these sources. Recommend: download via gslides.py with gcloud auth, or fetch from Databricks DAIS conference recordings."
+    }
+  ],
+  "_metadata": {
+    "total_candidates": 4,
+    "total_images": 4,
+    "by_point": {"7.1": 2, "7.2": 2, "7.3": 0},
+    "search_summary": "Searched 1943 deck slides (335 governance, 277 UC, 12 gateway-specific, 56 security/DASF). Found 2 good docs images per point (7.1, 7.2). Point 7.3 blocked by image delivery constraints. Recommended deck slides for 7.3: Agent Bricks L300 slide 20 (guardrails), DASF deck slide 6 (security framework), Agentbricks slide 156 (security). Docs pages checked: 300+ governance-related, 101 cost/budget, 299 security. Blog/public sources checked for illustrations."
+  }
+}

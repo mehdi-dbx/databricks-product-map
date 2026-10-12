@@ -1,0 +1,176 @@
+{
+  "9.1": [
+    {
+      "id": "p9.1-e2e-platform",
+      "file": "p9.1-e2e-platform.png",
+      "source": "candidate",
+      "url": "Agentbricks Roadshow, slide 21",
+      "kind": "diagram",
+      "why": "Shows end-to-end agent platform architecture with Pick your brain (models) → Give it actions → Give it context → Publish it (apps, API) → Run it your way (Supervisor or Custom Agents on Apps)"
+    },
+    {
+      "id": "p9.1-ai-stack",
+      "file": "p9.1-ai-stack.png",
+      "source": "candidate",
+      "url": "How to set up an Agentic Applications workshop, slide 40",
+      "kind": "diagram",
+      "why": "Illustrates full AI Stack Ecosystem from Application Layer (Claude, models) through Agent Development Platform (Databricks) to Cloud Platform and Hardware"
+    },
+    {
+      "id": "p9.1-apps-example",
+      "file": "p9.1-apps-example.png",
+      "source": "candidate",
+      "url": "How to set up an Agentic Applications workshop, slide 62",
+      "kind": "screenshot",
+      "why": "Real Databricks App interface showing a working deployed application example"
+    },
+    {
+      "id": "p9.1-apps-deployment",
+      "file": "p9.1-apps-deployment.png",
+      "source": "docs",
+      "url": "docs.databricks.com/dev-tools/databricks-apps/deploy",
+      "kind": "screenshot",
+      "why": "Shows the app deployment details page from Databricks UI, demonstrating how apps are deployed and managed on the platform"
+    },
+    {
+      "id": "p9.1-load-testing-dashboard",
+      "file": "p9.1-load-testing-dashboard.gif",
+      "source": "docs",
+      "url": "docs.databricks.com/agents/custom-agents/load-test-agent-app",
+      "kind": "screenshot",
+      "why": "Displays monitoring and load-testing dashboard for apps, showing how to observe and manage deployed applications"
+    },
+    {
+      "id": "p9.1-llmops-lifecycle",
+      "file": "p9.1-llmops-lifecycle.png",
+      "source": "deck",
+      "url": "Genie benchmarks, slide 9",
+      "kind": "diagram",
+      "why": "LLMOps lifecycle management diagram showing the full development and deployment workflow for agents and applications"
+    },
+    {
+      "id": "p9.1-what-do-we-sell",
+      "file": "p9.1-what-do-we-sell.png",
+      "source": "deck",
+      "url": "Mosaic AI - System Architecture 2026-02-25, slide 9",
+      "kind": "diagram",
+      "why": "Product positioning showing Databricks Apps as part of the Agent Development Platform with support for multiple deployment options"
+    }
+  ],
+  "9.2": [
+    {
+      "id": "p9.2-genie-traces",
+      "file": "p9.2-genie-traces.png",
+      "source": "candidate",
+      "url": "Agentbricks Roadshow, slide 212",
+      "kind": "screenshot",
+      "why": "Shows Genie Code traces interface with capabilities: Analyze traces, Set up evals, Custom visualizations, Just ask Genie to do it"
+    },
+    {
+      "id": "p9.2-code-generation",
+      "file": "p9.2-code-generation.png",
+      "source": "docs",
+      "url": "docs.databricks.com/notebooks/code-assistant",
+      "kind": "screenshot",
+      "why": "Demonstrates Genie Code generating Python code from natural language request: Enrich support cases with customer demographics - shows inline assistant in action"
+    },
+    {
+      "id": "p9.2-usage-metrics",
+      "file": "p9.2-usage-metrics.png",
+      "source": "docs",
+      "url": "docs.databricks.com/admin/system-tables/assistant",
+      "kind": "screenshot",
+      "why": "Genie Code Metrics dashboard showing adoption (4.6K users, 1.16K active, 2.23M submissions) and usage trends"
+    },
+    {
+      "id": "p9.2-ai-assistance-everywhere",
+      "file": "p9.2-ai-assistance-everywhere.png",
+      "source": "deck",
+      "url": "Data Science With Databricks, slide 26",
+      "kind": "screenshot",
+      "why": "Shows AI assistance integrated across every user experience: Notebooks, SQL editor, Help/Lakeview dashboards - boosts productivity for all users"
+    },
+    {
+      "id": "p9.2-databricks-assistant",
+      "file": "p9.2-databricks-assistant.png",
+      "source": "deck",
+      "url": "Data Science With Databricks, slide 23",
+      "kind": "screenshot",
+      "why": "Displays Databricks Assistant capabilities: Generate, explain, fix code with natural language; AI assistance in every user experience; powered by DatabricksIQ"
+    },
+    {
+      "id": "p9.2-best-practice",
+      "file": "p9.2-best-practice.png",
+      "source": "deck",
+      "url": "Genie benchmarks, slide 24",
+      "kind": "diagram",
+      "why": "Best Practice comparison showing how Claude Code and Genie Code are complementary: different jobs, different users, shared infrastructure"
+    },
+    {
+      "id": "p9.2-data-work-success",
+      "file": "p9.2-data-work-success.png",
+      "source": "deck",
+      "url": "Data Science With Databricks, slide 23",
+      "kind": "visual",
+      "why": "Performance metrics showing 77% Genie Code task success rate vs 32% leading general coding agent - built for data work"
+    },
+    {
+      "id": "p9.2-agent-bricks-architecture",
+      "file": "p9.2-agent-bricks-architecture.png",
+      "source": "deck",
+      "url": "SEMEA Agent Bricks Knowledge Assistant Workshop, slide 53",
+      "kind": "diagram",
+      "why": "Agent Bricks architecture showing Supervisor Agent, Knowledge Assistant, Genie Space - system for production AI agents optimized on your data"
+    }
+  ],
+  "9.3": [
+    {
+      "id": "p9.3-agent-dev-lifecycle",
+      "file": "p9.3-agent-dev-lifecycle.png",
+      "source": "candidate",
+      "url": "Mosaic AI - System Architecture 2026-02-25, slide 66",
+      "kind": "diagram",
+      "why": "Comprehensive agent development lifecycle: AI Tools Dev → AI Agent Development (with playground, langchain, Python) → Unity Catalog (Model & Tools Hub) → Prompt construction → Inference → Monitoring with System Tables"
+    },
+    {
+      "id": "p9.3-templates",
+      "file": "p9.3-templates.png",
+      "source": "docs",
+      "url": "docs.databricks.com/dev-tools/bundles/templates",
+      "kind": "screenshot",
+      "why": "Shows AI Dev Kit template folder structure for scaffolding agent projects - demonstrates templates and project structure for developers"
+    },
+    {
+      "id": "p9.3-omnigent-interface",
+      "file": "p9.3-omnigent-interface.png",
+      "source": "deck",
+      "url": "Genie benchmarks, slide 10",
+      "kind": "screenshot",
+      "why": "Omnigent interface slide showing meta harness for agent-first developers - unified interface for different coding agents"
+    },
+    {
+      "id": "p9.3-unity-gateway",
+      "file": "p9.3-unity-gateway.png",
+      "source": "deck",
+      "url": "Agentbricks Roadshow, slide 108",
+      "kind": "diagram",
+      "why": "Shows governance and control architecture for coding agents through central platform with tool routing and policy management"
+    },
+    {
+      "id": "p9.3-cost-analysis",
+      "file": "p9.3-cost-analysis.png",
+      "source": "deck",
+      "url": "Agent Bricks L300 Pitch Slides, slide 52",
+      "kind": "visual",
+      "why": "Cost analysis visualization dashboard showing cost tracking and optimization for agent development and deployment"
+    },
+    {
+      "id": "p9.3-meta-harness",
+      "file": "p9.3-meta-harness.png",
+      "source": "deck",
+      "url": "Agent Bricks L300 Pitch Slides, slide 59",
+      "kind": "diagram",
+      "why": "Meta harness comparison showing how Omnigent provides unified interface for Claude, Cursor, Codex and other coding agents with shared context and policies"
+    }
+  ]
+}

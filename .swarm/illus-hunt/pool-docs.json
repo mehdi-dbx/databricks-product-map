@@ -1,0 +1,2151 @@
+{
+ "1.1": [
+  {
+   "file": "dl-docs/cost-optimization-d52e27fef85fc6a87deb19f57f9cc6f6.png",
+   "page": "https://docs.databricks.com/aws/en/lakehouse-architecture/cost-optimization/",
+   "source": "docs.databricks.com/lakehouse-architecture/cost-optimization/"
+  },
+  {
+   "file": "dl-docs/data-governance-0b3d2fdd6f0105ed835645fb834c4694.png",
+   "page": "https://docs.databricks.com/aws/en/lakehouse-architecture/data-governance/",
+   "source": "docs.databricks.com/lakehouse-architecture/data-governance/"
+  },
+  {
+   "file": "dl-docs/account-level-scim-diagram-6b97893367688dd0a29bdd7c717a191d.png",
+   "page": "https://docs.databricks.com/aws/en/lakehouse-architecture/deployment-guide/account-setup",
+   "source": "docs.databricks.com/lakehouse-architecture/deployment-guide/account-setup"
+  }
+ ],
+ "1.2": [
+  {
+   "file": "dl-docs/lakeflow-designer-operator-code-out-of-sync-366439382cc42595f3ffb799c5e7fdb6.png",
+   "page": "https://docs.databricks.com/aws/en/designer/production",
+   "source": "docs.databricks.com/designer/production"
+  },
+  {
+   "file": "dl-docs/lakeflow-designer-schedule-workflow-83c7e3750e849862213b579b64773f09.png",
+   "page": "https://docs.databricks.com/aws/en/designer/production",
+   "source": "docs.databricks.com/designer/production"
+  },
+  {
+   "file": "dl-docs/examples-tab-5896ce2c2291344766c2444f8549f5e5.png",
+   "page": "https://docs.databricks.com/aws/en/genie-agents/tune-quality",
+   "source": "docs.databricks.com/genie-agents/tune-quality"
+  },
+  {
+   "file": "dl-docs/usage-guidance-85ea5e46212d1f36ce9293fe518233f9.png",
+   "page": "https://docs.databricks.com/aws/en/genie-agents/tune-quality",
+   "source": "docs.databricks.com/genie-agents/tune-quality"
+  },
+  {
+   "file": "dl-docs/add-values-d7659cf98371bfed2f4adbc9eac0246e.png",
+   "page": "https://docs.databricks.com/aws/en/genie-agents/tune-quality",
+   "source": "docs.databricks.com/genie-agents/tune-quality"
+  },
+  {
+   "file": "dl-docs/joins-6ca867a94d4aeaa36dc34438491f5944.png",
+   "page": "https://docs.databricks.com/aws/en/genie-agents/tune-quality",
+   "source": "docs.databricks.com/genie-agents/tune-quality"
+  },
+  {
+   "file": "dl-docs/review-knowledge-snippets-c3d78f4dccb624c119fafdbb811d3157.png",
+   "page": "https://docs.databricks.com/aws/en/genie-agents/tune-quality",
+   "source": "docs.databricks.com/genie-agents/tune-quality"
+  },
+  {
+   "file": "dl-docs/give-feedback-a768c938ca5ac042fbb16fac7748c6d8.png",
+   "page": "https://docs.databricks.com/aws/en/genie-agents/tune-quality",
+   "source": "docs.databricks.com/genie-agents/tune-quality"
+  },
+  {
+   "file": "dl-docs/mlops-dev-diagram-02133996a99f13034b95d38af366ffbe.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-workflow",
+   "source": "docs.databricks.com/machine-learning/mlops/mlops-workflow"
+  },
+  {
+   "file": "dl-docs/mlops-staging-diagram-e528fdf54405bf13245e84aa3fc32b8c.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-workflow",
+   "source": "docs.databricks.com/machine-learning/mlops/mlops-workflow"
+  },
+  {
+   "file": "dl-docs/mlops-prod-diagram-8033cbb4ce8746883c46e8dc4101faed.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-workflow",
+   "source": "docs.databricks.com/machine-learning/mlops/mlops-workflow"
+  }
+ ],
+ "2.1": [
+  {
+   "file": "dl-docs/lakehouse-diagram-865ba5c041f60df99ff6bee1ebaad26d.png",
+   "page": "https://docs.databricks.com/aws/en/lakehouse",
+   "source": "docs.databricks.com/lakehouse"
+  }
+ ],
+ "2.2": [
+  {
+   "file": "dl-docs/po-skip-reasons-run-type-dropdown-690fd44f570ac1a502d866351e6d611f.png",
+   "page": "https://docs.databricks.com/aws/en/optimizations/predictive-optimization",
+   "source": "docs.databricks.com/optimizations/predictive-optimization"
+  },
+  {
+   "file": "dl-docs/po-skip-reasons-catalog-explorer-23718dc2b98d310b2e0bc12f210ef318.png",
+   "page": "https://docs.databricks.com/aws/en/optimizations/predictive-optimization",
+   "source": "docs.databricks.com/optimizations/predictive-optimization"
+  }
+ ],
+ "2.3": [
+  {
+   "file": "dl-docs/lakebase-full-functional-d09be2f4160cf6b806b63f5b395f2789.png",
+   "page": "https://docs.databricks.com/aws/en/oltp/projects",
+   "source": "docs.databricks.com/oltp/projects"
+  },
+  {
+   "file": "dl-docs/lakebase-search-keyword-vs-vector-3b6bf8f91bfadbf03ef99eb1e8eac537.png",
+   "page": "https://docs.databricks.com/aws/en/oltp/projects/lakebase-search",
+   "source": "docs.databricks.com/oltp/projects/lakebase-search"
+  },
+  {
+   "file": "dl-docs/lakehouse-sync-start-sync-dialog-74dc2c8c6288bec146fc2509dca6849b.png",
+   "page": "https://docs.databricks.com/aws/en/oltp/projects/quickstart-lakebase-cdf",
+   "source": "docs.databricks.com/oltp/projects/quickstart-lakebase-cdf"
+  },
+  {
+   "file": "dl-docs/quickstart-lakehouse-sync-row-history-02840eea6e9bd7209d116faeadec15a1.png",
+   "page": "https://docs.databricks.com/aws/en/oltp/projects/quickstart-lakebase-cdf",
+   "source": "docs.databricks.com/oltp/projects/quickstart-lakebase-cdf"
+  },
+  {
+   "file": "dl-docs/agent-memory-3b963fc0bd099fe45ba6a90b72cc14b7.png",
+   "page": "https://docs.databricks.com/aws/en/agents/agent-memory/self-managed-memory",
+   "source": "docs.databricks.com/agents/agent-memory/self-managed-memory"
+  }
+ ],
+ "2.4": [
+  {
+   "file": "dl-docs/ltap-two-data-formats-179567c1d5ea63f9c06c25f9604902e1.png",
+   "page": "https://docs.databricks.com/aws/en/oltp/projects/ltap-overview",
+   "source": "docs.databricks.com/oltp/projects/ltap-overview"
+  },
+  {
+   "file": "dl-docs/ltap-governance-7339da8b6d08b2a5225cae86833cae0d.png",
+   "page": "https://docs.databricks.com/aws/en/oltp/projects/ltap-overview",
+   "source": "docs.databricks.com/oltp/projects/ltap-overview"
+  },
+  {
+   "file": "dl-docs/ltap-how-data-moves-326dad13db401519d6ca8c8b50ad3293.png",
+   "page": "https://docs.databricks.com/aws/en/oltp/projects/ltap-overview",
+   "source": "docs.databricks.com/oltp/projects/ltap-overview"
+  }
+ ],
+ "2.5": [
+  {
+   "file": "dl-docs/object-hierarchy-5ba1e04cccbedd84cddd2e051aa54021.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog",
+   "source": "docs.databricks.com/data-governance/unity-catalog"
+  },
+  {
+   "file": "dl-docs/schema-details-tab-337de9fb7f793ffe2567597271b72551.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/catalog-details-tab-0d93912c3342062d1c6f99c8f5e4e9ab.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/dqm-catalog-enablement-71fbb46f444042e1491d85d09b72c806.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/pencil-icon-1653e5c65900cda8121473a353380e01.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/data-quality-disable-toggle-c9cdb9a0f849a387a2b416705b2889db.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-monitor-by-slice-6ec414a7ea39c38e812393a73ddc0c9b.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-add-slices-0ac6ef94e01a881f5405092dc99720ef.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-monitor-by-slice-configured-8286d609a610edc7a1872f8062afd402.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-health-indicators-d8e978de4283df5a4c8fc0c5815eaa92.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-lineage-health-indicators-cf167093c989902e34e6ce742a308d89.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/quality-incidents-170a2cc87458af297b51e9ab633db3f6.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/dqm-unhealthy-table-assign-to-me-244e90c77c90a2f888638ff43e307669.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/dqm-root-cause-analysis-3f9c186d62d10f07254c7cd9d71e3d87.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-dqm-recently-resolved-incidents-70fdbcf8d024c2cb43cfaadb3d8d6eff.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/dqm-metastore-level-dashboard-05e12e5ecd5f81c148fb86316ceb8896.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/metastore-data-quality-dashboard-9d194085ce5d7c9ccba7dff860d7988a.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-table-quality-details-d9f97c18ad5f527898b4c1eb6c254762.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-table-quality-root-cause-d126f8f8331a1d6e4f1009980ff5d537.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-dashboard-quality-overview-schema-summary-dc82695a747dac5dfdd2b1894d0e707b.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-dashboard-quality-overview-results-table-b4a4359e733c5327fcebcd41897822fc.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-job-tasks-8ae4dfb9cc5296fb76742b56a9cd7eb2.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/dqm-manage-alerts-17b7ff1ad651ee65542a3ff231b37b92.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/alerts",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/alerts"
+  },
+  {
+   "file": "dl-docs/lakehouse-monitoring-overview-2b9bad8d4d90e166a1844c9830486921.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/data-profiling/"
+  },
+  {
+   "file": "dl-docs/lakehouse-monitoring-1795712375f648c67cef310c2e287ff5.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/data-profiling/"
+  },
+  {
+   "file": "dl-docs/quality-tab-new-f83e8fd3369e702ce587d436836f20dc.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/create-monitor-ui",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/data-profiling/create-monitor-ui"
+  },
+  {
+   "file": "dl-docs/quality-tab-4382749bd593f7235259c97328c605d4.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/create-monitor-ui",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/data-profiling/create-monitor-ui"
+  },
+  {
+   "file": "dl-docs/quality-dialog-b7c5d37a6fe88be6e2e2fb492db272b9.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/create-monitor-ui",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/data-profiling/create-monitor-ui"
+  },
+  {
+   "file": "dl-docs/configure-profile-55d777802c98d0228961ff6dca563d7f.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/create-monitor-ui",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/data-profiling/create-monitor-ui"
+  },
+  {
+   "file": "dl-docs/update-profile-5c275ce9b61bd94a9d2681d67716d61c.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/create-monitor-ui",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/data-profiling/create-monitor-ui"
+  },
+  {
+   "file": "dl-docs/delete-profile-a557f4209bbc7a1e8d73c286e8b0c5d2.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/create-monitor-ui",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/data-profiling/create-monitor-ui"
+  },
+  {
+   "file": "dl-docs/track-expenses-aws-0274a6600e7c9b3d564575197d8709aa.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/expense",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/data-profiling/expense"
+  },
+  {
+   "file": "dl-docs/dashboard-in-catalog-20190888cd8183a3f7595ababeb3b02b.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/monitor-dashboard",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/data-profiling/monitor-dashboard"
+  },
+  {
+   "file": "dl-docs/dashboard-list-267c17cf62ba6d46c9c46c9ccf6d6564.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/monitor-dashboard",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/data-profiling/monitor-dashboard"
+  },
+  {
+   "file": "dl-docs/monitor-dashboard-selectors-0394efc531e52c1e65513c5355460bc7.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/monitor-dashboard",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/data-profiling/monitor-dashboard"
+  }
+ ],
+ "3.1": [
+  {
+   "file": "dl-docs/cell-comment-icon-9d8c6655d4f9d43ac3f99627925cd8fc.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/notebooks-collaborate",
+   "source": "docs.databricks.com/notebooks/notebooks-collaborate"
+  },
+  {
+   "file": "dl-docs/save-comment-a3b5a95fe19a377b7b58bea1a9e5424d.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/notebooks-collaborate",
+   "source": "docs.databricks.com/notebooks/notebooks-collaborate"
+  },
+  {
+   "file": "dl-docs/eda-dataframe-044636e28d06e8fcebcac7b79eff70a4.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+   "source": "docs.databricks.com/notebooks/eda-tutorial"
+  },
+  {
+   "file": "dl-docs/eda-display-df-be48a386cad32d0a8bcf5723d3022d8f.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+   "source": "docs.databricks.com/notebooks/eda-tutorial"
+  },
+  {
+   "file": "dl-docs/eda-df-shape-a185acb8475c33f77f782b5fcd2481fc.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+   "source": "docs.databricks.com/notebooks/eda-tutorial"
+  },
+  {
+   "file": "dl-docs/eda-df-dtypes-83cc21c0aa9350eae9d6f5310b8a1631.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+   "source": "docs.databricks.com/notebooks/eda-tutorial"
+  },
+  {
+   "file": "dl-docs/eda-df-describe-41a1a8b926714173c45cd03d942fa961.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+   "source": "docs.databricks.com/notebooks/eda-tutorial"
+  },
+  {
+   "file": "dl-docs/eda-data-profile-473a4613c5ce5f68bbb308d539a51494.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+   "source": "docs.databricks.com/notebooks/eda-tutorial"
+  },
+  {
+   "file": "dl-docs/eda-display-df-cleaned-2a08dfc2c00677c8d2dde607b311ba4f.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+   "source": "docs.databricks.com/notebooks/eda-tutorial"
+  },
+  {
+   "file": "dl-docs/eda-table-search-1bb15a10530d5a532367cb920546bdbc.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+   "source": "docs.databricks.com/notebooks/eda-tutorial"
+  },
+  {
+   "file": "dl-docs/eda-table-filter-959a7f9b211b067f9a8c0e7e24b35093.gif",
+   "page": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+   "source": "docs.databricks.com/notebooks/eda-tutorial"
+  },
+  {
+   "file": "dl-docs/eda-visualization-editor-7ac4273d6cdf6f3b6701585a5a032506.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+   "source": "docs.databricks.com/notebooks/eda-tutorial"
+  },
+  {
+   "file": "dl-docs/eda-emission-trends-top-10-5775cb441a4e22dfa1b489366c5ef486.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+   "source": "docs.databricks.com/notebooks/eda-tutorial"
+  },
+  {
+   "file": "dl-docs/eda-emissions-by-region-d15fae514d0d37c3face19f7d5405936.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+   "source": "docs.databricks.com/notebooks/eda-tutorial"
+  },
+  {
+   "file": "dl-docs/eda-renewable-share-growth-9e468b5e0739038ab091500b804f9a5c.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+   "source": "docs.databricks.com/notebooks/eda-tutorial"
+  },
+  {
+   "file": "dl-docs/eda-renewable-impact-1c9311e65c1be470f55f6302e27c3da9.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+   "source": "docs.databricks.com/notebooks/eda-tutorial"
+  },
+  {
+   "file": "dl-docs/what-is-re-lfd-c2299123e1c45c8b5b631e97faf52647.png",
+   "page": "https://docs.databricks.com/aws/en/designer/what-is-lakeflow-designer",
+   "source": "docs.databricks.com/designer/what-is-lakeflow-designer"
+  },
+  {
+   "file": "dl-docs/lakeflow-designer-operators-a4f24f1118fd37c0bdb0bbb75ae36fa1.png",
+   "page": "https://docs.databricks.com/aws/en/designer/what-is-lakeflow-designer",
+   "source": "docs.databricks.com/designer/what-is-lakeflow-designer"
+  },
+  {
+   "file": "dl-docs/lakeflow-designer-output-pane-0a9634cd74f3892b0b6b32952df3027d.png",
+   "page": "https://docs.databricks.com/aws/en/designer/what-is-lakeflow-designer",
+   "source": "docs.databricks.com/designer/what-is-lakeflow-designer"
+  },
+  {
+   "file": "dl-docs/data-profiling-b98b2e418c7e93f86d5d611d1189da6e.png",
+   "page": "https://docs.databricks.com/aws/en/designer/what-is-lakeflow-designer",
+   "source": "docs.databricks.com/designer/what-is-lakeflow-designer"
+  },
+  {
+   "file": "dl-docs/re-genie-code-782b7b73d84bcbd30e4669c85618323a.png",
+   "page": "https://docs.databricks.com/aws/en/designer/what-is-lakeflow-designer",
+   "source": "docs.databricks.com/designer/what-is-lakeflow-designer"
+  },
+  {
+   "file": "dl-docs/toolbar-007849e85d424ddf62a22e451d112c68.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/notebooks-code",
+   "source": "docs.databricks.com/notebooks/notebooks-code"
+  },
+  {
+   "file": "dl-docs/_sqldf_python_sql-383d45da8ee551b18ca5d8f95b55d947.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/notebooks-code",
+   "source": "docs.databricks.com/notebooks/notebooks-code"
+  },
+  {
+   "file": "dl-docs/name-sql-cell-results-6473e457e457203620836b937c09934a.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/notebooks-code",
+   "source": "docs.databricks.com/notebooks/notebooks-code"
+  },
+  {
+   "file": "dl-docs/parallel-sql-execution-98837a432dfaf92fe853e825c3bbc6b5.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/notebooks-code",
+   "source": "docs.databricks.com/notebooks/notebooks-code"
+  }
+ ],
+ "3.2": [
+  {
+   "file": "dl-docs/complex-data-type-example-18d4e615f2c7e61dffcce1f6358f23c0.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/feature-store",
+   "source": "docs.databricks.com/machine-learning/feature-store"
+  },
+  {
+   "file": "dl-docs/feature-search-example-uc-16dbd302e1a2dbbe8880e4a56cf27f98.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/feature-store/uc/feature-tables-uc",
+   "source": "docs.databricks.com/machine-learning/feature-store/uc/feature-tables-uc"
+  },
+  {
+   "file": "dl-docs/example_feature_func-f8083716d53cedf3a297b1d26918f9b0.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/feature-store/on-demand-features",
+   "source": "docs.databricks.com/machine-learning/feature-store/on-demand-features"
+  },
+  {
+   "file": "dl-docs/model-page-lineage-tab-bbdc568a7dbbb5f618cd54da17a61f95.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/feature-store/lineage",
+   "source": "docs.databricks.com/machine-learning/feature-store/lineage"
+  },
+  {
+   "file": "dl-docs/lineage-graph-27b728d947b58f826aaac446e640d143.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/feature-store/lineage",
+   "source": "docs.databricks.com/machine-learning/feature-store/lineage"
+  },
+  {
+   "file": "dl-docs/query-endpoint-button-43406a324b7d59064f5be64026243a70.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/feature-store/feature-function-serving",
+   "source": "docs.databricks.com/machine-learning/feature-store/feature-function-serving"
+  },
+  {
+   "file": "dl-docs/query-endpoint-dialog-693b693d2c8303a6e87262fa82de380f.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/feature-store/feature-function-serving",
+   "source": "docs.databricks.com/machine-learning/feature-store/feature-function-serving"
+  },
+  {
+   "file": "dl-docs/query-endpoint-dialog-with-code-6316cdbe439df6ce632e8a8dd3665262.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/feature-store/feature-function-serving",
+   "source": "docs.databricks.com/machine-learning/feature-store/feature-function-serving"
+  },
+  {
+   "file": "dl-docs/update-endpoint-30420b342aac8449c8bab7d181ad0c24.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/feature-store/feature-function-serving",
+   "source": "docs.databricks.com/machine-learning/feature-store/feature-function-serving"
+  },
+  {
+   "file": "dl-docs/delete-endpoint-11109d506b8679598b1a8e29cf9563c8.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/feature-store/feature-function-serving",
+   "source": "docs.databricks.com/machine-learning/feature-store/feature-function-serving"
+  },
+  {
+   "file": "dl-docs/point-in-time-overview-e5699d6917724a99703d41f544ac98b6.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/feature-store/time-series",
+   "source": "docs.databricks.com/machine-learning/feature-store/time-series"
+  },
+  {
+   "file": "dl-docs/point-in-time-diagram-f128b40c64fc8109c6e552c3e728f2fe.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/feature-store/time-series",
+   "source": "docs.databricks.com/machine-learning/feature-store/time-series"
+  }
+ ],
+ "3.3": [
+  {
+   "file": "dl-docs/mlflow-model-tracking-ui-719f2224cc10087b4371b8d4496c066a.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow",
+   "source": "docs.databricks.com/mlflow"
+  },
+  {
+   "file": "dl-docs/complex-deployment-job-9ea629abdeae12c52b0fd7f079d78a7e.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow",
+   "source": "docs.databricks.com/mlflow"
+  },
+  {
+   "file": "dl-docs/uc-model-version-page-674574ad9423349aee3915e8a7a92e3d.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow",
+   "source": "docs.databricks.com/mlflow"
+  },
+  {
+   "file": "dl-docs/model-details-traces-2207f67728bcd54d2d95a640dae97d38.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow",
+   "source": "docs.databricks.com/mlflow"
+  },
+  {
+   "file": "dl-docs/mlflow-databricks-integration-ml-fed171835b9207db06e6b4867731a3fe.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow",
+   "source": "docs.databricks.com/mlflow"
+  },
+  {
+   "file": "dl-docs/evaluate-actions-menu-6c03dde8daa6e1bc8ec008104d482e18.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor",
+   "source": "docs.databricks.com/mlflow3/genai/eval-monitor"
+  },
+  {
+   "file": "dl-docs/evaluate-run-scorer-3df3ee556eae0e2094375086f77fc720.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor",
+   "source": "docs.databricks.com/mlflow3/genai/eval-monitor"
+  },
+  {
+   "file": "dl-docs/traces-ui-managed-9383d1852a34db876ac910d35e3ffd0d.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/overview",
+   "source": "docs.databricks.com/mlflow3/genai/tracing/overview"
+  },
+  {
+   "file": "dl-docs/first-trace-detail-35e6085733a65cd431150ea371e360a9.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/overview",
+   "source": "docs.databricks.com/mlflow3/genai/tracing/overview"
+  },
+  {
+   "file": "dl-docs/automl-alerts-3b3174dee68bf42059085aecad29b49d.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/automl/classification",
+   "source": "docs.databricks.com/machine-learning/automl/classification"
+  },
+  {
+   "file": "dl-docs/serverless-forecasting-cc2fbc5801a7b3025434de9efaf286b6.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/train-model/serverless-forecasting",
+   "source": "docs.databricks.com/machine-learning/train-model/serverless-forecasting"
+  }
+ ],
+ "3.4": [
+  {
+   "file": "dl-docs/air-notebook-overview-25567a256fec54e4937bd27b8d12b5f4.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/ai-runtime/quickstart",
+   "source": "docs.databricks.com/machine-learning/ai-runtime/quickstart"
+  },
+  {
+   "file": "dl-docs/air-notebook-env-091120364c27153b2cb267bba9956b16.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/ai-runtime/quickstart",
+   "source": "docs.databricks.com/machine-learning/ai-runtime/quickstart"
+  },
+  {
+   "file": "dl-docs/air-notebook-resource-fcc0d6f050ab5366ce2937291cab8920.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/ai-runtime/quickstart",
+   "source": "docs.databricks.com/machine-learning/ai-runtime/quickstart"
+  },
+  {
+   "file": "dl-docs/air-notebook-terminal-5cd5332592e9d7bbac6ee2f4d04e9478.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/ai-runtime/quickstart",
+   "source": "docs.databricks.com/machine-learning/ai-runtime/quickstart"
+  },
+  {
+   "file": "dl-docs/air-notebook-genie-378247f861959af0567d0ff79807100b.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/ai-runtime/quickstart",
+   "source": "docs.databricks.com/machine-learning/ai-runtime/quickstart"
+  }
+ ],
+ "4.1": [
+  {
+   "file": "dl-docs/ai-gateway-ui-1c3c5a1546943ab1db30a7242782fe07.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/configure-ai-gateway-endpoints",
+   "source": "docs.databricks.com/ai-gateway/configure-ai-gateway-endpoints"
+  },
+  {
+   "file": "dl-docs/fallback-example-0abbd821c25113655610634527ec17bb.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/configure-ai-gateway-endpoints",
+   "source": "docs.databricks.com/ai-gateway/configure-ai-gateway-endpoints"
+  },
+  {
+   "file": "dl-docs/ai-guardrails-69a294fd420593cbc2f5b1360669e522.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/configure-ai-gateway-endpoints",
+   "source": "docs.databricks.com/ai-gateway/configure-ai-gateway-endpoints"
+  },
+  {
+   "file": "dl-docs/update-ai-gateway-e5968f2ac542db1b3a8537a9b7530108.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/configure-ai-gateway-endpoints",
+   "source": "docs.databricks.com/ai-gateway/configure-ai-gateway-endpoints"
+  },
+  {
+   "file": "dl-docs/add-instance-profile-85d7ec40a687ac01fbd4cf84183f725b.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/model-serving/add-model-serving-instance-profile",
+   "source": "docs.databricks.com/machine-learning/model-serving/add-model-serving-instance-profile"
+  },
+  {
+   "file": "dl-docs/create-endpoint-eb0a4ce61321f63be092b3e0359f1c07.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/model-serving/create-foundation-model-endpoints",
+   "source": "docs.databricks.com/machine-learning/model-serving/create-foundation-model-endpoints"
+  },
+  {
+   "file": "dl-docs/serving-pane-ea28c77158ce07121e7c86bd9aa897ac.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/model-serving/create-manage-serving-endpoints",
+   "source": "docs.databricks.com/machine-learning/model-serving/create-manage-serving-endpoints"
+  },
+  {
+   "file": "dl-docs/edit-endpoint-623573bccfaf350254453e9c68b44ebe.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/model-serving/create-manage-serving-endpoints",
+   "source": "docs.databricks.com/machine-learning/model-serving/create-manage-serving-endpoints"
+  }
+ ],
+ "4.2": [
+  {
+   "file": "dl-docs/serving-endpoints-list-e6f5f52d6c405f624921e5e4c8802af0.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis",
+   "source": "docs.databricks.com/machine-learning/foundation-model-apis"
+  },
+  {
+   "file": "dl-docs/create-provisioned-throughput-ui-778bce6773c3d397ea3a5a37795d52c6.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis/deploy-prov-throughput-foundation-model-apis",
+   "source": "docs.databricks.com/machine-learning/foundation-model-apis/deploy-prov-throughput-foundation-model-apis"
+  },
+  {
+   "file": "dl-docs/reserved-pt-setup-5be9538b8df32bf37ef1973d00673480.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis/reserved-provisioned-throughput",
+   "source": "docs.databricks.com/machine-learning/foundation-model-apis/reserved-provisioned-throughput"
+  },
+  {
+   "file": "dl-docs/reserved-pt-estimate-model-units-17d35ac2caad5f78eb4a8a9b1cbc0f84.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis/reserved-provisioned-throughput",
+   "source": "docs.databricks.com/machine-learning/foundation-model-apis/reserved-provisioned-throughput"
+  },
+  {
+   "file": "dl-docs/reserved-pt-endpoint-overview-cd3e7b35a2e5c183c7c0481b3c62afb6.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis/reserved-provisioned-throughput",
+   "source": "docs.databricks.com/machine-learning/foundation-model-apis/reserved-provisioned-throughput"
+  },
+  {
+   "file": "dl-docs/reserved-pt-add-capacity-f2d05f094500bf592b1c30f008b08fc9.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis/reserved-provisioned-throughput",
+   "source": "docs.databricks.com/machine-learning/foundation-model-apis/reserved-provisioned-throughput"
+  },
+  {
+   "file": "dl-docs/llm-throughput-latency-0f922f80ed2a57469de2c4f5776e5ea3.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis/prov-throughput-run-benchmark",
+   "source": "docs.databricks.com/machine-learning/foundation-model-apis/prov-throughput-run-benchmark"
+  }
+ ],
+ "4.3": [
+  {
+   "file": "dl-docs/checkpoint-path-cff5d33c00e2899b91b47dccd540607c.png",
+   "page": "https://docs.databricks.com/aws/en/large-language-models/foundation-model-training/create-fine-tune-run",
+   "source": "docs.databricks.com/large-language-models/foundation-model-training/create-fine-tune-run"
+  },
+  {
+   "file": "dl-docs/get-events-output-aedc5921452a96248e925eba8c1180c0.png",
+   "page": "https://docs.databricks.com/aws/en/large-language-models/foundation-model-training/create-fine-tune-run",
+   "source": "docs.databricks.com/large-language-models/foundation-model-training/create-fine-tune-run"
+  },
+  {
+   "file": "dl-docs/run-details-d952f0f1ddb807ad9da93e1a14596880.png",
+   "page": "https://docs.databricks.com/aws/en/large-language-models/foundation-model-training/create-fine-tune-run",
+   "source": "docs.databricks.com/large-language-models/foundation-model-training/create-fine-tune-run"
+  },
+  {
+   "file": "dl-docs/cpt-data-example-a4819775290f32f973c7cf11cf8ca423.png",
+   "page": "https://docs.databricks.com/aws/en/large-language-models/foundation-model-training/data-preparation",
+   "source": "docs.databricks.com/large-language-models/foundation-model-training/data-preparation"
+  },
+  {
+   "file": "dl-docs/foundation-model-training-experiment-8b660e91c67596ea17dc5eb33d46ff89.png",
+   "page": "https://docs.databricks.com/aws/en/large-language-models/foundation-model-training/ui",
+   "source": "docs.databricks.com/large-language-models/foundation-model-training/ui"
+  },
+  {
+   "file": "dl-docs/experiment-ccdc21727e7157912cd3a38c47f8383f.png",
+   "page": "https://docs.databricks.com/aws/en/large-language-models/foundation-model-training/view-manage-runs",
+   "source": "docs.databricks.com/large-language-models/foundation-model-training/view-manage-runs"
+  },
+  {
+   "file": "dl-docs/menu-4c57a12c81b8ff471c9a0efe2627b89a.png",
+   "page": "https://docs.databricks.com/aws/en/large-language-models/foundation-model-training/view-manage-runs",
+   "source": "docs.databricks.com/large-language-models/foundation-model-training/view-manage-runs"
+  },
+  {
+   "file": "dl-docs/chart-29b878fd82e1526fdb09ea47dec503ed.png",
+   "page": "https://docs.databricks.com/aws/en/large-language-models/foundation-model-training/view-manage-runs",
+   "source": "docs.databricks.com/large-language-models/foundation-model-training/view-manage-runs"
+  },
+  {
+   "file": "dl-docs/run-screen-8d601287b818f2f639ff4f125a1ee741.png",
+   "page": "https://docs.databricks.com/aws/en/large-language-models/foundation-model-training/view-manage-runs",
+   "source": "docs.databricks.com/large-language-models/foundation-model-training/view-manage-runs"
+  },
+  {
+   "file": "dl-docs/checkpoint-folder-3d1631598a030899d2dee3694f95428f.png",
+   "page": "https://docs.databricks.com/aws/en/large-language-models/foundation-model-training/view-manage-runs",
+   "source": "docs.databricks.com/large-language-models/foundation-model-training/view-manage-runs"
+  }
+ ],
+ "4.4": [
+  {
+   "file": "dl-docs/model-provider-service-price-multiplier-d860cc67da0890ef76aeee2252acc10a.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/create-model-provider-services",
+   "source": "docs.databricks.com/ai-gateway/create-model-provider-services"
+  }
+ ],
+ "5.1": [
+  {
+   "file": "dl-docs/ai-sentiment-results-e098d98eb8d103fdefa345c668e65608.png",
+   "page": "https://docs.databricks.com/aws/en/large-language-models/ai-functions-example",
+   "source": "docs.databricks.com/large-language-models/ai-functions-example"
+  },
+  {
+   "file": "dl-docs/ai-classify-results-eb091fff36de1638bd327efc4d07e193.png",
+   "page": "https://docs.databricks.com/aws/en/large-language-models/ai-functions-example",
+   "source": "docs.databricks.com/large-language-models/ai-functions-example"
+  },
+  {
+   "file": "dl-docs/ai-extract-results-6a8aef221bab15f7b6ea77a629389b92.png",
+   "page": "https://docs.databricks.com/aws/en/large-language-models/ai-functions-example",
+   "source": "docs.databricks.com/large-language-models/ai-functions-example"
+  },
+  {
+   "file": "dl-docs/ai-gen-results-9d61a10ef13fac50537a406298d95b03.png",
+   "page": "https://docs.databricks.com/aws/en/large-language-models/ai-functions-example",
+   "source": "docs.databricks.com/large-language-models/ai-functions-example"
+  }
+ ],
+ "5.2": [
+  {
+   "file": "dl-docs/calculate-embeddings-c6fa28b679c1cf21b1f93434a0ed927d.png",
+   "page": "https://docs.databricks.com/aws/en/ai-search/ai-search",
+   "source": "docs.databricks.com/ai-search/ai-search"
+  },
+  {
+   "file": "dl-docs/precalculated-embeddings-d8c37d379698043d08e5955dfd428442.png",
+   "page": "https://docs.databricks.com/aws/en/ai-search/ai-search",
+   "source": "docs.databricks.com/ai-search/ai-search"
+  },
+  {
+   "file": "dl-docs/precalculated-embeddings-no-sync-edf4ba3ed04ef632805e43ec6f78d04b.png",
+   "page": "https://docs.databricks.com/aws/en/ai-search/ai-search",
+   "source": "docs.databricks.com/ai-search/ai-search"
+  },
+  {
+   "file": "dl-docs/evaluate-quality-button-874ae860874335cedd43daf2d3901442.png",
+   "page": "https://docs.databricks.com/aws/en/ai-search/retrieval-quality-eval",
+   "source": "docs.databricks.com/ai-search/retrieval-quality-eval"
+  },
+  {
+   "file": "dl-docs/autoeval-view-results-4ccaa348bf077fadb95ba583a75fe61c.png",
+   "page": "https://docs.databricks.com/aws/en/ai-search/retrieval-quality-eval",
+   "source": "docs.databricks.com/ai-search/retrieval-quality-eval"
+  },
+  {
+   "file": "dl-docs/retrieval-quality-dashboard-ef4ef6680bf25767e8ebad28738d1d0a.png",
+   "page": "https://docs.databricks.com/aws/en/ai-search/retrieval-quality-eval",
+   "source": "docs.databricks.com/ai-search/retrieval-quality-eval"
+  },
+  {
+   "file": "dl-docs/select-metric-from-dropdown-aa2afc3d58aab0e641e9edf05d69ae7a.png",
+   "page": "https://docs.databricks.com/aws/en/ai-search/retrieval-quality-eval",
+   "source": "docs.databricks.com/ai-search/retrieval-quality-eval"
+  }
+ ],
+ "5.3": [
+  {
+   "file": "dl-docs/ai-gateway-mcp-tab-2e3a2b8d9db81e94f8caf85a1e7ba15e.png",
+   "page": "https://docs.databricks.com/aws/en/agents/mcp-tools/mcp-services",
+   "source": "docs.databricks.com/agents/mcp-tools/mcp-services"
+  }
+ ],
+ "5.4": [
+  {
+   "file": "dl-docs/agent-memory-3b963fc0bd099fe45ba6a90b72cc14b7.png",
+   "page": "https://docs.databricks.com/aws/en/agents/agent-memory/self-managed-memory",
+   "source": "docs.databricks.com/agents/agent-memory/self-managed-memory"
+  },
+  {
+   "file": "dl-docs/sync-files-b1fe38e403c3bd5f19c6a18ea4c97833.png",
+   "page": "https://docs.databricks.com/aws/en/agents/custom-agents/author-agent",
+   "source": "docs.databricks.com/agents/custom-agents/author-agent"
+  },
+  {
+   "file": "dl-docs/playground-custom-input-735859dad262332526c41f49cba69224.png",
+   "page": "https://docs.databricks.com/aws/en/agents/custom-agents/author-agent",
+   "source": "docs.databricks.com/agents/custom-agents/author-agent"
+  }
+ ],
+ "5.5": [
+  {
+   "file": "dl-docs/supervisor-agent-build-7a6aae16ef78e4c196f3f70ec0723205.png",
+   "page": "https://docs.databricks.com/aws/en/agents/agent-bricks/multi-agent-supervisor",
+   "source": "docs.databricks.com/agents/agent-bricks/multi-agent-supervisor"
+  },
+  {
+   "file": "dl-docs/review-classify-40568d1ab3827ae1d4ad1149d9e3b927.png",
+   "page": "https://docs.databricks.com/aws/en/agents/agent-bricks/classification",
+   "source": "docs.databricks.com/agents/agent-bricks/classification"
+  },
+  {
+   "file": "dl-docs/ai-builder-t2t-labeled-dataset-484eca75be6b3e1d325122072be43455.png",
+   "page": "https://docs.databricks.com/aws/en/agents/agent-bricks/custom-llm",
+   "source": "docs.databricks.com/agents/agent-bricks/custom-llm"
+  },
+  {
+   "file": "dl-docs/pdfs-config-148671081ce79e3bf4eafc7132237a48.png",
+   "page": "https://docs.databricks.com/aws/en/agents/agent-bricks/custom-llm",
+   "source": "docs.databricks.com/agents/agent-bricks/custom-llm"
+  },
+  {
+   "file": "dl-docs/pdfs-status-f0f5e7fe7779fcc66334527d0c06d13a.png",
+   "page": "https://docs.databricks.com/aws/en/agents/agent-bricks/custom-llm",
+   "source": "docs.databricks.com/agents/agent-bricks/custom-llm"
+  },
+  {
+   "file": "dl-docs/document-parsing-ui-4c47be165e3acdb8fd32aaca58dfe56b.png",
+   "page": "https://docs.databricks.com/aws/en/agents/agent-bricks/document-parsing",
+   "source": "docs.databricks.com/agents/agent-bricks/document-parsing"
+  },
+  {
+   "file": "dl-docs/abie-build-ui-4601562a503ddb63d9ada43f1bc0c9fe.png",
+   "page": "https://docs.databricks.com/aws/en/agents/agent-bricks/info-extraction",
+   "source": "docs.databricks.com/agents/agent-bricks/info-extraction"
+  },
+  {
+   "file": "dl-docs/abie-eval-overview-5d01fcf4f6d0875e3b58d6262b8a35eb.png",
+   "page": "https://docs.databricks.com/aws/en/agents/agent-bricks/info-extraction",
+   "source": "docs.databricks.com/agents/agent-bricks/info-extraction"
+  },
+  {
+   "file": "dl-docs/abie-genie-code-6d58428c8a83c8b0730d0e9b5c189eca.png",
+   "page": "https://docs.databricks.com/aws/en/agents/agent-bricks/info-extraction",
+   "source": "docs.databricks.com/agents/agent-bricks/info-extraction"
+  },
+  {
+   "file": "dl-docs/abie-summary-eval-4e1bdb17103408a04c9505bbb4c54a89.png",
+   "page": "https://docs.databricks.com/aws/en/agents/agent-bricks/key-info-extraction",
+   "source": "docs.databricks.com/agents/agent-bricks/key-info-extraction"
+  },
+  {
+   "file": "dl-docs/abie-detailed-eval-cd7dd1d3b30243270a627f3f3d1eccb6.png",
+   "page": "https://docs.databricks.com/aws/en/agents/agent-bricks/key-info-extraction",
+   "source": "docs.databricks.com/agents/agent-bricks/key-info-extraction"
+  }
+ ],
+ "6.1": [
+  {
+   "file": "dl-docs/traces-ui-managed-9383d1852a34db876ac910d35e3ffd0d.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/overview",
+   "source": "docs.databricks.com/mlflow3/genai/tracing/overview"
+  },
+  {
+   "file": "dl-docs/first-trace-detail-35e6085733a65cd431150ea371e360a9.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/overview",
+   "source": "docs.databricks.com/mlflow3/genai/tracing/overview"
+  },
+  {
+   "file": "dl-docs/evaluate-actions-menu-6c03dde8daa6e1bc8ec008104d482e18.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor",
+   "source": "docs.databricks.com/mlflow3/genai/eval-monitor"
+  },
+  {
+   "file": "dl-docs/evaluate-run-scorer-3df3ee556eae0e2094375086f77fc720.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor",
+   "source": "docs.databricks.com/mlflow3/genai/eval-monitor"
+  },
+  {
+   "file": "dl-docs/unified-trace-table-traces-9706bc241f0b7a44623d56507b7c6bf2.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/unified-trace-table",
+   "source": "docs.databricks.com/ai-gateway/unified-trace-table"
+  },
+  {
+   "file": "dl-docs/otel-pii-overview-13cec10c83d05a98830f1afc7a399c86.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/govern-redact",
+   "source": "docs.databricks.com/mlflow3/genai/tracing/govern-redact"
+  },
+  {
+   "file": "dl-docs/bedrock-3205dc581becffe81e216378c06249fd.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/integrations/",
+   "source": "docs.databricks.com/mlflow3/genai/tracing/integrations/"
+  },
+  {
+   "file": "dl-docs/ollama-f6890d951470f9e165b04b6a4be6c226.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/integrations/",
+   "source": "docs.databricks.com/mlflow3/genai/tracing/integrations/"
+  },
+  {
+   "file": "dl-docs/langchain-c5ee2032ee6d42216f121c4346004a75.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/integrations/",
+   "source": "docs.databricks.com/mlflow3/genai/tracing/integrations/"
+  },
+  {
+   "file": "dl-docs/langgraph-265d8f0502836cef91e18bfa5922a002.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/integrations/",
+   "source": "docs.databricks.com/mlflow3/genai/tracing/integrations/"
+  },
+  {
+   "file": "dl-docs/smolagents-f061be51a814416f7dcff41c2ab70ea4.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/integrations/",
+   "source": "docs.databricks.com/mlflow3/genai/tracing/integrations/"
+  },
+  {
+   "file": "dl-docs/swarm-12f7fbc12799c549c31261070b03cffe.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/integrations/",
+   "source": "docs.databricks.com/mlflow3/genai/tracing/integrations/"
+  },
+  {
+   "file": "dl-docs/trace-list-view-new-40f393cafd6308da13584c7f78049f9c.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/observe-with-traces/",
+   "source": "docs.databricks.com/mlflow3/genai/tracing/observe-with-traces/"
+  }
+ ],
+ "6.2": [
+  {
+   "file": "dl-docs/evaluate-actions-menu-6c03dde8daa6e1bc8ec008104d482e18.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor",
+   "source": "docs.databricks.com/mlflow3/genai/eval-monitor"
+  },
+  {
+   "file": "dl-docs/evaluate-run-scorer-3df3ee556eae0e2094375086f77fc720.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor",
+   "source": "docs.databricks.com/mlflow3/genai/eval-monitor"
+  },
+  {
+   "file": "dl-docs/custom-review-app-4f2fc401cbe59ab835b7950b905930ca.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/expert-feedback/label-existing-traces",
+   "source": "docs.databricks.com/mlflow3/genai/human-feedback/expert-feedback/label-existing-traces"
+  },
+  {
+   "file": "dl-docs/evaluate-quality-button-874ae860874335cedd43daf2d3901442.png",
+   "page": "https://docs.databricks.com/aws/en/ai-search/retrieval-quality-eval",
+   "source": "docs.databricks.com/ai-search/retrieval-quality-eval"
+  },
+  {
+   "file": "dl-docs/autoeval-view-results-4ccaa348bf077fadb95ba583a75fe61c.png",
+   "page": "https://docs.databricks.com/aws/en/ai-search/retrieval-quality-eval",
+   "source": "docs.databricks.com/ai-search/retrieval-quality-eval"
+  },
+  {
+   "file": "dl-docs/retrieval-quality-dashboard-ef4ef6680bf25767e8ebad28738d1d0a.png",
+   "page": "https://docs.databricks.com/aws/en/ai-search/retrieval-quality-eval",
+   "source": "docs.databricks.com/ai-search/retrieval-quality-eval"
+  },
+  {
+   "file": "dl-docs/select-metric-from-dropdown-aa2afc3d58aab0e641e9edf05d69ae7a.png",
+   "page": "https://docs.databricks.com/aws/en/ai-search/retrieval-quality-eval",
+   "source": "docs.databricks.com/ai-search/retrieval-quality-eval"
+  },
+  {
+   "file": "dl-docs/basic-scorer-example-ui-417a4c80eb9d51ec5e12ceffdbaf352d.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor/concepts/scorers",
+   "source": "docs.databricks.com/mlflow3/genai/eval-monitor/concepts/scorers"
+  },
+  {
+   "file": "dl-docs/predefined-traces-1f3af862ed541693147768142e8977c2.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor/concepts/scorers",
+   "source": "docs.databricks.com/mlflow3/genai/eval-monitor/concepts/scorers"
+  },
+  {
+   "file": "dl-docs/predefined-ui-0a79f2dcfbe85f1bab37782e4f5f3e35.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor/concepts/scorers",
+   "source": "docs.databricks.com/mlflow3/genai/eval-monitor/concepts/scorers"
+  },
+  {
+   "file": "dl-docs/precision-formula-2667ca497a3e0573dddc19879d398617.png",
+   "page": "https://docs.databricks.com/aws/en/agents/tutorials/ai-cookbook/evaluate-assess-performance",
+   "source": "docs.databricks.com/agents/tutorials/ai-cookbook/evaluate-assess-performance"
+  },
+  {
+   "file": "dl-docs/recall-formula-ba4cf87fb5bf78c139fbbcd45c66d2fe.png",
+   "page": "https://docs.databricks.com/aws/en/agents/tutorials/ai-cookbook/evaluate-assess-performance",
+   "source": "docs.databricks.com/agents/tutorials/ai-cookbook/evaluate-assess-performance"
+  },
+  {
+   "file": "dl-docs/precision-recall-daigram-5aa1ff93361303c911134f8f80c5bf66.png",
+   "page": "https://docs.databricks.com/aws/en/agents/tutorials/ai-cookbook/evaluate-assess-performance",
+   "source": "docs.databricks.com/agents/tutorials/ai-cookbook/evaluate-assess-performance"
+  }
+ ],
+ "6.3": [
+  {
+   "file": "dl-docs/custom-review-app-4f2fc401cbe59ab835b7950b905930ca.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/expert-feedback/label-existing-traces",
+   "source": "docs.databricks.com/mlflow3/genai/human-feedback/expert-feedback/label-existing-traces"
+  },
+  {
+   "file": "dl-docs/create-labeling-session-form-3ab2a1a5a0b5ab0fb2445500b355ef80.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/concepts/labeling-sessions",
+   "source": "docs.databricks.com/mlflow3/genai/human-feedback/concepts/labeling-sessions"
+  },
+  {
+   "file": "dl-docs/share-button-3d27316218a0897f51a1daedf9e9bdff.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/concepts/labeling-sessions",
+   "source": "docs.databricks.com/mlflow3/genai/human-feedback/concepts/labeling-sessions"
+  },
+  {
+   "file": "dl-docs/reviewer-feedback-d32f2985c5aa78e0b8c3a58c4dfd43ce.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/concepts/labeling-sessions",
+   "source": "docs.databricks.com/mlflow3/genai/human-feedback/concepts/labeling-sessions"
+  },
+  {
+   "file": "dl-docs/reviewer-assessments-645775adb318dde3acf1e2a19b9a9bf6.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/concepts/labeling-sessions",
+   "source": "docs.databricks.com/mlflow3/genai/human-feedback/concepts/labeling-sessions"
+  },
+  {
+   "file": "dl-docs/select-trace-c824101f7fc28af0ed7ea7c03787a5c8.gif",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/concepts/labeling-sessions",
+   "source": "docs.databricks.com/mlflow3/genai/human-feedback/concepts/labeling-sessions"
+  },
+  {
+   "file": "dl-docs/actions-menu-66b9ef01ca4a5ed7ca300aee1bbee9b7.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/concepts/labeling-sessions",
+   "source": "docs.databricks.com/mlflow3/genai/human-feedback/concepts/labeling-sessions"
+  },
+  {
+   "file": "dl-docs/add-traces-dialog-ddc82686ce80187a07b4124cb8716f2d.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/concepts/labeling-sessions",
+   "source": "docs.databricks.com/mlflow3/genai/human-feedback/concepts/labeling-sessions"
+  },
+  {
+   "file": "dl-docs/labeling-schemas-form-e78466d056f1da43bf88a44e5a00d5c9.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/concepts/labeling-schemas",
+   "source": "docs.databricks.com/mlflow3/genai/human-feedback/concepts/labeling-schemas"
+  },
+  {
+   "file": "dl-docs/assess-trace-7e1bb81bc1e8f38db83a26847a79abcb.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/",
+   "source": "docs.databricks.com/mlflow3/genai/human-feedback/"
+  }
+ ],
+ "7.1": [
+  {
+   "file": "dl-docs/object-hierarchy-5ba1e04cccbedd84cddd2e051aa54021.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog",
+   "source": "docs.databricks.com/data-governance/unity-catalog"
+  },
+  {
+   "file": "dl-docs/ai-gateway-service-lineage-tab-0b251defe4be6bc15f22308e44e8e95c.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/ai-gateway-service-lineage",
+   "source": "docs.databricks.com/data-governance/unity-catalog/ai-gateway-service-lineage"
+  },
+  {
+   "file": "dl-docs/ai-gateway-service-lineage-graph-fafd844f8b5e34f89e3682fa2094c00f.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/ai-gateway-service-lineage",
+   "source": "docs.databricks.com/data-governance/unity-catalog/ai-gateway-service-lineage"
+  },
+  {
+   "file": "dl-docs/ai-gateway-service-payload-downstream-65c42ade2b8cbf1063a6257714d2996a.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/ai-gateway-service-lineage",
+   "source": "docs.databricks.com/data-governance/unity-catalog/ai-gateway-service-lineage"
+  },
+  {
+   "file": "dl-docs/uc-lineage-overview-96ca9004e65531e65b9dfdb4f30473d6.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-lineage"
+  },
+  {
+   "file": "dl-docs/uc-lineage-details-598f25ffcce29065c3f5e9117f01e62d.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-lineage"
+  },
+  {
+   "file": "dl-docs/uc-column-lineage-c8dfa626d400501fd428b1606ad74e7c.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-lineage"
+  },
+  {
+   "file": "dl-docs/udf-lineage-tab-2ce6d52961687a3d9029897bf0e8a050.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-lineage"
+  },
+  {
+   "file": "dl-docs/udf-lineage-graph-details-17f4b6e1ac0d73c3c25749b2550e5886.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-lineage"
+  },
+  {
+   "file": "dl-docs/ai-assistant-data-lineage-59805c2d5fc60d4324eec18d19c99d82.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-lineage"
+  },
+  {
+   "file": "dl-docs/lineage-external-metadata-f5483e379e1aba0a8c34699c63b4d07e.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/external-lineage",
+   "source": "docs.databricks.com/data-governance/unity-catalog/external-lineage"
+  }
+ ],
+ "7.2": [
+  {
+   "file": "dl-docs/ai-governance-overview-0791638048d7bd4c0ec4a4e9583fbb19.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/ai-governance",
+   "source": "docs.databricks.com/ai-gateway/ai-governance"
+  },
+  {
+   "file": "dl-docs/budgets-b5780475609ae1269a9da64fedb3c32f.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/budgets",
+   "source": "docs.databricks.com/ai-gateway/budgets"
+  },
+  {
+   "file": "dl-docs/budget-details-spend-b296b468e83c8be2f5d5556adcb15443.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/budgets",
+   "source": "docs.databricks.com/ai-gateway/budgets"
+  },
+  {
+   "file": "dl-docs/external-model-budget-8423964df40dd0506ebe0644085971bc.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/budgets",
+   "source": "docs.databricks.com/ai-gateway/budgets"
+  },
+  {
+   "file": "dl-docs/cost-analysis-dashboard-4b31004d53017689dd82733c7518e0e5.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/cost-observability",
+   "source": "docs.databricks.com/ai-gateway/cost-observability"
+  },
+  {
+   "file": "dl-docs/cost-analysis-drilldown-a4b237737156c00ea39213068597271d.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/cost-observability",
+   "source": "docs.databricks.com/ai-gateway/cost-observability"
+  },
+  {
+   "file": "dl-docs/ai-gateway-inf-tables-1761bf30585d00a5bb21ad9799947b68.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/inference-tables-serving-endpoints",
+   "source": "docs.databricks.com/ai-gateway/inference-tables-serving-endpoints"
+  },
+  {
+   "file": "dl-docs/update-dashboard-options-4281a802c754f85a51c58020e383a893.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/usage-tracking",
+   "source": "docs.databricks.com/ai-gateway/usage-tracking"
+  },
+  {
+   "file": "dl-docs/usage-dashboard-0e835f992e3035ef2ce47fcf2369a0a1.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/usage-tracking",
+   "source": "docs.databricks.com/ai-gateway/usage-tracking"
+  }
+ ],
+ "7.3": [
+  {
+   "file": "dl-docs/security-a785deb4cbd38bed202c1ed35f8ce973.png",
+   "page": "https://docs.databricks.com/aws/en/lakehouse-architecture/security-compliance-and-privacy/",
+   "source": "docs.databricks.com/lakehouse-architecture/security-compliance-and-privacy/"
+  }
+ ],
+ "8.1": [
+  {
+   "file": "dl-docs/for-you-24c9f4aa5cf7874a20e9d6180c831874.png",
+   "page": "https://docs.databricks.com/aws/en/genie-one",
+   "source": "docs.databricks.com/genie-one"
+  },
+  {
+   "file": "dl-docs/listing-page-556dc7c8cca0945d477a4f01537137ae.png",
+   "page": "https://docs.databricks.com/aws/en/genie-one",
+   "source": "docs.databricks.com/genie-one"
+  },
+  {
+   "file": "dl-docs/consume-dashboard-bb1eb235b3682d7e39269c46fbace63e.png",
+   "page": "https://docs.databricks.com/aws/en/genie-one",
+   "source": "docs.databricks.com/genie-one"
+  },
+  {
+   "file": "dl-docs/cert-tables-dash-6ef31d564ecfca8af42a2db2175403fa.png",
+   "page": "https://docs.databricks.com/aws/en/ai-bi/release-notes/2026",
+   "source": "docs.databricks.com/ai-bi/release-notes/2026"
+  },
+  {
+   "file": "dl-docs/genie-mcp-app-view-fa0653d46627bbb1a06936c0921902d0.png",
+   "page": "https://docs.databricks.com/aws/en/agents/mcp-tools/genie-mcp",
+   "source": "docs.databricks.com/agents/mcp-tools/genie-mcp"
+  },
+  {
+   "file": "dl-docs/create-agent-from-chat-813aa0d9dd8de43ca88c9964a3580342.png",
+   "page": "https://docs.databricks.com/aws/en/genie-one/chat",
+   "source": "docs.databricks.com/genie-one/chat"
+  },
+  {
+   "file": "dl-docs/edit-agent-context-affe47f12899b33ab83e97eb50f6dc02.png",
+   "page": "https://docs.databricks.com/aws/en/genie-one/chat",
+   "source": "docs.databricks.com/genie-one/chat"
+  },
+  {
+   "file": "dl-docs/delete-agent-043d2e1bb5993e63d851aeacd3ecb24b.png",
+   "page": "https://docs.databricks.com/aws/en/genie-one/chat",
+   "source": "docs.databricks.com/genie-one/chat"
+  },
+  {
+   "file": "dl-docs/create-scheduled-task-1da7de96363e546de22dd03bfcac60f9.png",
+   "page": "https://docs.databricks.com/aws/en/genie-one/chat",
+   "source": "docs.databricks.com/genie-one/chat"
+  },
+  {
+   "file": "dl-docs/personalized-starter-questions-478a68e0861eecf3734e5296cb40052f.png",
+   "page": "https://docs.databricks.com/aws/en/genie-one/chat",
+   "source": "docs.databricks.com/genie-one/chat"
+  },
+  {
+   "file": "dl-docs/upload-file-498a3c89cbaa10f06354cb3a2a20228e.png",
+   "page": "https://docs.databricks.com/aws/en/genie-one/chat",
+   "source": "docs.databricks.com/genie-one/chat"
+  },
+  {
+   "file": "dl-docs/share-chat-edfd2ad6819af1a574eb04929b75c08a.png",
+   "page": "https://docs.databricks.com/aws/en/genie-one/chat",
+   "source": "docs.databricks.com/genie-one/chat"
+  },
+  {
+   "file": "dl-docs/genie-desktop-window-with-badge-08bf80a82255ca55f3a3ab5d693d9975.png",
+   "page": "https://docs.databricks.com/aws/en/genie-one/desktop",
+   "source": "docs.databricks.com/genie-one/desktop"
+  }
+ ],
+ "8.2": [
+  {
+   "file": "dl-docs/what-is-e47897bcd7c9a7a16b119c3b1857ee42.png",
+   "page": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/",
+   "source": "docs.databricks.com/uc-semantics/metric-views/"
+  },
+  {
+   "file": "dl-docs/UI-editor-7cb597be46690bc3b8b3adf23a639e24.png",
+   "page": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/create",
+   "source": "docs.databricks.com/uc-semantics/metric-views/create"
+  },
+  {
+   "file": "dl-docs/preview-measure-e0afa9f13e43459127c383bdacf9b466.png",
+   "page": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/create",
+   "source": "docs.databricks.com/uc-semantics/metric-views/create"
+  },
+  {
+   "file": "dl-docs/materialization-pipeline_updated-e8055eea078a52b1bb7384356a8ec95c.png",
+   "page": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/materialization",
+   "source": "docs.databricks.com/uc-semantics/metric-views/materialization"
+  },
+  {
+   "file": "dl-docs/query-execution_update-e67cd6e37dbbd07a2d60c5d8a3cfcf8d.png",
+   "page": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/materialization",
+   "source": "docs.databricks.com/uc-semantics/metric-views/materialization"
+  },
+  {
+   "file": "dl-docs/aggregate-aware_update-c33a9ce4a4e09ad575107a361cea6df2.png",
+   "page": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/materialization",
+   "source": "docs.databricks.com/uc-semantics/metric-views/materialization"
+  },
+  {
+   "file": "dl-docs/match-strategies-a5ec08aca4e7835703c04040ed69771e.png",
+   "page": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/materialization",
+   "source": "docs.databricks.com/uc-semantics/metric-views/materialization"
+  },
+  {
+   "file": "dl-docs/query-profile-visibility-7303214298a6e61828ced4a1e36fb17a.png",
+   "page": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/materialization",
+   "source": "docs.databricks.com/uc-semantics/metric-views/materialization"
+  }
+ ],
+ "8.3": [
+  {
+   "file": "dl-docs/for-you-24c9f4aa5cf7874a20e9d6180c831874.png",
+   "page": "https://docs.databricks.com/aws/en/genie-one",
+   "source": "docs.databricks.com/genie-one"
+  },
+  {
+   "file": "dl-docs/listing-page-556dc7c8cca0945d477a4f01537137ae.png",
+   "page": "https://docs.databricks.com/aws/en/genie-one",
+   "source": "docs.databricks.com/genie-one"
+  },
+  {
+   "file": "dl-docs/consume-dashboard-bb1eb235b3682d7e39269c46fbace63e.png",
+   "page": "https://docs.databricks.com/aws/en/genie-one",
+   "source": "docs.databricks.com/genie-one"
+  },
+  {
+   "file": "dl-docs/cert-tables-dash-6ef31d564ecfca8af42a2db2175403fa.png",
+   "page": "https://docs.databricks.com/aws/en/ai-bi/release-notes/2026",
+   "source": "docs.databricks.com/ai-bi/release-notes/2026"
+  },
+  {
+   "file": "dl-docs/smart-routing-omnigent-harness-345bd2fd745d81320db2b03de8581fcc.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/coding-agent-model-selection",
+   "source": "docs.databricks.com/ai-gateway/coding-agent-model-selection"
+  },
+  {
+   "file": "dl-docs/smart-routing-omnigent-model-a3d050ed6448522424b649abb676950d.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/coding-agent-model-selection",
+   "source": "docs.databricks.com/ai-gateway/coding-agent-model-selection"
+  }
+ ],
+ "8.4": [
+  {
+   "file": "dl-docs/cert-tables-dash-6ef31d564ecfca8af42a2db2175403fa.png",
+   "page": "https://docs.databricks.com/aws/en/ai-bi/release-notes/2026",
+   "source": "docs.databricks.com/ai-bi/release-notes/2026"
+  },
+  {
+   "file": "dl-docs/custom-vis-a0fa840119fbf002f35a826f5f294080.png",
+   "page": "https://docs.databricks.com/aws/en/dashboards/manage/visualizations/custom-visualizations",
+   "source": "docs.databricks.com/dashboards/manage/visualizations/custom-visualizations"
+  },
+  {
+   "file": "dl-docs/bullet-3023a2ec8c437e023e79ec83feca8d13.png",
+   "page": "https://docs.databricks.com/aws/en/dashboards/manage/visualizations/custom-visualizations",
+   "source": "docs.databricks.com/dashboards/manage/visualizations/custom-visualizations"
+  },
+  {
+   "file": "dl-docs/radar-e92e9bb2690add0231739c435fde9fa6.png",
+   "page": "https://docs.databricks.com/aws/en/dashboards/manage/visualizations/custom-visualizations",
+   "source": "docs.databricks.com/dashboards/manage/visualizations/custom-visualizations"
+  },
+  {
+   "file": "dl-docs/radial-817ec55156f1301d53cf24171e36dea2.png",
+   "page": "https://docs.databricks.com/aws/en/dashboards/manage/visualizations/custom-visualizations",
+   "source": "docs.databricks.com/dashboards/manage/visualizations/custom-visualizations"
+  },
+  {
+   "file": "dl-docs/sunburst-7c28538bd2af6033380bde9355d2fb43.png",
+   "page": "https://docs.databricks.com/aws/en/dashboards/manage/visualizations/custom-visualizations",
+   "source": "docs.databricks.com/dashboards/manage/visualizations/custom-visualizations"
+  },
+  {
+   "file": "dl-docs/materialize-dataset-icon-e13146e9f189c4cf11849f5365bab3aa.png",
+   "page": "https://docs.databricks.com/aws/en/dashboards/materialization",
+   "source": "docs.databricks.com/dashboards/materialization"
+  },
+  {
+   "file": "dl-docs/materialize-datasets-toggle-on-ad19f0e4cdcac74b9b789150a04c1205.png",
+   "page": "https://docs.databricks.com/aws/en/dashboards/materialization",
+   "source": "docs.databricks.com/dashboards/materialization"
+  },
+  {
+   "file": "dl-docs/materialize-datasets-schedule-2403bde127fe06db9bd64349feee153d.png",
+   "page": "https://docs.databricks.com/aws/en/dashboards/materialization",
+   "source": "docs.databricks.com/dashboards/materialization"
+  },
+  {
+   "file": "dl-docs/materialize-datasets-info-sidebar-b5265821f1f78acc8133b11ff1af1d7c.png",
+   "page": "https://docs.databricks.com/aws/en/dashboards/materialization",
+   "source": "docs.databricks.com/dashboards/materialization"
+  },
+  {
+   "file": "dl-docs/materialize-datasets-status-aa95241a5c49e46e3601318af713468c.png",
+   "page": "https://docs.databricks.com/aws/en/dashboards/materialization",
+   "source": "docs.databricks.com/dashboards/materialization"
+  },
+  {
+   "file": "dl-docs/usage-dashboard-c9a6df41646d884f0c55edd61686c33e.png",
+   "page": "https://docs.databricks.com/aws/en/admin/account-settings/usage",
+   "source": "docs.databricks.com/admin/account-settings/usage"
+  }
+ ],
+ "8.5": [
+  {
+   "file": "dl-docs/sync-files-b1fe38e403c3bd5f19c6a18ea4c97833.png",
+   "page": "https://docs.databricks.com/aws/en/agents/custom-agents/author-agent",
+   "source": "docs.databricks.com/agents/custom-agents/author-agent"
+  },
+  {
+   "file": "dl-docs/playground-custom-input-735859dad262332526c41f49cba69224.png",
+   "page": "https://docs.databricks.com/aws/en/agents/custom-agents/author-agent",
+   "source": "docs.databricks.com/agents/custom-agents/author-agent"
+  },
+  {
+   "file": "dl-docs/load-testing-dashboard-adf0eea73242c259394c490c1a2cb753.gif",
+   "page": "https://docs.databricks.com/aws/en/agents/custom-agents/load-test-agent-app",
+   "source": "docs.databricks.com/agents/custom-agents/load-test-agent-app"
+  },
+  {
+   "file": "dl-docs/migration-todo-list-14574a0a2e0cf82ec771d34005d2c1fa.png",
+   "page": "https://docs.databricks.com/aws/en/agents/custom-agents/migrate-agent-to-apps",
+   "source": "docs.databricks.com/agents/custom-agents/migrate-agent-to-apps"
+  }
+ ],
+ "9.1": [
+  {
+   "file": "dl-docs/hello-world-app-details-after-deploy-e52209e570f4216e3e2cfb0117336621.png",
+   "page": "https://docs.databricks.com/aws/en/dev-tools/databricks-apps/deploy",
+   "source": "docs.databricks.com/dev-tools/databricks-apps/deploy"
+  },
+  {
+   "file": "dl-docs/sync-files-b1fe38e403c3bd5f19c6a18ea4c97833.png",
+   "page": "https://docs.databricks.com/aws/en/agents/custom-agents/author-agent",
+   "source": "docs.databricks.com/agents/custom-agents/author-agent"
+  },
+  {
+   "file": "dl-docs/playground-custom-input-735859dad262332526c41f49cba69224.png",
+   "page": "https://docs.databricks.com/aws/en/agents/custom-agents/author-agent",
+   "source": "docs.databricks.com/agents/custom-agents/author-agent"
+  },
+  {
+   "file": "dl-docs/load-testing-dashboard-adf0eea73242c259394c490c1a2cb753.gif",
+   "page": "https://docs.databricks.com/aws/en/agents/custom-agents/load-test-agent-app",
+   "source": "docs.databricks.com/agents/custom-agents/load-test-agent-app"
+  },
+  {
+   "file": "dl-docs/migration-todo-list-14574a0a2e0cf82ec771d34005d2c1fa.png",
+   "page": "https://docs.databricks.com/aws/en/agents/custom-agents/migrate-agent-to-apps",
+   "source": "docs.databricks.com/agents/custom-agents/migrate-agent-to-apps"
+  }
+ ],
+ "9.2": [
+  {
+   "file": "dl-docs/assistant-usage-dashboard-org-86b6c4f01da7d9568eb312a0769143c4.png",
+   "page": "https://docs.databricks.com/aws/en/admin/system-tables/assistant",
+   "source": "docs.databricks.com/admin/system-tables/assistant"
+  },
+  {
+   "file": "dl-docs/inline-assistant-enrich-data-8bbd0d9d93ff48def906025758a3873a.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/code-assistant",
+   "source": "docs.databricks.com/notebooks/code-assistant"
+  },
+  {
+   "file": "dl-docs/at-table-in-assistant-prompt-46ee4e1411ff9bf3d9d009d39c4852fa.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/code-assistant",
+   "source": "docs.databricks.com/notebooks/code-assistant"
+  },
+  {
+   "file": "dl-docs/code-complete-sql-b84980f73c08779235d3419baede6eae.gif",
+   "page": "https://docs.databricks.com/aws/en/notebooks/code-assistant",
+   "source": "docs.databricks.com/notebooks/code-assistant"
+  },
+  {
+   "file": "dl-docs/code-complete-python-68e720703b797a6663b1817dd1832024.gif",
+   "page": "https://docs.databricks.com/aws/en/notebooks/code-assistant",
+   "source": "docs.databricks.com/notebooks/code-assistant"
+  },
+  {
+   "file": "dl-docs/assistant-quick-fix-f3fa69897609f69c154aac51bba2df40.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/code-assistant",
+   "source": "docs.databricks.com/notebooks/code-assistant"
+  },
+  {
+   "file": "dl-docs/diagnose-error-6c38a69af7740097154a1d93b50f1f57.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/code-assistant",
+   "source": "docs.databricks.com/notebooks/code-assistant"
+  },
+  {
+   "file": "dl-docs/diagnose-error-sql-e9a5a0bc6887d29a97b50f743e7797a5.png",
+   "page": "https://docs.databricks.com/aws/en/notebooks/code-assistant",
+   "source": "docs.databricks.com/notebooks/code-assistant"
+  },
+  {
+   "file": "dl-docs/dashboard-agent-4248edd8486fc8973fab24c0c0ea9da7.png",
+   "page": "https://docs.databricks.com/aws/en/dashboards/manage/dashboard-agent",
+   "source": "docs.databricks.com/dashboards/manage/dashboard-agent"
+  },
+  {
+   "file": "dl-docs/region-by-price-4822903f2bf47cdb116fba8411d2754c.png",
+   "page": "https://docs.databricks.com/aws/en/dashboards/tutorials/genie-code-tutorial",
+   "source": "docs.databricks.com/dashboards/tutorials/genie-code-tutorial"
+  },
+  {
+   "file": "dl-docs/assistant-suggestions-citations-cc652b2172c42800f779047838e58d47.png",
+   "page": "https://docs.databricks.com/aws/en/genie-code/features-capabilities",
+   "source": "docs.databricks.com/genie-code/features-capabilities"
+  }
+ ],
+ "9.3": [
+  {
+   "file": "dl-docs/coding-agent-configuration-bbf91676e21b6c81131dba1d2362c1cc.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/coding-agent-configure-govern",
+   "source": "docs.databricks.com/ai-gateway/coding-agent-configure-govern"
+  },
+  {
+   "file": "dl-docs/coding-agent-editor-codex-55ea99e4846912868af7cd9db90bb757.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/coding-agent-configure-govern",
+   "source": "docs.databricks.com/ai-gateway/coding-agent-configure-govern"
+  },
+  {
+   "file": "dl-docs/template-folder-401878af50b2c2a05f3364c3ba732383.png",
+   "page": "https://docs.databricks.com/aws/en/dev-tools/bundles/templates",
+   "source": "docs.databricks.com/dev-tools/bundles/templates"
+  },
+  {
+   "file": "dl-docs/template-folder-details-c2edd12115459ba3553fdc7688a6b3c3.png",
+   "page": "https://docs.databricks.com/aws/en/dev-tools/bundles/templates",
+   "source": "docs.databricks.com/dev-tools/bundles/templates"
+  }
+ ],
+ "10.1": [],
+ "10.2": [
+  {
+   "file": "dl-docs/schema-details-tab-337de9fb7f793ffe2567597271b72551.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/catalog-details-tab-0d93912c3342062d1c6f99c8f5e4e9ab.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/dqm-catalog-enablement-71fbb46f444042e1491d85d09b72c806.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/pencil-icon-1653e5c65900cda8121473a353380e01.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/data-quality-disable-toggle-c9cdb9a0f849a387a2b416705b2889db.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-monitor-by-slice-6ec414a7ea39c38e812393a73ddc0c9b.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-add-slices-0ac6ef94e01a881f5405092dc99720ef.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-monitor-by-slice-configured-8286d609a610edc7a1872f8062afd402.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-health-indicators-d8e978de4283df5a4c8fc0c5815eaa92.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-lineage-health-indicators-cf167093c989902e34e6ce742a308d89.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/quality-incidents-170a2cc87458af297b51e9ab633db3f6.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/dqm-unhealthy-table-assign-to-me-244e90c77c90a2f888638ff43e307669.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/dqm-root-cause-analysis-3f9c186d62d10f07254c7cd9d71e3d87.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-dqm-recently-resolved-incidents-70fdbcf8d024c2cb43cfaadb3d8d6eff.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/dqm-metastore-level-dashboard-05e12e5ecd5f81c148fb86316ceb8896.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/metastore-data-quality-dashboard-9d194085ce5d7c9ccba7dff860d7988a.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-table-quality-details-d9f97c18ad5f527898b4c1eb6c254762.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-table-quality-root-cause-d126f8f8331a1d6e4f1009980ff5d537.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-dashboard-quality-overview-schema-summary-dc82695a747dac5dfdd2b1894d0e707b.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-dashboard-quality-overview-results-table-b4a4359e733c5327fcebcd41897822fc.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-job-tasks-8ae4dfb9cc5296fb76742b56a9cd7eb2.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/"
+  },
+  {
+   "file": "dl-docs/dqm-manage-alerts-17b7ff1ad651ee65542a3ff231b37b92.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/alerts",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/alerts"
+  },
+  {
+   "file": "dl-docs/run-issue-detection-7ad43a0f033c44693e02d0edb70192a5.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/observe-with-traces/analyze-traces",
+   "source": "docs.databricks.com/mlflow3/genai/tracing/observe-with-traces/analyze-traces"
+  },
+  {
+   "file": "dl-docs/review-issue-and-enable-monitor-0023df92c3be74467877a529cd3be15b.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/observe-with-traces/analyze-traces",
+   "source": "docs.databricks.com/mlflow3/genai/tracing/observe-with-traces/analyze-traces"
+  },
+  {
+   "file": "dl-docs/monitor-issue-rate-11a7ba9a0af1d680859be5dc3960ff3a.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/observe-with-traces/analyze-traces",
+   "source": "docs.databricks.com/mlflow3/genai/tracing/observe-with-traces/analyze-traces"
+  },
+  {
+   "file": "dl-docs/schedule-issue-detection-98df2c861465f95a6880fb0c07439fe1.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/observe-with-traces/analyze-traces",
+   "source": "docs.databricks.com/mlflow3/genai/tracing/observe-with-traces/analyze-traces"
+  }
+ ],
+ "11.1": [
+  {
+   "file": "dl-docs/mlflow-model-tracking-ui-719f2224cc10087b4371b8d4496c066a.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow",
+   "source": "docs.databricks.com/mlflow"
+  },
+  {
+   "file": "dl-docs/complex-deployment-job-9ea629abdeae12c52b0fd7f079d78a7e.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow",
+   "source": "docs.databricks.com/mlflow"
+  },
+  {
+   "file": "dl-docs/uc-model-version-page-674574ad9423349aee3915e8a7a92e3d.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow",
+   "source": "docs.databricks.com/mlflow"
+  },
+  {
+   "file": "dl-docs/model-details-traces-2207f67728bcd54d2d95a640dae97d38.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow",
+   "source": "docs.databricks.com/mlflow"
+  },
+  {
+   "file": "dl-docs/mlflow-databricks-integration-ml-fed171835b9207db06e6b4867731a3fe.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow",
+   "source": "docs.databricks.com/mlflow"
+  },
+  {
+   "file": "dl-docs/registered-model-714531f328fbab75b0a5d6b47210ce42.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle"
+  },
+  {
+   "file": "dl-docs/add-alias-7ca26ae0fd8c025c03f52639ee5fe082.gif",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle"
+  },
+  {
+   "file": "dl-docs/remove-alias-1fa338cf1b8fdc7aba2657d73deb4fab.gif",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle"
+  },
+  {
+   "file": "dl-docs/mlflow3-model-version-page-3bef0948f25abb51b63eb489ea55e01f.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle"
+  },
+  {
+   "file": "dl-docs/model-version-5817d7fe7bd433194ffdd23f000822f3.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle"
+  },
+  {
+   "file": "dl-docs/model-page-lineage-tab-eafe657793dcb514dbf415f927341250.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle"
+  },
+  {
+   "file": "dl-docs/lineage-graph-8b47d8dfa55669140117a1eeff33d241.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle"
+  },
+  {
+   "file": "dl-docs/uc-copy-model-dialog-6ae0befbf4db7d7802b214a9a68fbd8f.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle"
+  },
+  {
+   "file": "dl-docs/uc-delete-model-dialog-20773050c836e40e42b1faea36645e0c.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle"
+  },
+  {
+   "file": "dl-docs/uc-delete-model-version-dialog-b4888f254f756676d9eb2987e83d4562.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle"
+  },
+  {
+   "file": "dl-docs/uc-model-description-0fa4b7737238e0288a05ec2931920232.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle"
+  },
+  {
+   "file": "dl-docs/uc-model-version-description-8065499e536ef509770fe88173c84556.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle"
+  },
+  {
+   "file": "dl-docs/uc-lineage-overview-96ca9004e65531e65b9dfdb4f30473d6.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-lineage"
+  },
+  {
+   "file": "dl-docs/uc-lineage-details-598f25ffcce29065c3f5e9117f01e62d.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-lineage"
+  },
+  {
+   "file": "dl-docs/uc-column-lineage-c8dfa626d400501fd428b1606ad74e7c.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-lineage"
+  },
+  {
+   "file": "dl-docs/udf-lineage-tab-2ce6d52961687a3d9029897bf0e8a050.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-lineage"
+  },
+  {
+   "file": "dl-docs/udf-lineage-graph-details-17f4b6e1ac0d73c3c25749b2550e5886.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-lineage"
+  },
+  {
+   "file": "dl-docs/ai-assistant-data-lineage-59805c2d5fc60d4324eec18d19c99d82.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-lineage",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-lineage"
+  },
+  {
+   "file": "dl-docs/notebook-toolbar-70a2fafa48b3a925099e836a4d5fb0ae.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/workspace-model-registry",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/workspace-model-registry"
+  },
+  {
+   "file": "dl-docs/register-model-42b0af55568933728101e0b45428fda2.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/workspace-model-registry",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/workspace-model-registry"
+  },
+  {
+   "file": "dl-docs/registered-model-version-09f93a481aaeaceb1ec8dd0d1c34bd31.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/workspace-model-registry",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/workspace-model-registry"
+  },
+  {
+   "file": "dl-docs/registered-models-c97430c6ce709cd846c596fc421ae25b.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/workspace-model-registry",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/workspace-model-registry"
+  },
+  {
+   "file": "dl-docs/registered-model-06d672354a4be8e01a322469985ab787.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/workspace-model-registry",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/workspace-model-registry"
+  },
+  {
+   "file": "dl-docs/model-version-249eba0c289b4ce44186b9386e643ca0.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/workspace-model-registry",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/workspace-model-registry"
+  },
+  {
+   "file": "dl-docs/select-permission-f927290101bdc4d7afda05207b1034f9.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/workspace-model-registry",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/workspace-model-registry"
+  },
+  {
+   "file": "dl-docs/stage-options-6e0af02811649b9cdd785a100359fcbc.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/workspace-model-registry",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/workspace-model-registry"
+  },
+  {
+   "file": "dl-docs/handle-transition-request-af93986026a2d0e5e9f76c4bd9ab0214.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/workspace-model-registry",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/workspace-model-registry"
+  },
+  {
+   "file": "dl-docs/email-notifications-menu-6c3b102ee1f8a7b08a4316db5085752d.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/workspace-model-registry",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/workspace-model-registry"
+  },
+  {
+   "file": "dl-docs/tags-open-2b92892f2d6833c4fac51ed029b0ae39.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/workspace-model-registry",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/workspace-model-registry"
+  },
+  {
+   "file": "dl-docs/tag-add-e7a0a94c7df96101259d3f82deb415fc.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/workspace-model-registry",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/workspace-model-registry"
+  },
+  {
+   "file": "dl-docs/tag-edit-or-delete-2a374d59a14e35d810bf70d2e1369a79.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/workspace-model-registry",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/workspace-model-registry"
+  },
+  {
+   "file": "dl-docs/search-with-tags-c556dd179d35c1e762d355e11b8bc7c7.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/workspace-model-registry",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/workspace-model-registry"
+  },
+  {
+   "file": "dl-docs/model-search-name-and-tag-4cf926a5ed4b4546d7bbc240b478b697.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/workspace-model-registry",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/workspace-model-registry"
+  },
+  {
+   "file": "dl-docs/serve-pretrained-model-6ee2369c67bbc1c79738b9ba77e3ee77.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/foundation-models/pretrained-models",
+   "source": "docs.databricks.com/machine-learning/foundation-models/pretrained-models"
+  },
+  {
+   "file": "dl-docs/uc-model-add-description-95c4ff96734b6d23a50cb32e177f5c67.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/migrate-to-uc",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/migrate-to-uc"
+  },
+  {
+   "file": "dl-docs/multiworkspace-deda514f1a87b5b8093afb54fe652ae7.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/multiple-workspaces",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/multiple-workspaces"
+  },
+  {
+   "file": "dl-docs/simple-deployment-job-b9fca062d7a71439d2273cf1e8672e4f.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow/deployment-job",
+   "source": "docs.databricks.com/mlflow/deployment-job"
+  },
+  {
+   "file": "dl-docs/deployment-job-create-ui-c43b64da503e3f0babcb9ff81a78610d.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow/deployment-job",
+   "source": "docs.databricks.com/mlflow/deployment-job"
+  },
+  {
+   "file": "dl-docs/connected-deployment-job-13e5cff6f3558bd77384685a8717f882.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow/deployment-job",
+   "source": "docs.databricks.com/mlflow/deployment-job"
+  },
+  {
+   "file": "dl-docs/model-connect-job-3b63a91232bc1eb98d9f6917e361ae60.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow/deployment-job",
+   "source": "docs.databricks.com/mlflow/deployment-job"
+  },
+  {
+   "file": "dl-docs/select-deployment-job-081aae3c6e920db74cf7a94308b63f2e.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow/deployment-job",
+   "source": "docs.databricks.com/mlflow/deployment-job"
+  },
+  {
+   "file": "dl-docs/start-deployment-job-ab075c243d581edc29a3a73c3b69bf12.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow/deployment-job",
+   "source": "docs.databricks.com/mlflow/deployment-job"
+  },
+  {
+   "file": "dl-docs/deployment-job-fails-ce3bf9bcd91079559115538b3cac33dc.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow/deployment-job",
+   "source": "docs.databricks.com/mlflow/deployment-job"
+  },
+  {
+   "file": "dl-docs/model-version-review-metrics-94f8dd1e7b4ebb490a708182d651d530.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow/deployment-job",
+   "source": "docs.databricks.com/mlflow/deployment-job"
+  },
+  {
+   "file": "dl-docs/deployment-job-status-activity-2ef2d54140560d714144a27b571a31bb.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow/deployment-job",
+   "source": "docs.databricks.com/mlflow/deployment-job"
+  },
+  {
+   "file": "dl-docs/uc-model-version-traces-17c4c2dddd4046d20799269aa7a19e6a.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow/model-registry-3",
+   "source": "docs.databricks.com/mlflow/model-registry-3"
+  }
+ ],
+ "11.2": [
+  {
+   "file": "dl-docs/route-opt-endpoint-url-4bf21ad831de27b44401832df86bd453.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/model-serving/query-route-optimization",
+   "source": "docs.databricks.com/machine-learning/model-serving/query-route-optimization"
+  },
+  {
+   "file": "dl-docs/create-endpoint-eb0a4ce61321f63be092b3e0359f1c07.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/model-serving/route-optimization",
+   "source": "docs.databricks.com/machine-learning/model-serving/route-optimization"
+  },
+  {
+   "file": "dl-docs/ai-gateway-ui-1c3c5a1546943ab1db30a7242782fe07.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/configure-ai-gateway-endpoints",
+   "source": "docs.databricks.com/ai-gateway/configure-ai-gateway-endpoints"
+  },
+  {
+   "file": "dl-docs/fallback-example-0abbd821c25113655610634527ec17bb.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/configure-ai-gateway-endpoints",
+   "source": "docs.databricks.com/ai-gateway/configure-ai-gateway-endpoints"
+  },
+  {
+   "file": "dl-docs/ai-guardrails-69a294fd420593cbc2f5b1360669e522.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/configure-ai-gateway-endpoints",
+   "source": "docs.databricks.com/ai-gateway/configure-ai-gateway-endpoints"
+  },
+  {
+   "file": "dl-docs/update-ai-gateway-e5968f2ac542db1b3a8537a9b7530108.png",
+   "page": "https://docs.databricks.com/aws/en/ai-gateway/configure-ai-gateway-endpoints",
+   "source": "docs.databricks.com/ai-gateway/configure-ai-gateway-endpoints"
+  },
+  {
+   "file": "dl-docs/add-instance-profile-85d7ec40a687ac01fbd4cf84183f725b.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/model-serving/add-model-serving-instance-profile",
+   "source": "docs.databricks.com/machine-learning/model-serving/add-model-serving-instance-profile"
+  },
+  {
+   "file": "dl-docs/serving-pane-ea28c77158ce07121e7c86bd9aa897ac.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/model-serving/create-manage-serving-endpoints",
+   "source": "docs.databricks.com/machine-learning/model-serving/create-manage-serving-endpoints"
+  },
+  {
+   "file": "dl-docs/edit-endpoint-623573bccfaf350254453e9c68b44ebe.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/model-serving/create-manage-serving-endpoints",
+   "source": "docs.databricks.com/machine-learning/model-serving/create-manage-serving-endpoints"
+  }
+ ],
+ "11.3": [
+  {
+   "file": "dl-docs/evaluate-actions-menu-6c03dde8daa6e1bc8ec008104d482e18.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor",
+   "source": "docs.databricks.com/mlflow3/genai/eval-monitor"
+  },
+  {
+   "file": "dl-docs/evaluate-run-scorer-3df3ee556eae0e2094375086f77fc720.png",
+   "page": "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor",
+   "source": "docs.databricks.com/mlflow3/genai/eval-monitor"
+  },
+  {
+   "file": "dl-docs/inference-tables-diagram-046475b4ffd0030bc44543d341a7620d.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/model-serving/inference-tables",
+   "source": "docs.databricks.com/machine-learning/model-serving/inference-tables"
+  },
+  {
+   "file": "dl-docs/inference-table-location-94bd243ff946ae0b03c0fe9b7c3975f3.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/model-serving/inference-tables",
+   "source": "docs.databricks.com/machine-learning/model-serving/inference-tables"
+  },
+  {
+   "file": "dl-docs/disable-legacy-inference-table-1af33c92c0893ddb32b64ba8a0ce9afa.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/model-serving/inference-tables",
+   "source": "docs.databricks.com/machine-learning/model-serving/inference-tables"
+  },
+  {
+   "file": "dl-docs/enable-ai-gateway-inference-table-51b02f29a7e812736fbafe6a46d1ff75.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/model-serving/inference-tables",
+   "source": "docs.databricks.com/machine-learning/model-serving/inference-tables"
+  },
+  {
+   "file": "dl-docs/inference-table-name-3bf144f9b6ee3f4fe0951363e7a07f5d.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/model-serving/inference-tables",
+   "source": "docs.databricks.com/machine-learning/model-serving/inference-tables"
+  },
+  {
+   "file": "dl-docs/lakehouse-monitoring-overview-2b9bad8d4d90e166a1844c9830486921.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/data-profiling"
+  },
+  {
+   "file": "dl-docs/lakehouse-monitoring-1795712375f648c67cef310c2e287ff5.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/data-profiling"
+  },
+  {
+   "file": "dl-docs/schema-details-tab-337de9fb7f793ffe2567597271b72551.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  },
+  {
+   "file": "dl-docs/catalog-details-tab-0d93912c3342062d1c6f99c8f5e4e9ab.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  },
+  {
+   "file": "dl-docs/dqm-catalog-enablement-71fbb46f444042e1491d85d09b72c806.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  },
+  {
+   "file": "dl-docs/pencil-icon-1653e5c65900cda8121473a353380e01.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  },
+  {
+   "file": "dl-docs/data-quality-disable-toggle-c9cdb9a0f849a387a2b416705b2889db.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-monitor-by-slice-6ec414a7ea39c38e812393a73ddc0c9b.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-add-slices-0ac6ef94e01a881f5405092dc99720ef.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-monitor-by-slice-configured-8286d609a610edc7a1872f8062afd402.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-health-indicators-d8e978de4283df5a4c8fc0c5815eaa92.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-lineage-health-indicators-cf167093c989902e34e6ce742a308d89.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  },
+  {
+   "file": "dl-docs/quality-incidents-170a2cc87458af297b51e9ab633db3f6.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  },
+  {
+   "file": "dl-docs/dqm-unhealthy-table-assign-to-me-244e90c77c90a2f888638ff43e307669.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  },
+  {
+   "file": "dl-docs/dqm-root-cause-analysis-3f9c186d62d10f07254c7cd9d71e3d87.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-dqm-recently-resolved-incidents-70fdbcf8d024c2cb43cfaadb3d8d6eff.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  },
+  {
+   "file": "dl-docs/dqm-metastore-level-dashboard-05e12e5ecd5f81c148fb86316ceb8896.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  },
+  {
+   "file": "dl-docs/metastore-data-quality-dashboard-9d194085ce5d7c9ccba7dff860d7988a.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-table-quality-details-d9f97c18ad5f527898b4c1eb6c254762.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-table-quality-root-cause-d126f8f8331a1d6e4f1009980ff5d537.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-dashboard-quality-overview-schema-summary-dc82695a747dac5dfdd2b1894d0e707b.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-dashboard-quality-overview-results-table-b4a4359e733c5327fcebcd41897822fc.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  },
+  {
+   "file": "dl-docs/anomaly-detection-job-tasks-8ae4dfb9cc5296fb76742b56a9cd7eb2.png",
+   "page": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection"
+  }
+ ],
+ "11.4": [
+  {
+   "file": "dl-docs/mlops-stacks-components-60a21e64bd064fae6956f01b67d2d0d9.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-stacks",
+   "source": "docs.databricks.com/machine-learning/mlops/mlops-stacks"
+  },
+  {
+   "file": "dl-docs/mlops-stack-summary-665a242ac6b324bbc4b1bfeb80b847ab.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-stacks",
+   "source": "docs.databricks.com/machine-learning/mlops/mlops-stacks"
+  },
+  {
+   "file": "dl-docs/mlops-directory-structure-6adcc4565af76dd1f242a1c4dc24ee8b.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-stacks",
+   "source": "docs.databricks.com/machine-learning/mlops/mlops-stacks"
+  },
+  {
+   "file": "dl-docs/bundles-cicd-53be5f4860e8ebcedc2702f870290cda.png",
+   "page": "https://docs.databricks.com/aws/en/dev-tools/bundles",
+   "source": "docs.databricks.com/dev-tools/bundles"
+  },
+  {
+   "file": "dl-docs/example-job-overview-3afc40004602e65c871bd67edfa87f9b.png",
+   "page": "https://docs.databricks.com/aws/en/jobs",
+   "source": "docs.databricks.com/jobs"
+  },
+  {
+   "file": "dl-docs/expectations-flow-graph-02ab5dd2011b18ad791c67c0e8449af6.png",
+   "page": "https://docs.databricks.com/aws/en/ldp/expectations",
+   "source": "docs.databricks.com/ldp/expectations"
+  },
+  {
+   "file": "dl-docs/flow-failure-explained-3e48f828a3e48a4ad0930d00f5a6ec41.png",
+   "page": "https://docs.databricks.com/aws/en/ldp/expectations",
+   "source": "docs.databricks.com/ldp/expectations"
+  },
+  {
+   "file": "dl-docs/multiple-expectations-flow-graph-754e3b280dabb82589a2d1c1f55d137f.png",
+   "page": "https://docs.databricks.com/aws/en/ldp/expectations",
+   "source": "docs.databricks.com/ldp/expectations"
+  },
+  {
+   "file": "dl-docs/add-production-folder1-eb61ffa871d74cda40cf554beb9ab522.png",
+   "page": "https://docs.databricks.com/aws/en/repos/ci-cd",
+   "source": "docs.databricks.com/repos/ci-cd"
+  },
+  {
+   "file": "dl-docs/add-production-folder2-a9b7cca8b543671ccec1cacaa4387585.png",
+   "page": "https://docs.databricks.com/aws/en/repos/ci-cd",
+   "source": "docs.databricks.com/repos/ci-cd"
+  },
+  {
+   "file": "dl-docs/mlops-dev-diagram-02133996a99f13034b95d38af366ffbe.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-workflow",
+   "source": "docs.databricks.com/machine-learning/mlops/mlops-workflow"
+  },
+  {
+   "file": "dl-docs/mlops-staging-diagram-e528fdf54405bf13245e84aa3fc32b8c.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-workflow",
+   "source": "docs.databricks.com/machine-learning/mlops/mlops-workflow"
+  },
+  {
+   "file": "dl-docs/mlops-prod-diagram-8033cbb4ce8746883c46e8dc4101faed.png",
+   "page": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-workflow",
+   "source": "docs.databricks.com/machine-learning/mlops/mlops-workflow"
+  }
+ ]
+}

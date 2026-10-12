@@ -1,0 +1,62 @@
+{
+  "7.3": [
+    {
+      "id": "p7.3-dasf-v3-components",
+      "file": "p7.3-dasf-v3-components.png",
+      "source": "databricks.com blog: Agentic AI Security",
+      "url": "https://www.databricks.com/blog/agentic-ai-security-new-risks-and-controls-databricks-ai-security-framework-dasf-v30",
+      "kind": "diagram",
+      "why": "DASF v3.0 canonical 13 components of end-to-end AI system with 35 new agentic risks, 6 controls; shows DataSecOps, ModelSecOps, DevSecOps layers; replaces outdated DASF v1/v2 (59 controls)"
+    },
+    {
+      "id": "p7.3-dasf-v3-lethal-trifecta",
+      "file": "p7.3-dasf-v3-lethal-trifecta.png",
+      "source": "databricks.com blog: Agentic AI Security",
+      "url": "https://www.databricks.com/blog/agentic-ai-security-new-risks-and-controls-databricks-ai-security-framework-dasf-v30",
+      "kind": "diagram",
+      "why": "DASF v3.0 risk model: 'Lethal Trifecta' showing three simultaneous conditions that spike agentic risk (access to sensitive systems, untrustworthy inputs, ability to change state/communicate); maps to specific DASF v3.0 controls"
+    },
+    {
+      "id": "p7.3-dasf-v3-agent-components",
+      "file": "p7.3-dasf-v3-agent-components.png",
+      "source": "databricks.com blog: Agentic AI Security",
+      "url": "https://www.databricks.com/blog/agentic-ai-security-new-risks-and-controls-databricks-ai-security-framework-dasf-v30",
+      "kind": "diagram",
+      "why": "DASF v3.0 Component 13 (Agentic AI) breakdown: 35 risks across 3 sub-components (13A Agent Core: reasoning/memory 15 risks; 13B MCP Server: tool definitions 10 risks; 13C MCP Client: connection/code execution 10 risks); inter-agent dynamics"
+    }
+  ],
+  "11.2": [
+    {
+      "id": "p11.2-serving-arch-high-qps",
+      "file": "p11.2-serving-arch-high-qps.png",
+      "source": "databricks.com blog: AI Serving Platform",
+      "url": "https://www.databricks.com/blog/ai-serving-platform-adapts-your-model",
+      "kind": "diagram",
+      "why": "Databricks Model Serving architecture for 300k+ QPS: Client → Edge proxy → Load balancer → AutoPilot Pod Autoscaler → Serving pods + Inference engines + Warm pool; latency-first routing, request queue feedback loop"
+    },
+    {
+      "id": "p11.2-serving-autoscaling-metrics",
+      "file": "p11.2-serving-autoscaling-metrics.png",
+      "source": "databricks.com blog: AI Serving Platform",
+      "url": "https://www.databricks.com/blog/ai-serving-platform-adapts-your-model",
+      "kind": "diagram",
+      "why": "Serving autoscaling control loop: Request concurrency + Pod telemetry (CPU/GPU util, queue depth, latency variation) feed AutoPilot Pod Autoscaler; shows horizontal (add/remove replicas) and vertical (tune concurrency) scaling"
+    },
+    {
+      "id": "p11.2-serving-endpoint-ui",
+      "file": "p11.2-serving-endpoint-ui.png",
+      "source": "docs.databricks.com/machine-learning/model-serving",
+      "url": "https://docs.databricks.com/aws/en/machine-learning/model-serving/create-manage-serving-endpoints",
+      "kind": "screenshot",
+      "why": "Production serving endpoint detail UI showing Active configuration table with registered model version, traffic routing (%), compute type/concurrency settings, Gateway integration, Metrics/Events/Logs tabs for monitoring"
+    },
+    {
+      "id": "p11.2-serving-route-optimization",
+      "file": "p11.2-serving-route-optimization.png",
+      "source": "databricks.com blog: AI Serving Platform",
+      "url": "https://www.databricks.com/blog/ai-serving-platform-adapts-your-model",
+      "kind": "diagram",
+      "why": "Route optimization for low-latency serving: direct path from Client → Edge proxy → Load balancer → Serving pod with 'latency-first - every hop minimized'; shows network path reduction for high-QPS workloads"
+    }
+  ]
+}

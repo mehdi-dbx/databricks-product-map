@@ -1,0 +1,88 @@
+{
+  "6.1": [
+    {
+      "id": "p6.1-trace-dashboard",
+      "file": "p6.1-trace-dashboard.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 39",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.1000003",
+      "kind": "screenshot",
+      "why": "Hero slide showing agent tracing powered by MLflow with one-line integration for 30+ frameworks and pre-built trace analysis dashboards."
+    },
+    {
+      "id": "p6.1-trace-detail",
+      "file": "p6.1-trace-detail.png",
+      "source": "docs.databricks.com/mlflow3/genai/tracing/overview",
+      "url": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/overview",
+      "kind": "screenshot",
+      "why": "Detailed trace view showing nested spans for every step (guardrails, search, ranking, generation), with inputs, outputs, latency, tokens, and assessments—shows where the step went wrong."
+    },
+    {
+      "id": "p6.1-traces-list",
+      "file": "p6.1-traces-list.png",
+      "source": "docs.databricks.com/mlflow3/genai/tracing/overview",
+      "url": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/overview",
+      "kind": "screenshot",
+      "why": "List view of all traces across requests, showing trace ID, status, latency, token count, and cost for easy browsing and comparison."
+    },
+    {
+      "id": "p6.1-unified-trace-table",
+      "file": "p6.1-unified-trace-table.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 53",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.1000003",
+      "kind": "screenshot",
+      "why": "Unified trace table showing governance context (timestamp, trace ID, service, status, principal) across the organization."
+    }
+  ],
+  "6.2": [
+    {
+      "id": "p6.2-eval-flow",
+      "file": "p6.2-eval-flow.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 41",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.1000003",
+      "kind": "diagram",
+      "why": "End-to-end evaluation workflow: test during dev → deploy → monitor in production, with pre-built/custom scorers, evaluation sets, and quality validation."
+    },
+    {
+      "id": "p6.2-prompt-registry",
+      "file": "p6.2-prompt-registry.png",
+      "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 40",
+      "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.1000003",
+      "kind": "screenshot",
+      "why": "Prompt Registry interface showing versioned prompts with staging/production aliases (Live buttons), enabling tracked prompt changes like code changes."
+    },
+    {
+      "id": "p6.2-mlflow-platform-arch",
+      "file": "p6.2-mlflow-platform-arch.png",
+      "source": "Agentbricks Roadshow, slide 179",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.1000003",
+      "kind": "diagram",
+      "why": "MLflow Open GenAI platform architecture showing tracing, evaluation, human feedback, and prompt registry integrating with agent deployment."
+    }
+  ],
+  "6.3": [
+    {
+      "id": "p6.3-review-session",
+      "file": "p6.3-review-session.png",
+      "source": "docs.databricks.com/mlflow3/genai/human-feedback/expert-feedback/label-existing-traces",
+      "url": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/expert-feedback/label-existing-traces",
+      "kind": "screenshot",
+      "why": "Review App interface where domain experts test agents in a chat interface (User/Assistant conversation) and set expectations for labeling."
+    },
+    {
+      "id": "p6.3-review-labeling",
+      "file": "p6.3-review-labeling.png",
+      "source": "Agentbricks Roadshow, slide 188",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.1000003",
+      "kind": "visual",
+      "why": "Overview of MLflow Labeling: built-in review app for interactive testing, labeling workflows, synthetic bootstrapping, and auto-saving traces and feedback."
+    },
+    {
+      "id": "p6.3-assessments-feedback",
+      "file": "p6.3-assessments-feedback.png",
+      "source": "docs.databricks.com/mlflow3/genai/human-feedback/",
+      "url": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/",
+      "kind": "screenshot",
+      "why": "Trace view showing Assessments panel where experts add custom feedback and expectations; labels attach to traces and become evaluation datasets."
+    }
+  ]
+}

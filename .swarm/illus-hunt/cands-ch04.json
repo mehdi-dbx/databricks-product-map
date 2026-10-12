@@ -1,0 +1,146 @@
+{
+  "4.1": [
+    {
+      "id": "p4.1-serving-overview",
+      "file": "p4.1-serving-overview.png",
+      "source": "Agent Bricks L300 Pitch Slides, slide 19",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/",
+      "kind": "diagram",
+      "why": "Model Serving hierarchy: custom, foundation, and agent models with single unified interface"
+    },
+    {
+      "id": "p4.1-serving-controls",
+      "file": "p4.1-serving-controls.png",
+      "source": "Agent Bricks L300 Pitch Slides, slide 20",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/",
+      "kind": "screenshot",
+      "why": "Unified Gateway governance: logging, compliance, cost controls, traffic management, permissions"
+    },
+    {
+      "id": "p4.1-unified-serving",
+      "file": "p4.1-unified-serving.png",
+      "source": "Data Science With Databricks, slide 73",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/",
+      "kind": "visual",
+      "why": "Unified management of custom, foundation, and external models through one API"
+    },
+    {
+      "id": "p4.1-provisioned-pt",
+      "file": "p4.1-provisioned-pt.png",
+      "source": "Agentbricks Roadshow, slide 44",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/",
+      "kind": "diagram",
+      "why": "Provisioned throughput billing model: guaranteed capacity per endpoint with UI example"
+    },
+    {
+      "id": "p4.1-serving-production",
+      "file": "p4.1-serving-production.png",
+      "source": "Data Science With Databricks, slide 70",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/",
+      "kind": "screenshot",
+      "why": "Production Model Serving UI: deployment, configuration, real-time inference, monitoring"
+    },
+    {
+      "id": "p4.1-ab-testing",
+      "file": "p4.1-ab-testing.png",
+      "source": "Data Science With Databricks, slide 72",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/",
+      "kind": "screenshot",
+      "why": "Online evaluation: A/B testing and canary deployments with traffic split and performance metrics"
+    }
+  ],
+  "4.2": [
+    {
+      "id": "p4.2-fmapi-serving",
+      "file": "p4.2-fmapi-serving.png",
+      "source": "Agentbricks Roadshow, slide 32",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/",
+      "kind": "diagram",
+      "why": "FMAPI architecture: access control, Model Serving API routing to foundation model providers (Claude, Gemini, GPT)"
+    },
+    {
+      "id": "p4.2-external-models",
+      "file": "p4.2-external-models.png",
+      "source": "GenAI on Databricks L200 Tech Deck, slide 25",
+      "url": "https://docs.google.com/presentation/d/18q6e7yl1ldXtuvP2A2FgUm2vdrolh5We34Oca_RESwI/",
+      "kind": "diagram",
+      "why": "External and Foundation models served through Mosaic AI Gateway, showing model classification"
+    },
+    {
+      "id": "p4.2-gateway-models",
+      "file": "p4.2-gateway-models.png",
+      "source": "Product Deck: AI Gateway, slide 23",
+      "url": "https://docs.google.com/presentation/d/13FOrjaFbw8ApYmvl2sKg2cjxWiajglNE5RNVG-kK9qM/",
+      "kind": "diagram",
+      "why": "AI Gateway governance over Model Serving for all model types: agents, foundation models, external models"
+    },
+    {
+      "id": "p4.2-reserved-throughput",
+      "file": "p4.2-reserved-throughput.png",
+      "source": "docs.databricks.com/foundation-model-apis/reserved-provisioned-throughput",
+      "url": "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis/reserved-provisioned-throughput",
+      "kind": "screenshot",
+      "why": "Reserved provisioned throughput billing option for foundation models: capacity planning and cost control"
+    }
+  ],
+  "4.3": [
+    {
+      "id": "p4.3-fine-tuning",
+      "file": "p4.3-fine-tuning.png",
+      "source": "Data Science With Databricks, slide 51",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/",
+      "kind": "screenshot",
+      "why": "Easy LLM fine-tuning UI: serverless GPUs, no GPU reservation, data from UC or Hugging Face, IP ownership"
+    },
+    {
+      "id": "p4.3-ai-runtime",
+      "file": "p4.3-ai-runtime.png",
+      "source": "Agentbricks Roadshow, slide 142",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/",
+      "kind": "screenshot",
+      "why": "AI Runtime infrastructure: serverless GPU compute, new deep learning runtime, lakehouse-native integration"
+    },
+    {
+      "id": "p4.3-model-training-ui",
+      "file": "p4.3-model-training-ui.png",
+      "source": "docs.databricks.com/large-language-models/foundation-model-training/ui",
+      "url": "https://docs.databricks.com/aws/en/large-language-models/foundation-model-training/ui",
+      "kind": "screenshot",
+      "why": "Mosaic AI Model Training UI: task selection (Chat Completion, Pre-training, Instruction), model selection, data prep, model registration"
+    }
+  ],
+  "4.4": [
+    {
+      "id": "p4.4-gateway-governance",
+      "file": "p4.4-gateway-governance.png",
+      "source": "Product Deck: AI Gateway, slide 20",
+      "url": "https://docs.google.com/presentation/d/13FOrjaFbw8ApYmvl2sKg2cjxWiajglNE5RNVG-kK9qM/",
+      "kind": "diagram",
+      "why": "AI Gateway governance across all model types (Classic AI, Agents, Foundation Models, External Models)"
+    },
+    {
+      "id": "p4.4-unified-governance",
+      "file": "p4.4-unified-governance.png",
+      "source": "Agentbricks Roadshow, slide 124",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/",
+      "kind": "diagram",
+      "why": "Unified data and AI governance: Unity Catalog + Unity AI Gateway managing agents, models, tools, and external services"
+    },
+    {
+      "id": "p4.4-external-guardrails",
+      "file": "p4.4-external-guardrails.png",
+      "source": "Agentbricks Roadshow, slide 114",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/",
+      "kind": "screenshot",
+      "why": "External partner guardrails integration (ALICE, CrowdStrike, Cyera, etc.) for policy management through AI Gateway"
+    },
+    {
+      "id": "p4.4-external-provider-setup",
+      "file": "p4.4-external-provider-setup.png",
+      "source": "docs.databricks.com/ai-gateway/create-model-provider-services",
+      "url": "https://docs.databricks.com/aws/en/ai-gateway/create-model-provider-services",
+      "kind": "screenshot",
+      "why": "External model provider configuration: setting pricing and service parameters for external model access"
+    }
+  ]
+}

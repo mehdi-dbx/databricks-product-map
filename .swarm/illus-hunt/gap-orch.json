@@ -1,0 +1,244 @@
+{
+ "2.2": [
+  {
+   "id": "p2.2-predictive-optimization-history",
+   "file": "p2.2-predictive-optimization-history.png",
+   "source": "docs.databricks.com/optimizations/predictive-optimization",
+   "url": "https://docs.databricks.com/aws/en/optimizations/predictive-optimization",
+   "kind": "screenshot",
+   "why": "Table history showing Predictive Optimization running OPTIMIZE and VACUUM on its own"
+  },
+  {
+   "id": "p2.2-lakeflow-connect-database",
+   "file": "p2.2-lakeflow-connect-database.png",
+   "source": "Copy of Lakeflow Connect Tech Deck - L200, slide 27",
+   "url": "https://docs.google.com/presentation/d/1xiUXDS6x6aHv547-daQKBhvoOidHy_eVxdC8qdiHQxs/edit#slide=id.g316fd76f33f_0_1957",
+   "kind": "diagram",
+   "why": "Lakeflow Connect ingesting from a database into streaming Delta tables"
+  }
+ ],
+ "2.3": [
+  {
+   "id": "p2.3-lakebase-overview",
+   "file": "p2.3-lakebase-overview.png",
+   "source": "docs.databricks.com/oltp/projects",
+   "url": "https://docs.databricks.com/aws/en/oltp/projects",
+   "kind": "diagram",
+   "why": "Lakebase between analytical data and real-time feature serving, agent state and applications"
+  },
+  {
+   "id": "p2.3-lakehouse-sync-ui",
+   "file": "p2.3-lakehouse-sync-ui.png",
+   "source": "docs.databricks.com/oltp/projects/quickstart-lakebase-cdf",
+   "url": "https://docs.databricks.com/aws/en/oltp/projects/quickstart-lakebase-cdf",
+   "kind": "screenshot",
+   "why": "Sync from Lakebase to the lakehouse configured in the UI"
+  }
+ ],
+ "3.4": [
+  {
+   "id": "p3.4-ai-runtime-notebook",
+   "file": "p3.4-ai-runtime-notebook.png",
+   "source": "docs.databricks.com/machine-learning/ai-runtime/quickstart",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/ai-runtime/quickstart",
+   "kind": "screenshot",
+   "why": "Notebook on serverless GPU (AI Runtime) running a training step"
+  },
+  {
+   "id": "p3.4-gpu-accelerator-select",
+   "file": "p3.4-gpu-accelerator-select.png",
+   "source": "docs.databricks.com/machine-learning/ai-runtime/quickstart",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/ai-runtime/quickstart",
+   "kind": "screenshot",
+   "why": "Choosing an H100 accelerator for serverless GPU compute"
+  }
+ ],
+ "4.2": [
+  {
+   "id": "p4.2-serving-endpoints-list",
+   "file": "p4.2-serving-endpoints-list.png",
+   "source": "docs.databricks.com/machine-learning/foundation-model-apis",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis",
+   "kind": "screenshot",
+   "why": "Pay-per-token foundation model endpoints ready to use, next to an external model"
+  },
+  {
+   "id": "p4.2-provisioned-throughput-entity",
+   "file": "p4.2-provisioned-throughput-entity.png",
+   "source": "docs.databricks.com/machine-learning/foundation-model-apis/deploy-prov-throughput-foundation-model-apis",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis/deploy-prov-throughput-foundation-model-apis",
+   "kind": "screenshot",
+   "why": "Provisioned throughput configured for a foundation model endpoint"
+  }
+ ],
+ "4.3": [
+  {
+   "id": "p4.3-custom-fine-tune",
+   "file": "p4.3-custom-fine-tune.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 50",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_7882",
+   "kind": "diagram",
+   "why": "Custom fine-tuning of an open model on GPU compute, registered in UC and served"
+  },
+  {
+   "id": "p4.3-fine-tune-and-serve",
+   "file": "p4.3-fine-tune-and-serve.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 49",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_7794",
+   "kind": "diagram",
+   "why": "Fine-tuning an open model then serving it through Model Serving and the gateway"
+  }
+ ],
+ "4.4": [
+  {
+   "id": "p4.4-external-models-architecture",
+   "file": "p4.4-external-models-architecture.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 63",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_8926",
+   "kind": "diagram",
+   "why": "Externally hosted GenAI models managed through Databricks serving and the gateway"
+  }
+ ],
+ "5.5": [
+  {
+   "id": "p5.5-supervisor-agent-ui",
+   "file": "p5.5-supervisor-agent-ui.png",
+   "source": "docs.databricks.com/agents/agent-bricks/multi-agent-supervisor",
+   "url": "https://docs.databricks.com/aws/en/agents/agent-bricks/multi-agent-supervisor",
+   "kind": "screenshot",
+   "why": "Supervisor Agent configured with sub-agents, Genie spaces, tools and MCP servers"
+  }
+ ],
+ "6.3": [
+  {
+   "id": "p6.3-labeling-session",
+   "file": "p6.3-labeling-session.png",
+   "source": "docs.databricks.com/mlflow3/genai/human-feedback/concepts/labeling-sessions",
+   "url": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/concepts/labeling-sessions",
+   "kind": "screenshot",
+   "why": "Creating a labeling session with label schemas for expert review"
+  },
+  {
+   "id": "p6.3-agent-evaluation-review",
+   "file": "p6.3-agent-evaluation-review.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 10",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_5563",
+   "kind": "diagram",
+   "why": "Experts and users giving feedback through the review app, feeding evaluation"
+  }
+ ],
+ "7.1": [
+  {
+   "id": "p7.1-endpoint-lineage",
+   "file": "p7.1-endpoint-lineage.png",
+   "source": "docs.databricks.com/data-governance/unity-catalog/ai-gateway-service-lineage",
+   "url": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/ai-gateway-service-lineage",
+   "kind": "screenshot",
+   "why": "Lineage of a serving endpoint: upstream tables, models and model provider"
+  },
+  {
+   "id": "p7.1-ai-assets-in-uc",
+   "file": "p7.1-ai-assets-in-uc.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 55",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_8214",
+   "kind": "diagram",
+   "why": "AI assets (models, functions, vector indexes, tools) governed in Unity Catalog"
+  }
+ ],
+ "8.4": [
+  {
+   "id": "p8.4-aibi-dashboards-authoring",
+   "file": "p8.4-aibi-dashboards-authoring.png",
+   "source": "Agentbricks Roadshow [go/airoadshow], slide 206",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_6200",
+   "kind": "screenshot",
+   "why": "AI/BI dashboards with AI-assisted authoring"
+  },
+  {
+   "id": "p8.4-chart-created-by-genie",
+   "file": "p8.4-chart-created-by-genie.png",
+   "source": "docs.databricks.com/ai-bi/release-notes/2026",
+   "url": "https://docs.databricks.com/aws/en/ai-bi/release-notes/2026",
+   "kind": "screenshot",
+   "why": "A dashboard chart created by Genie from a request"
+  }
+ ],
+ "9.3": [
+  {
+   "id": "p9.3-coding-agents-governance",
+   "file": "p9.3-coding-agents-governance.png",
+   "source": "docs.databricks.com/ai-gateway/coding-agent-configure-govern",
+   "url": "https://docs.databricks.com/aws/en/ai-gateway/coding-agent-configure-govern",
+   "kind": "screenshot",
+   "why": "Coding agents such as Claude Code and Codex configured centrally with models and policies"
+  }
+ ],
+ "11.1": [
+  {
+   "id": "p11.1-model-lineage",
+   "file": "p11.1-model-lineage.png",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle",
+   "kind": "screenshot",
+   "why": "Model version lineage back to its training table"
+  },
+  {
+   "id": "p11.1-model-and-version-pages",
+   "file": "p11.1-model-and-version-pages.png",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/migrate-to-uc",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/migrate-to-uc",
+   "kind": "screenshot",
+   "why": "Model page and model version page in Catalog Explorer"
+  },
+  {
+   "id": "p11.1-registry-across-workspaces",
+   "file": "p11.1-registry-across-workspaces.png",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/multiple-workspaces",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/multiple-workspaces",
+   "kind": "diagram",
+   "why": "One registry across development, staging and production workspaces"
+  },
+  {
+   "id": "p11.1-deployment-job-on-model",
+   "file": "p11.1-deployment-job-on-model.png",
+   "source": "docs.databricks.com/mlflow/deployment-job",
+   "url": "https://docs.databricks.com/aws/en/mlflow/deployment-job",
+   "kind": "screenshot",
+   "why": "A deployment job attached to a registered model"
+  }
+ ],
+ "11.4": [
+  {
+   "id": "p11.4-mlops-workflow",
+   "file": "p11.4-mlops-workflow.png",
+   "source": "docs.databricks.com/machine-learning/mlops/mlops-stacks",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-stacks",
+   "kind": "diagram",
+   "why": "The full MLOps workflow across development, staging and production workspaces"
+  },
+  {
+   "id": "p11.4-mlops-stack-project",
+   "file": "p11.4-mlops-stack-project.png",
+   "source": "docs.databricks.com/machine-learning/mlops/mlops-stacks",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-stacks",
+   "kind": "diagram",
+   "why": "An MLOps Stacks project: ML code, CI/CD workflows and resources as files in Git"
+  },
+  {
+   "id": "p11.4-bundles-dev-staging-prod",
+   "file": "p11.4-bundles-dev-staging-prod.png",
+   "source": "docs.databricks.com/dev-tools/bundles",
+   "url": "https://docs.databricks.com/aws/en/dev-tools/bundles",
+   "kind": "diagram",
+   "why": "Bundles deploying the same project from Git to development, staging and production through CI/CD"
+  },
+  {
+   "id": "p11.4-lakeflow-jobs-dag",
+   "file": "p11.4-lakeflow-jobs-dag.png",
+   "source": "docs.databricks.com/jobs",
+   "url": "https://docs.databricks.com/aws/en/jobs",
+   "kind": "screenshot",
+   "why": "A Lakeflow Jobs pipeline of tasks with its schedule and triggers"
+  }
+ ]
+}

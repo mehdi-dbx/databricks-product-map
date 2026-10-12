@@ -10,6 +10,7 @@ let lastSize={w:1200,h:640};
 const SC={GA:'#1B3139',PuP:'#2272B4',Beta:'#B06A00',PrivPreview:'#8a9aa1',Announced:'#b4b9bc',Legacy:'#a05a5a'};
 let selNode=null;
 let state={tx:28,ty:28,k:1, newOnly:false, hideVerify:false, q:''};
+const SLABEL={PrivPreview:'PPR'};   // label shown on a status chip, when it differs from the status value
 const vp=document.getElementById('viewport');
 const svg=document.getElementById('svg');
 const stage=document.getElementById('stage');
@@ -57,7 +58,7 @@ function nodeInner(n){
   const dot=hasKids?'<span class="ddot"></span>':'';
   const warn=n.c==='verify'?'<span class="flag warn">⚠</span>':'';
   const tog=hasKids?`<span class="ptoggle">${n.collapsed?'▸':'▾'}</span>`:'';
-  const chip=n.s?`<span class="chip s-${n.s}">${n.s}</span>`:'';
+  const chip=n.s?`<span class="chip s-${n.s}">${SLABEL[n.s]||n.s}</span>`:'';
   if(n._depth===0) return `<div class="nm">${esc(dn(n.n))}</div>`;
   if(n._depth===1) return `<div class="nm">${tog}${esc(dn(n.n))}</div>`+
     `<div class="meta">${n.sub?`<span class="sub">${esc(n.sub)}</span>`:''}<span class="count">${(n.children||[]).length} items</span>${dot}</div>`;
@@ -213,7 +214,7 @@ function showPanel(n){
   document.getElementById('pname').textContent=dn(n.n);
   panelEl.style.borderTopColor=(n.s&&SC[n.s])?SC[n.s]:'var(--red)';
   let r='';
-  if(n.s) r+=`<span class="chip s-${n.s}">${n.s}</span>`;
+  if(n.s) r+=`<span class="chip s-${n.s}">${SLABEL[n.s]||n.s}</span>`;
   if(n.c==='verify') r+=`<span class="conf verify">⚠ to verify</span>`;
   if(n.new) r+=`<span style="color:var(--red);font-weight:700;font-size:0.8rem">✦ DAIS</span>`;
   document.getElementById('prow').innerHTML=r;
@@ -278,7 +279,7 @@ stage.addEventListener('wheel',e=>{
 
 // toolbar
 document.getElementById('search').addEventListener('input',e=>{
-  if(document.body.classList.contains('story-mode')){ storyFind(e.target.value); return; }
+  const m=findMode(); if(m){ runFind(m,e.target.value); return; }
   state.q=e.target.value;
   if(state.q.trim()){
     const q=state.q.trim().toLowerCase();
@@ -352,7 +353,7 @@ document.querySelectorAll('.navtab').forEach(b=>{ b.onclick=()=>{
   setActiveTab(b.dataset.tree);
   document.body.classList.toggle('decks-mode', b.dataset.tree==='decks');
   if(b.dataset.tree==='story'){ showStory(); }
-  else if(b.dataset.tree==='decks'){ hideStory(); }
+  else if(b.dataset.tree==='decks'){ showDecks(); }
   else { hideStory(); loadTree(b.dataset.tree); }
 }; });
 
@@ -366,27 +367,98 @@ function nodeByPath(tree,path){
 }
 function capCard(ref,key){
   const n=nodeByPath(ref.tree,ref.path); if(!n) return '';
-  const chip=n.s?`<span class="chip s-${n.s}">${n.s}</span>`:'';
+  const chip=n.s?`<span class="chip s-${n.s}">${SLABEL[n.s]||n.s}</span>`:'';
   return `<button class="scap" data-ref="${key}">`+
     `<div class="sct"><span class="stree">${ref.tree.toUpperCase()}</span><span>${esc(dn(n.n))}</span>${chip}</div>`+
     `<div class="scn">${esc(n.note||'')}</div><div class="scgo">See in tree →</div></button>`;
 }
+// ---- illustration candidates (temporary, while the illustrations are chosen) ----
+// a click on an image shows it full screen; its checkbox picks or unpicks it. The picks file
+// (chosen once per page load, Chrome / Edge only) is the reference: each change reads it,
+// changes that one pick and writes it back. The browser keeps a copy only for display.
+const PICKS=JSON.parse(localStorage.getItem('illusPicks')||'{}');
+let picksFile=null, pickQueue=Promise.resolve();
+const isPicked=(pid,id)=>(PICKS[pid]||[]).includes(id);
+function illusRow(pid){
+  const cands=ILLUS[pid]; if(!cands||!cands.length) return '';
+  return `<div class="sill">`+cands.map(c=>
+    `<div class="sillc${isPicked(pid,c.id)?' on':''}" data-pid="${pid}" data-id="${c.id}">`+
+    `<img src="${IMG_BASE}${c.file}" alt="" loading="lazy">`+
+    `<label><input type="checkbox"${isPicked(pid,c.id)?' checked':''}><span>${esc(c.source)}</span></label></div>`).join('')+`</div>`;
+}
+async function togglePick(pid,id){
+  if(!picksFile) picksFile=await showSaveFilePicker({suggestedName:'illustration-picks.json',
+    types:[{description:'JSON',accept:{'application/json':['.json']}}]});
+  const text=(await (await picksFile.getFile()).text()).trim();
+  let cur;
+  try{ cur=text?JSON.parse(text):{}; }catch(e){ throw new Error('the picks file is not valid JSON, it was left as is'); }
+  const set=new Set(cur[pid]||[]);
+  if(set.has(id)) set.delete(id); else set.add(id);
+  if(set.size) cur[pid]=[...set]; else delete cur[pid];
+  const w=await picksFile.createWritable(); await w.write(JSON.stringify(cur,null,1)+'\n'); await w.close();
+  Object.keys(PICKS).forEach(k=>delete PICKS[k]); Object.assign(PICKS,cur);
+  localStorage.setItem('illusPicks',JSON.stringify(PICKS));
+}
+// full-screen view, with the same checkbox
+const illusView=document.createElement('div');
+illusView.id='illusView'; illusView.hidden=true;
+illusView.innerHTML=`<img alt=""><div class="ivbar"><label><input type="checkbox"><span></span></label><a target="_blank" rel="noopener">Open the source ↗</a></div>`;
+document.body.appendChild(illusView);
+const ivBox=illusView.querySelector('input');
+let ivCur=null;
+function openIllus(pid,id){
+  const c=ILLUS[pid].find(x=>x.id===id); ivCur={pid,id};
+  illusView.querySelector('img').src=IMG_BASE+c.file;
+  illusView.querySelector('span').textContent=c.source;
+  illusView.querySelector('a').href=c.url;
+  ivBox.checked=isPicked(pid,id); illusView.hidden=false;
+}
+function syncPicks(){
+  storyView.querySelectorAll('.sillc').forEach(el=>{ const on=isPicked(el.dataset.pid,el.dataset.id);
+    el.classList.toggle('on',on); el.querySelector('input').checked=on; });
+  if(ivCur) ivBox.checked=isPicked(ivCur.pid,ivCur.id);
+}
+// changes run one after the other, so two quick clicks cannot overwrite each other
+function changePick(pid,id){
+  pickQueue=pickQueue.then(()=>togglePick(pid,id))
+    .catch(err=>{ if(err.name!=='AbortError') alert('Pick not saved: '+err.message); })
+    .finally(syncPicks);
+}
+storyView.addEventListener('click',e=>{ const img=e.target.closest('.sillc img'); if(img){ const c=img.closest('.sillc'); openIllus(c.dataset.pid,c.dataset.id); } });
+storyView.addEventListener('change',e=>{ const c=e.target.closest('.sillc'); if(c) changePick(c.dataset.pid,c.dataset.id); });
+ivBox.addEventListener('change',()=>changePick(ivCur.pid,ivCur.id));
+illusView.addEventListener('click',e=>{ if(!e.target.closest('.ivbar')) illusView.hidden=true; });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&!illusView.hidden) illusView.hidden=true; });
+// "Image picks" switch in the nav (Story only): shows or hides the candidates, remembered by the browser
+const illusTg=document.getElementById('illusTg');
+illusTg.checked=localStorage.getItem('illusShow')!=='0';
+document.body.classList.toggle('illus-off',!illusTg.checked);
+illusTg.onchange=()=>{ localStorage.setItem('illusShow',illusTg.checked?'1':'0'); document.body.classList.toggle('illus-off',!illusTg.checked); };
 function buildStory(){
-  const chs=STORY.chapters;
+  const chs=STORY.chapters, th=STORY.thread;   // thread: the complete story (docs/story-cement.md)
   const rail=`<div class="srail"><div class="srail-t">Chapters</div>`+
-    chs.map(c=>`<a href="#sch-${c.num}" data-ch="${c.num}"><b>${c.num}</b><span>${esc(c.title)}</span></a>`).join('')+`</div>`;
+    chs.map(c=>`<a href="#sch-${c.num}" data-ch="${c.num}"><b>${c.num}</b><span>${esc(c.title)}</span></a>`).join('')+
+    (th&&th.closing?`<a href="#sch-end" data-ch="end"><b>·</b><span>Closing</span></a>`:'')+`</div>`;
+  const top=th?`<div class="sthread"><h1 class="sthread-t">${esc(th.title)}</h1><p class="sopen">${esc(th.opening)}</p></div>`:'';
+  const close=th&&th.closing?`<section class="schap" id="sch-end" data-ch="end"><div class="schap-h"><h2 class="schap-t">Closing</h2></div>`+
+    `<p class="sintro">${esc(th.closing)}</p></section>`:'';
   const body=chs.map((c,ci)=>
     `<section class="schap" id="sch-${c.num}" data-ch="${c.num}">`+
     `<div class="schap-h"><span class="schap-n">${c.num}</span><h2 class="schap-t">${esc(c.title)}</h2></div>`+
+    (c.intro?`<p class="sintro">${esc(c.intro)}</p>`:'')+
     c.points.map((p,pi)=>
       `<article class="sslide" data-ci="${ci}" data-pi="${pi}"><h3>${esc(p.title)}</h3>`+
+      (p.effect?`<p class="seff">${esc(p.effect)}</p>`:'')+
       (p.lead?`<p class="slead">${esc(p.lead)}</p>`:'')+
+      // challenge, then the pivot that leads to the bullets (docs/story-editorial-guide.md)
+      ['challenge','pivot'].map(k=>p[k]?`<p class="sadd">${esc(p[k])}</p>`:'').join('')+
       `<ul class="sbul">${p.bullets.map(b=>`<li>${esc(b)}</li>`).join('')}</ul>`+
       (p.refs.length?`<div class="scaps">${p.refs.map((r,ri)=>capCard(r,`${ci}-${pi}-${ri}`)).join('')}</div>`:'')+
+      illusRow(p.id)+
       `</article>`).join('')+
     (c.handoff?`<p class="shand">${esc(c.handoff)}</p>`:'')+
     `</section>`).join('');
-  storyView.innerHTML=`<div class="story">${rail}<div class="sbody">${body}</div></div>`;
+  storyView.innerHTML=`<div class="story">${rail}<div class="sbody">${top}${body}${close}</div></div>`;
   // rail: highlight the chapter being read
   const links=[...storyView.querySelectorAll('.srail a')];
   const obs=new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){
@@ -419,7 +491,7 @@ storyPrev.onclick=()=>storyStep(-1);
 storyNext.onclick=()=>storyStep(1);
 // keyboard ↑ / ↓ do the same as the arrow buttons, in the Story only
 document.addEventListener('keydown',e=>{
-  if(!document.body.classList.contains('story-mode')) return;
+  if(!document.body.classList.contains('story-mode')||!illusView.hidden) return;
   if(e.target.closest('input,textarea,select,[contenteditable]')) return;
   if(e.key==='ArrowDown'){ e.preventDefault(); storyStep(1); }
   else if(e.key==='ArrowUp'){ e.preventDefault(); storyStep(-1); }
@@ -428,13 +500,17 @@ storyView.addEventListener('scroll',updateStoryNav,{passive:true});
 function showStory(){
   document.body.classList.add('story-mode');
   if(!storyBuilt){ buildStory(); storyBuilt=true; }
-  searchEl.placeholder='Search the story…'; searchEl.value=storyQ;
+  searchEl.placeholder='Search the story…'; searchEl.value=findQ.story;
   updateStoryNav();
 }
-function hideStory(){ document.body.classList.remove('story-mode'); searchEl.placeholder='Search features…'; storyResults.hidden=true; }
-// ---- Story search: find as you type, list the sections and slides where the word appears ----
-const searchEl=document.getElementById('search'), storyResults=document.getElementById('storyResults');
-let storyQ='', storyRes=[], storyResIdx=0;
+function hideStory(){ document.body.classList.remove('story-mode'); searchEl.placeholder='Search features…'; findResults.hidden=true; }
+function showDecks(){ hideStory(); searchEl.placeholder='Search the decks…'; searchEl.value=findQ.decks; }
+// ---- Story and Decks search: find as you type, list the places where the word appears ----
+const searchEl=document.getElementById('search'), findResults=document.getElementById('findResults');
+const decksView=document.getElementById('decksView');
+const findQ={story:'',decks:''};   // each tab keeps its own query
+let findRes=[], findResIdx=0;
+function findMode(){ const c=document.body.classList; return c.contains('story-mode')?'story':c.contains('decks-mode')?'decks':null; }
 function hl(raw,q){
   if(!q) return esc(raw);
   const re=new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig');
@@ -446,54 +522,79 @@ function snippet(text,q){
   return (a>0?'…':'')+hl(text.slice(a,b),q)+(b<text.length?'…':'');
 }
 function slideTexts(p){
-  const t=[p.title,p.lead,...p.bullets];
+  const t=[p.title,p.effect,p.lead,p.challenge,p.pivot,...p.bullets];
   p.refs.forEach(r=>{ const n=nodeByPath(r.tree,r.path); if(n) t.push(dn(n.n), n.note||''); });
   return t.filter(Boolean);
 }
-function storyFind(value){
-  storyQ=value; const q=value.trim().toLowerCase(); storyRes=[]; storyResIdx=0;
-  if(q) STORY.chapters.forEach((c,ci)=>{
-    const ct=[c.title,c.handoff||''].find(s=>s.toLowerCase().includes(q));
-    if(ct) storyRes.push({ci,pi:-1,snip:snippet(ct,q)});
-    c.points.forEach((p,pi)=>{ const hit=slideTexts(p).find(s=>s.toLowerCase().includes(q)); if(hit) storyRes.push({ci,pi,snip:snippet(hit,q)}); });
-  });
-  renderStoryResults(q);
-}
-function renderStoryResults(q){
-  if(!q){ storyResults.hidden=true; storyResults.innerHTML=''; return; }
-  storyResults.innerHTML = storyRes.length
-    ? storyRes.map((r,i)=>{ const c=STORY.chapters[r.ci], title=r.pi<0?c.title:c.points[r.pi].title;
-        return `<button class="sres${i===storyResIdx?' on':''}" data-i="${i}">`+
-          `<div class="sres-crumb">${c.num} · ${esc(c.title)}${r.pi<0?' · chapter':''}</div>`+
-          `<div class="sres-t">${hl(title,q)}</div><div class="sres-snip">${r.snip}</div></button>`; }).join('')
-    : `<div class="sres-none">No match</div>`;
-  storyResults.hidden=false;
-}
-function storyGoRes(i){
-  const r=storyRes[i]; if(!r) return;
-  storyResults.hidden=true;
-  const el = r.pi<0 ? storyView.querySelector(`#sch-${STORY.chapters[r.ci].num}`)
-                    : storyView.querySelector(`.sslide[data-ci="${r.ci}"][data-pi="${r.pi}"]`);
+// scroll a view to el (near the top, or centered), then flash el
+function reveal(view,el,flash,center){
   if(!el) return;
-  const top=el.getBoundingClientRect().top-storyView.getBoundingClientRect().top+storyView.scrollTop-16;
-  storyView.scrollTo({top:Math.max(0,top),behavior:'smooth'});
-  if(r.pi>=0){ el.classList.remove('sflash'); void el.offsetWidth; el.classList.add('sflash'); }
+  const off=center?(view.clientHeight-el.offsetHeight)/2:16;
+  const top=el.getBoundingClientRect().top-view.getBoundingClientRect().top+view.scrollTop-off;
+  view.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+  if(flash){ el.classList.remove('sflash'); void el.offsetWidth; el.classList.add('sflash'); }
 }
+function storyFind(q){
+  const th=STORY.thread;   // the opening and the closing of the complete story
+  if(th) [['Opening',th.opening,'.sthread'],['Closing',th.closing,'#sch-end']].forEach(([name,text,sel])=>{
+    if(text&&text.toLowerCase().includes(q)) findRes.push({crumb:`The story · ${name}`, title:th.title, snip:snippet(text,q),
+      go:()=>reveal(storyView,storyView.querySelector(sel),false)}); });
+  STORY.chapters.forEach((c,ci)=>{
+    const ct=[c.title,c.intro||'',c.handoff||''].find(s=>s.toLowerCase().includes(q));
+    if(ct) findRes.push({crumb:`${c.num} · ${c.title} · chapter`, title:c.title, snip:snippet(ct,q),
+      go:()=>reveal(storyView,storyView.querySelector(`#sch-${c.num}`),false)});
+    c.points.forEach((p,pi)=>{ const hit=slideTexts(p).find(s=>s.toLowerCase().includes(q));
+      if(hit) findRes.push({crumb:`${c.num} · ${c.title}`, title:p.title, snip:snippet(hit,q),
+        go:()=>reveal(storyView,storyView.querySelector(`.sslide[data-ci="${ci}"][data-pi="${pi}"]`),true)}); });
+  });
+}
+// a deck hit is a section heading or a table row; a row is named by its deck link
+function decksFind(q){
+  let h2='', h3='';
+  decksView.querySelectorAll('h2, h3, tbody tr').forEach(el=>{
+    const text=el.textContent;
+    if(el.tagName==='H2'){ h2=text; h3=''; }
+    if(el.tagName==='H3') h3=text;
+    if(el.tagName!=='TR'){
+      if(text.toLowerCase().includes(q)) findRes.push({crumb:el.tagName==='H3'?`${h2} · section`:'section', title:text, snip:'', go:()=>reveal(decksView,el,false)});
+      return;
+    }
+    const hit=[...el.cells].map(td=>td.textContent).find(s=>s.toLowerCase().includes(q));
+    if(hit) findRes.push({crumb:h3?`${h2} · ${h3}`:h2, title:(el.querySelector('a')||el.cells[0]).textContent,
+      snip:snippet(hit,q), go:()=>reveal(decksView,el,true,true)});
+  });
+}
+function runFind(mode,value){
+  findQ[mode]=value; const q=value.trim().toLowerCase(); findRes=[]; findResIdx=0;
+  if(q) (mode==='story'?storyFind:decksFind)(q);
+  renderFindResults(q);
+}
+function renderFindResults(q){
+  if(!q){ findResults.hidden=true; findResults.innerHTML=''; return; }
+  findResults.innerHTML = findRes.length
+    ? findRes.map((r,i)=>`<button class="sres${i===findResIdx?' on':''}" data-i="${i}">`+
+        `<div class="sres-crumb">${esc(r.crumb)}</div>`+
+        `<div class="sres-t">${hl(r.title,q)}</div><div class="sres-snip">${r.snip}</div></button>`).join('')
+    : `<div class="sres-none">No match</div>`;
+  findResults.hidden=false;
+}
+function findGo(i){ const r=findRes[i]; if(!r) return; findResults.hidden=true; r.go(); }
 // mousedown (not click) so the choice lands before the input loses focus
-storyResults.addEventListener('mousedown',e=>{ const b=e.target.closest('.sres'); if(!b) return; e.preventDefault(); storyGoRes(+b.dataset.i); });
+findResults.addEventListener('mousedown',e=>{ const b=e.target.closest('.sres'); if(!b) return; e.preventDefault(); findGo(+b.dataset.i); });
 searchEl.addEventListener('keydown',e=>{
-  if(!document.body.classList.contains('story-mode')) return;
+  const m=findMode(); if(!m) return;
   if(e.key==='ArrowDown'||e.key==='ArrowUp'){
-    if(!storyRes.length) return; e.preventDefault();
-    storyResIdx=(storyResIdx+(e.key==='ArrowDown'?1:-1)+storyRes.length)%storyRes.length;
-    renderStoryResults(storyQ.trim().toLowerCase());
-    const on=storyResults.querySelector('.sres.on'); if(on) on.scrollIntoView({block:'nearest'});
+    if(!findRes.length) return; e.preventDefault();
+    findResIdx=(findResIdx+(e.key==='ArrowDown'?1:-1)+findRes.length)%findRes.length;
+    renderFindResults(findQ[m].trim().toLowerCase());
+    const on=findResults.querySelector('.sres.on'); if(on) on.scrollIntoView({block:'nearest'});
   }
-  else if(e.key==='Enter'){ e.preventDefault(); storyGoRes(storyResIdx); }
-  else if(e.key==='Escape'){ storyResults.hidden=true; }
+  else if(e.key==='Enter'){ e.preventDefault(); findGo(findResIdx); }
+  else if(e.key==='Escape'){ findResults.hidden=true; }
 });
-searchEl.addEventListener('focus',()=>{ if(document.body.classList.contains('story-mode') && storyQ.trim()) renderStoryResults(storyQ.trim().toLowerCase()); });
-searchEl.addEventListener('blur',()=>{ storyResults.hidden=true; });
+// on focus, list the results again for the current tab's query
+searchEl.addEventListener('focus',()=>{ const m=findMode(); if(m && findQ[m].trim()) runFind(m,findQ[m]); });
+searchEl.addEventListener('blur',()=>{ findResults.hidden=true; });
 // "See in tree": switch to the capsule's tree, select it, center on it
 function gotoNode(tree,path){
   setActiveTab(tree); hideStory(); loadTree(tree);

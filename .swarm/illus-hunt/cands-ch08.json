@@ -1,0 +1,124 @@
+{
+  "8.1": [
+    {
+      "id": "p8.1-genie-one-chat",
+      "file": "p8.1-genie-one-chat.png",
+      "source": "Databricks blog: Introducing Genie One, Genie Ontology, and Genie Agents",
+      "url": "https://www.databricks.com/blog/introducing-genie-one-genie-ontology-and-genie-agents",
+      "kind": "screenshot",
+      "why": "Genie One UI showing 'How can I help you?' interface with action buttons; shows natural-language chat entry point for business users asking questions"
+    },
+    {
+      "id": "p8.1-genie-one-answer",
+      "file": "p8.1-genie-one-answer.png",
+      "source": "databricks.com/product/genie/one",
+      "url": "https://www.databricks.com/product/genie/one",
+      "kind": "screenshot",
+      "why": "Genie One answering natural language question about bakery franchise revenue with data table, analysis, and citations; shows complete Q&A experience with governed company data"
+    },
+    {
+      "id": "p8.1-genie-one-reasoning",
+      "file": "p8.1-genie-one-reasoning.png",
+      "source": "databricks.com/product/genie/one",
+      "url": "https://www.databricks.com/product/genie/one",
+      "kind": "screenshot",
+      "why": "Genie One reasoning thread showing asset discovery, context gathering, and data sourcing for NYC taxi trips query; demonstrates intelligent agent logic for answering questions"
+    }
+  ],
+  "8.2": [
+    {
+      "id": "p8.2-genie-ontology-benchmark",
+      "file": "p8.2-genie-ontology-benchmark.png",
+      "source": "Databricks blog: Introducing Genie One, Genie Ontology, and Genie Agents",
+      "url": "https://www.databricks.com/blog/introducing-genie-one-genie-ontology-and-genie-agents",
+      "kind": "diagram",
+      "why": "Benchmark chart showing Genie with Ontology achieving 84.5% accuracy vs 40-52% for competitors; demonstrates how Genie Ontology improves business definition accuracy"
+    },
+    {
+      "id": "p8-genie-family-overview",
+      "file": "p8-genie-family-overview.png",
+      "source": "Agentbricks Roadshow [go/airoadshow], Slide 3",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g1f1f1f1f",
+      "kind": "diagram",
+      "why": "Genie family comparison table including Genie Ontology (Knowledge snippets) and its role in shared business definitions; provides context for how ontology fits in product family"
+    }
+  ],
+  "8.3": [
+    {
+      "id": "p8.3-genie-agents-no-code",
+      "file": "p8.3-genie-agents-no-code.png",
+      "source": "[Customer-facing] Knowledge Assistant & Supervisor Agent updates, Slide 13",
+      "url": "https://docs.google.com/presentation/d/1QYbJUGDqzon9NQmK7ZPAA09O26XG-tb3oJse6Bcf-ko/edit#slide=id.g1f1f1f1f",
+      "kind": "diagram",
+      "why": "Genie Agents positioned as Option A for 'no-code assistants for majority of KA/SA workloads'; shows comparison with Agent Bricks (code) and Genie One + Skills"
+    },
+    {
+      "id": "p8.3-genie-agents-setup",
+      "file": "p8.3-genie-agents-setup.png",
+      "source": "databricks.com/product/genie/agents",
+      "url": "https://www.databricks.com/product/genie/agents",
+      "kind": "screenshot",
+      "why": "Genie Agents configuration UI showing Instructions tab with natural language business rules; demonstrates domain expert setup interface for building no-code agents"
+    },
+    {
+      "id": "p8.3-genie-agents-dashboard",
+      "file": "p8.3-genie-agents-dashboard.png",
+      "source": "databricks.com/product/genie/agents",
+      "url": "https://www.databricks.com/product/genie/agents",
+      "kind": "screenshot",
+      "why": "Genie Agent answering question about top sales reps with thought process and data results; shows agent reasoning and business analytics in action"
+    },
+    {
+      "id": "p8.3-genie-agents-eval",
+      "file": "p8.3-genie-agents-eval.png",
+      "source": "databricks.com/product/genie/agents",
+      "url": "https://www.databricks.com/product/genie/agents",
+      "kind": "screenshot",
+      "why": "Genie Agents evaluation and benchmarking interface tracking accuracy metrics and execution modes; shows quality assurance and monitoring for no-code agents"
+    }
+  ],
+  "8.4": [
+    {
+      "id": "p8.4-lakeview-dashboards",
+      "file": "p8.4-lakeview-dashboards.png",
+      "source": "Data Science With Databricks, Slide 26",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g1f1f1f1f",
+      "kind": "screenshot",
+      "why": "Databricks Assistant in Lakeview dashboards, notebooks, and SQL editor; shows AI assistance across multiple interfaces for dashboard and spreadsheet authoring"
+    },
+    {
+      "id": "p8.4-row-zero-spreadsheet",
+      "file": "p8.4-row-zero-spreadsheet.png",
+      "source": "Row Zero blog: From Query to Analysis Using AI in Row Zero",
+      "url": "https://rowzero.com/blog/from-query-to-analysis-using-ai-in-row-zero",
+      "kind": "screenshot",
+      "why": "Row Zero spreadsheet connected to live governed data with AI Agent panel providing assistance; shows Genie-powered spreadsheet for business users"
+    },
+    {
+      "id": "p8.4-row-zero-analysis",
+      "file": "p8.4-row-zero-analysis.png",
+      "source": "Row Zero blog: From Query to Analysis Using AI in Row Zero",
+      "url": "https://rowzero.com/blog/from-query-to-analysis-using-ai-in-row-zero",
+      "kind": "screenshot",
+      "why": "Row Zero business review with live data tables, charts, and AI-generated key findings; demonstrates AI-assisted analysis and insights in spreadsheet"
+    }
+  ],
+  "8.5": [
+    {
+      "id": "p8.5-genie-app-builder-deploy",
+      "file": "p8.5-genie-app-builder-deploy.png",
+      "source": "Databricks blog: Enabling Governed Vibe Coding for Enterprise Apps on Databricks",
+      "url": "https://www.databricks.com/blog/enabling-governed-vibe-coding-enterprise-apps-databricks",
+      "kind": "diagram",
+      "why": "Genie App Builder deployment flow showing App Space governance → Genie App Builder → one-click deploy → Serverless Micro App; shows no-code app generation pipeline"
+    },
+    {
+      "id": "p8.5-genie-app-builder-interface",
+      "file": "p8.5-genie-app-builder-interface.png",
+      "source": "Databricks blog: Enabling Governed Vibe Coding for Enterprise Apps on Databricks",
+      "url": "https://www.databricks.com/blog/enabling-governed-vibe-coding-enterprise-apps-databricks",
+      "kind": "screenshot",
+      "why": "Genie App Builder interface with natural language prompt ('Describe what you want to build') and generated NYC taxi heatmap app running live; shows end-to-end no-code app creation"
+    }
+  ]
+}

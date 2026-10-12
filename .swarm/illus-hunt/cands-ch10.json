@@ -1,0 +1,102 @@
+{
+  "10.1": [
+    {
+      "id": "p10.1-customerlake-campaigns",
+      "file": "p10.1-customerlake-campaigns.jpg",
+      "source": "databricks.com/product/customerlake-cdp",
+      "url": "https://www.databricks.com/product/customerlake-cdp",
+      "kind": "screenshot",
+      "why": "Campaign agents defining and activating audiences (Lapsed Loyalty audience with 2.7M members, segmentation logic)"
+    },
+    {
+      "id": "p10.1-customer-360-profiles",
+      "file": "p10.1-customer-360-profiles.jpg",
+      "source": "databricks.com/product/customerlake-cdp",
+      "url": "https://www.databricks.com/product/customerlake-cdp",
+      "kind": "screenshot",
+      "why": "Customer 360 profiles unified from multiple data sources with identity resolution (8 customer cards with unified attributes)"
+    },
+    {
+      "id": "p10.1-customer-360-diagram",
+      "file": "p10.1-customer-360-diagram.png",
+      "source": "databricks.com/product/customerlake-cdp",
+      "url": "https://www.databricks.com/product/customerlake-cdp",
+      "kind": "diagram",
+      "why": "Customer 360 conceptual diagram showing integration of Engagement, Analytics, Purchases, Predictive metrics, Social, and Service data"
+    },
+    {
+      "id": "p10.1-audience-segmentation",
+      "file": "p10.1-audience-segmentation.png",
+      "source": "databricks.com/product/customerlake-cdp",
+      "url": "https://www.databricks.com/product/customerlake-cdp",
+      "kind": "diagram",
+      "why": "Audience segmentation use case showing VIP customer filtering by loyalty tier and spend metrics"
+    },
+    {
+      "id": "p10.1-identity-resolution",
+      "file": "p10.1-identity-resolution.png",
+      "source": "databricks.com/product/customerlake-cdp",
+      "url": "https://www.databricks.com/product/customerlake-cdp",
+      "kind": "diagram",
+      "why": "Identity resolution pipeline: multiple sources (transactions, support, app) → cleaned tables → identity graph → unified profiles"
+    },
+    {
+      "id": "p10.1-campaign-automation",
+      "file": "p10.1-campaign-automation.png",
+      "source": "databricks.com/product/customerlake-cdp",
+      "url": "https://www.databricks.com/product/customerlake-cdp",
+      "kind": "diagram",
+      "why": "Campaign automation use case showing insights-driven audience creation and activation"
+    }
+  ],
+  "10.2": [
+    {
+      "id": "p10.2-lakewatch-alerts-monitoring",
+      "file": "p10.2-lakewatch-alerts-monitoring.png",
+      "source": "Agentbricks Roadshow [go/airoadshow] slide 117",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4785",
+      "kind": "screenshot",
+      "why": "Lakewatch integration with Unity AI Gateway for alerts and monitoring; governance UI showing Incidents table with severity and incident details"
+    },
+    {
+      "id": "p10.2-detection-as-code",
+      "file": "p10.2-detection-as-code.png",
+      "source": "databricks.com/product/lakewatch",
+      "url": "https://www.databricks.com/product/lakewatch",
+      "kind": "screenshot",
+      "why": "Detection-as-code YAML rule editor with Genie AI assistance showing Delta Sharing security rule with MITRE ATT&CK mapping"
+    },
+    {
+      "id": "p10.2-ai-threat-hunting",
+      "file": "p10.2-ai-threat-hunting.png",
+      "source": "databricks.com/product/lakewatch",
+      "url": "https://www.databricks.com/product/lakewatch",
+      "kind": "screenshot",
+      "why": "AI-driven threat hunting: Genie natural-language interface for querying petabyte-scale security data"
+    },
+    {
+      "id": "p10.2-automated-normalization",
+      "file": "p10.2-automated-normalization.png",
+      "source": "databricks.com/product/lakewatch",
+      "url": "https://www.databricks.com/product/lakewatch",
+      "kind": "visual",
+      "why": "OCSF automated log normalization feature visual showing log ingestion and standardization pipeline"
+    },
+    {
+      "id": "p10.2-petabyte-scale",
+      "file": "p10.2-petabyte-scale.png",
+      "source": "databricks.com/product/lakewatch",
+      "url": "https://www.databricks.com/product/lakewatch",
+      "kind": "visual",
+      "why": "Petabyte-scale retention and search capability showing long-term historical security data analysis"
+    },
+    {
+      "id": "p10.2-soc-operations",
+      "file": "p10.2-soc-operations.png",
+      "source": "databricks.com/blog/databricks-announces-lakewatch-new-agentic-siem",
+      "url": "https://www.databricks.com/blog/databricks-announces-lakewatch-new-agentic-siem",
+      "kind": "screenshot",
+      "why": "Security operations center dashboard showing autonomous agent-assisted alert investigation and triage workflow"
+    }
+  ]
+}

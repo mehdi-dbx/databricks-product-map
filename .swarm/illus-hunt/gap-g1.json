@@ -1,0 +1,146 @@
+{
+ "2.1": [
+  {
+   "id": "p2.1-delta-ecosystem",
+   "file": "p2.1-delta-ecosystem.webp",
+   "source": "delta.io blog - Delta Lake transaction log protocol",
+   "url": "https://delta.io/blog/2023-07-07-delta-lake-transaction-log-protocol/",
+   "kind": "diagram",
+   "why": "Shows Delta Kernels protocol ecosystem with Java, Python, and Rust frameworks supporting open table formats"
+  },
+  {
+   "id": "p2.1-multi-cluster-acid",
+   "file": "p2.1-multi-cluster-acid.webp",
+   "source": "delta.io blog - Multi-cluster writes to Delta Lake Storage in S3",
+   "url": "https://delta.io/blog/2022-05-18-multi-cluster-writes-to-delta-lake-storage-in-s3/",
+   "kind": "diagram",
+   "why": "Demonstrates ACID transaction guarantee for concurrent writes from multiple writers using DynamoDB coordination with S3 storage"
+  },
+  {
+   "id": "p2.1-transaction-log-structure",
+   "file": "p2.1-transaction-log-structure.png",
+   "source": "Databricks blog - Diving Into Delta Lake: Unpacking the Transaction Log",
+   "url": "https://www.databricks.com/blog/2019/08/21/diving-into-delta-lake-unpacking-the-transaction-log.html",
+   "kind": "diagram",
+   "why": "Shows Delta Lake table structure with transaction log (_delta_log), JSON commits, and data files (Parquet)"
+  },
+  {
+   "id": "p2.1-atomic-writes",
+   "file": "p2.1-atomic-writes.png",
+   "source": "Databricks blog - Diving Into Delta Lake: Unpacking the Transaction Log",
+   "url": "https://www.databricks.com/blog/2019/08/21/diving-into-delta-lake-unpacking-the-transaction-log.html",
+   "kind": "diagram",
+   "why": "Details atomic write protocol with partition directories and file organization for ACID compliance"
+  }
+ ],
+ "2.2": [
+  {
+   "id": "p2.2-lakeflow-components",
+   "file": "p2.2-lakeflow-components.png",
+   "source": "Databricks blog - Introducing Databricks Lakeflow",
+   "url": "https://www.databricks.com/blog/introducing-databricks-lakeflow",
+   "kind": "diagram",
+   "why": "Shows three core Lakeflow components: Ingest (Connect managed connectors), Transform (pipelines coming soon), Orchestrate (jobs coming soon), powered by Data Intelligence"
+  },
+  {
+   "id": "p2.2-lakeflow-ui",
+   "file": "p2.2-lakeflow-ui.png",
+   "source": "Databricks blog - Introducing Databricks Lakeflow",
+   "url": "https://www.databricks.com/blog/introducing-databricks-lakeflow",
+   "kind": "screenshot",
+   "why": "Visual UI of Lakeflow pipeline designer showing ingestion pipeline from Salesforce and SQL server with transformation steps"
+  }
+ ],
+ "2.4": [
+  {
+   "id": "p2.4-lakehouse-rt-benchmark",
+   "file": "p2.4-lakehouse-rt-benchmark.png",
+   "source": "Databricks blog - Introducing Lakehouse//RT: Real-Time Performance on a Unified Lakehouse",
+   "url": "https://www.databricks.com/blog/introducing-lakehousert-real-time-performance-unified-lakehouse",
+   "kind": "diagram",
+   "why": "Performance benchmark chart showing Lakehouse//RT (Reyden) vs competitors on hardest analytical queries (TPC-DS), demonstrating 16.8x-25x faster query latency on large datasets"
+  }
+ ],
+ "2.5": [
+  {
+   "id": "p2.5-unity-catalog-ui",
+   "file": "p2.5-unity-catalog-ui.png",
+   "source": "Databricks product page - Unity Catalog",
+   "url": "https://www.databricks.com/product/unity-catalog",
+   "kind": "screenshot",
+   "why": "Shows Unity Catalog workspace interface with data governance sidebar, asset discovery, domains organization, and data classification metrics"
+  },
+  {
+   "id": "p2.5-unity-catalog-ecosystem",
+   "file": "p2.5-unity-catalog-ecosystem.png",
+   "source": "Databricks product page - Unity Catalog",
+   "url": "https://www.databricks.com/product/unity-catalog",
+   "kind": "diagram",
+   "why": "Comprehensive diagram showing Unity Catalog as central hub connecting external clients, data warehouses, databases, and supporting Delta Lake/Iceberg open formats"
+  }
+ ],
+ "4.2": [
+  {
+   "id": "p4.2-fmapi-throughput-latency",
+   "file": "p4.2-fmapi-throughput-latency.png",
+   "source": "Databricks blog - Fast, Secure and Reliable: Enterprise-grade LLM Inference",
+   "url": "https://www.databricks.com/blog/fast-secure-and-reliable-enterprise-grade-llm-inference",
+   "kind": "diagram",
+   "why": "Shows typical throughput-latency curve for Foundation Model APIs with provisioned capacity (11,500 tokens/sec at 1000ms latency)"
+  },
+  {
+   "id": "p4.2-fmapi-inference-optimization",
+   "file": "p4.2-fmapi-inference-optimization.png",
+   "source": "Databricks blog - Fast, Secure and Reliable: Enterprise-grade LLM Inference",
+   "url": "https://www.databricks.com/blog/fast-secure-and-reliable-enterprise-grade-llm-inference",
+   "kind": "diagram",
+   "why": "Technical diagram of paged attention optimization for Foundation Model API inference improving throughput and latency"
+  },
+  {
+   "id": "p4.2-dbrx-model-performance",
+   "file": "p4.2-dbrx-model-performance.png",
+   "source": "Databricks blog - Introducing DBRX: A New State-of-the-Art Open LLM",
+   "url": "https://www.databricks.com/blog/introducing-dbrx-new-state-art-open-llm",
+   "kind": "diagram",
+   "why": "Benchmarks comparing DBRX performance across Language Understanding, Programming, and Math tasks against competing models (Llama-2, Mixtral, GPT models)"
+  }
+ ],
+ "4.3": [
+  {
+   "id": "p4.3-model-serving-foundation-models",
+   "file": "p4.3-model-serving-foundation-models.png",
+   "source": "Databricks product page - Model Serving",
+   "url": "https://www.databricks.com/product/model-serving",
+   "kind": "screenshot",
+   "why": "Shows Model Serving endpoint interface with Foundation Model APIs (Llama 2, MPT, BGE) ready for serving after fine-tuning, with pay-per-token and provisioned capacity options"
+  },
+  {
+   "id": "p4.3-model-serving-ab-testing",
+   "file": "p4.3-model-serving-ab-testing.png",
+   "source": "Databricks blog - Model Serving",
+   "url": "https://www.databricks.com/blog",
+   "kind": "screenshot",
+   "why": "Model Serving deployment UI showing A/B testing configuration with multiple model versions, traffic allocation, and real-time metrics (latency, request rate, CPU usage) for monitoring fine-tuned model performance"
+  }
+ ],
+ "5.1": [
+  {
+   "id": "p5.1-sql-ai-performance",
+   "file": "p5.1-sql-ai-performance.png",
+   "source": "Databricks blog - What's new with Databricks SQL",
+   "url": "https://www.databricks.com/blog/whats-new-with-databricks-sql",
+   "kind": "diagram",
+   "why": "Shows performance improvement over time (2022-2024) for SQL queries demonstrating 73% performance gains from AI Functions optimization"
+  }
+ ],
+ "5.5": [
+  {
+   "id": "p5.5-supervisor-architecture",
+   "file": "p5.5-supervisor-architecture.png",
+   "source": "Databricks blog - Multi-agent Supervisor Architecture: Orchestrating Enterprise AI at Scale",
+   "url": "https://www.databricks.com/blog/multi-agent-supervisor-architecture-orchestrating-enterprise-ai-scale",
+   "kind": "diagram",
+   "why": "Detailed supervisor agent architecture showing users/bot messaging, supervisor orchestrating Function-calling Agent and Genie Agent subagents, with evaluation feedback loop"
+  }
+ ]
+}

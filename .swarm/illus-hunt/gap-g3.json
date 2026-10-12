@@ -1,0 +1,32 @@
+{
+  "2.3": [
+    {
+      "id": "p2.3-lakebase-search-hybrid",
+      "file": "p2.3-lakebase-search-hybrid.png",
+      "source": "docs.databricks.com/oltp/projects/lakebase-search",
+      "url": "https://docs.databricks.com/aws/en/oltp/projects/lakebase-search",
+      "kind": "diagram",
+      "why": "Lakebase Search architecture: hybrid keyword (BM25) + vector (ANN) search with concrete example (fast sports car query) showing semantic matching and synonym handling"
+    }
+  ],
+  "4.2": [
+    {
+      "id": "p4.2-fmapi-unity-gateway",
+      "file": "p4.2-fmapi-unity-gateway.png",
+      "source": "Agent Bricks \u2014 L300 Pitch Slides, slide 17",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_3937",
+      "kind": "screenshot",
+      "why": "Foundation Model APIs via Unity Gateway: one API across Claude/GPT-5.5/Gemini/Llama, provisioned throughput, reliable low-latency, secure, governed with cost visibility"
+    }
+  ],
+  "5.1": [
+    {
+      "id": "p5.1-ai-functions-scale",
+      "file": "p5.1-ai-functions-scale.png",
+      "source": "Agentbricks Roadshow [go/airoadshow], slide 70",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_5399",
+      "kind": "screenshot",
+      "why": "AI Functions SQL pattern: SELECT ai_extract(...) FROM invoices, scales automatically on serverless, secure with unified model support (Gemini/OpenAI/Anthropic/Meta)"
+    }
+  ]
+}

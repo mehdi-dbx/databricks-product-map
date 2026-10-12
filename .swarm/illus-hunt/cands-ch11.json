@@ -1,0 +1,74 @@
+{
+  "11.1": [
+    {
+      "id": "p11.1-mlflow-overview",
+      "file": "p11.1-mlflow-overview.png",
+      "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 5",
+      "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_0",
+      "kind": "visual",
+      "why": "Shows MLflow pre-2024 vs 2024+: evolution of model registry from classic models tool to unified GenAI platform; demonstrates MLflow Registry adoption (800+ contributors, 5000+ orgs, 30M+ monthly downloads); includes experiment tracking dashboard visuals"
+    }
+  ],
+  "11.2": [
+    {
+      "id": "p11.2-model-serving-platform",
+      "file": "p11.2-model-serving-platform.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 19",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4758",
+      "kind": "diagram",
+      "why": "Illustrates Model Serving as unified platform serving custom models, 1st party models, and coding agents behind one endpoint"
+    },
+    {
+      "id": "p11.2-unity-gateway-governance",
+      "file": "p11.2-unity-gateway-governance.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 20",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4791",
+      "kind": "diagram",
+      "why": "Shows Unity Gateway architecture for controlling model serving traffic: logging, compliance guardrails, cost controls, governance through Unity Catalog"
+    }
+  ],
+  "11.3": [
+    {
+      "id": "p11.3-monitoring-dashboard",
+      "file": "p11.3-monitoring-dashboard.png",
+      "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 35",
+      "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_2401",
+      "kind": "screenshot",
+      "why": "Shows Lakehouse Monitoring (beta) UI with monitoring dashboard showing time-series metrics dashboard for inference tables and models"
+    },
+    {
+      "id": "p11.3-monitoring-setup-ui",
+      "file": "p11.3-monitoring-setup-ui.png",
+      "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 36",
+      "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_2867",
+      "kind": "screenshot",
+      "why": "Illustrates monitoring configuration UI: pick built-in AI judges, reuse scorers between offline and production, sampling traces"
+    },
+    {
+      "id": "p11.3-monitoring-governance",
+      "file": "p11.3-monitoring-governance.png",
+      "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 38",
+      "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_2880",
+      "kind": "screenshot",
+      "why": "Shows how production traces are governed with Databricks Unity Catalog for security and analysis via SQL/dashboards"
+    },
+    {
+      "id": "p11.3-monitoring-architecture",
+      "file": "p11.3-monitoring-architecture.png",
+      "source": "Data Science With Databricks, slide 84",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_13426",
+      "kind": "diagram",
+      "why": "Architecture diagram showing Lakehouse Monitoring covering tables and models with profiling tables, data drift tables, and inference tables; shows monitoring definitions and model pipeline"
+    }
+  ],
+  "11.4": [
+    {
+      "id": "p11.4-deployment-jobs-mlops",
+      "file": "p11.4-deployment-jobs-mlops.png",
+      "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 50",
+      "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_5016",
+      "kind": "screenshot",
+      "why": "Shows deployment jobs template and model registry integration: automate evaluation, approval, and deployment when new model version is created; integrates with Unity Catalog and Lakeflow Jobs"
+    }
+  ]
+}

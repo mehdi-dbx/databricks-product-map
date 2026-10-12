@@ -1,0 +1,116 @@
+{
+ "2.1": [
+  {
+   "id": "p2.1-lakehouse-diagram",
+   "file": "p2.1-lakehouse-diagram.png",
+   "source": "docs.databricks.com/lakehouse",
+   "url": "https://docs.databricks.com/aws/en/lakehouse",
+   "kind": "diagram",
+   "why": "Shows Delta Lake as unified storage layer with transactions, transformations, and multiple downstream uses (Data Marts, Features, Apps)"
+  }
+ ],
+ "2.2": [
+  {
+   "id": "p2.2-document-intelligence-pipeline",
+   "file": "p2.2-document-intelligence-pipeline.png",
+   "source": "Agentbricks Roadshow, slide 81",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit",
+   "kind": "diagram",
+   "why": "Shows Lakeflow orchestration pattern: Ingest documents from multiple sources, Transform with AI Functions, Orchestrate with Lakeflow"
+  },
+  {
+   "id": "p2.2-lakeflow-connect-architecture",
+   "file": "p2.2-lakeflow-connect-architecture.png",
+   "source": "Lakeflow Connect Tech Deck, slide 26",
+   "url": "https://docs.google.com/presentation/d/1xiUXDS6x6aHv547-daQKBhvoOidHy_eVxdC8qdiHQxs/edit",
+   "kind": "diagram",
+   "why": "Shows Lakeflow Connect managed ingestion architecture: SaaS services → Managed Ingestion (SDP) → Streaming Delta Tables"
+  }
+ ],
+ "2.3": [
+  {
+   "id": "p2.3-lakebase-deep-dive",
+   "file": "p2.3-lakebase-deep-dive.png",
+   "source": "Databricks Lakebase, slide 30",
+   "url": "https://docs.google.com/presentation/d/1Qp70jDM4mn1zVeOwSGIKg9czJzZzSSJLIK8pZB11-BA/edit",
+   "kind": "diagram",
+   "why": "Comprehensive Lakebase architecture showing users/apps/IDEs, control plane (Databricks UI, REST API, management), serverless compute with workspaces and storage"
+  },
+  {
+   "id": "p2.3-lakebase-search",
+   "file": "p2.3-lakebase-search.png",
+   "source": "docs.databricks.com/oltp/projects/lakebase-search",
+   "url": "https://docs.databricks.com/aws/en/oltp/projects/lakebase-search",
+   "kind": "diagram",
+   "why": "Shows Lakebase Search hybrid search capability: keyword search (BM25) and vector search (ANN) combined for semantic matching"
+  },
+  {
+   "id": "p2.3-lakebase-postgres",
+   "file": "p2.3-lakebase-postgres.png",
+   "source": "Databricks Lakebase, slide 20",
+   "url": "https://docs.google.com/presentation/d/1Qp70jDM4mn1zVeOwSGIKg9czJzZzSSJLIK8pZB11-BA/edit",
+   "kind": "diagram",
+   "why": "Shows Lakebase authentication options: PostgreSQL native (workspace credentials) or Databricks managed (OAuth)"
+  },
+  {
+   "id": "p2.3-lakebase-transactions",
+   "file": "p2.3-lakebase-transactions.png",
+   "source": "Databricks Lakebase, slide 21",
+   "url": "https://docs.google.com/presentation/d/1Qp70jDM4mn1zVeOwSGIKg9czJzZzSSJLIK8pZB11-BA/edit",
+   "kind": "diagram",
+   "why": "Shows Lakebase authorization with PostgreSQL native permissions and Unity Catalog governance for unified access control"
+  }
+ ],
+ "2.4": [
+  {
+   "id": "p2.4-ltap-governance",
+   "file": "p2.4-ltap-governance.png",
+   "source": "docs.databricks.com/oltp/projects/ltap-overview",
+   "url": "https://docs.databricks.com/aws/en/oltp/projects/ltap-overview",
+   "kind": "diagram",
+   "why": "Shows LTAP concept: Lakebase (OLTP) and Lakehouse (OLAP) unified under Unity Catalog with single logical copy in storage"
+  },
+  {
+   "id": "p2.4-ltap-data-formats",
+   "file": "p2.4-ltap-data-formats.png",
+   "source": "docs.databricks.com/oltp/projects/ltap-overview",
+   "url": "https://docs.databricks.com/aws/en/oltp/projects/ltap-overview",
+   "kind": "diagram",
+   "why": "Shows LTAP technical architecture: Postgres compute with Safekeepers and Pageservers materializing changes to Row and Open Columnar formats"
+  },
+  {
+   "id": "p2.4-ltap-data-movement",
+   "file": "p2.4-ltap-data-movement.png",
+   "source": "docs.databricks.com/oltp/projects/ltap-overview",
+   "url": "https://docs.databricks.com/aws/en/oltp/projects/ltap-overview",
+   "kind": "diagram",
+   "why": "Shows LTAP data flow: Lakehouse syncs to Lakebase, Application writes/reads via Lakebase, all unified in storage and governed by Unity Catalog"
+  }
+ ],
+ "2.5": [
+  {
+   "id": "p2.5-monitoring-quality",
+   "file": "p2.5-monitoring-quality.png",
+   "source": "Data Science With Databricks, slide 82",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit",
+   "kind": "diagram",
+   "why": "Shows data quality monitoring system: Monitor table for profiling and drift detection, Dashboard for alerts/webhooks, distributional stats and anomaly detection"
+  },
+  {
+   "id": "p2.5-data-quality-dashboard",
+   "file": "p2.5-data-quality-dashboard.png",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "url": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "kind": "screenshot",
+   "why": "UI showing data quality monitoring dashboard with 99.21% healthy tables status and per-catalog health metrics"
+  },
+  {
+   "id": "p2.5-data-quality-monitoring-pipeline",
+   "file": "p2.5-data-quality-monitoring-pipeline.png",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/data-profiling",
+   "url": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/",
+   "kind": "diagram",
+   "why": "Shows data quality in ML context: Input tables feed Feature table, monitored for statistical properties, Inference table tracks predictions and drift"
+  }
+ ]
+}

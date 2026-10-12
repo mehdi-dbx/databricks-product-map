@@ -1,0 +1,94 @@
+{
+  "10.1": [
+    {
+      "id": "p10.1-customer-360-profiles",
+      "file": "p10.1-customer-360-profiles.jpg",
+      "source": "databricks.com/product/customerlake-cdp",
+      "url": "https://www.databricks.com/product/customerlake-cdp",
+      "kind": "screenshot",
+      "why": "Shows 8 unified customer profile cards with attributes like Unified ID, Lifetime Spend, Last Purchase, App Sessions, Loyalty Status, demonstrating the 360-degree customer profiles that join transactions, behavior, and engagement data."
+    },
+    {
+      "id": "p10.1-customer-360-diagram",
+      "file": "p10.1-customer-360-diagram.png",
+      "source": "databricks.com/product/customerlake-cdp",
+      "url": "https://www.databricks.com/product/customerlake-cdp",
+      "kind": "diagram",
+      "why": "Hexagonal capability diagram showing six dimensions of CustomerLake: Engagement, Purchases, Analytics, Social, Service and support, and Predictive metrics, illustrating the breadth of customer data and capabilities."
+    },
+    {
+      "id": "p10.1-audience-segmentation",
+      "file": "p10.1-audience-segmentation.png",
+      "source": "databricks.com/product/customerlake-cdp",
+      "url": "https://www.databricks.com/product/customerlake-cdp",
+      "kind": "screenshot",
+      "why": "VIP Loyalty Shoppers audience segmentation interface with filters and 248k matching profiles showing $1,085 average lifetime value, demonstrating how campaign agents create and activate audiences."
+    },
+    {
+      "id": "p10.1-identity-resolution",
+      "file": "p10.1-identity-resolution.png",
+      "source": "databricks.com/product/customerlake-cdp",
+      "url": "https://www.databricks.com/product/customerlake-cdp",
+      "kind": "diagram",
+      "why": "Data flow diagram showing transactions, support tickets, and app sessions flowing through clean tables, then through customer_identity_graph to unified_profiles, exemplifying AI-assisted identity resolution joining multiple data sources."
+    },
+    {
+      "id": "p10.1-campaign-automation",
+      "file": "p10.1-campaign-automation.png",
+      "source": "databricks.com/product/customerlake-cdp",
+      "url": "https://www.databricks.com/product/customerlake-cdp",
+      "kind": "screenshot",
+      "why": "CustomerLake campaign management showing 'Post-Sale Upsell' campaign (Live) with 186k evaluated profiles, 167.4k total activations, 3.2k conversions, and activation trends, showing real-time profile API feeding personalization and activation."
+    }
+  ],
+  "10.2": [
+    {
+      "id": "p10.2-lakewatch-alerts-monitoring",
+      "file": "p10.2-lakewatch-alerts-monitoring.png",
+      "source": "Agentbricks Roadshow [go/airoadshow] slide 117",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4785",
+      "kind": "screenshot",
+      "why": "Shows Agent Tracing with Lakewatch integration for alerts and monitoring, displaying security incidents table with severity, incident IDs, and timestamps, demonstrating end-to-end visibility into security alerts."
+    },
+    {
+      "id": "p10.2-detection-as-code",
+      "file": "p10.2-detection-as-code.png",
+      "source": "databricks.com/product/lakewatch",
+      "url": "https://www.databricks.com/product/lakewatch",
+      "kind": "screenshot",
+      "why": "Detection rule creation interface with wizard steps and SQL code for 'Repeated Failed Logins Followed by Success' rule, with Genie AI agent suggesting rule logic, showing detection rules versioned and tested like code with agent assistance."
+    },
+    {
+      "id": "p10.2-ai-threat-hunting",
+      "file": "p10.2-ai-threat-hunting.png",
+      "source": "databricks.com/product/lakewatch",
+      "url": "https://www.databricks.com/product/lakewatch",
+      "kind": "screenshot",
+      "why": "Lakewatch Datasources dashboard showing multiple security, IT, and business log sources (CloudWatch, CloudTrail, Slack audit logs, Cisco ASA, etc.) with event and alert counts and activity timelines at petabyte scale."
+    },
+    {
+      "id": "p10.2-automated-normalization",
+      "file": "p10.2-automated-normalization.png",
+      "source": "databricks.com/product/lakewatch",
+      "url": "https://www.databricks.com/product/lakewatch",
+      "kind": "screenshot",
+      "why": "CloudTrail log ingestion and normalization pipeline showing Bronze (raw), Silver (normalized with 37 fields added), and Gold (enriched with alerts) layers, demonstrating log processing at object-storage cost."
+    },
+    {
+      "id": "p10.2-petabyte-scale",
+      "file": "p10.2-petabyte-scale.png",
+      "source": "databricks.com/product/lakewatch",
+      "url": "https://www.databricks.com/product/lakewatch",
+      "kind": "screenshot",
+      "why": "Lakewatch Query interface with SQL analyzing login failures (400k rows, 538s runtime) and autonomous Genie agent investigating threats, identifying suspicious behavior patterns and risk-ranking users."
+    },
+    {
+      "id": "p10.2-soc-operations",
+      "file": "p10.2-soc-operations.png",
+      "source": "databricks.com/blog/databricks-announces-lakewatch-new-agentic-siem",
+      "url": "https://www.databricks.com/blog/databricks-announces-lakewatch-new-agentic-siem",
+      "kind": "diagram",
+      "why": "Strategic architecture showing data sources (Email, Network/Firewall, Identity, SaaS, Cloud, DNS, EDR/XDR, Multi-modal) flowing through threat detection to Open Agents (Detection, Triage, Analytics, Responsive agents) with open data formats, illustrating agents as defenders against AI-powered attacks."
+    }
+  ]
+}

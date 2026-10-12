@@ -1,0 +1,180 @@
+{
+  "2.1": [
+    {
+      "id": "p2.1-delta-architecture",
+      "file": "p2.1-delta-architecture.png",
+      "source": "Data Science With Databricks, slide 8",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_1033",
+      "kind": "diagram",
+      "why": "Data Intelligence Platform architecture showing Delta Lake as storage foundation with transactions, batch and streaming support"
+    },
+    {
+      "id": "p2.1-lakehouse-diagram",
+      "file": "p2.1-lakehouse-diagram.png",
+      "source": "docs.databricks.com/lakehouse",
+      "url": "https://docs.databricks.com/aws/en/lakehouse",
+      "kind": "diagram",
+      "why": "Lakehouse architecture: data sources → object storage → Delta Tables through transform stages, with Unity Catalog governance"
+    },
+    {
+      "id": "p2.1-lakeflow-database-ingestion",
+      "file": "p2.1-lakeflow-database-ingestion.png",
+      "source": "Copy of Lakeflow Connect Tech Deck - L200, slide 27",
+      "url": "https://docs.google.com/presentation/d/1xiUXDS6x6aHv547-daQKBhvoOidHy_eVxdC8qdiHQxs/edit#slide=id.g316fd76f33f_0_1957",
+      "kind": "diagram",
+      "why": "Database ingestion flow via Lakeflow Connect: credentials → Ingestion Gateway → DLT → Staging (UC) → Ingestion Pipeline → Streaming Delta Tables"
+    },
+    {
+      "id": "p2.1-data-ingestion-usecases",
+      "file": "p2.1-data-ingestion-usecases.png",
+      "source": "Lakeflow Connect Tech Deck, slide 3",
+      "url": "https://docs.google.com/presentation/d/1xiUXDS6x6aHv547-daQKBhvoOidHy_eVxdC8qdiHQxs/edit",
+      "kind": "visual",
+      "why": "Real-world use cases showing data ingestion enabling customer experiences (Porsche, Grammarly, YIPIT) and analytics on Delta tables"
+    }
+  ],
+  "2.2": [
+    {
+      "id": "p2.2-document-intelligence-pipeline",
+      "file": "p2.2-document-intelligence-pipeline.png",
+      "source": "Agentbricks Roadshow, slide 81",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4250",
+      "kind": "diagram",
+      "why": "Complete Lakeflow pipeline: Ingest (connectors) → Transform (AI Functions) → Orchestrate (Lakeflow) - shows declarative transformation orchestration"
+    },
+    {
+      "id": "p2.2-data-ingestion-architecture",
+      "file": "p2.2-data-ingestion-architecture.png",
+      "source": "Lakeflow Connect Tech Deck, slide 5",
+      "url": "https://docs.google.com/presentation/d/1xiUXDS6x6aHv547-daQKBhvoOidHy_eVxdC8qdiHQxs/edit",
+      "kind": "diagram",
+      "why": "Lakeflow Connect managed connectors architecture supporting multiple sources: SaaS, message bus, on-prem databases, cloud storage"
+    },
+    {
+      "id": "p2.2-ai-functions-transformation",
+      "file": "p2.2-ai-functions-transformation.png",
+      "source": "Agentbricks Roadshow, slide 70",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4130",
+      "kind": "screenshot",
+      "why": "Declarative SQL transformation using ai_extract() showing how Lakeflow handles AI-powered data enrichment at scale"
+    },
+    {
+      "id": "p2.2-lakeflow-connect-architecture",
+      "file": "p2.2-lakeflow-connect-architecture.png",
+      "source": "Copy of Lakeflow Connect Tech Deck - L200, slide 26",
+      "url": "https://docs.google.com/presentation/d/1xiUXDS6x6aHv547-daQKBhvoOidHy_eVxdC8qdiHQxs/edit#slide=id.g316fd76f33f_0_1928",
+      "kind": "diagram",
+      "why": "Lakeflow Connect infrastructure showing credential management, state and staging via Unity Catalog, and serverless SDP ingestion pipeline"
+    }
+  ],
+  "2.3": [
+    {
+      "id": "p2.3-lakebase-deep-dive",
+      "file": "p2.3-lakebase-deep-dive.png",
+      "source": "Databricks Lakebase, slide 30",
+      "url": "https://docs.google.com/presentation/d/1Qp70jDM4mn1zVeOwSGIKg9czJzZzSSJLIK8pZB11-BA/edit#slide=id.g36e77e8f017_5_1877",
+      "kind": "diagram",
+      "why": "Comprehensive Lakebase architecture: control plane (UI, REST API, management), serverless compute plane (multi-tenant workspaces), with Ingress Security and storage layers"
+    },
+    {
+      "id": "p2.3-lakebase-full-functional",
+      "file": "p2.3-lakebase-full-functional.png",
+      "source": "docs.databricks.com/oltp/projects",
+      "url": "https://docs.databricks.com/aws/en/oltp/projects",
+      "kind": "diagram",
+      "why": "Lakebase functional model: analytical data from Databricks lakehouse syncs to Lakebase CDF; serves real-time feature serving, agent state, and transactional applications"
+    },
+    {
+      "id": "p2.3-lakebase-search",
+      "file": "p2.3-lakebase-search.png",
+      "source": "docs.databricks.com/oltp/projects/lakebase-search",
+      "url": "https://docs.databricks.com/aws/en/oltp/projects/lakebase-search",
+      "kind": "diagram",
+      "why": "Lakebase Search hybrid capability: keyword search (BM25) and vector search (ANN) in same Postgres database; no separate vector store required"
+    },
+    {
+      "id": "p2.3-lakebase-postgres",
+      "file": "p2.3-lakebase-postgres.png",
+      "source": "Databricks Lakebase, slide 20",
+      "url": "https://docs.google.com/presentation/d/1Qp70jDM4mn1zVeOwSGIKg9czJzZzSSJLIK8pZB11-BA/edit#slide=id.g36e77e8f017_1_4894",
+      "kind": "visual",
+      "why": "Postgres OLTP engine capabilities: low-latency point read/writes (1000s qps), full SQL language with transactions, indexes, views, triggers, stored procedures"
+    },
+    {
+      "id": "p2.3-lakebase-transactions",
+      "file": "p2.3-lakebase-transactions.png",
+      "source": "Databricks Lakebase, slide 21",
+      "url": "https://docs.google.com/presentation/d/1Qp70jDM4mn1zVeOwSGIKg9czJzZzSSJLIK8pZB11-BA/edit#slide=id.g36e77e8f017_1_4914",
+      "kind": "visual",
+      "why": "Transactional features: PostgreSQL compatibility (ODBC/JDBC/REST), extensions (PostGIS, pgvector), rich ecosystem (drivers, tools, pgAdmin, DBeaver, Postman)"
+    }
+  ],
+  "2.4": [
+    {
+      "id": "p2.4-ltap-governance",
+      "file": "p2.4-ltap-governance.png",
+      "source": "docs.databricks.com/oltp/projects/ltap-overview",
+      "url": "https://docs.databricks.com/aws/en/oltp/projects/ltap-overview",
+      "kind": "diagram",
+      "why": "LTAP governance architecture: Lakebase OLTP (serverless Postgres for fast point reads/writes) and Lakehouse OLAP (columnar scans) unified under Unity Catalog"
+    },
+    {
+      "id": "p2.4-ltap-data-formats",
+      "file": "p2.4-ltap-data-formats.png",
+      "source": "docs.databricks.com/oltp/projects/ltap-overview",
+      "url": "https://docs.databricks.com/aws/en/oltp/projects/ltap-overview",
+      "kind": "diagram",
+      "why": "LTAP data format separation: Postgres data pages (row format) serve OLTP, automatically replicated to Parquet in Delta & Iceberg (columnar format) for OLAP - one logical copy"
+    },
+    {
+      "id": "p2.4-ltap-data-movement",
+      "file": "p2.4-ltap-data-movement.png",
+      "source": "docs.databricks.com/oltp/projects/ltap-overview",
+      "url": "https://docs.databricks.com/aws/en/oltp/projects/ltap-overview",
+      "kind": "diagram",
+      "why": "LTAP technical flow: Postgres compute (stateless OLTP) with Safekeepers (WAL quorum), Pageservers (async materialize), cloud storage (dual format row/columnar)"
+    }
+  ],
+  "2.5": [
+    {
+      "id": "p2.5-monitoring-quality",
+      "file": "p2.5-monitoring-quality.png",
+      "source": "Data Science With Databricks, slide 82",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_9161",
+      "kind": "diagram",
+      "why": "Data quality monitoring: profiling tables, drift detection (anomaly detection), quality dashboards with alerts, custom metrics, DBSQL, webhooks"
+    },
+    {
+      "id": "p2.5-data-quality-dashboard",
+      "file": "p2.5-data-quality-dashboard.png",
+      "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+      "url": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+      "kind": "screenshot",
+      "why": "Data Quality Monitoring dashboard: metastore-level overview showing 99.21% healthy tables with health bars and monitored catalogs with health metrics"
+    },
+    {
+      "id": "p2.5-gateway-governance",
+      "file": "p2.5-gateway-governance.png",
+      "source": "Agent Bricks L300 Pitch Slides, slide 50",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_5086",
+      "kind": "diagram",
+      "why": "Unity Gateway enforces centralized governance: ALLOW/ASK/DENY decisions with built-in policies (PII blocking, unsafe content, jailbreak detection) and custom rules"
+    },
+    {
+      "id": "p2.5-decentralized-governance",
+      "file": "p2.5-decentralized-governance.png",
+      "source": "Data & AI Governance - Full deck, slide 40",
+      "url": "https://docs.google.com/presentation/d/14qbxrxi3Xi0HL7Tzzkp6PtNuQ3jFzRiXAm57XI7erx4/edit#slide=id.g366e131e145_3_0",
+      "kind": "diagram",
+      "why": "Decentralized governance model: each Domain/BU has independent boundary with Data, Data Product, Unity Catalog, and Insights - governance delegated to BU level"
+    },
+    {
+      "id": "p2.5-unity-catalog-hierarchy",
+      "file": "p2.5-unity-catalog-hierarchy.png",
+      "source": "docs.databricks.com/data-governance/unity-catalog",
+      "url": "https://docs.databricks.com/aws/en/data-governance/unity-catalog",
+      "kind": "diagram",
+      "why": "Unity Catalog object hierarchy showing metastore, catalogs, schemas, tables/views - single point for permissions, lineage, audit, and classification"
+    }
+  ]
+}

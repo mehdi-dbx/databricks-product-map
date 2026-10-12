@@ -13,3 +13,7 @@ venv/
 
 # text extracted from internal decks ("for internal field use only")
 .swarm/deck-hunt/*.txt
+
+# text extracted from internal decks for the illustration hunt
+.swarm/illus-hunt/deck-index.jsonl
+.swarm/illus-hunt/dl-*/

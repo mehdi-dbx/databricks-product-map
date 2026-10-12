@@ -1,0 +1,130 @@
+{
+  "4.1": [
+    {
+      "id": "p4.1-unified-serving",
+      "file": "p4.1-unified-serving.png",
+      "source": "Data Science With Databricks, slide 73",
+      "url": "https://docs.databricks.com/",
+      "kind": "diagram",
+      "why": "Comprehensive overview: unified management of custom models, foundation models, and external models with descriptions of each category"
+    },
+    {
+      "id": "p4.1-provisioned-pt",
+      "file": "p4.1-provisioned-pt.png",
+      "source": "Agentbricks Roadshow, slide 44",
+      "url": "https://docs.databricks.com/",
+      "kind": "diagram",
+      "why": "Explains provisioned throughput endpoint pricing model (dedicated capacity, guaranteed throughput, DBU/hour billing) with UI example"
+    },
+    {
+      "id": "p4.1-ab-testing",
+      "file": "p4.1-ab-testing.png",
+      "source": "Data Science With Databricks, slide 72",
+      "url": "https://docs.databricks.com/",
+      "kind": "screenshot",
+      "why": "Shows online evaluation capabilities: A/B testing and canary deployments by serving multiple models to one endpoint"
+    },
+    {
+      "id": "p4.1-serving-production",
+      "file": "p4.1-serving-production.png",
+      "source": "Data Science With Databricks, slide 70",
+      "url": "https://docs.databricks.com/",
+      "kind": "screenshot",
+      "why": "Demonstrates production deployment: serverless solution with API integration, metrics monitoring, and latency/request rate graphs"
+    },
+    {
+      "id": "p4.1-serving-overview",
+      "file": "p4.1-serving-overview.png",
+      "source": "Agent Bricks L300 Pitch Slides, slide 19",
+      "url": "https://docs.databricks.com/",
+      "kind": "diagram",
+      "why": "Visual summary of Model Serving breadth: custom models (mlflow), 1st party models (Anthropic, OpenAI, Llama), and coding agents"
+    }
+  ],
+  "4.2": [
+    {
+      "id": "p4.2-fmapi-serving",
+      "file": "p4.2-fmapi-serving.png",
+      "source": "Agentbricks Roadshow, slide 32",
+      "url": "https://docs.databricks.com/",
+      "kind": "diagram",
+      "why": "Architecture of Foundation Model APIs: shows customer tenant with query/management routes, access control, and Databricks provider infrastructure with Foundation Model APIs (Claude, Gemini, OpenAI endpoints)"
+    },
+    {
+      "id": "p4.2-external-models",
+      "file": "p4.2-external-models.png",
+      "source": "GenAI on Databricks L200 Tech Deck, slide 25",
+      "url": "https://docs.databricks.com/",
+      "kind": "diagram",
+      "why": "Shows Model Serving gateway with three branches: Agent/Chain, Foundation Models, and External Models, with provider logos"
+    },
+    {
+      "id": "p4.2-gateway-models",
+      "file": "p4.2-gateway-models.png",
+      "source": "Product Deck: AI Gateway, slide 23",
+      "url": "https://docs.databricks.com/",
+      "kind": "diagram",
+      "why": "Future Mosaic AI Gateway vision: AI Gateway capabilities (usage tracking, guardrails, A/B testing) layered above Model Serving with three model categories"
+    }
+  ],
+  "4.3": [
+    {
+      "id": "p4.3-fine-tuning",
+      "file": "p4.3-fine-tuning.png",
+      "source": "Data Science With Databricks, slide 51",
+      "url": "https://docs.databricks.com/",
+      "kind": "diagram",
+      "why": "Overview of fine-tuning: serverless, auto-provisioned GPUs, easy data selection from Unity Catalog, model control and IP ownership (Public Preview Q2)"
+    },
+    {
+      "id": "p4.3-ai-runtime",
+      "file": "p4.3-ai-runtime.png",
+      "source": "Agentbricks Roadshow, slide 142",
+      "url": "https://docs.databricks.com/",
+      "kind": "diagram",
+      "why": "AI Runtime deep learning stack: serverless GPU compute optimized for LLMs, Lakehouse-native enterprise-ready infrastructure"
+    },
+    {
+      "id": "p4.3-model-training-ui",
+      "file": "p4.3-model-training-ui.png",
+      "source": "docs.databricks.com/large-language-models/foundation-model-training/ui",
+      "url": "https://docs.databricks.com/large-language-models/foundation-model-training/ui",
+      "kind": "screenshot",
+      "why": "Foundation model training UI showing data preparation, model selection, training configuration, and model registration workflow"
+    }
+  ],
+  "4.4": [
+    {
+      "id": "p4.4-gateway-governance",
+      "file": "p4.4-gateway-governance.png",
+      "source": "Product Deck: AI Gateway, slide 20",
+      "url": "https://docs.databricks.com/",
+      "kind": "diagram",
+      "why": "Shows External Models within the unified Model Serving platform with AI Gateway providing governance, logging, cost controls, and traffic management across model types"
+    },
+    {
+      "id": "p4.4-unified-governance",
+      "file": "p4.4-unified-governance.png",
+      "source": "Agentbricks Roadshow, slide 124",
+      "url": "https://docs.databricks.com/",
+      "kind": "diagram",
+      "why": "Unified data and AI governance: shows how Unity Catalog and Unity AI Gateway work together to govern models including external agents, with central credential/policy management"
+    },
+    {
+      "id": "p4.4-external-guardrails",
+      "file": "p4.4-external-guardrails.png",
+      "source": "Agentbricks Roadshow, slide 114",
+      "url": "https://docs.databricks.com/",
+      "kind": "visual",
+      "why": "Integration with open ecosystem: shows contextual policies integrated through partner guardrails (security/compliance providers) for external models and agents"
+    },
+    {
+      "id": "p4.4-external-provider-setup",
+      "file": "p4.4-external-provider-setup.png",
+      "source": "docs.databricks.com/ai-gateway/create-model-provider-services",
+      "url": "https://docs.databricks.com/ai-gateway/create-model-provider-services",
+      "kind": "screenshot",
+      "why": "UI for registering external providers: shows configuration options including forward headers, query parameters, URL proxying, and price multiplier for managing external model provider credentials and routing"
+    }
+  ]
+}

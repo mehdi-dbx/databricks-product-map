@@ -1,0 +1,180 @@
+{
+  "5.1": [
+    {
+      "id": "p5.1-document-intelligence-workflow",
+      "file": "p5.1-document-intelligence-workflow.png",
+      "source": "Agentbricks Roadshow [go/airoadshow], slide 81",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g2ac45dc5c8c_0_12345",
+      "kind": "diagram",
+      "why": "Batch AI workflow: ingest documents, transform with AI Functions (SQL), orchestrate with Lakeflow. Core 5.1 concept."
+    },
+    {
+      "id": "p5-agent-use-case-guide",
+      "file": "p5-agent-use-case-guide.png",
+      "source": "Agentbricks Roadshow [go/airoadshow], slide 6",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g2ac45dc5c8c_0_6",
+      "kind": "diagram",
+      "why": "Decision tree showing AI Functions as entry point for automated, system-to-system use cases (vs interactive)."
+    },
+    {
+      "id": "p5.1-ai-functions-governance",
+      "file": "p5.1-ai-functions-governance.png",
+      "source": "Agentbricks Roadshow [go/airoadshow], slide 97",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4448",
+      "kind": "diagram",
+      "why": "New AI Functions (ai_prep_search, Vector Search in SQL, ai_search) with governance and usage tracking. Shows 5.1 capabilities."
+    },
+    {
+      "id": "p5.1-agents-architecture",
+      "file": "p5.1-agents-architecture.png",
+      "source": "Mosaic AI - System Architecture 2026-02-25, slide 64",
+      "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_9018",
+      "kind": "diagram",
+      "why": "End-to-end intelligent agents architecture showing batch inference via SQL+ai_query and production model serving. 5.1 batch processing."
+    }
+  ],
+  "5.2": [
+    {
+      "id": "p5.2-p5.3-playground-tools",
+      "file": "p5.2-p5.3-playground-tools.png",
+      "source": "Agentbricks Roadshow [go/airoadshow], slide 26",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g2ac45dc5c8c_0_26",
+      "kind": "screenshot",
+      "why": "Databricks Playground with Vector Search and MCP tools added. Shows practical retrieval setup for Q&A agents."
+    },
+    {
+      "id": "p5.2-p5.5-genie-vs-supervisor",
+      "file": "p5.2-p5.5-genie-vs-supervisor.png",
+      "source": "Agentbricks Roadshow [go/airoadshow], slide 5",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_3630",
+      "kind": "diagram",
+      "why": "Genie One (finished Q&A app for business users) vs Supervisor Agent. Genie One exemplifies 5.2 Knowledge Assistant concept."
+    },
+    {
+      "id": "p5.2-ai-search",
+      "file": "p5.2-ai-search.png",
+      "source": "Agentbricks Roadshow [go/airoadshow], slide 170",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_5565",
+      "kind": "diagram",
+      "why": "Vector Search renamed to AI Search: semantic, full-text, hybrid search, rerankersfor retrieval. Core 5.2 technology."
+    },
+    {
+      "id": "p5-agent-loop-architecture",
+      "file": "p5-agent-loop-architecture.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 8",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4117",
+      "kind": "diagram",
+      "why": "Core Agent Loop showing context (retrieval) as central to answering questions with external knowledge. Retrieval core."
+    }
+  ],
+  "5.3": [
+    {
+      "id": "p5.3-mcp-unity-gateway",
+      "file": "p5.3-mcp-unity-gateway.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 34",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4971",
+      "kind": "screenshot",
+      "why": "Unity Gateway UI with managed MCP servers (Genie One, AI Search, UC Functions). Shows tool governance and connectors."
+    },
+    {
+      "id": "p5.3-mcp-how-it-works",
+      "file": "p5.3-mcp-how-it-works.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 35",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4979",
+      "kind": "diagram",
+      "why": "MCP architecture: managed URLs, self-describing tools, endpoint pattern, Unity Gateway policy enforcement. Technical 5.3."
+    },
+    {
+      "id": "p5.3-mcp-servers",
+      "file": "p5.3-mcp-unity-gateway.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 34",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4971",
+      "kind": "screenshot",
+      "why": "Managed MCP servers list shows Genie, AI Search, UC Functions, plus connectors (Slack, GitHub, Atlassian, etc.). Tools inventory."
+    },
+    {
+      "id": "p5.3-tools-catalog",
+      "file": "p5.3-mcp-how-it-works.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 35",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4979",
+      "kind": "diagram",
+      "why": "Shows how tools are registered as Unity Catalog objects and governed centrally. MCP + Unity integration."
+    }
+  ],
+  "5.4": [
+    {
+      "id": "p5.4-agent-bricks-framework",
+      "file": "p5.4-agent-bricks-framework.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 13",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4552",
+      "kind": "diagram",
+      "why": "Comprehensive Agent Bricks framework: Framework (LangGraph/LangChain), Model (Unity Gateway), Compute, Context (Memory, UC), Observability."
+    },
+    {
+      "id": "p5.4-agent-runtime-sandbox",
+      "file": "p5.4-agent-runtime-sandbox.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 14",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4637",
+      "kind": "diagram",
+      "why": "Agent Runtime with Agent Server, Sandbox for isolated code execution, Agent Memory on Lakebase, Tools/MCP. Shows 5.4 components."
+    },
+    {
+      "id": "p5-agent-loop-architecture",
+      "file": "p5-agent-loop-architecture.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 8",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4117",
+      "kind": "diagram",
+      "why": "Core Agent Loop with Sandbox, Tools, Context, Memory. Central to custom agent operation (LangGraph, LangChain)."
+    },
+    {
+      "id": "p5-agent-loop-scale",
+      "file": "p5-agent-loop-scale.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 9",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4172",
+      "kind": "diagram",
+      "why": "Agent Loop at scale (thousands of agents), showing durable execution and identity/governance. Production readiness."
+    },
+    {
+      "id": "p5.4-agent-memory",
+      "file": "p5.4-agent-runtime-sandbox.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 14",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4637",
+      "kind": "diagram",
+      "why": "Agent memory built on Lakebase for session persistence. Shows 5.4 managed memory capability."
+    }
+  ],
+  "5.5": [
+    {
+      "id": "p5.2-p5.5-genie-vs-supervisor",
+      "file": "p5.2-p5.5-genie-vs-supervisor.png",
+      "source": "Agentbricks Roadshow [go/airoadshow], slide 5",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_3630",
+      "kind": "diagram",
+      "why": "Supervisor Agent as builder surface for multi-agent orchestration: wires agent tree, manages DBU-per-step, cross-tool routing."
+    },
+    {
+      "id": "p5-agent-use-case-guide",
+      "file": "p5-agent-use-case-guide.png",
+      "source": "Agentbricks Roadshow [go/airoadshow], slide 6",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g2ac45dc5c8c_0_6",
+      "kind": "diagram",
+      "why": "Decision tree showing Supervisor Agent as path for interactive use cases with custom orchestration. 5.5 entry point."
+    },
+    {
+      "id": "p5-agent-loop-scale",
+      "file": "p5-agent-loop-scale.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 9",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4172",
+      "kind": "diagram",
+      "why": "Durable execution and governance for thousands of agents. Essential for managing multi-agent orchestration at scale."
+    },
+    {
+      "id": "p5.5-supervisor-architecture",
+      "file": "p5-agent-loop-scale.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 9",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4172",
+      "kind": "diagram",
+      "why": "Supervisor agent coordinates multiple agents, each with access to different tools while maintaining user data permissions."
+    }
+  ]
+}

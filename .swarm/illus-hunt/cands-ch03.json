@@ -1,0 +1,122 @@
+{
+  "3.1": [
+    {
+      "id": "p3.1-notebook-table",
+      "file": "p3.1-notebook-table.png",
+      "source": "docs.databricks.com/eda-tutorial",
+      "url": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+      "kind": "screenshot",
+      "why": "Databricks notebook interface showing table display with data columns, timestamps, and row count for data exploration"
+    },
+    {
+      "id": "p3.1-visualization-editor",
+      "file": "p3.1-visualization-editor.png",
+      "source": "docs.databricks.com/eda-tutorial",
+      "url": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+      "kind": "screenshot",
+      "why": "Visualization editor in notebook with line chart configuration showing Y-axis metrics and series selection"
+    },
+    {
+      "id": "p3.1-python-sql-cells",
+      "file": "p3.1-python-sql-cells.png",
+      "source": "docs.databricks.com/notebooks/notebooks-code",
+      "url": "https://docs.databricks.com/aws/en/notebooks/notebooks-code",
+      "kind": "screenshot",
+      "why": "Multi-language notebook support: Python and SQL cells working together with shared variables and results"
+    },
+    {
+      "id": "p3.1-data-profile-add",
+      "file": "p3.1-data-profile-add.png",
+      "source": "docs.databricks.com/eda-tutorial",
+      "url": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+      "kind": "screenshot",
+      "why": "Data profiling interface showing built-in data profile option in notebook exploration"
+    }
+  ],
+  "3.2": [
+    {
+      "id": "p3.2-feature-store-ui",
+      "file": "p3.2-feature-store-ui.png",
+      "source": "Data Science With Databricks, slide 29",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit",
+      "kind": "screenshot",
+      "why": "Feature Engineering in Unity Catalog UI showing feature table browser and code example with FeatureEngineeringClient"
+    },
+    {
+      "id": "p3.2-feature-store-governance",
+      "file": "p3.2-feature-store-governance.png",
+      "source": "Data Science With Databricks, slide 30",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit",
+      "kind": "screenshot",
+      "why": "Feature Store governance through Unity Catalog showing permissions UI with Grant/Revoke controls"
+    },
+    {
+      "id": "p3.2-feature-serving-arch",
+      "file": "p3.2-feature-serving-arch.png",
+      "source": "Data Science With Databricks, slide 31",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit",
+      "kind": "diagram",
+      "why": "Feature Serving architecture showing Feature Service with Function Execution (Python UDF) and Lookups to online stores"
+    }
+  ],
+  "3.3": [
+    {
+      "id": "p3.3-automl-ui",
+      "file": "p3.3-automl-ui.png",
+      "source": "Data Science With Databricks, slide 35",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit",
+      "kind": "screenshot",
+      "why": "Glass-Box AutoML UI showing experiment configuration (Compute, problem type, target column, data directory) and generated trial notebook"
+    },
+    {
+      "id": "p3.3-automl-api",
+      "file": "p3.3-automl-api.png",
+      "source": "Data Science With Databricks, slide 36",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit",
+      "kind": "screenshot",
+      "why": "AutoML API showing MLflow experiment tracking runs with parameters, metrics, and model comparison"
+    },
+    {
+      "id": "p3.3-mlflow-intro",
+      "file": "p3.3-mlflow-intro.png",
+      "source": "Data Science With Databricks, slide 34",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit",
+      "kind": "diagram",
+      "why": "AutoML glass-box workflow showing UI+API entry, auto-created MLflow experiment, data exploration notebook, trial notebooks, and Model Registry"
+    },
+    {
+      "id": "p3.3-automl-roadmap",
+      "file": "p3.3-automl-roadmap.png",
+      "source": "Data Science With Databricks, slide 37",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit",
+      "kind": "diagram",
+      "why": "AutoML algorithms roadmap showing problem types (Classification, Regression, Time Series) and models (XGBoost, LightGBM, ARIMA, Prophet, etc)"
+    }
+  ],
+  "3.4": [
+    {
+      "id": "p3.4-global-uc-gpu",
+      "file": "p3.4-global-uc-gpu.png",
+      "source": "Agentbricks Roadshow, slide 160",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit",
+      "kind": "diagram",
+      "why": "Global Unity Catalog architecture showing CPU/GPU compute optionality across cloud regions and unified governance"
+    },
+    {
+      "id": "p3.4-ai-runtime-deep-learning",
+      "file": "p3.4-ai-runtime-deep-learning.png",
+      "source": "Agentbricks Roadshow, slide 142",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit",
+      "kind": "diagram",
+      "why": "AI Runtime Deep Learning Stack showing serverless A10/H100 GPUs, PyTorch support, and simplified distributed training infrastructure"
+    },
+    {
+      "id": "p3.4-distributed-training-cli",
+      "file": "p3.4-distributed-training-cli.png",
+      "source": "Agentbricks Roadshow, slide 162",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit",
+      "kind": "screenshot",
+      "why": "CLI submission for distributed training with TorchRun support (torchrun, axolotl) on serverless AI Runtime"
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "11.1": [
+    {
+      "id": "p11.1-mlflow-overview",
+      "file": "p11.1-mlflow-overview.png",
+      "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 5",
+      "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_0",
+      "kind": "diagram",
+      "why": "Shows MLflow as de facto standard with 800+ organizations, 5000+ organizations, 30M+ downloads; establishes credibility and scope of model registry solution"
+    },
+    {
+      "id": "p11.1-aliases-versions",
+      "file": "p11.1-aliases-versions.png",
+      "source": "Data Science With Databricks, slide 63",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_13917",
+      "kind": "diagram",
+      "why": "Explains model aliases (Champion, Challenger) and versions conceptually; directly addresses promoting versions via alias moves"
+    },
+    {
+      "id": "p11.1-unity-catalog-models",
+      "file": "p11.1-unity-catalog-models.png",
+      "source": "Data Science With Databricks, slide 114",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_2841",
+      "kind": "diagram",
+      "why": "Shows models registered in Unity Catalog with governance, permissions, and centralized control across data and models"
+    },
+    {
+      "id": "p11.1-mlflow-lifecycle",
+      "file": "p11.1-mlflow-lifecycle.png",
+      "source": "docs.databricks.com/mlflow",
+      "url": "https://docs.databricks.com/aws/en/mlflow",
+      "kind": "diagram",
+      "why": "Comprehensive lifecycle showing training → tracking → registry → monitoring → serving with Unity Catalog governance"
+    },
+    {
+      "id": "p11.1-model-lifecycle",
+      "file": "p11.1-model-lifecycle.png",
+      "source": "Data Science With Databricks, slide 66",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_13936",
+      "kind": "diagram",
+      "why": "Shows end-to-end model lifecycle including automated deployment jobs and version management in production"
+    }
+  ],
+  "11.2": [
+    {
+      "id": "p11.2-model-serving-platform",
+      "file": "p11.2-model-serving-platform.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 19",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4758",
+      "kind": "diagram",
+      "why": "Databricks as best platform for model serving with Custom Models, 1st Party Models, and Coding Agents; shows unified architecture"
+    },
+    {
+      "id": "p11.2-unity-gateway-governance",
+      "file": "p11.2-unity-gateway-governance.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 20",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4791",
+      "kind": "diagram",
+      "why": "Unity Gateway enforces governance across serving endpoints; shows logging, usage tracking, traffic management integration"
+    },
+    {
+      "id": "p11.2-serving-architecture",
+      "file": "p11.2-serving-architecture.png",
+      "source": "Mosaic AI - System Architecture 2026-02-25, slide 46",
+      "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g2eef4bbd1b8_0_3",
+      "kind": "diagram",
+      "why": "Complete serving architecture with inference, monitoring, and governance layers; shows high-level system design"
+    },
+    {
+      "id": "p11.2-finetuning-architecture",
+      "file": "p11.2-finetuning-architecture.png",
+      "source": "Mosaic AI - System Architecture 2026-02-25, slide 49",
+      "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g2eef4bbd1b8_0_3",
+      "kind": "diagram",
+      "why": "Fine-tuning and serving open-source models architecture; shows preparation, fine-tuning, and inference stages"
+    },
+    {
+      "id": "p11.2-route-optimization",
+      "file": "p11.2-route-optimization.png",
+      "source": "docs.databricks.com/machine-learning/model-serving/query-route-optimization",
+      "url": "https://docs.databricks.com/aws/en/machine-learning/model-serving/query-route-optimization",
+      "kind": "screenshot",
+      "why": "Shows endpoint URL configuration with route optimization; demonstrates setup for real-time serving"
+    }
+  ],
+  "11.3": [
+    {
+      "id": "p11.3-monitoring-dashboard",
+      "file": "p11.3-monitoring-dashboard.png",
+      "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 35",
+      "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_2401",
+      "kind": "screenshot",
+      "why": "Lakehouse Monitoring dashboard showing profiling, quality metrics, and drift detection in visual format"
+    },
+    {
+      "id": "p11.3-monitoring-setup-ui",
+      "file": "p11.3-monitoring-setup-ui.png",
+      "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 36",
+      "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_2867",
+      "kind": "screenshot",
+      "why": "Monitoring setup configuration with built-in AI judges, scorer reuse, and baseline sampling; shows simplicity"
+    },
+    {
+      "id": "p11.3-monitoring-governance",
+      "file": "p11.3-monitoring-governance.png",
+      "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 38",
+      "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_2880",
+      "kind": "screenshot",
+      "why": "Governance and monitoring integration; shows security, audit, and Unity Catalog integration"
+    },
+    {
+      "id": "p11.3-monitoring-architecture",
+      "file": "p11.3-monitoring-architecture.png",
+      "source": "Data Science With Databricks, slide 84",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_13426",
+      "kind": "diagram",
+      "why": "Lakehouse Monitoring architecture overview with all components; shows open monitoring for tables and models"
+    },
+    {
+      "id": "p11.3-monitoring-concept",
+      "file": "p11.3-monitoring-concept.png",
+      "source": "Mosaic AI - System Architecture 2026-02-25, slide 23",
+      "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g2eef4bbd1b8_0_3",
+      "kind": "diagram",
+      "why": "Monitoring system architecture showing inference tables, data quality profiling, and drift detection workflow"
+    },
+    {
+      "id": "p11.3-monitoring-system-arch",
+      "file": "p11.3-monitoring-system-arch.png",
+      "source": "Mosaic AI - System Architecture 2026-02-25, slide 23",
+      "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g2eef4bbd1b8_0_3",
+      "kind": "diagram",
+      "why": "End-to-end monitoring system showing inference request/response capture, profiling, and alerting"
+    }
+  ],
+  "11.4": [
+    {
+      "id": "p11.4-deployment-jobs-mlops",
+      "file": "p11.4-deployment-jobs-mlops.png",
+      "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 50",
+      "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_5016",
+      "kind": "screenshot",
+      "why": "Shows deployment jobs automating evaluation, approval, and deployment; simplifies model deployment pipelines"
+    },
+    {
+      "id": "p11.4-mlops-stacks",
+      "file": "p11.4-mlops-stacks.png",
+      "source": "Data Science With Databricks, slide 122",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_1",
+      "kind": "diagram",
+      "why": "MLOps Stacks for turnkey deployment of ML projects with CI/CD; shows complete workflow from dev to production"
+    },
+    {
+      "id": "p11.4-asset-bundles",
+      "file": "p11.4-asset-bundles.png",
+      "source": "Data Science With Databricks, slide 55",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_1",
+      "kind": "diagram",
+      "why": "Databricks Asset Bundles (Declarative Automation Bundles) describing code, jobs, models as Git files; enables GitOps"
+    },
+    {
+      "id": "p11.4-mlops-components",
+      "file": "p11.4-mlops-components.png",
+      "source": "docs.databricks.com/machine-learning/mlops/mlops-stacks",
+      "url": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-stacks",
+      "kind": "diagram",
+      "why": "MLOps Stacks components showing project structure, resources, and workflows for end-to-end CI/CD"
+    }
+  ]
+}

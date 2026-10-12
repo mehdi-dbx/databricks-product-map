@@ -1,0 +1,64 @@
+{
+  "9.3": [
+    {
+      "id": "p9.3-agent-bricks-framework",
+      "file": "p9.3-agent-bricks-framework.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 13",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4552",
+      "kind": "diagram",
+      "why": "Shows complete Agent Bricks framework with Omnigent as meta-harness for unified agent development across multiple coding harnesses"
+    },
+    {
+      "id": "p9.3-agent-ecosystem",
+      "file": "p9.3-agent-ecosystem.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 9",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4172",
+      "kind": "diagram",
+      "why": "Visual showing Agent Loop ecosystem with all required components (Tools, MCP, Models, Context, Governance) for shipping thousands of agents at scale"
+    }
+  ],
+  "11.1": [
+    {
+      "id": "p11.1-model-registry-deployment",
+      "file": "p11.1-model-registry-deployment.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 217",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_5499",
+      "kind": "screenshot",
+      "why": "Shows model in Catalog Explorer UI with governance in UC, plus Deployment Jobs template UI demonstrating model registry and versioning"
+    },
+    {
+      "id": "p11.1-models-in-unity-catalog",
+      "file": "p11.1-models-in-unity-catalog.png",
+      "source": "Data Science With Databricks, slide 114",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_2841",
+      "kind": "diagram",
+      "why": "Illustrates Models as first-class governed objects in UC alongside Volumes, Delta tables, Features, Inference tables, and Metric tables"
+    },
+    {
+      "id": "p11.1-mlflow-model-lifecycle-full",
+      "file": "p11.1-mlflow-model-lifecycle-full.png",
+      "source": "[Field] Databricks Overview for Data Science and ML, slide 39",
+      "url": "https://docs.google.com/presentation/d/1NugPRilivLHJsBUwy53HdenHUj_yvpu5bRRMFhWESuI/edit",
+      "kind": "diagram",
+      "why": "Comprehensive MLflow model lifecycle showing Models, Tracking, Model Registry with Staging/Production/Archived stages, versioning (v1/v2), and deployment options"
+    }
+  ],
+  "11.4": [
+    {
+      "id": "p11.4-model-serving-unified",
+      "file": "p11.4-model-serving-unified.png",
+      "source": "Data Science With Databricks, slide 121",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_3073",
+      "kind": "diagram",
+      "why": "Shows unified Model Serving managing Custom Models (MLflow), Foundation Models, and External Models with consistent deployment and governance"
+    },
+    {
+      "id": "p11.4-feature-deployment-mlops",
+      "file": "p11.4-feature-deployment-mlops.png",
+      "source": "Mosaic AI - System Architecture 2026-02-25, slide 28",
+      "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_6398",
+      "kind": "diagram",
+      "why": "End-to-end MLOps deployment flow showing feature and model deployment from UC to 3rd party model serving, with online feature lookup for inference"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-# Proto-story — working draft
+# Story notes — working draft
 
 Built bead by bead. Each chapter is written only after the previous one is checked.
 Story text is in English (app content language), presenter-led (short), with no claim
@@ -53,26 +53,108 @@ Most companies already run analytics and have started with AI. Their data sits i
 several places: operational databases behind the applications, a warehouse for
 reporting, a data lake for raw files, and SaaS tools. Each system keeps its own copies
 and its own access rules. Pipelines move data between them to keep the copies in sync.
-People who need an answer wait for the few colleagues who can query these systems.
+These pipelines are written and scheduled by hand, and the copies they feed are often
+out of date. When a table stops being refreshed or breaks, nobody is warned, and the
+repair is manual. People who need an answer wait for the few colleagues who can query
+these systems.
 
 ↳ **Link 1.1 → 1.2 (consequence).** AI needs that data. When the data is spread out,
 every AI project first has to collect it.
 
-**Point 1.2 — AI pilots blocked before production.**
+**Point 1.2 — Model work that is slow and hard to reproduce.**
+Data scientists rebuild the same features in each project, and features are often
+computed differently for training and in production. Experiments are hard to
+reproduce, results stay scattered across teams, and algorithms and settings are tried
+by hand. Large datasets do not fit on one machine, and GPUs are scarce, hard to set up
+or left idle.
+
+↳ **Link 1.2 → 1.3 (models trained elsewhere).** Many use cases now start from models
+that someone else trained.
+
+**Point 1.3 — Every model provider handled separately.**
+Each model provider comes with its own serving setup, and API keys end up scattered
+across code and teams. Token spend grows without warning, calls to outside models go
+unaudited, and relying on one provider creates lock-in. Adapting a model to the
+company's needs takes large and costly GPU resources.
+
+↳ **Link 1.3 → 1.4 (from answers to actions).** A model on its own only answers. Agents
+also look up company data and use tools.
+
+**Point 1.4 — Agents that cannot reach data and tools safely.**
+Using AI on company documents often means exporting the data to outside services. An
+agent also needs search, tools and memory, and each connection is built by hand, with
+credentials spread across agents. Agents start every conversation from scratch, and the
+code they generate can run with unrestricted access to data. A single agent is not
+enough for complex tasks, and routing work between agents is manual.
+
+↳ **Link 1.4 → 1.5 (trust).** Once AI acts on company data, it has to be trusted.
+
+**Point 1.5 — AI that nobody can verify or control.**
+When an agent gives a wrong answer, nobody sees which step failed, and the quality of
+its answers is not measured. Prompts change without being tracked, and expert feedback
+sits in spreadsheets, cut off from the agents. Models, agents and tools are not governed
+like data. Nobody has a central view of how AI is used, and nothing is audited.
+
+↳ **Link 1.5 → 1.6 (people).** These gaps also reach the people who use data and AI
+every day, and those who build with it.
+
+**Point 1.6 — Business users and developers held back.**
+Business users depend on those few colleagues for every question, and the same metric is
+defined differently from one team or dashboard to the next. What experts know stays with
+them, and analysis done in spreadsheets escapes governance. Even a small internal app
+needs a developer, and developers host each app on separate infrastructure, with its own
+identity and secrets. Much of their time goes into repetitive code and hand-built agent
+scaffolding.
+
+↳ **Link 1.6 → 1.7 (business domains).** Some business domains add silos of their own.
+
+**Point 1.7 — Customer and security data in separate silos.**
+Customer data is fragmented across systems, with duplicate records and no lineage.
+Security logs sit in separate tools, and many are deleted early to save cost.
+
+↳ **Link 1.7 → 1.8 (consequence).** With data, models and tools in this state, an AI
+project cannot start on live, governed data.
+
+**Point 1.8 — AI pilots blocked before production.**
 So AI projects start as pilots on extracts. A pilot can work on its extract. Going to
 production means reaching live data, proving the answers are right, and controlling who
-uses which model and at what cost. Many pilots stop at that step.
+uses which model and at what cost. Many pilots stop at that step. The models that do
+reach production are hard to run, because versions are not tracked and promoting a new
+one is manual and slow.
 
 **Hands off:** the work starts with the data. How do you get it into one place, governed
 once and fresh enough for AI?
 
 **Check M1.**
-- 1.1 → 1.2 is a consequence. Spread-out data forces each project to start on extracts,
-  so the pilot problem follows from the data problem.
-- Point 1.2 names four obstacles that later chapters answer: live data (ch. 2), correct
-  answers (ch. 6), model control and cost (ch. 4), and the step to production (ch. 10).
-  This is the loop the ending will close.
-- The handoff picks the data as the starting point because 1.2 depends on 1.1.
+- Rewritten on 2026-10-11 following `docs/story-starting-situation.md`. Each point is one
+  group of the pains listed in `docs/story-pains.md`, in the order of the chapters that
+  solve them. Every sentence of the former points 1.1 and 1.2 is kept: 1.1 gained two
+  sentences, and 1.2 became 1.8 and gained one.
+- Map of the loop the ending closes: 1.1 → ch. 2 · 1.2 → ch. 3 · 1.3 → ch. 4 ·
+  1.4 → ch. 5 · 1.5 → ch. 6 and 7 · 1.6 → ch. 8 and 9 · 1.7 → ch. 10 · 1.8 → ch. 11.
+  Point 1.8 also recalls the three obstacles that stop pilots: live data (ch. 2), right
+  answers (ch. 6), and control of models and cost (ch. 4 and 7).
+- Sources of the new sentences, as capsule [row] in `docs/story-pains.md`:
+  - 1.1: Lakeflow [0] [3] [4]; Lakehouse//RT [1]; LTAP [4]; Anomaly detection &
+    remediation [0] [2] [3]; Lakehouse / Delta Lake [0].
+  - 1.2: Feature Store (ai) [2], (ds) [0]; MLflow [0] [1]; AutoML (ai) [0] [1];
+    Distributed training & GPU [0] [4]; AI Runtime [0] [1].
+  - 1.3: Model Serving [0] [1]; External model services [0] [2] [4]; Foundation Model
+    APIs [0] [1]; Model fine-tuning [0] [1].
+  - 1.4: AI Functions [0] [3]; AI Search [0]; Managed MCP servers [0] [1]; MCP Services
+    + custom MCP [3]; Custom Agents [3]; Managed memory & sessions [2]; Databricks
+    Sandbox [0] [1]; Supervisor Agent [0] [1].
+  - 1.5: MLflow 3 for GenAI [0] [4]; Agent evaluation & monitoring [0]; MLflow Prompt
+    Registry [0]; Review Apps [1]; Unity Catalog for AI assets [0] [3]; Unity Gateway
+    [1] [4].
+  - 1.6: Genie One [1]; Genie Ontology [0]; Genie Agents [3]; Row Zero / Genie ZeroOps
+    [3]; Genie App Builder [1]; Databricks Apps + App Spaces [0] [2]; Genie Code [0]
+    [2]; AI Dev Kit [1].
+  - 1.7: CustomerLake [0] [1] [3]; Lakewatch [0] [2].
+  - 1.8: MLflow Model Registry [0] [4].
+- The 10 capsule references with no pains in the tree source no sentence here. Their
+  chapters still answer the groups above.
+- The handoff starts with the data, because every other group depends on it.
 
 ---
 
@@ -84,6 +166,9 @@ once and fresh enough for AI?
 Databricks stores the data once, in open Delta tables in your cloud storage. Delta adds
 transactions to those files. Batch jobs and streaming jobs write to the same tables
 without corrupting them, and the schema can change without breaking readers.
+**Effect:** The company keeps one consistent copy of its data, in an open format.
+**Challenge:** Batch and streaming data often sit in separate stores, sometimes in closed or complex formats. A job that fails halfway can leave a table inconsistent, and a schema change can break the jobs that read it.
+**Pivot:** Delta Lake brings these workloads together on one open table format.
 
 ↳ **Link 2.1 → 2.2 (prerequisite).** A storage layer is only useful once the data gets
 into it and stays usable.
@@ -94,6 +179,9 @@ connectors to databases and SaaS applications. Declarative pipelines describe th
 transformations, and Lakeflow works out the order in which to run them. Predictive
 Optimization then maintains the tables on its own, so nobody has to schedule
 maintenance jobs.
+**Effect:** Data engineers no longer write connector code or schedule table maintenance by hand.
+**Challenge:** Bringing data in means writing connector code for each source and wiring job dependencies by hand. The tables then need maintenance that someone has to schedule and tune.
+**Pivot:** Lakeflow and Predictive Optimization take over this work.
 
 ↳ **Link 2.2 → 2.3 (gap).** The analytical data is now in place. Applications and agents
 also read and write transactional data, and that data usually lives in a separate
@@ -103,6 +191,9 @@ database with its own copy.
 Lakebase is a serverless Postgres database inside the platform. It holds application
 data and agent state, and its tables sync with Unity Catalog. Lakebase Search adds
 vector and keyword search in the same Postgres database, with no separate vector store.
+**Effect:** Applications and agents keep their data on the same platform as the analytics, under the same governance.
+**Challenge:** Application data in that separate database escapes governance, and search over it needs yet another store for vectors, which copies the data again.
+**Pivot:** Lakebase and Lakebase Search bring this data and its search onto the platform.
 
 ↳ **Link 2.3 → 2.4 (the remaining copy).** Transactional and analytical data now sit on
 the same platform. The remaining copy is the one that feeds analytics with fresh operational data.
@@ -110,6 +201,9 @@ the same platform. The remaining copy is the one that feeds analytics with fresh
 **Point 2.4 — Real-time analytics on operational data.** *(Lakehouse//RT, LTAP)*
 Lakehouse//RT answers SQL queries in under 100 milliseconds directly on lakehouse
 tables, so dashboards and applications no longer need a separate serving copy. LTAP, which is announced, keeps one dataset that is written in Lakebase and read in Lakehouse//RT, with no replication pipeline between them.
+**Effect:** Dashboards and applications read live data instead of a stale copy.
+**Challenge:** Feeding analytics with operational data takes replication pipelines and a second system to maintain. The copies lag behind the source, and dashboard queries take seconds.
+**Pivot:** Lakehouse//RT and LTAP remove that last copy.
 
 ↳ **Link 2.4 → 2.5 (condition).** Everything is now in one place. That helps only if access, lineage and quality are handled once for all of it.
 
@@ -117,6 +211,9 @@ tables, so dashboards and applications no longer need a separate serving copy. L
 Unity Catalog applies one set of permissions, lineage and audit to tables and files. Data quality is watched in the same place.
 Classification tags sensitive data such as PII. Profiling and monitoring track quality.
 Anomaly detection flags stale or broken tables and can trigger a repair job.
+**Effect:** Data teams are alerted when a table goes stale, and repairs run as audited jobs.
+**Challenge:** Data freshness is invisible and nobody is notified, so a stale table can go unnoticed, and repairing it is manual and risky.
+**Pivot:** Anomaly detection and data classification add this watch to the catalog.
 
 **Hands off:** the data is in one place, fresh and governed. The first thing teams do
 with data like this is learn from it. How does a data science team work on it?
@@ -135,6 +232,26 @@ with data like this is learn from it. How does a data science team work on it?
 - Watch item: Lakebase is mentioned for agent state here and returns in ch. 3 (online
   feature store) and ch. 5 (agent memory). Those later mentions must be callbacks.
   The product must not be re-introduced.
+- Additions 2.1 (editorial guide):
+  - Effect ← Lakehouse / Delta Lake, solves[3].solution, solves[4].solution
+  - Challenge ← Lakehouse / Delta Lake, solves[2].problem, solves[3].problem, solves[0].problem, solves[4].problem, solves[1].problem
+  - Pivot ← Lakehouse / Delta Lake, note
+- Additions 2.2 (editorial guide):
+  - Effect ← Lakeflow, solves[0].solution; Predictive Optimization, solves[0].solution
+  - Challenge ← Lakeflow, solves[0].problem, solves[4].problem; Predictive Optimization, solves[0].problem, solves[1].problem
+  - Pivot ← Lakeflow, note; Predictive Optimization, note
+- Additions 2.3 (editorial guide):
+  - Effect ← Lakebase — serverless Postgres, note, solves[2].solution
+  - Challenge ← Lakebase — serverless Postgres, solves[2].problem; Lakebase Search, solves[1].problem, solves[3].problem
+  - Pivot ← Lakebase — serverless Postgres, note; Lakebase Search, note
+- Additions 2.4 (editorial guide):
+  - Effect ← Lakehouse//RT, solves[1].solution; LTAP, solves[4].solution
+  - Challenge ← LTAP, solves[0].problem, solves[2].problem, solves[1].problem; Lakehouse//RT, solves[1].problem, solves[0].problem
+  - Pivot ← Lakehouse//RT, solves[2].solution; LTAP, solves[0].solution
+- Additions 2.5 (editorial guide):
+  - Effect ← Anomaly detection & remediation, solves[0].solution, solves[3].solution, solves[2].solution, solves[4].solution
+  - Challenge ← Anomaly detection & remediation, solves[0].problem, solves[3].problem, solves[2].problem
+  - Pivot ← Anomaly detection & remediation, note; Classification / profiling / monitoring, note
 
 ---
 
@@ -156,6 +273,9 @@ The Feature Store keeps each feature definition in one place, governed by Unity 
 Training sets are built with point-in-time correct joins, and the same definitions feed
 predictions in production. For real-time use, features are served from an online store
 on Lakebase.
+**Effect:** Each feature is built once and reused by every team and every model.
+**Challenge:** Teams duplicate the same features across projects, with no view of where each one comes from or who may use it.
+**Pivot:** The Feature Store makes features a shared, governed asset.
 
 ↳ **Link 3.2 → 3.3 (next step).** With features in place, the team trains many models
 and compares them. Comparing them requires that every result can be reproduced.
@@ -165,6 +285,9 @@ MLflow records every training run with its parameters, metrics, code version and
 artifacts, so any result can be reproduced and compared. AutoML gives a first baseline.
 It tries algorithms such as XGBoost and LightGBM, tunes them, and writes each trial as a
 notebook the team can read and change.
+**Effect:** Model work becomes repeatable, and teams reach a first model faster.
+**Challenge:** When each team keeps its own metrics, results cannot be compared, and searching algorithms and settings by hand delays every model.
+**Pivot:** MLflow and AutoML take care of the tracking and the search.
 
 ↳ **Link 3.3 → 3.4 (limit).** Some datasets and models do not fit on one machine.
 
@@ -172,6 +295,9 @@ notebook the team can read and change.
 Training then spreads across GPUs and clusters with managed libraries such as
 TorchDistributor, DeepSpeed and Ray. AI Runtime provides GPUs on demand with no cluster
 to manage, and it scales to zero when the job ends.
+**Effect:** Training is no longer limited by the size of one machine or by access to GPUs.
+**Challenge:** Distributed training code is hard to write correctly, GPUs are hard to get, and clusters configured by hand are error-prone or sit idle.
+**Pivot:** Managed training libraries and AI Runtime take that work off the team.
 
 **Hands off:** the team now has trained models. A model is only useful once applications
 can call it. Many new use cases also start from large language models that someone else
@@ -190,6 +316,18 @@ trained. How do you serve and control any model, your own or a provider's?
   registry (ch. 10). Mentioning them here would announce later chapters too early.
 - Capsules covered: 10/10 for chapter 3 (both copies of Feature Store and AutoML).
 - Watch item: AI Runtime returns in ch. 4 for fine-tuning. That mention must be a callback.
+- Additions 3.2 (editorial guide):
+  - Effect ← Feature Store, solves[2].solution, solves[1].solution
+  - Challenge ← Feature Store, solves[1].problem, solves[2].problem, solves[3].problem
+  - Pivot ← Feature Store, solves[1].solution, solves[3].solution
+- Additions 3.3 (editorial guide):
+  - Effect ← MLflow, solves[0].solution; AutoML, solves[2].solution
+  - Challenge ← MLflow, solves[1].problem; AutoML, solves[0].problem, solves[1].problem, solves[2].problem
+  - Pivot ← MLflow, note; AutoML, note
+- Additions 3.4 (editorial guide):
+  - Effect ← Distributed training & GPU, solves[0].solution; AI Runtime — serverless GPU, solves[0].solution
+  - Challenge ← Distributed training & GPU, solves[1].problem, solves[4].problem; AI Runtime — serverless GPU, solves[0].problem, solves[1].problem
+  - Pivot ← Distributed training & GPU, solves[1].solution; AI Runtime — serverless GPU, note
 
 ---
 
@@ -202,6 +340,9 @@ Model Serving handles both cases with one kind of endpoint. Custom models, found
 models and external models are served behind serverless endpoints with the same API.
 Endpoints scale with demand, down to zero. They can be billed per token, with provisioned
 throughput, or in batch. Features from the Feature Store are looked up at serving time.
+**Effect:** Putting a model into production no longer needs its own infrastructure.
+**Challenge:** Each kind of model needs its own serving system, provisioned by hand, with access control split across them. Idle machines keep costing money.
+**Pivot:** Model Serving replaces these systems with one serverless service.
 
 ↳ **Link 4.1 → 4.2 (what sits behind the endpoint).** For large language models, teams need to know which models are available behind those endpoints.
 
@@ -210,6 +351,9 @@ Foundation Model APIs give access through one API to models from providers that 
 The catalog changes often. New versions arrive and older ones are retired. Databricks
 publishes the supported models and their retirement dates. Because applications call
 the same API for every model, moving to a newer model stays a small change.
+**Effect:** Teams can use the best model for each task, from any of the main providers.
+**Challenge:** Depending on one provider creates lock-in, token spend grows unpredictably, and models from different providers are tested piece by piece.
+**Pivot:** Foundation Model APIs remove the dependency on any single provider.
 
 ↳ **Link 4.2 → 4.3 (when a general model falls short).** Sometimes a general model does not
 know the company's vocabulary or tasks well enough.
@@ -218,11 +362,17 @@ know the company's vocabulary or tasks well enough.
 Fine-tuning adapts an open model to company data with LoRA, QLoRA or full fine-tuning,
 on serverless GPUs. The tuned model is logged in MLflow and served
 like any other model.
+**Effect:** Adapting a model to company data takes less GPU memory and is paid by the minute.
+**Challenge:** Full fine-tuning needs large amounts of GPU memory and is expensive and slow. Once tuned, the model often sits apart from the systems that serve the others.
+**Pivot:** Model fine-tuning makes this adaptation lighter and keeps it on the platform.
 
 ↳ **Link 4.3 → 4.4 (models hosted elsewhere).** Some teams also call models that are hosted directly at a provider.
 
 **Point 4.4 — External models.** *(External model services)*
 These models are registered as external models, with their keys stored centrally, so their calls go through the same Model Serving endpoints as every other model.
+**Effect:** Calls to outside models are tracked and audited like every other model call.
+**Challenge:** API keys end up scattered across code and team members, and these calls bypass security, with no view of what they cost.
+**Pivot:** External model services bring these calls under the same control.
 
 **Hands off:** every model, hosted on Databricks or at a provider, is now served the same way. Many use cases need a model that can also look up company data and call tools. How do you build agents?
 
@@ -241,6 +391,22 @@ These models are registered as external models, with their keys stored centrally
   In the final text, the external-models sentence could move to 4.4, since it is about
   keys and control. Left here for now because it is also about which models are
   available.
+- Additions 4.1 (editorial guide):
+  - Effect ← Model Serving, solves[1].solution, solves[0].solution
+  - Challenge ← Model Serving, solves[0].problem, solves[1].problem, solves[2].problem, solves[4].problem
+  - Pivot ← Model Serving, note, solves[0].solution
+- Additions 4.2 (editorial guide):
+  - Effect ← Foundation Model APIs, solves[0].solution, solves[3].solution
+  - Challenge ← Foundation Model APIs, solves[0].problem, solves[1].problem, solves[3].problem
+  - Pivot ← Foundation Model APIs, solves[0].solution
+- Additions 4.3 (editorial guide):
+  - Effect ← Model fine-tuning, solves[0].solution, solves[1].solution
+  - Challenge ← Model fine-tuning, solves[0].problem, solves[1].problem, solves[2].problem, solves[4].problem
+  - Pivot ← Model fine-tuning, solves[0].solution, solves[4].solution
+- Additions 4.4 (editorial guide):
+  - Effect ← External model services, solves[2].solution, solves[4].solution
+  - Challenge ← External model services, solves[0].problem, solves[1].problem, solves[2].problem
+  - Pivot ← External model services, note
 
 ---
 
@@ -252,6 +418,9 @@ These models are registered as external models, with their keys stored centrally
 AI Functions call a model from SQL or from a pipeline to classify, extract or summarize data and documents at scale.
 The first step needs no agent. The results come back with
 a fixed schema, and the data stays in Unity Catalog.
+**Effect:** Teams apply AI to large volumes of data and documents without moving them out of the platform.
+**Challenge:** Running a model over company data usually means sending the data to an outside service, building separate pipelines for documents and splitting the work into batches by hand. What comes back is unstructured.
+**Pivot:** AI Functions do this work where the data already is.
 
 ↳ **Link 5.1 → 5.2 (from batch to conversation).** An agent answers questions as they
 come. To answer well, it first has to find the right information.
@@ -260,6 +429,9 @@ come. To answer well, it first has to find the right information.
 AI Search indexes documents and tables for vector and keyword search, keeps the index in
 sync with the Delta tables, and returns citations. Knowledge Assistant packaged this into
 a question-answering agent over documents that could be set up in minutes. It is now moving into Genie Agents.
+**Effect:** Agents answer from the company's own documents, with sources that can be checked.
+**Challenge:** Search indexes are built and kept in sync by hand, and generic retrieval misses what a document means. Answers then cite sources that are missing or false.
+**Pivot:** AI Search and Knowledge Assistant ground the answers in the right documents.
 
 ↳ **Link 5.2 → 5.3 (from reading to acting).** Answering from documents only reads data.
 Many tasks also need actions, such as running a query, opening a ticket or changing
@@ -271,6 +443,9 @@ Databricks runs managed MCP servers for its own services, such as Genie, AI Sear
 SQL. Connectors give governed access to Google Workspace, Microsoft 365, Slack and
 GitHub. Teams can register their own MCP servers or host them as Databricks Apps. Every tool is a Unity Catalog object, so permissions and audit work the
 same way as for data.
+**Effect:** Agents reach the company's tools through one governed route instead of one-off connections.
+**Challenge:** Teams write a custom connector for each tool and host the servers themselves, credentials pile up across agents, and tool use stays hidden.
+**Pivot:** Managed MCP servers and MCP Services turn each tool into a governed connection.
 
 ↳ **Link 5.3 → 5.4 (assembly).** An agent combines retrieval and tools with its own logic.
 
@@ -280,12 +455,18 @@ OpenAI SDK. They can use any model on Model Serving and any MCP tool. Managed
 memory, stored in Lakebase, lets an agent remember context across conversations.
 Databricks Sandbox runs the code an agent writes in an isolated environment, with scoped
 access to data.
+**Effect:** Developers build the agent they need, and it remembers its users and runs its code safely.
+**Challenge:** Agent platforms often impose the framework and the model, and leave sessions and memory to be handled by hand. Users repeat their instructions in each conversation, and the code an agent writes is untrusted.
+**Pivot:** Custom agents, managed memory and Databricks Sandbox take these limits away.
 
 ↳ **Link 5.4 → 5.5 (beyond one agent).** Some tasks are too large for one agent.
 
 **Point 5.5 — Multi-agent orchestration.** *(Supervisor Agent)*
 A supervisor agent splits a task across several agents and keeps each user's data
 permissions. It is moving into Genie Agents as well.
+**Effect:** Large tasks are shared across specialized agents and come back as one answer.
+**Challenge:** Routing work between agents by hand gives disconnected answers, and a chain of agents can bypass a user's data permissions.
+**Pivot:** The Supervisor Agent takes over the routing.
 
 **Hands off:** the agent can now use company data and tools, and keep memory across conversations. Before it
 reaches users, it has to be trusted. How do you know it is right?
@@ -303,6 +484,26 @@ reaches users, it has to be trusted. How do you know it is right?
 - Weak spot to revisit in M11: Omnigent fits awkwardly in 5.5. It is about developers'
   agent harnesses, which is closer to chapter 8. It stays here because the capsule map
   puts it in chapter 5. M11 should decide whether to move it.
+- Additions 5.1 (editorial guide):
+  - Effect ← AI Functions, solves[0].solution, solves[3].solution
+  - Challenge ← AI Functions, solves[0].problem, solves[4].problem, solves[2].problem, solves[1].problem
+  - Pivot ← AI Functions, note
+- Additions 5.2 (editorial guide):
+  - Effect ← AI Search (ex-Vector Search), note; Knowledge Assistant, solves[2].solution
+  - Challenge ← AI Search (ex-Vector Search), solves[0].problem, solves[2].problem; Knowledge Assistant, solves[1].problem, solves[2].problem
+  - Pivot ← AI Search (ex-Vector Search), solves[0].solution; Knowledge Assistant, solves[0].solution
+- Additions 5.3 (editorial guide):
+  - Effect ← Managed MCP servers, solves[0].solution, solves[2].solution; MCP Services + custom MCP, solves[2].solution
+  - Challenge ← Managed MCP servers, solves[0].problem, solves[3].problem, solves[1].problem, solves[5].problem
+  - Pivot ← Managed MCP servers, note; MCP Services + custom MCP, note
+- Additions 5.4 (editorial guide):
+  - Effect ← Custom Agents, solves[0].solution; Managed memory & sessions, solves[1].solution; Databricks Sandbox, solves[0].solution
+  - Challenge ← Custom Agents, solves[1].problem, solves[5].problem, solves[3].problem; Managed memory & sessions, solves[1].problem; Databricks Sandbox, solves[0].problem
+  - Pivot ← Custom Agents, note; Managed memory & sessions, note; Databricks Sandbox, note
+- Additions 5.5 (editorial guide):
+  - Effect ← Supervisor Agent, solves[0].solution, solves[3].solution
+  - Challenge ← Supervisor Agent, solves[0].problem, solves[3].problem, solves[4].problem
+  - Pivot ← Supervisor Agent, solves[0].solution
 
 ---
 
@@ -315,6 +516,9 @@ MLflow traces every request through the agent. It records each model call, tool 
 and retrieval step, with inputs, outputs, latency and tokens, and it works with more
 than 30 agent frameworks. When an answer is wrong, the trace shows the step where it
 went wrong.
+**Effect:** Operators see inside every agent request, step by step, including what it costs.
+**Challenge:** Agent chains are opaque to the people who run them. When an answer is wrong, the failing step is hard to isolate, and the cost of each request is unknown.
+**Pivot:** MLflow 3 makes each request visible.
 
 ↳ **Link 6.1 → 6.2 (one request to many).** A trace shows one request. Judging quality
 needs a score across many requests.
@@ -325,6 +529,9 @@ before a release and continuously on live traffic. Each agent version gets its o
 evaluation run, so versions can be compared. Prompts are versioned in the Prompt
 Registry with staging and production aliases, so a prompt change is tracked like a code
 change.
+**Effect:** Teams know whether a new agent version is better before it ships.
+**Challenge:** Without quality metrics, traces are reviewed by hand and versions cannot be compared. Prompts change without a record, and staging and production drift apart.
+**Pivot:** Agent evaluation scores the answers, and the Prompt Registry versions the prompts.
 
 ↳ **Link 6.2 → 6.3 (the judges need a reference).** An LLM judge is only useful if its
 scores match what experts would say.
@@ -333,6 +540,9 @@ scores match what experts would say.
 Review Apps let domain experts test the agent in a chat interface and label its answers.
 The labels attach to the traces and become evaluation datasets. They are also used to
 align the judges with the experts.
+**Effect:** What domain experts know becomes the standard the agent is judged against.
+**Challenge:** Without ground truth, agent quality is a matter of opinion. Experts label answers in spreadsheets that are not linked to the traces, and their criteria drift from one session to the next.
+**Pivot:** Review Apps connect the experts to the agent.
 
 **Hands off:** the agent's answers can now be measured and reviewed. Data, models,
 agents and tools also need one set of rules for who may use what, and for what can go
@@ -351,6 +561,18 @@ wrong. How is all of it governed?
 - Capsules covered: 5/5 for chapter 6.
 - Wording checked: link 6.1 → 6.2 first read "seeing is not measuring". That is a reframe
   ("X is not Y") and was rewritten as two plain sentences.
+- Additions 6.1 (editorial guide):
+  - Effect ← MLflow 3 for GenAI, solves[0].solution, solves[4].solution, solves[3].solution
+  - Challenge ← MLflow 3 for GenAI, solves[0].problem, solves[4].problem, solves[3].problem
+  - Pivot ← MLflow 3 for GenAI, note
+- Additions 6.2 (editorial guide):
+  - Effect ← Agent evaluation & monitoring, solves[4].solution, solves[1].solution
+  - Challenge ← Agent evaluation & monitoring, solves[0].problem, solves[1].problem, solves[4].problem; MLflow Prompt Registry, solves[0].problem, solves[1].problem
+  - Pivot ← Agent evaluation & monitoring, solves[0].solution; MLflow Prompt Registry, solves[0].solution
+- Additions 6.3 (editorial guide):
+  - Effect ← Review Apps, solves[3].solution, solves[0].solution
+  - Challenge ← Review Apps, solves[0].problem, solves[1].problem, solves[4].problem
+  - Pivot ← Review Apps, note
 
 ---
 
@@ -363,6 +585,9 @@ Unity Catalog governs models, agents, tools and credentials in the same way as t
 and files. Each of them is a Unity Catalog object with permissions, lineage and an audit
 trail. Lineage follows the chain from data to model to agent. Credentials for external
 services are stored in the catalog and encrypted.
+**Effect:** Each model, agent and tool can be traced to the data behind it and to everyone who used it.
+**Challenge:** Models, agents and functions are not governed as assets of their own, permissions are enforced differently across them, and external credentials are scattered. Nobody knows which data feeds which model.
+**Pivot:** Unity Catalog extends to these assets.
 
 ↳ **Link 7.1 → 7.2 (from rules to traffic).** The catalog sets who may use each asset. Each
 model call and each tool call also needs control at the moment it happens.
@@ -371,6 +596,9 @@ model call and each tool call also needs control at the moment it happens.
 Unity Gateway sits in front of all model and tool traffic and is built on Unity Catalog.
 It sets who may call which model and tracks usage per user and team. Budgets cap spend.
 Guardrails apply to every prompt and response, and every request is logged for audit.
+**Effect:** Every model and tool call is controlled and logged in one place.
+**Challenge:** Each team connects to model providers on its own, so nobody sees who calls which model or what it costs. Prompts and responses go through without guardrails, and nothing is logged for an audit.
+**Pivot:** Unity Gateway puts this traffic under one control plane.
 
 ↳ **Link 7.2 → 7.3 (the full list of risks).** Permissions and guardrails address known
 risks. A security team also needs the full list of risks and the control that covers
@@ -394,6 +622,14 @@ Most of the people who need them do not write code. How do business users get to
 - Ch. 1 obstacle "controlling who uses which model and at what cost" is answered here.
 - Capsules: Unity Catalog for AI assets (from ch. 2), Unity Gateway (from ch. 4),
   DASF v3.0 (from ch. 6).
+- Additions 7.1 (editorial guide):
+  - Effect ← Unity Catalog for AI assets, solves[2].solution, solves[3].solution
+  - Challenge ← Unity Catalog for AI assets, solves[0].problem, solves[1].problem, solves[4].problem, solves[2].problem
+  - Pivot ← Unity Catalog for AI assets, note
+- Additions 7.2 (editorial guide):
+  - Effect ← Unity Gateway, solves[0].solution, solves[4].solution
+  - Challenge ← Unity Gateway, solves[0].problem, solves[1].problem, solves[2].problem, solves[3].problem, solves[4].problem
+  - Pivot ← Unity Gateway, solves[0].solution
 
 ---
 
@@ -405,6 +641,9 @@ Most of the people who need them do not write code. How do business users get to
 Genie One lets business users ask questions in plain language. They get answers from governed company data, with citations and with their own permissions
 applied. When a dashboard or an agent already answers the question, Genie One sends the
 user there.
+**Effect:** Business users get answers from company data without writing SQL.
+**Challenge:** Most people who need data do not write SQL. Their questions queue up at the data team, and the answer often comes after the decision.
+**Pivot:** Genie One gives them a front door to the data.
 
 ↳ **Link 8.1 → 8.2 (trust needs shared definitions).** An answer is only trusted if
 "revenue" or "active customer" means the same thing as in the official reports.
@@ -414,6 +653,9 @@ Genie Ontology holds those definitions. Each KPI is defined once, as a metric vi
 Unity Catalog. The ontology also learns business context from existing dashboards,
 queries and pipelines. It ranks sources by certification, usage and freshness, so Genie
 answers from certified definitions first.
+**Effect:** Every answer uses the company's certified definition of each metric.
+**Challenge:** Metrics are defined differently across dashboards, queries and teams, and business context is scattered across documents, chats and tickets. An AI can then pick an obsolete or draft definition.
+**Pivot:** Genie Ontology is the layer that grounds Genie in these definitions.
 
 ↳ **Link 8.2 → 8.3 (from definitions to know-how).** Once the definitions are shared,
 domain experts can package what they know for others.
@@ -422,6 +664,9 @@ domain experts can package what they know for others.
 Genie Agents let a domain expert build a no-code assistant for a business area. The
 assistant can follow up on questions, run multi-step analyses and explain its reasoning,
 and it can be embedded in other applications. Knowledge Assistant and the supervisor agent are moving into Genie Agents.
+**Effect:** The knowledge of each business area becomes available to everyone in it.
+**Challenge:** Business knowledge stays with a few experts, and dashboards only answer the questions they were built for. Deeper analysis is spread across separate tools.
+**Pivot:** Genie Agents turn that expertise into a shared assistant.
 
 ↳ **Link 8.3 → 8.4 (familiar formats).** Many users still work in dashboards and
 spreadsheets.
@@ -431,6 +676,9 @@ An AI/BI dashboard can be built from a plain-language request. The assistant fin
 tables, writes the queries and picks the charts, and the author approves each step.
 Row Zero, announced, brings the same governed data into a spreadsheet, with Genie
 writing the queries behind the formulas.
+**Effect:** Analysts and business users go from a question to a governed dashboard on their own.
+**Challenge:** Building a dashboard takes SQL and specialist skills, so requests wait. Meanwhile, analysis done in spreadsheets is cut off from the governed data and unaudited.
+**Pivot:** AI/BI Dashboards and Row Zero bring the assistant into both.
 
 ↳ **Link 8.4 → 8.5 (from a question to a tool).** When the same question comes back
 every week, it is worth turning into a small application.
@@ -438,6 +686,9 @@ every week, it is worth turning into a small application.
 **Point 8.5 — No-code app generation.** *(Genie App Builder)*
 Genie App Builder generates a Databricks App from a plain-language description, within
 the limits the admins set.
+**Effect:** Business teams turn an idea into a working app in minutes.
+**Challenge:** Building an app takes software engineering skills, and every change needs a developer and a new deployment.
+**Pivot:** Genie App Builder lets the team describe the app instead.
 
 **Hands off:** no-code covers the common needs. Developers build the rest, such as custom applications, agents and pipelines. What do builders get?
 
@@ -457,6 +708,26 @@ the limits the admins set.
 - Status check: Row Zero is announced. Its ZeroOps part (an agent that proposes
   operational fixes) is left out of the text. It does not serve this chapter's point,
   and the card carries it.
+- Additions 8.1 (editorial guide):
+  - Effect ← Genie One, solves[1].solution
+  - Challenge ← Genie One, solves[0].problem, solves[1].problem
+  - Pivot ← Genie One, solves[0].solution
+- Additions 8.2 (editorial guide):
+  - Effect ← Genie Ontology, solves[3].solution, solves[0].solution
+  - Challenge ← Genie Ontology, solves[0].problem, solves[2].problem, solves[1].problem
+  - Pivot ← Genie Ontology, note
+- Additions 8.3 (editorial guide):
+  - Effect ← Genie Agents, solves[3].solution
+  - Challenge ← Genie Agents, solves[3].problem, solves[0].problem, solves[2].problem
+  - Pivot ← Genie Agents, solves[3].solution
+- Additions 8.4 (editorial guide):
+  - Effect ← AI/BI Dashboards (Lakeview), solves[5].solution
+  - Challenge ← AI/BI Dashboards (Lakeview), solves[1].problem, solves[5].problem, solves[4].problem; Row Zero / Genie ZeroOps, solves[0].problem, solves[3].problem
+  - Pivot ← AI/BI Dashboards (Lakeview), note; Row Zero / Genie ZeroOps, note
+- Additions 8.5 (editorial guide):
+  - Effect ← Genie App Builder, solves[0].solution
+  - Challenge ← Genie App Builder, solves[1].problem, solves[3].problem
+  - Pivot ← Genie App Builder, solves[1].solution
 
 ---
 
@@ -469,6 +740,9 @@ Developers build applications with the frameworks they already use, such as Stre
 Gradio, React or FastAPI, and deploy them as Databricks Apps. The apps run serverless on
 the platform. They sign users in with the platform's identity and read data through
 Unity Catalog with each user's permissions. Custom MCP servers run the same way. App Spaces give admins one place to govern who deploys and uses which app.
+**Effect:** Data and AI applications run on the platform itself, next to the governed data.
+**Challenge:** A data or AI application usually runs on separate infrastructure, with its own identity management and secrets. It sits apart from the governed data, and access control and audit trails are hard to put in place.
+**Pivot:** Databricks Apps brings these applications onto the platform.
 
 ↳ **Link 9.1 → 9.2 (what remains).** Hosting is now handled. Writing the code still takes
 most of the time.
@@ -477,6 +751,9 @@ most of the time.
 Genie Code is the AI assistant inside notebooks, the SQL editor, pipelines and
 dashboards. It writes and explains code from plain-language requests. A command-line
 version, in beta, brings it into the terminal and into CI pipelines.
+**Effect:** Developers write less repetitive code, with the same assistant in every tool.
+**Challenge:** Much of that code is repetitive boilerplate, developers switch between separate tools for notebooks, SQL, pipelines and dashboards, and tuning SQL is hard for non-experts.
+**Pivot:** Genie Code takes on that work.
 
 ↳ **Link 9.2 → 9.3 (agents are code too).** Custom agents are code as well, and they need a project structure.
 
@@ -486,6 +763,9 @@ tools governed in Unity Catalog. Databricks uses the same kit for its own intern
 coding agents. Developers who already work with coding agents such as Claude, Codex or
 Cursor can put them behind one interface with Omnigent, with shared context and central
 policies.
+**Effect:** Teams build agents on a ready structure, with their tools governed and audited.
+**Challenge:** Developers scaffold each agent and its tool connections by hand, and the integrations they create are not audited. Each coding-agent tool is its own isolated world, so content is copied between them by hand.
+**Pivot:** The AI Dev Kit and Omnigent give this work a common base.
 
 **Hands off:** Databricks uses the same platform components to build complete applications for specific business domains. What comes ready-made?
 
@@ -502,6 +782,18 @@ policies.
 - Left out of the text: the internal spend figures in the AI Dev Kit capsule. They are an
   internal proof point and not suited to the story.
 - Capsules covered: 3/3 for chapter 8.
+- Additions 9.1 (editorial guide):
+  - Effect ← Databricks Apps + App Spaces, solves[0].solution, solves[3].solution
+  - Challenge ← Databricks Apps + App Spaces, solves[0].problem, solves[2].problem, solves[3].problem, solves[1].problem
+  - Pivot ← Databricks Apps + App Spaces, note
+- Additions 9.2 (editorial guide):
+  - Effect ← Genie Code, solves[2].solution, solves[1].solution
+  - Challenge ← Genie Code, solves[2].problem, solves[1].problem, solves[3].problem
+  - Pivot ← Genie Code, solves[0].solution
+- Additions 9.3 (editorial guide):
+  - Effect ← AI Dev Kit + internal coding agents (Isaac), solves[1].solution, solves[0].solution
+  - Challenge ← AI Dev Kit + internal coding agents (Isaac), solves[1].problem, solves[4].problem; Omnigent, solves[0].problem, solves[2].problem
+  - Pivot ← AI Dev Kit + internal coding agents (Isaac), note; Omnigent, note
 
 ---
 
@@ -514,6 +806,9 @@ CustomerLake, in private preview, builds customer 360 profiles on the lakehouse.
 joins transactions, behavior and engagement into one profile per customer. AI-assisted
 identity resolution merges duplicate records. Campaign agents create and activate
 audiences, and a real-time profile API feeds personalization.
+**Effect:** Campaigns and personalization run on governed customer profiles that stay current.
+**Challenge:** Each system holds its own part of the customer, often duplicated and without lineage, and audiences are built and activated by hand.
+**Pivot:** CustomerLake gives the platform a ready-made answer for customer data.
 
 ↳ **Link 10.1 → 10.2 (same pattern, another domain).** CustomerLake applies the platform to
 customer data. The same pattern applies to security data.
@@ -523,6 +818,9 @@ Lakewatch, in private preview, runs security operations on the lakehouse. It kee
 security, IT and business logs in one place at object-storage cost, so they no longer
 have to be deleted early. Autonomous agents investigate alerts and help write detection
 rules, which are versioned and tested like code.
+**Effect:** Security teams keep all their logs and investigate faster.
+**Challenge:** Security telemetry is split across separate tools, threat hunting and triage are manual, and detection rules are hard to version and test.
+**Pivot:** Lakewatch adds agents to security operations.
 
 ↳ **Link 10.2 → handoff (what the two share).** Both applications are built from the same parts: data on the lakehouse, governance in Unity Catalog, and agents.
 
@@ -541,6 +839,14 @@ every model and agent then runs in production for years. How do you run it?
 - Capsules covered: 2/2 for chapter 9.
 - Status stated in the text: both are in private preview. For applications this new,
   leaving the status out would mislead.
+- Additions 10.1 (editorial guide):
+  - Effect ← CustomerLake, solves[3].solution, solves[4].solution
+  - Challenge ← CustomerLake, solves[0].problem, solves[1].problem, solves[3].problem, solves[2].problem
+  - Pivot ← CustomerLake, note
+- Additions 10.2 (editorial guide):
+  - Effect ← Lakewatch, solves[2].solution, solves[4].solution, solves[1].solution
+  - Challenge ← Lakewatch, solves[0].problem, solves[1].problem, solves[3].problem
+  - Pivot ← Lakewatch, note
 
 ---
 
@@ -551,6 +857,9 @@ every model and agent then runs in production for years. How do you run it?
 **Point 11.1 — Model registry.** *(MLflow Model Registry, Model Registry & governance)*
 Every model in production is registered in Unity Catalog with its versions, its aliases
 such as champion and challenger, and its lineage back to the training data. Promoting a new version means moving an alias, and model update triggers or deployment jobs can start the next steps automatically.
+**Effect:** Teams always know which model version is in production and where it came from.
+**Challenge:** Model versions go untracked, promotions are manual and error-prone, and the link between a model and its training data gets lost. Without a shared view across workspaces, teams rebuild models that already exist.
+**Pivot:** The Model Registry in Unity Catalog keeps this history and governs every model.
 
 ↳ **Link 11.1 → 11.2 (from registered to running).** A registered version then has to
 serve traffic.
@@ -559,6 +868,9 @@ serve traffic.
 Model Serving endpoints run the registered version, for real-time
 requests and for batch scoring. They handle more than 25,000 queries per second with low
 added latency, and they scale with demand.
+**Effect:** Production traffic can grow without anyone resizing the infrastructure.
+**Challenge:** Models end up spread across several serving platforms, scaled by hand, with no central view of what is deployed.
+**Pivot:** Model Serving runs them all from one place.
 
 ↳ **Link 11.2 → 11.3 (what happens over time).** Once a model is serving, its inputs
 change over time and its quality can drift.
@@ -586,6 +898,14 @@ environments as files in Git. Lakeflow Jobs run the pipelines. Each change goes 
   named in ch. 1, which is why business users are not in it yet (see M7 weak spot).
 - Capsules covered: 5/5 for chapter 10 (both registry capsules).
 - Running total: 10 + 10 + 7 + 10 + 5 + 6 + 4 + 2 + 5 = 59 capsules, all placed once (after the M11 move of Omnigent).
+- Additions 11.1 (editorial guide):
+  - Effect ← MLflow Model Registry, solves[0].solution, solves[2].solution; Model Registry & governance, solves[2].solution
+  - Challenge ← MLflow Model Registry, solves[0].problem, solves[1].problem; Model Registry & governance, solves[2].problem, solves[0].problem
+  - Pivot ← Model Registry & governance, note
+- Additions 11.2 (editorial guide):
+  - Effect ← Model Serving & batch inference, solves[1].solution
+  - Challenge ← Model Serving & batch inference, solves[0].problem, solves[1].problem, solves[2].problem
+  - Pivot ← Model Serving & batch inference, solves[0].solution, solves[2].solution
 
 ---
 
@@ -662,3 +982,123 @@ Requested by Mehdi. The story now has 11 chapters.
 - Old chapters 7 to 10 are now 8 to 11. Point ids and link labels were renumbered.
 - The M0 chain and the per-milestone checks describe the 10-chapter version. This entry
   supersedes them where they differ.
+
+---
+
+## M15 — The complete story
+
+Written on 2026-10-11 following `docs/story-cement.md`. `scripts/story_extract.py` reads this
+section into the Story tab: the title and the opening at the top, each chapter's paragraph at
+the head of its chapter, and the closing after chapter 11.
+
+**Title:** From scattered data to AI in production
+
+**Opening.**
+Most large organizations already run analytics and have started with AI. Their data sits in
+several systems, each with its own copies and rules, kept in sync by pipelines built by hand.
+Data scientists rebuild the same features and struggle to reproduce their results, every model
+provider is handled separately, and agents cannot reach data and tools safely. Nobody can
+verify the answers of the AI or see how it is used. Business users wait for the few colleagues
+who can query the data, developers host each application on its own infrastructure, and
+customer and security data stay in their own silos. So AI projects start as pilots on
+extracts, and many stop before production. The work starts with the data. How do you get it
+into one place, governed once and fresh enough for AI?
+
+**Chapter 2.**
+It starts by storing the data once. Copies multiply because every workload, from batch jobs to
+applications and dashboards, keeps its own. Delta Lake keeps one open copy, Lakeflow and
+Predictive Optimization bring the data in and maintain it, Lakebase and Lakehouse//RT put
+applications and live analytics on that same copy, and Unity Catalog governs all of it and
+watches its quality. The organization now works from one fresh, governed copy of its data. How
+does a data science team work on it?
+
+**Chapter 3.**
+Data scientists explore that governed data in notebooks, with the languages they already know.
+Their work slows down when features are rebuilt for each project and results cannot be
+reproduced. The Feature Store shares each feature across teams, MLflow and AutoML track and
+speed up the experiments, and AI Runtime provides GPUs when the data outgrows one machine. The
+team ends up with models it can reproduce, while many new uses start from models trained by
+others. How do you serve and control any model, your own or a provider's?
+
+**Chapter 4.**
+Serving those models is the next step. Without one way to do it, every model and every provider
+brings its own system, keys and costs. Model Serving puts every model behind the same kind of
+endpoint, Foundation Model APIs reach the main providers through one API, fine-tuning adapts
+open models to the company's needs, and external models go through the same control. Every
+model is now served the same way, and many uses need one that can also look up company data and
+call tools. How do you build agents?
+
+**Chapter 5.**
+An agent starts from the company's own data. It has to find the right information, use tools,
+remember what it learned and run code without putting data at risk. AI Functions bring models
+to the data in SQL, AI Search and Knowledge Assistant find the right documents, MCP connects
+tools under Unity Catalog, custom agents get managed memory and Databricks Sandbox, and the
+Supervisor Agent shares out large tasks. The agent can now use company data and tools, and
+before it reaches users, it has to be trusted. How do you know it is right?
+
+**Chapter 6.**
+Knowing that an agent is right starts with seeing what it does. Without that, a wrong answer
+cannot be traced, quality is a matter of opinion, and a prompt change can go unnoticed. MLflow 3
+traces every request step by step, agent evaluation scores the answers of each version, the
+Prompt Registry versions the prompts, and Review Apps bring the experts' judgment in. Quality is
+now measured before each release, and data, models, agents and tools also need rules for who may
+use what. How is all of it governed?
+
+**Chapter 7.**
+Governance has to cover all of it at once. Models, agents and tools often sit outside the rules
+that govern data, calls to models go unchecked, and the risks of AI are not mapped. Unity
+Catalog governs them the same way as tables, Unity Gateway controls and logs every model and
+tool call, and the Databricks AI Security Framework links each risk to the control that covers
+it. Data, models, agents and tools are now governed with one set of rules, but most of the
+people who need them do not write code. How do business users get to them?
+
+**Chapter 8.**
+Business users depend on analysts for every question, and the same metric can mean different
+things from one report to the next. Genie One lets them ask in plain language and answers with
+their own permissions, and Genie Ontology makes each answer use the certified definition. Genie
+Agents, AI/BI Dashboards, Row Zero and Genie App Builder carry the same help into assistants,
+dashboards, spreadsheets and small apps. No-code now covers the common needs, and developers
+build the rest. What do builders get?
+
+**Chapter 9.**
+Developers build the rest on the same platform. Each application usually needs its own
+infrastructure, identity and secrets, and much of the code is repetitive. Databricks Apps hosts
+applications next to the governed data, App Spaces governs who deploys and uses them, Genie Code
+writes and explains code in every tool, and the AI Dev Kit and Omnigent give agent development a
+common base. Databricks builds with these same components, up to complete applications for
+specific business domains. What comes ready-made?
+
+**Chapter 10.**
+Some of these applications come ready-made. Customer data and security logs each sit in their
+own silo, with duplicate records, separate tools and logs deleted to save cost. CustomerLake
+builds one governed profile per customer and lets agents run the campaigns, and Lakewatch keeps
+the logs on the lakehouse and investigates alerts with agents. Whether the organization builds
+its applications or uses ready-made ones, every model and agent then runs in production for
+years. How do you run it?
+
+**Chapter 11.**
+Running it means keeping track of every version. Models drift as their inputs change, and each
+fix has to reach production the same way every time. The Model Registry in Unity Catalog records
+each version and its lineage, Model Serving runs the registered version at scale, Lakehouse
+Monitoring detects drift and raises alerts, and MLOps Stacks and bundles carry each change from
+development to production. Each model and agent now runs, is watched and is updated in
+production for as long as it is used.
+
+**Closing.**
+Every part of the starting situation now has its answer. The data foundation stores the
+scattered data once and governs it, the data science lifecycle makes model work reproducible,
+and model access puts every provider behind one way of serving. Building agents gives them safe
+access to data and tools, evaluation measures their answers, and governance sets who may use
+what. Business users and developers get tools of their own, domain applications break the
+customer and security silos, and production operations keep every model under control. AI no
+longer stops at the pilot.
+
+**Check M15.**
+- Each paragraph from chapter 2 to 10 ends on the last sentence of its chapter's handoff, word
+  for word. The opening ends on chapter 1's handoff. Chapter 11 has no handoff and leads into
+  the closing.
+- The closing follows the Check M1 map in order: 1.1 data foundation, 1.2 data science
+  lifecycle, 1.3 model access, 1.4 building agents, 1.5 evaluation and governance, 1.6 business
+  users and developers, 1.7 domain applications, 1.8 production operations.
+- Every product a paragraph names is cited by its chapter's points, as a capsule or in the
+  bullets.

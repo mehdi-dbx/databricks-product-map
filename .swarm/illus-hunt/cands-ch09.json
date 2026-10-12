@@ -1,0 +1,48 @@
+{
+  "9.1": [
+    {
+      "id": "p9.1-apps-example",
+      "file": "p9.1-apps-example.png",
+      "source": "How to set up an Agentic Applications workshop, slide 62",
+      "url": "https://docs.google.com/presentation/d/1qzWNKqEJogGPmiwdNrmm-_nVIc4gXU3yELKcmWb_aRU/edit#slide=id.g30dd8c5d16c_0_1330",
+      "kind": "screenshot",
+      "why": "Real-world Databricks Apps hosting: LLMOps dashboard with Lakebase, AI functions, Lakeflow jobs"
+    },
+    {
+      "id": "p9.1-ai-stack",
+      "file": "p9.1-ai-stack.png",
+      "source": "How to set up an Agentic Applications workshop, slide 40",
+      "url": "https://docs.google.com/presentation/d/1qzWNKqEJogGPmiwdNrmm-_nVIc4gXU3yELKcmWb_aRU/edit",
+      "kind": "diagram",
+      "why": "AI Stack Ecosystem: shows Databricks Apps hosting in context of agents, data platform, models, cloud infrastructure"
+    },
+    {
+      "id": "p9.1-e2e-platform",
+      "file": "p9.1-e2e-platform.png",
+      "source": "Agentbricks Roadshow, slide 21",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit",
+      "kind": "diagram",
+      "why": "Agent Bricks E2E: 'Custom Agents on Apps' deployment option; shows apps as publishing target alongside API"
+    }
+  ],
+  "9.2": [
+    {
+      "id": "p9.2-genie-traces",
+      "file": "p9.2-genie-traces.png",
+      "source": "Agentbricks Roadshow, slide 212",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit",
+      "kind": "screenshot",
+      "why": "Genie Code interactive features: analyze traces, set up evals, custom visualizations for agent debugging"
+    }
+  ],
+  "9.3": [
+    {
+      "id": "p9.3-agent-dev-lifecycle",
+      "file": "p9.3-agent-dev-lifecycle.png",
+      "source": "Mosaic AI - System Architecture 2026-02-25, slide 66",
+      "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit",
+      "kind": "diagram",
+      "why": "Complete agent dev kit lifecycle: AI Playground, LangChain, agent evaluation (MLflow), registration, deployment to Databricks App"
+    }
+  ]
+}

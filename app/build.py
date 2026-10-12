@@ -182,12 +182,21 @@ css = (SRC / "styles.css").read_text(encoding="utf-8")
 js = (SRC / "mindmap.js").read_text(encoding="utf-8")
 template = (SRC / "template.html").read_text(encoding="utf-8")
 
-banner = "<!-- AUTO-GENERATED from app/src/ by app/build.py — edit the sources, then run build.py -->\n"
-script = f'const TREES = {{ "ai": {ai_text}, "ds": {ds_text} }};\nconst STORY = {story_text};\n\n{js}'
-html = banner + template.replace("{{STYLES}}", css).replace("{{DECKS}}", decks_html).replace("{{SCRIPT}}", script)
+# ---- story illustrations (candidates to pick from): every image file must exist in static/img/ ----
+illus_text = (SRC / "illustrations.json").read_text(encoding="utf-8").strip()
+missing_img = [c["file"] for cands in json.loads(illus_text).values() for c in cands
+               if not (HERE / "static" / "img" / c["file"]).is_file()]
+if missing_img:
+    raise SystemExit(f"BUILD FAILED — illustration file(s) missing from app/static/img/: {', '.join(missing_img)}")
 
-outputs = [HERE / "static" / "index.html", HERE.parent / "ai-tree-mindmap.html"]
-for out in outputs:
+banner = "<!-- AUTO-GENERATED from app/src/ by app/build.py — edit the sources, then run build.py -->\n"
+
+# the images stay in app/static/img/; each output reaches them by its own relative path
+outputs = {HERE / "static" / "index.html": "img/", HERE.parent / "ai-tree-mindmap.html": "app/static/img/"}
+for out, img_base in outputs.items():
+    script = (f'const TREES = {{ "ai": {ai_text}, "ds": {ds_text} }};\nconst STORY = {story_text};\n'
+              f'const ILLUS = {illus_text};\nconst IMG_BASE = "{img_base}";\n\n{js}')
+    html = banner + template.replace("{{STYLES}}", css).replace("{{DECKS}}", decks_html).replace("{{SCRIPT}}", script)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding="utf-8")
     print(f"wrote {out}  ({len(html):,} bytes)")

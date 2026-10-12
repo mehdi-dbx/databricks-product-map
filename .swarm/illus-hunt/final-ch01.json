@@ -1,0 +1,70 @@
+{
+  "1.1": [
+    {
+      "id": "p1.1-data-silos-before",
+      "file": "p1.1-data-silos-before.png",
+      "source": "Copy of Lakeflow Connect Tech Deck - L200, slide 20",
+      "url": "https://docs.google.com/presentation/d/1xiUXDS6x6aHv547-daQKBhvoOidHy_eVxdC8qdiHQxs/edit#slide=id.g316fd76f33f_0_1851",
+      "kind": "diagram",
+      "why": "Shows the 'Before' state with data fragmentation across Salesforce, SQL, and custom tools - directly illustrates the problem of spread systems"
+    },
+    {
+      "id": "p1.1-lakehouse-evolution",
+      "file": "p1.1-lakehouse-evolution.png",
+      "source": "Databricks blog: What is a Data Lakehouse?",
+      "url": "https://www.databricks.com/blog/what-is-data-lakehouse",
+      "kind": "diagram",
+      "why": "Three-panel progression showing evolution from data warehouse silos to data lake to lakehouse - visual before/after of the architecture problem"
+    },
+    {
+      "id": "p1.1-lakeflow-sources",
+      "file": "p1.1-lakeflow-sources.png",
+      "source": "Copy of Lakeflow Connect Tech Deck - L200, slide 16",
+      "url": "https://docs.google.com/presentation/d/1xiUXDS6x6aHv547-daQKBhvoOidHy_eVxdC8qdiHQxs/edit#slide=id.g3773fdeb85f_19_349",
+      "kind": "diagram",
+      "why": "Comprehensive inventory of all connector sources (Applications, Files, Databases, Warehouses, Zerobus, Message buses) - shows the sprawl and fragmentation of systems"
+    },
+    {
+      "id": "p1.1-lakeflow-connectors",
+      "file": "p1.1-lakeflow-connectors.png",
+      "source": "Copy of Lakeflow Connect Tech Deck - L200, slide 42",
+      "url": "https://docs.google.com/presentation/d/1xiUXDS6x6aHv547-daQKBhvoOidHy_eVxdC8qdiHQxs/edit#slide=id.g374d02f907e_0_2",
+      "kind": "diagram",
+      "why": "Shows diversity of database and warehouse systems (Oracle, SQL Server, PostgreSQL, MySQL, Redshift, Snowflake, MariaDB, etc.) requiring connectors"
+    }
+  ],
+  "1.2": [
+    {
+      "id": "p1.2-mlops-dev",
+      "file": "p1.2-mlops-dev.png",
+      "source": "docs.databricks.com/machine-learning/mlops/mlops-workflow",
+      "url": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-workflow",
+      "kind": "diagram",
+      "why": "Shows development/pilot phase with training, validation, compliance checks - first stage pilots start in; demonstrates initial requirements"
+    },
+    {
+      "id": "p1.2-mlops-staging",
+      "file": "p1.2-mlops-staging.png",
+      "source": "docs.databricks.com/machine-learning/mlops/mlops-workflow",
+      "url": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-workflow",
+      "kind": "diagram",
+      "why": "Shows staging phase with integration tests, Model Serving endpoint, monitoring tests - intermediate gate where projects often stall"
+    },
+    {
+      "id": "p1.2-mlops-prod",
+      "file": "p1.2-mlops-prod.png",
+      "source": "docs.databricks.com/machine-learning/mlops/mlops-workflow",
+      "url": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-workflow",
+      "kind": "diagram",
+      "why": "Shows production phase with full monitoring, inference pipelines, retraining loops, model aliases - full infrastructure barrier many pilots never reach"
+    },
+    {
+      "id": "p1.2-agent-lifecycle-proto",
+      "file": "p1.2-agent-lifecycle-proto.png",
+      "source": "Agentbricks Roadshow, slide 205",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_6153",
+      "kind": "diagram",
+      "why": "Shows agent development lifecycle with stakeholder sign-off gate (highlighted) and feedback loops showing iteration burden; illustrates where projects get stuck before production"
+    }
+  ]
+}

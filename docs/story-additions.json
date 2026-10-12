@@ -1,0 +1,1828 @@
+[
+ {
+  "chapter": 2,
+  "point": "2.1",
+  "effect": "The company keeps one consistent copy of its data, in an open format.",
+  "challenge": "Batch and streaming data often sit in separate stores, sometimes in closed or complex formats. A job that fails halfway can leave a table inconsistent, and a schema change can break the jobs that read it.",
+  "pivot": "Delta Lake brings these workloads together on one open table format.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[3].solution",
+     "text": "**Open** Delta standard"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].solution",
+     "text": "Consistency **guaranteed**"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[2].problem",
+     "text": "**Separate** stores for batch/stream"
+    },
+    {
+     "ref": 0,
+     "field": "solves[3].problem",
+     "text": "**Proprietary** or complex formats"
+    },
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "Data **corruption** mid-stream"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].problem",
+     "text": "Transactional **inconsistency**"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "Enforcement **breaks** on change"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "Delta Lake provides open ACID transactions for both batch and streaming data workloads."
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 2,
+  "point": "2.2",
+  "effect": "Data engineers no longer write connector code or schedule table maintenance by hand.",
+  "challenge": "Bringing data in means writing connector code for each source and wiring job dependencies by hand. The tables then need maintenance that someone has to schedule and tune.",
+  "pivot": "Lakeflow and Predictive Optimization take over this work.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**Managed** Connect service"
+    },
+    {
+     "ref": 1,
+     "field": "solves[0].solution",
+     "text": "**ROI-driven** auto-running"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "Manual **connector** code"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].problem",
+     "text": "Job dependencies **manual**"
+    },
+    {
+     "ref": 1,
+     "field": "solves[0].problem",
+     "text": "Manual **OPTIMIZE** scheduling"
+    },
+    {
+     "ref": 1,
+     "field": "solves[1].problem",
+     "text": "Clustering keys **hand-tuned**"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "Lakeflow provides data ingestion, orchestration, and transformation components for building data pipelines."
+    },
+    {
+     "ref": 1,
+     "field": "note",
+     "text": "Predictive Optimization automatically tunes Delta tables on Unity Catalog using ROI-based optimization."
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 2,
+  "point": "2.3",
+  "effect": "Applications and agents keep their data on the same platform as the analytics, under the same governance.",
+  "challenge": "Application data in that separate database escapes governance, and search over it needs yet another store for vectors, which copies the data again.",
+  "pivot": "Lakebase and Lakebase Search bring this data and its search onto the platform.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "Lakebase provides serverless PostgreSQL storage for agent state and application data with Unity Catalog integration."
+    },
+    {
+     "ref": 0,
+     "field": "solves[2].solution",
+     "text": "**UC-synced** tables"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[2].problem",
+     "text": "App data **ungoverned**"
+    },
+    {
+     "ref": 1,
+     "field": "solves[1].problem",
+     "text": "Separate **vector DB** required"
+    },
+    {
+     "ref": 1,
+     "field": "solves[3].problem",
+     "text": "Vector data **replicated** elsewhere"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "Lakebase provides serverless PostgreSQL storage for agent state and application data with Unity Catalog integration."
+    },
+    {
+     "ref": 1,
+     "field": "note",
+     "text": "Lakebase Search combines vector and keyword search within PostgreSQL without requiring a separate vector database."
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 2,
+  "point": "2.4",
+  "effect": "Dashboards and applications read live data instead of a stale copy.",
+  "challenge": "Feeding analytics with operational data takes replication pipelines and a second system to maintain. The copies lag behind the source, and dashboard queries take seconds.",
+  "pivot": "Lakehouse//RT and LTAP remove that last copy.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[1].solution",
+     "text": "Queries run **live** on governed Delta/Iceberg lakehouse tables"
+    },
+    {
+     "ref": 1,
+     "field": "solves[4].solution",
+     "text": "Lakehouse//RT merges recent Postgres changes with lake for live results"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 1,
+     "field": "solves[0].problem",
+     "text": "**Replication pipelines** needed between operational DB and warehouse"
+    },
+    {
+     "ref": 1,
+     "field": "solves[2].problem",
+     "text": "Maintain **two systems** (Postgres + Warehouse)"
+    },
+    {
+     "ref": 1,
+     "field": "solves[1].problem",
+     "text": "**Eventual consistency** lag between operational and analytical"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "Copied serving data **stale** vs operational source"
+    },
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "BI and dashboard queries **slow** (seconds)"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "solves[2].solution",
+     "text": "**Single lakehouse** source for all SQL workloads (read-only)"
+    },
+    {
+     "ref": 1,
+     "field": "solves[0].solution",
+     "text": "**Shared lake storage** (Parquet, Delta, Iceberg) eliminates sync"
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 2,
+  "point": "2.5",
+  "effect": "Data teams are alerted when a table goes stale, and repairs run as audited jobs.",
+  "challenge": "Data freshness is invisible and nobody is notified, so a stale table can go unnoticed, and repairing it is manual and risky.",
+  "pivot": "Anomaly detection and data classification add this watch to the catalog.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 1,
+     "field": "solves[0].solution",
+     "text": "**Automatic** anomaly detection"
+    },
+    {
+     "ref": 1,
+     "field": "solves[3].solution",
+     "text": "Email/Slack/**Webhook** integration"
+    },
+    {
+     "ref": 1,
+     "field": "solves[2].solution",
+     "text": "**Orchestrated** via Lakeflow Jobs"
+    },
+    {
+     "ref": 1,
+     "field": "solves[4].solution",
+     "text": "Allowlist + **audit** trail"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 1,
+     "field": "solves[0].problem",
+     "text": "Data freshness **invisible**"
+    },
+    {
+     "ref": 1,
+     "field": "solves[3].problem",
+     "text": "No **notification** channels"
+    },
+    {
+     "ref": 1,
+     "field": "solves[2].problem",
+     "text": "Repairs **manual** and risky"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 1,
+     "field": "note",
+     "text": "Detects anomalies in data with automated remediation capabilities that are still emerging."
+    },
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "Provides AI-driven data classification and quality monitoring integrated with Unity Catalog."
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 3,
+  "point": "3.1",
+  "effect": "",
+  "challenge": "",
+  "pivot": "",
+  "sources": {
+   "effect": [],
+   "challenge": [],
+   "pivot": []
+  },
+  "report": "No capsule of this point has solves rows (Notebooks & collaboration, Data prep & EDA, DS languages & frameworks), so there is no challenge and no pivot. An effect drawn from the notes would repeat the bullets."
+ },
+ {
+  "chapter": 3,
+  "point": "3.2",
+  "effect": "Each feature is built once and reused by every team and every model.",
+  "challenge": "Teams duplicate the same features across projects, with no view of where each one comes from or who may use it.",
+  "pivot": "The Feature Store makes features a shared, governed asset.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[2].solution",
+     "text": "**discoverable** shared library"
+    },
+    {
+     "ref": 1,
+     "field": "solves[1].solution",
+     "text": "**Shared** feature registry enables centralized reuse"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 1,
+     "field": "solves[1].problem",
+     "text": "Teams **duplicate** features across projects wasting resources"
+    },
+    {
+     "ref": 1,
+     "field": "solves[2].problem",
+     "text": "No visibility into feature **origins** and dependencies"
+    },
+    {
+     "ref": 1,
+     "field": "solves[3].problem",
+     "text": "Ungoverned **access** to features across teams"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "solves[1].solution",
+     "text": "centralized **UC-backed** registry"
+    },
+    {
+     "ref": 1,
+     "field": "solves[3].solution",
+     "text": "Unity Catalog integration provides **access control** and compliance"
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 3,
+  "point": "3.3",
+  "effect": "Model work becomes repeatable, and teams reach a first model faster.",
+  "challenge": "When each team keeps its own metrics, results cannot be compared, and searching algorithms and settings by hand delays every model.",
+  "pivot": "MLflow and AutoML take care of the tracking and the search.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**Centralized** experiment tracking logs all parameters, metrics, and artifacts"
+    },
+    {
+     "ref": 2,
+     "field": "solves[2].solution",
+     "text": "**End-to-end** automation handles data prep, training, and evaluation"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "Teams work in **isolation** with scattered metrics and results"
+    },
+    {
+     "ref": 2,
+     "field": "solves[0].problem",
+     "text": "Data scientists manually **search** through algorithms causing delays"
+    },
+    {
+     "ref": 2,
+     "field": "solves[1].problem",
+     "text": "Hyperparameter optimization is **tedious** and often incomplete"
+    },
+    {
+     "ref": 2,
+     "field": "solves[2].problem",
+     "text": "Manual experimentation is **slow** delaying model deployment"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "Experiment tracking, autologging, and model management."
+    },
+    {
+     "ref": 1,
+     "field": "note",
+     "text": "Automated hyperparameter tuning and model selection for tabular classification and regression tasks."
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 3,
+  "point": "3.4",
+  "effect": "Training is no longer limited by the size of one machine or by access to GPUs.",
+  "challenge": "Distributed training code is hard to write correctly, GPUs are hard to get, and clusters configured by hand are error-prone or sit idle.",
+  "pivot": "Managed training libraries and AI Runtime take that work off the team.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**Distributed** scaling across GPU workers handles any dataset size"
+    },
+    {
+     "ref": 1,
+     "field": "solves[0].solution",
+     "text": "**on-demand** serverless GPU provisioning"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "Distributed training code is **complex** and difficult to write correctly"
+    },
+    {
+     "ref": 1,
+     "field": "solves[0].problem",
+     "text": "GPU **scarcity** delays training"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].problem",
+     "text": "Manual **GPU** provisioning and cluster configuration is error-prone"
+    },
+    {
+     "ref": 1,
+     "field": "solves[1].problem",
+     "text": "overprovisioned GPUs **idle**"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "solves[1].solution",
+     "text": "**Managed** abstractions (DeepSpeed, TorchDistributor, Ray) hide distribution details"
+    },
+    {
+     "ref": 1,
+     "field": "note",
+     "text": "Serverless GPU access for fine-tuning, distributed training, and batch inference with A10 and H100 instances."
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 4,
+  "point": "4.1",
+  "effect": "Putting a model into production no longer needs its own infrastructure.",
+  "challenge": "Each kind of model needs its own serving system, provisioned by hand, with access control split across them. Idle machines keep costing money.",
+  "pivot": "Model Serving replaces these systems with one serverless service.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[1].solution",
+     "text": "**serverless** auto-scaling to demand"
+    },
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**unified** control plane and REST API"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "**multiple** serving systems per provider"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "manual infrastructure **provisioning**"
+    },
+    {
+     "ref": 0,
+     "field": "solves[2].problem",
+     "text": "**fragmented** model access control"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].problem",
+     "text": "idle compute **wastes** spend"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "Model Serving provides serverless endpoints with pay-per-token, provisioned throughput, and batch billing."
+    },
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**unified** control plane and REST API"
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 4,
+  "point": "4.2",
+  "effect": "Teams can use the best model for each task, from any of the main providers.",
+  "challenge": "Depending on one provider creates lock-in, token spend grows unpredictably, and models from different providers are tested piece by piece.",
+  "pivot": "Foundation Model APIs remove the dependency on any single provider.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**Multi-provider** unified API (Anthropic, OpenAI, Google, Meta, Qwen, Grok, others)"
+    },
+    {
+     "ref": 0,
+     "field": "solves[3].solution",
+     "text": "**Unified endpoint** for A/B testing and model swapping"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "Vendor **lock-in** to single model provider"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "Unpredictable token **spend** growth"
+    },
+    {
+     "ref": 0,
+     "field": "solves[3].problem",
+     "text": "**Fragmented** testing across providers"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**Multi-provider** unified API (Anthropic, OpenAI, Google, Meta, Qwen, Grok, others)"
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 4,
+  "point": "4.3",
+  "effect": "Adapting a model to company data takes less GPU memory and is paid by the minute.",
+  "challenge": "Full fine-tuning needs large amounts of GPU memory and is expensive and slow. Once tuned, the model often sits apart from the systems that serve the others.",
+  "pivot": "Model fine-tuning makes this adaptation lighter and keeps it on the platform.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**QLoRA/LoRA** parameter efficiency"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].solution",
+     "text": "serverless GPU **pay-per-minute** model"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "full fine-tune requires **large GPU memory**"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "fine-tuning **expensive** with full GPU"
+    },
+    {
+     "ref": 0,
+     "field": "solves[2].problem",
+     "text": "model adaptation **slow** with full training"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].problem",
+     "text": "fine-tuned models **isolated** from serving"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**QLoRA/LoRA** parameter efficiency"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].solution",
+     "text": "integrate with **MLflow** and **Model Serving**"
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 4,
+  "point": "4.4",
+  "effect": "Calls to outside models are tracked and audited like every other model call.",
+  "challenge": "API keys end up scattered across code and team members, and these calls bypass security, with no view of what they cost.",
+  "pivot": "External model services bring these calls under the same control.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[2].solution",
+     "text": "**Rate limiting** + **usage tracking** through AI Gateway"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].solution",
+     "text": "**Unity Catalog** integration for governance and audit logs"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "API keys **scattered** across code and team members"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "**Ungoverned** external API calls bypass security"
+    },
+    {
+     "ref": 0,
+     "field": "solves[2].problem",
+     "text": "**Blind** to external model spending"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "Databricks governs access to externally hosted models through Unity Catalog and the Gateway."
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 5,
+  "point": "5.1",
+  "effect": "Teams apply AI to large volumes of data and documents without moving them out of the platform.",
+  "challenge": "Running a model over company data usually means sending the data to an outside service, building separate pipelines for documents and splitting the work into batches by hand. What comes back is unstructured.",
+  "pivot": "AI Functions do this work where the data already is.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**native** functions run inside data platform"
+    },
+    {
+     "ref": 0,
+     "field": "solves[3].solution",
+     "text": "data **stays** in Unity Catalog"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "**external** AI services require data export"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].problem",
+     "text": "build **separate** OCR, NLP, JSON pipelines"
+    },
+    {
+     "ref": 0,
+     "field": "solves[2].problem",
+     "text": "**manual** batch splitting and parallelization"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "model output is **unstructured** for downstream use"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "SQL- & pipeline-native AI for batch transformation of data and documents."
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 5,
+  "point": "5.2",
+  "effect": "Agents answer from the company's own documents, with sources that can be checked.",
+  "challenge": "Search indexes are built and kept in sync by hand, and generic retrieval misses what a document means. Answers then cite sources that are missing or false.",
+  "pivot": "AI Search and Knowledge Assistant ground the answers in the right documents.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "AI Search combines vector and keyword search with reranking, Delta sync, and citation tracking."
+    },
+    {
+     "ref": 1,
+     "field": "solves[2].solution",
+     "text": "**grounded** source attribution"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "**manual** embedding and index management"
+    },
+    {
+     "ref": 0,
+     "field": "solves[2].problem",
+     "text": "vector indices **slow to maintain** at scale"
+    },
+    {
+     "ref": 1,
+     "field": "solves[1].problem",
+     "text": "**generic** retrieval misses document intent"
+    },
+    {
+     "ref": 1,
+     "field": "solves[2].problem",
+     "text": "sources **missing** or **false**"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "automatic **embedding** computation + Delta sync"
+    },
+    {
+     "ref": 1,
+     "field": "solves[0].solution",
+     "text": "**Instructed Retriever** keeps answers grounded"
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 5,
+  "point": "5.3",
+  "effect": "Agents reach the company's tools through one governed route instead of one-off connections.",
+  "challenge": "Teams write a custom connector for each tool and host the servers themselves, credentials pile up across agents, and tool use stays hidden.",
+  "pivot": "Managed MCP servers and MCP Services turn each tool into a governed connection.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**Standard** MCP endpoints"
+    },
+    {
+     "ref": 0,
+     "field": "solves[2].solution",
+     "text": "**Unity Catalog** enforces grants"
+    },
+    {
+     "ref": 2,
+     "field": "solves[2].solution",
+     "text": "**UC securable** model"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "Custom **connectors** per tool"
+    },
+    {
+     "ref": 0,
+     "field": "solves[3].problem",
+     "text": "Building server **infrastructure**"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "Credential **sprawl** across agents"
+    },
+    {
+     "ref": 0,
+     "field": "solves[5].problem",
+     "text": "Tool usage **hidden**"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "Managed MCP servers provide governed agent access to Databricks services including analytics, search, and SQL."
+    },
+    {
+     "ref": 2,
+     "field": "note",
+     "text": "MCP Services lets you register external MCPs as governed assets and deploy custom MCPs as Databricks Apps."
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 5,
+  "point": "5.4",
+  "effect": "Developers build the agent they need, and it remembers its users and runs its code safely.",
+  "challenge": "Agent platforms often impose the framework and the model, and leave sessions and memory to be handled by hand. Users repeat their instructions in each conversation, and the code an agent writes is untrusted.",
+  "pivot": "Custom agents, managed memory and Databricks Sandbox take these limits away.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**custom** agent logic and workflows"
+    },
+    {
+     "ref": 1,
+     "field": "solves[1].solution",
+     "text": "agents **recall** learned preferences"
+    },
+    {
+     "ref": 2,
+     "field": "solves[0].solution",
+     "text": "**isolated** execution environment"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "**predetermined** framework choice"
+    },
+    {
+     "ref": 0,
+     "field": "solves[5].problem",
+     "text": "**fixed** model selection"
+    },
+    {
+     "ref": 0,
+     "field": "solves[3].problem",
+     "text": "**manual** session and memory management"
+    },
+    {
+     "ref": 1,
+     "field": "solves[1].problem",
+     "text": "users repeat **instructions** in each session"
+    },
+    {
+     "ref": 2,
+     "field": "solves[0].problem",
+     "text": "**untrusted** AI-generated code poses risk"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "Build agents using code-first frameworks like LangGraph or CrewAI with agent.toml configuration."
+    },
+    {
+     "ref": 1,
+     "field": "note",
+     "text": "Lakebase-backed, cross-session, semantic search (Sep 16)."
+    },
+    {
+     "ref": 2,
+     "field": "note",
+     "text": "Isolated serverless code execution, scoped UC access."
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 5,
+  "point": "5.5",
+  "effect": "Large tasks are shared across specialized agents and come back as one answer.",
+  "challenge": "Routing work between agents by hand gives disconnected answers, and a chain of agents can bypass a user's data permissions.",
+  "pivot": "The Supervisor Agent takes over the routing.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**AI-orchestrated** task delegation"
+    },
+    {
+     "ref": 0,
+     "field": "solves[3].solution",
+     "text": "**synthesized** comprehensive solutions"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "**manual** routing between agents"
+    },
+    {
+     "ref": 0,
+     "field": "solves[3].problem",
+     "text": "**disconnected** responses from subagents"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].problem",
+     "text": "**bypass** user data access controls"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**AI-orchestrated** task delegation"
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 6,
+  "point": "6.1",
+  "effect": "Operators see inside every agent request, step by step, including what it costs.",
+  "challenge": "Agent chains are opaque to the people who run them. When an answer is wrong, the failing step is hard to isolate, and the cost of each request is unknown.",
+  "pivot": "MLflow 3 makes each request visible.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**end-to-end** request tracing (OTel, 30+ frameworks)"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].solution",
+     "text": "granular **intermediate step** visibility"
+    },
+    {
+     "ref": 0,
+     "field": "solves[3].solution",
+     "text": "**traced tokens** enable cost attribution"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "agentic chains **opaque** to operators"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].problem",
+     "text": "failures **hard to isolate** in chains"
+    },
+    {
+     "ref": 0,
+     "field": "solves[3].problem",
+     "text": "LLM spend **opaque** per request"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "MLflow provides end-to-end tracing for 30+ frameworks, LLM-based evaluation, and production monitoring."
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 6,
+  "point": "6.2",
+  "effect": "Teams know whether a new agent version is better before it ships.",
+  "challenge": "Without quality metrics, traces are reviewed by hand and versions cannot be compared. Prompts change without a record, and staging and production drift apart.",
+  "pivot": "Agent evaluation scores the answers, and the Prompt Registry versions the prompts.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[4].solution",
+     "text": "**evaluation runs** tracked per version"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].solution",
+     "text": "**programmatic** batch evaluation runs"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "no **metrics** on response quality"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "**manual** review of traces"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].problem",
+     "text": "can't **compare** agent versions"
+    },
+    {
+     "ref": 1,
+     "field": "solves[0].problem",
+     "text": "prompt changes **untracked** over time"
+    },
+    {
+     "ref": 1,
+     "field": "solves[1].problem",
+     "text": "staging/prod prompts **diverge**"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**LLM judges** score each trace"
+    },
+    {
+     "ref": 1,
+     "field": "solves[0].solution",
+     "text": "version **history** per prompt"
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 6,
+  "point": "6.3",
+  "effect": "What domain experts know becomes the standard the agent is judged against.",
+  "challenge": "Without ground truth, agent quality is a matter of opinion. Experts label answers in spreadsheets that are not linked to the traces, and their criteria drift from one session to the next.",
+  "pivot": "Review Apps connect the experts to the agent.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[3].solution",
+     "text": "Ground truth from experts used to **train and align** judges"
+    },
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**Expert assessments** attached to MLflow traces with structured labels"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "Agent quality **subjective** without ground truth"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "Manual **spreadsheet** labeling disconnected from traces"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].problem",
+     "text": "Eval **criteria drift** across labeling sessions"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "Review Apps enable human-in-the-loop labeling of traces and chat interactions for eval datasets."
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 7,
+  "point": "7.1",
+  "effect": "Each model, agent and tool can be traced to the data behind it and to everyone who used it.",
+  "challenge": "Models, agents and functions are not governed as assets of their own, permissions are enforced differently across them, and external credentials are scattered. Nobody knows which data feeds which model.",
+  "pivot": "Unity Catalog extends to these assets.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[2].solution",
+     "text": "**Lineage** visibility showing data→model→agent flows"
+    },
+    {
+     "ref": 0,
+     "field": "solves[3].solution",
+     "text": "**Audit logs** for all access, modification, and usage events"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "AI models, agents, functions **ungoverned** individually"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "Inconsistent **permission** enforcement across assets"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].problem",
+     "text": "External credentials **scattered** and unmanaged"
+    },
+    {
+     "ref": 0,
+     "field": "solves[2].problem",
+     "text": "Unknown **dependencies** between models and data"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "Unity Catalog for AI assets provides role-based access control, lineage tracking, and audit trails for models and agents."
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 7,
+  "point": "7.2",
+  "effect": "Every model and tool call is controlled and logged in one place.",
+  "challenge": "Each team connects to model providers on its own, so nobody sees who calls which model or what it costs. Prompts and responses go through without guardrails, and nothing is logged for an audit.",
+  "pivot": "Unity Gateway puts this traffic under one control plane.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**one control plane** fronts every provider"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].solution",
+     "text": "every request and response **logged**"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "**self-managed** per provider"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "**no central view** of who calls what"
+    },
+    {
+     "ref": 0,
+     "field": "solves[2].problem",
+     "text": "**spend** grows unchecked"
+    },
+    {
+     "ref": 0,
+     "field": "solves[3].problem",
+     "text": "**no guardrails** on prompts and responses"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].problem",
+     "text": "**no audit** for compliance"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**one control plane** fronts every provider"
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 7,
+  "point": "7.3",
+  "effect": "",
+  "challenge": "",
+  "pivot": "",
+  "sources": {
+   "effect": [],
+   "challenge": [],
+   "pivot": []
+  },
+  "report": "DASF v3.0 has no solves rows, so there is no challenge and no pivot. The lead already states the need, and an effect drawn from the note would repeat the bullets."
+ },
+ {
+  "chapter": 8,
+  "point": "8.1",
+  "effect": "Business users get answers from company data without writing SQL.",
+  "challenge": "Most people who need data do not write SQL. Their questions queue up at the data team, and the answer often comes after the decision.",
+  "pivot": "Genie One gives them a front door to the data.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[1].solution",
+     "text": "Users **answer** ad-hoc questions directly without SQL or waiting"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "Business users **blocked** by technical Databricks interface"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "Analyst **dependency** for every data question"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "Simplified, non-technical **front door** with natural language chat"
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 8,
+  "point": "8.2",
+  "effect": "Every answer uses the company's certified definition of each metric.",
+  "challenge": "Metrics are defined differently across dashboards, queries and teams, and business context is scattered across documents, chats and tickets. An AI can then pick an obsolete or draft definition.",
+  "pivot": "Genie Ontology is the layer that grounds Genie in these definitions.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[3].solution",
+     "text": "Genie **uses** certified metrics and Pages in answering, with governance applied"
+    },
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "Canonical **Unity Catalog Metric Views** define each KPI once, governed globally"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "Metrics defined **differently** across dashboards, queries, and teams"
+    },
+    {
+     "ref": 0,
+     "field": "solves[2].problem",
+     "text": "Business definitions **fragmented** across dashboards, SQL, docs, chat, tickets"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "Genie may **choose** obsolete or draft definitions over trusted sources"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "Learned business-context layer grounding Genie answers."
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 8,
+  "point": "8.3",
+  "effect": "The knowledge of each business area becomes available to everyone in it.",
+  "challenge": "Business knowledge stays with a few experts, and dashboards only answer the questions they were built for. Deeper analysis is spread across separate tools.",
+  "pivot": "Genie Agents turn that expertise into a shared assistant.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[3].solution",
+     "text": "Domain experts **encode** logic once, shared as reusable agents"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[3].problem",
+     "text": "Business knowledge **trapped** with subject-matter experts"
+    },
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "Dashboards answer only **predefined** questions"
+    },
+    {
+     "ref": 0,
+     "field": "solves[2].problem",
+     "text": "Complex \"why\" and \"what-if\" analysis **fragmented** across tools"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "solves[3].solution",
+     "text": "Domain experts **encode** logic once, shared as reusable agents"
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 8,
+  "point": "8.4",
+  "effect": "Analysts and business users go from a question to a governed dashboard on their own.",
+  "challenge": "Building a dashboard takes SQL and specialist skills, so requests wait. Meanwhile, analysis done in spreadsheets is cut off from the governed data and unaudited.",
+  "pivot": "AI/BI Dashboards and Row Zero bring the assistant into both.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[5].solution",
+     "text": "Analysts and business users **move** from question to governed dashboard independently"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "High **SQL barrier** for dashboard creation"
+    },
+    {
+     "ref": 0,
+     "field": "solves[5].problem",
+     "text": "Self-service BI **blocked** by specialist dependency"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].problem",
+     "text": "Troubleshooting and **refining** dashboards requires specialist skills"
+    },
+    {
+     "ref": 1,
+     "field": "solves[0].problem",
+     "text": "Analysis **disconnected** from governed data source"
+    },
+    {
+     "ref": 1,
+     "field": "solves[3].problem",
+     "text": "Spreadsheet analysis **ungoverned** and unaudited"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "AI-assisted authoring, dashboard-level Genie, metric views."
+    },
+    {
+     "ref": 1,
+     "field": "note",
+     "text": "Row Zero integrates spreadsheets with Genie for automated data remediation and ML-driven insights."
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 8,
+  "point": "8.5",
+  "effect": "Business teams turn an idea into a working app in minutes.",
+  "challenge": "Building an app takes software engineering skills, and every change needs a developer and a new deployment.",
+  "pivot": "Genie App Builder lets the team describe the app instead.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "Natural language **converts** idea to working Databricks App in minutes"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "App building **requires** software engineering or Streamlit/React expertise"
+    },
+    {
+     "ref": 0,
+     "field": "solves[3].problem",
+     "text": "App **modifications** require developer involvement and redeployment cycles"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "solves[1].solution",
+     "text": "No-code **agents** build fully functional apps from natural language"
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 9,
+  "point": "9.1",
+  "effect": "Data and AI applications run on the platform itself, next to the governed data.",
+  "challenge": "A data or AI application usually runs on separate infrastructure, with its own identity management and secrets. It sits apart from the governed data, and access control and audit trails are hard to put in place.",
+  "pivot": "Databricks Apps brings these applications onto the platform.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**Serverless Databricks Apps** eliminate external hosting costs and complexity"
+    },
+    {
+     "ref": 0,
+     "field": "solves[3].solution",
+     "text": "Native **Unity Catalog integration** for permissions-aware data access"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "Apps require **separate infrastructure** outside Databricks platform"
+    },
+    {
+     "ref": 0,
+     "field": "solves[2].problem",
+     "text": "Apps require **separate identity management** and secrets handling"
+    },
+    {
+     "ref": 0,
+     "field": "solves[3].problem",
+     "text": "Apps **isolated** from governed data lake"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "App-level access control and **audit trails** difficult to implement"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "Databricks Apps hosts interactive data and AI apps on Databricks, governed by Unity Catalog."
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 9,
+  "point": "9.2",
+  "effect": "Developers write less repetitive code, with the same assistant in every tool.",
+  "challenge": "Much of that code is repetitive boilerplate, developers switch between separate tools for notebooks, SQL, pipelines and dashboards, and tuning SQL is hard for non-experts.",
+  "pivot": "Genie Code takes on that work.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[2].solution",
+     "text": "Agent **scaffolds and generates** foundation, reducing manual coding"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].solution",
+     "text": "Single **unified assistant** for notebook, SQL, pipeline, dashboard authoring"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[2].problem",
+     "text": "Boilerplate **code writing** blocks rapid iteration"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "Developers must **context-switch** between notebook, SQL, pipeline, dashboard tools"
+    },
+    {
+     "ref": 0,
+     "field": "solves[3].problem",
+     "text": "Non-expert developers **struggle** with SQL and pipeline optimization"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "Genie Code **generates SQL and code** from natural language prompts"
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 9,
+  "point": "9.3",
+  "effect": "Teams build agents on a ready structure, with their tools governed and audited.",
+  "challenge": "Developers scaffold each agent and its tool connections by hand, and the integrations they create are not audited. Each coding-agent tool is its own isolated world, so content is copied between them by hand.",
+  "pivot": "The AI Dev Kit and Omnigent give this work a common base.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[1].solution",
+     "text": "AI Dev Kit provides **templates and scaffolding** for rapid agent setup"
+    },
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "UC-**governed MCPs** provide central control and audit trail for agent tools"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "Developers must **manually scaffold** agents and MCP configurations"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].problem",
+     "text": "Agent-MCP integrations **lack audit** and compliance tracking"
+    },
+    {
+     "ref": 1,
+     "field": "solves[0].problem",
+     "text": "each agent harness **isolated** ecosystem"
+    },
+    {
+     "ref": 1,
+     "field": "solves[2].problem",
+     "text": "**manual** copying of content between tools"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "AI Dev Kit provides scaffolding and unified UC-governed tools for agent development."
+    },
+    {
+     "ref": 1,
+     "field": "note",
+     "text": "Omnigent unifies agent development across Claude, Codex, and Cursor with managed infrastructure and policies."
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 10,
+  "point": "10.1",
+  "effect": "Campaigns and personalization run on governed customer profiles that stay current.",
+  "challenge": "Each system holds its own part of the customer, often duplicated and without lineage, and audiences are built and activated by hand.",
+  "pivot": "CustomerLake gives the platform a ready-made answer for customer data.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[3].solution",
+     "text": "Embedded in lakehouse with **Unity Catalog** governance and audit"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].solution",
+     "text": "**Real-time profile API** with predictive models for instant attributes"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "Customer data **fragmented** across systems"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "Duplicate customer records create **fragmentation**"
+    },
+    {
+     "ref": 0,
+     "field": "solves[3].problem",
+     "text": "Customer data **ungoverned** with no lineage"
+    },
+    {
+     "ref": 0,
+     "field": "solves[2].problem",
+     "text": "**Manual** audience segmentation and activation"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "CustomerLake delivers agentic capabilities for customer profiles, identity resolution, and campaign management."
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 10,
+  "point": "10.2",
+  "effect": "Security teams keep all their logs and investigate faster.",
+  "challenge": "Security telemetry is split across separate tools, threat hunting and triage are manual, and detection rules are hard to version and test.",
+  "pivot": "Lakewatch adds agents to security operations.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[2].solution",
+     "text": "**Unlimited** petabyte-scale ingestion and retention (object storage economics)"
+    },
+    {
+     "ref": 0,
+     "field": "solves[4].solution",
+     "text": "**Sub-second** queries across billions of records for rapid investigations"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].solution",
+     "text": "**Autonomous agents** for investigation, rule authoring, and data normalization"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "Security telemetry **siloed** in separate SIEM vendors"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "**Manual** threat hunting and incident triage"
+    },
+    {
+     "ref": 0,
+     "field": "solves[3].problem",
+     "text": "Detections **scattered** across tools; hard to version and test"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "note",
+     "text": "Lakewatch provides agentic security information and event management with Panther integration."
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 11,
+  "point": "11.1",
+  "effect": "Teams always know which model version is in production and where it came from.",
+  "challenge": "Model versions go untracked, promotions are manual and error-prone, and the link between a model and its training data gets lost. Without a shared view across workspaces, teams rebuild models that already exist.",
+  "pivot": "The Model Registry in Unity Catalog keeps this history and governs every model.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**chronological** version history per model"
+    },
+    {
+     "ref": 0,
+     "field": "solves[2].solution",
+     "text": "UC-backed **experiment lineage** tracking"
+    },
+    {
+     "ref": 1,
+     "field": "solves[2].solution",
+     "text": "Automatic **lineage** graphs track model-to-table relationships via mlflow.log_input()"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "model versions **untracked** over time"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "manual stage **transitions** error-prone"
+    },
+    {
+     "ref": 1,
+     "field": "solves[2].problem",
+     "text": "**Lost** lineage between models and training data complicates debugging"
+    },
+    {
+     "ref": 1,
+     "field": "solves[0].problem",
+     "text": "No **cross-workspace** visibility means models are repeatedly recreated"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 1,
+     "field": "note",
+     "text": "Model versioning, aliases, and lineage in Unity Catalog."
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 11,
+  "point": "11.2",
+  "effect": "Production traffic can grow without anyone resizing the infrastructure.",
+  "challenge": "Models end up spread across several serving platforms, scaled by hand, with no central view of what is deployed.",
+  "pivot": "Model Serving runs them all from one place.",
+  "sources": {
+   "effect": [
+    {
+     "ref": 0,
+     "field": "solves[1].solution",
+     "text": "**Automatic** serverless compute scales on demand reducing infrastructure overhead"
+    }
+   ],
+   "challenge": [
+    {
+     "ref": 0,
+     "field": "solves[0].problem",
+     "text": "Models scattered across **multiple** serving platforms creates operational chaos"
+    },
+    {
+     "ref": 0,
+     "field": "solves[1].problem",
+     "text": "Manual endpoint scaling and management is **time-consuming** and reactive"
+    },
+    {
+     "ref": 0,
+     "field": "solves[2].problem",
+     "text": "No **central** visibility or control over deployed models"
+    }
+   ],
+   "pivot": [
+    {
+     "ref": 0,
+     "field": "solves[0].solution",
+     "text": "**Unified** interface for real-time and batch inference across all model types"
+    },
+    {
+     "ref": 0,
+     "field": "solves[2].solution",
+     "text": "**Centralized** endpoint management with permission controls and usage monitoring"
+    }
+   ]
+  },
+  "report": ""
+ },
+ {
+  "chapter": 11,
+  "point": "11.3",
+  "effect": "",
+  "challenge": "",
+  "pivot": "",
+  "sources": {
+   "effect": [],
+   "challenge": [],
+   "pivot": []
+  },
+  "report": "Monitoring & evaluation has no solves rows, so there is no challenge and no pivot. The lead already states the problem, and an effect drawn from the note would repeat the bullets."
+ },
+ {
+  "chapter": 11,
+  "point": "11.4",
+  "effect": "",
+  "challenge": "",
+  "pivot": "",
+  "sources": {
+   "effect": [],
+   "challenge": [],
+   "pivot": []
+  },
+  "report": "MLOps & CI/CD has no solves rows, so there is no challenge and no pivot. The lead already states the problem, and an effect drawn from the note would repeat the bullets."
+ }
+]

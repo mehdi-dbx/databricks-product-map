@@ -1,0 +1,220 @@
+{
+  "8.1": [
+    {
+      "id": "p8.1-genie-one-chat",
+      "file": "p8.1-genie-one-chat.png",
+      "source": "Databricks blog: Introducing Genie One, Genie Ontology, and Genie Agents",
+      "url": "https://www.databricks.com/blog/introducing-genie-one-genie-ontology-and-genie-agents",
+      "kind": "diagram",
+      "why": "Shows Databricks blog: Introducing G... (tile 1)"
+    },
+    {
+      "id": "p8.1-genie-one-answer",
+      "file": "p8.1-genie-one-answer.png",
+      "source": "databricks.com/product/genie/one",
+      "url": "https://www.databricks.com/product/genie/one",
+      "kind": "screenshot",
+      "why": "Shows databricks.com/product/genie/o... (tile 2)"
+    },
+    {
+      "id": "p8.1-genie-one-reasoning",
+      "file": "p8.1-genie-one-reasoning.png",
+      "source": "databricks.com/product/genie/one",
+      "url": "https://www.databricks.com/product/genie/one",
+      "kind": "screenshot",
+      "why": "Shows databricks.com/product/genie/o... (tile 3)"
+    },
+    {
+      "id": "p8.1-personalized-starter-questions-478a68e08",
+      "file": "p8.1-personalized-starter-questions-478a68e08.png",
+      "source": "docs.databricks.com/genie-one/chat",
+      "url": "https://docs.databricks.com/aws/en/genie-one/chat",
+      "kind": "screenshot",
+      "why": "Shows docs.databricks.com/genie-one/... (tile 13)"
+    },
+    {
+      "id": "p8.1-upload-file-498a3c89cbaa10f06354cb3a2a20",
+      "file": "p8.1-upload-file-498a3c89cbaa10f06354cb3a2a20.png",
+      "source": "docs.databricks.com/genie-one/chat",
+      "url": "https://docs.databricks.com/aws/en/genie-one/chat",
+      "kind": "screenshot",
+      "why": "Shows docs.databricks.com/genie-one/... (tile 14)"
+    },
+    {
+      "id": "p8.1-genie-desktop-window-with-badge-08bf80a8",
+      "file": "p8.1-genie-desktop-window-with-badge-08bf80a8.png",
+      "source": "docs.databricks.com/genie-one/desktop",
+      "url": "https://docs.databricks.com/aws/en/genie-one/desktop",
+      "kind": "screenshot",
+      "why": "Shows docs.databricks.com/genie-one/... (tile 16)"
+    }
+  ],
+  "8.2": [
+    {
+      "id": "p8.2-genie-ontology-benchmark",
+      "file": "p8.2-genie-ontology-benchmark.png",
+      "source": "Databricks blog: Introducing Genie One, Genie Ontology, and Genie Agents",
+      "url": "https://www.databricks.com/blog/introducing-genie-one-genie-ontology-and-genie-agents",
+      "kind": "diagram",
+      "why": "Shows Databricks blog: Introducing G... (tile 1)"
+    },
+    {
+      "id": "p8.2-what-is-e47897bcd7c9a7a16b119c3b1857ee42",
+      "file": "p8.2-what-is-e47897bcd7c9a7a16b119c3b1857ee42.png",
+      "source": "docs.databricks.com/uc-semantics/metric-views/",
+      "url": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/",
+      "kind": "screenshot",
+      "why": "Shows docs.databricks.com/uc-semanti... (tile 3)"
+    },
+    {
+      "id": "p8.2-ui-editor-7cb597be46690bc3b8b3adf23a639e",
+      "file": "p8.2-ui-editor-7cb597be46690bc3b8b3adf23a639e.png",
+      "source": "docs.databricks.com/uc-semantics/metric-views/create",
+      "url": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/create",
+      "kind": "screenshot",
+      "why": "Shows docs.databricks.com/uc-semanti... (tile 4)"
+    },
+    {
+      "id": "p8.2-materialization-pipeline-updated-e8055ee",
+      "file": "p8.2-materialization-pipeline-updated-e8055ee.png",
+      "source": "docs.databricks.com/uc-semantics/metric-views/materialization",
+      "url": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/materialization",
+      "kind": "screenshot",
+      "why": "Shows docs.databricks.com/uc-semanti... (tile 6)"
+    },
+    {
+      "id": "p8.2-query-execution-update-e67cd6e37dbbd07a2",
+      "file": "p8.2-query-execution-update-e67cd6e37dbbd07a2.png",
+      "source": "docs.databricks.com/uc-semantics/metric-views/materialization",
+      "url": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/materialization",
+      "kind": "screenshot",
+      "why": "Shows docs.databricks.com/uc-semanti... (tile 7)"
+    }
+  ],
+  "8.3": [
+    {
+      "id": "p8.3-genie-agents-no-code",
+      "file": "p8.3-genie-agents-no-code.png",
+      "source": "[Customer-facing] Knowledge Assistant & Supervisor Agent updates, Slide 13",
+      "url": "https://docs.google.com/presentation/d/1QYbJUGDqzon9NQmK7ZPAA09O26XG-tb3oJse6Bcf-ko/edit#slide=id.g1f1f1f1f",
+      "kind": "screenshot",
+      "why": "Shows [Customer-facing] Knowledge As... (tile 1)"
+    },
+    {
+      "id": "p8.3-genie-agents-setup",
+      "file": "p8.3-genie-agents-setup.png",
+      "source": "databricks.com/product/genie/agents",
+      "url": "https://www.databricks.com/product/genie/agents",
+      "kind": "screenshot",
+      "why": "Shows databricks.com/product/genie/a... (tile 2)"
+    },
+    {
+      "id": "p8.3-genie-agents-eval",
+      "file": "p8.3-genie-agents-eval.png",
+      "source": "databricks.com/product/genie/agents",
+      "url": "https://www.databricks.com/product/genie/agents",
+      "kind": "screenshot",
+      "why": "Shows databricks.com/product/genie/a... (tile 4)"
+    },
+    {
+      "id": "p8.3-1nzunoxtg68ogokrse8qsd1-uctxsi9lh6dzxj4l",
+      "file": "p8.3-1nzunoxtg68ogokrse8qsd1-uctxsi9lh6dzxj4l.png",
+      "source": "[SEMEA] Agent Bricks - Knowledge Assistant - Workshop - SEMEA - Online - 05 May 2026, slide 53",
+      "url": "https://docs.google.com/presentation/d/1nzunOxTG68OgOkrSE8QSD1_uctXsI9LH6dzXj4LGoBc/edit#slide=id.g3dbbb35421b_0_5215",
+      "kind": "screenshot",
+      "why": "Shows [SEMEA] Agent Bricks - Knowled... (tile 14)"
+    },
+    {
+      "id": "p8.3-1nzunoxtg68ogokrse8qsd1-uctxsi-2",
+      "file": "p8.3-1nzunoxtg68ogokrse8qsd1-uctxsi-2.png",
+      "source": "[SEMEA] Agent Bricks - Knowledge Assistant - Workshop - SEMEA - Online - 05 May 2026, slide 32",
+      "url": "https://docs.google.com/presentation/d/1nzunOxTG68OgOkrSE8QSD1_uctXsI9LH6dzXj4LGoBc/edit#slide=id.g3871c9ddcbc_0_2920",
+      "kind": "screenshot",
+      "why": "Shows [SEMEA] Agent Bricks - Knowled... (tile 18)"
+    },
+    {
+      "id": "p8.3-1nzunoxtg68ogokrse8qsd1-uctxsi-3",
+      "file": "p8.3-1nzunoxtg68ogokrse8qsd1-uctxsi-3.png",
+      "source": "[SEMEA] Agent Bricks - Knowledge Assistant - Workshop - SEMEA - Online - 05 May 2026, slide 38",
+      "url": "https://docs.google.com/presentation/d/1nzunOxTG68OgOkrSE8QSD1_uctXsI9LH6dzXj4LGoBc/edit#slide=id.g3dc0c4e7081_0_6",
+      "kind": "screenshot",
+      "why": "Shows [SEMEA] Agent Bricks - Knowled... (tile 19)"
+    }
+  ],
+  "8.4": [
+    {
+      "id": "p8.4-lakeview-dashboards",
+      "file": "p8.4-lakeview-dashboards.png",
+      "source": "Data Science With Databricks, Slide 26",
+      "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g1f1f1f1f",
+      "kind": "screenshot",
+      "why": "Shows Data Science With Databricks... (tile 1)"
+    },
+    {
+      "id": "p8.4-row-zero-spreadsheet",
+      "file": "p8.4-row-zero-spreadsheet.png",
+      "source": "Row Zero blog: From Query to Analysis Using AI in Row Zero",
+      "url": "https://rowzero.com/blog/from-query-to-analysis-using-ai-in-row-zero",
+      "kind": "diagram",
+      "why": "Shows Row Zero blog: From Query to A... (tile 2)"
+    },
+    {
+      "id": "p8.4-row-zero-analysis",
+      "file": "p8.4-row-zero-analysis.png",
+      "source": "Row Zero blog: From Query to Analysis Using AI in Row Zero",
+      "url": "https://rowzero.com/blog/from-query-to-analysis-using-ai-in-row-zero",
+      "kind": "diagram",
+      "why": "Shows Row Zero blog: From Query to A... (tile 3)"
+    },
+    {
+      "id": "p8.4-1zybz4unikz1yfgbpwzzfweaqg3hskpr8ujbhs3c",
+      "file": "p8.4-1zybz4unikz1yfgbpwzzfweaqg3hskpr8ujbhs3c.png",
+      "source": "Agentbricks Roadshow [go/airoadshow], slide 218",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_6325",
+      "kind": "screenshot",
+      "why": "Shows Agentbricks Roadshow [go/airoa... (tile 24)"
+    }
+  ],
+  "8.5": [
+    {
+      "id": "p8.5-genie-app-builder-deploy",
+      "file": "p8.5-genie-app-builder-deploy.png",
+      "source": "Databricks blog: Enabling Governed Vibe Coding for Enterprise Apps on Databricks",
+      "url": "https://www.databricks.com/blog/enabling-governed-vibe-coding-enterprise-apps-databricks",
+      "kind": "diagram",
+      "why": "Shows Databricks blog: Enabling Gove... (tile 1)"
+    },
+    {
+      "id": "p8.5-genie-app-builder-interface",
+      "file": "p8.5-genie-app-builder-interface.png",
+      "source": "Databricks blog: Enabling Governed Vibe Coding for Enterprise Apps on Databricks",
+      "url": "https://www.databricks.com/blog/enabling-governed-vibe-coding-enterprise-apps-databricks",
+      "kind": "diagram",
+      "why": "Shows Databricks blog: Enabling Gove... (tile 2)"
+    },
+    {
+      "id": "p8.5-1qzwnkqejoggpmiwdnrmm--nvic4gxu3yelkcmwb",
+      "file": "p8.5-1qzwnkqejoggpmiwdnrmm--nvic4gxu3yelkcmwb.png",
+      "source": "How to set up an Agentic Applications workshop? (go/agentic-applications), slide 43",
+      "url": "https://docs.google.com/presentation/d/1qzWNKqEJogGPmiwdNrmm-_nVIc4gXU3yELKcmWb_aRU/edit#slide=id.g3846bdac0d2_3_710",
+      "kind": "screenshot",
+      "why": "Shows How to set up an Agentic Appli... (tile 10)"
+    },
+    {
+      "id": "p8.5-1qzwnkqejoggpmiwdnrmm--nvic4gx-2",
+      "file": "p8.5-1qzwnkqejoggpmiwdnrmm--nvic4gx-2.png",
+      "source": "How to set up an Agentic Applications workshop? (go/agentic-applications), slide 55",
+      "url": "https://docs.google.com/presentation/d/1qzWNKqEJogGPmiwdNrmm-_nVIc4gXU3yELKcmWb_aRU/edit#slide=id.g38be5ce3a85_0_0",
+      "kind": "screenshot",
+      "why": "Shows How to set up an Agentic Appli... (tile 11)"
+    },
+    {
+      "id": "p8.5-1qzwnkqejoggpmiwdnrmm--nvic4gx-3",
+      "file": "p8.5-1qzwnkqejoggpmiwdnrmm--nvic4gx-3.png",
+      "source": "How to set up an Agentic Applications workshop? (go/agentic-applications), slide 48",
+      "url": "https://docs.google.com/presentation/d/1qzWNKqEJogGPmiwdNrmm-_nVIc4gXU3yELKcmWb_aRU/edit#slide=id.g3846bdac0d2_3_4071",
+      "kind": "screenshot",
+      "why": "Shows How to set up an Agentic Appli... (tile 12)"
+    }
+  ]
+}

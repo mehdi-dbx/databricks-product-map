@@ -1,0 +1,52 @@
+{
+ "5.5": [
+  {
+   "id": "p5.5-agent-bricks-e2e",
+   "file": "p5.5-agent-bricks-e2e.png",
+   "source": "Agentbricks Roadshow [go/airoadshow], slide 21",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_627",
+   "kind": "diagram",
+   "why": "E2E agent platform flow diagram showing 6 layers: brain (models), actions (tools), context (memory), observe & improve (evals), publish (deployment), run (Supervisor Agent highlighted as deployment option)"
+  }
+ ],
+ "6.1": [
+  {
+   "id": "p6.1-mlflow-genai-platform",
+   "file": "p6.1-mlflow-genai-platform.png",
+   "source": "Agentbricks Roadshow [go/airoadshow], slide 179",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_5693",
+   "kind": "diagram",
+   "why": "MLflow Open GenAI platform architecture showing Tracing (left pillar) connecting to deployment, with Trace logging component feeding Observability, and integration with LLM Judges and human feedback for evaluation"
+  }
+ ],
+ "6.3": [
+  {
+   "id": "p6.3-mlflow-labeling-review",
+   "file": "p6.3-mlflow-labeling-review.png",
+   "source": "Agentbricks Roadshow [go/airoadshow], slide 188",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_5927",
+   "kind": "screenshot",
+   "why": "MLflow Labeling review app interface showing domain experts testing agent in chat interface with conversation review, labeling workflows, and feedback collection to create evaluation datasets"
+  }
+ ],
+ "7.1": [
+  {
+   "id": "p7.1-unity-gateway-mcp",
+   "file": "p7.1-unity-gateway-mcp.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 34",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_5105",
+   "kind": "screenshot",
+   "why": "Unity AI Gateway UI showing governance and management of managed MCP servers (Genie One, AI Search, UC Functions, DBSQL) and external integrations as centrally governed UC objects with permissions and lifecycle management"
+  }
+ ],
+ "8.3": [
+  {
+   "id": "p8.3-genie-agents-simpler",
+   "file": "p8.3-genie-agents-simpler.png",
+   "source": "[Customer-facing] Knowledge Assistant & Supervisor Agent updates, slide 9",
+   "url": "https://docs.google.com/presentation/d/1QYbJUGDqzon9NQmK7ZPAA09O26XG-tb3oJse6Bcf-ko/edit#slide=id.g36bf8ec0e55_0_0",
+   "kind": "diagram",
+   "why": "Before/after showing how Genie Agents simplify 'talk to your data' agent building: fragmented setup (3 agents) versus simpler unified Genie Agent build handling both documents and tables"
+  }
+ ]
+}

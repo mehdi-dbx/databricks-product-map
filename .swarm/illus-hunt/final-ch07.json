@@ -1,0 +1,128 @@
+{
+ "7.1": [
+  {
+   "id": "p7.1-unity-catalog-hierarchy",
+   "file": "p7.1-unity-catalog-hierarchy.png",
+   "source": "candidate",
+   "url": "",
+   "kind": "diagram",
+   "why": "UC object hierarchy showing models, functions, services, secrets as governed objects alongside tables"
+  },
+  {
+   "id": "p7.1-ai-gateway-lineage-graph",
+   "file": "p7.1-ai-gateway-lineage-graph.png",
+   "source": "docs.databricks.com/data-governance/unity-catalog/ai-gateway-service-lineage",
+   "url": "https://docs.databricks.com/data-governance/unity-catalog/ai-gateway-service-lineage",
+   "kind": "diagram",
+   "why": "AI Gateway service lineage graph showing model lineage tracking with UC"
+  },
+  {
+   "id": "p7.1-unity-catalog-models",
+   "file": "p7.1-unity-catalog-models.png",
+   "source": "Data Science With Databricks, slide 114",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI",
+   "kind": "visual",
+   "why": "UC Models visual showing models as managed objects in Unity Catalog"
+  },
+  {
+   "id": "p7.1-governing-ai-functions",
+   "file": "p7.1-governing-ai-functions.png",
+   "source": "Agentbricks Roadshow [go/airoadshow], slide 98",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM",
+   "kind": "screenshot",
+   "why": "Governing AI functions in UC showing permissions and execution control"
+  },
+  {
+   "id": "p7.1-decentralized-governance",
+   "file": "p7.1-decentralized-governance.png",
+   "source": "Data & AI Governance - Full deck, slide 40",
+   "url": "https://docs.google.com/presentation/d/14qbxrxi3Xi0HL7Tzzkp6PtNuQ3jFzRiXAm57XI7erx4",
+   "kind": "diagram",
+   "why": "Decentralized governance showing multi-org UC setup with separate org catalogs"
+  }
+ ],
+ "7.2": [
+  {
+   "id": "p7.2-unity-gateway-architecture",
+   "file": "p7.2-unity-gateway-architecture.png",
+   "source": "candidate",
+   "url": "",
+   "kind": "diagram",
+   "why": "Unity AI Gateway control flow showing Authenticate, OBO, Authorize, Execute pipeline"
+  },
+  {
+   "id": "p7.2-ai-governance-dashboard",
+   "file": "p7.2-ai-governance-dashboard.png",
+   "source": "candidate",
+   "url": "",
+   "kind": "screenshot",
+   "why": "AI Governance dashboard showing token usage, governed traffic %, budgets, spend tracking"
+  },
+  {
+   "id": "p7.2-cumulative-spend-chart",
+   "file": "p7.2-cumulative-spend-chart.png",
+   "source": "docs.databricks.com/ai-gateway/budgets",
+   "url": "https://docs.databricks.com/ai-gateway/budgets",
+   "kind": "screenshot",
+   "why": "Cumulative spend chart showing budget control and cost monitoring"
+  },
+  {
+   "id": "p7.2-unity-gateway-hub",
+   "file": "p7.2-unity-gateway-hub.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 20",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U",
+   "kind": "diagram",
+   "why": "Unity Gateway as central hub enforcing governance across custom models, foundation models, and MCP"
+  },
+  {
+   "id": "p7.2-unity-gateway-available",
+   "file": "p7.2-unity-gateway-available.png",
+   "source": "Agentbricks Roadshow [go/airoadshow], slide 119",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM",
+   "kind": "screenshot",
+   "why": "Unity AI Gateway capabilities available today (usage tracking, guardrails, budgets)"
+  }
+ ],
+ "7.3": [
+  {
+   "id": "p7.3-lakehouse-security",
+   "file": "p7.3-lakehouse-security.png",
+   "source": "docs.databricks.com/lakehouse-architecture/security-compliance-and-privacy/",
+   "url": "https://docs.databricks.com/lakehouse-architecture/security-compliance-and-privacy/",
+   "kind": "diagram",
+   "why": "Lakehouse security stack showing components (Mosaic AI, Databricks, Lakeflow) with UC and security layers"
+  },
+  {
+   "id": "p7.3-dasf-motivation-framework",
+   "file": "p7.3-dasf-motivation-framework.png",
+   "source": "Databricks AI Security Framework (DASF) - Selection, slide 2",
+   "url": "https://docs.google.com/presentation/d/1jQ_4m4_ddYxZdwx7XRR_Cq60ilaEgTmUCs3JQBlQmGc",
+   "kind": "visual",
+   "why": "DASF motivation showing framework goals and mapping to 59 controls across 12 AI components"
+  },
+  {
+   "id": "p7.3-dasf-use-cases-to-controls",
+   "file": "p7.3-dasf-use-cases-to-controls.png",
+   "source": "Databricks AI Security Framework (DASF) - Selection, slide 10",
+   "url": "https://docs.google.com/presentation/d/1jQ_4m4_ddYxZdwx7XRR_Cq60ilaEgTmUCs3JQBlQmGc",
+   "kind": "diagram",
+   "why": "DASF methodology: AI business use case → deployment model → select risks → select controls → implement across 12 components"
+  },
+  {
+   "id": "p7.3-ai-governance-capabilities",
+   "file": "p7.3-ai-governance-capabilities.png",
+   "source": "Data & AI Governance - Full deck, slide 32",
+   "url": "https://docs.google.com/presentation/d/14qbxrxi3Xi0HL7Tzzkp6PtNuQ3jFzRiXAm57XI7erx4",
+   "kind": "screenshot",
+   "why": "AI Governance Capabilities matrix showing controls (risk management, fairness, compliance, etc.)"
+  },
+  {
+   "id": "p7.3-ai-governance-capabilities-2",
+   "file": "p7.3-ai-governance-capabilities-2.png",
+   "source": "Data & AI Governance - Full deck, slide 84",
+   "url": "https://docs.google.com/presentation/d/14qbxrxi3Xi0HL7Tzzkp6PtNuQ3jFzRiXAm57XI7erx4",
+   "kind": "screenshot",
+   "why": "Gartner governance styles (Control, Outcomes, Autonomous, Adaptive) showing governance approaches"
+  }
+ ]
+}

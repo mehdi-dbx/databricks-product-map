@@ -1,0 +1,78 @@
+{
+  "1.1": [
+    {
+      "id": "p1.1-lakehouse-evolution",
+      "file": "p1.1-lakehouse-evolution.png",
+      "source": "Databricks blog: What is a Data Lakehouse?",
+      "url": "https://www.databricks.com/blog/what-is-data-lakehouse",
+      "kind": "diagram",
+      "why": "Classic architecture comparison: shows Data Warehouse (single purpose), Data Lake (multiple consumers but separate from warehouse), and Data Lakehouse (unified). Clearly illustrates the two-tier problem (left/middle panels) where organizations maintain separate systems with duplicate data."
+    },
+    {
+      "id": "p1.1-data-silos-before",
+      "file": "p1.1-data-silos-before.png",
+      "source": "Copy of Lakeflow Connect Tech Deck - L200, slide 20",
+      "url": "https://docs.google.com/presentation/d/1xiUXDS6x6aHv547-daQKBhvoOidHy_eVxdC8qdiHQxs/edit#slide=id.g316fd76f33f_0_1851",
+      "kind": "diagram",
+      "why": "BEFORE diagram: shows problem state of data fragmentation—SQL and Salesforce sources with manual extraction infrastructure, structured streaming, and custom notebooks needed to integrate them. Illustrates the operational complexity of data silos."
+    },
+    {
+      "id": "p1.1-lakeflow-connectors",
+      "file": "p1.1-lakeflow-connectors.png",
+      "source": "Copy of Lakeflow Connect Tech Deck - L200, slide 42",
+      "url": "https://docs.google.com/presentation/d/1xiUXDS6x6aHv547-daQKBhvoOidHy_eVxdC8qdiHQxs/edit#slide=id.g374d02f907e_0_2",
+      "kind": "diagram",
+      "why": "Query-based connectors: displays the breadth of data sources in the problem space (Applications, File sources, Databases, Warehouses, Message buses with vendor logos: SQL Server, Oracle, PostgreSQL, Snowflake, Redshift). Visualizes the fragmentation companies maintain."
+    },
+    {
+      "id": "p1.1-lakeflow-sources",
+      "file": "p1.1-lakeflow-sources.png",
+      "source": "Copy of Lakeflow Connect Tech Deck - L200, slide 16",
+      "url": "https://docs.google.com/presentation/d/1xiUXDS6x6aHv547-daQKBhvoOidHy_eVxdC8qdiHQxs/edit#slide=id.g3773fdeb85f_19_349",
+      "kind": "diagram",
+      "why": "Lakeflow Connect roadmap organized by category (Applications, File sources, Databases, Warehouses, Message buses). Demonstrates the variety and complexity of siloed data systems companies manage separately."
+    }
+  ],
+  "1.2": [
+    {
+      "id": "p1.2-agent-framework-prod",
+      "file": "p1.2-agent-framework-prod.png",
+      "source": "Mosaic AI - System Architecture 2026-02-25, slide 70",
+      "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_9768",
+      "kind": "diagram",
+      "why": "Agent workflow showing the production blocker visually: step 3 'Deploy to pre-production' → step 4 'Fix quality issues' (red hexagon, blocking step) → step 5 'Deploy to production'. Shows the gap where pilots stall."
+    },
+    {
+      "id": "p1.2-agent-lifecycle-proto",
+      "file": "p1.2-agent-lifecycle-proto.png",
+      "source": "Agentbricks Roadshow, slide 205",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_6153",
+      "kind": "diagram",
+      "why": "Agent Development Lifecycle showing progression: build prototype → test with humans → identify issues → fix code → test fixes → **get stakeholder sign-off** (highlighted box) → release. The feedback loop and gated production entry show why pilots stall."
+    },
+    {
+      "id": "p1.2-agent-lifecycle-ops",
+      "file": "p1.2-agent-lifecycle-ops.png",
+      "source": "Agentbricks Roadshow, slide 208",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_6214",
+      "kind": "diagram",
+      "why": "Same lifecycle with operational tools highlighted on right (Tracing, Labeling, Evaluation datasets, Prompt Registry, LLM Judges, Evaluation UIs, Dashboards). Shows the operational complexity and tools required to reach production—the blocker."
+    },
+    {
+      "id": "p1.2-agent-framework-detailed",
+      "file": "p1.2-agent-framework-detailed.png",
+      "source": "Mosaic AI - System Architecture 2026-02-25, slide 72",
+      "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_10046",
+      "kind": "diagram",
+      "why": "Full Agent Framework & Evaluation - Production architecture: shows all production components (Vector Search, SQL Serverless, Model Serving, API Gateway, monitoring). Illustrates the operational infrastructure gap between prototype and production deployment."
+    },
+    {
+      "id": "p1.2-agent-framework-ops",
+      "file": "p1.2-agent-framework-ops.png",
+      "source": "Mosaic AI - System Architecture 2026-02-25, slide 54",
+      "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_8144",
+      "kind": "diagram",
+      "why": "Agent Framework & Evaluation - Production section showing governance and LLMOps controls (evaluation, monitoring). Emphasizes the control, governance, and quality gates required before production—why many pilots stop here."
+    }
+  ]
+}

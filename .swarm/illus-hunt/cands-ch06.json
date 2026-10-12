@@ -1,0 +1,112 @@
+{
+  "6.1": [
+    {
+      "id": "p6.1-trace-dashboard",
+      "file": "p6.1-trace-dashboard.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 39",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.1000003",
+      "kind": "screenshot",
+      "why": "MLflow tracing dashboard UI showing agent autologging with trace table, filters, span metrics, and analytics"
+    },
+    {
+      "id": "p6.1-trace-detail",
+      "file": "p6.1-trace-detail.png",
+      "source": "docs.databricks.com/mlflow3/genai/tracing/overview",
+      "url": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/overview",
+      "kind": "screenshot",
+      "why": "Detailed trace view with span tree (input_guardrail, query_rewrite, embed_query, vector_search, rerank), inputs/outputs, and assessments panel showing metrics"
+    },
+    {
+      "id": "p6.1-traces-list",
+      "file": "p6.1-traces-list.png",
+      "source": "docs.databricks.com/mlflow3/genai/tracing/overview",
+      "url": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/overview",
+      "kind": "screenshot",
+      "why": "MLflow Traces UI list view with columns: Time, Input, Output, Session, Duration, State, Tokens; sidebar shows Observability, Evaluation, Prompts & versions sections"
+    },
+    {
+      "id": "p6.1-unified-trace-table",
+      "file": "p6.1-unified-trace-table.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 53",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.1000003",
+      "kind": "screenshot",
+      "why": "OpenTelemetry unified trace table showing complete request/response logging for every agent execution across all services with trace IDs, services, and principals"
+    }
+  ],
+  "6.2": [
+    {
+      "id": "p6.2-eval-flow",
+      "file": "p6.2-eval-flow.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 41",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.1000003",
+      "kind": "diagram",
+      "why": "Agent evaluation lifecycle diagram: test during development, deploy new version, monitor in production, iteratively improve quality using pre-built and custom scorers, evaluation sets"
+    },
+    {
+      "id": "p6.2-agent-bricks-observability",
+      "file": "p6.2-agent-bricks-observability.png",
+      "source": "Agent Bricks — L300 Pitch Slides, slide 13",
+      "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.1000003",
+      "kind": "diagram",
+      "why": "Agent Bricks observability stack: MLflow tracing and evaluation, 8 built-in LLM judges, custom scorers, human feedback, evaluation datasets, production monitoring"
+    },
+    {
+      "id": "p6.2-prompt-registry",
+      "file": "p6.2-prompt-registry.png",
+      "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 40",
+      "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.1000003",
+      "kind": "screenshot",
+      "why": "Prompt Registry UI showing versioned prompts (Address validator) with side-by-side version comparison, system/user roles, and prompt evolution"
+    },
+    {
+      "id": "p6.2-mlflow-platform-arch",
+      "file": "p6.2-mlflow-platform-arch.png",
+      "source": "Agentbricks Roadshow, slide 179",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.1000003",
+      "kind": "diagram",
+      "why": "MLflow Open GenAI platform architecture: tracing (prompt loading, trace logging), evaluation (human feedback, LLM judges), prompt registry with authoring workflows"
+    },
+    {
+      "id": "p6.2-eval-scorers",
+      "file": "p6.2-eval-scorers.png",
+      "source": "docs.databricks.com/mlflow3/genai/eval-monitor/",
+      "url": "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor/",
+      "kind": "screenshot",
+      "why": "MLflow evaluation UI: 'Run scorer on 2 traces' dialog showing 13 pre-built LLM judges (Completeness, Correctness, Equivalence, Expectations Guidelines, Fluency) and option to create custom scorer"
+    },
+    {
+      "id": "p6.2-eval-actions",
+      "file": "p6.2-eval-actions.png",
+      "source": "docs.databricks.com/mlflow3/genai/eval-monitor/",
+      "url": "https://docs.databricks.com/aws/en/mlflow3/genai/eval-monitor/",
+      "kind": "screenshot",
+      "why": "Trace evaluation actions menu showing workflow options: Use for evaluation, Evaluate, Add to evaluation dataset, Flag for review"
+    }
+  ],
+  "6.3": [
+    {
+      "id": "p6.3-review-session",
+      "file": "p6.3-review-session.png",
+      "source": "docs.databricks.com/mlflow3/genai/human-feedback/expert-feedback/label-existing-traces",
+      "url": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/expert-feedback/label-existing-traces",
+      "kind": "screenshot",
+      "why": "Review App interface: expert reviewing conversation with expectations panel (Expected facts, Guidelines, Expected response) and progress tracking (40% done, 1 of 5)"
+    },
+    {
+      "id": "p6.3-review-labeling",
+      "file": "p6.3-review-labeling.png",
+      "source": "Agentbricks Roadshow, slide 188",
+      "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.1000003",
+      "kind": "screenshot",
+      "why": "MLflow labeling UI: built-in review app for interactive chat testing, targeted labeling workflows, synthetic conversation bootstrapping, auto-save feedback to MLflow"
+    },
+    {
+      "id": "p6.3-assessments-feedback",
+      "file": "p6.3-assessments-feedback.png",
+      "source": "docs.databricks.com/mlflow3/genai/human-feedback/",
+      "url": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/",
+      "kind": "screenshot",
+      "why": "Trace assessment view with Feedback panel (Add custom feedback button) and Expectations panel (Add custom expectation) for domain expert labeling and eval dataset creation"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+# orchestrator QA (visual review of every final selection): file-name prefixes to drop, with the reason
+p2.2-lakeflow-components	outdated statuses (Connect private preview, Pipelines coming soon)
+p2.3-lakebase-postgres	authentication slide, text boxes, off the point
+p3.1-python-sql-cells	unreadable tall screenshot
+p3.2-docs-9	serving endpoint page, not Feature Store
+p3.3-deck-23	same lifecycle diagram as ds-lifecycle-slide14
+p3.4-deck-10	text-only wrap-up slide
+p3.4-deck-14	section divider
+p4.2-external-models	2024 "Mosaic AI Gateway" slide, outdated naming
+p4.2-gateway-models	2024 "FUTURE" Mosaic AI Gateway slide
+p4.2-fmapi-inference-optimization	paged-attention internals, off the point
+p4.2-dbrx-model-performance	DBRX benchmark, outdated
+p4.3-model-serving-foundation-models	serving UI with retired models, not fine-tuning
+p4.3-model-serving-ab-testing	A/B testing, not fine-tuning
+p4.4-external-guardrails	partner guardrails, chapter 7 topic
+p5.1-sql-ai-performance	partner ecosystem map, mislabelled, off the point
+p5.3-complementary-by-design	text cards
+p5.2-p5.5-genie-vs-supervisor	two-column text comparison
+p5.5-key-takeaways-agents	text slide
+p5.5-options-moving-forward	text cards
+p6.1-unified-trace-table	faded, mostly text, beta banner
+p6.3-assessments-feedback	unreadable tall screenshot
+p7.1-governing-ai-functions	text-only slide
+p7.1-decentralized-governance	data-org model, mostly text, off the point
+p7.2-unity-gateway-available	text table
+p7.3-dasf-motivation-framework	old DASF (55 risks, 59 controls)
+p7.3-dasf-use-cases-to-controls	old DASF (55 risks, 59 controls)
+p7.3-ai-governance-capabilities	generic governance matrix, not DASF
+p8.1-personalized-starter-questions	near-duplicate of the Genie One home screen
+p8.1-genie-desktop-window	near-duplicate of the Genie One home screen
+p8.3-genie-agents-no-code	text cards
+p8.3-1nzunoxtg68ogokrse8qsd1-uctxsi9lh6dzxj4l	older Agent Bricks slide with a quote
+p8.4-1zybz4unikz1y	MLflow system tables, off the point
+p8.4-lakeview-dashboards	same slide as p9.2-ai-assistance-everywhere, kept in 9.2
+p8.5-1qzwnkqejoggpmiwdnrmm	workshop flow and text slides
+p9.1-e2e-platform	Agent Bricks overview, not app hosting
+p9.1-ai-stack	generic AI stack, not app hosting
+p9.1-what-do-we-sell	LLMOps lifecycle, off the point
+p9.2-usage-metrics	blurred dashboard
+p9.2-best-practice	text table
+p9.3-omnigent-interface	text slide
+p9.3-unity-gateway	text cards, chapter 7 topic
+p9.3-templates	settings screen, off the point
+p9.3-cost-analysis	faded, beta banner
+p11.1-mlflow-overview	"MLflow before 2024", off the point
+p11.1-aliases-versions	text slide
+p11.1-model-lifecycle	text and code slide
+p11.2-finetuning-architecture	fine-tuning, chapter 4 topic
+p11.3-monitoring-system-arch	near-duplicate of p11.3-monitoring-architecture
+p11.4-asset-bundles	text cards
+p11.2-route-optimization	tiny endpoint header screenshot
+p2.3-lakebase-search-hybrid	same docs diagram as p2.3-lakebase-search
+p11.1-model-registry-deployment	same slide as p11.4-deployment-jobs-mlops
+p11.1-mlflow-model-lifecycle-full	registry stages (Staging/Production/Archived), replaced by aliases
+p11.4-model-serving-unified	same slide as p4.1-unified-serving, serving topic
+p11.4-feature-deployment-mlops	feature serving, not CI/CD

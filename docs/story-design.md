@@ -127,10 +127,10 @@ The build fails if a reference does not resolve to a node.
 
 1. **Angle: generic.** The story is a generic Databricks story, with no claims about
    Amadeus (decided by Mehdi, 2026-10-08).
-2. **Length: accepted as is.** The proto-story is about 2,100 words, presented while
+2. **Length: accepted as is.** The story is about 2,100 words, presented while
    scrolling. No further cut is needed (decided by Mehdi, 2026-10-08).
 
-The working draft is `protostory.md`. The readable story is `story.md`, generated from
+The working draft is `story-notes.md`. The readable story is `story.md`, generated from
 it by `scripts/story_extract.py`. The check lines are dropped. Each link sentence
 becomes the first sentence of the next point, so the text flows from point to point.
 
@@ -146,7 +146,7 @@ on any reference that does not resolve to a tree node.
 
 **What the user sees, in a third tab next to the two trees:**
 - The story, chapter by chapter, read by scrolling. The text is the one in `story.md`,
-  generated from `protostory.md` by `scripts/story_extract.py`.
+  generated from `story-notes.md` by `scripts/story_extract.py`.
 - In each point, the capsules it cites, shown as small cards (name, status, note). The
   cards are pulled from the trees, so a change to a capsule in a tree shows in the
   Story.

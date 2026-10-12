@@ -1,0 +1,194 @@
+{
+  "3.1": [
+    {
+      "id": "p3.1-notebook-table",
+      "file": "p3.1-notebook-table.png",
+      "source": "docs.databricks.com/eda-tutorial",
+      "url": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+      "kind": "screenshot",
+      "why": "Databricks notebook showing Python code with display(df) output exploring data in table format, demonstrating the core notebook interface for data exploration"
+    },
+    {
+      "id": "p3.1-visualization-editor",
+      "file": "p3.1-visualization-editor.png",
+      "source": "docs.databricks.com/eda-tutorial",
+      "url": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+      "kind": "screenshot",
+      "why": "Visualization Editor UI in Databricks notebook showing how data scientists create charts with configurable chart types, axes, and series\u2014a key exploration tool"
+    },
+    {
+      "id": "p3.1-python-sql-cells",
+      "file": "p3.1-python-sql-cells.png",
+      "source": "docs.databricks.com/notebooks/notebooks-code",
+      "url": "https://docs.databricks.com/aws/en/notebooks/notebooks-code",
+      "kind": "screenshot",
+      "why": "Notebook showing multiple cells in SQL and Python with shared variable _sqldf, demonstrating multi-language support and data sharing between cell types"
+    },
+    {
+      "id": "p3.1-data-profile-add",
+      "file": "p3.1-data-profile-add.png",
+      "source": "docs.databricks.com/eda-tutorial",
+      "url": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+      "kind": "screenshot",
+      "why": "Data Profile feature showing automatic summary statistics and distributions for columns, enabling quick data quality and exploratory assessment"
+    },
+    {
+      "id": "p3.1-data-profile-detailed",
+      "file": "p3.1-docs-12.png",
+      "source": "docs.databricks.com/notebooks/eda-tutorial",
+      "url": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+      "kind": "screenshot",
+      "why": "Detailed Data Profile display showing column metadata, data types, and statistical summaries\u2014core built-in EDA feature in notebooks"
+    }
+  ],
+  "3.2": [
+    {
+      "id": "p3.2-feature-store-ui",
+      "file": "p3.2-feature-store-ui.png",
+      "source": "Data Science With Databricks, slide 29",
+      "url": "",
+      "kind": "screenshot",
+      "why": "Feature Store governance and Unity Catalog integration showing feature definitions with primary keys and Feature Engineering API, with Catalog Explorer UI"
+    },
+    {
+      "id": "p3.2-feature-serving-arch",
+      "file": "p3.2-feature-store-governance.png",
+      "source": "Data Science With Databricks, slide 30",
+      "url": "",
+      "kind": "diagram",
+      "why": "Feature Serving architecture diagram showing consistent REST APIs for external access to Features and Feature Functions hosted in Feature Store with lineage"
+    },
+    {
+      "id": "p3.2-feature-store-overview",
+      "file": "p3.2-feature-serving-arch.png",
+      "source": "Data Science With Databricks, slide 31",
+      "url": "",
+      "kind": "screenshot",
+      "why": "Feature Store overview with governance badge showing Feature Serving APIs and Python/later integration\u2014demonstrates feature availability and serving capability"
+    },
+    {
+      "id": "p3.2-serving-endpoint",
+      "file": "p3.2-docs-9.png",
+      "source": "docs.databricks.com/machine-learning/feature-store/feature-function-serving",
+      "url": "https://docs.databricks.com/machine-learning/feature-store/feature-function-serving",
+      "kind": "screenshot",
+      "why": "Query endpoint interface showing REST API for online feature serving with language options (Browser, Curl, Python, SQL)"
+    },
+    {
+      "id": "p3.2-point-in-time",
+      "file": "p3.2-docs-14.png",
+      "source": "docs.databricks.com/machine-learning/feature-store/time-series",
+      "url": "https://docs.databricks.com/machine-learning/feature-store/time-series",
+      "kind": "diagram",
+      "why": "Point-in-time join concept diagram showing feature observation alignment across training timestamps\u2014critical for preventing data leakage in training sets"
+    },
+    {
+      "id": "p3.2-feature-eng-arch",
+      "file": "p3.2-deck-20.png",
+      "source": "Data Science With Databricks, slide 31",
+      "url": "",
+      "kind": "diagram",
+      "why": "Feature engineering and model training architecture diagram showing Feature Store integration with training and serving pipelines"
+    }
+  ],
+  "3.3": [
+    {
+      "id": "p3.3-automl-ui",
+      "file": "p3.3-automl-ui.png",
+      "source": "Data Science With Databricks, slide 35",
+      "url": "",
+      "kind": "screenshot",
+      "why": "Glass-Box AutoML UI showing train-and-evaluate workflow with train/evaluate/customize/display tabs for model development and experimentation"
+    },
+    {
+      "id": "p3.3-automl-api",
+      "file": "p3.3-automl-api.png",
+      "source": "Data Science With Databricks, slide 36",
+      "url": "",
+      "kind": "screenshot",
+      "why": "Glass-Box AutoML API interface with code showing automated ML training pipeline and notebook generation for reproducibility"
+    },
+    {
+      "id": "p3.3-mlflow-intro",
+      "file": "p3.3-mlflow-intro.png",
+      "source": "Data Science With Databricks, slide 34",
+      "url": "",
+      "kind": "screenshot",
+      "why": "Databricks AutoML overview showing MLflow experiment tracking, auto-generated notebooks, and reproducible trial notebooks for model iteration"
+    },
+    {
+      "id": "p3.3-automl-roadmap",
+      "file": "p3.3-automl-roadmap.png",
+      "source": "Data Science With Databricks, slide 37",
+      "url": "",
+      "kind": "diagram",
+      "why": "AutoML Releases and Roadmap showing supported problem types, model families, and features including XGBoost, LightGBM, and more"
+    },
+    {
+      "id": "p3.3-experiment-tracking",
+      "file": "p3.3-deck-17.png",
+      "source": "Data Science With Databricks, slide 34",
+      "url": "",
+      "kind": "screenshot",
+      "why": "MLflow experiment tracking UI showing model runs with parameter tracking, metrics comparison, and artifact management"
+    },
+    {
+      "id": "p3.3-ml-lifecycle",
+      "file": "p3.3-deck-23.png",
+      "source": "Data Science With Databricks, slide 14",
+      "url": "",
+      "kind": "diagram",
+      "why": "Full ML Lifecycle diagram showing end-to-end flow from data preparation through experiment tracking, model selection, and deployment with all components"
+    }
+  ],
+  "3.4": [
+    {
+      "id": "p3.4-ai-runtime-stack",
+      "file": "p3.4-ai-runtime-deep-learning.png",
+      "source": "Agentbricks Roadshow, slide 142",
+      "url": "",
+      "kind": "diagram",
+      "why": "AI Runtime Deep Learning Stack overview showing serverless GPU compute, managed Databricks runtime, and Lakebase integration for distributed training"
+    },
+    {
+      "id": "p3.4-cli-submission",
+      "file": "p3.4-distributed-training-cli.png",
+      "source": "Agentbricks Roadshow, slide 162",
+      "url": "",
+      "kind": "screenshot",
+      "why": "CLI Submission interface showing how to submit training jobs with GPU support via command line using Databricks CLI"
+    },
+    {
+      "id": "p3.4-gpu-hardware",
+      "file": "p3.4-docs-6.png",
+      "source": "docs.databricks.com/machine-learning/ai-runtime/quickstart",
+      "url": "https://docs.databricks.com/machine-learning/ai-runtime/quickstart",
+      "kind": "screenshot",
+      "why": "AI Runtime hardware accelerator options showing available GPU choices (H100, A100) with environment configurations for distributed training"
+    },
+    {
+      "id": "p3.4-gpu-monitoring",
+      "file": "p3.4-deck-10.png",
+      "source": "Agentbricks Roadshow [go/airoadshow], slide 168",
+      "url": "https://docs.databricks.com/en/release-notes/product-updates/2025/december-2024",
+      "kind": "screenshot",
+      "why": "AI Runtime overview showing serverless GPU compute platform for distributed training with support for TorchDistributor, DeepSpeed, Ray, and multi-node scaling"
+    },
+    {
+      "id": "p3.4-distributed-training",
+      "file": "p3.4-deck-14.png",
+      "source": "Agentbricks Roadshow [go/airoadshow], slide 139",
+      "url": "",
+      "kind": "diagram",
+      "why": "Comparison showing AI Runtime as serverless GPU platform for distributed training, highlighting advantages over classic MLR and external GPU providers"
+    },
+    {
+      "id": "p3.4-training-submission",
+      "file": "p3.4-deck-16.png",
+      "source": "Agentbricks Roadshow [go/airoadshow], slide 162",
+      "url": "",
+      "kind": "diagram",
+      "why": "Training submission workflow showing how to run distributed training with TorchDistributor, Ray, and other distributed frameworks on AI Runtime"
+    }
+  ]
+}

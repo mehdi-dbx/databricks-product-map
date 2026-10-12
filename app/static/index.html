@@ -241,14 +241,35 @@
   .srail a.on b{color:var(--red);}
   .schap{margin-bottom:3.2em;scroll-margin-top:1em;}
   .schap-h{display:flex;align-items:baseline;gap:0.8em;margin:0 0 1.1em;}
+  .sthread{margin:0 0 2.8em;}
+  .sthread-t{font-size:1.75em;font-weight:900;letter-spacing:-0.5px;color:var(--navy);margin-bottom:0.55em;}
+  .sopen, .sintro{font-size:1em;line-height:1.55;color:var(--text);margin:0 0 1.1em;max-width:62em;}
   .schap-n{font-family:'DM Mono',monospace;color:var(--red);font-weight:700;font-size:1.5em;}
   .schap-t{font-size:1.65em;font-weight:900;letter-spacing:-0.5px;color:var(--red);}
   .sslide{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--red);border-radius:14px;padding:1.1em 1.5em 1.2em;margin-bottom:1em;box-shadow:0 1px 4px rgba(27,49,57,0.05);}
   .sslide h3{font-size:1.18em;font-weight:800;letter-spacing:-0.2px;margin-bottom:0.45em;color:var(--dbxblue);}
   .slead{font-style:italic;color:var(--text2);margin-bottom:0.55em;font-size:0.95em;line-height:1.4;}
+  .seff{font-size:1em;line-height:1.4;color:var(--text);margin:-0.15em 0 0.55em;}
+  .sadd{font-size:0.98em;line-height:1.45;color:var(--text);margin:0.15em 0 0.5em;}
   .sbul{list-style:none;display:flex;flex-direction:column;gap:0.38em;margin:0.2em 0 0.4em;}
   .sbul li{position:relative;padding-left:1.15em;font-size:0.98em;line-height:1.42;color:var(--text);}
   .sbul li::before{content:"";position:absolute;left:0.1em;top:0.62em;width:0.375em;height:0.375em;border-radius:50%;background:var(--red);opacity:0.6;}
+  body:not(.story-mode) #illusMode{display:none !important;}
+  body.illus-off .sill{display:none;}
+  .sill{display:flex;flex-wrap:wrap;gap:0.7em;margin-top:0.8em;padding-top:0.75em;border-top:1px dashed var(--border);}
+  .sillc{width:min(17em,100%);padding:0.35em;border:2px solid var(--border);border-radius:10px;background:#fff;display:flex;flex-direction:column;gap:0.3em;}
+  .sillc.on{border-color:var(--red);box-shadow:0 0 0 3px var(--red-dim);}
+  .sillc img{width:100%;height:9em;object-fit:contain;background:var(--bg);border-radius:6px;cursor:zoom-in;}
+  .sillc label{display:flex;align-items:center;gap:0.4em;cursor:pointer;}
+  .sillc input{width:0.8em;height:0.8em;accent-color:var(--red);cursor:pointer;flex:none;}
+  .sillc span{font-family:'DM Mono',monospace;font-size:0.55em;color:var(--text3);text-align:left;}
+  #illusView{position:fixed;inset:0;z-index:500;background:rgba(27,49,57,0.92);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:3vh 3vw;cursor:zoom-out;}
+  #illusView[hidden]{display:none;}
+  #illusView img{max-width:100%;max-height:calc(100% - 60px);object-fit:contain;background:#fff;border-radius:8px;}
+  .ivbar{display:flex;gap:28px;align-items:center;color:#fff;font-size:1rem;cursor:default;}
+  .ivbar label{display:flex;gap:8px;align-items:center;cursor:pointer;}
+  .ivbar input{width:20px;height:20px;accent-color:var(--red);cursor:pointer;}
+  .ivbar a{color:#fff;}
   .scaps{display:flex;flex-wrap:wrap;gap:0.55em;margin-top:0.8em;padding-top:0.75em;border-top:1px dashed var(--border);}
   .scap{border:1px solid rgba(255,54,33,0.55);border-radius:12px;padding:0.5em 0.75em;background:#fff;width:min(21em,100%);cursor:pointer;text-align:left;font-family:inherit;font-size:inherit;color:inherit;}
   .scap:hover{background:var(--red-dim);border-color:var(--red);}
@@ -261,8 +282,8 @@
   @media (max-width:900px){ .story{grid-template-columns:1fr;} .srail{position:static;} }
   /* Story search: find-as-you-type list under the top search box */
   .searchwrap{position:relative;}
-  #storyResults{position:absolute;top:calc(100% + 8px);right:0;width:min(460px,80vw);max-height:60vh;overflow:auto;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 34px rgba(27,49,57,0.18);z-index:300;padding:6px;}
-  #storyResults[hidden]{display:none;}
+  #findResults{position:absolute;top:calc(100% + 8px);right:0;width:min(460px,80vw);max-height:60vh;overflow:auto;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 34px rgba(27,49,57,0.18);z-index:300;padding:6px;}
+  #findResults[hidden]{display:none;}
   .sres{display:block;width:100%;text-align:left;border:0;background:none;font-family:inherit;color:inherit;padding:8px 10px;border-radius:8px;cursor:pointer;}
   .sres:hover,.sres.on{background:var(--red-dim);}
   .sres-crumb{font-family:'DM Mono',monospace;font-size:0.64rem;color:var(--text3);text-transform:uppercase;letter-spacing:0.04em;}
@@ -289,7 +310,7 @@
   #decksView{position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;overflow:auto;display:none;background:var(--bg);}
   body.decks-mode #decksView{display:block;}
   body.decks-mode #stage, body.decks-mode #panel, body.decks-mode #panelTab, body.decks-mode #legend,
-  body.decks-mode #hint, body.decks-mode .tool, body.decks-mode #navMode, body.decks-mode #storyNav,
+  body.decks-mode #hint, body.decks-mode .tool .icbtn, body.decks-mode #navMode, body.decks-mode #storyNav,
   body.decks-mode #backToStory{display:none !important;}
   .decks{max-width:1500px;margin:0 auto;padding:2rem 1.8rem 5rem;color:var(--text);}
   .decks h1{font-size:1.9rem;font-weight:900;letter-spacing:-0.6px;margin-bottom:0.8rem;}
@@ -306,6 +327,8 @@
   .dtable td{padding:7px 10px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.4;color:var(--text2);overflow-wrap:anywhere;}
   .dtable tr:last-child td{border-bottom:none;}
   .dtable tbody tr:nth-child(even){background:rgba(27,49,57,0.025);}
+  .dtable tr.sflash td{animation:rowflash 1.6s ease-out;}
+  @keyframes rowflash{0%{background:rgba(255,54,33,0.22);}100%{background:transparent;}}
 
   /* simple-node fallback meta (unchanged look) */
   .pfall{font-size:0.95rem;line-height:1.42;color:var(--text2);}
@@ -329,9 +352,14 @@
     <span class="setlbl">Internal</span>
     <span class="modesw"><input type="checkbox" id="modeTg"><span class="mtrack"></span><span class="mknob"></span></span>
   </label>
+  <!-- temporary, while the Story illustrations are chosen -->
+  <label class="navmode" id="illusMode" title="Show the illustration candidates under the slides">
+    <span class="setlbl">Image picks</span>
+    <span class="modesw"><input type="checkbox" id="illusTg"><span class="mtrack"></span><span class="mknob"></span></span>
+  </label>
   <div class="nav-sep"></div>
   <div class="tool">
-    <div class="searchwrap"><input type="search" id="search" placeholder="Search features…" autocomplete="off"><div id="storyResults" hidden></div></div>
+    <div class="searchwrap"><input type="search" id="search" placeholder="Search features…" autocomplete="off"><div id="findResults" hidden></div></div>
     <button class="icbtn" id="btnNew" data-tip="DAIS" aria-label="DAIS"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .962 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.962 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg></button>
     <button class="icbtn" id="btnVerify" data-tip="Hide to-verify" aria-label="Hide to-verify"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></svg></button>
     <button class="icbtn" id="btnToggle" data-tip="Expand all" aria-label="Toggle expand/collapse"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-6"/><path d="M12 8V2"/><path d="M4 12H2"/><path d="M10 12H8"/><path d="M16 12h-2"/><path d="M22 12h-2"/><path d="m15 19-3 3-3-3"/><path d="m15 5-3-3-3 3"/></svg></button>
@@ -390,7 +418,7 @@
     <span class="chip s-GA">GA</span>
     <span class="chip s-PuP">PuP</span>
     <span class="chip s-Beta">Beta</span>
-    <span class="chip s-PrivPreview">Priv</span>
+    <span class="chip s-PrivPreview">PPR</span>
     <span class="chip s-Announced">Announced</span>
     <span class="chip s-Legacy">Legacy</span>
   </div>
@@ -6269,6 +6297,11 @@ const TREES = { "ai": {
  ]
 } };
 const STORY = {
+ "thread": {
+  "title": "From scattered data to AI in production",
+  "opening": "Most large organizations already run analytics and have started with AI. Their data sits in several systems, each with its own copies and rules, kept in sync by pipelines built by hand. Data scientists rebuild the same features and struggle to reproduce their results, every model provider is handled separately, and agents cannot reach data and tools safely. Nobody can verify the answers of the AI or see how it is used. Business users wait for the few colleagues who can query the data, developers host each application on its own infrastructure, and customer and security data stay in their own silos. So AI projects start as pilots on extracts, and many stop before production. The work starts with the data. How do you get it into one place, governed once and fresh enough for AI?",
+  "closing": "Every part of the starting situation now has its answer. The data foundation stores the scattered data once and governs it, the data science lifecycle makes model work reproducible, and model access puts every provider behind one way of serving. Building agents gives them safe access to data and tools, evaluation measures their answers, and governance sets who may use what. Business users and developers get tools of their own, domain applications break the customer and security silos, and production operations keep every model under control. AI no longer stops at the pilot."
+ },
  "chapters": [
   {
    "num": 1,
@@ -6284,19 +6317,90 @@ const STORY = {
       "Their data sits in several places: operational databases behind the applications, a warehouse for reporting, a data lake for raw files, and SaaS tools.",
       "Each system keeps its own copies and its own access rules.",
       "Pipelines move data between them to keep the copies in sync.",
+      "These pipelines are written and scheduled by hand, and the copies they feed are often out of date.",
+      "When a table stops being refreshed or breaks, nobody is warned, and the repair is manual.",
       "People who need an answer wait for the few colleagues who can query these systems."
      ],
      "refs": []
     },
     {
      "id": "1.2",
-     "title": "AI pilots blocked before production",
+     "title": "Model work that is slow and hard to reproduce",
      "lead": "AI needs that data. When the data is spread out, every AI project first has to collect it.",
+     "bullets": [
+      "Data scientists rebuild the same features in each project, and features are often computed differently for training and in production.",
+      "Experiments are hard to reproduce, results stay scattered across teams, and algorithms and settings are tried by hand.",
+      "Large datasets do not fit on one machine, and GPUs are scarce, hard to set up or left idle."
+     ],
+     "refs": []
+    },
+    {
+     "id": "1.3",
+     "title": "Every model provider handled separately",
+     "lead": "Many use cases now start from models that someone else trained.",
+     "bullets": [
+      "Each model provider comes with its own serving setup, and API keys end up scattered across code and teams.",
+      "Token spend grows without warning, calls to outside models go unaudited, and relying on one provider creates lock-in.",
+      "Adapting a model to the company's needs takes large and costly GPU resources."
+     ],
+     "refs": []
+    },
+    {
+     "id": "1.4",
+     "title": "Agents that cannot reach data and tools safely",
+     "lead": "A model on its own only answers. Agents also look up company data and use tools.",
+     "bullets": [
+      "Using AI on company documents often means exporting the data to outside services.",
+      "An agent also needs search, tools and memory, and each connection is built by hand, with credentials spread across agents.",
+      "Agents start every conversation from scratch, and the code they generate can run with unrestricted access to data.",
+      "A single agent is not enough for complex tasks, and routing work between agents is manual."
+     ],
+     "refs": []
+    },
+    {
+     "id": "1.5",
+     "title": "AI that nobody can verify or control",
+     "lead": "Once AI acts on company data, it has to be trusted.",
+     "bullets": [
+      "When an agent gives a wrong answer, nobody sees which step failed, and the quality of its answers is not measured.",
+      "Prompts change without being tracked, and expert feedback sits in spreadsheets, cut off from the agents.",
+      "Models, agents and tools are not governed like data.",
+      "Nobody has a central view of how AI is used, and nothing is audited."
+     ],
+     "refs": []
+    },
+    {
+     "id": "1.6",
+     "title": "Business users and developers held back",
+     "lead": "These gaps also reach the people who use data and AI every day, and those who build with it.",
+     "bullets": [
+      "Business users depend on those few colleagues for every question, and the same metric is defined differently from one team or dashboard to the next.",
+      "What experts know stays with them, and analysis done in spreadsheets escapes governance.",
+      "Even a small internal app needs a developer, and developers host each app on separate infrastructure, with its own identity and secrets.",
+      "Much of their time goes into repetitive code and hand-built agent scaffolding."
+     ],
+     "refs": []
+    },
+    {
+     "id": "1.7",
+     "title": "Customer and security data in separate silos",
+     "lead": "Some business domains add silos of their own.",
+     "bullets": [
+      "Customer data is fragmented across systems, with duplicate records and no lineage.",
+      "Security logs sit in separate tools, and many are deleted early to save cost."
+     ],
+     "refs": []
+    },
+    {
+     "id": "1.8",
+     "title": "AI pilots blocked before production",
+     "lead": "With data, models and tools in this state, an AI project cannot start on live, governed data.",
      "bullets": [
       "So AI projects start as pilots on extracts.",
       "A pilot can work on its extract.",
       "Going to production means reaching live data, proving the answers are right, and controlling who uses which model and at what cost.",
-      "Many pilots stop at that step."
+      "Many pilots stop at that step.",
+      "The models that do reach production are hard to run, because versions are not tracked and promoting a new one is manual and slow."
      ],
      "refs": []
     }
@@ -6311,6 +6415,9 @@ const STORY = {
      "id": "2.1",
      "title": "Open table storage with Delta Lake",
      "lead": "",
+     "effect": "The company keeps one consistent copy of its data, in an open format.",
+     "challenge": "Batch and streaming data often sit in separate stores, sometimes in closed or complex formats. A job that fails halfway can leave a table inconsistent, and a schema change can break the jobs that read it.",
+     "pivot": "Delta Lake brings these workloads together on one open table format.",
      "bullets": [
       "Databricks stores the data once, in open Delta tables in your cloud storage.",
       "Delta adds transactions to those files.",
@@ -6331,6 +6438,9 @@ const STORY = {
      "id": "2.2",
      "title": "Ingestion, transformation and table maintenance",
      "lead": "A storage layer is only useful once the data gets into it and stays usable.",
+     "effect": "Data engineers no longer write connector code or schedule table maintenance by hand.",
+     "challenge": "Bringing data in means writing connector code for each source and wiring job dependencies by hand. The tables then need maintenance that someone has to schedule and tune.",
+     "pivot": "Lakeflow and Predictive Optimization take over this work.",
      "bullets": [
       "Lakeflow brings the data in and transforms it.",
       "Lakeflow Connect provides managed connectors to databases and SaaS applications.",
@@ -6360,6 +6470,9 @@ const STORY = {
      "id": "2.3",
      "title": "Transactional data on the same platform",
      "lead": "The analytical data is now in place. Applications and agents also read and write transactional data, and that data usually lives in a separate database with its own copy.",
+     "effect": "Applications and agents keep their data on the same platform as the analytics, under the same governance.",
+     "challenge": "Application data in that separate database escapes governance, and search over it needs yet another store for vectors, which copies the data again.",
+     "pivot": "Lakebase and Lakebase Search bring this data and its search onto the platform.",
      "bullets": [
       "Lakebase is a serverless Postgres database inside the platform.",
       "It holds application data and agent state, and its tables sync with Unity Catalog.",
@@ -6388,6 +6501,9 @@ const STORY = {
      "id": "2.4",
      "title": "Real-time analytics on operational data",
      "lead": "Transactional and analytical data now sit on the same platform. The remaining copy is the one that feeds analytics with fresh operational data.",
+     "effect": "Dashboards and applications read live data instead of a stale copy.",
+     "challenge": "Feeding analytics with operational data takes replication pipelines and a second system to maintain. The copies lag behind the source, and dashboard queries take seconds.",
+     "pivot": "Lakehouse//RT and LTAP remove that last copy.",
      "bullets": [
       "Lakehouse//RT answers SQL queries in under 100 milliseconds directly on lakehouse tables, so dashboards and applications no longer need a separate serving copy.",
       "LTAP, which is announced, keeps one dataset that is written in Lakebase and read in Lakehouse//RT, with no replication pipeline between them."
@@ -6415,6 +6531,9 @@ const STORY = {
      "id": "2.5",
      "title": "Data catalog and data quality",
      "lead": "Everything is now in one place. That helps only if access, lineage and quality are handled once for all of it.",
+     "effect": "Data teams are alerted when a table goes stale, and repairs run as audited jobs.",
+     "challenge": "Data freshness is invisible and nobody is notified, so a stale table can go unnoticed, and repairing it is manual and risky.",
+     "pivot": "Anomaly detection and data classification add this watch to the catalog.",
      "bullets": [
       "Unity Catalog applies one set of permissions, lineage and audit to tables and files.",
       "Data quality is watched in the same place.",
@@ -6441,7 +6560,8 @@ const STORY = {
       }
      ]
     }
-   ]
+   ],
+   "intro": "It starts by storing the data once. Copies multiply because every workload, from batch jobs to applications and dashboards, keeps its own. Delta Lake keeps one open copy, Lakeflow and Predictive Optimization bring the data in and maintain it, Lakebase and Lakehouse//RT put applications and live analytics on that same copy, and Unity Catalog governs all of it and watches its quality. The organization now works from one fresh, governed copy of its data. How does a data science team work on it?"
   },
   {
    "num": 3,
@@ -6488,6 +6608,9 @@ const STORY = {
      "id": "3.2",
      "title": "Feature Store",
      "lead": "Exploration ends in features, the inputs a model learns from. A feature computed one way for training and another way in production gives wrong predictions.",
+     "effect": "Each feature is built once and reused by every team and every model.",
+     "challenge": "Teams duplicate the same features across projects, with no view of where each one comes from or who may use it.",
+     "pivot": "The Feature Store makes features a shared, governed asset.",
      "bullets": [
       "The Feature Store keeps each feature definition in one place, governed by Unity Catalog.",
       "Training sets are built with point-in-time correct joins, and the same definitions feed predictions in production.",
@@ -6516,6 +6639,9 @@ const STORY = {
      "id": "3.3",
      "title": "Experiment tracking and AutoML",
      "lead": "With features in place, the team trains many models and compares them. Comparing them requires that every result can be reproduced.",
+     "effect": "Model work becomes repeatable, and teams reach a first model faster.",
+     "challenge": "When each team keeps its own metrics, results cannot be compared, and searching algorithms and settings by hand delays every model.",
+     "pivot": "MLflow and AutoML take care of the tracking and the search.",
      "bullets": [
       "MLflow records every training run with its parameters, metrics, code version and artifacts, so any result can be reproduced and compared.",
       "AutoML gives a first baseline.",
@@ -6552,6 +6678,9 @@ const STORY = {
      "id": "3.4",
      "title": "Distributed training and GPUs",
      "lead": "Some datasets and models do not fit on one machine.",
+     "effect": "Training is no longer limited by the size of one machine or by access to GPUs.",
+     "challenge": "Distributed training code is hard to write correctly, GPUs are hard to get, and clusters configured by hand are error-prone or sit idle.",
+     "pivot": "Managed training libraries and AI Runtime take that work off the team.",
      "bullets": [
       "Training then spreads across GPUs and clusters with managed libraries such as TorchDistributor, DeepSpeed and Ray.",
       "AI Runtime provides GPUs on demand with no cluster to manage, and it scales to zero when the job ends."
@@ -6575,7 +6704,8 @@ const STORY = {
       }
      ]
     }
-   ]
+   ],
+   "intro": "Data scientists explore that governed data in notebooks, with the languages they already know. Their work slows down when features are rebuilt for each project and results cannot be reproduced. The Feature Store shares each feature across teams, MLflow and AutoML track and speed up the experiments, and AI Runtime provides GPUs when the data outgrows one machine. The team ends up with models it can reproduce, while many new uses start from models trained by others. How do you serve and control any model, your own or a provider's?"
   },
   {
    "num": 4,
@@ -6586,6 +6716,9 @@ const STORY = {
      "id": "4.1",
      "title": "Model serving",
      "lead": "",
+     "effect": "Putting a model into production no longer needs its own infrastructure.",
+     "challenge": "Each kind of model needs its own serving system, provisioned by hand, with access control split across them. Idle machines keep costing money.",
+     "pivot": "Model Serving replaces these systems with one serverless service.",
      "bullets": [
       "Model Serving handles both cases with one kind of endpoint.",
       "Custom models, foundation models and external models are served behind serverless endpoints with the same API.",
@@ -6608,6 +6741,9 @@ const STORY = {
      "id": "4.2",
      "title": "Foundation models and their lifecycle",
      "lead": "For large language models, teams need to know which models are available behind those endpoints.",
+     "effect": "Teams can use the best model for each task, from any of the main providers.",
+     "challenge": "Depending on one provider creates lock-in, token spend grows unpredictably, and models from different providers are tested piece by piece.",
+     "pivot": "Foundation Model APIs remove the dependency on any single provider.",
      "bullets": [
       "Foundation Model APIs give access through one API to models from providers that include Anthropic, OpenAI, Google and Meta.",
       "They are billed per token or with reserved capacity.",
@@ -6647,6 +6783,9 @@ const STORY = {
      "id": "4.3",
      "title": "Model fine-tuning",
      "lead": "Sometimes a general model does not know the company's vocabulary or tasks well enough.",
+     "effect": "Adapting a model to company data takes less GPU memory and is paid by the minute.",
+     "challenge": "Full fine-tuning needs large amounts of GPU memory and is expensive and slow. Once tuned, the model often sits apart from the systems that serve the others.",
+     "pivot": "Model fine-tuning makes this adaptation lighter and keeps it on the platform.",
      "bullets": [
       "Fine-tuning adapts an open model to company data with LoRA, QLoRA or full fine-tuning, on serverless GPUs.",
       "The tuned model is logged in MLflow and served like any other model."
@@ -6666,6 +6805,9 @@ const STORY = {
      "id": "4.4",
      "title": "External models",
      "lead": "Some teams also call models that are hosted directly at a provider.",
+     "effect": "Calls to outside models are tracked and audited like every other model call.",
+     "challenge": "API keys end up scattered across code and team members, and these calls bypass security, with no view of what they cost.",
+     "pivot": "External model services bring these calls under the same control.",
      "bullets": [
       "These models are registered as external models, with their keys stored centrally, so their calls go through the same Model Serving endpoints as every other model."
      ],
@@ -6680,7 +6822,8 @@ const STORY = {
       }
      ]
     }
-   ]
+   ],
+   "intro": "Serving those models is the next step. Without one way to do it, every model and every provider brings its own system, keys and costs. Model Serving puts every model behind the same kind of endpoint, Foundation Model APIs reach the main providers through one API, fine-tuning adapts open models to the company's needs, and external models go through the same control. Every model is now served the same way, and many uses need one that can also look up company data and call tools. How do you build agents?"
   },
   {
    "num": 5,
@@ -6691,6 +6834,9 @@ const STORY = {
      "id": "5.1",
      "title": "Batch AI in SQL and pipelines",
      "lead": "",
+     "effect": "Teams apply AI to large volumes of data and documents without moving them out of the platform.",
+     "challenge": "Running a model over company data usually means sending the data to an outside service, building separate pipelines for documents and splitting the work into batches by hand. What comes back is unstructured.",
+     "pivot": "AI Functions do this work where the data already is.",
      "bullets": [
       "AI Functions call a model from SQL or from a pipeline to classify, extract or summarize data and documents at scale.",
       "The first step needs no agent.",
@@ -6711,6 +6857,9 @@ const STORY = {
      "id": "5.2",
      "title": "Retrieval and document question answering",
      "lead": "An agent answers questions as they come. To answer well, it first has to find the right information.",
+     "effect": "Agents answer from the company's own documents, with sources that can be checked.",
+     "challenge": "Search indexes are built and kept in sync by hand, and generic retrieval misses what a document means. Answers then cite sources that are missing or false.",
+     "pivot": "AI Search and Knowledge Assistant ground the answers in the right documents.",
      "bullets": [
       "AI Search indexes documents and tables for vector and keyword search, keeps the index in sync with the Delta tables, and returns citations.",
       "Knowledge Assistant packaged this into a question-answering agent over documents that could be set up in minutes.",
@@ -6739,6 +6888,9 @@ const STORY = {
      "id": "5.3",
      "title": "Tool access through MCP",
      "lead": "Answering from documents only reads data. Many tasks also need actions, such as running a query, opening a ticket or changing code. Each of these tools needs a connection and permissions.",
+     "effect": "Agents reach the company's tools through one governed route instead of one-off connections.",
+     "challenge": "Teams write a custom connector for each tool and host the servers themselves, credentials pile up across agents, and tool use stays hidden.",
+     "pivot": "Managed MCP servers and MCP Services turn each tool into a governed connection.",
      "bullets": [
       "The Model Context Protocol (MCP) is the standard way for an agent to call tools.",
       "Databricks runs managed MCP servers for its own services, such as Genie, AI Search and SQL.",
@@ -6777,6 +6929,9 @@ const STORY = {
      "id": "5.4",
      "title": "Custom agents, memory and sandbox",
      "lead": "An agent combines retrieval and tools with its own logic.",
+     "effect": "Developers build the agent they need, and it remembers its users and runs its code safely.",
+     "challenge": "Agent platforms often impose the framework and the model, and leave sessions and memory to be handled by hand. Users repeat their instructions in each conversation, and the code an agent writes is untrusted.",
+     "pivot": "Custom agents, managed memory and Databricks Sandbox take these limits away.",
      "bullets": [
       "Custom agents are written in code with frameworks such as LangGraph, LangChain or the OpenAI SDK.",
       "They can use any model on Model Serving and any MCP tool.",
@@ -6814,6 +6969,9 @@ const STORY = {
      "id": "5.5",
      "title": "Multi-agent orchestration",
      "lead": "Some tasks are too large for one agent.",
+     "effect": "Large tasks are shared across specialized agents and come back as one answer.",
+     "challenge": "Routing work between agents by hand gives disconnected answers, and a chain of agents can bypass a user's data permissions.",
+     "pivot": "The Supervisor Agent takes over the routing.",
      "bullets": [
       "A supervisor agent splits a task across several agents and keeps each user's data permissions.",
       "It is moving into Genie Agents as well."
@@ -6829,7 +6987,8 @@ const STORY = {
       }
      ]
     }
-   ]
+   ],
+   "intro": "An agent starts from the company's own data. It has to find the right information, use tools, remember what it learned and run code without putting data at risk. AI Functions bring models to the data in SQL, AI Search and Knowledge Assistant find the right documents, MCP connects tools under Unity Catalog, custom agents get managed memory and Databricks Sandbox, and the Supervisor Agent shares out large tasks. The agent can now use company data and tools, and before it reaches users, it has to be trusted. How do you know it is right?"
   },
   {
    "num": 6,
@@ -6840,6 +6999,9 @@ const STORY = {
      "id": "6.1",
      "title": "Tracing",
      "lead": "",
+     "effect": "Operators see inside every agent request, step by step, including what it costs.",
+     "challenge": "Agent chains are opaque to the people who run them. When an answer is wrong, the failing step is hard to isolate, and the cost of each request is unknown.",
+     "pivot": "MLflow 3 makes each request visible.",
      "bullets": [
       "MLflow traces every request through the agent.",
       "It records each model call, tool call and retrieval step, with inputs, outputs, latency and tokens, and it works with more than 30 agent frameworks.",
@@ -6860,6 +7022,9 @@ const STORY = {
      "id": "6.2",
      "title": "Evaluation and prompt versioning",
      "lead": "A trace shows one request. Judging quality needs a score across many requests.",
+     "effect": "Teams know whether a new agent version is better before it ships.",
+     "challenge": "Without quality metrics, traces are reviewed by hand and versions cannot be compared. Prompts change without a record, and staging and production drift apart.",
+     "pivot": "Agent evaluation scores the answers, and the Prompt Registry versions the prompts.",
      "bullets": [
       "Agent evaluation applies LLM judges and custom scorers to traces.",
       "It runs in batch before a release and continuously on live traffic.",
@@ -6889,6 +7054,9 @@ const STORY = {
      "id": "6.3",
      "title": "Expert review and labeling",
      "lead": "An LLM judge is only useful if its scores match what experts would say.",
+     "effect": "What domain experts know becomes the standard the agent is judged against.",
+     "challenge": "Without ground truth, agent quality is a matter of opinion. Experts label answers in spreadsheets that are not linked to the traces, and their criteria drift from one session to the next.",
+     "pivot": "Review Apps connect the experts to the agent.",
      "bullets": [
       "Review Apps let domain experts test the agent in a chat interface and label its answers.",
       "The labels attach to the traces and become evaluation datasets.",
@@ -6905,7 +7073,8 @@ const STORY = {
       }
      ]
     }
-   ]
+   ],
+   "intro": "Knowing that an agent is right starts with seeing what it does. Without that, a wrong answer cannot be traced, quality is a matter of opinion, and a prompt change can go unnoticed. MLflow 3 traces every request step by step, agent evaluation scores the answers of each version, the Prompt Registry versions the prompts, and Review Apps bring the experts' judgment in. Quality is now measured before each release, and data, models, agents and tools also need rules for who may use what. How is all of it governed?"
   },
   {
    "num": 7,
@@ -6916,6 +7085,9 @@ const STORY = {
      "id": "7.1",
      "title": "Unity Catalog for AI assets",
      "lead": "",
+     "effect": "Each model, agent and tool can be traced to the data behind it and to everyone who used it.",
+     "challenge": "Models, agents and functions are not governed as assets of their own, permissions are enforced differently across them, and external credentials are scattered. Nobody knows which data feeds which model.",
+     "pivot": "Unity Catalog extends to these assets.",
      "bullets": [
       "Unity Catalog governs models, agents, tools and credentials in the same way as tables and files.",
       "Each of them is a Unity Catalog object with permissions, lineage and an audit trail.",
@@ -6937,6 +7109,9 @@ const STORY = {
      "id": "7.2",
      "title": "Control of AI traffic with Unity Gateway",
      "lead": "The catalog sets who may use each asset. Each model call and each tool call also needs control at the moment it happens.",
+     "effect": "Every model and tool call is controlled and logged in one place.",
+     "challenge": "Each team connects to model providers on its own, so nobody sees who calls which model or what it costs. Prompts and responses go through without guardrails, and nothing is logged for an audit.",
+     "pivot": "Unity Gateway puts this traffic under one control plane.",
      "bullets": [
       "Unity Gateway sits in front of all model and tool traffic and is built on Unity Catalog.",
       "It sets who may call which model and tracks usage per user and team.",
@@ -6974,7 +7149,8 @@ const STORY = {
       }
      ]
     }
-   ]
+   ],
+   "intro": "Governance has to cover all of it at once. Models, agents and tools often sit outside the rules that govern data, calls to models go unchecked, and the risks of AI are not mapped. Unity Catalog governs them the same way as tables, Unity Gateway controls and logs every model and tool call, and the Databricks AI Security Framework links each risk to the control that covers it. Data, models, agents and tools are now governed with one set of rules, but most of the people who need them do not write code. How do business users get to them?"
   },
   {
    "num": 8,
@@ -6985,6 +7161,9 @@ const STORY = {
      "id": "8.1",
      "title": "Natural-language questions on company data",
      "lead": "",
+     "effect": "Business users get answers from company data without writing SQL.",
+     "challenge": "Most people who need data do not write SQL. Their questions queue up at the data team, and the answer often comes after the decision.",
+     "pivot": "Genie One gives them a front door to the data.",
      "bullets": [
       "Genie One lets business users ask questions in plain language.",
       "They get answers from governed company data, with citations and with their own permissions applied.",
@@ -7005,6 +7184,9 @@ const STORY = {
      "id": "8.2",
      "title": "Shared business definitions",
      "lead": "An answer is only trusted if \"revenue\" or \"active customer\" means the same thing as in the official reports.",
+     "effect": "Every answer uses the company's certified definition of each metric.",
+     "challenge": "Metrics are defined differently across dashboards, queries and teams, and business context is scattered across documents, chats and tickets. An AI can then pick an obsolete or draft definition.",
+     "pivot": "Genie Ontology is the layer that grounds Genie in these definitions.",
      "bullets": [
       "Genie Ontology holds those definitions.",
       "Each KPI is defined once, as a metric view in Unity Catalog.",
@@ -7026,6 +7208,9 @@ const STORY = {
      "id": "8.3",
      "title": "No-code assistants built by domain experts",
      "lead": "Once the definitions are shared, domain experts can package what they know for others.",
+     "effect": "The knowledge of each business area becomes available to everyone in it.",
+     "challenge": "Business knowledge stays with a few experts, and dashboards only answer the questions they were built for. Deeper analysis is spread across separate tools.",
+     "pivot": "Genie Agents turn that expertise into a shared assistant.",
      "bullets": [
       "Genie Agents let a domain expert build a no-code assistant for a business area.",
       "The assistant can follow up on questions, run multi-step analyses and explain its reasoning, and it can be embedded in other applications.",
@@ -7046,6 +7231,9 @@ const STORY = {
      "id": "8.4",
      "title": "AI-assisted dashboards and spreadsheets",
      "lead": "Many users still work in dashboards and spreadsheets.",
+     "effect": "Analysts and business users go from a question to a governed dashboard on their own.",
+     "challenge": "Building a dashboard takes SQL and specialist skills, so requests wait. Meanwhile, analysis done in spreadsheets is cut off from the governed data and unaudited.",
+     "pivot": "AI/BI Dashboards and Row Zero bring the assistant into both.",
      "bullets": [
       "An AI/BI dashboard can be built from a plain-language request.",
       "The assistant finds the tables, writes the queries and picks the charts, and the author approves each step.",
@@ -7074,6 +7262,9 @@ const STORY = {
      "id": "8.5",
      "title": "No-code app generation",
      "lead": "When the same question comes back every week, it is worth turning into a small application.",
+     "effect": "Business teams turn an idea into a working app in minutes.",
+     "challenge": "Building an app takes software engineering skills, and every change needs a developer and a new deployment.",
+     "pivot": "Genie App Builder lets the team describe the app instead.",
      "bullets": [
       "Genie App Builder generates a Databricks App from a plain-language description, within the limits the admins set."
      ],
@@ -7088,7 +7279,8 @@ const STORY = {
       }
      ]
     }
-   ]
+   ],
+   "intro": "Business users depend on analysts for every question, and the same metric can mean different things from one report to the next. Genie One lets them ask in plain language and answers with their own permissions, and Genie Ontology makes each answer use the certified definition. Genie Agents, AI/BI Dashboards, Row Zero and Genie App Builder carry the same help into assistants, dashboards, spreadsheets and small apps. No-code now covers the common needs, and developers build the rest. What do builders get?"
   },
   {
    "num": 9,
@@ -7099,6 +7291,9 @@ const STORY = {
      "id": "9.1",
      "title": "Application hosting",
      "lead": "",
+     "effect": "Data and AI applications run on the platform itself, next to the governed data.",
+     "challenge": "A data or AI application usually runs on separate infrastructure, with its own identity management and secrets. It sits apart from the governed data, and access control and audit trails are hard to put in place.",
+     "pivot": "Databricks Apps brings these applications onto the platform.",
      "bullets": [
       "Developers build applications with the frameworks they already use, such as Streamlit, Gradio, React or FastAPI, and deploy them as Databricks Apps.",
       "The apps run serverless on the platform.",
@@ -7121,6 +7316,9 @@ const STORY = {
      "id": "9.2",
      "title": "Coding assistant",
      "lead": "Hosting is now handled. Writing the code still takes most of the time.",
+     "effect": "Developers write less repetitive code, with the same assistant in every tool.",
+     "challenge": "Much of that code is repetitive boilerplate, developers switch between separate tools for notebooks, SQL, pipelines and dashboards, and tuning SQL is hard for non-experts.",
+     "pivot": "Genie Code takes on that work.",
      "bullets": [
       "Genie Code is the AI assistant inside notebooks, the SQL editor, pipelines and dashboards.",
       "It writes and explains code from plain-language requests.",
@@ -7141,6 +7339,9 @@ const STORY = {
      "id": "9.3",
      "title": "Agent development kit and coding-agent harnesses",
      "lead": "Custom agents are code as well, and they need a project structure.",
+     "effect": "Teams build agents on a ready structure, with their tools governed and audited.",
+     "challenge": "Developers scaffold each agent and its tool connections by hand, and the integrations they create are not audited. Each coding-agent tool is its own isolated world, so content is copied between them by hand.",
+     "pivot": "The AI Dev Kit and Omnigent give this work a common base.",
      "bullets": [
       "The AI Dev Kit gives developers templates and scaffolding for agents, and a set of tools governed in Unity Catalog.",
       "Databricks uses the same kit for its own internal coding agents.",
@@ -7165,7 +7366,8 @@ const STORY = {
       }
      ]
     }
-   ]
+   ],
+   "intro": "Developers build the rest on the same platform. Each application usually needs its own infrastructure, identity and secrets, and much of the code is repetitive. Databricks Apps hosts applications next to the governed data, App Spaces governs who deploys and uses them, Genie Code writes and explains code in every tool, and the AI Dev Kit and Omnigent give agent development a common base. Databricks builds with these same components, up to complete applications for specific business domains. What comes ready-made?"
   },
   {
    "num": 10,
@@ -7176,6 +7378,9 @@ const STORY = {
      "id": "10.1",
      "title": "Customer data application",
      "lead": "",
+     "effect": "Campaigns and personalization run on governed customer profiles that stay current.",
+     "challenge": "Each system holds its own part of the customer, often duplicated and without lineage, and audiences are built and activated by hand.",
+     "pivot": "CustomerLake gives the platform a ready-made answer for customer data.",
      "bullets": [
       "CustomerLake, in private preview, builds customer 360 profiles on the lakehouse.",
       "It joins transactions, behavior and engagement into one profile per customer.",
@@ -7197,6 +7402,9 @@ const STORY = {
      "id": "10.2",
      "title": "Security operations application",
      "lead": "CustomerLake applies the platform to customer data. The same pattern applies to security data.",
+     "effect": "Security teams keep all their logs and investigate faster.",
+     "challenge": "Security telemetry is split across separate tools, threat hunting and triage are manual, and detection rules are hard to version and test.",
+     "pivot": "Lakewatch adds agents to security operations.",
      "bullets": [
       "Lakewatch, in private preview, runs security operations on the lakehouse.",
       "It keeps security, IT and business logs in one place at object-storage cost, so they no longer have to be deleted early.",
@@ -7213,7 +7421,8 @@ const STORY = {
       }
      ]
     }
-   ]
+   ],
+   "intro": "Some of these applications come ready-made. Customer data and security logs each sit in their own silo, with duplicate records, separate tools and logs deleted to save cost. CustomerLake builds one governed profile per customer and lets agents run the campaigns, and Lakewatch keeps the logs on the lakehouse and investigates alerts with agents. Whether the organization builds its applications or uses ready-made ones, every model and agent then runs in production for years. How do you run it?"
   },
   {
    "num": 11,
@@ -7224,6 +7433,9 @@ const STORY = {
      "id": "11.1",
      "title": "Model registry",
      "lead": "",
+     "effect": "Teams always know which model version is in production and where it came from.",
+     "challenge": "Model versions go untracked, promotions are manual and error-prone, and the link between a model and its training data gets lost. Without a shared view across workspaces, teams rebuild models that already exist.",
+     "pivot": "The Model Registry in Unity Catalog keeps this history and governs every model.",
      "bullets": [
       "Every model in production is registered in Unity Catalog with its versions, its aliases such as champion and challenger, and its lineage back to the training data.",
       "Promoting a new version means moving an alias, and model update triggers or deployment jobs can start the next steps automatically."
@@ -7251,6 +7463,9 @@ const STORY = {
      "id": "11.2",
      "title": "Production serving",
      "lead": "A registered version then has to serve traffic.",
+     "effect": "Production traffic can grow without anyone resizing the infrastructure.",
+     "challenge": "Models end up spread across several serving platforms, scaled by hand, with no central view of what is deployed.",
+     "pivot": "Model Serving runs them all from one place.",
      "bullets": [
       "Model Serving endpoints run the registered version, for real-time requests and for batch scoring.",
       "They handle more than 25,000 queries per second with low added latency, and they scale with demand."
@@ -7306,10 +7521,1512 @@ const STORY = {
       }
      ]
     }
-   ]
+   ],
+   "intro": "Running it means keeping track of every version. Models drift as their inputs change, and each fix has to reach production the same way every time. The Model Registry in Unity Catalog records each version and its lineage, Model Serving runs the registered version at scale, Lakehouse Monitoring detects drift and raises alerts, and MLOps Stacks and bundles carry each change from development to production. Each model and agent now runs, is watched and is updated in production for as long as it is used."
   }
  ]
 };
+const ILLUS = {
+ "1.1": [
+  {
+   "id": "p1.1-data-silos-before",
+   "file": "p1.1-data-silos-before.png",
+   "source": "Copy of Lakeflow Connect Tech Deck - L200, slide 20",
+   "url": "https://docs.google.com/presentation/d/1xiUXDS6x6aHv547-daQKBhvoOidHy_eVxdC8qdiHQxs/edit#slide=id.g316fd76f33f_0_1851",
+   "kind": "diagram",
+   "why": "Shows the 'Before' state with data fragmentation across Salesforce, SQL, and custom tools - directly illustrates the problem of spread systems"
+  },
+  {
+   "id": "p1.1-lakehouse-evolution",
+   "file": "p1.1-lakehouse-evolution.png",
+   "source": "Databricks blog: What is a Data Lakehouse?",
+   "url": "https://www.databricks.com/blog/what-is-data-lakehouse",
+   "kind": "diagram",
+   "why": "Three-panel progression showing evolution from data warehouse silos to data lake to lakehouse - visual before/after of the architecture problem"
+  },
+  {
+   "id": "p1.1-lakeflow-sources",
+   "file": "p1.1-lakeflow-sources.png",
+   "source": "Copy of Lakeflow Connect Tech Deck - L200, slide 16",
+   "url": "https://docs.google.com/presentation/d/1xiUXDS6x6aHv547-daQKBhvoOidHy_eVxdC8qdiHQxs/edit#slide=id.g3773fdeb85f_19_349",
+   "kind": "diagram",
+   "why": "Comprehensive inventory of all connector sources (Applications, Files, Databases, Warehouses, Zerobus, Message buses) - shows the sprawl and fragmentation of systems"
+  },
+  {
+   "id": "p1.1-lakeflow-connectors",
+   "file": "p1.1-lakeflow-connectors.png",
+   "source": "Copy of Lakeflow Connect Tech Deck - L200, slide 42",
+   "url": "https://docs.google.com/presentation/d/1xiUXDS6x6aHv547-daQKBhvoOidHy_eVxdC8qdiHQxs/edit#slide=id.g374d02f907e_0_2",
+   "kind": "diagram",
+   "why": "Shows diversity of database and warehouse systems (Oracle, SQL Server, PostgreSQL, MySQL, Redshift, Snowflake, MariaDB, etc.) requiring connectors"
+  }
+ ],
+ "1.2": [
+  {
+   "id": "p1.2-mlops-dev",
+   "file": "p1.2-mlops-dev.png",
+   "source": "docs.databricks.com/machine-learning/mlops/mlops-workflow",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-workflow",
+   "kind": "diagram",
+   "why": "Shows development/pilot phase with training, validation, compliance checks - first stage pilots start in; demonstrates initial requirements"
+  },
+  {
+   "id": "p1.2-mlops-staging",
+   "file": "p1.2-mlops-staging.png",
+   "source": "docs.databricks.com/machine-learning/mlops/mlops-workflow",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-workflow",
+   "kind": "diagram",
+   "why": "Shows staging phase with integration tests, Model Serving endpoint, monitoring tests - intermediate gate where projects often stall"
+  },
+  {
+   "id": "p1.2-mlops-prod",
+   "file": "p1.2-mlops-prod.png",
+   "source": "docs.databricks.com/machine-learning/mlops/mlops-workflow",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-workflow",
+   "kind": "diagram",
+   "why": "Shows production phase with full monitoring, inference pipelines, retraining loops, model aliases - full infrastructure barrier many pilots never reach"
+  },
+  {
+   "id": "p1.2-agent-lifecycle-proto",
+   "file": "p1.2-agent-lifecycle-proto.png",
+   "source": "Agentbricks Roadshow, slide 205",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_6153",
+   "kind": "diagram",
+   "why": "Shows agent development lifecycle with stakeholder sign-off gate (highlighted) and feedback loops showing iteration burden; illustrates where projects get stuck before production"
+  }
+ ],
+ "2.1": [
+  {
+   "id": "p2.1-lakehouse-diagram",
+   "file": "p2.1-lakehouse-diagram.png",
+   "source": "docs.databricks.com/lakehouse",
+   "url": "https://docs.databricks.com/aws/en/lakehouse",
+   "kind": "diagram",
+   "why": "Shows Delta Lake as unified storage layer with transactions, transformations, and multiple downstream uses (Data Marts, Features, Apps)"
+  },
+  {
+   "id": "p2.1-delta-ecosystem",
+   "file": "p2.1-delta-ecosystem.webp",
+   "source": "delta.io blog - Delta Lake transaction log protocol",
+   "url": "https://delta.io/blog/2023-07-07-delta-lake-transaction-log-protocol/",
+   "kind": "diagram",
+   "why": "Shows Delta Kernels protocol ecosystem with Java, Python, and Rust frameworks supporting open table formats"
+  },
+  {
+   "id": "p2.1-multi-cluster-acid",
+   "file": "p2.1-multi-cluster-acid.webp",
+   "source": "delta.io blog - Multi-cluster writes to Delta Lake Storage in S3",
+   "url": "https://delta.io/blog/2022-05-18-multi-cluster-writes-to-delta-lake-storage-in-s3/",
+   "kind": "diagram",
+   "why": "Demonstrates ACID transaction guarantee for concurrent writes from multiple writers using DynamoDB coordination with S3 storage"
+  },
+  {
+   "id": "p2.1-transaction-log-structure",
+   "file": "p2.1-transaction-log-structure.png",
+   "source": "Databricks blog - Diving Into Delta Lake: Unpacking the Transaction Log",
+   "url": "https://www.databricks.com/blog/2019/08/21/diving-into-delta-lake-unpacking-the-transaction-log.html",
+   "kind": "diagram",
+   "why": "Shows Delta Lake table structure with transaction log (_delta_log), JSON commits, and data files (Parquet)"
+  },
+  {
+   "id": "p2.1-atomic-writes",
+   "file": "p2.1-atomic-writes.png",
+   "source": "Databricks blog - Diving Into Delta Lake: Unpacking the Transaction Log",
+   "url": "https://www.databricks.com/blog/2019/08/21/diving-into-delta-lake-unpacking-the-transaction-log.html",
+   "kind": "diagram",
+   "why": "Details atomic write protocol with partition directories and file organization for ACID compliance"
+  }
+ ],
+ "2.2": [
+  {
+   "id": "p2.2-document-intelligence-pipeline",
+   "file": "p2.2-document-intelligence-pipeline.png",
+   "source": "Agentbricks Roadshow, slide 81",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4250",
+   "kind": "diagram",
+   "why": "Shows Lakeflow orchestration pattern: Ingest documents from multiple sources, Transform with AI Functions, Orchestrate with Lakeflow"
+  },
+  {
+   "id": "p2.2-lakeflow-connect-architecture",
+   "file": "p2.2-lakeflow-connect-architecture.png",
+   "source": "Lakeflow Connect Tech Deck, slide 26",
+   "url": "https://docs.google.com/presentation/d/1xiUXDS6x6aHv547-daQKBhvoOidHy_eVxdC8qdiHQxs/edit#slide=id.g316fd76f33f_0_1928",
+   "kind": "diagram",
+   "why": "Shows Lakeflow Connect managed ingestion architecture: SaaS services → Managed Ingestion (SDP) → Streaming Delta Tables"
+  },
+  {
+   "id": "p2.2-lakeflow-ui",
+   "file": "p2.2-lakeflow-ui.png",
+   "source": "Databricks blog - Introducing Databricks Lakeflow",
+   "url": "https://www.databricks.com/blog/introducing-databricks-lakeflow",
+   "kind": "screenshot",
+   "why": "Visual UI of Lakeflow pipeline designer showing ingestion pipeline from Salesforce and SQL server with transformation steps"
+  },
+  {
+   "id": "p2.2-predictive-optimization-history",
+   "file": "p2.2-predictive-optimization-history.png",
+   "source": "docs.databricks.com/optimizations/predictive-optimization",
+   "url": "https://docs.databricks.com/aws/en/optimizations/predictive-optimization",
+   "kind": "screenshot",
+   "why": "Table history showing Predictive Optimization running OPTIMIZE and VACUUM on its own"
+  },
+  {
+   "id": "p2.2-lakeflow-connect-database",
+   "file": "p2.2-lakeflow-connect-database.png",
+   "source": "Copy of Lakeflow Connect Tech Deck - L200, slide 27",
+   "url": "https://docs.google.com/presentation/d/1xiUXDS6x6aHv547-daQKBhvoOidHy_eVxdC8qdiHQxs/edit#slide=id.g316fd76f33f_0_1957",
+   "kind": "diagram",
+   "why": "Lakeflow Connect ingesting from a database into streaming Delta tables"
+  }
+ ],
+ "2.3": [
+  {
+   "id": "p2.3-lakebase-deep-dive",
+   "file": "p2.3-lakebase-deep-dive.png",
+   "source": "Databricks Lakebase, slide 30",
+   "url": "https://docs.google.com/presentation/d/1Qp70jDM4mn1zVeOwSGIKg9czJzZzSSJLIK8pZB11-BA/edit#slide=id.g36e77e8f017_5_1877",
+   "kind": "diagram",
+   "why": "Comprehensive Lakebase architecture showing users/apps/IDEs, control plane (Databricks UI, REST API, management), serverless compute with workspaces and storage"
+  },
+  {
+   "id": "p2.3-lakebase-search",
+   "file": "p2.3-lakebase-search.png",
+   "source": "docs.databricks.com/oltp/projects/lakebase-search",
+   "url": "https://docs.databricks.com/aws/en/oltp/projects/lakebase-search",
+   "kind": "diagram",
+   "why": "Shows Lakebase Search hybrid search capability: keyword search (BM25) and vector search (ANN) combined for semantic matching"
+  },
+  {
+   "id": "p2.3-lakebase-transactions",
+   "file": "p2.3-lakebase-transactions.png",
+   "source": "Databricks Lakebase, slide 21",
+   "url": "https://docs.google.com/presentation/d/1Qp70jDM4mn1zVeOwSGIKg9czJzZzSSJLIK8pZB11-BA/edit#slide=id.g36e77e8f017_1_4914",
+   "kind": "diagram",
+   "why": "Shows Lakebase authorization with PostgreSQL native permissions and Unity Catalog governance for unified access control"
+  },
+  {
+   "id": "p2.3-lakebase-overview",
+   "file": "p2.3-lakebase-overview.png",
+   "source": "docs.databricks.com/oltp/projects",
+   "url": "https://docs.databricks.com/aws/en/oltp/projects",
+   "kind": "diagram",
+   "why": "Lakebase between analytical data and real-time feature serving, agent state and applications"
+  },
+  {
+   "id": "p2.3-lakehouse-sync-ui",
+   "file": "p2.3-lakehouse-sync-ui.png",
+   "source": "docs.databricks.com/oltp/projects/quickstart-lakebase-cdf",
+   "url": "https://docs.databricks.com/aws/en/oltp/projects/quickstart-lakebase-cdf",
+   "kind": "screenshot",
+   "why": "Sync from Lakebase to the lakehouse configured in the UI"
+  }
+ ],
+ "2.4": [
+  {
+   "id": "p2.4-ltap-governance",
+   "file": "p2.4-ltap-governance.png",
+   "source": "docs.databricks.com/oltp/projects/ltap-overview",
+   "url": "https://docs.databricks.com/aws/en/oltp/projects/ltap-overview",
+   "kind": "diagram",
+   "why": "Shows LTAP concept: Lakebase (OLTP) and Lakehouse (OLAP) unified under Unity Catalog with single logical copy in storage"
+  },
+  {
+   "id": "p2.4-ltap-data-formats",
+   "file": "p2.4-ltap-data-formats.png",
+   "source": "docs.databricks.com/oltp/projects/ltap-overview",
+   "url": "https://docs.databricks.com/aws/en/oltp/projects/ltap-overview",
+   "kind": "diagram",
+   "why": "Shows LTAP technical architecture: Postgres compute with Safekeepers and Pageservers materializing changes to Row and Open Columnar formats"
+  },
+  {
+   "id": "p2.4-ltap-data-movement",
+   "file": "p2.4-ltap-data-movement.png",
+   "source": "docs.databricks.com/oltp/projects/ltap-overview",
+   "url": "https://docs.databricks.com/aws/en/oltp/projects/ltap-overview",
+   "kind": "diagram",
+   "why": "Shows LTAP data flow: Lakehouse syncs to Lakebase, Application writes/reads via Lakebase, all unified in storage and governed by Unity Catalog"
+  },
+  {
+   "id": "p2.4-lakehouse-rt-benchmark",
+   "file": "p2.4-lakehouse-rt-benchmark.png",
+   "source": "Databricks blog - Introducing Lakehouse//RT: Real-Time Performance on a Unified Lakehouse",
+   "url": "https://www.databricks.com/blog/introducing-lakehousert-real-time-performance-unified-lakehouse",
+   "kind": "diagram",
+   "why": "Performance benchmark chart showing Lakehouse//RT (Reyden) vs competitors on hardest analytical queries (TPC-DS), demonstrating 16.8x-25x faster query latency on large datasets"
+  }
+ ],
+ "2.5": [
+  {
+   "id": "p2.5-monitoring-quality",
+   "file": "p2.5-monitoring-quality.png",
+   "source": "Data Science With Databricks, slide 82",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_13380",
+   "kind": "diagram",
+   "why": "Shows data quality monitoring system: Monitor table for profiling and drift detection, Dashboard for alerts/webhooks, distributional stats and anomaly detection"
+  },
+  {
+   "id": "p2.5-data-quality-dashboard",
+   "file": "p2.5-data-quality-dashboard.png",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection",
+   "url": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/anomaly-detection/",
+   "kind": "screenshot",
+   "why": "UI showing data quality monitoring dashboard with 99.21% healthy tables status and per-catalog health metrics"
+  },
+  {
+   "id": "p2.5-data-quality-monitoring-pipeline",
+   "file": "p2.5-data-quality-monitoring-pipeline.png",
+   "source": "docs.databricks.com/data-governance/unity-catalog/data-quality-monitoring/data-profiling",
+   "url": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/",
+   "kind": "diagram",
+   "why": "Shows data quality in ML context: Input tables feed Feature table, monitored for statistical properties, Inference table tracks predictions and drift"
+  },
+  {
+   "id": "p2.5-unity-catalog-ui",
+   "file": "p2.5-unity-catalog-ui.png",
+   "source": "Databricks product page - Unity Catalog",
+   "url": "https://www.databricks.com/product/unity-catalog",
+   "kind": "screenshot",
+   "why": "Shows Unity Catalog workspace interface with data governance sidebar, asset discovery, domains organization, and data classification metrics"
+  },
+  {
+   "id": "p2.5-unity-catalog-ecosystem",
+   "file": "p2.5-unity-catalog-ecosystem.png",
+   "source": "Databricks product page - Unity Catalog",
+   "url": "https://www.databricks.com/product/unity-catalog",
+   "kind": "diagram",
+   "why": "Comprehensive diagram showing Unity Catalog as central hub connecting external clients, data warehouses, databases, and supporting Delta Lake/Iceberg open formats"
+  }
+ ],
+ "3.1": [
+  {
+   "id": "ds-lifecycle-slide14",
+   "file": "ds-lifecycle-slide14.png",
+   "source": "Data Science With Databricks, slide 14",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI"
+  },
+  {
+   "id": "p3.1-notebook-table",
+   "file": "p3.1-notebook-table.png",
+   "source": "docs.databricks.com/eda-tutorial",
+   "url": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+   "kind": "screenshot",
+   "why": "Databricks notebook showing Python code with display(df) output exploring data in table format, demonstrating the core notebook interface for data exploration"
+  },
+  {
+   "id": "p3.1-visualization-editor",
+   "file": "p3.1-visualization-editor.png",
+   "source": "docs.databricks.com/eda-tutorial",
+   "url": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+   "kind": "screenshot",
+   "why": "Visualization Editor UI in Databricks notebook showing how data scientists create charts with configurable chart types, axes, and series—a key exploration tool"
+  },
+  {
+   "id": "p3.1-docs-12",
+   "file": "p3.1-docs-12.png",
+   "source": "docs.databricks.com/notebooks/eda-tutorial",
+   "url": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
+   "kind": "screenshot",
+   "why": "Detailed Data Profile display showing column metadata, data types, and statistical summaries—core built-in EDA feature in notebooks"
+  }
+ ],
+ "3.2": [
+  {
+   "id": "p3.2-feature-store-ui",
+   "file": "p3.2-feature-store-ui.png",
+   "source": "Data Science With Databricks, slide 29",
+   "kind": "screenshot",
+   "why": "Feature Store governance and Unity Catalog integration showing feature definitions with primary keys and Feature Engineering API, with Catalog Explorer UI",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_7374"
+  },
+  {
+   "id": "p3.2-feature-store-governance",
+   "file": "p3.2-feature-store-governance.png",
+   "source": "Data Science With Databricks, slide 30",
+   "kind": "diagram",
+   "why": "Feature Serving architecture diagram showing consistent REST APIs for external access to Features and Feature Functions hosted in Feature Store with lineage",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_7384"
+  },
+  {
+   "id": "p3.2-feature-serving-arch",
+   "file": "p3.2-feature-serving-arch.png",
+   "source": "Data Science With Databricks, slide 31",
+   "kind": "screenshot",
+   "why": "Feature Store overview with governance badge showing Feature Serving APIs and Python/later integration—demonstrates feature availability and serving capability",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_9084"
+  },
+  {
+   "id": "p3.2-docs-14",
+   "file": "p3.2-docs-14.png",
+   "source": "docs.databricks.com/machine-learning/feature-store/time-series",
+   "url": "https://docs.databricks.com/machine-learning/feature-store/time-series",
+   "kind": "diagram",
+   "why": "Point-in-time join concept diagram showing feature observation alignment across training timestamps—critical for preventing data leakage in training sets"
+  }
+ ],
+ "3.3": [
+  {
+   "id": "p3.3-automl-ui",
+   "file": "p3.3-automl-ui.png",
+   "source": "Data Science With Databricks, slide 35",
+   "kind": "screenshot",
+   "why": "Glass-Box AutoML UI showing train-and-evaluate workflow with train/evaluate/customize/display tabs for model development and experimentation",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_8558"
+  },
+  {
+   "id": "p3.3-automl-api",
+   "file": "p3.3-automl-api.png",
+   "source": "Data Science With Databricks, slide 36",
+   "kind": "screenshot",
+   "why": "Glass-Box AutoML API interface with code showing automated ML training pipeline and notebook generation for reproducibility",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_8575"
+  },
+  {
+   "id": "p3.3-mlflow-intro",
+   "file": "p3.3-mlflow-intro.png",
+   "source": "Data Science With Databricks, slide 34",
+   "kind": "screenshot",
+   "why": "Databricks AutoML overview showing MLflow experiment tracking, auto-generated notebooks, and reproducible trial notebooks for model iteration",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_8529"
+  },
+  {
+   "id": "p3.3-automl-roadmap",
+   "file": "p3.3-automl-roadmap.png",
+   "source": "Data Science With Databricks, slide 37",
+   "kind": "diagram",
+   "why": "AutoML Releases and Roadmap showing supported problem types, model families, and features including XGBoost, LightGBM, and more",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_8729"
+  }
+ ],
+ "3.4": [
+  {
+   "id": "p3.4-ai-runtime-deep-learning",
+   "file": "p3.4-ai-runtime-deep-learning.png",
+   "source": "Agentbricks Roadshow, slide 142",
+   "kind": "diagram",
+   "why": "AI Runtime Deep Learning Stack overview showing serverless GPU compute, managed Databricks runtime, and Lakebase integration for distributed training",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_5211"
+  },
+  {
+   "id": "p3.4-distributed-training-cli",
+   "file": "p3.4-distributed-training-cli.png",
+   "source": "Agentbricks Roadshow, slide 162",
+   "kind": "screenshot",
+   "why": "CLI Submission interface showing how to submit training jobs with GPU support via command line using Databricks CLI",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_5499"
+  },
+  {
+   "id": "p3.4-docs-6",
+   "file": "p3.4-docs-6.png",
+   "source": "docs.databricks.com/machine-learning/ai-runtime/quickstart",
+   "url": "https://docs.databricks.com/machine-learning/ai-runtime/quickstart",
+   "kind": "screenshot",
+   "why": "AI Runtime hardware accelerator options showing available GPU choices (H100, A100) with environment configurations for distributed training"
+  },
+  {
+   "id": "p3.4-ai-runtime-notebook",
+   "file": "p3.4-ai-runtime-notebook.png",
+   "source": "docs.databricks.com/machine-learning/ai-runtime/quickstart",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/ai-runtime/quickstart",
+   "kind": "screenshot",
+   "why": "Notebook on serverless GPU (AI Runtime) running a training step"
+  },
+  {
+   "id": "p3.4-gpu-accelerator-select",
+   "file": "p3.4-gpu-accelerator-select.png",
+   "source": "docs.databricks.com/machine-learning/ai-runtime/quickstart",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/ai-runtime/quickstart",
+   "kind": "screenshot",
+   "why": "Choosing an H100 accelerator for serverless GPU compute"
+  }
+ ],
+ "4.1": [
+  {
+   "id": "p4.1-unified-serving",
+   "file": "p4.1-unified-serving.png",
+   "source": "Data Science With Databricks, slide 73",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_10971",
+   "kind": "diagram",
+   "why": "Comprehensive overview: unified management of custom models, foundation models, and external models with descriptions of each category"
+  },
+  {
+   "id": "p4.1-provisioned-pt",
+   "file": "p4.1-provisioned-pt.png",
+   "source": "Agentbricks Roadshow, slide 44",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_3937",
+   "kind": "diagram",
+   "why": "Explains provisioned throughput endpoint pricing model (dedicated capacity, guaranteed throughput, DBU/hour billing) with UI example"
+  },
+  {
+   "id": "p4.1-ab-testing",
+   "file": "p4.1-ab-testing.png",
+   "source": "Data Science With Databricks, slide 72",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_11836",
+   "kind": "screenshot",
+   "why": "Shows online evaluation capabilities: A/B testing and canary deployments by serving multiple models to one endpoint"
+  },
+  {
+   "id": "p4.1-serving-production",
+   "file": "p4.1-serving-production.png",
+   "source": "Data Science With Databricks, slide 70",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_11811",
+   "kind": "screenshot",
+   "why": "Demonstrates production deployment: serverless solution with API integration, metrics monitoring, and latency/request rate graphs"
+  },
+  {
+   "id": "p4.1-serving-overview",
+   "file": "p4.1-serving-overview.png",
+   "source": "Agent Bricks L300 Pitch Slides, slide 19",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4758",
+   "kind": "diagram",
+   "why": "Visual summary of Model Serving breadth: custom models (mlflow), 1st party models (Anthropic, OpenAI, Llama), and coding agents"
+  }
+ ],
+ "4.2": [
+  {
+   "id": "p4.2-fmapi-serving",
+   "file": "p4.2-fmapi-serving.png",
+   "source": "Agentbricks Roadshow, slide 32",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_3805",
+   "kind": "diagram",
+   "why": "Architecture of Foundation Model APIs: shows customer tenant with query/management routes, access control, and Databricks provider infrastructure with Foundation Model APIs (Claude, Gemini, OpenAI endpoints)"
+  },
+  {
+   "id": "p4.2-fmapi-throughput-latency",
+   "file": "p4.2-fmapi-throughput-latency.png",
+   "source": "Databricks blog - Fast, Secure and Reliable: Enterprise-grade LLM Inference",
+   "url": "https://www.databricks.com/blog/fast-secure-and-reliable-enterprise-grade-llm-inference",
+   "kind": "diagram",
+   "why": "Shows typical throughput-latency curve for Foundation Model APIs with provisioned capacity (11,500 tokens/sec at 1000ms latency)"
+  },
+  {
+   "id": "p4.2-fmapi-unity-gateway",
+   "file": "p4.2-fmapi-unity-gateway.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 17",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4717",
+   "kind": "screenshot",
+   "why": "Foundation Model APIs via Unity Gateway: one API across Claude/GPT-5.5/Gemini/Llama, provisioned throughput, reliable low-latency, secure, governed with cost visibility"
+  },
+  {
+   "id": "p4.2-serving-endpoints-list",
+   "file": "p4.2-serving-endpoints-list.png",
+   "source": "docs.databricks.com/machine-learning/foundation-model-apis",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis",
+   "kind": "screenshot",
+   "why": "Pay-per-token foundation model endpoints ready to use, next to an external model"
+  },
+  {
+   "id": "p4.2-provisioned-throughput-entity",
+   "file": "p4.2-provisioned-throughput-entity.png",
+   "source": "docs.databricks.com/machine-learning/foundation-model-apis/deploy-prov-throughput-foundation-model-apis",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis/deploy-prov-throughput-foundation-model-apis",
+   "kind": "screenshot",
+   "why": "Provisioned throughput configured for a foundation model endpoint"
+  }
+ ],
+ "4.3": [
+  {
+   "id": "p4.3-fine-tuning",
+   "file": "p4.3-fine-tuning.png",
+   "source": "Data Science With Databricks, slide 51",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_10451",
+   "kind": "diagram",
+   "why": "Overview of fine-tuning: serverless, auto-provisioned GPUs, easy data selection from Unity Catalog, model control and IP ownership (Public Preview Q2)"
+  },
+  {
+   "id": "p4.3-model-training-ui",
+   "file": "p4.3-model-training-ui.png",
+   "source": "docs.databricks.com/large-language-models/foundation-model-training/ui",
+   "url": "https://docs.databricks.com/large-language-models/foundation-model-training/ui",
+   "kind": "screenshot",
+   "why": "Foundation model training UI showing data preparation, model selection, training configuration, and model registration workflow"
+  },
+  {
+   "id": "p4.3-custom-fine-tune",
+   "file": "p4.3-custom-fine-tune.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 50",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_7882",
+   "kind": "diagram",
+   "why": "Custom fine-tuning of an open model on GPU compute, registered in UC and served"
+  },
+  {
+   "id": "p4.3-fine-tune-and-serve",
+   "file": "p4.3-fine-tune-and-serve.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 49",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_7794",
+   "kind": "diagram",
+   "why": "Fine-tuning an open model then serving it through Model Serving and the gateway"
+  }
+ ],
+ "4.4": [
+  {
+   "id": "p4.4-gateway-governance",
+   "file": "p4.4-gateway-governance.png",
+   "source": "Product Deck: AI Gateway, slide 20",
+   "url": "https://docs.google.com/presentation/d/13FOrjaFbw8ApYmvl2sKg2cjxWiajglNE5RNVG-kK9qM/edit#slide=id.g33a54769ce1_0_191",
+   "kind": "diagram",
+   "why": "Shows External Models within the unified Model Serving platform with AI Gateway providing governance, logging, cost controls, and traffic management across model types"
+  },
+  {
+   "id": "p4.4-unified-governance",
+   "file": "p4.4-unified-governance.png",
+   "source": "Agentbricks Roadshow, slide 124",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4872",
+   "kind": "diagram",
+   "why": "Unified data and AI governance: shows how Unity Catalog and Unity AI Gateway work together to govern models including external agents, with central credential/policy management"
+  },
+  {
+   "id": "p4.4-external-provider-setup",
+   "file": "p4.4-external-provider-setup.png",
+   "source": "docs.databricks.com/ai-gateway/create-model-provider-services",
+   "url": "https://docs.databricks.com/ai-gateway/create-model-provider-services",
+   "kind": "screenshot",
+   "why": "UI for registering external providers: shows configuration options including forward headers, query parameters, URL proxying, and price multiplier for managing external model provider credentials and routing"
+  },
+  {
+   "id": "p4.4-external-models-architecture",
+   "file": "p4.4-external-models-architecture.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 63",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_8926",
+   "kind": "diagram",
+   "why": "Externally hosted GenAI models managed through Databricks serving and the gateway"
+  }
+ ],
+ "5.1": [
+  {
+   "id": "p5-agent-use-case-guide",
+   "file": "p5-agent-use-case-guide.png",
+   "source": "Agentbricks Roadshow [go/airoadshow], slide 6",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_3639",
+   "kind": "diagram",
+   "why": "Decision tree showing when to use AI Functions for automated batch processing vs interactive agents"
+  },
+  {
+   "id": "p5.1-ai-functions-governance",
+   "file": "p5.1-ai-functions-governance.png",
+   "source": "Agentbricks Roadshow [go/airoadshow], slide 97",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4448",
+   "kind": "diagram",
+   "why": "Details the specific AI Functions (ai_prep_search, Vector Search in SQL, ai_search) and governance/observability for operations at scale"
+  },
+  {
+   "id": "p5.1-common-workflows",
+   "file": "p5.1-common-workflows.png",
+   "source": "Agentbricks Roadshow, slide 87",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4320",
+   "kind": "diagram",
+   "why": "Shows three common workflows using AI Functions: Intelligent Data Extraction, Categorized Intelligence, and Search-Optimized RAG"
+  },
+  {
+   "id": "p5.1-ai-functions-scale",
+   "file": "p5.1-ai-functions-scale.png",
+   "source": "Agentbricks Roadshow [go/airoadshow], slide 70",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4130",
+   "kind": "screenshot",
+   "why": "AI Functions SQL pattern: SELECT ai_extract(...) FROM invoices, scales automatically on serverless, secure with unified model support (Gemini/OpenAI/Anthropic/Meta)"
+  }
+ ],
+ "5.2": [
+  {
+   "id": "p5.2-ai-search",
+   "file": "p5.2-ai-search.png",
+   "source": "Agentbricks Roadshow [go/airoadshow], slide 170",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_5565",
+   "kind": "diagram",
+   "why": "Evolution from Vector Search to AI Search: adds semantic search, full-text/BM25, hybrid, rerankers, auto-quality evaluation for retrieval"
+  },
+  {
+   "id": "p5.2-retrieval-architecture",
+   "file": "p5.2-retrieval-architecture.png",
+   "source": "docs.databricks.com/ai-search/ai-search",
+   "url": "https://docs.databricks.com/ai-search/ai-search/",
+   "kind": "diagram",
+   "why": "Retrieval architecture showing how to calculate embeddings from source data, create vector indexes, and query with LLM application"
+  },
+  {
+   "id": "p5.2-build-rag-databricks",
+   "file": "p5.2-build-rag-databricks.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 47",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_7604",
+   "kind": "diagram",
+   "why": "Complete RAG architecture: data preparation with Lakeflow/LDP → Vector Search embeddings → prompt enhancement → inference via Mosaic AI Gateway"
+  },
+  {
+   "id": "p5.2-rag-agents-indexing",
+   "file": "p5.2-rag-agents-indexing.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 8",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_5462",
+   "kind": "diagram",
+   "why": "RAG Agents pipeline showing end-to-end ingestion and indexing: data preparation, document processing, storage, vector database, with model serving"
+  },
+  {
+   "id": "p5.2-vector-search-deployment",
+   "file": "p5.2-vector-search-deployment.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 25",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_6398",
+   "kind": "diagram",
+   "why": "Deployment option showing automatic embedding creation via Model Serving with Unity Catalog, Vector index, and AI App integration"
+  }
+ ],
+ "5.3": [
+  {
+   "id": "p5.3-mcp-unity-gateway",
+   "file": "p5.3-mcp-unity-gateway.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 34",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4971",
+   "kind": "diagram",
+   "why": "Managed MCP servers overview: Genie One, AI Search, UC Functions, DBSQL with governance and central policy control"
+  },
+  {
+   "id": "p5.3-mcp-how-it-works",
+   "file": "p5.3-mcp-how-it-works.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 35",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4979",
+   "kind": "diagram",
+   "why": "How MCP works: managed URLs per service, Genie One as MCP service in Unity Gateway, self-describing tools, Unity Gateway enforces policy"
+  },
+  {
+   "id": "p5.3-agent-to-tools-communication",
+   "file": "p5.3-agent-to-tools-communication.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 11",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_5617",
+   "kind": "diagram",
+   "why": "Agent-to-tools communication architecture showing managed MCP connectors, external agent services, and enterprise tools integration via APIs"
+  },
+  {
+   "id": "p5.3-what-is-an-agent",
+   "file": "p5.3-what-is-an-agent.png",
+   "source": "How to set up an Agentic Applications workshop",
+   "kind": "diagram",
+   "why": "Conceptual diagram of agent components: user, reasoning engine with context, foundation models API, agent tools, MCP flow, skills, actions"
+  }
+ ],
+ "5.4": [
+  {
+   "id": "p5.4-agent-bricks-framework",
+   "file": "p5.4-agent-bricks-framework.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 13",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4552",
+   "kind": "diagram",
+   "why": "Agent Bricks framework overview: choose LangGraph/framework, select model, serverless compute, provide context, instrument observability"
+  },
+  {
+   "id": "p5.4-agent-runtime-sandbox",
+   "file": "p5.4-agent-runtime-sandbox.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 14",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4637",
+   "kind": "diagram",
+   "why": "Agent runtime components: Unity Gateway, Databricks Sandbox for secure code execution, Agent Memory with Lakebase, Tools and MCP, MLflow tracking"
+  },
+  {
+   "id": "p5-agent-loop-scale",
+   "file": "p5-agent-loop-scale.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 9",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4172",
+   "kind": "diagram",
+   "why": "Demonstrates operating at scale: many agents deployed simultaneously with Sandbox, Tools, Evaluation, Deployments, Monitoring, MCP, Governance"
+  },
+  {
+   "id": "p5.4-agent-memory",
+   "file": "p5.4-agent-memory.png",
+   "source": "docs.databricks.com/agents/agent-memory/self-managed-memory",
+   "url": "https://docs.databricks.com/agents/agent-memory/self-managed-memory/",
+   "kind": "diagram",
+   "why": "Long-term memory architecture: entire conversations stored in Lakebase by thread ID, enabling agents to access history across sessions"
+  },
+  {
+   "id": "p5.4-databricks-sandbox",
+   "file": "p5.4-databricks-sandbox.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 27",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4905",
+   "kind": "diagram",
+   "why": "Databricks Sandbox isolation: managed environment for agent-generated code with up to 100GB home directory, downscoped access, SDK/REST/CLI/SSH"
+  }
+ ],
+ "5.5": [
+  {
+   "id": "p5.5-supervisor-architecture",
+   "file": "p5.5-supervisor-architecture.png",
+   "source": "Databricks blog - Multi-agent Supervisor Architecture: Orchestrating Enterprise AI at Scale",
+   "url": "https://www.databricks.com/blog/multi-agent-supervisor-architecture-orchestrating-enterprise-ai-scale",
+   "kind": "diagram",
+   "why": "Detailed supervisor agent architecture showing users/bot messaging, supervisor orchestrating Function-calling Agent and Genie Agent subagents, with evaluation feedback loop"
+  },
+  {
+   "id": "p5.5-agent-bricks-e2e",
+   "file": "p5.5-agent-bricks-e2e.png",
+   "source": "Agentbricks Roadshow [go/airoadshow], slide 21",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f02a63d3ab_10_0",
+   "kind": "diagram",
+   "why": "E2E agent platform flow diagram showing 6 layers: brain (models), actions (tools), context (memory), observe & improve (evals), publish (deployment), run (Supervisor Agent highlighted as deployment option)"
+  },
+  {
+   "id": "p5.5-supervisor-agent-ui",
+   "file": "p5.5-supervisor-agent-ui.png",
+   "source": "docs.databricks.com/agents/agent-bricks/multi-agent-supervisor",
+   "url": "https://docs.databricks.com/aws/en/agents/agent-bricks/multi-agent-supervisor",
+   "kind": "screenshot",
+   "why": "Supervisor Agent configured with sub-agents, Genie spaces, tools and MCP servers"
+  }
+ ],
+ "6.1": [
+  {
+   "id": "p6.1-trace-dashboard",
+   "file": "p6.1-trace-dashboard.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 39",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_5002",
+   "kind": "screenshot",
+   "why": "Hero slide showing agent tracing powered by MLflow with one-line integration for 30+ frameworks and pre-built trace analysis dashboards."
+  },
+  {
+   "id": "p6.1-trace-detail",
+   "file": "p6.1-trace-detail.png",
+   "source": "docs.databricks.com/mlflow3/genai/tracing/overview",
+   "url": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/overview",
+   "kind": "screenshot",
+   "why": "Detailed trace view showing nested spans for every step (guardrails, search, ranking, generation), with inputs, outputs, latency, tokens, and assessments—shows where the step went wrong."
+  },
+  {
+   "id": "p6.1-traces-list",
+   "file": "p6.1-traces-list.png",
+   "source": "docs.databricks.com/mlflow3/genai/tracing/overview",
+   "url": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/overview",
+   "kind": "screenshot",
+   "why": "List view of all traces across requests, showing trace ID, status, latency, token count, and cost for easy browsing and comparison."
+  },
+  {
+   "id": "p6.1-mlflow-genai-platform",
+   "file": "p6.1-mlflow-genai-platform.png",
+   "source": "Agentbricks Roadshow [go/airoadshow], slide 179",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_5693",
+   "kind": "diagram",
+   "why": "MLflow Open GenAI platform architecture showing Tracing (left pillar) connecting to deployment, with Trace logging component feeding Observability, and integration with LLM Judges and human feedback for evaluation"
+  }
+ ],
+ "6.2": [
+  {
+   "id": "mlflow-eval-hero",
+   "file": "mlflow-eval-hero.png",
+   "source": "mlflow.org/genai/evaluations",
+   "url": "https://mlflow.org/genai/evaluations"
+  },
+  {
+   "id": "mlflow-eval-1",
+   "file": "mlflow-eval-1.png",
+   "source": "mlflow.org/genai/evaluations",
+   "url": "https://mlflow.org/genai/evaluations"
+  },
+  {
+   "id": "mlflow-eval-custom-judge",
+   "file": "mlflow-eval-custom-judge.png",
+   "source": "mlflow.org/genai/evaluations",
+   "url": "https://mlflow.org/genai/evaluations"
+  },
+  {
+   "id": "p6.2-eval-flow",
+   "file": "p6.2-eval-flow.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 41",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_5016",
+   "kind": "diagram",
+   "why": "End-to-end evaluation workflow: test during dev → deploy → monitor in production, with pre-built/custom scorers, evaluation sets, and quality validation."
+  },
+  {
+   "id": "p6.2-prompt-registry",
+   "file": "p6.2-prompt-registry.png",
+   "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 40",
+   "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_3085",
+   "kind": "screenshot",
+   "why": "Prompt Registry interface showing versioned prompts with staging/production aliases (Live buttons), enabling tracked prompt changes like code changes."
+  }
+ ],
+ "6.3": [
+  {
+   "id": "mlflow-eval-feedback",
+   "file": "mlflow-eval-feedback.png",
+   "source": "mlflow.org/genai/evaluations",
+   "url": "https://mlflow.org/genai/evaluations"
+  },
+  {
+   "id": "p6.3-review-session",
+   "file": "p6.3-review-session.png",
+   "source": "docs.databricks.com/mlflow3/genai/human-feedback/expert-feedback/label-existing-traces",
+   "url": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/expert-feedback/label-existing-traces",
+   "kind": "screenshot",
+   "why": "Review App interface where domain experts test agents in a chat interface (User/Assistant conversation) and set expectations for labeling."
+  },
+  {
+   "id": "p6.3-review-labeling",
+   "file": "p6.3-review-labeling.png",
+   "source": "Agentbricks Roadshow, slide 188",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_5927",
+   "kind": "visual",
+   "why": "Overview of MLflow Labeling: built-in review app for interactive testing, labeling workflows, synthetic bootstrapping, and auto-saving traces and feedback."
+  },
+  {
+   "id": "p6.3-labeling-session",
+   "file": "p6.3-labeling-session.png",
+   "source": "docs.databricks.com/mlflow3/genai/human-feedback/concepts/labeling-sessions",
+   "url": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/concepts/labeling-sessions",
+   "kind": "screenshot",
+   "why": "Creating a labeling session with label schemas for expert review"
+  },
+  {
+   "id": "p6.3-agent-evaluation-review",
+   "file": "p6.3-agent-evaluation-review.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 10",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_5563",
+   "kind": "diagram",
+   "why": "Experts and users giving feedback through the review app, feeding evaluation"
+  }
+ ],
+ "7.1": [
+  {
+   "id": "p7.1-unity-catalog-hierarchy",
+   "file": "p7.1-unity-catalog-hierarchy.png",
+   "source": "candidate",
+   "kind": "diagram",
+   "why": "UC object hierarchy showing models, functions, services, secrets as governed objects alongside tables"
+  },
+  {
+   "id": "p7.1-ai-gateway-lineage-graph",
+   "file": "p7.1-ai-gateway-lineage-graph.png",
+   "source": "docs.databricks.com/data-governance/unity-catalog/ai-gateway-service-lineage",
+   "url": "https://docs.databricks.com/data-governance/unity-catalog/ai-gateway-service-lineage",
+   "kind": "diagram",
+   "why": "AI Gateway service lineage graph showing model lineage tracking with UC"
+  },
+  {
+   "id": "p7.1-unity-catalog-models",
+   "file": "p7.1-unity-catalog-models.png",
+   "source": "Data Science With Databricks, slide 114",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_2841",
+   "kind": "visual",
+   "why": "UC Models visual showing models as managed objects in Unity Catalog"
+  },
+  {
+   "id": "p7.1-endpoint-lineage",
+   "file": "p7.1-endpoint-lineage.png",
+   "source": "docs.databricks.com/data-governance/unity-catalog/ai-gateway-service-lineage",
+   "url": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/ai-gateway-service-lineage",
+   "kind": "screenshot",
+   "why": "Lineage of a serving endpoint: upstream tables, models and model provider"
+  },
+  {
+   "id": "p7.1-ai-assets-in-uc",
+   "file": "p7.1-ai-assets-in-uc.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 55",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_8214",
+   "kind": "diagram",
+   "why": "AI assets (models, functions, vector indexes, tools) governed in Unity Catalog"
+  }
+ ],
+ "7.2": [
+  {
+   "id": "p7.2-unity-gateway-architecture",
+   "file": "p7.2-unity-gateway-architecture.png",
+   "source": "candidate",
+   "kind": "diagram",
+   "why": "Unity AI Gateway control flow showing Authenticate, OBO, Authorize, Execute pipeline"
+  },
+  {
+   "id": "p7.2-ai-governance-dashboard",
+   "file": "p7.2-ai-governance-dashboard.png",
+   "source": "candidate",
+   "kind": "screenshot",
+   "why": "AI Governance dashboard showing token usage, governed traffic %, budgets, spend tracking"
+  },
+  {
+   "id": "p7.2-cumulative-spend-chart",
+   "file": "p7.2-cumulative-spend-chart.png",
+   "source": "docs.databricks.com/ai-gateway/budgets",
+   "url": "https://docs.databricks.com/ai-gateway/budgets",
+   "kind": "screenshot",
+   "why": "Cumulative spend chart showing budget control and cost monitoring"
+  },
+  {
+   "id": "p7.2-unity-gateway-hub",
+   "file": "p7.2-unity-gateway-hub.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 20",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4791",
+   "kind": "diagram",
+   "why": "Unity Gateway as central hub enforcing governance across custom models, foundation models, and MCP"
+  }
+ ],
+ "7.3": [
+  {
+   "id": "p7.3-lakehouse-security",
+   "file": "p7.3-lakehouse-security.png",
+   "source": "docs.databricks.com/lakehouse-architecture/security-compliance-and-privacy/",
+   "url": "https://docs.databricks.com/lakehouse-architecture/security-compliance-and-privacy/",
+   "kind": "diagram",
+   "why": "Lakehouse security stack showing components (Mosaic AI, Databricks, Lakeflow) with UC and security layers"
+  },
+  {
+   "id": "p7.3-dasf-v3-components",
+   "file": "p7.3-dasf-v3-components.png",
+   "source": "databricks.com blog: Agentic AI Security",
+   "url": "https://www.databricks.com/blog/agentic-ai-security-new-risks-and-controls-databricks-ai-security-framework-dasf-v30",
+   "kind": "diagram",
+   "why": "DASF v3.0 canonical 13 components of end-to-end AI system with 35 new agentic risks, 6 controls; shows DataSecOps, ModelSecOps, DevSecOps layers; replaces outdated DASF v1/v2 (59 controls)"
+  },
+  {
+   "id": "p7.3-dasf-v3-lethal-trifecta",
+   "file": "p7.3-dasf-v3-lethal-trifecta.png",
+   "source": "databricks.com blog: Agentic AI Security",
+   "url": "https://www.databricks.com/blog/agentic-ai-security-new-risks-and-controls-databricks-ai-security-framework-dasf-v30",
+   "kind": "diagram",
+   "why": "DASF v3.0 risk model: 'Lethal Trifecta' showing three simultaneous conditions that spike agentic risk (access to sensitive systems, untrustworthy inputs, ability to change state/communicate); maps to specific DASF v3.0 controls"
+  },
+  {
+   "id": "p7.3-dasf-v3-agent-components",
+   "file": "p7.3-dasf-v3-agent-components.png",
+   "source": "databricks.com blog: Agentic AI Security",
+   "url": "https://www.databricks.com/blog/agentic-ai-security-new-risks-and-controls-databricks-ai-security-framework-dasf-v30",
+   "kind": "diagram",
+   "why": "DASF v3.0 Component 13 (Agentic AI) breakdown: 35 risks across 3 sub-components (13A Agent Core: reasoning/memory 15 risks; 13B MCP Server: tool definitions 10 risks; 13C MCP Client: connection/code execution 10 risks); inter-agent dynamics"
+  }
+ ],
+ "8.1": [
+  {
+   "id": "p8.1-genie-one-chat",
+   "file": "p8.1-genie-one-chat.png",
+   "source": "Databricks blog: Introducing Genie One, Genie Ontology, and Genie Agents",
+   "url": "https://www.databricks.com/blog/introducing-genie-one-genie-ontology-and-genie-agents",
+   "kind": "diagram",
+   "why": "Shows Databricks blog: Introducing G... (tile 1)"
+  },
+  {
+   "id": "p8.1-genie-one-answer",
+   "file": "p8.1-genie-one-answer.png",
+   "source": "databricks.com/product/genie/one",
+   "url": "https://www.databricks.com/product/genie/one",
+   "kind": "screenshot",
+   "why": "Shows databricks.com/product/genie/o... (tile 2)"
+  },
+  {
+   "id": "p8.1-genie-one-reasoning",
+   "file": "p8.1-genie-one-reasoning.png",
+   "source": "databricks.com/product/genie/one",
+   "url": "https://www.databricks.com/product/genie/one",
+   "kind": "screenshot",
+   "why": "Shows databricks.com/product/genie/o... (tile 3)"
+  },
+  {
+   "id": "p8.1-upload-file-498a3c89cbaa10f06354cb3a2a20",
+   "file": "p8.1-upload-file-498a3c89cbaa10f06354cb3a2a20.png",
+   "source": "docs.databricks.com/genie-one/chat",
+   "url": "https://docs.databricks.com/aws/en/genie-one/chat",
+   "kind": "screenshot",
+   "why": "Shows docs.databricks.com/genie-one/... (tile 14)"
+  }
+ ],
+ "8.2": [
+  {
+   "id": "p8.2-genie-ontology-benchmark",
+   "file": "p8.2-genie-ontology-benchmark.png",
+   "source": "Databricks blog: Introducing Genie One, Genie Ontology, and Genie Agents",
+   "url": "https://www.databricks.com/blog/introducing-genie-one-genie-ontology-and-genie-agents",
+   "kind": "diagram",
+   "why": "Shows Databricks blog: Introducing G... (tile 1)"
+  },
+  {
+   "id": "p8.2-what-is-e47897bcd7c9a7a16b119c3b1857ee42",
+   "file": "p8.2-what-is-e47897bcd7c9a7a16b119c3b1857ee42.png",
+   "source": "docs.databricks.com/uc-semantics/metric-views/",
+   "url": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/",
+   "kind": "screenshot",
+   "why": "Shows docs.databricks.com/uc-semanti... (tile 3)"
+  },
+  {
+   "id": "p8.2-ui-editor-7cb597be46690bc3b8b3adf23a639e",
+   "file": "p8.2-ui-editor-7cb597be46690bc3b8b3adf23a639e.png",
+   "source": "docs.databricks.com/uc-semantics/metric-views/create",
+   "url": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/create",
+   "kind": "screenshot",
+   "why": "Shows docs.databricks.com/uc-semanti... (tile 4)"
+  },
+  {
+   "id": "p8.2-materialization-pipeline-updated-e8055ee",
+   "file": "p8.2-materialization-pipeline-updated-e8055ee.png",
+   "source": "docs.databricks.com/uc-semantics/metric-views/materialization",
+   "url": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/materialization",
+   "kind": "screenshot",
+   "why": "Shows docs.databricks.com/uc-semanti... (tile 6)"
+  },
+  {
+   "id": "p8.2-query-execution-update-e67cd6e37dbbd07a2",
+   "file": "p8.2-query-execution-update-e67cd6e37dbbd07a2.png",
+   "source": "docs.databricks.com/uc-semantics/metric-views/materialization",
+   "url": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/materialization",
+   "kind": "screenshot",
+   "why": "Shows docs.databricks.com/uc-semanti... (tile 7)"
+  }
+ ],
+ "8.3": [
+  {
+   "id": "p8.3-genie-agents-setup",
+   "file": "p8.3-genie-agents-setup.png",
+   "source": "databricks.com/product/genie/agents",
+   "url": "https://www.databricks.com/product/genie/agents",
+   "kind": "screenshot",
+   "why": "Shows databricks.com/product/genie/a... (tile 2)"
+  },
+  {
+   "id": "p8.3-genie-agents-eval",
+   "file": "p8.3-genie-agents-eval.png",
+   "source": "databricks.com/product/genie/agents",
+   "url": "https://www.databricks.com/product/genie/agents",
+   "kind": "screenshot",
+   "why": "Shows databricks.com/product/genie/a... (tile 4)"
+  },
+  {
+   "id": "p8.3-1nzunoxtg68ogokrse8qsd1-uctxsi-2",
+   "file": "p8.3-1nzunoxtg68ogokrse8qsd1-uctxsi-2.png",
+   "source": "[SEMEA] Agent Bricks - Knowledge Assistant - Workshop - SEMEA - Online - 05 May 2026, slide 32",
+   "url": "https://docs.google.com/presentation/d/1nzunOxTG68OgOkrSE8QSD1_uctXsI9LH6dzXj4LGoBc/edit#slide=id.g3871c9ddcbc_0_2920",
+   "kind": "screenshot",
+   "why": "Shows [SEMEA] Agent Bricks - Knowled... (tile 18)"
+  },
+  {
+   "id": "p8.3-genie-agents-simpler",
+   "file": "p8.3-genie-agents-simpler.png",
+   "source": "[Customer-facing] Knowledge Assistant & Supervisor Agent updates, slide 9",
+   "url": "https://docs.google.com/presentation/d/1QYbJUGDqzon9NQmK7ZPAA09O26XG-tb3oJse6Bcf-ko/edit#slide=id.g3faed49ef47_0_876",
+   "kind": "diagram",
+   "why": "Before/after showing how Genie Agents simplify 'talk to your data' agent building: fragmented setup (3 agents) versus simpler unified Genie Agent build handling both documents and tables"
+  }
+ ],
+ "8.4": [
+  {
+   "id": "p8.4-row-zero-spreadsheet",
+   "file": "p8.4-row-zero-spreadsheet.png",
+   "source": "Row Zero blog: From Query to Analysis Using AI in Row Zero",
+   "url": "https://rowzero.com/blog/from-query-to-analysis-using-ai-in-row-zero",
+   "kind": "diagram",
+   "why": "Shows Row Zero blog: From Query to A... (tile 2)"
+  },
+  {
+   "id": "p8.4-row-zero-analysis",
+   "file": "p8.4-row-zero-analysis.png",
+   "source": "Row Zero blog: From Query to Analysis Using AI in Row Zero",
+   "url": "https://rowzero.com/blog/from-query-to-analysis-using-ai-in-row-zero",
+   "kind": "diagram",
+   "why": "Shows Row Zero blog: From Query to A... (tile 3)"
+  },
+  {
+   "id": "p8.4-aibi-dashboards-authoring",
+   "file": "p8.4-aibi-dashboards-authoring.png",
+   "source": "Agentbricks Roadshow [go/airoadshow], slide 206",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_6200",
+   "kind": "screenshot",
+   "why": "AI/BI dashboards with AI-assisted authoring"
+  },
+  {
+   "id": "p8.4-chart-created-by-genie",
+   "file": "p8.4-chart-created-by-genie.png",
+   "source": "docs.databricks.com/ai-bi/release-notes/2026",
+   "url": "https://docs.databricks.com/aws/en/ai-bi/release-notes/2026",
+   "kind": "screenshot",
+   "why": "A dashboard chart created by Genie from a request"
+  }
+ ],
+ "8.5": [
+  {
+   "id": "p8.5-genie-app-builder-deploy",
+   "file": "p8.5-genie-app-builder-deploy.png",
+   "source": "Databricks blog: Enabling Governed Vibe Coding for Enterprise Apps on Databricks",
+   "url": "https://www.databricks.com/blog/enabling-governed-vibe-coding-enterprise-apps-databricks",
+   "kind": "diagram",
+   "why": "Shows Databricks blog: Enabling Gove... (tile 1)"
+  },
+  {
+   "id": "p8.5-genie-app-builder-interface",
+   "file": "p8.5-genie-app-builder-interface.png",
+   "source": "Databricks blog: Enabling Governed Vibe Coding for Enterprise Apps on Databricks",
+   "url": "https://www.databricks.com/blog/enabling-governed-vibe-coding-enterprise-apps-databricks",
+   "kind": "diagram",
+   "why": "Shows Databricks blog: Enabling Gove... (tile 2)"
+  }
+ ],
+ "9.1": [
+  {
+   "id": "p9.1-apps-example",
+   "file": "p9.1-apps-example.png",
+   "source": "candidate",
+   "url": "How to set up an Agentic Applications workshop, slide 62",
+   "kind": "screenshot",
+   "why": "Real Databricks App interface showing a working deployed application example"
+  },
+  {
+   "id": "p9.1-apps-deployment",
+   "file": "p9.1-apps-deployment.png",
+   "source": "docs",
+   "url": "docs.databricks.com/dev-tools/databricks-apps/deploy",
+   "kind": "screenshot",
+   "why": "Shows the app deployment details page from Databricks UI, demonstrating how apps are deployed and managed on the platform"
+  },
+  {
+   "id": "p9.1-load-testing-dashboard",
+   "file": "p9.1-load-testing-dashboard.gif",
+   "source": "docs",
+   "url": "docs.databricks.com/agents/custom-agents/load-test-agent-app",
+   "kind": "screenshot",
+   "why": "Displays monitoring and load-testing dashboard for apps, showing how to observe and manage deployed applications"
+  },
+  {
+   "id": "p9.1-llmops-lifecycle",
+   "file": "p9.1-llmops-lifecycle.png",
+   "source": "deck",
+   "url": "Genie benchmarks, slide 9",
+   "kind": "diagram",
+   "why": "LLMOps lifecycle management diagram showing the full development and deployment workflow for agents and applications"
+  }
+ ],
+ "9.2": [
+  {
+   "id": "p9.2-genie-traces",
+   "file": "p9.2-genie-traces.png",
+   "source": "candidate",
+   "url": "Agentbricks Roadshow, slide 212",
+   "kind": "screenshot",
+   "why": "Shows Genie Code traces interface with capabilities: Analyze traces, Set up evals, Custom visualizations, Just ask Genie to do it"
+  },
+  {
+   "id": "p9.2-code-generation",
+   "file": "p9.2-code-generation.png",
+   "source": "docs",
+   "url": "docs.databricks.com/notebooks/code-assistant",
+   "kind": "screenshot",
+   "why": "Demonstrates Genie Code generating Python code from natural language request: Enrich support cases with customer demographics - shows inline assistant in action"
+  },
+  {
+   "id": "p9.2-ai-assistance-everywhere",
+   "file": "p9.2-ai-assistance-everywhere.png",
+   "source": "deck",
+   "url": "Data Science With Databricks, slide 26",
+   "kind": "screenshot",
+   "why": "Shows AI assistance integrated across every user experience: Notebooks, SQL editor, Help/Lakeview dashboards - boosts productivity for all users"
+  },
+  {
+   "id": "p9.2-databricks-assistant",
+   "file": "p9.2-databricks-assistant.png",
+   "source": "deck",
+   "url": "Data Science With Databricks, slide 23",
+   "kind": "screenshot",
+   "why": "Displays Databricks Assistant capabilities: Generate, explain, fix code with natural language; AI assistance in every user experience; powered by DatabricksIQ"
+  },
+  {
+   "id": "p9.2-data-work-success",
+   "file": "p9.2-data-work-success.png",
+   "source": "deck",
+   "url": "Data Science With Databricks, slide 23",
+   "kind": "visual",
+   "why": "Performance metrics showing 77% Genie Code task success rate vs 32% leading general coding agent - built for data work"
+  },
+  {
+   "id": "p9.2-agent-bricks-architecture",
+   "file": "p9.2-agent-bricks-architecture.png",
+   "source": "deck",
+   "url": "SEMEA Agent Bricks Knowledge Assistant Workshop, slide 53",
+   "kind": "diagram",
+   "why": "Agent Bricks architecture showing Supervisor Agent, Knowledge Assistant, Genie Space - system for production AI agents optimized on your data"
+  }
+ ],
+ "9.3": [
+  {
+   "id": "p9.3-agent-dev-lifecycle",
+   "file": "p9.3-agent-dev-lifecycle.png",
+   "source": "candidate",
+   "url": "Mosaic AI - System Architecture 2026-02-25, slide 66",
+   "kind": "diagram",
+   "why": "Comprehensive agent development lifecycle: AI Tools Dev → AI Agent Development (with playground, langchain, Python) → Unity Catalog (Model & Tools Hub) → Prompt construction → Inference → Monitoring with System Tables"
+  },
+  {
+   "id": "p9.3-meta-harness",
+   "file": "p9.3-meta-harness.png",
+   "source": "deck",
+   "url": "Agent Bricks L300 Pitch Slides, slide 59",
+   "kind": "diagram",
+   "why": "Meta harness comparison showing how Omnigent provides unified interface for Claude, Cursor, Codex and other coding agents with shared context and policies"
+  },
+  {
+   "id": "p9.3-coding-agents-governance",
+   "file": "p9.3-coding-agents-governance.png",
+   "source": "docs.databricks.com/ai-gateway/coding-agent-configure-govern",
+   "url": "https://docs.databricks.com/aws/en/ai-gateway/coding-agent-configure-govern",
+   "kind": "screenshot",
+   "why": "Coding agents such as Claude Code and Codex configured centrally with models and policies"
+  }
+ ],
+ "10.1": [
+  {
+   "id": "p10.1-customer-360-profiles",
+   "file": "p10.1-customer-360-profiles.jpg",
+   "source": "databricks.com/product/customerlake-cdp",
+   "url": "https://www.databricks.com/product/customerlake-cdp",
+   "kind": "screenshot",
+   "why": "Shows 8 unified customer profile cards with attributes like Unified ID, Lifetime Spend, Last Purchase, App Sessions, Loyalty Status, demonstrating the 360-degree customer profiles that join transactions, behavior, and engagement data."
+  },
+  {
+   "id": "p10.1-customer-360-diagram",
+   "file": "p10.1-customer-360-diagram.png",
+   "source": "databricks.com/product/customerlake-cdp",
+   "url": "https://www.databricks.com/product/customerlake-cdp",
+   "kind": "diagram",
+   "why": "Hexagonal capability diagram showing six dimensions of CustomerLake: Engagement, Purchases, Analytics, Social, Service and support, and Predictive metrics, illustrating the breadth of customer data and capabilities."
+  },
+  {
+   "id": "p10.1-audience-segmentation",
+   "file": "p10.1-audience-segmentation.png",
+   "source": "databricks.com/product/customerlake-cdp",
+   "url": "https://www.databricks.com/product/customerlake-cdp",
+   "kind": "screenshot",
+   "why": "VIP Loyalty Shoppers audience segmentation interface with filters and 248k matching profiles showing $1,085 average lifetime value, demonstrating how campaign agents create and activate audiences."
+  },
+  {
+   "id": "p10.1-identity-resolution",
+   "file": "p10.1-identity-resolution.png",
+   "source": "databricks.com/product/customerlake-cdp",
+   "url": "https://www.databricks.com/product/customerlake-cdp",
+   "kind": "diagram",
+   "why": "Data flow diagram showing transactions, support tickets, and app sessions flowing through clean tables, then through customer_identity_graph to unified_profiles, exemplifying AI-assisted identity resolution joining multiple data sources."
+  },
+  {
+   "id": "p10.1-campaign-automation",
+   "file": "p10.1-campaign-automation.png",
+   "source": "databricks.com/product/customerlake-cdp",
+   "url": "https://www.databricks.com/product/customerlake-cdp",
+   "kind": "screenshot",
+   "why": "CustomerLake campaign management showing 'Post-Sale Upsell' campaign (Live) with 186k evaluated profiles, 167.4k total activations, 3.2k conversions, and activation trends, showing real-time profile API feeding personalization and activation."
+  }
+ ],
+ "10.2": [
+  {
+   "id": "p10.2-lakewatch-alerts-monitoring",
+   "file": "p10.2-lakewatch-alerts-monitoring.png",
+   "source": "Agentbricks Roadshow [go/airoadshow] slide 117",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4785",
+   "kind": "screenshot",
+   "why": "Shows Agent Tracing with Lakewatch integration for alerts and monitoring, displaying security incidents table with severity, incident IDs, and timestamps, demonstrating end-to-end visibility into security alerts."
+  },
+  {
+   "id": "p10.2-detection-as-code",
+   "file": "p10.2-detection-as-code.png",
+   "source": "databricks.com/product/lakewatch",
+   "url": "https://www.databricks.com/product/lakewatch",
+   "kind": "screenshot",
+   "why": "Detection rule creation interface with wizard steps and SQL code for 'Repeated Failed Logins Followed by Success' rule, with Genie AI agent suggesting rule logic, showing detection rules versioned and tested like code with agent assistance."
+  },
+  {
+   "id": "p10.2-ai-threat-hunting",
+   "file": "p10.2-ai-threat-hunting.png",
+   "source": "databricks.com/product/lakewatch",
+   "url": "https://www.databricks.com/product/lakewatch",
+   "kind": "screenshot",
+   "why": "Lakewatch Datasources dashboard showing multiple security, IT, and business log sources (CloudWatch, CloudTrail, Slack audit logs, Cisco ASA, etc.) with event and alert counts and activity timelines at petabyte scale."
+  },
+  {
+   "id": "p10.2-automated-normalization",
+   "file": "p10.2-automated-normalization.png",
+   "source": "databricks.com/product/lakewatch",
+   "url": "https://www.databricks.com/product/lakewatch",
+   "kind": "screenshot",
+   "why": "CloudTrail log ingestion and normalization pipeline showing Bronze (raw), Silver (normalized with 37 fields added), and Gold (enriched with alerts) layers, demonstrating log processing at object-storage cost."
+  },
+  {
+   "id": "p10.2-petabyte-scale",
+   "file": "p10.2-petabyte-scale.png",
+   "source": "databricks.com/product/lakewatch",
+   "url": "https://www.databricks.com/product/lakewatch",
+   "kind": "screenshot",
+   "why": "Lakewatch Query interface with SQL analyzing login failures (400k rows, 538s runtime) and autonomous Genie agent investigating threats, identifying suspicious behavior patterns and risk-ranking users."
+  },
+  {
+   "id": "p10.2-soc-operations",
+   "file": "p10.2-soc-operations.png",
+   "source": "databricks.com/blog/databricks-announces-lakewatch-new-agentic-siem",
+   "url": "https://www.databricks.com/blog/databricks-announces-lakewatch-new-agentic-siem",
+   "kind": "diagram",
+   "why": "Strategic architecture showing data sources (Email, Network/Firewall, Identity, SaaS, Cloud, DNS, EDR/XDR, Multi-modal) flowing through threat detection to Open Agents (Detection, Triage, Analytics, Responsive agents) with open data formats, illustrating agents as defenders against AI-powered attacks."
+  }
+ ],
+ "11.1": [
+  {
+   "id": "p11.1-mlflow-lifecycle",
+   "file": "p11.1-mlflow-lifecycle.png",
+   "source": "docs.databricks.com/mlflow",
+   "url": "https://docs.databricks.com/aws/en/mlflow",
+   "kind": "diagram",
+   "why": "Comprehensive lifecycle showing training → tracking → registry → monitoring → serving with Unity Catalog governance"
+  },
+  {
+   "id": "p11.1-model-lineage",
+   "file": "p11.1-model-lineage.png",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle",
+   "kind": "screenshot",
+   "why": "Model version lineage back to its training table"
+  },
+  {
+   "id": "p11.1-model-and-version-pages",
+   "file": "p11.1-model-and-version-pages.png",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/migrate-to-uc",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/migrate-to-uc",
+   "kind": "screenshot",
+   "why": "Model page and model version page in Catalog Explorer"
+  },
+  {
+   "id": "p11.1-registry-across-workspaces",
+   "file": "p11.1-registry-across-workspaces.png",
+   "source": "docs.databricks.com/machine-learning/manage-model-lifecycle/multiple-workspaces",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/manage-model-lifecycle/multiple-workspaces",
+   "kind": "diagram",
+   "why": "One registry across development, staging and production workspaces"
+  },
+  {
+   "id": "p11.1-deployment-job-on-model",
+   "file": "p11.1-deployment-job-on-model.png",
+   "source": "docs.databricks.com/mlflow/deployment-job",
+   "url": "https://docs.databricks.com/aws/en/mlflow/deployment-job",
+   "kind": "screenshot",
+   "why": "A deployment job attached to a registered model"
+  }
+ ],
+ "11.2": [
+  {
+   "id": "p11.2-serving-architecture",
+   "file": "p11.2-serving-architecture.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 46",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_7528",
+   "kind": "diagram",
+   "why": "Complete serving architecture with inference, monitoring, and governance layers; shows high-level system design"
+  },
+  {
+   "id": "p11.2-serving-arch-high-qps",
+   "file": "p11.2-serving-arch-high-qps.png",
+   "source": "databricks.com blog: AI Serving Platform",
+   "url": "https://www.databricks.com/blog/ai-serving-platform-adapts-your-model",
+   "kind": "diagram",
+   "why": "Databricks Model Serving architecture for 300k+ QPS: Client → Edge proxy → Load balancer → AutoPilot Pod Autoscaler → Serving pods + Inference engines + Warm pool; latency-first routing, request queue feedback loop"
+  },
+  {
+   "id": "p11.2-serving-autoscaling-metrics",
+   "file": "p11.2-serving-autoscaling-metrics.png",
+   "source": "databricks.com blog: AI Serving Platform",
+   "url": "https://www.databricks.com/blog/ai-serving-platform-adapts-your-model",
+   "kind": "diagram",
+   "why": "Serving autoscaling control loop: Request concurrency + Pod telemetry (CPU/GPU util, queue depth, latency variation) feed AutoPilot Pod Autoscaler; shows horizontal (add/remove replicas) and vertical (tune concurrency) scaling"
+  },
+  {
+   "id": "p11.2-serving-endpoint-ui",
+   "file": "p11.2-serving-endpoint-ui.png",
+   "source": "docs.databricks.com/machine-learning/model-serving",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/model-serving/create-manage-serving-endpoints",
+   "kind": "screenshot",
+   "why": "Production serving endpoint detail UI showing Active configuration table with registered model version, traffic routing (%), compute type/concurrency settings, Gateway integration, Metrics/Events/Logs tabs for monitoring"
+  },
+  {
+   "id": "p11.2-serving-route-optimization",
+   "file": "p11.2-serving-route-optimization.png",
+   "source": "databricks.com blog: AI Serving Platform",
+   "url": "https://www.databricks.com/blog/ai-serving-platform-adapts-your-model",
+   "kind": "diagram",
+   "why": "Route optimization for low-latency serving: direct path from Client → Edge proxy → Load balancer → Serving pod with 'latency-first - every hop minimized'; shows network path reduction for high-QPS workloads"
+  }
+ ],
+ "11.3": [
+  {
+   "id": "p11.3-monitoring-dashboard",
+   "file": "p11.3-monitoring-dashboard.png",
+   "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 35",
+   "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_2401",
+   "kind": "screenshot",
+   "why": "Lakehouse Monitoring dashboard showing profiling, quality metrics, and drift detection in visual format"
+  },
+  {
+   "id": "p11.3-monitoring-setup-ui",
+   "file": "p11.3-monitoring-setup-ui.png",
+   "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 36",
+   "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_2867",
+   "kind": "screenshot",
+   "why": "Monitoring setup configuration with built-in AI judges, scorer reuse, and baseline sampling; shows simplicity"
+  },
+  {
+   "id": "p11.3-monitoring-governance",
+   "file": "p11.3-monitoring-governance.png",
+   "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 38",
+   "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_2880",
+   "kind": "screenshot",
+   "why": "Governance and monitoring integration; shows security, audit, and Unity Catalog integration"
+  },
+  {
+   "id": "p11.3-monitoring-architecture",
+   "file": "p11.3-monitoring-architecture.png",
+   "source": "Data Science With Databricks, slide 84",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_13426",
+   "kind": "diagram",
+   "why": "Lakehouse Monitoring architecture overview with all components; shows open monitoring for tables and models"
+  }
+ ],
+ "11.4": [
+  {
+   "id": "p11.4-deployment-jobs-mlops",
+   "file": "p11.4-deployment-jobs-mlops.png",
+   "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 50",
+   "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_5016",
+   "kind": "screenshot",
+   "why": "Shows deployment jobs automating evaluation, approval, and deployment; simplifies model deployment pipelines"
+  },
+  {
+   "id": "p11.4-mlops-stacks",
+   "file": "p11.4-mlops-stacks.png",
+   "source": "Data Science With Databricks, slide 122",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_3027",
+   "kind": "diagram",
+   "why": "MLOps Stacks for turnkey deployment of ML projects with CI/CD; shows complete workflow from dev to production"
+  },
+  {
+   "id": "p11.4-mlops-components",
+   "file": "p11.4-mlops-components.png",
+   "source": "docs.databricks.com/machine-learning/mlops/mlops-stacks",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-stacks",
+   "kind": "diagram",
+   "why": "MLOps Stacks components showing project structure, resources, and workflows for end-to-end CI/CD"
+  },
+  {
+   "id": "p11.4-mlops-workflow",
+   "file": "p11.4-mlops-workflow.png",
+   "source": "docs.databricks.com/machine-learning/mlops/mlops-stacks",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-stacks",
+   "kind": "diagram",
+   "why": "The full MLOps workflow across development, staging and production workspaces"
+  },
+  {
+   "id": "p11.4-mlops-stack-project",
+   "file": "p11.4-mlops-stack-project.png",
+   "source": "docs.databricks.com/machine-learning/mlops/mlops-stacks",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-stacks",
+   "kind": "diagram",
+   "why": "An MLOps Stacks project: ML code, CI/CD workflows and resources as files in Git"
+  },
+  {
+   "id": "p11.4-bundles-dev-staging-prod",
+   "file": "p11.4-bundles-dev-staging-prod.png",
+   "source": "docs.databricks.com/dev-tools/bundles",
+   "url": "https://docs.databricks.com/aws/en/dev-tools/bundles",
+   "kind": "diagram",
+   "why": "Bundles deploying the same project from Git to development, staging and production through CI/CD"
+  },
+  {
+   "id": "p11.4-lakeflow-jobs-dag",
+   "file": "p11.4-lakeflow-jobs-dag.png",
+   "source": "docs.databricks.com/jobs",
+   "url": "https://docs.databricks.com/aws/en/jobs",
+   "kind": "screenshot",
+   "why": "A Lakeflow Jobs pipeline of tasks with its schedule and triggers"
+  }
+ ]
+};
+const IMG_BASE = "img/";
 
 // ---- state holders (DATA is swapped per tab via loadTree) ----
 let DATA = TREES.ai, _id=0, byId={};
@@ -7323,6 +9040,7 @@ let lastSize={w:1200,h:640};
 const SC={GA:'#1B3139',PuP:'#2272B4',Beta:'#B06A00',PrivPreview:'#8a9aa1',Announced:'#b4b9bc',Legacy:'#a05a5a'};
 let selNode=null;
 let state={tx:28,ty:28,k:1, newOnly:false, hideVerify:false, q:''};
+const SLABEL={PrivPreview:'PPR'};   // label shown on a status chip, when it differs from the status value
 const vp=document.getElementById('viewport');
 const svg=document.getElementById('svg');
 const stage=document.getElementById('stage');
@@ -7370,7 +9088,7 @@ function nodeInner(n){
   const dot=hasKids?'<span class="ddot"></span>':'';
   const warn=n.c==='verify'?'<span class="flag warn">⚠</span>':'';
   const tog=hasKids?`<span class="ptoggle">${n.collapsed?'▸':'▾'}</span>`:'';
-  const chip=n.s?`<span class="chip s-${n.s}">${n.s}</span>`:'';
+  const chip=n.s?`<span class="chip s-${n.s}">${SLABEL[n.s]||n.s}</span>`:'';
   if(n._depth===0) return `<div class="nm">${esc(dn(n.n))}</div>`;
   if(n._depth===1) return `<div class="nm">${tog}${esc(dn(n.n))}</div>`+
     `<div class="meta">${n.sub?`<span class="sub">${esc(n.sub)}</span>`:''}<span class="count">${(n.children||[]).length} items</span>${dot}</div>`;
@@ -7526,7 +9244,7 @@ function showPanel(n){
   document.getElementById('pname').textContent=dn(n.n);
   panelEl.style.borderTopColor=(n.s&&SC[n.s])?SC[n.s]:'var(--red)';
   let r='';
-  if(n.s) r+=`<span class="chip s-${n.s}">${n.s}</span>`;
+  if(n.s) r+=`<span class="chip s-${n.s}">${SLABEL[n.s]||n.s}</span>`;
   if(n.c==='verify') r+=`<span class="conf verify">⚠ to verify</span>`;
   if(n.new) r+=`<span style="color:var(--red);font-weight:700;font-size:0.8rem">✦ DAIS</span>`;
   document.getElementById('prow').innerHTML=r;
@@ -7591,7 +9309,7 @@ stage.addEventListener('wheel',e=>{
 
 // toolbar
 document.getElementById('search').addEventListener('input',e=>{
-  if(document.body.classList.contains('story-mode')){ storyFind(e.target.value); return; }
+  const m=findMode(); if(m){ runFind(m,e.target.value); return; }
   state.q=e.target.value;
   if(state.q.trim()){
     const q=state.q.trim().toLowerCase();
@@ -7665,7 +9383,7 @@ document.querySelectorAll('.navtab').forEach(b=>{ b.onclick=()=>{
   setActiveTab(b.dataset.tree);
   document.body.classList.toggle('decks-mode', b.dataset.tree==='decks');
   if(b.dataset.tree==='story'){ showStory(); }
-  else if(b.dataset.tree==='decks'){ hideStory(); }
+  else if(b.dataset.tree==='decks'){ showDecks(); }
   else { hideStory(); loadTree(b.dataset.tree); }
 }; });
 
@@ -7679,27 +9397,98 @@ function nodeByPath(tree,path){
 }
 function capCard(ref,key){
   const n=nodeByPath(ref.tree,ref.path); if(!n) return '';
-  const chip=n.s?`<span class="chip s-${n.s}">${n.s}</span>`:'';
+  const chip=n.s?`<span class="chip s-${n.s}">${SLABEL[n.s]||n.s}</span>`:'';
   return `<button class="scap" data-ref="${key}">`+
     `<div class="sct"><span class="stree">${ref.tree.toUpperCase()}</span><span>${esc(dn(n.n))}</span>${chip}</div>`+
     `<div class="scn">${esc(n.note||'')}</div><div class="scgo">See in tree →</div></button>`;
 }
+// ---- illustration candidates (temporary, while the illustrations are chosen) ----
+// a click on an image shows it full screen; its checkbox picks or unpicks it. The picks file
+// (chosen once per page load, Chrome / Edge only) is the reference: each change reads it,
+// changes that one pick and writes it back. The browser keeps a copy only for display.
+const PICKS=JSON.parse(localStorage.getItem('illusPicks')||'{}');
+let picksFile=null, pickQueue=Promise.resolve();
+const isPicked=(pid,id)=>(PICKS[pid]||[]).includes(id);
+function illusRow(pid){
+  const cands=ILLUS[pid]; if(!cands||!cands.length) return '';
+  return `<div class="sill">`+cands.map(c=>
+    `<div class="sillc${isPicked(pid,c.id)?' on':''}" data-pid="${pid}" data-id="${c.id}">`+
+    `<img src="${IMG_BASE}${c.file}" alt="" loading="lazy">`+
+    `<label><input type="checkbox"${isPicked(pid,c.id)?' checked':''}><span>${esc(c.source)}</span></label></div>`).join('')+`</div>`;
+}
+async function togglePick(pid,id){
+  if(!picksFile) picksFile=await showSaveFilePicker({suggestedName:'illustration-picks.json',
+    types:[{description:'JSON',accept:{'application/json':['.json']}}]});
+  const text=(await (await picksFile.getFile()).text()).trim();
+  let cur;
+  try{ cur=text?JSON.parse(text):{}; }catch(e){ throw new Error('the picks file is not valid JSON, it was left as is'); }
+  const set=new Set(cur[pid]||[]);
+  if(set.has(id)) set.delete(id); else set.add(id);
+  if(set.size) cur[pid]=[...set]; else delete cur[pid];
+  const w=await picksFile.createWritable(); await w.write(JSON.stringify(cur,null,1)+'\n'); await w.close();
+  Object.keys(PICKS).forEach(k=>delete PICKS[k]); Object.assign(PICKS,cur);
+  localStorage.setItem('illusPicks',JSON.stringify(PICKS));
+}
+// full-screen view, with the same checkbox
+const illusView=document.createElement('div');
+illusView.id='illusView'; illusView.hidden=true;
+illusView.innerHTML=`<img alt=""><div class="ivbar"><label><input type="checkbox"><span></span></label><a target="_blank" rel="noopener">Open the source ↗</a></div>`;
+document.body.appendChild(illusView);
+const ivBox=illusView.querySelector('input');
+let ivCur=null;
+function openIllus(pid,id){
+  const c=ILLUS[pid].find(x=>x.id===id); ivCur={pid,id};
+  illusView.querySelector('img').src=IMG_BASE+c.file;
+  illusView.querySelector('span').textContent=c.source;
+  illusView.querySelector('a').href=c.url;
+  ivBox.checked=isPicked(pid,id); illusView.hidden=false;
+}
+function syncPicks(){
+  storyView.querySelectorAll('.sillc').forEach(el=>{ const on=isPicked(el.dataset.pid,el.dataset.id);
+    el.classList.toggle('on',on); el.querySelector('input').checked=on; });
+  if(ivCur) ivBox.checked=isPicked(ivCur.pid,ivCur.id);
+}
+// changes run one after the other, so two quick clicks cannot overwrite each other
+function changePick(pid,id){
+  pickQueue=pickQueue.then(()=>togglePick(pid,id))
+    .catch(err=>{ if(err.name!=='AbortError') alert('Pick not saved: '+err.message); })
+    .finally(syncPicks);
+}
+storyView.addEventListener('click',e=>{ const img=e.target.closest('.sillc img'); if(img){ const c=img.closest('.sillc'); openIllus(c.dataset.pid,c.dataset.id); } });
+storyView.addEventListener('change',e=>{ const c=e.target.closest('.sillc'); if(c) changePick(c.dataset.pid,c.dataset.id); });
+ivBox.addEventListener('change',()=>changePick(ivCur.pid,ivCur.id));
+illusView.addEventListener('click',e=>{ if(!e.target.closest('.ivbar')) illusView.hidden=true; });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&!illusView.hidden) illusView.hidden=true; });
+// "Image picks" switch in the nav (Story only): shows or hides the candidates, remembered by the browser
+const illusTg=document.getElementById('illusTg');
+illusTg.checked=localStorage.getItem('illusShow')!=='0';
+document.body.classList.toggle('illus-off',!illusTg.checked);
+illusTg.onchange=()=>{ localStorage.setItem('illusShow',illusTg.checked?'1':'0'); document.body.classList.toggle('illus-off',!illusTg.checked); };
 function buildStory(){
-  const chs=STORY.chapters;
+  const chs=STORY.chapters, th=STORY.thread;   // thread: the complete story (docs/story-cement.md)
   const rail=`<div class="srail"><div class="srail-t">Chapters</div>`+
-    chs.map(c=>`<a href="#sch-${c.num}" data-ch="${c.num}"><b>${c.num}</b><span>${esc(c.title)}</span></a>`).join('')+`</div>`;
+    chs.map(c=>`<a href="#sch-${c.num}" data-ch="${c.num}"><b>${c.num}</b><span>${esc(c.title)}</span></a>`).join('')+
+    (th&&th.closing?`<a href="#sch-end" data-ch="end"><b>·</b><span>Closing</span></a>`:'')+`</div>`;
+  const top=th?`<div class="sthread"><h1 class="sthread-t">${esc(th.title)}</h1><p class="sopen">${esc(th.opening)}</p></div>`:'';
+  const close=th&&th.closing?`<section class="schap" id="sch-end" data-ch="end"><div class="schap-h"><h2 class="schap-t">Closing</h2></div>`+
+    `<p class="sintro">${esc(th.closing)}</p></section>`:'';
   const body=chs.map((c,ci)=>
     `<section class="schap" id="sch-${c.num}" data-ch="${c.num}">`+
     `<div class="schap-h"><span class="schap-n">${c.num}</span><h2 class="schap-t">${esc(c.title)}</h2></div>`+
+    (c.intro?`<p class="sintro">${esc(c.intro)}</p>`:'')+
     c.points.map((p,pi)=>
       `<article class="sslide" data-ci="${ci}" data-pi="${pi}"><h3>${esc(p.title)}</h3>`+
+      (p.effect?`<p class="seff">${esc(p.effect)}</p>`:'')+
       (p.lead?`<p class="slead">${esc(p.lead)}</p>`:'')+
+      // challenge, then the pivot that leads to the bullets (docs/story-editorial-guide.md)
+      ['challenge','pivot'].map(k=>p[k]?`<p class="sadd">${esc(p[k])}</p>`:'').join('')+
       `<ul class="sbul">${p.bullets.map(b=>`<li>${esc(b)}</li>`).join('')}</ul>`+
       (p.refs.length?`<div class="scaps">${p.refs.map((r,ri)=>capCard(r,`${ci}-${pi}-${ri}`)).join('')}</div>`:'')+
+      illusRow(p.id)+
       `</article>`).join('')+
     (c.handoff?`<p class="shand">${esc(c.handoff)}</p>`:'')+
     `</section>`).join('');
-  storyView.innerHTML=`<div class="story">${rail}<div class="sbody">${body}</div></div>`;
+  storyView.innerHTML=`<div class="story">${rail}<div class="sbody">${top}${body}${close}</div></div>`;
   // rail: highlight the chapter being read
   const links=[...storyView.querySelectorAll('.srail a')];
   const obs=new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){
@@ -7732,7 +9521,7 @@ storyPrev.onclick=()=>storyStep(-1);
 storyNext.onclick=()=>storyStep(1);
 // keyboard ↑ / ↓ do the same as the arrow buttons, in the Story only
 document.addEventListener('keydown',e=>{
-  if(!document.body.classList.contains('story-mode')) return;
+  if(!document.body.classList.contains('story-mode')||!illusView.hidden) return;
   if(e.target.closest('input,textarea,select,[contenteditable]')) return;
   if(e.key==='ArrowDown'){ e.preventDefault(); storyStep(1); }
   else if(e.key==='ArrowUp'){ e.preventDefault(); storyStep(-1); }
@@ -7741,13 +9530,17 @@ storyView.addEventListener('scroll',updateStoryNav,{passive:true});
 function showStory(){
   document.body.classList.add('story-mode');
   if(!storyBuilt){ buildStory(); storyBuilt=true; }
-  searchEl.placeholder='Search the story…'; searchEl.value=storyQ;
+  searchEl.placeholder='Search the story…'; searchEl.value=findQ.story;
   updateStoryNav();
 }
-function hideStory(){ document.body.classList.remove('story-mode'); searchEl.placeholder='Search features…'; storyResults.hidden=true; }
-// ---- Story search: find as you type, list the sections and slides where the word appears ----
-const searchEl=document.getElementById('search'), storyResults=document.getElementById('storyResults');
-let storyQ='', storyRes=[], storyResIdx=0;
+function hideStory(){ document.body.classList.remove('story-mode'); searchEl.placeholder='Search features…'; findResults.hidden=true; }
+function showDecks(){ hideStory(); searchEl.placeholder='Search the decks…'; searchEl.value=findQ.decks; }
+// ---- Story and Decks search: find as you type, list the places where the word appears ----
+const searchEl=document.getElementById('search'), findResults=document.getElementById('findResults');
+const decksView=document.getElementById('decksView');
+const findQ={story:'',decks:''};   // each tab keeps its own query
+let findRes=[], findResIdx=0;
+function findMode(){ const c=document.body.classList; return c.contains('story-mode')?'story':c.contains('decks-mode')?'decks':null; }
 function hl(raw,q){
   if(!q) return esc(raw);
   const re=new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig');
@@ -7759,54 +9552,79 @@ function snippet(text,q){
   return (a>0?'…':'')+hl(text.slice(a,b),q)+(b<text.length?'…':'');
 }
 function slideTexts(p){
-  const t=[p.title,p.lead,...p.bullets];
+  const t=[p.title,p.effect,p.lead,p.challenge,p.pivot,...p.bullets];
   p.refs.forEach(r=>{ const n=nodeByPath(r.tree,r.path); if(n) t.push(dn(n.n), n.note||''); });
   return t.filter(Boolean);
 }
-function storyFind(value){
-  storyQ=value; const q=value.trim().toLowerCase(); storyRes=[]; storyResIdx=0;
-  if(q) STORY.chapters.forEach((c,ci)=>{
-    const ct=[c.title,c.handoff||''].find(s=>s.toLowerCase().includes(q));
-    if(ct) storyRes.push({ci,pi:-1,snip:snippet(ct,q)});
-    c.points.forEach((p,pi)=>{ const hit=slideTexts(p).find(s=>s.toLowerCase().includes(q)); if(hit) storyRes.push({ci,pi,snip:snippet(hit,q)}); });
-  });
-  renderStoryResults(q);
-}
-function renderStoryResults(q){
-  if(!q){ storyResults.hidden=true; storyResults.innerHTML=''; return; }
-  storyResults.innerHTML = storyRes.length
-    ? storyRes.map((r,i)=>{ const c=STORY.chapters[r.ci], title=r.pi<0?c.title:c.points[r.pi].title;
-        return `<button class="sres${i===storyResIdx?' on':''}" data-i="${i}">`+
-          `<div class="sres-crumb">${c.num} · ${esc(c.title)}${r.pi<0?' · chapter':''}</div>`+
-          `<div class="sres-t">${hl(title,q)}</div><div class="sres-snip">${r.snip}</div></button>`; }).join('')
-    : `<div class="sres-none">No match</div>`;
-  storyResults.hidden=false;
-}
-function storyGoRes(i){
-  const r=storyRes[i]; if(!r) return;
-  storyResults.hidden=true;
-  const el = r.pi<0 ? storyView.querySelector(`#sch-${STORY.chapters[r.ci].num}`)
-                    : storyView.querySelector(`.sslide[data-ci="${r.ci}"][data-pi="${r.pi}"]`);
+// scroll a view to el (near the top, or centered), then flash el
+function reveal(view,el,flash,center){
   if(!el) return;
-  const top=el.getBoundingClientRect().top-storyView.getBoundingClientRect().top+storyView.scrollTop-16;
-  storyView.scrollTo({top:Math.max(0,top),behavior:'smooth'});
-  if(r.pi>=0){ el.classList.remove('sflash'); void el.offsetWidth; el.classList.add('sflash'); }
+  const off=center?(view.clientHeight-el.offsetHeight)/2:16;
+  const top=el.getBoundingClientRect().top-view.getBoundingClientRect().top+view.scrollTop-off;
+  view.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+  if(flash){ el.classList.remove('sflash'); void el.offsetWidth; el.classList.add('sflash'); }
 }
+function storyFind(q){
+  const th=STORY.thread;   // the opening and the closing of the complete story
+  if(th) [['Opening',th.opening,'.sthread'],['Closing',th.closing,'#sch-end']].forEach(([name,text,sel])=>{
+    if(text&&text.toLowerCase().includes(q)) findRes.push({crumb:`The story · ${name}`, title:th.title, snip:snippet(text,q),
+      go:()=>reveal(storyView,storyView.querySelector(sel),false)}); });
+  STORY.chapters.forEach((c,ci)=>{
+    const ct=[c.title,c.intro||'',c.handoff||''].find(s=>s.toLowerCase().includes(q));
+    if(ct) findRes.push({crumb:`${c.num} · ${c.title} · chapter`, title:c.title, snip:snippet(ct,q),
+      go:()=>reveal(storyView,storyView.querySelector(`#sch-${c.num}`),false)});
+    c.points.forEach((p,pi)=>{ const hit=slideTexts(p).find(s=>s.toLowerCase().includes(q));
+      if(hit) findRes.push({crumb:`${c.num} · ${c.title}`, title:p.title, snip:snippet(hit,q),
+        go:()=>reveal(storyView,storyView.querySelector(`.sslide[data-ci="${ci}"][data-pi="${pi}"]`),true)}); });
+  });
+}
+// a deck hit is a section heading or a table row; a row is named by its deck link
+function decksFind(q){
+  let h2='', h3='';
+  decksView.querySelectorAll('h2, h3, tbody tr').forEach(el=>{
+    const text=el.textContent;
+    if(el.tagName==='H2'){ h2=text; h3=''; }
+    if(el.tagName==='H3') h3=text;
+    if(el.tagName!=='TR'){
+      if(text.toLowerCase().includes(q)) findRes.push({crumb:el.tagName==='H3'?`${h2} · section`:'section', title:text, snip:'', go:()=>reveal(decksView,el,false)});
+      return;
+    }
+    const hit=[...el.cells].map(td=>td.textContent).find(s=>s.toLowerCase().includes(q));
+    if(hit) findRes.push({crumb:h3?`${h2} · ${h3}`:h2, title:(el.querySelector('a')||el.cells[0]).textContent,
+      snip:snippet(hit,q), go:()=>reveal(decksView,el,true,true)});
+  });
+}
+function runFind(mode,value){
+  findQ[mode]=value; const q=value.trim().toLowerCase(); findRes=[]; findResIdx=0;
+  if(q) (mode==='story'?storyFind:decksFind)(q);
+  renderFindResults(q);
+}
+function renderFindResults(q){
+  if(!q){ findResults.hidden=true; findResults.innerHTML=''; return; }
+  findResults.innerHTML = findRes.length
+    ? findRes.map((r,i)=>`<button class="sres${i===findResIdx?' on':''}" data-i="${i}">`+
+        `<div class="sres-crumb">${esc(r.crumb)}</div>`+
+        `<div class="sres-t">${hl(r.title,q)}</div><div class="sres-snip">${r.snip}</div></button>`).join('')
+    : `<div class="sres-none">No match</div>`;
+  findResults.hidden=false;
+}
+function findGo(i){ const r=findRes[i]; if(!r) return; findResults.hidden=true; r.go(); }
 // mousedown (not click) so the choice lands before the input loses focus
-storyResults.addEventListener('mousedown',e=>{ const b=e.target.closest('.sres'); if(!b) return; e.preventDefault(); storyGoRes(+b.dataset.i); });
+findResults.addEventListener('mousedown',e=>{ const b=e.target.closest('.sres'); if(!b) return; e.preventDefault(); findGo(+b.dataset.i); });
 searchEl.addEventListener('keydown',e=>{
-  if(!document.body.classList.contains('story-mode')) return;
+  const m=findMode(); if(!m) return;
   if(e.key==='ArrowDown'||e.key==='ArrowUp'){
-    if(!storyRes.length) return; e.preventDefault();
-    storyResIdx=(storyResIdx+(e.key==='ArrowDown'?1:-1)+storyRes.length)%storyRes.length;
-    renderStoryResults(storyQ.trim().toLowerCase());
-    const on=storyResults.querySelector('.sres.on'); if(on) on.scrollIntoView({block:'nearest'});
+    if(!findRes.length) return; e.preventDefault();
+    findResIdx=(findResIdx+(e.key==='ArrowDown'?1:-1)+findRes.length)%findRes.length;
+    renderFindResults(findQ[m].trim().toLowerCase());
+    const on=findResults.querySelector('.sres.on'); if(on) on.scrollIntoView({block:'nearest'});
   }
-  else if(e.key==='Enter'){ e.preventDefault(); storyGoRes(storyResIdx); }
-  else if(e.key==='Escape'){ storyResults.hidden=true; }
+  else if(e.key==='Enter'){ e.preventDefault(); findGo(findResIdx); }
+  else if(e.key==='Escape'){ findResults.hidden=true; }
 });
-searchEl.addEventListener('focus',()=>{ if(document.body.classList.contains('story-mode') && storyQ.trim()) renderStoryResults(storyQ.trim().toLowerCase()); });
-searchEl.addEventListener('blur',()=>{ storyResults.hidden=true; });
+// on focus, list the results again for the current tab's query
+searchEl.addEventListener('focus',()=>{ const m=findMode(); if(m && findQ[m].trim()) runFind(m,findQ[m]); });
+searchEl.addEventListener('blur',()=>{ findResults.hidden=true; });
 // "See in tree": switch to the capsule's tree, select it, center on it
 function gotoNode(tree,path){
   setActiveTab(tree); hideStory(); loadTree(tree);
