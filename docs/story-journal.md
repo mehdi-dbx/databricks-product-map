@@ -119,3 +119,417 @@ sed 's/^  WARN /  - /'
   - 8.4: Effect is close to chapter 1: Business users depend on those few colleagues for every ques…
   - 9.1: Pivot is close to its own text: The apps run serverless on the platform.…
   - 10.2: Pivot is close to its own text: Lakewatch, in private preview, runs security operations on t…
+
+## Story as slides: passages split into bullets (2026-10-12)
+
+The instruction was to keep everything and cut nothing, but to split every passage of the Story page into bullet points: the page serves as presentation slides, and nobody reads paragraphs any more.
+
+- **The sentence "The first thing teams do with data like this is learn from it." was deleted** from chapter 2's handoff, as asked.
+- **An element is any block of the Story page that shows two or more sentences together.** The inventory, taken from the files, found 56 such blocks:
+  - 12 cement blocks;
+  - 20 challenges;
+  - 14 transitions;
+  - 10 handoffs.
+
+  The 14 one-sentence challenges that string several problems together with commas were added, for 70 in total. Single sentences (effects, pivots, one-sentence transitions) stay as they are.
+- **The cement and the challenges were rewritten as one idea per bullet.** These are texts written in this run, not validated texts. The split follows the example given: one bullet per product when a sentence names several. Only joining words such as "and" were dropped. A script checked that every word of the old cement survives.
+  - Two pronouns were replaced, because the bullet split cut them off from what they referred to:
+    - in the chapter 7 block, "governs them" became "governs models, agents and tools";
+    - in the 3.2 and 11.2 challenges, "with no view of" became "Nobody sees" and "Nobody has a central view".
+  - The challenges of 2.2, 4.1, 4.3, 5.1 and 8.4 already had one problem per sentence.
+- **The validated transitions and handoffs were not reworded.** They are split one bullet per sentence at display time, by `mindmap.js` and `story_extract.py`.
+- **Display:** the dash bullets (`.slist`) are kept apart from the product bullets, which keep their red dots.
+- **Coverage check in the browser:**
+  - 70 lists on the page, which is the 70 elements of the inventory;
+  - no paragraph of two or more sentences left;
+  - the deleted sentence is found nowhere.
+- **The guide, `story-cement.md` and `story-additions-setup.md` now describe the bullet format,** and the guide's three examples show the split challenges.
+
+## Repeated terms (2026-10-12)
+
+The instruction was to scan the slides for repeated terms that are not needed. The two examples given were "Pipelines… / These pipelines… the copies…" and a pivot "The Feature Store…" placed just before the bullet "The Feature Store…".
+
+- **Scan:** a script listed every pair of consecutive lines that share a content word, across 68 blocks: 46 slides, 12 cement blocks and 10 handoffs. It found 189 pairs, and each one was judged.
+- **Fixed, in text written during these runs only:**
+  - all 34 pivots;
+  - 17 effects;
+  - the challenges of 22 points;
+  - 12 sentences of chapter 1, including the "These pipelines…" example;
+  - 17 cement bullets.
+- **The pivot rule changed.** The first bullet names the product right after the pivot, so the pivot now says how the problem is taken on and repeats neither the product's name nor the bullet's terms. Before this, every pivot named its product.
+  - Example: "One shared registry ends the duplication." now comes before "The Feature Store keeps each feature definition in one place…".
+  - The rule written after the agent pilot ("the pivot names a product of its point") is gone.
+- **Kept:**
+  - pairs where both lines are validated text (bullets, transitions, handoffs, the original sentences of chapter 1). That text was not touched.
+  - pairs whose shared word is part of a product or chapter name (Model Serving, Genie…, data science), the slide's subject ("model" in the models chapter), a deliberate pick-up ("That feed", "such scores"), or a deliberate contrast ("open format" against "closed formats").
+- **`apply_story_additions.py` now flags an added sentence that repeats a term of the neighbouring line.** The title's terms are allowed, except between the pivot and the first bullet. The check found five repetitions that the scan's word filter had missed (4.1, 4.3, 5.2, 6.2, 8.2) and they were fixed. The 10 warnings left are the kept cases above, plus the echoes of chapter 1 already logged.
+- **The guide, `story-cement.md`, `story-starting-situation.md` and `story-additions-setup.md` now carry the rule.** The guide also has two counter-examples, and its three examples show the current text.
+
+## Review of titles and effects from the Google Sheet (2026-10-12)
+
+The comments were entered line by line in the sheet "Story — titles and effects". Every row was read, the comments were grouped into rules, and a scan applied those rules to the 46 slides, together with each row's own comment.
+
+**Feedback types and examples.** Each rule is now in the guide: the "Title" section, the effect rules and the counter-examples.
+
+| Type | Examples from the sheet |
+|---|---|
+| The title must name the feature | "Batch AI in SQL and pipelines": "Awful - feature is not named - AI Functions". Same for 8.1, 8.2, 9.1, 9.2 and 10.2 |
+| Short, synthetic titles that do not list notions | 2.2, 5.2 and 5.4: "titres longs et verbeux qui listent des notions et des features" |
+| One notion per slide | 6.2, 6.3 and 9.3: "deux notions qui n'ont rien à voir mises dans une même boîte" |
+| Compact title forms | "Foundation models & lifecycle", "Unity Gateway for AI traffic control" |
+| Only offerings Databricks has | 8.4: "Databricks does not offer spreadsheets" |
+| Short effects that start with a verb | "Apply AI to large volumes of data and documents in place", "Build features once & reuse…", "Trace request details and cost step by step" |
+| No generic subject | "Tu répètes trop souvent Teams", "…The company", "Team" (5.1, 5.3, 6.2, 11.1) |
+| Affirmative form | 3.4 and 4.1: "Phrase négative - utilise la forme affirmative" |
+| Plain words, not laborious | "draw" is too contrived (5.2). "laborieux" (6.1) |
+| What works: short and efficient, one complete sentence | 2.3, 2.4, 4.2 and 5.5 were praised. 6.3, 7.1, 7.2, 8.1 to 8.5, 9.1 and 11.2 were rated good |
+
+**Per slide.** All 46 slides were covered and none was missed.
+
+- **Chapter 1 (1.1–1.8):** no change. The titles state problems, and there is no effect.
+- **Titles changed (32):**
+  - 2.2 Lakeflow & Predictive Optimization; 2.3 Lakebase; 2.4 Lakehouse//RT & LTAP; 2.5 Data quality monitoring;
+  - 3.1 Notebooks; 3.3 MLflow & AutoML; 3.4 Distributed training & AI Runtime;
+  - 4.1 Model Serving; 4.2 Foundation models & lifecycle;
+  - 5.1 AI Functions; 5.2 AI Search & Knowledge Assistant; 5.4 Custom agents; 5.5 Supervisor Agent;
+  - 6.1 MLflow Tracing; 6.2 Agent evaluation & Prompt Registry; 6.3 Review Apps;
+  - 7.2 Unity Gateway for AI traffic control; 7.3 Databricks AI Security Framework;
+  - 8.1 Genie One; 8.2 Genie Ontology; 8.3 Genie Agents; 8.4 AI/BI Dashboards; 8.5 Genie App Builder;
+  - 9.1 Databricks Apps; 9.2 Genie Code; 9.3 AI Dev Kit & Omnigent;
+  - 10.1 CustomerLake; 10.2 Lakewatch;
+  - 11.1 Model Registry; 11.2 Model Serving at scale; 11.3 Lakehouse Monitoring; 11.4 MLOps & CI/CD.
+- **Titles kept:** 2.1, 3.2, 4.3, 4.4, 5.3 and 7.1. They already name the product and are short.
+- **Effects rewritten (19):** 2.1, 2.2, 2.5, 3.2, 3.3, 3.4, 4.1, 4.3, 4.4, 5.1, 5.2, 5.3, 5.4, 6.1, 6.2, 9.2, 9.3, 10.2 and 11.1. The sheet's own formula was used when the comment gave one (2.1, 3.2, 5.1, 5.2, 6.1, 9.2).
+- **Effects kept (15):** 2.3, 2.4, 4.2, 5.5, 6.3, 7.1, 7.2, 8.1, 8.2, 8.3, 8.4, 8.5, 9.1 and 11.2 were praised or rated good. 10.1 already follows the rules.
+- **No effect (4):** 3.1, 7.3, 11.3 and 11.4 (no `solves` rows).
+
+**Left open.** Each of these needs a change beyond titles and effects:
+- **6.2 and 9.3 still pair two products,** "Agent evaluation & Prompt Registry" and "AI Dev Kit & Omnigent". Pairing them properly needs the slides split, and that changes the structure.
+- **The 8.4 bullet "Row Zero, announced, brings the same governed data into a spreadsheet…" stays,** because it is validated text sourced from the tree. It contradicts the comment that Databricks offers no spreadsheets.
+- **Corrections given directly (2026-10-12):** 5.3 is now "Agents reach tools through one governed route." and 6.2 is now "Improve new agent versions quality.".
+
+## Product named in the pivot (2026-10-12)
+
+The instruction, with three examples (6.1, 6.3, 11.2), was to move the product's name from the first bullet into the pivot: "With MLflow, every step can be made visible." followed by "It traces every request through the agent.".
+
+- **Scan:** 34 slides have a pivot, and all were covered.
+  - **Changed (20):** 2.3, 3.2, 4.1, 4.2, 4.3, 5.1, 5.4, 5.5, 6.1, 6.3, 7.1, 7.2, 8.1, 8.2, 8.3, 8.5, 9.2, 10.1, 10.2, 11.2.
+    - The pivot now starts with "With <Product>,".
+    - Only the subject of the first bullet changed: "It", "They", "Its endpoints", and for CustomerLake and Lakewatch "In private preview, it…".
+  - **Left as they were, two products (7):** 2.2, 2.4, 3.3, 5.2, 6.2, 8.4, 9.3. A pronoun would be ambiguous.
+  - **Left as they were, the first bullet does not start with the product (7):** 2.1, 2.5, 3.4, 4.4, 5.3, 9.1, 11.1.
+- **Validated bullets changed** in their subject only, as asked. The rest of each bullet is word for word.
+- **The guide's pivot rule replaces the previous one** ("never repeat the product's name"). The two examples involved (Genie One, Unity Gateway), the Feature Store counter-example and the agent prompt now follow it.
+- **Expected warnings:** `apply_story_additions.py` still counts the product's name as a repetition between the pivot and the first bullet (3.2, 4.2, 4.3, 5.5, 7.2). That check predates this rule, and it was left unchanged.
+- **Chapters renamed (2026-10-12):** chapter 2 "Data and AI foundation" is now "Data foundation for AI", and chapter 4 "Model access and governance" is now "Model access".
+
+## Chapter 1, noslop pass (2026-10-12)
+
+The instruction was to run /noslop on chapter 1 "Challenges". Its titles must be short formulas, with no "that" and no long phrase. 1.3 was given as the model, and 1.8 was given word for word.
+
+- **Titles (6 changed, 2 kept):**
+  - 1.2 "Model work that is slow and hard to reproduce" is now "Models slow to build".
+  - 1.4 "Agents that cannot reach data and tools safely" is now "Agents with unsafe access".
+  - 1.5 "AI that nobody can verify or control" is now "AI without evaluation or governance". These are the topics of chapters 6 and 7, which answer it.
+  - 1.6 "Business users and developers held back" is now "No self-service for business users or developers".
+  - 1.7 "Customer and security data in separate silos" is now "Customer and security silos".
+  - 1.8 "AI pilots blocked before production" is now "AI pilots do not make it to Production", as given, capital P included.
+  - 1.1 "Data spread across systems" and 1.3 "Every model provider handled separately" are kept.
+- **Text:** every fact is kept. The changes:
+  - Sentences of three clauses, or that join two unrelated claims, were split in 1.2, 1.3, 1.4, 1.5 and 1.6.
+  - The mirrored clauses were removed: "its own copies and its own access rules" (1.1), "nobody sees… and nobody measures…" and "Nobody has… and nothing is audited" (1.5).
+  - Ambiguous pronouns were replaced: "Adapting one" became "Adapting a model" (1.3), "They start" became "Agents start" (1.4), "cut off from them" became "cut off from the agent" (1.5), and "Much of their time" became "Developers spend much of their time" (1.6).
+- **Links (2 changed):**
+  - 1.3 → 1.4 "A model on its own only answers. Agents also look up company data and use tools." is now "Agents build on these models to look up company data and use tools."
+  - 1.5 → 1.6 "These gaps also reach the people who use data and AI every day, and those who build with it." is now "These gaps also slow down everyone who works with data and AI."
+- **Kept as is:** the hands off line and its question, which the cement quotes word for word, and the cement's opening, which sits above the chapter.
+- **Prompt updated:** `docs/story-starting-situation.md` now carries the title rule (a short formula, no relative clause, no stacked qualifiers, no vague verb) and the sentence rules (one claim per sentence, no mirrored clauses, no contrast setup line). The guide's chapter 1 exception points to it.
+- **Check warnings:** `apply_story_additions.py --check` now flags 10 additions as close to chapter 1, against 3 before: 3.3, 3.4, 6.2, 6.3, 8.2, 8.4 and 9.1 are new. Their words were already in chapter 1, inside longer sentences, and the shorter sentences make the overlap visible. They were left as they are: chapter 1 announces and the chapter gives the detail. Two rewordings of this pass had added overlap, and they were changed back: "cut off from the agent" instead of "cut off from the agent's answers" (6.3), and "escapes governance" was kept (8.4).
+
+## Product named in every pivot (2026-10-12)
+
+The instruction, with three examples (2.5 with Unity Catalog, 3.3 with MLflow, 2.4 with Lakehouse//RT), was to name the product at the start of every pivot that did not yet name it, and never to repeat that name in the next sentence.
+
+- **Rule:** every pivot starts with "With <Product>,". The first bullet does not name the product again. On a slide with two products, the pivot names the product of the first bullet.
+- **Scan:** the 14 pivots left out on the first pass were all changed. The pivot text stays word for word after the prefix.
+  - **The first bullet now starts with a pronoun (8):** 2.2 Lakeflow, 2.4 Lakehouse//RT, 2.5 Unity Catalog, 3.3 MLflow, 5.2 AI Search, 5.3 MCP, 6.2 Agent evaluation, 9.3 AI Dev Kit. The name of the Model Context Protocol, written out in full, moves from the first bullet of 5.3 into its pivot.
+  - **The name is removed further on in the first bullet (4):** 2.1 "open Delta tables" becomes "open tables", 4.4 "the same Model Serving endpoints" becomes "the same endpoints", 8.4 "An AI/BI dashboard" becomes "A dashboard", 9.1 "deploy them as Databricks Apps" becomes "deploy them there".
+  - **First bullet unchanged, because it does not name the product (2):** 3.4 AI Runtime and 11.1 MLflow.
+- **Products chosen where the slide's title does not settle it:**
+  - 4.4: Model Serving, because the pivot's "they" refers to the provider models, and "With external models, they…" would read as the same thing twice.
+  - 11.1: MLflow, because "With the Model Registry, one registry…" repeats "registry".
+- **Coverage:** 34 pivots, 34 start with "With <Product>,", and no first bullet repeats the product's name.
+- **Words kept on purpose:** some first bullets keep an ordinary word that the product's name contains, such as "lakehouse tables" (2.4), "full fine-tuning" (4.3) or "vector and keyword search" (5.2). The check script reports them as "Pivot repeats" (9 warnings), and they were left as they are.
+- **Pivots that now credit one product with the work of both:** 2.2 (table maintenance is Predictive Optimization), 6.2 (versioned prompts are the Prompt Registry), 8.4 (spreadsheets are Row Zero) and 9.3 (coding-agent tools are Omnigent). 3.3 is in the same case and was given as an example.
+- **Guide updated:** the two exceptions are gone from the pivot rule and from the agent prompt. The Databricks Apps reference example and the markup example in `docs/story-additions-setup.md` show the new form.
+
+## Pivot starts with the product in bold (2026-10-12)
+
+The instruction was to make every pivot start with the feature's name in bold, and never with "With". It was rephrased with a before/after example, then run as a scan.
+
+- **Rule:** the product is the subject of the pivot. The sentence starts with its name in bold (`**…**`) and says how it takes the problem on, as in "**MLflow** makes every step visible.". A name with an article keeps the article outside the bold ("The **Supervisor Agent** …"). The first bullet does not change: its "It", "They" or "Its" now refers to that subject.
+- **Scan:** 34 pivots, 34 rewritten. Each keeps the meaning of its "With …" version, and only the wording turns around the new subject.
+- **Two products on the slide:** as the subject, the product would carry a claim that "With …" only implied.
+  - 3.3 and 6.2 no longer credit the first product with the other's work: "**MLflow** handles the bookkeeping, and the trial and error can be automated too." and "**Agent evaluation** measures the answers, and versioned prompts close the remaining gaps.".
+  - 2.2 ("hands both jobs over to the platform"), 8.4 ("come with an assistant that can help in both places") and 9.3 ("removes that manual work") keep a general wording.
+- **9.1:** "now hosts them on the platform" came close to the bullet "The apps run serverless on the platform.", so the pivot is "**Databricks Apps** now hosts them itself.". The first bullet's "deploy them there" lost its antecedent, and it is now "deploy them".
+- **Display:** `mindmap.js` renders the pivot with the existing `mdBold` helper, and the Story search ignores the asterisks. This is two expressions in a file that the parallel session also edits. A headless check of the Story tab found 34 pivots in bold, no asterisk shown and no page error.
+- **Warnings:** the 9 "Pivot repeats" warnings on ordinary words remain, as before.
+- **Docs updated:** the guide's pivot rule, its examples (Databricks Apps, Genie One, Unity Gateway), the Feature Store counter-example and the agent prompt, and the markup example in `docs/story-additions-setup.md`.
+
+## Doc links on the capsule cards (2026-10-12)
+
+- Each capsule card of the Story shows the panel's doc links next to "See in tree", with the panel's style (`.pdocs`). They are the same links as in the panel: the capsule's own, else those of its nearest ancestor.
+- The card is now a `div` with `role="button"`, because a button cannot hold links. A click on a link opens the doc and leaves the card in place. Enter and Space still open the card.
+- Checked on all 59 cards: the links equal the panel's for the same node. Row Zero / Genie ZeroOps has none, in the panel as well.
+
+## Chapter 3 renamed (2026-10-12)
+
+- Chapter 3 "Data science lifecycle" is now "Data Science", in the chapter list and in the chapter's title, as given.
+- The closing bullet "The data science lifecycle makes the work reproducible." was left as it is, because the instruction named only the menu and the title.
+
+## Challenge box on every slide (2026-10-12)
+
+The box tried on 4.3 is now on every slide with a challenge.
+
+- **Box:** blue border like a capsule card, transparent background, as wide as its text, no hover. The text has the size of the effect and a grey a little darker than before (#76888F).
+- **Scan:** 34 slides have a challenge, and all 34 show it in the box. The 12 slides without one (chapter 1, 3.1, 7.3, 11.3, 11.4) have no box. A headless check found 34 boxes, no challenge outside a box and no page error.
+- **Code:** the 4.3-only trial set in `mindmap.js` is removed, so the box shows whenever a slide has a challenge.
+
+- **Title renamed (2026-10-12):** 4.2 "Foundation models & lifecycle" is now "Foundation models". The guide's "X & Y" example is now "MLflow & AutoML".
+
+## Production operations moved after Model access (2026-10-12)
+
+The instruction was to place Production operations right after chapter 4, Model access, and to fix everything so the story stays coherent.
+
+- **New order:** 1 Challenges, 2 Data foundation for AI, 3 Data Science, 4 Model access, 5 Production operations, 6 Building agents, 7 Evaluating agents, 8 Governance, 9 AI for business users, 10 Developer tools, 11 Domain applications. Slide ids follow: 11.k became 5.k, and chapters 5–10 became 6–11.
+- **Renumbered:** chapter headings, points, links and "Additions" lines in `docs/story-notes.md`; `docs/story-additions.json`; `app/src/illustrations.json` and `illustration-picks.json`; `docs/story-pains.md`; the arc and coverage tables of `docs/story-design.md`; the examples of the guide and of `docs/story-additions-setup.md`. The narrative Check blocks were not renumbered: their numbers were already out of date and they are not shown.
+- **Junctions rewritten:**
+  - Chapter 4 now hands off "Each one then runs in production for years. How do you run it?", the question that used to lead into operations.
+  - Chapter 5 receives "how do you run models in production, for years?" (agents are not introduced yet), and gains a handoff that leads to agents, reusing chapter 4's former question: "Many use cases need a model that can also look up company data and call tools. How do you build agents?".
+  - Chapter 11, Domain applications, is now the last one. Its handoff no longer asks how to run things. It keeps the chapter's own point, "both applications are built from the same parts…", which was its last link.
+- **Chapter 1:** its points follow the order of the chapters that answer them, so the pilots point moved from 1.8 to 1.4. The links moved with it: "In this state, live, governed data stays out of reach." now leads into the pilots, and "Agents build on these models…" follows them. The Check M1 map and its sources follow the new numbers.
+- **Complete story (M15):** the opening's pilots bullet moved after the model providers, without its "So". The chapter 5 block moved after chapter 4 and ends on "How do you build agents?". Chapter 4 ends on "How do you run it?". Chapter 11 ends on the shared parts and leads into the closing. The closing names production operations right after model access.
+- **Illustrations:** the pictures filed under "1.2" were about pilots and MLOps, from before the chapter 1 rewrite, and showed on "Models slow to build". They now sit on the pilots slide, 1.4.
+- **Checks:** chapters 2–10 end their M15 block on their handoff question, word for word, and chapter 11's handoff asks none. All 34 additions are still in place, none refused. Every illustration key matches a slide. The Story tab shows the 11 chapters in the new order, with no page error.
+- **Not changed:** the Google Sheet still uses the old slide numbers.
+
+## Keywords in bold in the bullets (2026-10-12)
+
+The instruction was to bold the keywords of each slide's bullets, for easier reading, with a light hand: only keywords, not too many per slide, and not on every line.
+
+- **Rule:** about one bold for two bullets, at most one per bullet, a short phrase and never a clause, and not the product already in bold in the pivot. The rule is now in the guide, under "Keywords in the bullets".
+- **Where:** the keywords are marked as `**…**` in `docs/story-notes.md`, the source, and `story_extract.py` carries them into `story.json` (which is never edited by hand). `mindmap.js` renders the bullets with `mdBold`, and the search ignores the asterisks. The sentence splitter now also accepts a sentence that starts in bold.
+- **Scan:** 46 slides and 164 bullets. 70 keywords were placed, at most 3 on a slide, and no slide has more than half its bullets in bold. The words of the bullets are unchanged.
+  - 1.1 several places, often out of date, nobody is warned · 1.2 hard to reproduce, scarce · 1.3 scattered, lock-in · 1.4 pilots on extracts, stop at that step · 1.5 outside services, built by hand, unrestricted access · 1.6 which step failed, without being tracked, not governed like data · 1.7 every question, defined differently, separate infrastructure · 1.8 deleted early
+  - 2.1 open tables · 2.2 managed connectors, on its own · 2.3 serverless Postgres · 2.4 under 100 milliseconds · 2.5 one set of permissions, stale or broken tables
+  - 3.1 governed tables · 3.2 point-in-time correct joins · 3.3 reproduced and compared · 3.4 GPUs on demand
+  - 4.1 same API, down to zero · 4.2 one API, retired, small change · 4.3 serverless GPUs · 4.4 stored centrally
+  - 5.1 moving an alias · 5.2 25,000 queries per second · 5.3 drift · 5.4 files in Git
+  - 6.1 from SQL · 6.2 citations · 6.3 managed MCP servers, Unity Catalog object · 6.4 remember context, isolated environment · 6.5 data permissions
+  - 7.1 the step where it went wrong · 7.2 LLM judges, like a code change · 7.3 evaluation datasets
+  - 8.1 same way as tables and files, from data to model to agent · 8.2 who may call which model, logged for audit · 8.3 specific to agents
+  - 9.1 plain language · 9.2 defined once, certified definitions first · 9.3 no-code assistant · 9.4 approves each step · 9.5 limits the admins set
+  - 10.1 serverless, each user's permissions · 10.2 writes and explains code · 10.3 one interface
+  - 11.1 customer 360 profiles, identity resolution · 11.2 object-storage cost
+- **Check:** a headless check of the Story tab found 164 bullets, 70 in bold, no asterisk shown and no page error.
+
+## AI Search slide renamed (2026-10-12)
+
+- Slide 6.2 "AI Search & Knowledge Assistant" is now "AI Search", as given. Knowledge Assistant keeps its bullets.
+- **Second pass, same day:** the first pass was judged too light. 52 keywords were added, so 122 of the 164 bullets now have one, still at most one per bullet. Bullets that only link or introduce keep none. Added: 1.1 own copies, few colleagues · 1.2 same features, one machine · 1.3 unaudited · 1.4 live data, not tracked · 1.5 from scratch · 1.6 not measured, central view · 1.7 stays with them, needs a developer · 1.8 duplicate records · 2.1 transactions · 2.2 Declarative pipelines · 2.3 no separate vector store · 2.4 no replication pipeline · 2.5 sensitive data · 3.1 versioned in Git · 3.2 online store · 3.3 first baseline · 3.4 managed libraries · 4.1 one kind of endpoint, at serving time · 4.2 per token · 4.3 like any other model · 5.1 lineage · 5.2 batch scoring · 5.3 every request and response · 5.4 automated path · 6.1 fixed schema · 6.2 Genie Agents · 6.3 standard way, governed access · 6.4 any model · 6.5 Genie Agents · 7.1 latency and tokens · 7.2 live traffic · 7.3 label its answers · 8.1 encrypted · 8.2 cap spend · 8.3 least-privilege tool access · 9.1 their own permissions · 9.2 business context · 9.3 multi-step analyses · 9.4 plain-language request · 10.1 frameworks they already use, one place to govern · 10.2 command-line version · 10.3 templates and scaffolding · 11.1 activate audiences · 11.2 investigate alerts. The guide's rule now says about two bullets out of three.
+
+## Chapter 1 condensed (2026-10-12)
+
+The instruction was that chapter 1's titles read like novels and are too styled for a technical audience, and that its text must be much shorter and go straight to the point. The work started from the current state, with the pilots point at 1.4 and key phrases in bold.
+
+- **Titles (8 changed):** 1.1 Fragmented data; 1.2 Slow ML development; 1.3 Model provider sprawl; 1.4 Pilots stuck before production; 1.5 Unsafe agent access; 1.6 No AI evaluation or governance; 1.7 No self-service; 1.8 Customer and security silos.
+- **Text:** 42 bullets became 30, each one fact, with its key phrase in bold. No fact was added.
+  - Setup sentences and repeats were dropped: "Most companies already run analytics…", "A pilot can work on its extract.", "What experts know stays with them.".
+  - Bullets on related facts were merged, such as tuning with reproducibility (1.2), and the app's developer with its infrastructure (1.7).
+- **Links:** each is now one short line. The hands off line is kept word for word, because the cement quotes it.
+- **Prompt updated:** `docs/story-starting-situation.md` now asks for two- to four-word labels and 2 to 5 short sentences with the key phrase in bold.
+
+## Overview slide (2026-10-12)
+
+The instruction was a first slide that shows the whole path of the story before it starts, with a visual block per step.
+
+- **Rejected on the way:** a table of chapters, then sentences inside the blocks. The slide must not enumerate or explain. The presenter talks.
+- **Kept:** seven blocks, left to right with arrows: Data Layer, Models, Ops, Agents, Observability, Governance, Business Users. Each block holds only its modules as tiles. A few short points sit under it. No chapter numbers are shown.
+- **Choices from the review:**
+  - "Starting point" was removed.
+  - "Trust" was split into Observability and Governance. Observability comes first, as evaluation does in the Story.
+  - Production became Ops, and it sits between Models and Agents, as Production operations now does.
+  - Business Users keeps the developer tools and the domain applications, Databricks Apps included.
+- **Build:**
+  - The source is section M16 of `docs/story-notes.md`. Each tile names its slide, and a click on it opens the slide. The extractor fails on a slide id that does not exist.
+  - The slide is dark navy with red accents, full width above the chapter list, and it fits one 1440×900 screen. On narrow screens the blocks wrap.
+  - The story's title moved from above the opening onto this slide. "Overview" is the first entry of the chapter list.
+
+## Story title (2026-10-12)
+
+The story's title "From scattered data to AI in production" is now "AI in Production with Databricks", as given. It shows on the overview slide and heads `docs/story.md`.
+
+## Databricks Apps moved to AI for business users (2026-10-12)
+
+The instruction was to move Databricks Apps from Developer tools into AI for business users, and to make every change that follows. Only the Story changes: the trees keep Databricks Apps under "Developer productivity".
+
+- **Place:** the last slide of chapter 9, 9.6, right after Genie App Builder, which generates a Databricks App. Chapter 10 keeps the developer tools only: Genie Code (10.1) and AI Dev Kit & Omnigent (10.2).
+- **Renumbered:** points, links and "Additions" lines in `docs/story-notes.md`, `docs/story-additions.json`, `app/src/illustrations.json`, `illustration-picks.json`, `docs/story-pains.md`, the tiles of the overview (M16), the arc and coverage tables of `docs/story-design.md`, and the examples of the guide and of `docs/story-additions-setup.md`. The narrative Check blocks were not renumbered, as in the previous move.
+- **Junctions:**
+  - New link 9.5 → 9.6: "These apps, like the ones developers write, need a place to run." It gives the challenge's "each one" its subject.
+  - The link "Hosting is now handled. Writing the code still takes most of the time." is gone: Genie Code now opens chapter 10, and a chapter's first slide has no transition.
+  - Chapter 9 keeps its handoff word for word. Chapter 10 keeps "what do builders get?".
+- **Complete story (M15):** the application bullets moved from chapter 10 to chapter 9: the challenge "Each application usually needs its own infrastructure, identity and secrets." joins the other challenges, and "Databricks Apps hosts them next to the governed data." and "App Spaces governs who deploys and uses them." follow Genie App Builder. Chapter 10 keeps the code, Genie Code and the AI Dev Kit.
+- **Chapter 1:** unchanged. Point 1.7 already maps to chapters 9 and 10.
+- **Checks:** all 34 additions in place, none refused. Every illustration key matches a slide. The Story tab shows 9.6 after Genie App Builder, with no page error.
+
+## Keywords in bold in the complete story (2026-10-12)
+
+The instruction was to give the blocks outside the slides the same treatment, with the opening as the example.
+
+- **Scope:** the M15 blocks, which are the opening, the intro of chapters 2 to 11 and the closing. That makes 102 bullets.
+- **Rule:** the same as for the slides: about two bullets out of three, at most one bold per bullet. The handoff questions get none, so they stay word for word, and neither do the bullets that only link two blocks. The rule is now in `docs/story-cement.md`.
+- **Scan:** 63 keywords placed, in 12 blocks out of 12.
+  - Opening: several systems, same features, handled separately, stop before production, safely, verify the answers, few colleagues, its own infrastructure, their own silos.
+  - 2: Copies multiply, one open copy, same copy, watches its quality, fresh, governed copy.
+  - 3: cannot be reproduced, across teams, GPUs, trained by others.
+  - 4: keys and costs, same kind of endpoint, one API, same control, for years.
+  - 5: every version, Models drift, lineage, development to production, call tools.
+  - 6: company's own data, without putting it at risk, right documents, managed memory, has to be trusted.
+  - 7: seeing what it does, cannot be traced, step by step, experts' judgment, measured before each release.
+  - 8: outside the rules, unchecked, not mapped, same way as tables, every call, one set of rules.
+  - 9: every question, different things, plain language, certified definition, next to the governed data, common needs.
+  - 10: repetitive, common base, complete applications.
+  - 11: ready-made, one governed profile, investigates alerts.
+  - Closing: reproducible, one way of serving, under control, safely, who may use what, tools of their own, no longer stops at the pilot.
+- **Display:** the shared list renderer of `mindmap.js` now uses `mdBold`, and the search ignores the asterisks in these blocks. A headless check found 102 bullets, 63 with a keyword, no question in bold, no asterisk shown and no page error.
+
+## Capsules on chapter 1 (2026-10-12)
+
+The instruction was to add to each chapter 1 entry the capsules of the Databricks products that answer its problems.
+
+- **Source:** each point cites the capsules of its sources in the Check M1 block, which list the pains its sentences rest on. Nothing was chosen outside that list.
+- **Cards:** 40 references on the 8 points. 1.1 has 5, 1.2 has 7 (Feature Store and AutoML exist in both trees), 1.3 has 4, 1.4 has 1, 1.5 has 8, 1.6 has 6, 1.7 has 7 and 1.8 has 2.
+- **Left out:** Genie Agents on 1.7, because its sentence ("What experts know stays with them") was dropped when the chapter was condensed.
+- **Prompts updated:** `docs/story-starting-situation.md` now has chapter 1 cite those capsules, and the guide's scope says that chapter 1 gets no additions.
+
+## Story PDF (2026-10-16)
+
+The instruction was to produce a PDF of the Story that starts directly with the features, with a carefully finished layout. `scripts/story_pdf.py` writes `AI-in-Production-with-Databricks.pdf` from `app/src/story.json` and the two trees.
+
+- **Format:** 16:9, one slide per page, 50 pages. The overview is the cover, each chapter opens on a dark page, and the closing ends the deck.
+- **Left out:**
+  - the opening and chapter 1, as asked;
+  - the separate handoff box, because each chapter's intro already ends on the same question;
+  - the illustrations, which are still candidates;
+  - on the cards, "See in tree" and the tree tag, which only make sense in the app.
+- **Kept as they are:** every title, effect, transition, challenge, pivot, bullet and intro bullet, word for word.
+- **Layout choices:**
+  - Chapters are numbered from 1 in the PDF, so that it does not start at chapter 2.
+  - Each chapter opener shows the question it answers above its title. The question is the previous chapter's last intro bullet, which is moved there instead of being repeated; for the first chapter it is the question of chapter 1's handoff. The opener also lists the chapter's slides.
+  - A capsule present in both trees (Feature Store, AutoML) gets one card.
+  - A slide without challenges puts its bullets on the left and its cards on the right.
+  - The overview tiles and the chapter lists link to their slides (82 internal links).
+- **Fonts:** Google Fonts serves DM Sans as a variable font, which Chromium embeds as Type 3 fonts, rendered blurred by some viewers. The script builds static instances once, in `~/.cache/story_pdf`, so every font is embedded as TrueType.
+- **Fitting:** a slide whose body overflows gets a smaller body font, while its header keeps its size. The script fails if a page still overflows.
+- **Check:** every page was rendered to an image and reviewed.
+- **Logos and doc links (same day, on request):**
+  - Every page carries the Databricks logo top left and the Amadeus logo top right, in white on the dark pages. The logos are in `assets/logos`: the horizontal Databricks logo from the databricks.com header, and the Amadeus logo adopted in October 2023, from Wikimedia Commons, cropped to the wordmark. On slides, the chapter label sits between the two logos.
+  - The cards show their doc links again, 103 in all, as in the app. Labels are the app's, cut at a word. Release notes keep their last two segments ("release notes 2026 september" instead of "september"), and two links with the same label count as one.
+  - Fitting now reduces three slides: 4.2 (16 px), 6.3 (14.5 px) and 9.6 (17.25 px).
+
+## Noslop scan of the Story PDF (2026-10-16)
+
+The instruction was to run /noslop on the PDF, page by page, component by component, sentence by sentence. The scan covered 644 elements on 50 pages: titles, effects, transitions, challenges, pivots, bullets, chapter intros, overview labels, card names and notes, and the closing. 40 were changed and 604 kept. Every fact is kept.
+
+- **Fixed:**
+  - Setup lines built as conditions: "A storage layer is only useful once…" (2.2), "That helps only if…" (2.5), "An LLM judge is only useful if…" (7.3), and the chapter 3 handoff ("A model is only useful once applications can call it." became "Applications have to call them.").
+  - Sentences that joined two unrelated claims, split in two: 2.1's last bullet, and the intros of chapters 3, 6, 7, 8 and 9 ("…, but most of the people who need them do not write code", "No-code now covers the common needs, and developers build the rest").
+  - Pronouns with nothing to refer to on their slide: "Nothing tracks them" (5.1), "They are not governed" (8.1), "Much of it" (10.1), "It handles both cases" (4.1), "without putting it at risk" (chapter 6 intro).
+  - Literary or emphatic wording: "escapes governance" and "yet another store" (2.3), "in isolation" (3.3), "opens a front door to the data" (9.1), "every model and every provider" (chapter 4 intro).
+  - Narration: "Serving those models is the next step." and "The first step needs no agent."
+  - The closing's last line, "AI no longer stops at the pilot.", became "AI projects now go from pilot to production."
+  - Overview labels that were fragments: "Monitored", "Experts review", "Business users, no code", "Developers, their own tools", "Company data and tools".
+  - The 7.2 effect "Improve new agent versions quality." became "Improve the quality of new agent versions.", a grammar fix of a sentence given word for word.
+  - The chapter openers showed only the question, whose "it" or "them" had nothing to refer to. They now show the previous chapter's whole handoff.
+- **Kept on purpose:** the bold keywords, which were asked for; product names and the slide and chapter titles, which are plain labels; the card names and notes, which come from the trees and are plain descriptions; lists of real items, even of three.
+
+## One JSON source for the Story (2026-10-16)
+
+The instruction was to give the Story one source, in JSON and not in Markdown, done cleanly and with its consequences thought through. Before, the text lived in `docs/story-notes.md` and in `docs/story-additions.json`, and two scripts generated `app/src/story.json` from them.
+
+- **Source:** `app/src/story.json`, edited by hand. Every key is always present, the point keys follow the slide order, and the file is indented for reading. The content is unchanged: same 46 points, PDF text identical character for character, and the app shows the same Story.
+- **Sources of the sentences:** `docs/story-sources.json`, formerly `docs/story-additions.json`, keeps only the sources (38 slides, 246 sources) and no sentence.
+- **Retired:**
+  - `scripts/story_extract.py` and `docs/story.md` are deleted;
+  - `scripts/apply_story_additions.py` became `scripts/story_check.py`, which checks and writes nothing. It has `--diff` to list the changed sentences, and `--story` and `--sources` to check copies;
+  - `docs/story-additions-setup.md` became `docs/story-tools.md`, with the file's format;
+  - `docs/story-notes.md` moved to `docs/archive/`, under a banner. No script reads it.
+- **Build:** `app/build.py` runs `story_check.py` and stops on any error. It embeds `story.json` compact.
+- **Fact-check:** `scripts/apply_fact_check.py` now corrects the sentences of `story.json`.
+- **Taken out of the notes:**
+  - The map from chapter 1's points to the chapters that answer them is now in `docs/story-cement.md`, its only user.
+  - Chapter 1's sentences keep their sources at capsule level, in each point's `refs`. The row-level detail stays in the archive.
+  - The chain of questions is the chapters' handoffs in `story.json`, so the old spine table was not carried over.
+- **Prompts updated:** CLAUDE.md, the editorial guide (process, output, and the agent prompt: agents edit copies in /tmp and check them with `--story` and `--sources`), the chapter 1 prompt, the cement prompt, `story-design.md`, `architecture-synthesis.md` and `plan/platform-expansion.md`.
+- **Tests:**
+  - On the current file, the check finds 0 errors and 34 warnings, as before.
+  - It catches 9 kinds of errors: a wrong id, a missing key, an unknown key, an unclosed `**`, a capsule not found, a stale source, an unsourced sentence, a tile pointing to no slide, and chapters out of order.
+  - The build stops on a broken file.
+- **Consequence:** a session that still follows the old instructions would edit the archive and change nothing. CLAUDE.md now points to `story.json`.
+
+## Sources inside the slides (2026-10-17)
+
+The instruction was to stop keeping the sources in a separate file, with everything that follows from it. `docs/story-sources.json` was tied to `story.json` by slide id only, so every move of chapters or slides had to renumber its keys by hand. Its two reasons, keeping the sources out of the hand-edited text and out of the app, are handled inside one file.
+
+- **Format:** each slide of `app/src/story.json` has a `sources` key after `refs`, with `effect`, `challenge`, `pivot` and `report`, always present. The 38 entries and 246 sources moved unchanged. Chapter 1's slides have empty lists.
+- **Deleted:** `docs/story-sources.json`. Its `about` text is now in `docs/story-tools.md`.
+- **Check:** `scripts/story_check.py` reads the sources from each slide and checks their shape. `--sources` is gone. The source texts are not sentences: the `**` check and `--diff` skip them.
+- **Build:** `app/build.py` removes `sources` before embedding the Story, so the app is byte-identical to before.
+- **Fact-check:** `scripts/apply_fact_check.py` no longer treats source texts as sentences. A corrected tree field now also updates the sources that quote it, which no script did before.
+- **Docs updated:** CLAUDE.md, `docs/story-tools.md`, and the editorial guide: the source of the Story, the output format, the process, the three examples, and the agent prompt, which now works on one copy.
+- **Tests:**
+  - On the current file, the check finds 0 errors and 34 warnings, as before.
+  - It catches a stale source text, a ref out of range, an unsourced effect, a missing `sources` key, a mistyped `report`, an unknown key and a field that does not exist.
+  - The built HTML is identical to before, byte for byte, and the PDF text is identical.
+  - `sync_sources` updates the one source that quotes a corrected field.
+
+## The Story follows the plan v2 (2026-10-17)
+
+The instruction was to align everything on the plan v2 given in the chat, and to respect it. That plan is now `docs/feature-tree.md`, word for word, with its explanation of why v1 was replaced. Only that plan and its explanation were used as input. The working files of the verification session were not.
+
+- **Structure:** the title "AI and Data Science on Databricks", the overview "Databricks platform architecture", 9 chapters, 47 slides and the appendix "capability map by section", in the plan's order and with its titles. Each slide carries its `features`, the plan's children. The "Challenges" chapter is gone, as the plan has none.
+- **Titles:** the plan's labels. Its verification markers ("to verify", "not verified") never show, because the Story is customer facing. A slide's title also leaves out the plan's "(see …)" pointer. The features keep it.
+- **Check:** `scripts/story_check.py` parses the plan and fails on any difference in the title, overview, chapters, slides, titles, features or appendix. It also fails on a shown marker. Sources are now required on every chapter. The check on closeness to chapter 1 is gone with chapter 1. Eight injected faults were all caught.
+- **Text:** the validated sentences were kept word for word where a v2 slide receives them. They were changed only where the plan forces it:
+  - **Legacy names:** the plan's current names replace them. Feature Engineering in Unity Catalog, Models in Unity Catalog, Data Quality Monitoring, Declarative Automation Bundles and Spark Declarative Pipelines.
+  - **Not in the plan:** these sentences were cut. Supervisor Agent (slide 6.5 of v1), Knowledge Assistant, AutoML, Lakebase Search, Row Zero, MLOps Stacks, the AI Dev Kit, and the model-churn bullets of Foundation Model APIs.
+  - **Split slides:** a sentence went to the slide that holds its feature. Predictive Optimization became 1.4. The Prompt Registry became 5.3. Unity Gateway is split over 4.1 and 6.2 to 6.5.
+  - **Merged slides:** the v1 duplicates are merged. 2.3 and 2.4 became 1.3, 4.1, 5.2 and the inference tables became 3.5, 3.3 and 5.1 became 3.4, 7.2 and 7.3 became 5.2, 9.5 and 9.6 became 7.6, 3.1 and 10.1 became 3.1.
+  - **Fine-tuning:** it now runs on AI Runtime, so the pivot of 4.2 names AI Runtime.
+  - **Feature order:** the bullets follow it. In 3.1, Genie Code's effect, challenge and pivot were dropped so that the notebooks come first. In 3.3, the pivot names Databricks Runtime for Machine Learning, the first feature.
+- **New slides:** they rest on capsules where some exist, such as 4.8 on managed memory and 8.1 on Omnigent. Otherwise their bullets come only from the plan's labels, with no effect, challenge or pivot. These are 2.1, 2.2, 2.4, 2.5, 2.6, 4.7, 4.9, 6.5, 7.4, 7.7, 7.8 and 8.2. Clean Rooms and Marketplace have no descriptor in the plan, so their bullets state what the products are.
+- **Linking texts:** each chapter has a short factual intro. The handoffs, the opening and the closing are empty, because the plan dropped the problem framing and the chain of questions. `docs/story-cement.md` is rewritten to match.
+- **Trees:** the plan's explanation is applied to them.
+  - Feature Store became Feature Engineering in Unity Catalog in both trees.
+  - MLflow Model Registry and Model Registry & governance became Models in Unity Catalog.
+  - Model fine-tuning became Fine-tuning (on AI Runtime). Its note says Foundation Model Fine-tuning was removed on Aug 14, 2026.
+  - Supervisor Agent and Knowledge Assistant are legacy since Oct 12, 2026.
+  - Agents run on Agent Runtime with AgentKit, and the older agent servers are legacy since Oct 5, 2026.
+  - LTAP is an architecture.
+  - The AI Dev Kit is a field GitHub project with no docs page, and its docs link is gone.
+  - The other tree content is unchanged, and the trees keep their own structure.
+- **App:** the overview shows the overview's title and one block per chapter. The appendix closes the Story, with an "Appendix" entry in the chapter list. The search covers the features.
+- **PDF:** it is now named `AI-and-Data-Science-on-Databricks.pdf` and covers every chapter. The appendix takes three pages, four columns each. The old PDF and its copy in `app/static` are deleted.
+- **Illustrations:** the candidates and the pick moved to the new ids. The 11 candidates of the Challenges chapter and of the Supervisor Agent were dropped.
+- **Archived:** `docs/story-starting-situation.md` and `docs/story-pains.md`, the docs of the v1 chapter 1, are in `docs/archive/` under a banner.
+- **Docs updated:** CLAUDE.md, `docs/story-tools.md`, `docs/story-design.md`, the editorial guide and `docs/story-cement.md`. The guide covers the scope, the title rule, a new "Bullets and the plan" section, the pivot examples, the three examples regenerated from the current slides, and the agent prompt.
+- **Kept warnings:** 17. All but one are on validated sentences carried over word for word.
+  - 1.1, 2.3, 3.2, 4.1, 4.2, 4.3, 6.1 and 7.1 have an effect that shares a word with its challenge or lead.
+  - In 1.2, "by hand" is followed by the pivot's "hands".
+  - In 4.1, 4.4, 6.2 and 7.5, a pivot shares a word of a product's name with the first bullet. The exception is 4.4, where that word belongs to ai_prep_search, a feature of the plan.
+  - 3.3 has an effect close to the AI Runtime bullet.
+  - In 5.2, the lead's "score" is taken up by the challenge.
+  - In 7.1, "data" appears in the effect, in the challenge and in the pivot.
+  - In 7.2, the challenge's "spread" is taken up by the pivot.

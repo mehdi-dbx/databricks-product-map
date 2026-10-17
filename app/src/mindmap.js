@@ -155,10 +155,10 @@ function docsFor(n){
   if(!docs.length){ let p=n._p; while(p){ if(p.docs&&p.docs.length){ docs=p.docs; break; } p=p._p; } }
   return docs;
 }
-function docsHTML(n){
-  const docs=docsFor(n);
+function docsLinks(docs){
   return docs.length?`<div class="pdocs">`+docs.map(u=>`<a href="${u}" target="_blank" rel="noopener">↗ ${esc(shortDoc(u))}</a>`).join('')+`</div>`:'';
 }
+function docsHTML(n){ return docsLinks(docsFor(n)); }
 function metaFor(n){
   let m='';
   const par=(n._p&&n._p._depth>=1)?n._p:null;
@@ -215,7 +215,6 @@ function showPanel(n){
   panelEl.style.borderTopColor=(n.s&&SC[n.s])?SC[n.s]:'var(--red)';
   let r='';
   if(n.s) r+=`<span class="chip s-${n.s}">${SLABEL[n.s]||n.s}</span>`;
-  if(n.c==='verify') r+=`<span class="conf verify">⚠ to verify</span>`;
   if(n.new) r+=`<span style="color:var(--red);font-weight:700;font-size:0.8rem">✦ DAIS</span>`;
   document.getElementById('prow').innerHTML=r;
 
@@ -365,12 +364,20 @@ function nodeByPath(tree,path){
   for(let i=1;i<path.length;i++){ n=(n.children||[]).find(c=>c.n===path[i]); if(!n) return null; }
   return n;
 }
+// the panel's docs for a Story capsule: its own, else the nearest ancestor's, found along the
+// path because the capsule's tree may not be loaded (no _p links)
+function pathDocs(ref){
+  let n=TREES[ref.tree]; const chain=[n];
+  for(let i=1;i<ref.path.length;i++){ n=(n.children||[]).find(c=>c.n===ref.path[i]); chain.push(n); }
+  const d=chain.reverse().find(x=>x&&x.docs&&x.docs.length); return d?d.docs:[];
+}
 function capCard(ref,key){
   const n=nodeByPath(ref.tree,ref.path); if(!n) return '';
   const chip=n.s?`<span class="chip s-${n.s}">${SLABEL[n.s]||n.s}</span>`:'';
-  return `<button class="scap" data-ref="${key}">`+
+  return `<div class="scap" role="button" tabindex="0" data-ref="${key}">`+
     `<div class="sct"><span class="stree">${ref.tree.toUpperCase()}</span><span>${esc(dn(n.n))}</span>${chip}</div>`+
-    `<div class="scn">${esc(n.note||'')}</div><div class="scgo">See in tree →</div></button>`;
+    `<div class="scn">${esc(n.note||'')}</div>`+
+    `<div class="scfoot"><span class="scgo">See in tree →</span>${docsLinks(pathDocs(ref))}</div></div>`;
 }
 // ---- illustration candidates (temporary, while the illustrations are chosen) ----
 // a click on an image shows it full screen; its checkbox picks or unpicks it. The picks file
@@ -434,35 +441,69 @@ const illusTg=document.getElementById('illusTg');
 illusTg.checked=localStorage.getItem('illusShow')!=='0';
 document.body.classList.toggle('illus-off',!illusTg.checked);
 illusTg.onchange=()=>{ localStorage.setItem('illusShow',illusTg.checked?'1':'0'); document.body.classList.toggle('illus-off',!illusTg.checked); };
+// the Story serves as slides: a text of two or more sentences shows one bullet per sentence
+const sentencesOf=t=>t?t.split(/(?<=[.!?])\s+(?=[A-Z"“(])/):[];
+function bullets(items,cls){ return items&&items.length?`<ul class="${cls} slist">${items.map(x=>`<li>${mdBold(x)}</li>`).join('')}</ul>`:''; }
+function prose(text,cls){ const s=sentencesOf(text); return !text?'':s.length>1?bullets(s,cls):`<p class="${cls}">${esc(text)}</p>`; }
+// the first slide: the platform architecture, one block per chapter, its slides as tiles (story.json, overview)
+function overviewHtml(th){
+  const ov=STORY.overview; if(!ov||!ov.length) return '';
+  const where={}; STORY.chapters.forEach((c,ci)=>c.points.forEach((p,pi)=>{ where[p.id]=`ss-${ci}-${pi}`; }));
+  return `<section class="schap sover" id="sch-over" data-ch="over"><div class="sover-k">Overview</div>`+
+    (th?`<h1 class="sover-t">${esc(th.title)}</h1>`:'')+(th&&th.overview?`<p class="sover-s">${esc(th.overview)}</p>`:'')+
+    `<div class="sov-path" style="--steps:${ov.length}">${ov.map((b,bi)=>`<div class="sov-step"><div class="sov-card">`+
+      `<div class="sov-h"><span class="sov-n">${bi+1}</span><span class="sov-name">${esc(b.name)}</span></div>`+
+      `<div class="sov-tiles">${b.tiles.map(tl=>`<button type="button" class="sov-tile" data-go="${where[tl.id]}">${esc(tl.label)}</button>`).join('')}</div></div>`+
+      (b.points.length?`<ul class="sov-pts">${b.points.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'')+
+      `</div>`).join('')}</div></section>`;
+}
+// the appendix: the capability map, every slide with its features from the plan (docs/feature-tree.md)
+const featureText=fs=>fs.map(f=>f.name+(f.children.length?` (${featureText(f.children)})`:'')).join(' · ');
+function appendixHtml(){
+  const ap=STORY.appendix; if(!ap) return '';
+  const title=ap.title.charAt(0).toUpperCase()+ap.title.slice(1);
+  return `<section class="schap sapp" id="sch-app" data-ch="app"><div class="schap-h"><h2 class="schap-t">Appendix: ${esc(title)}</h2></div>`+
+    `<div class="sapp-map">${STORY.chapters.map((c,ci)=>`<div class="sapp-sec"><div class="sapp-h"><span>${c.num}</span>${esc(c.title)}</div>`+
+      c.points.map((p,pi)=>`<div class="sapp-pt"><a href="#ss-${ci}-${pi}" class="sapp-t"><span>${esc(p.id)}</span>${esc(p.title)}</a>`+
+        (p.features.length?`<ul>${p.features.map(f=>`<li>${esc(f.name)}${f.children.length?`<span>${esc(featureText(f.children))}</span>`:''}</li>`).join('')}</ul>`:'')+
+        `</div>`).join('')+`</div>`).join('')}</div></section>`;
+}
 function buildStory(){
   const chs=STORY.chapters, th=STORY.thread;   // thread: the complete story (docs/story-cement.md)
+  const over=overviewHtml(th);
   const rail=`<div class="srail"><div class="srail-t">Chapters</div>`+
-    chs.map(c=>`<a href="#sch-${c.num}" data-ch="${c.num}"><b>${c.num}</b><span>${esc(c.title)}</span></a>`).join('')+
-    (th&&th.closing?`<a href="#sch-end" data-ch="end"><b>·</b><span>Closing</span></a>`:'')+`</div>`;
-  const top=th?`<div class="sthread"><h1 class="sthread-t">${esc(th.title)}</h1><p class="sopen">${esc(th.opening)}</p></div>`:'';
-  const close=th&&th.closing?`<section class="schap" id="sch-end" data-ch="end"><div class="schap-h"><h2 class="schap-t">Closing</h2></div>`+
-    `<p class="sintro">${esc(th.closing)}</p></section>`:'';
+    (over?`<a href="#sch-over" data-ch="over"><b>·</b><span>Overview</span></a>`:'')+
+    chs.map((c,ci)=>`<a href="#sch-${c.num}" data-ch="${c.num}"><b>${c.num}</b><span>${esc(c.title)}</span></a>`+
+      // sub-entries: one per slide, shown only for the chapter being read
+      `<div class="srail-sub" data-ch="${c.num}">${c.points.map((p,pi)=>`<a href="#ss-${ci}-${pi}">${esc(p.title)}</a>`).join('')}</div>`).join('')+
+    (th&&th.closing&&th.closing.length?`<a href="#sch-end" data-ch="end"><b>·</b><span>Closing</span></a>`:'')+
+    (STORY.appendix?`<a href="#sch-app" data-ch="app"><b>·</b><span>Appendix</span></a>`:'')+`</div>`;
+  // the story's title goes on the overview when there is one
+  const top=th?`<div class="sthread">${over?'':`<h1 class="sthread-t">${esc(th.title)}</h1>`}${bullets(th.opening,'sopen')}</div>`:'';
+  const close=th&&th.closing&&th.closing.length?`<section class="schap" id="sch-end" data-ch="end"><div class="schap-h"><h2 class="schap-t">Closing</h2></div>`+
+    `${bullets(th.closing,'sintro')}</section>`:'';
   const body=chs.map((c,ci)=>
     `<section class="schap" id="sch-${c.num}" data-ch="${c.num}">`+
     `<div class="schap-h"><span class="schap-n">${c.num}</span><h2 class="schap-t">${esc(c.title)}</h2></div>`+
-    (c.intro?`<p class="sintro">${esc(c.intro)}</p>`:'')+
+    bullets(c.intro,'sintro')+
     c.points.map((p,pi)=>
-      `<article class="sslide" data-ci="${ci}" data-pi="${pi}"><h3>${esc(p.title)}</h3>`+
+      `<article class="sslide" id="ss-${ci}-${pi}" data-ci="${ci}" data-pi="${pi}"><h3>${esc(p.title)}</h3>`+
       (p.effect?`<p class="seff">${esc(p.effect)}</p>`:'')+
-      (p.lead?`<p class="slead">${esc(p.lead)}</p>`:'')+
+      prose(p.lead,'slead')+
       // challenge, then the pivot that leads to the bullets (docs/story-editorial-guide.md)
-      ['challenge','pivot'].map(k=>p[k]?`<p class="sadd">${esc(p[k])}</p>`:'').join('')+
-      `<ul class="sbul">${p.bullets.map(b=>`<li>${esc(b)}</li>`).join('')}</ul>`+
+      (p.challenge?`<div class="schbox"><div class="schbox-l">Challenges</div>${prose(p.challenge,'sadd schal')}</div>`:prose(p.challenge,'sadd schal'))+(p.pivot?`<p class="sadd">${mdBold(p.pivot)}</p>`:'')+
+      `<ul class="sbul">${p.bullets.map(b=>`<li>${mdBold(b)}</li>`).join('')}</ul>`+
       (p.refs.length?`<div class="scaps">${p.refs.map((r,ri)=>capCard(r,`${ci}-${pi}-${ri}`)).join('')}</div>`:'')+
       illusRow(p.id)+
       `</article>`).join('')+
-    (c.handoff?`<p class="shand">${esc(c.handoff)}</p>`:'')+
+    prose(c.handoff,'shand')+
     `</section>`).join('');
-  storyView.innerHTML=`<div class="story">${rail}<div class="sbody">${top}${body}${close}</div></div>`;
+  storyView.innerHTML=`<div class="story">${over}${rail}<div class="sbody">${top}${body}${close}${appendixHtml()}</div></div>`;
   // rail: highlight the chapter being read
-  const links=[...storyView.querySelectorAll('.srail a')];
+  const links=[...storyView.querySelectorAll('.srail a')], subs=[...storyView.querySelectorAll('.srail-sub')];
   const obs=new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){
-    links.forEach(a=>a.classList.toggle('on',a.dataset.ch===e.target.dataset.ch)); } }); },
+    links.forEach(a=>a.classList.toggle('on',a.dataset.ch===e.target.dataset.ch));
+    subs.forEach(d=>d.classList.toggle('open',d.dataset.ch===e.target.dataset.ch)); } }); },
     {root:storyView, rootMargin:'0px 0px -70% 0px'});
   storyView.querySelectorAll('.schap').forEach(s=>obs.observe(s));
   links.forEach(a=>a.onclick=e=>{ e.preventDefault(); storyView.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'}); });
@@ -471,7 +512,7 @@ function buildStory(){
 const storyPrev=document.getElementById('storyPrev'), storyNext=document.getElementById('storyNext');
 function storyStops(){
   const top=storyView.getBoundingClientRect().top, st=storyView.scrollTop, stops=[];
-  storyView.querySelectorAll('.schap').forEach(sec=>{
+  storyView.querySelectorAll('.schap,.sthread').forEach(sec=>{
     const slides=[...sec.querySelectorAll('.sslide')];
     [sec, ...slides.slice(1)].forEach(el=>stops.push(el.getBoundingClientRect().top-top+st-16));
   });
@@ -497,6 +538,8 @@ document.addEventListener('keydown',e=>{
   else if(e.key==='ArrowUp'){ e.preventDefault(); storyStep(-1); }
 });
 storyView.addEventListener('scroll',updateStoryNav,{passive:true});
+// a tile of the overview opens its slide
+storyView.addEventListener('click',e=>{ const tl=e.target.closest('.sov-tile'); if(tl) reveal(storyView,document.getElementById(tl.dataset.go),true); });
 function showStory(){
   document.body.classList.add('story-mode');
   if(!storyBuilt){ buildStory(); storyBuilt=true; }
@@ -522,7 +565,7 @@ function snippet(text,q){
   return (a>0?'…':'')+hl(text.slice(a,b),q)+(b<text.length?'…':'');
 }
 function slideTexts(p){
-  const t=[p.title,p.effect,p.lead,p.challenge,p.pivot,...p.bullets];
+  const t=[p.title,p.effect,p.lead,p.challenge,(p.pivot||'').replace(/\*\*/g,''),...p.bullets.map(b=>b.replace(/\*\*/g,'')),featureText(p.features||[])];
   p.refs.forEach(r=>{ const n=nodeByPath(r.tree,r.path); if(n) t.push(dn(n.n), n.note||''); });
   return t.filter(Boolean);
 }
@@ -536,11 +579,11 @@ function reveal(view,el,flash,center){
 }
 function storyFind(q){
   const th=STORY.thread;   // the opening and the closing of the complete story
-  if(th) [['Opening',th.opening,'.sthread'],['Closing',th.closing,'#sch-end']].forEach(([name,text,sel])=>{
+  if(th) [['Opening',(th.opening||[]).join(' ').replace(/\*\*/g,''),'.sthread'],['Closing',(th.closing||[]).join(' ').replace(/\*\*/g,''),'#sch-end']].forEach(([name,text,sel])=>{
     if(text&&text.toLowerCase().includes(q)) findRes.push({crumb:`The story · ${name}`, title:th.title, snip:snippet(text,q),
       go:()=>reveal(storyView,storyView.querySelector(sel),false)}); });
   STORY.chapters.forEach((c,ci)=>{
-    const ct=[c.title,c.intro||'',c.handoff||''].find(s=>s.toLowerCase().includes(q));
+    const ct=[c.title,(c.intro||[]).join(' ').replace(/\*\*/g,''),c.handoff||''].find(s=>s.toLowerCase().includes(q));
     if(ct) findRes.push({crumb:`${c.num} · ${c.title} · chapter`, title:c.title, snip:snippet(ct,q),
       go:()=>reveal(storyView,storyView.querySelector(`#sch-${c.num}`),false)});
     c.points.forEach((p,pi)=>{ const hit=slideTexts(p).find(s=>s.toLowerCase().includes(q));
@@ -606,7 +649,7 @@ function gotoNode(tree,path){
   pendingFocus=true; setTimeout(()=>{ if(pendingFocus){ pendingFocus=false; focusSelected(); } },320);
 }
 storyView.addEventListener('click',e=>{
-  const b=e.target.closest('.scap'); if(!b) return;
+  const b=e.target.closest('.scap'); if(!b || e.target.closest('a')) return;   // a doc link opens, the card does not move
   const [ci,pi,ri]=b.dataset.ref.split('-').map(Number);
   const ref=STORY.chapters[ci].points[pi].refs[ri];
   storyReturn={scroll:storyView.scrollTop, key:b.dataset.ref};
@@ -615,6 +658,8 @@ storyView.addEventListener('click',e=>{
   history.pushState({fromStory:true},'');
   gotoNode(ref.tree, ref.path);
 });
+// a capsule card is a div (it holds links), so Enter and Space open it like a button
+storyView.addEventListener('keydown',e=>{ if(e.target.classList.contains('scap') && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); e.target.click(); } });
 // way back to the Story: the pill, Esc, or the browser / trackpad back gesture
 const btnBack=document.getElementById('backToStory');
 let storyReturn=null;                       // {scroll, key} of the slide we left

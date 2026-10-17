@@ -240,8 +240,8 @@ shared node. Also `AREAS = manifest` and `STORY`.
 2. Resolve the 8 duplicated names one at a time. Same feature: merge into one home node and
    place a `ref` in the other tree. Different scope: keep both and add `see`. Proposed for
    Feature Store and AutoML: merge, with DS as home, since the DS copies are the richer ones.
-3. Move Story references from name path to id. `scripts/story_extract.py` writes ids, and the
-   build gate checks ids.
+3. Move Story references from name path to id. `app/src/story.json` holds ids, and
+   `scripts/story_check.py` and the build gate check them.
 4. The AI capsules that belong to another area (§3) stay in the AI tree until that area is
    built. Then each moves to its home tree with the same id, and the AI tree keeps a `ref` or
    a `see` (rule in D2).

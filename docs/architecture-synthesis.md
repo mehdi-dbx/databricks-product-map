@@ -191,7 +191,7 @@ words. Here it is optional, with a fixed format.
   - A new node: `field: "node"`, the node as `value`, plus `parent` and `ordinal`.
   - A placement: `field: "ref"`, plus `tree`, `parent` and `ordinal`.
 - Story records carry `{"story": "7.2", "part": "…", "bullet": n}` instead of `id`. They are
-  applied to `docs/story-notes.md`, as today.
+  applied to `app/src/story.json`, as today.
 
 ### 4.6 Applier and log
 

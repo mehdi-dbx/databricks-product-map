@@ -5,6 +5,7 @@ An internal Databricks field app, `ai-tree-mindmap`. It has four tabs: AI Ecosys
 ## Build and deploy
 
 - Build: `python3 app/build.py` writes `app/static/index.html` and `ai-tree-mindmap.html` from `app/src/` and `docs/internal-decks.md`.
+- Story PDF: `python3 scripts/story_pdf.py` writes `AI-and-Data-Science-on-Databricks.pdf`, one 16:9 page per slide, and a copy in `app/static` that the deployed app serves at `/AI-and-Data-Science-on-Databricks.pdf`.
 - Deploy only when asked:
   - `databricks sync app /Workspace/Users/mehdi.lamrani@databricks.com/ai-tree-mindmap --profile fevm-agent --full`
   - then `databricks apps deploy ai-tree-mindmap --source-code-path /Workspace/Users/mehdi.lamrani@databricks.com/ai-tree-mindmap --profile fevm-agent`
@@ -14,11 +15,12 @@ An internal Databricks field app, `ai-tree-mindmap`. It has four tabs: AI Ecosys
 
 ## The Story
 
-- **Source:** `docs/story-notes.md`. `scripts/story_extract.py` generates `app/src/story.json` and `docs/story.md` from it. Never edit those two by hand.
-- **The points of chapters 2–11:** `docs/story-editorial-guide.md`, the rules, the process and how to delegate.
-- **Chapter 1, the starting situation:** `docs/story-starting-situation.md`.
-- **The complete story, section M15:** `docs/story-cement.md`.
-- **Tools:** `docs/story-additions-setup.md`. Additions go through `scripts/apply_story_additions.py`, with `--check` first.
+- **Plan:** `docs/feature-tree.md`, version 2 of 2026-10-17. It sets the chapters, the slides, their titles and their features. Respect it word for word, and change it only on request. The check fails when the Story leaves it.
+- **Source:** `app/src/story.json`, the only file of the Story. It is edited by hand. Each slide holds its text and, in `sources`, the tree fields that its effect, challenge and pivot rest on. Its format is in `docs/story-tools.md`.
+- **After an edit:** `python3 scripts/story_check.py`, then `python3 app/build.py`, then `python3 scripts/story_pdf.py`. The build stops if the check finds an error.
+- **The slides:** `docs/story-editorial-guide.md`, the rules, the process and how to delegate.
+- **The chapter intros:** `docs/story-cement.md`.
+- **Archive:** `docs/archive/` holds `story-notes.md`, the source until 2026-10-16, and the docs of the v1 chapter 1, which the plan dropped. No script reads them.
 - **Decisions:** log every one, with its reason, in `docs/story-journal.md`.
 
 ## Rules for any change

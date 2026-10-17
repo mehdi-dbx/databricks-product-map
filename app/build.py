@@ -54,9 +54,22 @@ def validate_types(root, tree_name):
 validate_types(ai_data, "ai-tree.json")
 validate_types(ds_data, "ds-tree.json")
 
-# ---- story: every capsule the Story cites must exist in the trees ----
+# ---- story: app/src/story.json is edited by hand; scripts/story_check.py checks its structure,
+# its capsule references and the sources of its sentences, and the build stops on any error ----
 story_text = (SRC / "story.json").read_text(encoding="utf-8").strip()
 story_data = json.loads(story_text)
+_check = HERE.parent / "scripts" / "story_check.py"
+if _check.exists():
+    import subprocess  # noqa: E402
+    import sys  # noqa: E402
+    _r = subprocess.run([sys.executable, str(_check)], capture_output=True, text=True)
+    if _r.returncode:
+        _errs = "\n".join(l for l in _r.stdout.splitlines() if "ERROR" in l)
+        raise SystemExit(f"BUILD FAILED — app/src/story.json has errors (python3 scripts/story_check.py):\n{_errs}")
+# the sources of the sentences serve the check only: the app does not carry them
+story_app = {**story_data, "chapters": [
+    {**ch, "points": [{k: v for k, v in p.items() if k != "sources"} for p in ch["points"]]}
+    for ch in story_data["chapters"]]}
 
 
 def tree_paths(root):
@@ -79,7 +92,7 @@ missing = [(p["id"], " / ".join(r["path"]))
 if missing:
     lines = "\n".join(f"  - point {i}: {path}" for i, path in missing)
     raise SystemExit(f"BUILD FAILED — {len(missing)} Story reference(s) point to no tree node:\n{lines}\n"
-                     f"Regenerate with: python3 scripts/story_extract.py")
+                     f"Fix the refs in app/src/story.json.")
 
 # ---- decks tab: docs/internal-decks.md rendered to HTML at build time ----
 import html as _html  # noqa: E402
@@ -194,7 +207,7 @@ banner = "<!-- AUTO-GENERATED from app/src/ by app/build.py — edit the sources
 # the images stay in app/static/img/; each output reaches them by its own relative path
 outputs = {HERE / "static" / "index.html": "img/", HERE.parent / "ai-tree-mindmap.html": "app/static/img/"}
 for out, img_base in outputs.items():
-    script = (f'const TREES = {{ "ai": {ai_text}, "ds": {ds_text} }};\nconst STORY = {story_text};\n'
+    script = (f'const TREES = {{ "ai": {ai_text}, "ds": {ds_text} }};\nconst STORY = {json.dumps(story_app, ensure_ascii=False, separators=(',', ':'))};\n'
               f'const ILLUS = {illus_text};\nconst IMG_BASE = "{img_base}";\n\n{js}')
     html = banner + template.replace("{{STYLES}}", css).replace("{{DECKS}}", decks_html).replace("{{SCRIPT}}", script)
     out.parent.mkdir(parents=True, exist_ok=True)

@@ -1,5 +1,7 @@
 # Story starting situation
 
+> **Archived on 2026-10-17.** The Story follows the plan in `docs/feature-tree.md` (v2), which has no "Challenges" chapter: it opens with the platform architecture and goes straight to the features. This file describes chapter 1 of v1. No script reads it.
+
 These are the instructions for rewriting the starting situation of the Story, chapter 1 "Challenges", as a complete synthesis of the pains that the Story solves, and then for updating the Story with it. Follow them exactly.
 
 Today, chapter 1 states two problems: data spread across systems, and AI pilots blocked before production. That is too thin. The Story solves far more, and the opening must show all of it, so that each chapter then answers part of the situation.
@@ -37,37 +39,44 @@ Write steps 1 and 2 to `docs/story-pains.md`, chapter by chapter and then capsul
 
    Use only the wording of the pains. Order the groups like the chapters that solve them, so that the opening announces the Story in order.
 2. Write the new chapter 1, with one point per group:
-   - **Title:** the challenge, in plain words.
-   - **Text:** 2 to 4 sentences that synthesize the group's pains. Name no product: the products come in the later chapters. The point cites no capsule.
+   - **Title:** the challenge, in plain words. Keep it short and synthetic, with one idea and no list of notions. See the "Title" section of `docs/story-editorial-guide.md`: chapter 1 is its only exception, since its titles name no product.
+     - The audience is technical. Write a label of two to four words that names the problem directly, such as "Fragmented data", "Model provider sprawl", "Unsafe agent access" or "Pilots stuck before production".
+     - Write no sentence and no styled phrase. "AI pilots do not make it to Production", "Every model provider handled separately" and "Data spread across systems" are too long.
+     - Use no relative clause, as in "Agents that cannot reach data and tools safely", and no vague verb, as in "Business users and developers held back".
+   - **Text:** 2 to 5 short sentences that synthesize the group's pains, one fact each, with its key phrase in bold as `**…**`. Go straight to the problem: no setup sentence such as "Most companies already run analytics and have started with AI.", and keep each link sentence to one short line. Name no product in the text: the products come in the later chapters. The point cites, in its `refs`, the capsules whose pains its sentences rest on. Drop a capsule whose sentence was dropped.
    - Start from the two current points, 1.1 and 1.2. Keep their sentences unless the synthesis already says the same thing. List every sentence you drop or change.
-   - Write a link sentence between consecutive points, as the other chapters do, with `↳ **Link 1.k → 1.k+1 (reason).**`.
-   - Keep the chapter's title and its "Hands off" line word for word. Chapter 2 receives it.
+   - Write a link sentence between consecutive points, as the other chapters do. It is the `lead` of the next point.
+   - Keep the chapter's `title` and `handoff` word for word. Chapter 2 receives the handoff.
    - Repeat no lead and no bullet of a later chapter, even in other words. Chapter 1 announces each problem in its own words, and the later chapters give the detail. In the first run, a sentence of 1.2 copied the lead of 3.2 and had to be reworded.
 3. Follow the same rules as the rest of the Story:
    - no scene, character or example company;
    - no number or fact that is not in the pains;
    - no exaggeration;
    - no slogans, taglines, refrains, or formulas such as "One set of rules: …";
-   - no jargon that a C-level reader would not know, unless you explain it.
+   - no jargon that a C-level reader would not know, unless you explain it;
+   - no term repeated from one sentence to the next, when a pronoun or another word would do;
+   - one claim per sentence. Join two clauses only when the second follows from the first. A sentence of three clauses, such as "Token spend grows without warning, calls to outside models go unaudited, and relying on a single vendor creates lock-in.", is split;
+   - no mirrored clauses, such as "nobody sees which step failed, and nobody measures its quality" or "the people who use data and AI every day, and those who build with it";
+   - no setup line that contrasts two things, such as "A model on its own only answers.".
 
 ## Step 4 — Update the Story
 
-1. Copy the notes: `cp docs/story-notes.md /tmp/story-notes.before.md`.
-2. In `docs/story-notes.md`, section `## M1 — Chapter 1. Challenges`:
-   - Replace the points and their links with the new ones.
-   - Keep the "Receives" and "Hands off" lines as they are.
-   - Rewrite the Check M1 block. For each point, give the chapters that answer its group and the pains that its sentences rest on, by capsule. Then the ending can close the loop.
-3. Run `python3 scripts/story_extract.py`, then `python3 app/build.py`.
-4. Update `docs/story-cement.md`. It relies on "the four obstacles of point 1.2" in its inputs, its opening, its closing and its checks. Make it rely on the points of the new chapter 1 and on the mapping in Check M1.
+1. Copy the file: `cp app/src/story.json /tmp/story.before.json`.
+2. In `app/src/story.json`, chapter 1 (the first entry of `chapters`):
+   - Replace its points. Each one has its `title`, its `lead` (the link sentence from the previous point, empty for 1.1), its `bullets` and its `refs`. Its `effect`, `challenge` and `pivot` stay empty.
+   - Keep the chapter's `title` and `handoff` as they are.
+3. In `docs/story-cement.md`, update the map from each point of chapter 1 to the chapters that answer it. Then the ending can close the loop.
+4. Run `python3 scripts/story_check.py --diff /tmp/story.before.json`, then `python3 app/build.py`.
+5. If the opening or the closing of the complete story no longer matches chapter 1, follow `docs/story-cement.md` to update them.
 
 ## Checks before showing it
 
 - `docs/story-pains.md` has all 59 capsule references, and its counts are right.
 - Every pain in `docs/story-pains.md` belongs to one group, and every group leads to at least one chapter.
-- Every sentence of the new chapter 1 rests on pains listed in Check M1.
+- Every sentence of the new chapter 1 rests on pains of the capsules in its point's `refs`, as listed in `docs/story-pains.md`.
 - Compare each sentence of the new chapter 1 with the leads and bullets of chapters 2–11, by script. Reword every sentence that comes too close.
-- Outside section M1, `diff /tmp/story-notes.before.md docs/story-notes.md` shows no change.
-- The extractor and the build run without errors.
+- The diff of `story_check.py` lists changes in chapter 1 only (`story.chapters[0]`).
+- The check and the build run without errors.
 
 ## Output
 

@@ -1,74 +1,6 @@
 {
  "1.1": [
   {
-   "id": "p1.1-data-silos-before",
-   "file": "p1.1-data-silos-before.png",
-   "source": "Copy of Lakeflow Connect Tech Deck - L200, slide 20",
-   "url": "https://docs.google.com/presentation/d/1xiUXDS6x6aHv547-daQKBhvoOidHy_eVxdC8qdiHQxs/edit#slide=id.g316fd76f33f_0_1851",
-   "kind": "diagram",
-   "why": "Shows the 'Before' state with data fragmentation across Salesforce, SQL, and custom tools - directly illustrates the problem of spread systems"
-  },
-  {
-   "id": "p1.1-lakehouse-evolution",
-   "file": "p1.1-lakehouse-evolution.png",
-   "source": "Databricks blog: What is a Data Lakehouse?",
-   "url": "https://www.databricks.com/blog/what-is-data-lakehouse",
-   "kind": "diagram",
-   "why": "Three-panel progression showing evolution from data warehouse silos to data lake to lakehouse - visual before/after of the architecture problem"
-  },
-  {
-   "id": "p1.1-lakeflow-sources",
-   "file": "p1.1-lakeflow-sources.png",
-   "source": "Copy of Lakeflow Connect Tech Deck - L200, slide 16",
-   "url": "https://docs.google.com/presentation/d/1xiUXDS6x6aHv547-daQKBhvoOidHy_eVxdC8qdiHQxs/edit#slide=id.g3773fdeb85f_19_349",
-   "kind": "diagram",
-   "why": "Comprehensive inventory of all connector sources (Applications, Files, Databases, Warehouses, Zerobus, Message buses) - shows the sprawl and fragmentation of systems"
-  },
-  {
-   "id": "p1.1-lakeflow-connectors",
-   "file": "p1.1-lakeflow-connectors.png",
-   "source": "Copy of Lakeflow Connect Tech Deck - L200, slide 42",
-   "url": "https://docs.google.com/presentation/d/1xiUXDS6x6aHv547-daQKBhvoOidHy_eVxdC8qdiHQxs/edit#slide=id.g374d02f907e_0_2",
-   "kind": "diagram",
-   "why": "Shows diversity of database and warehouse systems (Oracle, SQL Server, PostgreSQL, MySQL, Redshift, Snowflake, MariaDB, etc.) requiring connectors"
-  }
- ],
- "1.2": [
-  {
-   "id": "p1.2-mlops-dev",
-   "file": "p1.2-mlops-dev.png",
-   "source": "docs.databricks.com/machine-learning/mlops/mlops-workflow",
-   "url": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-workflow",
-   "kind": "diagram",
-   "why": "Shows development/pilot phase with training, validation, compliance checks - first stage pilots start in; demonstrates initial requirements"
-  },
-  {
-   "id": "p1.2-mlops-staging",
-   "file": "p1.2-mlops-staging.png",
-   "source": "docs.databricks.com/machine-learning/mlops/mlops-workflow",
-   "url": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-workflow",
-   "kind": "diagram",
-   "why": "Shows staging phase with integration tests, Model Serving endpoint, monitoring tests - intermediate gate where projects often stall"
-  },
-  {
-   "id": "p1.2-mlops-prod",
-   "file": "p1.2-mlops-prod.png",
-   "source": "docs.databricks.com/machine-learning/mlops/mlops-workflow",
-   "url": "https://docs.databricks.com/aws/en/machine-learning/mlops/mlops-workflow",
-   "kind": "diagram",
-   "why": "Shows production phase with full monitoring, inference pipelines, retraining loops, model aliases - full infrastructure barrier many pilots never reach"
-  },
-  {
-   "id": "p1.2-agent-lifecycle-proto",
-   "file": "p1.2-agent-lifecycle-proto.png",
-   "source": "Agentbricks Roadshow, slide 205",
-   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_6153",
-   "kind": "diagram",
-   "why": "Shows agent development lifecycle with stakeholder sign-off gate (highlighted) and feedback loops showing iteration burden; illustrates where projects get stuck before production"
-  }
- ],
- "2.1": [
-  {
    "id": "p2.1-lakehouse-diagram",
    "file": "p2.1-lakehouse-diagram.png",
    "source": "docs.databricks.com/lakehouse",
@@ -109,7 +41,7 @@
    "why": "Details atomic write protocol with partition directories and file organization for ACID compliance"
   }
  ],
- "2.2": [
+ "1.2": [
   {
    "id": "p2.2-document-intelligence-pipeline",
    "file": "p2.2-document-intelligence-pipeline.png",
@@ -151,7 +83,7 @@
    "why": "Lakeflow Connect ingesting from a database into streaming Delta tables"
   }
  ],
- "2.3": [
+ "1.3": [
   {
    "id": "p2.3-lakebase-deep-dive",
    "file": "p2.3-lakebase-deep-dive.png",
@@ -191,9 +123,7 @@
    "url": "https://docs.databricks.com/aws/en/oltp/projects/quickstart-lakebase-cdf",
    "kind": "screenshot",
    "why": "Sync from Lakebase to the lakehouse configured in the UI"
-  }
- ],
- "2.4": [
+  },
   {
    "id": "p2.4-ltap-governance",
    "file": "p2.4-ltap-governance.png",
@@ -227,7 +157,7 @@
    "why": "Performance benchmark chart showing Lakehouse//RT (Reyden) vs competitors on hardest analytical queries (TPC-DS), demonstrating 16.8x-25x faster query latency on large datasets"
   }
  ],
- "2.5": [
+ "2.3": [
   {
    "id": "p2.5-monitoring-quality",
    "file": "p2.5-monitoring-quality.png",
@@ -299,861 +229,7 @@
    "url": "https://docs.databricks.com/aws/en/notebooks/eda-tutorial",
    "kind": "screenshot",
    "why": "Detailed Data Profile display showing column metadata, data types, and statistical summaries—core built-in EDA feature in notebooks"
-  }
- ],
- "3.2": [
-  {
-   "id": "p3.2-feature-store-ui",
-   "file": "p3.2-feature-store-ui.png",
-   "source": "Data Science With Databricks, slide 29",
-   "kind": "screenshot",
-   "why": "Feature Store governance and Unity Catalog integration showing feature definitions with primary keys and Feature Engineering API, with Catalog Explorer UI",
-   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_7374"
   },
-  {
-   "id": "p3.2-feature-store-governance",
-   "file": "p3.2-feature-store-governance.png",
-   "source": "Data Science With Databricks, slide 30",
-   "kind": "diagram",
-   "why": "Feature Serving architecture diagram showing consistent REST APIs for external access to Features and Feature Functions hosted in Feature Store with lineage",
-   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_7384"
-  },
-  {
-   "id": "p3.2-feature-serving-arch",
-   "file": "p3.2-feature-serving-arch.png",
-   "source": "Data Science With Databricks, slide 31",
-   "kind": "screenshot",
-   "why": "Feature Store overview with governance badge showing Feature Serving APIs and Python/later integration—demonstrates feature availability and serving capability",
-   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_9084"
-  },
-  {
-   "id": "p3.2-docs-14",
-   "file": "p3.2-docs-14.png",
-   "source": "docs.databricks.com/machine-learning/feature-store/time-series",
-   "url": "https://docs.databricks.com/machine-learning/feature-store/time-series",
-   "kind": "diagram",
-   "why": "Point-in-time join concept diagram showing feature observation alignment across training timestamps—critical for preventing data leakage in training sets"
-  }
- ],
- "3.3": [
-  {
-   "id": "p3.3-automl-ui",
-   "file": "p3.3-automl-ui.png",
-   "source": "Data Science With Databricks, slide 35",
-   "kind": "screenshot",
-   "why": "Glass-Box AutoML UI showing train-and-evaluate workflow with train/evaluate/customize/display tabs for model development and experimentation",
-   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_8558"
-  },
-  {
-   "id": "p3.3-automl-api",
-   "file": "p3.3-automl-api.png",
-   "source": "Data Science With Databricks, slide 36",
-   "kind": "screenshot",
-   "why": "Glass-Box AutoML API interface with code showing automated ML training pipeline and notebook generation for reproducibility",
-   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_8575"
-  },
-  {
-   "id": "p3.3-mlflow-intro",
-   "file": "p3.3-mlflow-intro.png",
-   "source": "Data Science With Databricks, slide 34",
-   "kind": "screenshot",
-   "why": "Databricks AutoML overview showing MLflow experiment tracking, auto-generated notebooks, and reproducible trial notebooks for model iteration",
-   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_8529"
-  },
-  {
-   "id": "p3.3-automl-roadmap",
-   "file": "p3.3-automl-roadmap.png",
-   "source": "Data Science With Databricks, slide 37",
-   "kind": "diagram",
-   "why": "AutoML Releases and Roadmap showing supported problem types, model families, and features including XGBoost, LightGBM, and more",
-   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_8729"
-  }
- ],
- "3.4": [
-  {
-   "id": "p3.4-ai-runtime-deep-learning",
-   "file": "p3.4-ai-runtime-deep-learning.png",
-   "source": "Agentbricks Roadshow, slide 142",
-   "kind": "diagram",
-   "why": "AI Runtime Deep Learning Stack overview showing serverless GPU compute, managed Databricks runtime, and Lakebase integration for distributed training",
-   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_5211"
-  },
-  {
-   "id": "p3.4-distributed-training-cli",
-   "file": "p3.4-distributed-training-cli.png",
-   "source": "Agentbricks Roadshow, slide 162",
-   "kind": "screenshot",
-   "why": "CLI Submission interface showing how to submit training jobs with GPU support via command line using Databricks CLI",
-   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_5499"
-  },
-  {
-   "id": "p3.4-docs-6",
-   "file": "p3.4-docs-6.png",
-   "source": "docs.databricks.com/machine-learning/ai-runtime/quickstart",
-   "url": "https://docs.databricks.com/machine-learning/ai-runtime/quickstart",
-   "kind": "screenshot",
-   "why": "AI Runtime hardware accelerator options showing available GPU choices (H100, A100) with environment configurations for distributed training"
-  },
-  {
-   "id": "p3.4-ai-runtime-notebook",
-   "file": "p3.4-ai-runtime-notebook.png",
-   "source": "docs.databricks.com/machine-learning/ai-runtime/quickstart",
-   "url": "https://docs.databricks.com/aws/en/machine-learning/ai-runtime/quickstart",
-   "kind": "screenshot",
-   "why": "Notebook on serverless GPU (AI Runtime) running a training step"
-  },
-  {
-   "id": "p3.4-gpu-accelerator-select",
-   "file": "p3.4-gpu-accelerator-select.png",
-   "source": "docs.databricks.com/machine-learning/ai-runtime/quickstart",
-   "url": "https://docs.databricks.com/aws/en/machine-learning/ai-runtime/quickstart",
-   "kind": "screenshot",
-   "why": "Choosing an H100 accelerator for serverless GPU compute"
-  }
- ],
- "4.1": [
-  {
-   "id": "p4.1-unified-serving",
-   "file": "p4.1-unified-serving.png",
-   "source": "Data Science With Databricks, slide 73",
-   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_10971",
-   "kind": "diagram",
-   "why": "Comprehensive overview: unified management of custom models, foundation models, and external models with descriptions of each category"
-  },
-  {
-   "id": "p4.1-provisioned-pt",
-   "file": "p4.1-provisioned-pt.png",
-   "source": "Agentbricks Roadshow, slide 44",
-   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_3937",
-   "kind": "diagram",
-   "why": "Explains provisioned throughput endpoint pricing model (dedicated capacity, guaranteed throughput, DBU/hour billing) with UI example"
-  },
-  {
-   "id": "p4.1-ab-testing",
-   "file": "p4.1-ab-testing.png",
-   "source": "Data Science With Databricks, slide 72",
-   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_11836",
-   "kind": "screenshot",
-   "why": "Shows online evaluation capabilities: A/B testing and canary deployments by serving multiple models to one endpoint"
-  },
-  {
-   "id": "p4.1-serving-production",
-   "file": "p4.1-serving-production.png",
-   "source": "Data Science With Databricks, slide 70",
-   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_11811",
-   "kind": "screenshot",
-   "why": "Demonstrates production deployment: serverless solution with API integration, metrics monitoring, and latency/request rate graphs"
-  },
-  {
-   "id": "p4.1-serving-overview",
-   "file": "p4.1-serving-overview.png",
-   "source": "Agent Bricks L300 Pitch Slides, slide 19",
-   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4758",
-   "kind": "diagram",
-   "why": "Visual summary of Model Serving breadth: custom models (mlflow), 1st party models (Anthropic, OpenAI, Llama), and coding agents"
-  }
- ],
- "4.2": [
-  {
-   "id": "p4.2-fmapi-serving",
-   "file": "p4.2-fmapi-serving.png",
-   "source": "Agentbricks Roadshow, slide 32",
-   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_3805",
-   "kind": "diagram",
-   "why": "Architecture of Foundation Model APIs: shows customer tenant with query/management routes, access control, and Databricks provider infrastructure with Foundation Model APIs (Claude, Gemini, OpenAI endpoints)"
-  },
-  {
-   "id": "p4.2-fmapi-throughput-latency",
-   "file": "p4.2-fmapi-throughput-latency.png",
-   "source": "Databricks blog - Fast, Secure and Reliable: Enterprise-grade LLM Inference",
-   "url": "https://www.databricks.com/blog/fast-secure-and-reliable-enterprise-grade-llm-inference",
-   "kind": "diagram",
-   "why": "Shows typical throughput-latency curve for Foundation Model APIs with provisioned capacity (11,500 tokens/sec at 1000ms latency)"
-  },
-  {
-   "id": "p4.2-fmapi-unity-gateway",
-   "file": "p4.2-fmapi-unity-gateway.png",
-   "source": "Agent Bricks — L300 Pitch Slides, slide 17",
-   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4717",
-   "kind": "screenshot",
-   "why": "Foundation Model APIs via Unity Gateway: one API across Claude/GPT-5.5/Gemini/Llama, provisioned throughput, reliable low-latency, secure, governed with cost visibility"
-  },
-  {
-   "id": "p4.2-serving-endpoints-list",
-   "file": "p4.2-serving-endpoints-list.png",
-   "source": "docs.databricks.com/machine-learning/foundation-model-apis",
-   "url": "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis",
-   "kind": "screenshot",
-   "why": "Pay-per-token foundation model endpoints ready to use, next to an external model"
-  },
-  {
-   "id": "p4.2-provisioned-throughput-entity",
-   "file": "p4.2-provisioned-throughput-entity.png",
-   "source": "docs.databricks.com/machine-learning/foundation-model-apis/deploy-prov-throughput-foundation-model-apis",
-   "url": "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis/deploy-prov-throughput-foundation-model-apis",
-   "kind": "screenshot",
-   "why": "Provisioned throughput configured for a foundation model endpoint"
-  }
- ],
- "4.3": [
-  {
-   "id": "p4.3-fine-tuning",
-   "file": "p4.3-fine-tuning.png",
-   "source": "Data Science With Databricks, slide 51",
-   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_10451",
-   "kind": "diagram",
-   "why": "Overview of fine-tuning: serverless, auto-provisioned GPUs, easy data selection from Unity Catalog, model control and IP ownership (Public Preview Q2)"
-  },
-  {
-   "id": "p4.3-model-training-ui",
-   "file": "p4.3-model-training-ui.png",
-   "source": "docs.databricks.com/large-language-models/foundation-model-training/ui",
-   "url": "https://docs.databricks.com/large-language-models/foundation-model-training/ui",
-   "kind": "screenshot",
-   "why": "Foundation model training UI showing data preparation, model selection, training configuration, and model registration workflow"
-  },
-  {
-   "id": "p4.3-custom-fine-tune",
-   "file": "p4.3-custom-fine-tune.png",
-   "source": "Mosaic AI - System Architecture 2026-02-25, slide 50",
-   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_7882",
-   "kind": "diagram",
-   "why": "Custom fine-tuning of an open model on GPU compute, registered in UC and served"
-  },
-  {
-   "id": "p4.3-fine-tune-and-serve",
-   "file": "p4.3-fine-tune-and-serve.png",
-   "source": "Mosaic AI - System Architecture 2026-02-25, slide 49",
-   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_7794",
-   "kind": "diagram",
-   "why": "Fine-tuning an open model then serving it through Model Serving and the gateway"
-  }
- ],
- "4.4": [
-  {
-   "id": "p4.4-gateway-governance",
-   "file": "p4.4-gateway-governance.png",
-   "source": "Product Deck: AI Gateway, slide 20",
-   "url": "https://docs.google.com/presentation/d/13FOrjaFbw8ApYmvl2sKg2cjxWiajglNE5RNVG-kK9qM/edit#slide=id.g33a54769ce1_0_191",
-   "kind": "diagram",
-   "why": "Shows External Models within the unified Model Serving platform with AI Gateway providing governance, logging, cost controls, and traffic management across model types"
-  },
-  {
-   "id": "p4.4-unified-governance",
-   "file": "p4.4-unified-governance.png",
-   "source": "Agentbricks Roadshow, slide 124",
-   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4872",
-   "kind": "diagram",
-   "why": "Unified data and AI governance: shows how Unity Catalog and Unity AI Gateway work together to govern models including external agents, with central credential/policy management"
-  },
-  {
-   "id": "p4.4-external-provider-setup",
-   "file": "p4.4-external-provider-setup.png",
-   "source": "docs.databricks.com/ai-gateway/create-model-provider-services",
-   "url": "https://docs.databricks.com/ai-gateway/create-model-provider-services",
-   "kind": "screenshot",
-   "why": "UI for registering external providers: shows configuration options including forward headers, query parameters, URL proxying, and price multiplier for managing external model provider credentials and routing"
-  },
-  {
-   "id": "p4.4-external-models-architecture",
-   "file": "p4.4-external-models-architecture.png",
-   "source": "Mosaic AI - System Architecture 2026-02-25, slide 63",
-   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_8926",
-   "kind": "diagram",
-   "why": "Externally hosted GenAI models managed through Databricks serving and the gateway"
-  }
- ],
- "5.1": [
-  {
-   "id": "p5-agent-use-case-guide",
-   "file": "p5-agent-use-case-guide.png",
-   "source": "Agentbricks Roadshow [go/airoadshow], slide 6",
-   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_3639",
-   "kind": "diagram",
-   "why": "Decision tree showing when to use AI Functions for automated batch processing vs interactive agents"
-  },
-  {
-   "id": "p5.1-ai-functions-governance",
-   "file": "p5.1-ai-functions-governance.png",
-   "source": "Agentbricks Roadshow [go/airoadshow], slide 97",
-   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4448",
-   "kind": "diagram",
-   "why": "Details the specific AI Functions (ai_prep_search, Vector Search in SQL, ai_search) and governance/observability for operations at scale"
-  },
-  {
-   "id": "p5.1-common-workflows",
-   "file": "p5.1-common-workflows.png",
-   "source": "Agentbricks Roadshow, slide 87",
-   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4320",
-   "kind": "diagram",
-   "why": "Shows three common workflows using AI Functions: Intelligent Data Extraction, Categorized Intelligence, and Search-Optimized RAG"
-  },
-  {
-   "id": "p5.1-ai-functions-scale",
-   "file": "p5.1-ai-functions-scale.png",
-   "source": "Agentbricks Roadshow [go/airoadshow], slide 70",
-   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4130",
-   "kind": "screenshot",
-   "why": "AI Functions SQL pattern: SELECT ai_extract(...) FROM invoices, scales automatically on serverless, secure with unified model support (Gemini/OpenAI/Anthropic/Meta)"
-  }
- ],
- "5.2": [
-  {
-   "id": "p5.2-ai-search",
-   "file": "p5.2-ai-search.png",
-   "source": "Agentbricks Roadshow [go/airoadshow], slide 170",
-   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_5565",
-   "kind": "diagram",
-   "why": "Evolution from Vector Search to AI Search: adds semantic search, full-text/BM25, hybrid, rerankers, auto-quality evaluation for retrieval"
-  },
-  {
-   "id": "p5.2-retrieval-architecture",
-   "file": "p5.2-retrieval-architecture.png",
-   "source": "docs.databricks.com/ai-search/ai-search",
-   "url": "https://docs.databricks.com/ai-search/ai-search/",
-   "kind": "diagram",
-   "why": "Retrieval architecture showing how to calculate embeddings from source data, create vector indexes, and query with LLM application"
-  },
-  {
-   "id": "p5.2-build-rag-databricks",
-   "file": "p5.2-build-rag-databricks.png",
-   "source": "Mosaic AI - System Architecture 2026-02-25, slide 47",
-   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_7604",
-   "kind": "diagram",
-   "why": "Complete RAG architecture: data preparation with Lakeflow/LDP → Vector Search embeddings → prompt enhancement → inference via Mosaic AI Gateway"
-  },
-  {
-   "id": "p5.2-rag-agents-indexing",
-   "file": "p5.2-rag-agents-indexing.png",
-   "source": "Mosaic AI - System Architecture 2026-02-25, slide 8",
-   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_5462",
-   "kind": "diagram",
-   "why": "RAG Agents pipeline showing end-to-end ingestion and indexing: data preparation, document processing, storage, vector database, with model serving"
-  },
-  {
-   "id": "p5.2-vector-search-deployment",
-   "file": "p5.2-vector-search-deployment.png",
-   "source": "Mosaic AI - System Architecture 2026-02-25, slide 25",
-   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_6398",
-   "kind": "diagram",
-   "why": "Deployment option showing automatic embedding creation via Model Serving with Unity Catalog, Vector index, and AI App integration"
-  }
- ],
- "5.3": [
-  {
-   "id": "p5.3-mcp-unity-gateway",
-   "file": "p5.3-mcp-unity-gateway.png",
-   "source": "Agent Bricks — L300 Pitch Slides, slide 34",
-   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4971",
-   "kind": "diagram",
-   "why": "Managed MCP servers overview: Genie One, AI Search, UC Functions, DBSQL with governance and central policy control"
-  },
-  {
-   "id": "p5.3-mcp-how-it-works",
-   "file": "p5.3-mcp-how-it-works.png",
-   "source": "Agent Bricks — L300 Pitch Slides, slide 35",
-   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4979",
-   "kind": "diagram",
-   "why": "How MCP works: managed URLs per service, Genie One as MCP service in Unity Gateway, self-describing tools, Unity Gateway enforces policy"
-  },
-  {
-   "id": "p5.3-agent-to-tools-communication",
-   "file": "p5.3-agent-to-tools-communication.png",
-   "source": "Mosaic AI - System Architecture 2026-02-25, slide 11",
-   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_5617",
-   "kind": "diagram",
-   "why": "Agent-to-tools communication architecture showing managed MCP connectors, external agent services, and enterprise tools integration via APIs"
-  },
-  {
-   "id": "p5.3-what-is-an-agent",
-   "file": "p5.3-what-is-an-agent.png",
-   "source": "How to set up an Agentic Applications workshop",
-   "kind": "diagram",
-   "why": "Conceptual diagram of agent components: user, reasoning engine with context, foundation models API, agent tools, MCP flow, skills, actions"
-  }
- ],
- "5.4": [
-  {
-   "id": "p5.4-agent-bricks-framework",
-   "file": "p5.4-agent-bricks-framework.png",
-   "source": "Agent Bricks — L300 Pitch Slides, slide 13",
-   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4552",
-   "kind": "diagram",
-   "why": "Agent Bricks framework overview: choose LangGraph/framework, select model, serverless compute, provide context, instrument observability"
-  },
-  {
-   "id": "p5.4-agent-runtime-sandbox",
-   "file": "p5.4-agent-runtime-sandbox.png",
-   "source": "Agent Bricks — L300 Pitch Slides, slide 14",
-   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4637",
-   "kind": "diagram",
-   "why": "Agent runtime components: Unity Gateway, Databricks Sandbox for secure code execution, Agent Memory with Lakebase, Tools and MCP, MLflow tracking"
-  },
-  {
-   "id": "p5-agent-loop-scale",
-   "file": "p5-agent-loop-scale.png",
-   "source": "Agent Bricks — L300 Pitch Slides, slide 9",
-   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4172",
-   "kind": "diagram",
-   "why": "Demonstrates operating at scale: many agents deployed simultaneously with Sandbox, Tools, Evaluation, Deployments, Monitoring, MCP, Governance"
-  },
-  {
-   "id": "p5.4-agent-memory",
-   "file": "p5.4-agent-memory.png",
-   "source": "docs.databricks.com/agents/agent-memory/self-managed-memory",
-   "url": "https://docs.databricks.com/agents/agent-memory/self-managed-memory/",
-   "kind": "diagram",
-   "why": "Long-term memory architecture: entire conversations stored in Lakebase by thread ID, enabling agents to access history across sessions"
-  },
-  {
-   "id": "p5.4-databricks-sandbox",
-   "file": "p5.4-databricks-sandbox.png",
-   "source": "Agent Bricks — L300 Pitch Slides, slide 27",
-   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4905",
-   "kind": "diagram",
-   "why": "Databricks Sandbox isolation: managed environment for agent-generated code with up to 100GB home directory, downscoped access, SDK/REST/CLI/SSH"
-  }
- ],
- "5.5": [
-  {
-   "id": "p5.5-supervisor-architecture",
-   "file": "p5.5-supervisor-architecture.png",
-   "source": "Databricks blog - Multi-agent Supervisor Architecture: Orchestrating Enterprise AI at Scale",
-   "url": "https://www.databricks.com/blog/multi-agent-supervisor-architecture-orchestrating-enterprise-ai-scale",
-   "kind": "diagram",
-   "why": "Detailed supervisor agent architecture showing users/bot messaging, supervisor orchestrating Function-calling Agent and Genie Agent subagents, with evaluation feedback loop"
-  },
-  {
-   "id": "p5.5-agent-bricks-e2e",
-   "file": "p5.5-agent-bricks-e2e.png",
-   "source": "Agentbricks Roadshow [go/airoadshow], slide 21",
-   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f02a63d3ab_10_0",
-   "kind": "diagram",
-   "why": "E2E agent platform flow diagram showing 6 layers: brain (models), actions (tools), context (memory), observe & improve (evals), publish (deployment), run (Supervisor Agent highlighted as deployment option)"
-  },
-  {
-   "id": "p5.5-supervisor-agent-ui",
-   "file": "p5.5-supervisor-agent-ui.png",
-   "source": "docs.databricks.com/agents/agent-bricks/multi-agent-supervisor",
-   "url": "https://docs.databricks.com/aws/en/agents/agent-bricks/multi-agent-supervisor",
-   "kind": "screenshot",
-   "why": "Supervisor Agent configured with sub-agents, Genie spaces, tools and MCP servers"
-  }
- ],
- "6.1": [
-  {
-   "id": "p6.1-trace-dashboard",
-   "file": "p6.1-trace-dashboard.png",
-   "source": "Agent Bricks — L300 Pitch Slides, slide 39",
-   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_5002",
-   "kind": "screenshot",
-   "why": "Hero slide showing agent tracing powered by MLflow with one-line integration for 30+ frameworks and pre-built trace analysis dashboards."
-  },
-  {
-   "id": "p6.1-trace-detail",
-   "file": "p6.1-trace-detail.png",
-   "source": "docs.databricks.com/mlflow3/genai/tracing/overview",
-   "url": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/overview",
-   "kind": "screenshot",
-   "why": "Detailed trace view showing nested spans for every step (guardrails, search, ranking, generation), with inputs, outputs, latency, tokens, and assessments—shows where the step went wrong."
-  },
-  {
-   "id": "p6.1-traces-list",
-   "file": "p6.1-traces-list.png",
-   "source": "docs.databricks.com/mlflow3/genai/tracing/overview",
-   "url": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/overview",
-   "kind": "screenshot",
-   "why": "List view of all traces across requests, showing trace ID, status, latency, token count, and cost for easy browsing and comparison."
-  },
-  {
-   "id": "p6.1-mlflow-genai-platform",
-   "file": "p6.1-mlflow-genai-platform.png",
-   "source": "Agentbricks Roadshow [go/airoadshow], slide 179",
-   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_5693",
-   "kind": "diagram",
-   "why": "MLflow Open GenAI platform architecture showing Tracing (left pillar) connecting to deployment, with Trace logging component feeding Observability, and integration with LLM Judges and human feedback for evaluation"
-  }
- ],
- "6.2": [
-  {
-   "id": "mlflow-eval-hero",
-   "file": "mlflow-eval-hero.png",
-   "source": "mlflow.org/genai/evaluations",
-   "url": "https://mlflow.org/genai/evaluations"
-  },
-  {
-   "id": "mlflow-eval-1",
-   "file": "mlflow-eval-1.png",
-   "source": "mlflow.org/genai/evaluations",
-   "url": "https://mlflow.org/genai/evaluations"
-  },
-  {
-   "id": "mlflow-eval-custom-judge",
-   "file": "mlflow-eval-custom-judge.png",
-   "source": "mlflow.org/genai/evaluations",
-   "url": "https://mlflow.org/genai/evaluations"
-  },
-  {
-   "id": "p6.2-eval-flow",
-   "file": "p6.2-eval-flow.png",
-   "source": "Agent Bricks — L300 Pitch Slides, slide 41",
-   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_5016",
-   "kind": "diagram",
-   "why": "End-to-end evaluation workflow: test during dev → deploy → monitor in production, with pre-built/custom scorers, evaluation sets, and quality validation."
-  },
-  {
-   "id": "p6.2-prompt-registry",
-   "file": "p6.2-prompt-registry.png",
-   "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 40",
-   "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_3085",
-   "kind": "screenshot",
-   "why": "Prompt Registry interface showing versioned prompts with staging/production aliases (Live buttons), enabling tracked prompt changes like code changes."
-  }
- ],
- "6.3": [
-  {
-   "id": "mlflow-eval-feedback",
-   "file": "mlflow-eval-feedback.png",
-   "source": "mlflow.org/genai/evaluations",
-   "url": "https://mlflow.org/genai/evaluations"
-  },
-  {
-   "id": "p6.3-review-session",
-   "file": "p6.3-review-session.png",
-   "source": "docs.databricks.com/mlflow3/genai/human-feedback/expert-feedback/label-existing-traces",
-   "url": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/expert-feedback/label-existing-traces",
-   "kind": "screenshot",
-   "why": "Review App interface where domain experts test agents in a chat interface (User/Assistant conversation) and set expectations for labeling."
-  },
-  {
-   "id": "p6.3-review-labeling",
-   "file": "p6.3-review-labeling.png",
-   "source": "Agentbricks Roadshow, slide 188",
-   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_5927",
-   "kind": "visual",
-   "why": "Overview of MLflow Labeling: built-in review app for interactive testing, labeling workflows, synthetic bootstrapping, and auto-saving traces and feedback."
-  },
-  {
-   "id": "p6.3-labeling-session",
-   "file": "p6.3-labeling-session.png",
-   "source": "docs.databricks.com/mlflow3/genai/human-feedback/concepts/labeling-sessions",
-   "url": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/concepts/labeling-sessions",
-   "kind": "screenshot",
-   "why": "Creating a labeling session with label schemas for expert review"
-  },
-  {
-   "id": "p6.3-agent-evaluation-review",
-   "file": "p6.3-agent-evaluation-review.png",
-   "source": "Mosaic AI - System Architecture 2026-02-25, slide 10",
-   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_5563",
-   "kind": "diagram",
-   "why": "Experts and users giving feedback through the review app, feeding evaluation"
-  }
- ],
- "7.1": [
-  {
-   "id": "p7.1-unity-catalog-hierarchy",
-   "file": "p7.1-unity-catalog-hierarchy.png",
-   "source": "candidate",
-   "kind": "diagram",
-   "why": "UC object hierarchy showing models, functions, services, secrets as governed objects alongside tables"
-  },
-  {
-   "id": "p7.1-ai-gateway-lineage-graph",
-   "file": "p7.1-ai-gateway-lineage-graph.png",
-   "source": "docs.databricks.com/data-governance/unity-catalog/ai-gateway-service-lineage",
-   "url": "https://docs.databricks.com/data-governance/unity-catalog/ai-gateway-service-lineage",
-   "kind": "diagram",
-   "why": "AI Gateway service lineage graph showing model lineage tracking with UC"
-  },
-  {
-   "id": "p7.1-unity-catalog-models",
-   "file": "p7.1-unity-catalog-models.png",
-   "source": "Data Science With Databricks, slide 114",
-   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_2841",
-   "kind": "visual",
-   "why": "UC Models visual showing models as managed objects in Unity Catalog"
-  },
-  {
-   "id": "p7.1-endpoint-lineage",
-   "file": "p7.1-endpoint-lineage.png",
-   "source": "docs.databricks.com/data-governance/unity-catalog/ai-gateway-service-lineage",
-   "url": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/ai-gateway-service-lineage",
-   "kind": "screenshot",
-   "why": "Lineage of a serving endpoint: upstream tables, models and model provider"
-  },
-  {
-   "id": "p7.1-ai-assets-in-uc",
-   "file": "p7.1-ai-assets-in-uc.png",
-   "source": "Mosaic AI - System Architecture 2026-02-25, slide 55",
-   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_8214",
-   "kind": "diagram",
-   "why": "AI assets (models, functions, vector indexes, tools) governed in Unity Catalog"
-  }
- ],
- "7.2": [
-  {
-   "id": "p7.2-unity-gateway-architecture",
-   "file": "p7.2-unity-gateway-architecture.png",
-   "source": "candidate",
-   "kind": "diagram",
-   "why": "Unity AI Gateway control flow showing Authenticate, OBO, Authorize, Execute pipeline"
-  },
-  {
-   "id": "p7.2-ai-governance-dashboard",
-   "file": "p7.2-ai-governance-dashboard.png",
-   "source": "candidate",
-   "kind": "screenshot",
-   "why": "AI Governance dashboard showing token usage, governed traffic %, budgets, spend tracking"
-  },
-  {
-   "id": "p7.2-cumulative-spend-chart",
-   "file": "p7.2-cumulative-spend-chart.png",
-   "source": "docs.databricks.com/ai-gateway/budgets",
-   "url": "https://docs.databricks.com/ai-gateway/budgets",
-   "kind": "screenshot",
-   "why": "Cumulative spend chart showing budget control and cost monitoring"
-  },
-  {
-   "id": "p7.2-unity-gateway-hub",
-   "file": "p7.2-unity-gateway-hub.png",
-   "source": "Agent Bricks — L300 Pitch Slides, slide 20",
-   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4791",
-   "kind": "diagram",
-   "why": "Unity Gateway as central hub enforcing governance across custom models, foundation models, and MCP"
-  }
- ],
- "7.3": [
-  {
-   "id": "p7.3-lakehouse-security",
-   "file": "p7.3-lakehouse-security.png",
-   "source": "docs.databricks.com/lakehouse-architecture/security-compliance-and-privacy/",
-   "url": "https://docs.databricks.com/lakehouse-architecture/security-compliance-and-privacy/",
-   "kind": "diagram",
-   "why": "Lakehouse security stack showing components (Mosaic AI, Databricks, Lakeflow) with UC and security layers"
-  },
-  {
-   "id": "p7.3-dasf-v3-components",
-   "file": "p7.3-dasf-v3-components.png",
-   "source": "databricks.com blog: Agentic AI Security",
-   "url": "https://www.databricks.com/blog/agentic-ai-security-new-risks-and-controls-databricks-ai-security-framework-dasf-v30",
-   "kind": "diagram",
-   "why": "DASF v3.0 canonical 13 components of end-to-end AI system with 35 new agentic risks, 6 controls; shows DataSecOps, ModelSecOps, DevSecOps layers; replaces outdated DASF v1/v2 (59 controls)"
-  },
-  {
-   "id": "p7.3-dasf-v3-lethal-trifecta",
-   "file": "p7.3-dasf-v3-lethal-trifecta.png",
-   "source": "databricks.com blog: Agentic AI Security",
-   "url": "https://www.databricks.com/blog/agentic-ai-security-new-risks-and-controls-databricks-ai-security-framework-dasf-v30",
-   "kind": "diagram",
-   "why": "DASF v3.0 risk model: 'Lethal Trifecta' showing three simultaneous conditions that spike agentic risk (access to sensitive systems, untrustworthy inputs, ability to change state/communicate); maps to specific DASF v3.0 controls"
-  },
-  {
-   "id": "p7.3-dasf-v3-agent-components",
-   "file": "p7.3-dasf-v3-agent-components.png",
-   "source": "databricks.com blog: Agentic AI Security",
-   "url": "https://www.databricks.com/blog/agentic-ai-security-new-risks-and-controls-databricks-ai-security-framework-dasf-v30",
-   "kind": "diagram",
-   "why": "DASF v3.0 Component 13 (Agentic AI) breakdown: 35 risks across 3 sub-components (13A Agent Core: reasoning/memory 15 risks; 13B MCP Server: tool definitions 10 risks; 13C MCP Client: connection/code execution 10 risks); inter-agent dynamics"
-  }
- ],
- "8.1": [
-  {
-   "id": "p8.1-genie-one-chat",
-   "file": "p8.1-genie-one-chat.png",
-   "source": "Databricks blog: Introducing Genie One, Genie Ontology, and Genie Agents",
-   "url": "https://www.databricks.com/blog/introducing-genie-one-genie-ontology-and-genie-agents",
-   "kind": "diagram",
-   "why": "Shows Databricks blog: Introducing G... (tile 1)"
-  },
-  {
-   "id": "p8.1-genie-one-answer",
-   "file": "p8.1-genie-one-answer.png",
-   "source": "databricks.com/product/genie/one",
-   "url": "https://www.databricks.com/product/genie/one",
-   "kind": "screenshot",
-   "why": "Shows databricks.com/product/genie/o... (tile 2)"
-  },
-  {
-   "id": "p8.1-genie-one-reasoning",
-   "file": "p8.1-genie-one-reasoning.png",
-   "source": "databricks.com/product/genie/one",
-   "url": "https://www.databricks.com/product/genie/one",
-   "kind": "screenshot",
-   "why": "Shows databricks.com/product/genie/o... (tile 3)"
-  },
-  {
-   "id": "p8.1-upload-file-498a3c89cbaa10f06354cb3a2a20",
-   "file": "p8.1-upload-file-498a3c89cbaa10f06354cb3a2a20.png",
-   "source": "docs.databricks.com/genie-one/chat",
-   "url": "https://docs.databricks.com/aws/en/genie-one/chat",
-   "kind": "screenshot",
-   "why": "Shows docs.databricks.com/genie-one/... (tile 14)"
-  }
- ],
- "8.2": [
-  {
-   "id": "p8.2-genie-ontology-benchmark",
-   "file": "p8.2-genie-ontology-benchmark.png",
-   "source": "Databricks blog: Introducing Genie One, Genie Ontology, and Genie Agents",
-   "url": "https://www.databricks.com/blog/introducing-genie-one-genie-ontology-and-genie-agents",
-   "kind": "diagram",
-   "why": "Shows Databricks blog: Introducing G... (tile 1)"
-  },
-  {
-   "id": "p8.2-what-is-e47897bcd7c9a7a16b119c3b1857ee42",
-   "file": "p8.2-what-is-e47897bcd7c9a7a16b119c3b1857ee42.png",
-   "source": "docs.databricks.com/uc-semantics/metric-views/",
-   "url": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/",
-   "kind": "screenshot",
-   "why": "Shows docs.databricks.com/uc-semanti... (tile 3)"
-  },
-  {
-   "id": "p8.2-ui-editor-7cb597be46690bc3b8b3adf23a639e",
-   "file": "p8.2-ui-editor-7cb597be46690bc3b8b3adf23a639e.png",
-   "source": "docs.databricks.com/uc-semantics/metric-views/create",
-   "url": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/create",
-   "kind": "screenshot",
-   "why": "Shows docs.databricks.com/uc-semanti... (tile 4)"
-  },
-  {
-   "id": "p8.2-materialization-pipeline-updated-e8055ee",
-   "file": "p8.2-materialization-pipeline-updated-e8055ee.png",
-   "source": "docs.databricks.com/uc-semantics/metric-views/materialization",
-   "url": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/materialization",
-   "kind": "screenshot",
-   "why": "Shows docs.databricks.com/uc-semanti... (tile 6)"
-  },
-  {
-   "id": "p8.2-query-execution-update-e67cd6e37dbbd07a2",
-   "file": "p8.2-query-execution-update-e67cd6e37dbbd07a2.png",
-   "source": "docs.databricks.com/uc-semantics/metric-views/materialization",
-   "url": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/materialization",
-   "kind": "screenshot",
-   "why": "Shows docs.databricks.com/uc-semanti... (tile 7)"
-  }
- ],
- "8.3": [
-  {
-   "id": "p8.3-genie-agents-setup",
-   "file": "p8.3-genie-agents-setup.png",
-   "source": "databricks.com/product/genie/agents",
-   "url": "https://www.databricks.com/product/genie/agents",
-   "kind": "screenshot",
-   "why": "Shows databricks.com/product/genie/a... (tile 2)"
-  },
-  {
-   "id": "p8.3-genie-agents-eval",
-   "file": "p8.3-genie-agents-eval.png",
-   "source": "databricks.com/product/genie/agents",
-   "url": "https://www.databricks.com/product/genie/agents",
-   "kind": "screenshot",
-   "why": "Shows databricks.com/product/genie/a... (tile 4)"
-  },
-  {
-   "id": "p8.3-1nzunoxtg68ogokrse8qsd1-uctxsi-2",
-   "file": "p8.3-1nzunoxtg68ogokrse8qsd1-uctxsi-2.png",
-   "source": "[SEMEA] Agent Bricks - Knowledge Assistant - Workshop - SEMEA - Online - 05 May 2026, slide 32",
-   "url": "https://docs.google.com/presentation/d/1nzunOxTG68OgOkrSE8QSD1_uctXsI9LH6dzXj4LGoBc/edit#slide=id.g3871c9ddcbc_0_2920",
-   "kind": "screenshot",
-   "why": "Shows [SEMEA] Agent Bricks - Knowled... (tile 18)"
-  },
-  {
-   "id": "p8.3-genie-agents-simpler",
-   "file": "p8.3-genie-agents-simpler.png",
-   "source": "[Customer-facing] Knowledge Assistant & Supervisor Agent updates, slide 9",
-   "url": "https://docs.google.com/presentation/d/1QYbJUGDqzon9NQmK7ZPAA09O26XG-tb3oJse6Bcf-ko/edit#slide=id.g3faed49ef47_0_876",
-   "kind": "diagram",
-   "why": "Before/after showing how Genie Agents simplify 'talk to your data' agent building: fragmented setup (3 agents) versus simpler unified Genie Agent build handling both documents and tables"
-  }
- ],
- "8.4": [
-  {
-   "id": "p8.4-row-zero-spreadsheet",
-   "file": "p8.4-row-zero-spreadsheet.png",
-   "source": "Row Zero blog: From Query to Analysis Using AI in Row Zero",
-   "url": "https://rowzero.com/blog/from-query-to-analysis-using-ai-in-row-zero",
-   "kind": "diagram",
-   "why": "Shows Row Zero blog: From Query to A... (tile 2)"
-  },
-  {
-   "id": "p8.4-row-zero-analysis",
-   "file": "p8.4-row-zero-analysis.png",
-   "source": "Row Zero blog: From Query to Analysis Using AI in Row Zero",
-   "url": "https://rowzero.com/blog/from-query-to-analysis-using-ai-in-row-zero",
-   "kind": "diagram",
-   "why": "Shows Row Zero blog: From Query to A... (tile 3)"
-  },
-  {
-   "id": "p8.4-aibi-dashboards-authoring",
-   "file": "p8.4-aibi-dashboards-authoring.png",
-   "source": "Agentbricks Roadshow [go/airoadshow], slide 206",
-   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_6200",
-   "kind": "screenshot",
-   "why": "AI/BI dashboards with AI-assisted authoring"
-  },
-  {
-   "id": "p8.4-chart-created-by-genie",
-   "file": "p8.4-chart-created-by-genie.png",
-   "source": "docs.databricks.com/ai-bi/release-notes/2026",
-   "url": "https://docs.databricks.com/aws/en/ai-bi/release-notes/2026",
-   "kind": "screenshot",
-   "why": "A dashboard chart created by Genie from a request"
-  }
- ],
- "8.5": [
-  {
-   "id": "p8.5-genie-app-builder-deploy",
-   "file": "p8.5-genie-app-builder-deploy.png",
-   "source": "Databricks blog: Enabling Governed Vibe Coding for Enterprise Apps on Databricks",
-   "url": "https://www.databricks.com/blog/enabling-governed-vibe-coding-enterprise-apps-databricks",
-   "kind": "diagram",
-   "why": "Shows Databricks blog: Enabling Gove... (tile 1)"
-  },
-  {
-   "id": "p8.5-genie-app-builder-interface",
-   "file": "p8.5-genie-app-builder-interface.png",
-   "source": "Databricks blog: Enabling Governed Vibe Coding for Enterprise Apps on Databricks",
-   "url": "https://www.databricks.com/blog/enabling-governed-vibe-coding-enterprise-apps-databricks",
-   "kind": "diagram",
-   "why": "Shows Databricks blog: Enabling Gove... (tile 2)"
-  }
- ],
- "9.1": [
-  {
-   "id": "p9.1-apps-example",
-   "file": "p9.1-apps-example.png",
-   "source": "candidate",
-   "url": "How to set up an Agentic Applications workshop, slide 62",
-   "kind": "screenshot",
-   "why": "Real Databricks App interface showing a working deployed application example"
-  },
-  {
-   "id": "p9.1-apps-deployment",
-   "file": "p9.1-apps-deployment.png",
-   "source": "docs",
-   "url": "docs.databricks.com/dev-tools/databricks-apps/deploy",
-   "kind": "screenshot",
-   "why": "Shows the app deployment details page from Databricks UI, demonstrating how apps are deployed and managed on the platform"
-  },
-  {
-   "id": "p9.1-load-testing-dashboard",
-   "file": "p9.1-load-testing-dashboard.gif",
-   "source": "docs",
-   "url": "docs.databricks.com/agents/custom-agents/load-test-agent-app",
-   "kind": "screenshot",
-   "why": "Displays monitoring and load-testing dashboard for apps, showing how to observe and manage deployed applications"
-  },
-  {
-   "id": "p9.1-llmops-lifecycle",
-   "file": "p9.1-llmops-lifecycle.png",
-   "source": "deck",
-   "url": "Genie benchmarks, slide 9",
-   "kind": "diagram",
-   "why": "LLMOps lifecycle management diagram showing the full development and deployment workflow for agents and applications"
-  }
- ],
- "9.2": [
   {
    "id": "p9.2-genie-traces",
    "file": "p9.2-genie-traces.png",
@@ -1203,125 +279,115 @@
    "why": "Agent Bricks architecture showing Supervisor Agent, Knowledge Assistant, Genie Space - system for production AI agents optimized on your data"
   }
  ],
- "9.3": [
+ "3.2": [
   {
-   "id": "p9.3-agent-dev-lifecycle",
-   "file": "p9.3-agent-dev-lifecycle.png",
-   "source": "candidate",
-   "url": "Mosaic AI - System Architecture 2026-02-25, slide 66",
-   "kind": "diagram",
-   "why": "Comprehensive agent development lifecycle: AI Tools Dev → AI Agent Development (with playground, langchain, Python) → Unity Catalog (Model & Tools Hub) → Prompt construction → Inference → Monitoring with System Tables"
-  },
-  {
-   "id": "p9.3-meta-harness",
-   "file": "p9.3-meta-harness.png",
-   "source": "deck",
-   "url": "Agent Bricks L300 Pitch Slides, slide 59",
-   "kind": "diagram",
-   "why": "Meta harness comparison showing how Omnigent provides unified interface for Claude, Cursor, Codex and other coding agents with shared context and policies"
-  },
-  {
-   "id": "p9.3-coding-agents-governance",
-   "file": "p9.3-coding-agents-governance.png",
-   "source": "docs.databricks.com/ai-gateway/coding-agent-configure-govern",
-   "url": "https://docs.databricks.com/aws/en/ai-gateway/coding-agent-configure-govern",
+   "id": "p3.2-feature-store-ui",
+   "file": "p3.2-feature-store-ui.png",
+   "source": "Data Science With Databricks, slide 29",
    "kind": "screenshot",
-   "why": "Coding agents such as Claude Code and Codex configured centrally with models and policies"
+   "why": "Feature Store governance and Unity Catalog integration showing feature definitions with primary keys and Feature Engineering API, with Catalog Explorer UI",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_7374"
+  },
+  {
+   "id": "p3.2-feature-store-governance",
+   "file": "p3.2-feature-store-governance.png",
+   "source": "Data Science With Databricks, slide 30",
+   "kind": "diagram",
+   "why": "Feature Serving architecture diagram showing consistent REST APIs for external access to Features and Feature Functions hosted in Feature Store with lineage",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_7384"
+  },
+  {
+   "id": "p3.2-feature-serving-arch",
+   "file": "p3.2-feature-serving-arch.png",
+   "source": "Data Science With Databricks, slide 31",
+   "kind": "screenshot",
+   "why": "Feature Store overview with governance badge showing Feature Serving APIs and Python/later integration—demonstrates feature availability and serving capability",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_9084"
+  },
+  {
+   "id": "p3.2-docs-14",
+   "file": "p3.2-docs-14.png",
+   "source": "docs.databricks.com/machine-learning/feature-store/time-series",
+   "url": "https://docs.databricks.com/machine-learning/feature-store/time-series",
+   "kind": "diagram",
+   "why": "Point-in-time join concept diagram showing feature observation alignment across training timestamps—critical for preventing data leakage in training sets"
   }
  ],
- "10.1": [
+ "3.3": [
   {
-   "id": "p10.1-customer-360-profiles",
-   "file": "p10.1-customer-360-profiles.jpg",
-   "source": "databricks.com/product/customerlake-cdp",
-   "url": "https://www.databricks.com/product/customerlake-cdp",
-   "kind": "screenshot",
-   "why": "Shows 8 unified customer profile cards with attributes like Unified ID, Lifetime Spend, Last Purchase, App Sessions, Loyalty Status, demonstrating the 360-degree customer profiles that join transactions, behavior, and engagement data."
-  },
-  {
-   "id": "p10.1-customer-360-diagram",
-   "file": "p10.1-customer-360-diagram.png",
-   "source": "databricks.com/product/customerlake-cdp",
-   "url": "https://www.databricks.com/product/customerlake-cdp",
+   "id": "p3.4-ai-runtime-deep-learning",
+   "file": "p3.4-ai-runtime-deep-learning.png",
+   "source": "Agentbricks Roadshow, slide 142",
    "kind": "diagram",
-   "why": "Hexagonal capability diagram showing six dimensions of CustomerLake: Engagement, Purchases, Analytics, Social, Service and support, and Predictive metrics, illustrating the breadth of customer data and capabilities."
+   "why": "AI Runtime Deep Learning Stack overview showing serverless GPU compute, managed Databricks runtime, and Lakebase integration for distributed training",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_5211"
   },
   {
-   "id": "p10.1-audience-segmentation",
-   "file": "p10.1-audience-segmentation.png",
-   "source": "databricks.com/product/customerlake-cdp",
-   "url": "https://www.databricks.com/product/customerlake-cdp",
+   "id": "p3.4-distributed-training-cli",
+   "file": "p3.4-distributed-training-cli.png",
+   "source": "Agentbricks Roadshow, slide 162",
    "kind": "screenshot",
-   "why": "VIP Loyalty Shoppers audience segmentation interface with filters and 248k matching profiles showing $1,085 average lifetime value, demonstrating how campaign agents create and activate audiences."
+   "why": "CLI Submission interface showing how to submit training jobs with GPU support via command line using Databricks CLI",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_5499"
   },
   {
-   "id": "p10.1-identity-resolution",
-   "file": "p10.1-identity-resolution.png",
-   "source": "databricks.com/product/customerlake-cdp",
-   "url": "https://www.databricks.com/product/customerlake-cdp",
-   "kind": "diagram",
-   "why": "Data flow diagram showing transactions, support tickets, and app sessions flowing through clean tables, then through customer_identity_graph to unified_profiles, exemplifying AI-assisted identity resolution joining multiple data sources."
-  },
-  {
-   "id": "p10.1-campaign-automation",
-   "file": "p10.1-campaign-automation.png",
-   "source": "databricks.com/product/customerlake-cdp",
-   "url": "https://www.databricks.com/product/customerlake-cdp",
+   "id": "p3.4-docs-6",
+   "file": "p3.4-docs-6.png",
+   "source": "docs.databricks.com/machine-learning/ai-runtime/quickstart",
+   "url": "https://docs.databricks.com/machine-learning/ai-runtime/quickstart",
    "kind": "screenshot",
-   "why": "CustomerLake campaign management showing 'Post-Sale Upsell' campaign (Live) with 186k evaluated profiles, 167.4k total activations, 3.2k conversions, and activation trends, showing real-time profile API feeding personalization and activation."
+   "why": "AI Runtime hardware accelerator options showing available GPU choices (H100, A100) with environment configurations for distributed training"
+  },
+  {
+   "id": "p3.4-ai-runtime-notebook",
+   "file": "p3.4-ai-runtime-notebook.png",
+   "source": "docs.databricks.com/machine-learning/ai-runtime/quickstart",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/ai-runtime/quickstart",
+   "kind": "screenshot",
+   "why": "Notebook on serverless GPU (AI Runtime) running a training step"
+  },
+  {
+   "id": "p3.4-gpu-accelerator-select",
+   "file": "p3.4-gpu-accelerator-select.png",
+   "source": "docs.databricks.com/machine-learning/ai-runtime/quickstart",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/ai-runtime/quickstart",
+   "kind": "screenshot",
+   "why": "Choosing an H100 accelerator for serverless GPU compute"
   }
  ],
- "10.2": [
+ "3.4": [
   {
-   "id": "p10.2-lakewatch-alerts-monitoring",
-   "file": "p10.2-lakewatch-alerts-monitoring.png",
-   "source": "Agentbricks Roadshow [go/airoadshow] slide 117",
-   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4785",
+   "id": "p3.3-automl-ui",
+   "file": "p3.3-automl-ui.png",
+   "source": "Data Science With Databricks, slide 35",
    "kind": "screenshot",
-   "why": "Shows Agent Tracing with Lakewatch integration for alerts and monitoring, displaying security incidents table with severity, incident IDs, and timestamps, demonstrating end-to-end visibility into security alerts."
+   "why": "Glass-Box AutoML UI showing train-and-evaluate workflow with train/evaluate/customize/display tabs for model development and experimentation",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_8558"
   },
   {
-   "id": "p10.2-detection-as-code",
-   "file": "p10.2-detection-as-code.png",
-   "source": "databricks.com/product/lakewatch",
-   "url": "https://www.databricks.com/product/lakewatch",
+   "id": "p3.3-automl-api",
+   "file": "p3.3-automl-api.png",
+   "source": "Data Science With Databricks, slide 36",
    "kind": "screenshot",
-   "why": "Detection rule creation interface with wizard steps and SQL code for 'Repeated Failed Logins Followed by Success' rule, with Genie AI agent suggesting rule logic, showing detection rules versioned and tested like code with agent assistance."
+   "why": "Glass-Box AutoML API interface with code showing automated ML training pipeline and notebook generation for reproducibility",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_8575"
   },
   {
-   "id": "p10.2-ai-threat-hunting",
-   "file": "p10.2-ai-threat-hunting.png",
-   "source": "databricks.com/product/lakewatch",
-   "url": "https://www.databricks.com/product/lakewatch",
+   "id": "p3.3-mlflow-intro",
+   "file": "p3.3-mlflow-intro.png",
+   "source": "Data Science With Databricks, slide 34",
    "kind": "screenshot",
-   "why": "Lakewatch Datasources dashboard showing multiple security, IT, and business log sources (CloudWatch, CloudTrail, Slack audit logs, Cisco ASA, etc.) with event and alert counts and activity timelines at petabyte scale."
+   "why": "Databricks AutoML overview showing MLflow experiment tracking, auto-generated notebooks, and reproducible trial notebooks for model iteration",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_8529"
   },
   {
-   "id": "p10.2-automated-normalization",
-   "file": "p10.2-automated-normalization.png",
-   "source": "databricks.com/product/lakewatch",
-   "url": "https://www.databricks.com/product/lakewatch",
-   "kind": "screenshot",
-   "why": "CloudTrail log ingestion and normalization pipeline showing Bronze (raw), Silver (normalized with 37 fields added), and Gold (enriched with alerts) layers, demonstrating log processing at object-storage cost."
-  },
-  {
-   "id": "p10.2-petabyte-scale",
-   "file": "p10.2-petabyte-scale.png",
-   "source": "databricks.com/product/lakewatch",
-   "url": "https://www.databricks.com/product/lakewatch",
-   "kind": "screenshot",
-   "why": "Lakewatch Query interface with SQL analyzing login failures (400k rows, 538s runtime) and autonomous Genie agent investigating threats, identifying suspicious behavior patterns and risk-ranking users."
-  },
-  {
-   "id": "p10.2-soc-operations",
-   "file": "p10.2-soc-operations.png",
-   "source": "databricks.com/blog/databricks-announces-lakewatch-new-agentic-siem",
-   "url": "https://www.databricks.com/blog/databricks-announces-lakewatch-new-agentic-siem",
+   "id": "p3.3-automl-roadmap",
+   "file": "p3.3-automl-roadmap.png",
+   "source": "Data Science With Databricks, slide 37",
    "kind": "diagram",
-   "why": "Strategic architecture showing data sources (Email, Network/Firewall, Identity, SaaS, Cloud, DNS, EDR/XDR, Multi-modal) flowing through threat detection to Open Agents (Detection, Triage, Analytics, Responsive agents) with open data formats, illustrating agents as defenders against AI-powered attacks."
-  }
- ],
- "11.1": [
+   "why": "AutoML Releases and Roadmap showing supported problem types, model families, and features including XGBoost, LightGBM, and more",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_8729"
+  },
   {
    "id": "p11.1-mlflow-lifecycle",
    "file": "p11.1-mlflow-lifecycle.png",
@@ -1363,7 +429,47 @@
    "why": "A deployment job attached to a registered model"
   }
  ],
- "11.2": [
+ "3.5": [
+  {
+   "id": "p4.1-unified-serving",
+   "file": "p4.1-unified-serving.png",
+   "source": "Data Science With Databricks, slide 73",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_10971",
+   "kind": "diagram",
+   "why": "Comprehensive overview: unified management of custom models, foundation models, and external models with descriptions of each category"
+  },
+  {
+   "id": "p4.1-provisioned-pt",
+   "file": "p4.1-provisioned-pt.png",
+   "source": "Agentbricks Roadshow, slide 44",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_3937",
+   "kind": "diagram",
+   "why": "Explains provisioned throughput endpoint pricing model (dedicated capacity, guaranteed throughput, DBU/hour billing) with UI example"
+  },
+  {
+   "id": "p4.1-ab-testing",
+   "file": "p4.1-ab-testing.png",
+   "source": "Data Science With Databricks, slide 72",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_11836",
+   "kind": "screenshot",
+   "why": "Shows online evaluation capabilities: A/B testing and canary deployments by serving multiple models to one endpoint"
+  },
+  {
+   "id": "p4.1-serving-production",
+   "file": "p4.1-serving-production.png",
+   "source": "Data Science With Databricks, slide 70",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_11811",
+   "kind": "screenshot",
+   "why": "Demonstrates production deployment: serverless solution with API integration, metrics monitoring, and latency/request rate graphs"
+  },
+  {
+   "id": "p4.1-serving-overview",
+   "file": "p4.1-serving-overview.png",
+   "source": "Agent Bricks L300 Pitch Slides, slide 19",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4758",
+   "kind": "diagram",
+   "why": "Visual summary of Model Serving breadth: custom models (mlflow), 1st party models (Anthropic, OpenAI, Llama), and coding agents"
+  },
   {
    "id": "p11.2-serving-architecture",
    "file": "p11.2-serving-architecture.png",
@@ -1405,41 +511,7 @@
    "why": "Route optimization for low-latency serving: direct path from Client → Edge proxy → Load balancer → Serving pod with 'latency-first - every hop minimized'; shows network path reduction for high-QPS workloads"
   }
  ],
- "11.3": [
-  {
-   "id": "p11.3-monitoring-dashboard",
-   "file": "p11.3-monitoring-dashboard.png",
-   "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 35",
-   "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_2401",
-   "kind": "screenshot",
-   "why": "Lakehouse Monitoring dashboard showing profiling, quality metrics, and drift detection in visual format"
-  },
-  {
-   "id": "p11.3-monitoring-setup-ui",
-   "file": "p11.3-monitoring-setup-ui.png",
-   "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 36",
-   "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_2867",
-   "kind": "screenshot",
-   "why": "Monitoring setup configuration with built-in AI judges, scorer reuse, and baseline sampling; shows simplicity"
-  },
-  {
-   "id": "p11.3-monitoring-governance",
-   "file": "p11.3-monitoring-governance.png",
-   "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 38",
-   "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_2880",
-   "kind": "screenshot",
-   "why": "Governance and monitoring integration; shows security, audit, and Unity Catalog integration"
-  },
-  {
-   "id": "p11.3-monitoring-architecture",
-   "file": "p11.3-monitoring-architecture.png",
-   "source": "Data Science With Databricks, slide 84",
-   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_13426",
-   "kind": "diagram",
-   "why": "Lakehouse Monitoring architecture overview with all components; shows open monitoring for tables and models"
-  }
- ],
- "11.4": [
+ "3.6": [
   {
    "id": "p11.4-deployment-jobs-mlops",
    "file": "p11.4-deployment-jobs-mlops.png",
@@ -1495,6 +567,826 @@
    "url": "https://docs.databricks.com/aws/en/jobs",
    "kind": "screenshot",
    "why": "A Lakeflow Jobs pipeline of tasks with its schedule and triggers"
+  }
+ ],
+ "4.1": [
+  {
+   "id": "p4.2-fmapi-serving",
+   "file": "p4.2-fmapi-serving.png",
+   "source": "Agentbricks Roadshow, slide 32",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_3805",
+   "kind": "diagram",
+   "why": "Architecture of Foundation Model APIs: shows customer tenant with query/management routes, access control, and Databricks provider infrastructure with Foundation Model APIs (Claude, Gemini, OpenAI endpoints)"
+  },
+  {
+   "id": "p4.2-fmapi-throughput-latency",
+   "file": "p4.2-fmapi-throughput-latency.png",
+   "source": "Databricks blog - Fast, Secure and Reliable: Enterprise-grade LLM Inference",
+   "url": "https://www.databricks.com/blog/fast-secure-and-reliable-enterprise-grade-llm-inference",
+   "kind": "diagram",
+   "why": "Shows typical throughput-latency curve for Foundation Model APIs with provisioned capacity (11,500 tokens/sec at 1000ms latency)"
+  },
+  {
+   "id": "p4.2-fmapi-unity-gateway",
+   "file": "p4.2-fmapi-unity-gateway.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 17",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4717",
+   "kind": "screenshot",
+   "why": "Foundation Model APIs via Unity Gateway: one API across Claude/GPT-5.5/Gemini/Llama, provisioned throughput, reliable low-latency, secure, governed with cost visibility"
+  },
+  {
+   "id": "p4.2-serving-endpoints-list",
+   "file": "p4.2-serving-endpoints-list.png",
+   "source": "docs.databricks.com/machine-learning/foundation-model-apis",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis",
+   "kind": "screenshot",
+   "why": "Pay-per-token foundation model endpoints ready to use, next to an external model"
+  },
+  {
+   "id": "p4.2-provisioned-throughput-entity",
+   "file": "p4.2-provisioned-throughput-entity.png",
+   "source": "docs.databricks.com/machine-learning/foundation-model-apis/deploy-prov-throughput-foundation-model-apis",
+   "url": "https://docs.databricks.com/aws/en/machine-learning/foundation-model-apis/deploy-prov-throughput-foundation-model-apis",
+   "kind": "screenshot",
+   "why": "Provisioned throughput configured for a foundation model endpoint"
+  },
+  {
+   "id": "p4.4-gateway-governance",
+   "file": "p4.4-gateway-governance.png",
+   "source": "Product Deck: AI Gateway, slide 20",
+   "url": "https://docs.google.com/presentation/d/13FOrjaFbw8ApYmvl2sKg2cjxWiajglNE5RNVG-kK9qM/edit#slide=id.g33a54769ce1_0_191",
+   "kind": "diagram",
+   "why": "Shows External Models within the unified Model Serving platform with AI Gateway providing governance, logging, cost controls, and traffic management across model types"
+  },
+  {
+   "id": "p4.4-unified-governance",
+   "file": "p4.4-unified-governance.png",
+   "source": "Agentbricks Roadshow, slide 124",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4872",
+   "kind": "diagram",
+   "why": "Unified data and AI governance: shows how Unity Catalog and Unity AI Gateway work together to govern models including external agents, with central credential/policy management"
+  },
+  {
+   "id": "p4.4-external-provider-setup",
+   "file": "p4.4-external-provider-setup.png",
+   "source": "docs.databricks.com/ai-gateway/create-model-provider-services",
+   "url": "https://docs.databricks.com/ai-gateway/create-model-provider-services",
+   "kind": "screenshot",
+   "why": "UI for registering external providers: shows configuration options including forward headers, query parameters, URL proxying, and price multiplier for managing external model provider credentials and routing"
+  },
+  {
+   "id": "p4.4-external-models-architecture",
+   "file": "p4.4-external-models-architecture.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 63",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_8926",
+   "kind": "diagram",
+   "why": "Externally hosted GenAI models managed through Databricks serving and the gateway"
+  }
+ ],
+ "4.2": [
+  {
+   "id": "p4.3-fine-tuning",
+   "file": "p4.3-fine-tuning.png",
+   "source": "Data Science With Databricks, slide 51",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_10451",
+   "kind": "diagram",
+   "why": "Overview of fine-tuning: serverless, auto-provisioned GPUs, easy data selection from Unity Catalog, model control and IP ownership (Public Preview Q2)"
+  },
+  {
+   "id": "p4.3-model-training-ui",
+   "file": "p4.3-model-training-ui.png",
+   "source": "docs.databricks.com/large-language-models/foundation-model-training/ui",
+   "url": "https://docs.databricks.com/large-language-models/foundation-model-training/ui",
+   "kind": "screenshot",
+   "why": "Foundation model training UI showing data preparation, model selection, training configuration, and model registration workflow"
+  },
+  {
+   "id": "p4.3-custom-fine-tune",
+   "file": "p4.3-custom-fine-tune.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 50",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_7882",
+   "kind": "diagram",
+   "why": "Custom fine-tuning of an open model on GPU compute, registered in UC and served"
+  },
+  {
+   "id": "p4.3-fine-tune-and-serve",
+   "file": "p4.3-fine-tune-and-serve.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 49",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_7794",
+   "kind": "diagram",
+   "why": "Fine-tuning an open model then serving it through Model Serving and the gateway"
+  }
+ ],
+ "4.3": [
+  {
+   "id": "p5-agent-use-case-guide",
+   "file": "p5-agent-use-case-guide.png",
+   "source": "Agentbricks Roadshow [go/airoadshow], slide 6",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_3639",
+   "kind": "diagram",
+   "why": "Decision tree showing when to use AI Functions for automated batch processing vs interactive agents"
+  },
+  {
+   "id": "p5.1-ai-functions-governance",
+   "file": "p5.1-ai-functions-governance.png",
+   "source": "Agentbricks Roadshow [go/airoadshow], slide 97",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4448",
+   "kind": "diagram",
+   "why": "Details the specific AI Functions (ai_prep_search, Vector Search in SQL, ai_search) and governance/observability for operations at scale"
+  },
+  {
+   "id": "p5.1-common-workflows",
+   "file": "p5.1-common-workflows.png",
+   "source": "Agentbricks Roadshow, slide 87",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4320",
+   "kind": "diagram",
+   "why": "Shows three common workflows using AI Functions: Intelligent Data Extraction, Categorized Intelligence, and Search-Optimized RAG"
+  },
+  {
+   "id": "p5.1-ai-functions-scale",
+   "file": "p5.1-ai-functions-scale.png",
+   "source": "Agentbricks Roadshow [go/airoadshow], slide 70",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4130",
+   "kind": "screenshot",
+   "why": "AI Functions SQL pattern: SELECT ai_extract(...) FROM invoices, scales automatically on serverless, secure with unified model support (Gemini/OpenAI/Anthropic/Meta)"
+  }
+ ],
+ "4.4": [
+  {
+   "id": "p5.2-ai-search",
+   "file": "p5.2-ai-search.png",
+   "source": "Agentbricks Roadshow [go/airoadshow], slide 170",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_5565",
+   "kind": "diagram",
+   "why": "Evolution from Vector Search to AI Search: adds semantic search, full-text/BM25, hybrid, rerankers, auto-quality evaluation for retrieval"
+  },
+  {
+   "id": "p5.2-retrieval-architecture",
+   "file": "p5.2-retrieval-architecture.png",
+   "source": "docs.databricks.com/ai-search/ai-search",
+   "url": "https://docs.databricks.com/ai-search/ai-search/",
+   "kind": "diagram",
+   "why": "Retrieval architecture showing how to calculate embeddings from source data, create vector indexes, and query with LLM application"
+  },
+  {
+   "id": "p5.2-build-rag-databricks",
+   "file": "p5.2-build-rag-databricks.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 47",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_7604",
+   "kind": "diagram",
+   "why": "Complete RAG architecture: data preparation with Lakeflow/LDP → Vector Search embeddings → prompt enhancement → inference via Mosaic AI Gateway"
+  },
+  {
+   "id": "p5.2-rag-agents-indexing",
+   "file": "p5.2-rag-agents-indexing.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 8",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_5462",
+   "kind": "diagram",
+   "why": "RAG Agents pipeline showing end-to-end ingestion and indexing: data preparation, document processing, storage, vector database, with model serving"
+  },
+  {
+   "id": "p5.2-vector-search-deployment",
+   "file": "p5.2-vector-search-deployment.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 25",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_6398",
+   "kind": "diagram",
+   "why": "Deployment option showing automatic embedding creation via Model Serving with Unity Catalog, Vector index, and AI App integration"
+  }
+ ],
+ "4.5": [
+  {
+   "id": "p5.3-mcp-unity-gateway",
+   "file": "p5.3-mcp-unity-gateway.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 34",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4971",
+   "kind": "diagram",
+   "why": "Managed MCP servers overview: Genie One, AI Search, UC Functions, DBSQL with governance and central policy control"
+  },
+  {
+   "id": "p5.3-mcp-how-it-works",
+   "file": "p5.3-mcp-how-it-works.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 35",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4979",
+   "kind": "diagram",
+   "why": "How MCP works: managed URLs per service, Genie One as MCP service in Unity Gateway, self-describing tools, Unity Gateway enforces policy"
+  },
+  {
+   "id": "p5.3-agent-to-tools-communication",
+   "file": "p5.3-agent-to-tools-communication.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 11",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_5617",
+   "kind": "diagram",
+   "why": "Agent-to-tools communication architecture showing managed MCP connectors, external agent services, and enterprise tools integration via APIs"
+  },
+  {
+   "id": "p5.3-what-is-an-agent",
+   "file": "p5.3-what-is-an-agent.png",
+   "source": "How to set up an Agentic Applications workshop",
+   "kind": "diagram",
+   "why": "Conceptual diagram of agent components: user, reasoning engine with context, foundation models API, agent tools, MCP flow, skills, actions"
+  }
+ ],
+ "4.6": [
+  {
+   "id": "p5.4-agent-bricks-framework",
+   "file": "p5.4-agent-bricks-framework.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 13",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4552",
+   "kind": "diagram",
+   "why": "Agent Bricks framework overview: choose LangGraph/framework, select model, serverless compute, provide context, instrument observability"
+  },
+  {
+   "id": "p5.4-agent-runtime-sandbox",
+   "file": "p5.4-agent-runtime-sandbox.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 14",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4637",
+   "kind": "diagram",
+   "why": "Agent runtime components: Unity Gateway, Databricks Sandbox for secure code execution, Agent Memory with Lakebase, Tools and MCP, MLflow tracking"
+  },
+  {
+   "id": "p5-agent-loop-scale",
+   "file": "p5-agent-loop-scale.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 9",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4172",
+   "kind": "diagram",
+   "why": "Demonstrates operating at scale: many agents deployed simultaneously with Sandbox, Tools, Evaluation, Deployments, Monitoring, MCP, Governance"
+  },
+  {
+   "id": "p5.4-agent-memory",
+   "file": "p5.4-agent-memory.png",
+   "source": "docs.databricks.com/agents/agent-memory/self-managed-memory",
+   "url": "https://docs.databricks.com/agents/agent-memory/self-managed-memory/",
+   "kind": "diagram",
+   "why": "Long-term memory architecture: entire conversations stored in Lakebase by thread ID, enabling agents to access history across sessions"
+  },
+  {
+   "id": "p5.4-databricks-sandbox",
+   "file": "p5.4-databricks-sandbox.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 27",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4905",
+   "kind": "diagram",
+   "why": "Databricks Sandbox isolation: managed environment for agent-generated code with up to 100GB home directory, downscoped access, SDK/REST/CLI/SSH"
+  }
+ ],
+ "5.1": [
+  {
+   "id": "p6.1-trace-dashboard",
+   "file": "p6.1-trace-dashboard.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 39",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_5002",
+   "kind": "screenshot",
+   "why": "Hero slide showing agent tracing powered by MLflow with one-line integration for 30+ frameworks and pre-built trace analysis dashboards."
+  },
+  {
+   "id": "p6.1-trace-detail",
+   "file": "p6.1-trace-detail.png",
+   "source": "docs.databricks.com/mlflow3/genai/tracing/overview",
+   "url": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/overview",
+   "kind": "screenshot",
+   "why": "Detailed trace view showing nested spans for every step (guardrails, search, ranking, generation), with inputs, outputs, latency, tokens, and assessments—shows where the step went wrong."
+  },
+  {
+   "id": "p6.1-traces-list",
+   "file": "p6.1-traces-list.png",
+   "source": "docs.databricks.com/mlflow3/genai/tracing/overview",
+   "url": "https://docs.databricks.com/aws/en/mlflow3/genai/tracing/overview",
+   "kind": "screenshot",
+   "why": "List view of all traces across requests, showing trace ID, status, latency, token count, and cost for easy browsing and comparison."
+  },
+  {
+   "id": "p6.1-mlflow-genai-platform",
+   "file": "p6.1-mlflow-genai-platform.png",
+   "source": "Agentbricks Roadshow [go/airoadshow], slide 179",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_5693",
+   "kind": "diagram",
+   "why": "MLflow Open GenAI platform architecture showing Tracing (left pillar) connecting to deployment, with Trace logging component feeding Observability, and integration with LLM Judges and human feedback for evaluation"
+  }
+ ],
+ "5.2": [
+  {
+   "id": "mlflow-eval-hero",
+   "file": "mlflow-eval-hero.png",
+   "source": "mlflow.org/genai/evaluations",
+   "url": "https://mlflow.org/genai/evaluations"
+  },
+  {
+   "id": "mlflow-eval-1",
+   "file": "mlflow-eval-1.png",
+   "source": "mlflow.org/genai/evaluations",
+   "url": "https://mlflow.org/genai/evaluations"
+  },
+  {
+   "id": "mlflow-eval-custom-judge",
+   "file": "mlflow-eval-custom-judge.png",
+   "source": "mlflow.org/genai/evaluations",
+   "url": "https://mlflow.org/genai/evaluations"
+  },
+  {
+   "id": "p6.2-eval-flow",
+   "file": "p6.2-eval-flow.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 41",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_5016",
+   "kind": "diagram",
+   "why": "End-to-end evaluation workflow: test during dev → deploy → monitor in production, with pre-built/custom scorers, evaluation sets, and quality validation."
+  },
+  {
+   "id": "p6.2-prompt-registry",
+   "file": "p6.2-prompt-registry.png",
+   "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 40",
+   "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_3085",
+   "kind": "screenshot",
+   "why": "Prompt Registry interface showing versioned prompts with staging/production aliases (Live buttons), enabling tracked prompt changes like code changes."
+  },
+  {
+   "id": "mlflow-eval-feedback",
+   "file": "mlflow-eval-feedback.png",
+   "source": "mlflow.org/genai/evaluations",
+   "url": "https://mlflow.org/genai/evaluations"
+  },
+  {
+   "id": "p6.3-review-session",
+   "file": "p6.3-review-session.png",
+   "source": "docs.databricks.com/mlflow3/genai/human-feedback/expert-feedback/label-existing-traces",
+   "url": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/expert-feedback/label-existing-traces",
+   "kind": "screenshot",
+   "why": "Review App interface where domain experts test agents in a chat interface (User/Assistant conversation) and set expectations for labeling."
+  },
+  {
+   "id": "p6.3-review-labeling",
+   "file": "p6.3-review-labeling.png",
+   "source": "Agentbricks Roadshow, slide 188",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_5927",
+   "kind": "visual",
+   "why": "Overview of MLflow Labeling: built-in review app for interactive testing, labeling workflows, synthetic bootstrapping, and auto-saving traces and feedback."
+  },
+  {
+   "id": "p6.3-labeling-session",
+   "file": "p6.3-labeling-session.png",
+   "source": "docs.databricks.com/mlflow3/genai/human-feedback/concepts/labeling-sessions",
+   "url": "https://docs.databricks.com/aws/en/mlflow3/genai/human-feedback/concepts/labeling-sessions",
+   "kind": "screenshot",
+   "why": "Creating a labeling session with label schemas for expert review"
+  },
+  {
+   "id": "p6.3-agent-evaluation-review",
+   "file": "p6.3-agent-evaluation-review.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 10",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_5563",
+   "kind": "diagram",
+   "why": "Experts and users giving feedback through the review app, feeding evaluation"
+  }
+ ],
+ "5.4": [
+  {
+   "id": "p11.3-monitoring-dashboard",
+   "file": "p11.3-monitoring-dashboard.png",
+   "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 35",
+   "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_2401",
+   "kind": "screenshot",
+   "why": "Lakehouse Monitoring dashboard showing profiling, quality metrics, and drift detection in visual format"
+  },
+  {
+   "id": "p11.3-monitoring-setup-ui",
+   "file": "p11.3-monitoring-setup-ui.png",
+   "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 36",
+   "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_2867",
+   "kind": "screenshot",
+   "why": "Monitoring setup configuration with built-in AI judges, scorer reuse, and baseline sampling; shows simplicity"
+  },
+  {
+   "id": "p11.3-monitoring-governance",
+   "file": "p11.3-monitoring-governance.png",
+   "source": "MLFlow 3.0 (L100-L200) Pitch Deck, slide 38",
+   "url": "https://docs.google.com/presentation/d/1YmdmOd7LCg0c7lH_8LoeQCPKuLuYVkW4L1adkXEjoJA/edit#slide=id.g367d3f91423_0_2880",
+   "kind": "screenshot",
+   "why": "Governance and monitoring integration; shows security, audit, and Unity Catalog integration"
+  },
+  {
+   "id": "p11.3-monitoring-architecture",
+   "file": "p11.3-monitoring-architecture.png",
+   "source": "Data Science With Databricks, slide 84",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_13426",
+   "kind": "diagram",
+   "why": "Lakehouse Monitoring architecture overview with all components; shows open monitoring for tables and models"
+  }
+ ],
+ "6.1": [
+  {
+   "id": "p7.1-unity-catalog-hierarchy",
+   "file": "p7.1-unity-catalog-hierarchy.png",
+   "source": "candidate",
+   "kind": "diagram",
+   "why": "UC object hierarchy showing models, functions, services, secrets as governed objects alongside tables"
+  },
+  {
+   "id": "p7.1-ai-gateway-lineage-graph",
+   "file": "p7.1-ai-gateway-lineage-graph.png",
+   "source": "docs.databricks.com/data-governance/unity-catalog/ai-gateway-service-lineage",
+   "url": "https://docs.databricks.com/data-governance/unity-catalog/ai-gateway-service-lineage",
+   "kind": "diagram",
+   "why": "AI Gateway service lineage graph showing model lineage tracking with UC"
+  },
+  {
+   "id": "p7.1-unity-catalog-models",
+   "file": "p7.1-unity-catalog-models.png",
+   "source": "Data Science With Databricks, slide 114",
+   "url": "https://docs.google.com/presentation/d/1p-lb7UxBJLcrAIqQ6sIxsyI5-li-Fpy4hqYDUkHCoBI/edit#slide=id.g2deeda79fb6_0_2841",
+   "kind": "visual",
+   "why": "UC Models visual showing models as managed objects in Unity Catalog"
+  },
+  {
+   "id": "p7.1-endpoint-lineage",
+   "file": "p7.1-endpoint-lineage.png",
+   "source": "docs.databricks.com/data-governance/unity-catalog/ai-gateway-service-lineage",
+   "url": "https://docs.databricks.com/aws/en/data-governance/unity-catalog/ai-gateway-service-lineage",
+   "kind": "screenshot",
+   "why": "Lineage of a serving endpoint: upstream tables, models and model provider"
+  },
+  {
+   "id": "p7.1-ai-assets-in-uc",
+   "file": "p7.1-ai-assets-in-uc.png",
+   "source": "Mosaic AI - System Architecture 2026-02-25, slide 55",
+   "url": "https://docs.google.com/presentation/d/1uzSDh3addpxvvavUb_aYRKSCKlRWCS6N3rBE5DTf_PU/edit#slide=id.g3ce9ad101dc_0_8214",
+   "kind": "diagram",
+   "why": "AI assets (models, functions, vector indexes, tools) governed in Unity Catalog"
+  }
+ ],
+ "6.2": [
+  {
+   "id": "p7.2-unity-gateway-architecture",
+   "file": "p7.2-unity-gateway-architecture.png",
+   "source": "candidate",
+   "kind": "diagram",
+   "why": "Unity AI Gateway control flow showing Authenticate, OBO, Authorize, Execute pipeline"
+  },
+  {
+   "id": "p7.2-ai-governance-dashboard",
+   "file": "p7.2-ai-governance-dashboard.png",
+   "source": "candidate",
+   "kind": "screenshot",
+   "why": "AI Governance dashboard showing token usage, governed traffic %, budgets, spend tracking"
+  },
+  {
+   "id": "p7.2-cumulative-spend-chart",
+   "file": "p7.2-cumulative-spend-chart.png",
+   "source": "docs.databricks.com/ai-gateway/budgets",
+   "url": "https://docs.databricks.com/ai-gateway/budgets",
+   "kind": "screenshot",
+   "why": "Cumulative spend chart showing budget control and cost monitoring"
+  },
+  {
+   "id": "p7.2-unity-gateway-hub",
+   "file": "p7.2-unity-gateway-hub.png",
+   "source": "Agent Bricks — L300 Pitch Slides, slide 20",
+   "url": "https://docs.google.com/presentation/d/1yHFQN3ZD7PWDnpEInf8nhiToChVn_g5XfTlY98Ls58U/edit#slide=id.h62d219fcc814e33b_195_4791",
+   "kind": "diagram",
+   "why": "Unity Gateway as central hub enforcing governance across custom models, foundation models, and MCP"
+  }
+ ],
+ "6.6": [
+  {
+   "id": "p7.3-lakehouse-security",
+   "file": "p7.3-lakehouse-security.png",
+   "source": "docs.databricks.com/lakehouse-architecture/security-compliance-and-privacy/",
+   "url": "https://docs.databricks.com/lakehouse-architecture/security-compliance-and-privacy/",
+   "kind": "diagram",
+   "why": "Lakehouse security stack showing components (Mosaic AI, Databricks, Lakeflow) with UC and security layers"
+  },
+  {
+   "id": "p7.3-dasf-v3-components",
+   "file": "p7.3-dasf-v3-components.png",
+   "source": "databricks.com blog: Agentic AI Security",
+   "url": "https://www.databricks.com/blog/agentic-ai-security-new-risks-and-controls-databricks-ai-security-framework-dasf-v30",
+   "kind": "diagram",
+   "why": "DASF v3.0 canonical 13 components of end-to-end AI system with 35 new agentic risks, 6 controls; shows DataSecOps, ModelSecOps, DevSecOps layers; replaces outdated DASF v1/v2 (59 controls)"
+  },
+  {
+   "id": "p7.3-dasf-v3-lethal-trifecta",
+   "file": "p7.3-dasf-v3-lethal-trifecta.png",
+   "source": "databricks.com blog: Agentic AI Security",
+   "url": "https://www.databricks.com/blog/agentic-ai-security-new-risks-and-controls-databricks-ai-security-framework-dasf-v30",
+   "kind": "diagram",
+   "why": "DASF v3.0 risk model: 'Lethal Trifecta' showing three simultaneous conditions that spike agentic risk (access to sensitive systems, untrustworthy inputs, ability to change state/communicate); maps to specific DASF v3.0 controls"
+  },
+  {
+   "id": "p7.3-dasf-v3-agent-components",
+   "file": "p7.3-dasf-v3-agent-components.png",
+   "source": "databricks.com blog: Agentic AI Security",
+   "url": "https://www.databricks.com/blog/agentic-ai-security-new-risks-and-controls-databricks-ai-security-framework-dasf-v30",
+   "kind": "diagram",
+   "why": "DASF v3.0 Component 13 (Agentic AI) breakdown: 35 risks across 3 sub-components (13A Agent Core: reasoning/memory 15 risks; 13B MCP Server: tool definitions 10 risks; 13C MCP Client: connection/code execution 10 risks); inter-agent dynamics"
+  }
+ ],
+ "7.1": [
+  {
+   "id": "p8.1-genie-one-chat",
+   "file": "p8.1-genie-one-chat.png",
+   "source": "Databricks blog: Introducing Genie One, Genie Ontology, and Genie Agents",
+   "url": "https://www.databricks.com/blog/introducing-genie-one-genie-ontology-and-genie-agents",
+   "kind": "diagram",
+   "why": "Shows Databricks blog: Introducing G... (tile 1)"
+  },
+  {
+   "id": "p8.1-genie-one-answer",
+   "file": "p8.1-genie-one-answer.png",
+   "source": "databricks.com/product/genie/one",
+   "url": "https://www.databricks.com/product/genie/one",
+   "kind": "screenshot",
+   "why": "Shows databricks.com/product/genie/o... (tile 2)"
+  },
+  {
+   "id": "p8.1-genie-one-reasoning",
+   "file": "p8.1-genie-one-reasoning.png",
+   "source": "databricks.com/product/genie/one",
+   "url": "https://www.databricks.com/product/genie/one",
+   "kind": "screenshot",
+   "why": "Shows databricks.com/product/genie/o... (tile 3)"
+  },
+  {
+   "id": "p8.1-upload-file-498a3c89cbaa10f06354cb3a2a20",
+   "file": "p8.1-upload-file-498a3c89cbaa10f06354cb3a2a20.png",
+   "source": "docs.databricks.com/genie-one/chat",
+   "url": "https://docs.databricks.com/aws/en/genie-one/chat",
+   "kind": "screenshot",
+   "why": "Shows docs.databricks.com/genie-one/... (tile 14)"
+  }
+ ],
+ "7.2": [
+  {
+   "id": "p8.3-genie-agents-setup",
+   "file": "p8.3-genie-agents-setup.png",
+   "source": "databricks.com/product/genie/agents",
+   "url": "https://www.databricks.com/product/genie/agents",
+   "kind": "screenshot",
+   "why": "Shows databricks.com/product/genie/a... (tile 2)"
+  },
+  {
+   "id": "p8.3-genie-agents-eval",
+   "file": "p8.3-genie-agents-eval.png",
+   "source": "databricks.com/product/genie/agents",
+   "url": "https://www.databricks.com/product/genie/agents",
+   "kind": "screenshot",
+   "why": "Shows databricks.com/product/genie/a... (tile 4)"
+  },
+  {
+   "id": "p8.3-1nzunoxtg68ogokrse8qsd1-uctxsi-2",
+   "file": "p8.3-1nzunoxtg68ogokrse8qsd1-uctxsi-2.png",
+   "source": "[SEMEA] Agent Bricks - Knowledge Assistant - Workshop - SEMEA - Online - 05 May 2026, slide 32",
+   "url": "https://docs.google.com/presentation/d/1nzunOxTG68OgOkrSE8QSD1_uctXsI9LH6dzXj4LGoBc/edit#slide=id.g3871c9ddcbc_0_2920",
+   "kind": "screenshot",
+   "why": "Shows [SEMEA] Agent Bricks - Knowled... (tile 18)"
+  },
+  {
+   "id": "p8.3-genie-agents-simpler",
+   "file": "p8.3-genie-agents-simpler.png",
+   "source": "[Customer-facing] Knowledge Assistant & Supervisor Agent updates, slide 9",
+   "url": "https://docs.google.com/presentation/d/1QYbJUGDqzon9NQmK7ZPAA09O26XG-tb3oJse6Bcf-ko/edit#slide=id.g3faed49ef47_0_876",
+   "kind": "diagram",
+   "why": "Before/after showing how Genie Agents simplify 'talk to your data' agent building: fragmented setup (3 agents) versus simpler unified Genie Agent build handling both documents and tables"
+  }
+ ],
+ "7.3": [
+  {
+   "id": "p8.2-genie-ontology-benchmark",
+   "file": "p8.2-genie-ontology-benchmark.png",
+   "source": "Databricks blog: Introducing Genie One, Genie Ontology, and Genie Agents",
+   "url": "https://www.databricks.com/blog/introducing-genie-one-genie-ontology-and-genie-agents",
+   "kind": "diagram",
+   "why": "Shows Databricks blog: Introducing G... (tile 1)"
+  },
+  {
+   "id": "p8.2-what-is-e47897bcd7c9a7a16b119c3b1857ee42",
+   "file": "p8.2-what-is-e47897bcd7c9a7a16b119c3b1857ee42.png",
+   "source": "docs.databricks.com/uc-semantics/metric-views/",
+   "url": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/",
+   "kind": "screenshot",
+   "why": "Shows docs.databricks.com/uc-semanti... (tile 3)"
+  },
+  {
+   "id": "p8.2-ui-editor-7cb597be46690bc3b8b3adf23a639e",
+   "file": "p8.2-ui-editor-7cb597be46690bc3b8b3adf23a639e.png",
+   "source": "docs.databricks.com/uc-semantics/metric-views/create",
+   "url": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/create",
+   "kind": "screenshot",
+   "why": "Shows docs.databricks.com/uc-semanti... (tile 4)"
+  },
+  {
+   "id": "p8.2-materialization-pipeline-updated-e8055ee",
+   "file": "p8.2-materialization-pipeline-updated-e8055ee.png",
+   "source": "docs.databricks.com/uc-semantics/metric-views/materialization",
+   "url": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/materialization",
+   "kind": "screenshot",
+   "why": "Shows docs.databricks.com/uc-semanti... (tile 6)"
+  },
+  {
+   "id": "p8.2-query-execution-update-e67cd6e37dbbd07a2",
+   "file": "p8.2-query-execution-update-e67cd6e37dbbd07a2.png",
+   "source": "docs.databricks.com/uc-semantics/metric-views/materialization",
+   "url": "https://docs.databricks.com/aws/en/uc-semantics/metric-views/materialization",
+   "kind": "screenshot",
+   "why": "Shows docs.databricks.com/uc-semanti... (tile 7)"
+  }
+ ],
+ "7.5": [
+  {
+   "id": "p8.4-row-zero-spreadsheet",
+   "file": "p8.4-row-zero-spreadsheet.png",
+   "source": "Row Zero blog: From Query to Analysis Using AI in Row Zero",
+   "url": "https://rowzero.com/blog/from-query-to-analysis-using-ai-in-row-zero",
+   "kind": "diagram",
+   "why": "Shows Row Zero blog: From Query to A... (tile 2)"
+  },
+  {
+   "id": "p8.4-row-zero-analysis",
+   "file": "p8.4-row-zero-analysis.png",
+   "source": "Row Zero blog: From Query to Analysis Using AI in Row Zero",
+   "url": "https://rowzero.com/blog/from-query-to-analysis-using-ai-in-row-zero",
+   "kind": "diagram",
+   "why": "Shows Row Zero blog: From Query to A... (tile 3)"
+  },
+  {
+   "id": "p8.4-aibi-dashboards-authoring",
+   "file": "p8.4-aibi-dashboards-authoring.png",
+   "source": "Agentbricks Roadshow [go/airoadshow], slide 206",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_6200",
+   "kind": "screenshot",
+   "why": "AI/BI dashboards with AI-assisted authoring"
+  },
+  {
+   "id": "p8.4-chart-created-by-genie",
+   "file": "p8.4-chart-created-by-genie.png",
+   "source": "docs.databricks.com/ai-bi/release-notes/2026",
+   "url": "https://docs.databricks.com/aws/en/ai-bi/release-notes/2026",
+   "kind": "screenshot",
+   "why": "A dashboard chart created by Genie from a request"
+  }
+ ],
+ "7.6": [
+  {
+   "id": "p8.5-genie-app-builder-deploy",
+   "file": "p8.5-genie-app-builder-deploy.png",
+   "source": "Databricks blog: Enabling Governed Vibe Coding for Enterprise Apps on Databricks",
+   "url": "https://www.databricks.com/blog/enabling-governed-vibe-coding-enterprise-apps-databricks",
+   "kind": "diagram",
+   "why": "Shows Databricks blog: Enabling Gove... (tile 1)"
+  },
+  {
+   "id": "p8.5-genie-app-builder-interface",
+   "file": "p8.5-genie-app-builder-interface.png",
+   "source": "Databricks blog: Enabling Governed Vibe Coding for Enterprise Apps on Databricks",
+   "url": "https://www.databricks.com/blog/enabling-governed-vibe-coding-enterprise-apps-databricks",
+   "kind": "diagram",
+   "why": "Shows Databricks blog: Enabling Gove... (tile 2)"
+  },
+  {
+   "id": "p9.1-apps-example",
+   "file": "p9.1-apps-example.png",
+   "source": "candidate",
+   "url": "How to set up an Agentic Applications workshop, slide 62",
+   "kind": "screenshot",
+   "why": "Real Databricks App interface showing a working deployed application example"
+  },
+  {
+   "id": "p9.1-apps-deployment",
+   "file": "p9.1-apps-deployment.png",
+   "source": "docs",
+   "url": "docs.databricks.com/dev-tools/databricks-apps/deploy",
+   "kind": "screenshot",
+   "why": "Shows the app deployment details page from Databricks UI, demonstrating how apps are deployed and managed on the platform"
+  },
+  {
+   "id": "p9.1-load-testing-dashboard",
+   "file": "p9.1-load-testing-dashboard.gif",
+   "source": "docs",
+   "url": "docs.databricks.com/agents/custom-agents/load-test-agent-app",
+   "kind": "screenshot",
+   "why": "Displays monitoring and load-testing dashboard for apps, showing how to observe and manage deployed applications"
+  },
+  {
+   "id": "p9.1-llmops-lifecycle",
+   "file": "p9.1-llmops-lifecycle.png",
+   "source": "deck",
+   "url": "Genie benchmarks, slide 9",
+   "kind": "diagram",
+   "why": "LLMOps lifecycle management diagram showing the full development and deployment workflow for agents and applications"
+  }
+ ],
+ "8.1": [
+  {
+   "id": "p9.3-agent-dev-lifecycle",
+   "file": "p9.3-agent-dev-lifecycle.png",
+   "source": "candidate",
+   "url": "Mosaic AI - System Architecture 2026-02-25, slide 66",
+   "kind": "diagram",
+   "why": "Comprehensive agent development lifecycle: AI Tools Dev → AI Agent Development (with playground, langchain, Python) → Unity Catalog (Model & Tools Hub) → Prompt construction → Inference → Monitoring with System Tables"
+  },
+  {
+   "id": "p9.3-meta-harness",
+   "file": "p9.3-meta-harness.png",
+   "source": "deck",
+   "url": "Agent Bricks L300 Pitch Slides, slide 59",
+   "kind": "diagram",
+   "why": "Meta harness comparison showing how Omnigent provides unified interface for Claude, Cursor, Codex and other coding agents with shared context and policies"
+  },
+  {
+   "id": "p9.3-coding-agents-governance",
+   "file": "p9.3-coding-agents-governance.png",
+   "source": "docs.databricks.com/ai-gateway/coding-agent-configure-govern",
+   "url": "https://docs.databricks.com/aws/en/ai-gateway/coding-agent-configure-govern",
+   "kind": "screenshot",
+   "why": "Coding agents such as Claude Code and Codex configured centrally with models and policies"
+  }
+ ],
+ "9.1": [
+  {
+   "id": "p10.1-customer-360-profiles",
+   "file": "p10.1-customer-360-profiles.jpg",
+   "source": "databricks.com/product/customerlake-cdp",
+   "url": "https://www.databricks.com/product/customerlake-cdp",
+   "kind": "screenshot",
+   "why": "Shows 8 unified customer profile cards with attributes like Unified ID, Lifetime Spend, Last Purchase, App Sessions, Loyalty Status, demonstrating the 360-degree customer profiles that join transactions, behavior, and engagement data."
+  },
+  {
+   "id": "p10.1-customer-360-diagram",
+   "file": "p10.1-customer-360-diagram.png",
+   "source": "databricks.com/product/customerlake-cdp",
+   "url": "https://www.databricks.com/product/customerlake-cdp",
+   "kind": "diagram",
+   "why": "Hexagonal capability diagram showing six dimensions of CustomerLake: Engagement, Purchases, Analytics, Social, Service and support, and Predictive metrics, illustrating the breadth of customer data and capabilities."
+  },
+  {
+   "id": "p10.1-audience-segmentation",
+   "file": "p10.1-audience-segmentation.png",
+   "source": "databricks.com/product/customerlake-cdp",
+   "url": "https://www.databricks.com/product/customerlake-cdp",
+   "kind": "screenshot",
+   "why": "VIP Loyalty Shoppers audience segmentation interface with filters and 248k matching profiles showing $1,085 average lifetime value, demonstrating how campaign agents create and activate audiences."
+  },
+  {
+   "id": "p10.1-identity-resolution",
+   "file": "p10.1-identity-resolution.png",
+   "source": "databricks.com/product/customerlake-cdp",
+   "url": "https://www.databricks.com/product/customerlake-cdp",
+   "kind": "diagram",
+   "why": "Data flow diagram showing transactions, support tickets, and app sessions flowing through clean tables, then through customer_identity_graph to unified_profiles, exemplifying AI-assisted identity resolution joining multiple data sources."
+  },
+  {
+   "id": "p10.1-campaign-automation",
+   "file": "p10.1-campaign-automation.png",
+   "source": "databricks.com/product/customerlake-cdp",
+   "url": "https://www.databricks.com/product/customerlake-cdp",
+   "kind": "screenshot",
+   "why": "CustomerLake campaign management showing 'Post-Sale Upsell' campaign (Live) with 186k evaluated profiles, 167.4k total activations, 3.2k conversions, and activation trends, showing real-time profile API feeding personalization and activation."
+  }
+ ],
+ "9.2": [
+  {
+   "id": "p10.2-lakewatch-alerts-monitoring",
+   "file": "p10.2-lakewatch-alerts-monitoring.png",
+   "source": "Agentbricks Roadshow [go/airoadshow] slide 117",
+   "url": "https://docs.google.com/presentation/d/1zYbz4UnikZ1yFgBPWZzfwEaQG3hSKpR8UjbhS3cmaBM/edit#slide=id.g3f016edc6dc_11_4785",
+   "kind": "screenshot",
+   "why": "Shows Agent Tracing with Lakewatch integration for alerts and monitoring, displaying security incidents table with severity, incident IDs, and timestamps, demonstrating end-to-end visibility into security alerts."
+  },
+  {
+   "id": "p10.2-detection-as-code",
+   "file": "p10.2-detection-as-code.png",
+   "source": "databricks.com/product/lakewatch",
+   "url": "https://www.databricks.com/product/lakewatch",
+   "kind": "screenshot",
+   "why": "Detection rule creation interface with wizard steps and SQL code for 'Repeated Failed Logins Followed by Success' rule, with Genie AI agent suggesting rule logic, showing detection rules versioned and tested like code with agent assistance."
+  },
+  {
+   "id": "p10.2-ai-threat-hunting",
+   "file": "p10.2-ai-threat-hunting.png",
+   "source": "databricks.com/product/lakewatch",
+   "url": "https://www.databricks.com/product/lakewatch",
+   "kind": "screenshot",
+   "why": "Lakewatch Datasources dashboard showing multiple security, IT, and business log sources (CloudWatch, CloudTrail, Slack audit logs, Cisco ASA, etc.) with event and alert counts and activity timelines at petabyte scale."
+  },
+  {
+   "id": "p10.2-automated-normalization",
+   "file": "p10.2-automated-normalization.png",
+   "source": "databricks.com/product/lakewatch",
+   "url": "https://www.databricks.com/product/lakewatch",
+   "kind": "screenshot",
+   "why": "CloudTrail log ingestion and normalization pipeline showing Bronze (raw), Silver (normalized with 37 fields added), and Gold (enriched with alerts) layers, demonstrating log processing at object-storage cost."
+  },
+  {
+   "id": "p10.2-petabyte-scale",
+   "file": "p10.2-petabyte-scale.png",
+   "source": "databricks.com/product/lakewatch",
+   "url": "https://www.databricks.com/product/lakewatch",
+   "kind": "screenshot",
+   "why": "Lakewatch Query interface with SQL analyzing login failures (400k rows, 538s runtime) and autonomous Genie agent investigating threats, identifying suspicious behavior patterns and risk-ranking users."
+  },
+  {
+   "id": "p10.2-soc-operations",
+   "file": "p10.2-soc-operations.png",
+   "source": "databricks.com/blog/databricks-announces-lakewatch-new-agentic-siem",
+   "url": "https://www.databricks.com/blog/databricks-announces-lakewatch-new-agentic-siem",
+   "kind": "diagram",
+   "why": "Strategic architecture showing data sources (Email, Network/Firewall, Identity, SaaS, Cloud, DNS, EDR/XDR, Multi-modal) flowing through threat detection to Open Agents (Detection, Triage, Analytics, Responsive agents) with open data formats, illustrating agents as defenders against AI-powered attacks."
   }
  ]
 }

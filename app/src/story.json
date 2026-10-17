@@ -1,1230 +1,3696 @@
 {
- "thread": {
-  "title": "From scattered data to AI in production",
-  "opening": "Most large organizations already run analytics and have started with AI. Their data sits in several systems, each with its own copies and rules, kept in sync by pipelines built by hand. Data scientists rebuild the same features and struggle to reproduce their results, every model provider is handled separately, and agents cannot reach data and tools safely. Nobody can verify the answers of the AI or see how it is used. Business users wait for the few colleagues who can query the data, developers host each application on its own infrastructure, and customer and security data stay in their own silos. So AI projects start as pilots on extracts, and many stop before production. The work starts with the data. How do you get it into one place, governed once and fresh enough for AI?",
-  "closing": "Every part of the starting situation now has its answer. The data foundation stores the scattered data once and governs it, the data science lifecycle makes model work reproducible, and model access puts every provider behind one way of serving. Building agents gives them safe access to data and tools, evaluation measures their answers, and governance sets who may use what. Business users and developers get tools of their own, domain applications break the customer and security silos, and production operations keep every model under control. AI no longer stops at the pilot."
- },
- "chapters": [
-  {
-   "num": 1,
-   "title": "Challenges",
-   "handoff": "The work starts with the data. How do you get it into one place, governed once and fresh enough for AI?",
-   "points": [
-    {
-     "id": "1.1",
-     "title": "Data spread across systems",
-     "lead": "",
-     "bullets": [
-      "Most companies already run analytics and have started with AI.",
-      "Their data sits in several places: operational databases behind the applications, a warehouse for reporting, a data lake for raw files, and SaaS tools.",
-      "Each system keeps its own copies and its own access rules.",
-      "Pipelines move data between them to keep the copies in sync.",
-      "These pipelines are written and scheduled by hand, and the copies they feed are often out of date.",
-      "When a table stops being refreshed or breaks, nobody is warned, and the repair is manual.",
-      "People who need an answer wait for the few colleagues who can query these systems."
-     ],
-     "refs": []
-    },
-    {
-     "id": "1.2",
-     "title": "Model work that is slow and hard to reproduce",
-     "lead": "AI needs that data. When the data is spread out, every AI project first has to collect it.",
-     "bullets": [
-      "Data scientists rebuild the same features in each project, and features are often computed differently for training and in production.",
-      "Experiments are hard to reproduce, results stay scattered across teams, and algorithms and settings are tried by hand.",
-      "Large datasets do not fit on one machine, and GPUs are scarce, hard to set up or left idle."
-     ],
-     "refs": []
-    },
-    {
-     "id": "1.3",
-     "title": "Every model provider handled separately",
-     "lead": "Many use cases now start from models that someone else trained.",
-     "bullets": [
-      "Each model provider comes with its own serving setup, and API keys end up scattered across code and teams.",
-      "Token spend grows without warning, calls to outside models go unaudited, and relying on one provider creates lock-in.",
-      "Adapting a model to the company's needs takes large and costly GPU resources."
-     ],
-     "refs": []
-    },
-    {
-     "id": "1.4",
-     "title": "Agents that cannot reach data and tools safely",
-     "lead": "A model on its own only answers. Agents also look up company data and use tools.",
-     "bullets": [
-      "Using AI on company documents often means exporting the data to outside services.",
-      "An agent also needs search, tools and memory, and each connection is built by hand, with credentials spread across agents.",
-      "Agents start every conversation from scratch, and the code they generate can run with unrestricted access to data.",
-      "A single agent is not enough for complex tasks, and routing work between agents is manual."
-     ],
-     "refs": []
-    },
-    {
-     "id": "1.5",
-     "title": "AI that nobody can verify or control",
-     "lead": "Once AI acts on company data, it has to be trusted.",
-     "bullets": [
-      "When an agent gives a wrong answer, nobody sees which step failed, and the quality of its answers is not measured.",
-      "Prompts change without being tracked, and expert feedback sits in spreadsheets, cut off from the agents.",
-      "Models, agents and tools are not governed like data.",
-      "Nobody has a central view of how AI is used, and nothing is audited."
-     ],
-     "refs": []
-    },
-    {
-     "id": "1.6",
-     "title": "Business users and developers held back",
-     "lead": "These gaps also reach the people who use data and AI every day, and those who build with it.",
-     "bullets": [
-      "Business users depend on those few colleagues for every question, and the same metric is defined differently from one team or dashboard to the next.",
-      "What experts know stays with them, and analysis done in spreadsheets escapes governance.",
-      "Even a small internal app needs a developer, and developers host each app on separate infrastructure, with its own identity and secrets.",
-      "Much of their time goes into repetitive code and hand-built agent scaffolding."
-     ],
-     "refs": []
-    },
-    {
-     "id": "1.7",
-     "title": "Customer and security data in separate silos",
-     "lead": "Some business domains add silos of their own.",
-     "bullets": [
-      "Customer data is fragmented across systems, with duplicate records and no lineage.",
-      "Security logs sit in separate tools, and many are deleted early to save cost."
-     ],
-     "refs": []
-    },
-    {
-     "id": "1.8",
-     "title": "AI pilots blocked before production",
-     "lead": "With data, models and tools in this state, an AI project cannot start on live, governed data.",
-     "bullets": [
-      "So AI projects start as pilots on extracts.",
-      "A pilot can work on its extract.",
-      "Going to production means reaching live data, proving the answers are right, and controlling who uses which model and at what cost.",
-      "Many pilots stop at that step.",
-      "The models that do reach production are hard to run, because versions are not tracked and promoting a new one is manual and slow."
-     ],
-     "refs": []
-    }
-   ]
+  "thread": {
+    "title": "AI and Data Science on Databricks",
+    "overview": "Databricks platform architecture",
+    "opening": [],
+    "closing": []
   },
-  {
-   "num": 2,
-   "title": "Data and AI foundation",
-   "handoff": "The data is in one place, fresh and governed. The first thing teams do with data like this is learn from it. How does a data science team work on it?",
-   "points": [
+  "overview": [
     {
-     "id": "2.1",
-     "title": "Open table storage with Delta Lake",
-     "lead": "",
-     "effect": "The company keeps one consistent copy of its data, in an open format.",
-     "challenge": "Batch and streaming data often sit in separate stores, sometimes in closed or complex formats. A job that fails halfway can leave a table inconsistent, and a schema change can break the jobs that read it.",
-     "pivot": "Delta Lake brings these workloads together on one open table format.",
-     "bullets": [
-      "Databricks stores the data once, in open Delta tables in your cloud storage.",
-      "Delta adds transactions to those files.",
-      "Batch jobs and streaming jobs write to the same tables without corrupting them, and the schema can change without breaking readers."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Data foundation for AI",
-        "Lakehouse / Delta Lake"
-       ]
-      }
-     ]
+      "name": "Data storage and movement",
+      "tiles": [
+        {
+          "label": "Table formats",
+          "id": "1.1"
+        },
+        {
+          "label": "Ingestion and pipelines",
+          "id": "1.2"
+        },
+        {
+          "label": "Transactional and real-time data",
+          "id": "1.3"
+        },
+        {
+          "label": "Table maintenance",
+          "id": "1.4"
+        }
+      ],
+      "points": []
     },
     {
-     "id": "2.2",
-     "title": "Ingestion, transformation and table maintenance",
-     "lead": "A storage layer is only useful once the data gets into it and stays usable.",
-     "effect": "Data engineers no longer write connector code or schedule table maintenance by hand.",
-     "challenge": "Bringing data in means writing connector code for each source and wiring job dependencies by hand. The tables then need maintenance that someone has to schedule and tune.",
-     "pivot": "Lakeflow and Predictive Optimization take over this work.",
-     "bullets": [
-      "Lakeflow brings the data in and transforms it.",
-      "Lakeflow Connect provides managed connectors to databases and SaaS applications.",
-      "Declarative pipelines describe the transformations, and Lakeflow works out the order in which to run them.",
-      "Predictive Optimization then maintains the tables on its own, so nobody has to schedule maintenance jobs."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Data foundation for AI",
-        "Lakeflow"
-       ]
-      },
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Data foundation for AI",
-        "Predictive Optimization"
-       ]
-      }
-     ]
+      "name": "Unity Catalog",
+      "tiles": [
+        {
+          "label": "Catalog and access",
+          "id": "2.1"
+        },
+        {
+          "label": "Policy and classification",
+          "id": "2.2"
+        },
+        {
+          "label": "Observability",
+          "id": "2.3"
+        },
+        {
+          "label": "Cost and usage",
+          "id": "2.4"
+        },
+        {
+          "label": "Semantic definitions",
+          "id": "2.5"
+        },
+        {
+          "label": "Data sharing",
+          "id": "2.6"
+        }
+      ],
+      "points": []
     },
     {
-     "id": "2.3",
-     "title": "Transactional data on the same platform",
-     "lead": "The analytical data is now in place. Applications and agents also read and write transactional data, and that data usually lives in a separate database with its own copy.",
-     "effect": "Applications and agents keep their data on the same platform as the analytics, under the same governance.",
-     "challenge": "Application data in that separate database escapes governance, and search over it needs yet another store for vectors, which copies the data again.",
-     "pivot": "Lakebase and Lakebase Search bring this data and its search onto the platform.",
-     "bullets": [
-      "Lakebase is a serverless Postgres database inside the platform.",
-      "It holds application data and agent state, and its tables sync with Unity Catalog.",
-      "Lakebase Search adds vector and keyword search in the same Postgres database, with no separate vector store."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Data foundation for AI",
-        "Lakebase — serverless Postgres"
-       ]
-      },
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Data foundation for AI",
-        "Lakebase Search"
-       ]
-      }
-     ]
+      "name": "Data science and machine learning",
+      "tiles": [
+        {
+          "label": "Workspace",
+          "id": "3.1"
+        },
+        {
+          "label": "Feature engineering in Unity Catalog",
+          "id": "3.2"
+        },
+        {
+          "label": "Training compute",
+          "id": "3.3"
+        },
+        {
+          "label": "MLflow 3",
+          "id": "3.4"
+        },
+        {
+          "label": "Model Serving",
+          "id": "3.5"
+        },
+        {
+          "label": "Deployment automation",
+          "id": "3.6"
+        }
+      ],
+      "points": []
     },
     {
-     "id": "2.4",
-     "title": "Real-time analytics on operational data",
-     "lead": "Transactional and analytical data now sit on the same platform. The remaining copy is the one that feeds analytics with fresh operational data.",
-     "effect": "Dashboards and applications read live data instead of a stale copy.",
-     "challenge": "Feeding analytics with operational data takes replication pipelines and a second system to maintain. The copies lag behind the source, and dashboard queries take seconds.",
-     "pivot": "Lakehouse//RT and LTAP remove that last copy.",
-     "bullets": [
-      "Lakehouse//RT answers SQL queries in under 100 milliseconds directly on lakehouse tables, so dashboards and applications no longer need a separate serving copy.",
-      "LTAP, which is announced, keeps one dataset that is written in Lakebase and read in Lakehouse//RT, with no replication pipeline between them."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Real-time & transactional AI",
-        "Lakehouse//RT"
-       ]
-      },
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Real-time & transactional AI",
-        "LTAP"
-       ]
-      }
-     ]
+      "name": "Agent development",
+      "tiles": [
+        {
+          "label": "Model access",
+          "id": "4.1"
+        },
+        {
+          "label": "Custom LLMs",
+          "id": "4.2"
+        },
+        {
+          "label": "Batch inference: AI Functions",
+          "id": "4.3"
+        },
+        {
+          "label": "Knowledge retrieval",
+          "id": "4.4"
+        },
+        {
+          "label": "Tools",
+          "id": "4.5"
+        },
+        {
+          "label": "Agent build",
+          "id": "4.6"
+        },
+        {
+          "label": "Agent deployment",
+          "id": "4.7"
+        },
+        {
+          "label": "Agent memory",
+          "id": "4.8"
+        },
+        {
+          "label": "No-code agents: Genie Agents",
+          "id": "4.9"
+        }
+      ],
+      "points": []
     },
     {
-     "id": "2.5",
-     "title": "Data catalog and data quality",
-     "lead": "Everything is now in one place. That helps only if access, lineage and quality are handled once for all of it.",
-     "effect": "Data teams are alerted when a table goes stale, and repairs run as audited jobs.",
-     "challenge": "Data freshness is invisible and nobody is notified, so a stale table can go unnoticed, and repairing it is manual and risky.",
-     "pivot": "Anomaly detection and data classification add this watch to the catalog.",
-     "bullets": [
-      "Unity Catalog applies one set of permissions, lineage and audit to tables and files.",
-      "Data quality is watched in the same place.",
-      "Classification tags sensitive data such as PII.",
-      "Profiling and monitoring track quality.",
-      "Anomaly detection flags stale or broken tables and can trigger a repair job."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Agentic Data Management",
-        "Classification / profiling / monitoring"
-       ]
-      },
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Agentic Data Management",
-        "Anomaly detection & remediation"
-       ]
-      }
-     ]
+      "name": "Observability and evaluation",
+      "tiles": [
+        {
+          "label": "MLflow Tracing",
+          "id": "5.1"
+        },
+        {
+          "label": "MLflow evaluation",
+          "id": "5.2"
+        },
+        {
+          "label": "Prompt Registry",
+          "id": "5.3"
+        },
+        {
+          "label": "Runtime telemetry",
+          "id": "5.4"
+        }
+      ],
+      "points": []
+    },
+    {
+      "name": "AI governance and security",
+      "tiles": [
+        {
+          "label": "Unity Catalog for AI assets",
+          "id": "6.1"
+        },
+        {
+          "label": "Unity Gateway: policies",
+          "id": "6.2"
+        },
+        {
+          "label": "Unity Gateway: monitoring",
+          "id": "6.3"
+        },
+        {
+          "label": "Unity Gateway: cost and capacity",
+          "id": "6.4"
+        },
+        {
+          "label": "Unity Gateway: coding agent governance",
+          "id": "6.5"
+        },
+        {
+          "label": "Security and compliance",
+          "id": "6.6"
+        }
+      ],
+      "points": []
+    },
+    {
+      "name": "AI for business users",
+      "tiles": [
+        {
+          "label": "Genie One",
+          "id": "7.1"
+        },
+        {
+          "label": "Genie Agents",
+          "id": "7.2"
+        },
+        {
+          "label": "Genie Ontology",
+          "id": "7.3"
+        },
+        {
+          "label": "Genie integrations",
+          "id": "7.4"
+        },
+        {
+          "label": "AI/BI Dashboards",
+          "id": "7.5"
+        },
+        {
+          "label": "Applications",
+          "id": "7.6"
+        },
+        {
+          "label": "Genie ZeroOps",
+          "id": "7.7"
+        },
+        {
+          "label": "Genie budgets",
+          "id": "7.8"
+        }
+      ],
+      "points": []
+    },
+    {
+      "name": "Developer tools",
+      "tiles": [
+        {
+          "label": "Omnigent",
+          "id": "8.1"
+        },
+        {
+          "label": "Agentic code converter",
+          "id": "8.2"
+        }
+      ],
+      "points": []
+    },
+    {
+      "name": "Vertical applications",
+      "tiles": [
+        {
+          "label": "CustomerLake",
+          "id": "9.1"
+        },
+        {
+          "label": "Lakewatch",
+          "id": "9.2"
+        }
+      ],
+      "points": []
     }
-   ],
-   "intro": "It starts by storing the data once. Copies multiply because every workload, from batch jobs to applications and dashboards, keeps its own. Delta Lake keeps one open copy, Lakeflow and Predictive Optimization bring the data in and maintain it, Lakebase and Lakehouse//RT put applications and live analytics on that same copy, and Unity Catalog governs all of it and watches its quality. The organization now works from one fresh, governed copy of its data. How does a data science team work on it?"
-  },
-  {
-   "num": 3,
-   "title": "Data science lifecycle",
-   "handoff": "The team now has trained models. A model is only useful once applications can call it. Many new use cases also start from large language models that someone else trained. How do you serve and control any model, your own or a provider's?",
-   "points": [
+  ],
+  "chapters": [
     {
-     "id": "3.1",
-     "title": "Notebooks and data exploration",
-     "lead": "",
-     "bullets": [
-      "Data scientists work in notebooks that run Python, SQL, R and Scala directly on the governed tables.",
-      "Several people can edit the same notebook at once, and notebooks are versioned in Git.",
-      "Exploration uses the tools the team already knows: pandas, Spark, SQL and built-in data profiles."
-     ],
-     "refs": [
-      {
-       "tree": "ds",
-       "path": [
-        "Databricks Data Science",
-        "Develop & explore",
-        "Notebooks & collaboration"
-       ]
-      },
-      {
-       "tree": "ds",
-       "path": [
-        "Databricks Data Science",
-        "Develop & explore",
-        "Data prep & EDA"
-       ]
-      },
-      {
-       "tree": "ds",
-       "path": [
-        "Databricks Data Science",
-        "Languages & libraries",
-        "DS languages & frameworks"
-       ]
-      }
-     ]
+      "num": 1,
+      "title": "Data storage and movement",
+      "intro": [
+        "The platform starts with storage.",
+        "Data is stored once in open tables, brought in by pipelines and maintained automatically.",
+        "Transactional and real-time data sit on the same storage."
+      ],
+      "points": [
+        {
+          "id": "1.1",
+          "title": "Table formats",
+          "effect": "Keep one consistent copy of your data, in an open format.",
+          "lead": "",
+          "challenge": "Batch and streaming data often sit in separate stores, sometimes in closed or complex formats. A job that fails halfway can leave a table inconsistent. A schema change can break the jobs that read it.",
+          "pivot": "**Delta Lake** is now the single format for batch and streaming alike.",
+          "bullets": [
+            "Databricks stores the data once, in **open tables** in your cloud storage.",
+            "Delta adds **transactions** to those files.",
+            "Batch jobs and streaming jobs write to the same tables without corrupting them.",
+            "The schema can change without breaking readers.",
+            "Tables can also use **Apache Iceberg**, the other open table format.",
+            "**Multi-table transactions** commit changes to several tables at once."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Data foundation for AI",
+                "Lakehouse / Delta Lake"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Delta Lake",
+              "children": []
+            },
+            {
+              "name": "Apache Iceberg",
+              "children": []
+            },
+            {
+              "name": "Multi-table transactions",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[3].solution",
+                "text": "**Open** Delta standard"
+              },
+              {
+                "ref": 0,
+                "field": "solves[4].solution",
+                "text": "Consistency **guaranteed**"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[2].problem",
+                "text": "**Separate** stores for batch/stream"
+              },
+              {
+                "ref": 0,
+                "field": "solves[3].problem",
+                "text": "**Proprietary** or complex formats"
+              },
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "Data **corruption** mid-stream"
+              },
+              {
+                "ref": 0,
+                "field": "solves[4].problem",
+                "text": "Transactional **inconsistency**"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "Enforcement **breaks** on change"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "note",
+                "text": "Delta Lake provides open ACID transactions for both batch and streaming data workloads."
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "1.2",
+          "title": "Ingestion and pipelines",
+          "effect": "Connectors and pipelines are managed by the platform.",
+          "lead": "The data then has to get into this storage.",
+          "challenge": "Getting it there means writing connector code for each source and wiring job dependencies by hand.",
+          "pivot": "**Lakeflow** now hands both jobs over to the platform.",
+          "bullets": [
+            "It brings the data in and transforms it.",
+            "Lakeflow Connect provides **managed connectors** to databases and SaaS applications, query-based and community connectors, and Auto Loader for files.",
+            "Zerobus Ingest brings in **event data**.",
+            "**Spark Declarative Pipelines** describe the transformations, and Lakeflow works out the order in which to run them.",
+            "They are written in the Lakeflow Pipelines Editor, or on a **visual canvas** in Lakeflow Designer, and can run in **real-time mode**.",
+            "Lakeflow Jobs **orchestrates** the workflows."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Data foundation for AI",
+                "Lakeflow"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Lakeflow Connect (ingestion connectors)",
+              "children": [
+                {
+                  "name": "Managed connectors",
+                  "children": []
+                },
+                {
+                  "name": "Query-based connectors",
+                  "children": []
+                },
+                {
+                  "name": "Community connectors",
+                  "children": []
+                },
+                {
+                  "name": "Auto Loader (file ingestion)",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Zerobus Ingest (event ingestion)",
+              "children": []
+            },
+            {
+              "name": "Spark Declarative Pipelines (pipeline framework)",
+              "children": [
+                {
+                  "name": "Lakeflow Pipelines Editor (authoring UI)",
+                  "children": []
+                },
+                {
+                  "name": "Real-time mode",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Lakeflow Designer (visual pipeline builder)",
+              "children": []
+            },
+            {
+              "name": "Lakeflow Jobs (orchestration)",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "**Managed** Connect service"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].solution",
+                "text": "**Declarative** Pipelines"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "Manual **connector** code"
+              },
+              {
+                "ref": 0,
+                "field": "solves[4].problem",
+                "text": "Job dependencies **manual**"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "note",
+                "text": "Lakeflow provides data ingestion, orchestration, and transformation components for building data pipelines."
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "1.3",
+          "title": "Transactional and real-time data",
+          "effect": "Applications and agents keep their data on the same platform as the analytics, under the same governance.",
+          "lead": "The analytical data is now in place. Applications and agents also read and write transactional data, and that data usually lives in a separate database with its own copy.",
+          "challenge": "It is not governed there. Feeding analytics from it takes replication pipelines and a second system to maintain. The copies lag behind the source.",
+          "pivot": "**Lakebase** now keeps that data next to the analytics, under the same rules.",
+          "bullets": [
+            "It is a **serverless Postgres** database inside the platform, for the state of applications and agents.",
+            "**Synced tables** bring lakehouse data into Lakebase, and **Lakehouse Sync** writes Lakebase tables back to the lakehouse.",
+            "**Lakehouse//RT** answers SQL queries in **under 100 milliseconds** directly on lakehouse tables, so dashboards and applications no longer need a separate serving copy.",
+            "LTAP is the architecture these capabilities deliver: one dataset, written in Lakebase and read in Lakehouse//RT, with **no replication pipeline** between them."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Data foundation for AI",
+                "Lakebase — serverless Postgres"
+              ]
+            },
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Real-time & transactional AI",
+                "Lakehouse//RT"
+              ]
+            },
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Real-time & transactional AI",
+                "LTAP"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Lakebase (transactional database): LTAP architecture",
+              "children": [
+                {
+                  "name": "Synced tables (lakehouse to Lakebase)",
+                  "children": []
+                },
+                {
+                  "name": "Lakehouse Sync (Lakebase to lakehouse)",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Lakehouse//RT (real-time analytics)",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "note",
+                "text": "Lakebase provides serverless PostgreSQL storage for agent state and application data with Unity Catalog integration."
+              },
+              {
+                "ref": 0,
+                "field": "solves[2].solution",
+                "text": "**UC-synced** tables"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[2].problem",
+                "text": "App data **ungoverned**"
+              },
+              {
+                "ref": 2,
+                "field": "solves[0].problem",
+                "text": "**Replication pipelines** needed between operational DB and warehouse"
+              },
+              {
+                "ref": 2,
+                "field": "solves[2].problem",
+                "text": "Maintain **two systems** (Postgres + Warehouse)"
+              },
+              {
+                "ref": 2,
+                "field": "solves[1].problem",
+                "text": "**Eventual consistency** lag between operational and analytical"
+              },
+              {
+                "ref": 1,
+                "field": "solves[1].problem",
+                "text": "Copied serving data **stale** vs operational source"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "note",
+                "text": "Lakebase provides serverless PostgreSQL storage for agent state and application data with Unity Catalog integration."
+              },
+              {
+                "ref": 0,
+                "field": "solves[2].solution",
+                "text": "**UC-synced** tables"
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "1.4",
+          "title": "Table maintenance",
+          "effect": "Tables are maintained automatically, with no jobs to schedule.",
+          "lead": "The tables then need maintenance.",
+          "challenge": "Someone has to schedule it and tune it by hand.",
+          "pivot": "**Predictive Optimization** now maintains the tables on its own.",
+          "bullets": [
+            "It decides when to compact files, remove old versions and cluster the data, based on how it is queried.",
+            "It runs on **serverless compute**, and each decision is recorded for audit."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Data foundation for AI",
+                "Predictive Optimization"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Predictive Optimization",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "**ROI-driven** auto-running"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "Manual **OPTIMIZE** scheduling"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "Clustering keys **hand-tuned**"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "note",
+                "text": "Predictive Optimization automatically tunes Delta tables on Unity Catalog using ROI-based optimization."
+              }
+            ],
+            "report": ""
+          }
+        }
+      ],
+      "handoff": ""
     },
     {
-     "id": "3.2",
-     "title": "Feature Store",
-     "lead": "Exploration ends in features, the inputs a model learns from. A feature computed one way for training and another way in production gives wrong predictions.",
-     "effect": "Each feature is built once and reused by every team and every model.",
-     "challenge": "Teams duplicate the same features across projects, with no view of where each one comes from or who may use it.",
-     "pivot": "The Feature Store makes features a shared, governed asset.",
-     "bullets": [
-      "The Feature Store keeps each feature definition in one place, governed by Unity Catalog.",
-      "Training sets are built with point-in-time correct joins, and the same definitions feed predictions in production.",
-      "For real-time use, features are served from an online store on Lakebase."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "AI Platform / ML lifecycle",
-        "Feature Store"
-       ]
-      },
-      {
-       "tree": "ds",
-       "path": [
-        "Databricks Data Science",
-        "Feature engineering",
-        "Feature Store"
-       ]
-      }
-     ]
+      "num": 2,
+      "title": "Unity Catalog",
+      "intro": [
+        "Unity Catalog governs everything stored on the platform.",
+        "Access, policies, quality, cost, business definitions and sharing are set in one place.",
+        "Machine learning, agents and Genie all build on it."
+      ],
+      "points": [
+        {
+          "id": "2.1",
+          "title": "Catalog and access",
+          "effect": "",
+          "lead": "Everything is now in one place. Access and lineage then have to be handled once for all of it.",
+          "challenge": "",
+          "pivot": "",
+          "bullets": [
+            "**Unity Catalog** applies **one set of permissions**, lineage and audit to tables and files.",
+            "The catalog organizes every asset, and **Discover** lets users find them.",
+            "Lineage follows the data across the platform, and **external lineage** extends it to systems outside Databricks.",
+            "Access is granted **by role** or **by attribute**.",
+            "Users can **request access** to an asset.",
+            "Other engines access the same tables through **catalog commits** and the **Unity REST API**.",
+            "**Secrets** are stored and governed in the catalog."
+          ],
+          "refs": [
+            {
+              "tree": "ds",
+              "path": [
+                "Databricks Data Science",
+                "Develop & explore",
+                "Data prep & EDA",
+                "Catalog Explorer & AI-assisted discovery"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Catalog",
+              "children": []
+            },
+            {
+              "name": "Discover (asset discovery)",
+              "children": []
+            },
+            {
+              "name": "Lineage",
+              "children": [
+                {
+                  "name": "External lineage",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Role-based access control",
+              "children": []
+            },
+            {
+              "name": "Attribute-based access control",
+              "children": []
+            },
+            {
+              "name": "Access requests",
+              "children": []
+            },
+            {
+              "name": "External engine access",
+              "children": [
+                {
+                  "name": "Catalog commits",
+                  "children": []
+                },
+                {
+                  "name": "Unity REST API",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Secrets",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [],
+            "challenge": [],
+            "pivot": [],
+            "report": ""
+          }
+        },
+        {
+          "id": "2.2",
+          "title": "Policy and classification",
+          "effect": "",
+          "lead": "Access policies depend on knowing what each table holds.",
+          "challenge": "",
+          "pivot": "",
+          "bullets": [
+            "**Data classification** tags **sensitive data** such as PII.",
+            "**Governed tags** carry those labels, and **tag propagation** applies them to the data derived from a tagged table.",
+            "The tags feed **row- and column-level access policies**.",
+            "**Governance Hub** shows the state of governance in one dashboard."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Agentic Data Management",
+                "Classification / profiling / monitoring"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Data classification",
+              "children": []
+            },
+            {
+              "name": "Governed tags",
+              "children": [
+                {
+                  "name": "Tag propagation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Governance Hub (governance dashboard)",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [],
+            "challenge": [],
+            "pivot": [],
+            "report": ""
+          }
+        },
+        {
+          "id": "2.3",
+          "title": "Observability",
+          "effect": "Get alerted when a table goes stale, and repair it as an audited job.",
+          "lead": "",
+          "challenge": "Data freshness is invisible and nobody is notified, so a stale table can go unnoticed. Repairing it is manual and risky.",
+          "pivot": "**Data Quality Monitoring** now puts quality checks where access is controlled.",
+          "bullets": [
+            "**Profiles** track metrics over time and detect **drift** in tables and in predictions.",
+            "Anomaly detection flags **stale or broken tables** and can trigger a repair job.",
+            "**Health indicators** show the quality and freshness of each table in the catalog.",
+            "Alerts go out by email, Slack or webhook."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Agentic Data Management",
+                "Anomaly detection & remediation"
+              ]
+            },
+            {
+              "tree": "ds",
+              "path": [
+                "Databricks Data Science",
+                "Operate",
+                "Monitoring & evaluation"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Data Quality Monitoring",
+              "children": [
+                {
+                  "name": "Anomaly detection",
+                  "children": []
+                },
+                {
+                  "name": "Health indicators",
+                  "children": []
+                }
+              ]
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "**Automatic** anomaly detection"
+              },
+              {
+                "ref": 0,
+                "field": "solves[3].solution",
+                "text": "Email/Slack/**Webhook** integration"
+              },
+              {
+                "ref": 0,
+                "field": "solves[2].solution",
+                "text": "**Orchestrated** via Lakeflow Jobs"
+              },
+              {
+                "ref": 0,
+                "field": "solves[4].solution",
+                "text": "Allowlist + **audit** trail"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "Data freshness **invisible**"
+              },
+              {
+                "ref": 0,
+                "field": "solves[3].problem",
+                "text": "No **notification** channels"
+              },
+              {
+                "ref": 0,
+                "field": "solves[2].problem",
+                "text": "Repairs **manual** and risky"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "note",
+                "text": "Detects anomalies in data with automated remediation capabilities that are still emerging."
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "2.4",
+          "title": "Cost and usage",
+          "effect": "",
+          "lead": "",
+          "challenge": "",
+          "pivot": "",
+          "bullets": [
+            "**System tables** hold the platform's **billing and usage data**.",
+            "They are queried with SQL like any other table.",
+            "Audit logs and the history of automatic table maintenance are recorded there too."
+          ],
+          "refs": [],
+          "features": [
+            {
+              "name": "System tables (billing and usage data)",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [],
+            "challenge": [],
+            "pivot": [],
+            "report": ""
+          }
+        },
+        {
+          "id": "2.5",
+          "title": "Semantic definitions",
+          "effect": "",
+          "lead": "An answer is only trusted if \"revenue\" or \"active customer\" means the same thing as in the official reports.",
+          "challenge": "",
+          "pivot": "",
+          "bullets": [
+            "**Metric views** define governed, reusable metrics in Unity Catalog, computed at query time.",
+            "**Domains** group assets by business domain.",
+            "**Pages** describe business concepts."
+          ],
+          "refs": [],
+          "features": [
+            {
+              "name": "Metrics (metric views)",
+              "children": []
+            },
+            {
+              "name": "Domains (business domains)",
+              "children": []
+            },
+            {
+              "name": "Pages (business concept pages)",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [],
+            "challenge": [],
+            "pivot": [],
+            "report": ""
+          }
+        },
+        {
+          "id": "2.6",
+          "title": "Data sharing",
+          "effect": "",
+          "lead": "",
+          "challenge": "",
+          "pivot": "",
+          "bullets": [
+            "**OpenSharing** is the protocol for sharing data.",
+            "**SecureConnect** shares data that sits behind a firewall.",
+            "**Clean Rooms** let organizations work on shared data without exposing their raw data to each other.",
+            "**Marketplace** lists data, models and applications from other providers."
+          ],
+          "refs": [],
+          "features": [
+            {
+              "name": "OpenSharing (sharing protocol)",
+              "children": [
+                {
+                  "name": "SecureConnect (sharing behind a firewall)",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Clean Rooms",
+              "children": []
+            },
+            {
+              "name": "Marketplace",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [],
+            "challenge": [],
+            "pivot": [],
+            "report": ""
+          }
+        }
+      ],
+      "handoff": ""
     },
     {
-     "id": "3.3",
-     "title": "Experiment tracking and AutoML",
-     "lead": "With features in place, the team trains many models and compares them. Comparing them requires that every result can be reproduced.",
-     "effect": "Model work becomes repeatable, and teams reach a first model faster.",
-     "challenge": "When each team keeps its own metrics, results cannot be compared, and searching algorithms and settings by hand delays every model.",
-     "pivot": "MLflow and AutoML take care of the tracking and the search.",
-     "bullets": [
-      "MLflow records every training run with its parameters, metrics, code version and artifacts, so any result can be reproduced and compared.",
-      "AutoML gives a first baseline.",
-      "It tries algorithms such as XGBoost and LightGBM, tunes them, and writes each trial as a notebook the team can read and change."
-     ],
-     "refs": [
-      {
-       "tree": "ds",
-       "path": [
-        "Databricks Data Science",
-        "Experimentation & AutoML",
-        "MLflow"
-       ]
-      },
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "AI Platform / ML lifecycle",
-        "AutoML"
-       ]
-      },
-      {
-       "tree": "ds",
-       "path": [
-        "Databricks Data Science",
-        "Experimentation & AutoML",
-        "AutoML"
-       ]
-      }
-     ]
+      "num": 3,
+      "title": "Data science and machine learning",
+      "intro": [
+        "Data scientists work on the governed data in notebooks, with an AI assistant.",
+        "They build features, train on classic or serverless compute, track the work in MLflow, serve the models and automate their deployment."
+      ],
+      "points": [
+        {
+          "id": "3.1",
+          "title": "Workspace",
+          "effect": "",
+          "lead": "",
+          "challenge": "",
+          "pivot": "",
+          "bullets": [
+            "Data scientists work in notebooks that run Python, SQL, R and Scala directly on the **governed tables**.",
+            "Several people can edit the same notebook at once, and notebooks are **versioned in Git**.",
+            "Exploration uses the tools the team already knows: pandas, Spark, SQL and built-in data profiles.",
+            "**Genie Code** is the AI assistant inside notebooks, the SQL editor, pipelines and dashboards.",
+            "It **writes and explains code** from plain-language requests.",
+            "It works in a pane next to the notebook or on a **full page**.",
+            "A **command-line version**, in beta, brings it into the terminal and into CI pipelines.",
+            "It also runs **scheduled tasks**, including as a task in Lakeflow Jobs."
+          ],
+          "refs": [
+            {
+              "tree": "ds",
+              "path": [
+                "Databricks Data Science",
+                "Develop & explore",
+                "Notebooks & collaboration"
+              ]
+            },
+            {
+              "tree": "ds",
+              "path": [
+                "Databricks Data Science",
+                "Develop & explore",
+                "Data prep & EDA"
+              ]
+            },
+            {
+              "tree": "ds",
+              "path": [
+                "Databricks Data Science",
+                "Languages & libraries",
+                "DS languages & frameworks"
+              ]
+            },
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Developer productivity",
+                "Genie Code"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Notebooks",
+              "children": []
+            },
+            {
+              "name": "Genie Code (coding assistant)",
+              "children": [
+                {
+                  "name": "Genie Code pane (in notebooks)",
+                  "children": []
+                },
+                {
+                  "name": "Full-page Genie Code",
+                  "children": []
+                },
+                {
+                  "name": "Genie Code CLI",
+                  "children": []
+                },
+                {
+                  "name": "Scheduled tasks",
+                  "children": []
+                },
+                {
+                  "name": "Lakeflow Jobs task",
+                  "children": []
+                }
+              ]
+            }
+          ],
+          "sources": {
+            "effect": [],
+            "challenge": [],
+            "pivot": [],
+            "report": ""
+          }
+        },
+        {
+          "id": "3.2",
+          "title": "Feature engineering in Unity Catalog",
+          "effect": "Build features once & reuse them across teams and models.",
+          "lead": "Exploration ends in features, the inputs a model learns from. A feature computed one way for training and another way in production gives wrong predictions.",
+          "challenge": "Teams duplicate the same features across projects. Nobody sees where each one comes from or who may use it.",
+          "pivot": "**Feature Engineering in Unity Catalog** ends the duplication with one shared registry.",
+          "bullets": [
+            "It keeps each definition in one place, with the same governance as the data.",
+            "Teams write features to **feature tables**, or declare them as **Feature Views**, which compute them automatically.",
+            "Stream Feature Views compute them from **streaming data**.",
+            "Training sets are built with **point-in-time correct joins**, and the same definitions feed predictions in production.",
+            "For real-time use, features are served from an **online store** on Lakebase.",
+            "**Feature serving** returns them over REST, and models look them up automatically at inference time."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "AI Platform / ML lifecycle",
+                "Feature Engineering in Unity Catalog"
+              ]
+            },
+            {
+              "tree": "ds",
+              "path": [
+                "Databricks Data Science",
+                "Feature engineering",
+                "Feature Engineering in Unity Catalog"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Feature tables",
+              "children": []
+            },
+            {
+              "name": "Feature Views",
+              "children": [
+                {
+                  "name": "Stream Feature Views",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Online Feature Stores",
+              "children": []
+            },
+            {
+              "name": "Feature serving",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[2].solution",
+                "text": "**discoverable** shared library"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].solution",
+                "text": "centralized **UC-backed** registry"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 1,
+                "field": "solves[1].problem",
+                "text": "Teams **duplicate** features across projects wasting resources"
+              },
+              {
+                "ref": 1,
+                "field": "solves[2].problem",
+                "text": "No visibility into feature **origins** and dependencies"
+              },
+              {
+                "ref": 1,
+                "field": "solves[3].problem",
+                "text": "Ungoverned **access** to features across teams"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 1,
+                "field": "solves[1].solution",
+                "text": "**Shared** feature registry enables centralized reuse"
+              },
+              {
+                "ref": 1,
+                "field": "solves[3].solution",
+                "text": "Unity Catalog integration provides **access control** and compliance"
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "3.3",
+          "title": "Training compute",
+          "effect": "Train at any scale, with GPUs on demand.",
+          "lead": "Some datasets and models do not fit on one machine.",
+          "challenge": "Distributed training code is hard to write correctly. GPUs are scarce. Clusters configured by hand are error-prone or sit idle.",
+          "pivot": "**Databricks Runtime for Machine Learning** takes much of that work off the team.",
+          "bullets": [
+            "It runs training on **classic clusters**, with managed libraries such as TorchDistributor, DeepSpeed and Ray.",
+            "AI Runtime provides **GPUs on demand** with no cluster to manage, and it scales to zero when the job ends.",
+            "The **AI Runtime SDK** spreads training across GPUs, and the **AI Runtime CLI** submits it from the command line."
+          ],
+          "refs": [
+            {
+              "tree": "ds",
+              "path": [
+                "Databricks Data Science",
+                "Training & compute",
+                "Distributed training & GPU"
+              ]
+            },
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "AI Platform / ML lifecycle",
+                "AI Runtime — serverless GPU"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Databricks Runtime for Machine Learning (classic compute)",
+              "children": []
+            },
+            {
+              "name": "AI Runtime (serverless GPU compute)",
+              "children": [
+                {
+                  "name": "Distributed training (AI Runtime SDK)",
+                  "children": []
+                },
+                {
+                  "name": "AI Runtime CLI",
+                  "children": []
+                }
+              ]
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "**Distributed** scaling across GPU workers handles any dataset size"
+              },
+              {
+                "ref": 1,
+                "field": "solves[0].solution",
+                "text": "**on-demand** serverless GPU provisioning"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "Distributed training code is **complex** and difficult to write correctly"
+              },
+              {
+                "ref": 1,
+                "field": "solves[0].problem",
+                "text": "GPU **scarcity** delays training"
+              },
+              {
+                "ref": 0,
+                "field": "solves[4].problem",
+                "text": "Manual **GPU** provisioning and cluster configuration is error-prone"
+              },
+              {
+                "ref": 1,
+                "field": "solves[1].problem",
+                "text": "overprovisioned GPUs **idle**"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "solves[1].solution",
+                "text": "**Managed** abstractions (DeepSpeed, TorchDistributor, Ray) hide distribution details"
+              },
+              {
+                "ref": 0,
+                "field": "solves[4].solution",
+                "text": "**Integrated** Databricks Runtime ML infrastructure handles resource allocation"
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "3.4",
+          "title": "MLflow 3 (ML lifecycle management)",
+          "effect": "Repeat any experiment, and know which version runs in production.",
+          "lead": "With features in place, the team trains many models and compares them. Comparing them requires that every result can be reproduced.",
+          "challenge": "Each team keeps its metrics to itself. Nothing tracks model versions over time. Promotions are manual and error-prone.",
+          "pivot": "**MLflow** handles the bookkeeping.",
+          "bullets": [
+            "It records every training run with its parameters, metrics, code version and artifacts, so any result can be **reproduced and compared**.",
+            "Every model in production is registered in Unity Catalog with its versions, its aliases such as champion and challenger, and its **lineage** back to the training data.",
+            "Promoting a new version means **moving an alias**, and model update triggers or deployment jobs can start the next steps automatically."
+          ],
+          "refs": [
+            {
+              "tree": "ds",
+              "path": [
+                "Databricks Data Science",
+                "Experimentation & AutoML",
+                "MLflow"
+              ]
+            },
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "AI Platform / ML lifecycle",
+                "Models in Unity Catalog"
+              ]
+            },
+            {
+              "tree": "ds",
+              "path": [
+                "Databricks Data Science",
+                "Deploy & serve",
+                "Models in Unity Catalog"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Experiment tracking",
+              "children": []
+            },
+            {
+              "name": "Models in Unity Catalog (model registry)",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "**Centralized** experiment tracking logs all parameters, metrics, and artifacts"
+              },
+              {
+                "ref": 1,
+                "field": "solves[0].solution",
+                "text": "**chronological** version history per model"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "Teams work in **isolation** with scattered metrics and results"
+              },
+              {
+                "ref": 1,
+                "field": "solves[0].problem",
+                "text": "model versions **untracked** over time"
+              },
+              {
+                "ref": 1,
+                "field": "solves[1].problem",
+                "text": "manual stage **transitions** error-prone"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "note",
+                "text": "Experiment tracking, autologging, and model management."
+              },
+              {
+                "ref": 2,
+                "field": "note",
+                "text": "Model versioning, aliases, and lineage in Unity Catalog."
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "3.5",
+          "title": "Model Serving (ML models)",
+          "effect": "Put any model into production on serverless infrastructure.",
+          "lead": "A registered version then has to serve traffic.",
+          "challenge": "Each kind of model needs its own serving system, provisioned by hand, with access control split across them. Idle machines keep costing money.",
+          "pivot": "**Model Serving** replaces them all as a single serverless service.",
+          "bullets": [
+            "Its endpoints run the registered version, for real-time requests and for **batch scoring**.",
+            "**Custom model endpoints** serve models built with scikit-learn, XGBoost, PyTorch or Hugging Face.",
+            "Endpoints scale with demand, **down to zero**.",
+            "They handle more than **25,000 queries per second** with low added latency.",
+            "Features are looked up from the online store **at serving time**.",
+            "**Endpoint telemetry** monitors the usage of each endpoint.",
+            "**Inference tables** log **every request and response**."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "AI Platform / ML lifecycle",
+                "Model Serving"
+              ]
+            },
+            {
+              "tree": "ds",
+              "path": [
+                "Databricks Data Science",
+                "Deploy & serve",
+                "Model Serving & batch inference"
+              ]
+            },
+            {
+              "tree": "ds",
+              "path": [
+                "Databricks Data Science",
+                "Operate",
+                "Monitoring & evaluation",
+                "Inference Tables"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Custom model endpoints",
+              "children": []
+            },
+            {
+              "name": "Endpoint telemetry",
+              "children": []
+            },
+            {
+              "name": "Inference tables",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[1].solution",
+                "text": "**serverless** auto-scaling to demand"
+              },
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "**unified** control plane and REST API"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "**multiple** serving systems per provider"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "manual infrastructure **provisioning**"
+              },
+              {
+                "ref": 0,
+                "field": "solves[2].problem",
+                "text": "**fragmented** model access control"
+              },
+              {
+                "ref": 0,
+                "field": "solves[4].problem",
+                "text": "idle compute **wastes** spend"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "note",
+                "text": "Model Serving provides serverless endpoints with pay-per-token, provisioned throughput, and batch billing."
+              },
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "**unified** control plane and REST API"
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "3.6",
+          "title": "Deployment automation",
+          "effect": "",
+          "lead": "Each change then has to reach production safely and the same way every time.",
+          "challenge": "",
+          "pivot": "",
+          "bullets": [
+            "**Declarative Automation Bundles** describe code, jobs, models and their environments as **files in Git**.",
+            "The **Databricks CLI** deploys them from a terminal or a CI pipeline.",
+            "Each change goes from development to production through that **automated path**."
+          ],
+          "refs": [
+            {
+              "tree": "ds",
+              "path": [
+                "Databricks Data Science",
+                "Operate",
+                "MLOps & CI/CD",
+                "Declarative Automation Bundles (DABs)"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Declarative Automation Bundles",
+              "children": []
+            },
+            {
+              "name": "Databricks CLI",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [],
+            "challenge": [],
+            "pivot": [],
+            "report": ""
+          }
+        }
+      ],
+      "handoff": ""
     },
     {
-     "id": "3.4",
-     "title": "Distributed training and GPUs",
-     "lead": "Some datasets and models do not fit on one machine.",
-     "effect": "Training is no longer limited by the size of one machine or by access to GPUs.",
-     "challenge": "Distributed training code is hard to write correctly, GPUs are hard to get, and clusters configured by hand are error-prone or sit idle.",
-     "pivot": "Managed training libraries and AI Runtime take that work off the team.",
-     "bullets": [
-      "Training then spreads across GPUs and clusters with managed libraries such as TorchDistributor, DeepSpeed and Ray.",
-      "AI Runtime provides GPUs on demand with no cluster to manage, and it scales to zero when the job ends."
-     ],
-     "refs": [
-      {
-       "tree": "ds",
-       "path": [
-        "Databricks Data Science",
-        "Training & compute",
-        "Distributed training & GPU"
-       ]
-      },
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "AI Platform / ML lifecycle",
-        "AI Runtime — serverless GPU"
-       ]
-      }
-     ]
+      "num": 4,
+      "title": "Agent development",
+      "intro": [
+        "An agent combines models with company data and tools.",
+        "Teams choose the models, retrieve knowledge, connect tools, then build, deploy and give memory to the agent.",
+        "Business users build no-code agents with Genie Agents."
+      ],
+      "points": [
+        {
+          "id": "4.1",
+          "title": "Model access",
+          "effect": "Each task can get the best model, from any of the main providers.",
+          "lead": "",
+          "challenge": "Depending on one provider creates lock-in. Token spend grows unpredictably. Models from different providers are tested piece by piece.",
+          "pivot": "**Foundation Model APIs** remove the dependency on any single vendor.",
+          "bullets": [
+            "They give access through **one API** to models from providers that include Anthropic, OpenAI, Google and Meta.",
+            "They are billed **per token**, with a **priority** option, or with **provisioned throughput**.",
+            "The catalog includes **OpenJev**, the Databricks judge model.",
+            "Because applications call the same API for every model, moving to a newer model stays a **small change**.",
+            "Models hosted at a provider are registered as **external models**, with their keys **stored centrally**.",
+            "**Unity Gateway** is the single access layer in front of all of these models."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Foundation Models & LLM access",
+                "Foundation Model APIs"
+              ]
+            },
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Foundation Models & LLM access",
+                "External model services"
+              ]
+            },
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Governance for AI",
+                "Unity Gateway"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Foundation Model APIs (hosted models)",
+              "children": [
+                {
+                  "name": "Pay-per-token",
+                  "children": []
+                },
+                {
+                  "name": "Priority pay-per-token",
+                  "children": []
+                },
+                {
+                  "name": "Provisioned throughput",
+                  "children": []
+                },
+                {
+                  "name": "OpenJev (Databricks judge model)",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "External model providers",
+              "children": []
+            },
+            {
+              "name": "Unity Gateway (model access layer)",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "**Multi-provider** unified API (Anthropic, OpenAI, Google, Meta, Qwen, Grok, others)"
+              },
+              {
+                "ref": 0,
+                "field": "solves[3].solution",
+                "text": "**Unified endpoint** for A/B testing and model swapping"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "Vendor **lock-in** to single model provider"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "Unpredictable token **spend** growth"
+              },
+              {
+                "ref": 0,
+                "field": "solves[3].problem",
+                "text": "**Fragmented** testing across providers"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "**Multi-provider** unified API (Anthropic, OpenAI, Google, Meta, Qwen, Grok, others)"
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "4.2",
+          "title": "Custom LLMs",
+          "effect": "Adapt a model to your data with less GPU memory, paid by the minute.",
+          "lead": "Sometimes a general model does not know the company's vocabulary or tasks well enough.",
+          "challenge": "Full fine-tuning needs large amounts of GPU memory and is expensive and slow. Once tuned, the model often sits apart from the systems that serve the others.",
+          "pivot": "**AI Runtime** now runs this work with lighter methods, and keeps the result on the platform.",
+          "bullets": [
+            "It adapts an open model to company data with LoRA, QLoRA or full fine-tuning, on **serverless GPUs**.",
+            "The tuned model is logged in MLflow and served on **Model Serving** like any other model."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "AI Platform / ML lifecycle",
+                "Fine-tuning (on AI Runtime)"
+              ]
+            },
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "AI Platform / ML lifecycle",
+                "AI Runtime — serverless GPU"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Fine-tuning (on AI Runtime)",
+              "children": []
+            },
+            {
+              "name": "Custom LLM serving (on Model Serving)",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "**QLoRA/LoRA** parameter efficiency"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].solution",
+                "text": "serverless GPU **pay-per-minute** model"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "full fine-tune requires **large GPU memory**"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "fine-tuning **expensive** with full GPU"
+              },
+              {
+                "ref": 0,
+                "field": "solves[2].problem",
+                "text": "model adaptation **slow** with full training"
+              },
+              {
+                "ref": 0,
+                "field": "solves[4].problem",
+                "text": "fine-tuned models **isolated** from serving"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "note",
+                "text": "Fine-tuning runs on AI Runtime, with QLoRA, LoRA or full fine-tuning on serverless GPUs. Foundation Model Fine-tuning was removed on Aug 14, 2026."
+              },
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "**QLoRA/LoRA** parameter efficiency"
+              },
+              {
+                "ref": 0,
+                "field": "solves[4].solution",
+                "text": "integrate with **MLflow** and **Model Serving**"
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "4.3",
+          "title": "Batch inference: AI Functions",
+          "effect": "Apply AI to large volumes of data and documents in place.",
+          "lead": "",
+          "challenge": "Running a model over company data usually means sending it to an outside service, building separate pipelines for documents and splitting the work into batches by hand. What comes back is unstructured.",
+          "pivot": "**AI Functions** now run this work where the information already lives.",
+          "bullets": [
+            "They call a model **from SQL** or from a pipeline to classify, extract or summarize data and documents at scale.",
+            "This needs no agent.",
+            "ai_query calls any model, ai_classify classifies, ai_extract extracts fields, ai_parse_document parses documents and ai_transcribe transcribes audio.",
+            "Classification and extraction also have a **no-code interface**.",
+            "The results come back with a **fixed schema**, and the data stays in Unity Catalog.",
+            "Applications call the same functions through a **REST API**."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Agents / Agent Bricks",
+                "AI Functions"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "ai_query (general inference)",
+              "children": []
+            },
+            {
+              "name": "ai_classify (classification)",
+              "children": [
+                {
+                  "name": "Classification UI",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "ai_extract (information extraction)",
+              "children": [
+                {
+                  "name": "Information Extraction UI",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "ai_parse_document (document parsing)",
+              "children": []
+            },
+            {
+              "name": "ai_transcribe (audio transcription)",
+              "children": []
+            },
+            {
+              "name": "AI Functions REST API",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "**native** functions run inside data platform"
+              },
+              {
+                "ref": 0,
+                "field": "solves[3].solution",
+                "text": "data **stays** in Unity Catalog"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "**external** AI services require data export"
+              },
+              {
+                "ref": 0,
+                "field": "solves[4].problem",
+                "text": "build **separate** OCR, NLP, JSON pipelines"
+              },
+              {
+                "ref": 0,
+                "field": "solves[2].problem",
+                "text": "**manual** batch splitting and parallelization"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "model output is **unstructured** for downstream use"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "note",
+                "text": "SQL- & pipeline-native AI for batch transformation of data and documents."
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "4.4",
+          "title": "Knowledge retrieval",
+          "effect": "Retrieve targeted data from documents, based on checked sources.",
+          "lead": "An agent answers questions as they come. To answer well, it first has to find the right information.",
+          "challenge": "Search indexes are built and kept in sync by hand. They often match on vectors alone.",
+          "pivot": "**AI Search** fixes this by grounding answers in the right material.",
+          "bullets": [
+            "ai_prep_search first splits the documents into chunks and prepares them for it.",
+            "AI Search indexes documents and tables for **vector, hybrid and full-text search**, keeps the index in sync with the Delta tables, and returns **citations**.",
+            "The **ai_search** function queries the index from SQL.",
+            "Agents can also use **Genie Agents** as a source of context."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "AI Platform / ML lifecycle",
+                "AI Search (ex-Vector Search)"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "ai_prep_search (chunking and preparation)",
+              "children": []
+            },
+            {
+              "name": "AI Search (vector, hybrid and full-text search)",
+              "children": []
+            },
+            {
+              "name": "ai_search (search SQL function)",
+              "children": []
+            },
+            {
+              "name": "Genie Agents as a context source (see AI for business users)",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "note",
+                "text": "AI Search combines vector and keyword search with reranking, Delta sync, and citation tracking."
+              },
+              {
+                "ref": 0,
+                "field": "solves[3].solution",
+                "text": "UC **lineage** and **citations** built-in"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "**manual** embedding and index management"
+              },
+              {
+                "ref": 0,
+                "field": "solves[2].problem",
+                "text": "vector indices **slow to maintain** at scale"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "**single-mode** search (vector only)"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "solves[3].solution",
+                "text": "UC **lineage** and **citations** built-in"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].solution",
+                "text": "**hybrid** search (vector + BM25 + rerank)"
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "4.5",
+          "title": "Tools",
+          "effect": "Agents reach tools through one governed route.",
+          "lead": "Answering from documents only reads data. Many tasks also need actions, such as running a query, opening a ticket or changing code. Each of these tools needs a connection and permissions.",
+          "challenge": "Teams write a custom connector for every one of them and host the servers themselves. Credentials pile up across agents. Tool use stays hidden.",
+          "pivot": "The **Model Context Protocol (MCP)** lets every connection be governed in one place instead.",
+          "bullets": [
+            "It is the **standard way** for an agent to call tools.",
+            "Databricks runs **managed MCP servers** for its own services, such as Genie, AI Search and SQL.",
+            "Managed MCP connectors give **governed access** to Google Workspace, Microsoft 365, Slack and GitHub.",
+            "Teams can register their own MCP servers or host them as Databricks Apps.",
+            "**Unity Catalog functions** and **skills** serve as tools as well.",
+            "Every tool is a **Unity Catalog object**, so permissions and audit work the same way as for data.",
+            "Databricks Sandbox runs the code an agent writes in an **isolated environment**, with scoped access to data."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "MCP integration",
+                "Managed MCP servers"
+              ]
+            },
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "MCP integration",
+                "External connectors"
+              ]
+            },
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "MCP integration",
+                "MCP Services + custom MCP"
+              ]
+            },
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Agents / Agent Bricks",
+                "Databricks Sandbox"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Managed MCP servers",
+              "children": []
+            },
+            {
+              "name": "Managed MCP connectors",
+              "children": []
+            },
+            {
+              "name": "External MCP servers",
+              "children": []
+            },
+            {
+              "name": "Unity Catalog functions",
+              "children": []
+            },
+            {
+              "name": "Skills",
+              "children": []
+            },
+            {
+              "name": "Databricks Sandbox (code execution tool)",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "**Standard** MCP endpoints"
+              },
+              {
+                "ref": 0,
+                "field": "solves[2].solution",
+                "text": "**Unity Catalog** enforces grants"
+              },
+              {
+                "ref": 2,
+                "field": "solves[2].solution",
+                "text": "**UC securable** model"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "Custom **connectors** per tool"
+              },
+              {
+                "ref": 0,
+                "field": "solves[3].problem",
+                "text": "Building server **infrastructure**"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "Credential **sprawl** across agents"
+              },
+              {
+                "ref": 0,
+                "field": "solves[5].problem",
+                "text": "Tool usage **hidden**"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "note",
+                "text": "Managed MCP servers provide governed agent access to Databricks services including analytics, search, and SQL."
+              },
+              {
+                "ref": 2,
+                "field": "note",
+                "text": "MCP Services lets you register external MCPs as governed assets and deploy custom MCPs as Databricks Apps."
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "4.6",
+          "title": "Agent build",
+          "effect": "Build the agent you need, with any framework and any model.",
+          "lead": "An agent combines retrieval and tools with its own logic.",
+          "challenge": "Platforms often impose the framework and the model.",
+          "pivot": "**Custom agents** lift these limits.",
+          "bullets": [
+            "They are written in code with frameworks such as LangGraph, LangChain or the OpenAI SDK.",
+            "They can use **any model** and any MCP tool.",
+            "**AI Bridge** packages connect these frameworks to Databricks: databricks-openai, databricks-langchain, databricks-dspy and databricks-mcp.",
+            "The **Agent Bricks CLI** creates a new project from templates.",
+            "Omnigent can also run them as a **meta-harness**."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Agents / Agent Bricks",
+                "Custom Agents"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Custom agents (code-first agents, any framework)",
+              "children": []
+            },
+            {
+              "name": "AI Bridge (framework integration packages)",
+              "children": [
+                {
+                  "name": "databricks-openai",
+                  "children": []
+                },
+                {
+                  "name": "databricks-langchain",
+                  "children": []
+                },
+                {
+                  "name": "databricks-dspy",
+                  "children": []
+                },
+                {
+                  "name": "databricks-mcp",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Agent Bricks CLI",
+              "children": [
+                {
+                  "name": "CLI project templates",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Omnigent as meta-harness (see Developer tools)",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[1].solution",
+                "text": "**choose** LangGraph, LangChain, OpenAI SDK"
+              },
+              {
+                "ref": 0,
+                "field": "solves[5].solution",
+                "text": "**choose** any model per use case"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "**predetermined** framework choice"
+              },
+              {
+                "ref": 0,
+                "field": "solves[5].problem",
+                "text": "**fixed** model selection"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "**custom** agent logic and workflows"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].solution",
+                "text": "**choose** LangGraph, LangChain, OpenAI SDK"
+              },
+              {
+                "ref": 0,
+                "field": "solves[5].solution",
+                "text": "**choose** any model per use case"
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "4.7",
+          "title": "Agent deployment",
+          "effect": "",
+          "lead": "Once built, an agent has to run in production.",
+          "challenge": "",
+          "pivot": "",
+          "bullets": [
+            "**AgentKit** is a **durable agent server**, shipped in the databricks-agentbricks SDK package.",
+            "Agents run on **Agent Runtime**, on Databricks Apps.",
+            "Applications query a deployed agent through the **Invocation API**, the **Responses API** or **SQL**."
+          ],
+          "refs": [],
+          "features": [
+            {
+              "name": "AgentKit (durable agent server)",
+              "children": [
+                {
+                  "name": "databricks-agentbricks (SDK package)",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Agent Runtime (on Databricks Apps)",
+              "children": []
+            },
+            {
+              "name": "Agent query interfaces",
+              "children": [
+                {
+                  "name": "Invocation API",
+                  "children": []
+                },
+                {
+                  "name": "Responses API",
+                  "children": []
+                },
+                {
+                  "name": "SQL",
+                  "children": []
+                }
+              ]
+            }
+          ],
+          "sources": {
+            "effect": [],
+            "challenge": [],
+            "pivot": [],
+            "report": ""
+          }
+        },
+        {
+          "id": "4.8",
+          "title": "Agent memory",
+          "effect": "Agents remember what users told them.",
+          "lead": "",
+          "challenge": "Agents often start every conversation from nothing. Users then repeat their instructions each time.",
+          "pivot": "**Managed memory** keeps that knowledge for them.",
+          "bullets": [
+            "It is stored in **Lakebase**, and an agent searches it to **remember context** across conversations.",
+            "**Sessions** keep the state of each conversation.",
+            "Memory can also be built with **memory pipelines**.",
+            "Several agents can **share** the same memory."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Agents / Agent Bricks",
+                "Managed memory & sessions"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Managed memory",
+              "children": []
+            },
+            {
+              "name": "Sessions",
+              "children": []
+            },
+            {
+              "name": "Memory pipelines",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[1].solution",
+                "text": "agents **recall** learned preferences"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[2].problem",
+                "text": "agents **start fresh** each conversation"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "users repeat **instructions** in each session"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "**semantic search** retrieves past context"
+              },
+              {
+                "ref": 0,
+                "field": "solves[4].solution",
+                "text": "**long-term** Lakebase-backed storage"
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "4.9",
+          "title": "No-code agents: Genie Agents",
+          "effect": "",
+          "lead": "",
+          "challenge": "",
+          "pivot": "",
+          "bullets": [
+            "Domain experts build agents **without code** in Genie Agents.",
+            "They are part of **AI for business users**."
+          ],
+          "refs": [],
+          "features": [],
+          "sources": {
+            "effect": [],
+            "challenge": [],
+            "pivot": [],
+            "report": ""
+          }
+        }
+      ],
+      "handoff": ""
+    },
+    {
+      "num": 5,
+      "title": "Observability and evaluation",
+      "intro": [
+        "Before an agent reaches users, its behavior has to be visible and its answers measured.",
+        "MLflow traces each request, evaluates the answers and versions the prompts.",
+        "Runtime telemetry covers what runs in production."
+      ],
+      "points": [
+        {
+          "id": "5.1",
+          "title": "MLflow Tracing",
+          "effect": "Trace request details and cost, step by step.",
+          "lead": "",
+          "challenge": "Agent chains are opaque to the people who run them. When an answer is wrong, the failing step is hard to isolate. The cost of each request is unknown.",
+          "pivot": "**MLflow** makes every step visible.",
+          "bullets": [
+            "It traces every request through the agent.",
+            "It records each model call, tool call and retrieval step, with inputs, outputs, **latency and tokens**, and it works with more than 30 agent frameworks.",
+            "When an answer is wrong, the trace shows **the step where it went wrong**.",
+            "The traces are stored in **Unity Catalog**."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "AI Platform / ML lifecycle",
+                "MLflow 3 for GenAI"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Traces in Unity Catalog",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "**end-to-end** request tracing (OTel, 30+ frameworks)"
+              },
+              {
+                "ref": 0,
+                "field": "solves[4].solution",
+                "text": "granular **intermediate step** visibility"
+              },
+              {
+                "ref": 0,
+                "field": "solves[3].solution",
+                "text": "**traced tokens** enable cost attribution"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "agentic chains **opaque** to operators"
+              },
+              {
+                "ref": 0,
+                "field": "solves[4].problem",
+                "text": "failures **hard to isolate** in chains"
+              },
+              {
+                "ref": 0,
+                "field": "solves[3].problem",
+                "text": "LLM spend **opaque** per request"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "note",
+                "text": "MLflow provides end-to-end tracing for 30+ frameworks, LLM-based evaluation, and production monitoring."
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "5.2",
+          "title": "MLflow evaluation",
+          "effect": "Improve the quality of new agent versions.",
+          "lead": "A trace shows one request. Judging quality needs a score across many requests.",
+          "challenge": "Without such scores, traces are reviewed by hand and versions cannot be compared. Expert labels sit in separate spreadsheets.",
+          "pivot": "**MLflow evaluation** measures the answers.",
+          "bullets": [
+            "It applies **LLM judges** and custom **scorers** to traces.",
+            "It runs in batch before a release and continuously on **live traffic**.",
+            "Each agent version gets its own evaluation run, so versions can be compared.",
+            "The **Review App** lets domain experts test the agent in a chat interface and **label its answers**.",
+            "The labels attach to the traces and become **evaluation datasets**.",
+            "They are also used to align the judges with the experts."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Agents / Agent Bricks",
+                "Agent evaluation & monitoring"
+              ]
+            },
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Governance for AI",
+                "Review Apps"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "LLM judges",
+              "children": []
+            },
+            {
+              "name": "Scorers",
+              "children": []
+            },
+            {
+              "name": "Review App (human labeling)",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[4].solution",
+                "text": "**evaluation runs** tracked per version"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].solution",
+                "text": "**programmatic** batch evaluation runs"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "no **metrics** on response quality"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "**manual** review of traces"
+              },
+              {
+                "ref": 0,
+                "field": "solves[4].problem",
+                "text": "can't **compare** agent versions"
+              },
+              {
+                "ref": 1,
+                "field": "solves[1].problem",
+                "text": "Manual **spreadsheet** labeling disconnected from traces"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "**LLM judges** score each trace"
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "5.3",
+          "title": "Prompt Registry (prompt management)",
+          "effect": "Know which prompt each version of an agent uses.",
+          "lead": "",
+          "challenge": "Prompts change with no record. Staging and production drift apart.",
+          "pivot": "**Prompt Registry** keeps a version of every prompt.",
+          "bullets": [
+            "Staging and production aliases point to them, so a change is tracked **like a code change**.",
+            "Each prompt is stored with its **model parameters**, such as the temperature.",
+            "Unity Catalog permissions control who can use each prompt."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "AI Platform / ML lifecycle",
+                "MLflow Prompt Registry"
+              ]
+            }
+          ],
+          "features": [],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[4].solution",
+                "text": "frozen prompt **versions** per run"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "prompt changes **untracked** over time"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "staging/prod prompts **diverge**"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "version **history** per prompt"
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "5.4",
+          "title": "Runtime telemetry",
+          "effect": "",
+          "lead": "In production, each endpoint and each app also has to be watched.",
+          "challenge": "",
+          "pivot": "",
+          "bullets": [
+            "Model Serving reports **telemetry** for each endpoint.",
+            "Databricks Apps export their **telemetry** to Unity Catalog, with agent traces in MLflow.",
+            "**Inference tables** store the requests and responses in Delta tables for quality analysis.",
+            "**System tables** record tokens, latency and errors for audit and troubleshooting."
+          ],
+          "refs": [
+            {
+              "tree": "ds",
+              "path": [
+                "Databricks Data Science",
+                "Operate",
+                "Monitoring & evaluation",
+                "Inference Tables"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Endpoint telemetry (Model Serving)",
+              "children": []
+            },
+            {
+              "name": "Databricks Apps telemetry",
+              "children": []
+            },
+            {
+              "name": "Inference tables",
+              "children": []
+            },
+            {
+              "name": "System tables",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [],
+            "challenge": [],
+            "pivot": [],
+            "report": ""
+          }
+        }
+      ],
+      "handoff": ""
+    },
+    {
+      "num": 6,
+      "title": "AI governance and security",
+      "intro": [
+        "Unity Catalog and Unity Gateway govern AI with the same rules as data.",
+        "The catalog holds the AI assets and their permissions.",
+        "The gateway applies policies, monitoring and cost controls to every call, including the calls of coding agents."
+      ],
+      "points": [
+        {
+          "id": "6.1",
+          "title": "Unity Catalog for AI assets",
+          "effect": "Each model, agent and tool can be traced to the data behind it and to everyone who used it.",
+          "lead": "",
+          "challenge": "Models, agents and tools are not governed as assets of their own. Permissions are enforced differently across them. External credentials are scattered. Nobody knows which data feeds which model.",
+          "pivot": "**Unity Catalog** extends the existing rules to these assets.",
+          "bullets": [
+            "It governs models, agents, tools and credentials in the **same way as tables and files**.",
+            "These assets include models, functions, hosted model services, external model provider services, memory stores, skills and traces.",
+            "Each of them is a Unity Catalog object with permissions, lineage and an audit trail.",
+            "Lineage follows the chain **from data to model to agent**.",
+            "Credentials for external services are stored in the catalog and **encrypted**.",
+            "Permissions also cover the use of **foundation models** and **AI Functions**, and **ABAC GRANT policies** apply to models and services."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Governance for AI",
+                "Unity Catalog for AI assets"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Models",
+              "children": []
+            },
+            {
+              "name": "Functions",
+              "children": []
+            },
+            {
+              "name": "Model services (hosted model endpoints)",
+              "children": []
+            },
+            {
+              "name": "Model provider services (external providers)",
+              "children": []
+            },
+            {
+              "name": "Memory stores",
+              "children": []
+            },
+            {
+              "name": "Skills",
+              "children": []
+            },
+            {
+              "name": "Traces",
+              "children": []
+            },
+            {
+              "name": "Foundation model permissions",
+              "children": []
+            },
+            {
+              "name": "AI Functions permissions",
+              "children": []
+            },
+            {
+              "name": "ABAC GRANT policies for models and services",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[2].solution",
+                "text": "**Lineage** visibility showing data→model→agent flows"
+              },
+              {
+                "ref": 0,
+                "field": "solves[3].solution",
+                "text": "**Audit logs** for all access, modification, and usage events"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "AI models, agents, functions **ungoverned** individually"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "Inconsistent **permission** enforcement across assets"
+              },
+              {
+                "ref": 0,
+                "field": "solves[4].problem",
+                "text": "External credentials **scattered** and unmanaged"
+              },
+              {
+                "ref": 0,
+                "field": "solves[2].problem",
+                "text": "Unknown **dependencies** between models and data"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "note",
+                "text": "Unity Catalog for AI assets provides role-based access control, lineage tracking, and audit trails for models and agents."
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "6.2",
+          "title": "Unity Gateway: policies",
+          "effect": "Every model and tool call follows the same policies.",
+          "lead": "The catalog sets who may use each asset. Each model call and each tool call also needs control at the moment it happens.",
+          "challenge": "Prompts and responses go through without guardrails.",
+          "pivot": "**Unity Gateway** puts one control plane in charge.",
+          "bullets": [
+            "It sits in front of all model and tool traffic and is built on Unity Catalog.",
+            "**Service policies** set the rules for the calls to each service.",
+            "**LLM-as-a-judge policies** check prompts and responses with a model.",
+            "**Sensitive data** is redacted, and **partner guardrails** can be added.",
+            "**Request tags** attribute each call to a user, team or project."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Governance for AI",
+                "Unity Gateway"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Service policies",
+              "children": []
+            },
+            {
+              "name": "LLM-as-a-judge policies",
+              "children": []
+            },
+            {
+              "name": "Sensitive data redaction",
+              "children": []
+            },
+            {
+              "name": "Partner guardrails",
+              "children": []
+            },
+            {
+              "name": "Request tags (attribution)",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[3].solution",
+                "text": "**policies** applied on every request"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[3].problem",
+                "text": "**no guardrails** on prompts and responses"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "**one control plane** fronts every provider"
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "6.3",
+          "title": "Unity Gateway: monitoring",
+          "effect": "See who calls what, and keep a record of every call.",
+          "lead": "",
+          "challenge": "Teams connect to providers on their own, so nobody sees who uses which model. Nothing is logged for an audit.",
+          "pivot": "**Unity Gateway** records the traffic that passes through it.",
+          "bullets": [
+            "**Inference tables** log every request and response.",
+            "Usage is tracked **per user and team**, and a **usage dashboard** shows it.",
+            "A **unified trace table** collects the traces in one place."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Governance for AI",
+                "Unity Gateway"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Inference tables (request and response logging)",
+              "children": []
+            },
+            {
+              "name": "Usage tracking",
+              "children": []
+            },
+            {
+              "name": "Usage dashboard",
+              "children": []
+            },
+            {
+              "name": "Unified trace table",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[1].solution",
+                "text": "usage tracked **per user and team**"
+              },
+              {
+                "ref": 0,
+                "field": "solves[4].solution",
+                "text": "every request and response **logged**"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "**self-managed** per provider"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "**no central view** of who calls what"
+              },
+              {
+                "ref": 0,
+                "field": "solves[4].problem",
+                "text": "**no audit** for compliance"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "solves[4].solution",
+                "text": "every request and response **logged**"
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "6.4",
+          "title": "Unity Gateway: cost and capacity",
+          "effect": "Keep AI costs within budget.",
+          "lead": "",
+          "challenge": "Spend on models grows unchecked.",
+          "pivot": "**Unity Gateway** puts limits on it, centrally.",
+          "bullets": [
+            "**Budgets** and **cost caps** apply per user, team or project.",
+            "**Rate limits** cap the number of requests.",
+            "**Smart routing** picks the model for each request and falls back to another one when a provider is unavailable."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Governance for AI",
+                "Unity Gateway"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Budgets",
+              "children": []
+            },
+            {
+              "name": "Cost caps",
+              "children": []
+            },
+            {
+              "name": "Rate limits",
+              "children": []
+            },
+            {
+              "name": "Smart routing",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[2].solution",
+                "text": "**budgets** cap spend centrally"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[2].problem",
+                "text": "**spend** grows unchecked"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "solves[2].solution",
+                "text": "**budgets** cap spend centrally"
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "6.5",
+          "title": "Unity Gateway: coding agent governance",
+          "effect": "",
+          "lead": "",
+          "challenge": "",
+          "pivot": "",
+          "bullets": [
+            "Coding agents connect to Unity Gateway with the **ug CLI**.",
+            "Their configuration is managed **centrally**.",
+            "Their model calls then follow the same policies, monitoring and cost controls as the rest of the AI traffic."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Governance for AI",
+                "Unity Gateway"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "ug CLI (coding agent connection)",
+              "children": []
+            },
+            {
+              "name": "Centralized coding agent configuration",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [],
+            "challenge": [],
+            "pivot": [],
+            "report": ""
+          }
+        },
+        {
+          "id": "6.6",
+          "title": "Security and compliance (Databricks AI Security Framework)",
+          "effect": "",
+          "lead": "Permissions and guardrails address known risks. A security team also needs the full list of risks and the control that covers each one.",
+          "challenge": "",
+          "pivot": "",
+          "bullets": [
+            "The Databricks AI Security Framework lists the risks of AI systems and the controls that address them.",
+            "Version 3.0 covers 97 risks and 73 controls, including 35 risks **specific to agents**.",
+            "The controls include **least-privilege tool access** in Unity Catalog, sandboxed code execution, guardrails in Unity Gateway, and human review.",
+            "**Databricks Geos** keep data in a chosen geography, for **data residency**.",
+            "The **compliance security profile** turns on additional security controls for regulated workloads."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Governance for AI",
+                "DASF v3.0"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Databricks Geos (data residency)",
+              "children": []
+            },
+            {
+              "name": "Compliance security profile",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [],
+            "challenge": [],
+            "pivot": [],
+            "report": ""
+          }
+        }
+      ],
+      "handoff": ""
+    },
+    {
+      "num": 7,
+      "title": "AI for business users",
+      "intro": [
+        "Business users reach the governed data and the agents without writing code.",
+        "Genie One answers their questions in plain language, and Genie Agents carry the knowledge of each business area.",
+        "Genie also works inside the tools they already use, and applications run next to the data."
+      ],
+      "points": [
+        {
+          "id": "7.1",
+          "title": "Genie One (conversational assistant)",
+          "effect": "Anyone in the business can question the data directly.",
+          "lead": "",
+          "challenge": "Most people who need data do not write SQL. Their questions queue up at the data team. The answer often comes after the decision.",
+          "pivot": "**Genie One** gives everyone a single entry point to the data.",
+          "bullets": [
+            "It lets business users ask questions in **plain language**.",
+            "They get answers from governed company data, with citations and with **their own permissions** applied.",
+            "When a dashboard or an agent already answers the question, Genie One sends the user there.",
+            "It runs on the **web**, as a desktop app on macOS, and on **iOS** and **Android**.",
+            "Other AI assistants reach it through the **Genie One MCP server**.",
+            "**Web search** adds outside sources to its answers.",
+            "Users with **account-only access** can use it too."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Genie / AI.BI family",
+                "Genie One"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Web app",
+              "children": []
+            },
+            {
+              "name": "Desktop app (macOS)",
+              "children": []
+            },
+            {
+              "name": "iOS app",
+              "children": []
+            },
+            {
+              "name": "Android app",
+              "children": []
+            },
+            {
+              "name": "Genie One MCP server",
+              "children": []
+            },
+            {
+              "name": "Web search",
+              "children": []
+            },
+            {
+              "name": "Account-only user access",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[1].solution",
+                "text": "Users **answer** ad-hoc questions directly without SQL or waiting"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "Business users **blocked** by technical Databricks interface"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "Analyst **dependency** for every data question"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "Simplified, non-technical **front door** with natural language chat"
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "7.2",
+          "title": "Genie Agents (no-code agents)",
+          "effect": "The knowledge of each business area becomes available to everyone in it.",
+          "lead": "Once the definitions are shared, domain experts can package what they know for others.",
+          "challenge": "Today that knowledge stays with a few people. Dashboards only answer the questions they were built for. Deeper analysis is spread across separate tools.",
+          "pivot": "**Genie Agents** spread that expertise instead.",
+          "bullets": [
+            "They let a domain expert build a **no-code assistant** for a business area.",
+            "The assistant can follow up on questions, run **multi-step analyses** and explain its reasoning, and it can be embedded in other applications."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Genie / AI.BI family",
+                "Genie Agents"
+              ]
+            }
+          ],
+          "features": [],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[3].solution",
+                "text": "Domain experts **encode** logic once, shared as reusable agents"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[3].problem",
+                "text": "Business knowledge **trapped** with subject-matter experts"
+              },
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "Dashboards answer only **predefined** questions"
+              },
+              {
+                "ref": 0,
+                "field": "solves[2].problem",
+                "text": "Complex \"why\" and \"what-if\" analysis **fragmented** across tools"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "solves[3].solution",
+                "text": "Domain experts **encode** logic once, shared as reusable agents"
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "7.3",
+          "title": "Genie Ontology (business context layer)",
+          "effect": "Each metric has one certified definition, used everywhere.",
+          "lead": "An answer is only trusted if \"revenue\" or \"active customer\" means the same thing as in the official reports.",
+          "challenge": "Metrics are defined differently across dashboards, queries and teams. Business context is scattered in documents, chats and tickets. An AI can then pick an obsolete or draft definition.",
+          "pivot": "**Genie Ontology** grounds answers in the certified version.",
+          "bullets": [
+            "It holds those definitions.",
+            "Each KPI is **defined once**, as a metric view in Unity Catalog.",
+            "The ontology also learns **business context** from existing dashboards, queries and pipelines.",
+            "It ranks sources by certification, usage and freshness, so Genie answers from **certified definitions first**."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Genie / AI.BI family",
+                "Genie Ontology"
+              ]
+            }
+          ],
+          "features": [],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[3].solution",
+                "text": "Genie **uses** certified metrics and Pages in answering, with governance applied"
+              },
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "Canonical **Unity Catalog Metric Views** define each KPI once, governed globally"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "Metrics defined **differently** across dashboards, queries, and teams"
+              },
+              {
+                "ref": 0,
+                "field": "solves[2].problem",
+                "text": "Business definitions **fragmented** across dashboards, SQL, docs, chat, tickets"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "Genie may **choose** obsolete or draft definitions over trusted sources"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "note",
+                "text": "Learned business-context layer grounding Genie answers."
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "7.4",
+          "title": "Genie integrations",
+          "effect": "",
+          "lead": "Many users spend their day in chat tools and spreadsheets.",
+          "challenge": "",
+          "pivot": "",
+          "bullets": [
+            "Genie answers questions inside **Microsoft Teams** and **Slack**.",
+            "It also works in **Excel** and **Google Sheets**.",
+            "It is available in **Microsoft Copilot Cowork** as well."
+          ],
+          "refs": [],
+          "features": [
+            {
+              "name": "Microsoft Teams",
+              "children": []
+            },
+            {
+              "name": "Slack",
+              "children": []
+            },
+            {
+              "name": "Excel",
+              "children": []
+            },
+            {
+              "name": "Google Sheets",
+              "children": []
+            },
+            {
+              "name": "Microsoft Copilot Cowork",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [],
+            "challenge": [],
+            "pivot": [],
+            "report": ""
+          }
+        },
+        {
+          "id": "7.5",
+          "title": "AI/BI Dashboards",
+          "effect": "Analysts and business people serve themselves, without waiting for a specialist.",
+          "lead": "",
+          "challenge": "Building a dashboard takes SQL skills, so requests wait.",
+          "pivot": "**AI/BI Dashboards** come with an assistant.",
+          "bullets": [
+            "A dashboard can be built from a **plain-language request**.",
+            "The assistant finds the tables, writes the queries and picks the charts, and the author **approves each step**."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Genie / AI.BI family",
+                "AI/BI Dashboards (Lakeview)"
+              ]
+            }
+          ],
+          "features": [],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[5].solution",
+                "text": "Analysts and business users **move** from question to governed dashboard independently"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "High **SQL barrier** for dashboard creation"
+              },
+              {
+                "ref": 0,
+                "field": "solves[5].problem",
+                "text": "Self-service BI **blocked** by specialist dependency"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "note",
+                "text": "AI-assisted authoring, dashboard-level Genie, metric views."
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "7.6",
+          "title": "Applications",
+          "effect": "Data and AI applications run on the platform itself, next to the governed data.",
+          "lead": "When the same question comes back every week, it is worth turning into a small application.",
+          "challenge": "Usually each one runs on separate infrastructure, with its own identity management and secrets. It sits apart from the governed data. Access control and audit trails are hard to put in place.",
+          "pivot": "**Databricks Apps** now hosts them itself.",
+          "bullets": [
+            "Developers build applications with the **frameworks they already use**, such as Streamlit, Gradio, React or FastAPI, and deploy them.",
+            "**Databricks AppKit** is a framework for building them.",
+            "The apps run **serverless** on the platform.",
+            "They sign users in with the platform's identity and read data through Unity Catalog with **each user's permissions**.",
+            "Custom MCP servers run the same way.",
+            "App Spaces give admins **one place to govern** who deploys and uses which app.",
+            "**Genie App Builder** generates an app from a plain-language description, within the **limits the admins set**."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Developer productivity",
+                "Databricks Apps + App Spaces"
+              ]
+            },
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Genie / AI.BI family",
+                "Genie App Builder"
+              ]
+            }
+          ],
+          "features": [
+            {
+              "name": "Databricks Apps (application hosting)",
+              "children": [
+                {
+                  "name": "Databricks AppKit (app framework)",
+                  "children": []
+                },
+                {
+                  "name": "App Spaces",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "name": "Genie App Builder (no-code app builder)",
+              "children": []
+            }
+          ],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "**Serverless Databricks Apps** eliminate external hosting costs and complexity"
+              },
+              {
+                "ref": 0,
+                "field": "solves[3].solution",
+                "text": "Native **Unity Catalog integration** for permissions-aware data access"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "Apps require **separate infrastructure** outside Databricks platform"
+              },
+              {
+                "ref": 0,
+                "field": "solves[2].problem",
+                "text": "Apps require **separate identity management** and secrets handling"
+              },
+              {
+                "ref": 0,
+                "field": "solves[3].problem",
+                "text": "Apps **isolated** from governed data lake"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "App-level access control and **audit trails** difficult to implement"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "note",
+                "text": "Databricks Apps hosts interactive data and AI apps on Databricks, governed by Unity Catalog."
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "7.7",
+          "title": "Genie ZeroOps (autonomous pipeline operations)",
+          "effect": "",
+          "lead": "",
+          "challenge": "",
+          "pivot": "",
+          "bullets": [
+            "**Genie ZeroOps** runs **pipeline operations** on its own.",
+            "Its agent investigates a problem, proposes a fix in a sandbox, and waits for **human approval**.",
+            "It is announced."
+          ],
+          "refs": [],
+          "features": [],
+          "sources": {
+            "effect": [],
+            "challenge": [],
+            "pivot": [],
+            "report": ""
+          }
+        },
+        {
+          "id": "7.8",
+          "title": "Genie budgets (per-user limits)",
+          "effect": "",
+          "lead": "",
+          "challenge": "",
+          "pivot": "",
+          "bullets": [
+            "**Genie budgets** set **per-user limits** on Genie usage."
+          ],
+          "refs": [],
+          "features": [],
+          "sources": {
+            "effect": [],
+            "challenge": [],
+            "pivot": [],
+            "report": ""
+          }
+        }
+      ],
+      "handoff": ""
+    },
+    {
+      "num": 8,
+      "title": "Developer tools",
+      "intro": [
+        "Developers bring their own coding agents to the platform and migrate existing SQL code."
+      ],
+      "points": [
+        {
+          "id": "8.1",
+          "title": "Omnigent (coding agent harness)",
+          "effect": "Coding agents share context and follow central policies.",
+          "lead": "",
+          "challenge": "Each coding-agent tool is its own isolated world, so content is copied between them by hand.",
+          "pivot": "**Omnigent** puts them behind one interface.",
+          "bullets": [
+            "It works with coding agents such as **Claude, Codex or Cursor**.",
+            "Agents are defined in **portable YAML**, for local or managed execution.",
+            "Developers can **share a live session**.",
+            "The managed version runs code in Databricks Sandbox."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Agents / Agent Bricks",
+                "Omnigent"
+              ]
+            }
+          ],
+          "features": [],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[2].solution",
+                "text": "**automatic** context sharing"
+              },
+              {
+                "ref": 0,
+                "field": "solves[3].solution",
+                "text": "**contextual policies** at meta layer"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "each agent harness **isolated** ecosystem"
+              },
+              {
+                "ref": 0,
+                "field": "solves[2].problem",
+                "text": "**manual** copying of content between tools"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "solves[0].solution",
+                "text": "**unified** interface across harnesses"
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "8.2",
+          "title": "Agentic code converter (SQL migration)",
+          "effect": "",
+          "lead": "",
+          "challenge": "",
+          "pivot": "",
+          "bullets": [
+            "The **agentic code converter** converts SQL written for other systems into Databricks SQL."
+          ],
+          "refs": [],
+          "features": [],
+          "sources": {
+            "effect": [],
+            "challenge": [],
+            "pivot": [],
+            "report": ""
+          }
+        }
+      ],
+      "handoff": ""
+    },
+    {
+      "num": 9,
+      "title": "Vertical applications",
+      "intro": [
+        "Databricks builds complete applications for specific domains on the same platform.",
+        "Both are in private preview."
+      ],
+      "points": [
+        {
+          "id": "9.1",
+          "title": "CustomerLake (customer data platform)",
+          "effect": "Campaigns and personalization run on governed customer profiles that stay current.",
+          "lead": "",
+          "challenge": "Each system holds its own part of the customer, often duplicated and without lineage. Audiences are built and activated by hand.",
+          "pivot": "**CustomerLake** now covers this work as a ready-made application.",
+          "bullets": [
+            "In private preview, it builds **customer 360 profiles** on the lakehouse.",
+            "It joins transactions, behavior and engagement into one profile per customer.",
+            "AI-assisted **identity resolution** merges duplicate records.",
+            "Campaign agents create and **activate audiences**, and a real-time profile API feeds personalization."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Domain-specific AI",
+                "CustomerLake"
+              ]
+            }
+          ],
+          "features": [],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[3].solution",
+                "text": "Embedded in lakehouse with **Unity Catalog** governance and audit"
+              },
+              {
+                "ref": 0,
+                "field": "solves[4].solution",
+                "text": "**Real-time profile API** with predictive models for instant attributes"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "Customer data **fragmented** across systems"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "Duplicate customer records create **fragmentation**"
+              },
+              {
+                "ref": 0,
+                "field": "solves[3].problem",
+                "text": "Customer data **ungoverned** with no lineage"
+              },
+              {
+                "ref": 0,
+                "field": "solves[2].problem",
+                "text": "**Manual** audience segmentation and activation"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "note",
+                "text": "CustomerLake delivers agentic capabilities for customer profiles, identity resolution, and campaign management."
+              }
+            ],
+            "report": ""
+          }
+        },
+        {
+          "id": "9.2",
+          "title": "Lakewatch (agentic SIEM)",
+          "effect": "Keep every log and investigate faster.",
+          "lead": "CustomerLake applies the platform to customer data. The same pattern applies to security data.",
+          "challenge": "Telemetry is split across separate tools. Threat hunting and triage are manual. Detection rules are hard to version and test.",
+          "pivot": "**Lakewatch** now lets agents share the load.",
+          "bullets": [
+            "In private preview, it runs security operations on the lakehouse.",
+            "It keeps security, IT and business logs in one place at **object-storage cost**, so they no longer have to be deleted early.",
+            "Autonomous agents **investigate alerts** and help write detection rules, which are versioned and tested like code."
+          ],
+          "refs": [
+            {
+              "tree": "ai",
+              "path": [
+                "Databricks AI",
+                "Domain-specific AI",
+                "Lakewatch"
+              ]
+            }
+          ],
+          "features": [],
+          "sources": {
+            "effect": [
+              {
+                "ref": 0,
+                "field": "solves[2].solution",
+                "text": "**Unlimited** petabyte-scale ingestion and retention (object storage economics)"
+              },
+              {
+                "ref": 0,
+                "field": "solves[4].solution",
+                "text": "**Sub-second** queries across billions of records for rapid investigations"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].solution",
+                "text": "**Autonomous agents** for investigation, rule authoring, and data normalization"
+              }
+            ],
+            "challenge": [
+              {
+                "ref": 0,
+                "field": "solves[0].problem",
+                "text": "Security telemetry **siloed** in separate SIEM vendors"
+              },
+              {
+                "ref": 0,
+                "field": "solves[1].problem",
+                "text": "**Manual** threat hunting and incident triage"
+              },
+              {
+                "ref": 0,
+                "field": "solves[3].problem",
+                "text": "Detections **scattered** across tools; hard to version and test"
+              }
+            ],
+            "pivot": [
+              {
+                "ref": 0,
+                "field": "note",
+                "text": "Lakewatch provides agentic security information and event management with Panther integration."
+              }
+            ],
+            "report": ""
+          }
+        }
+      ],
+      "handoff": ""
     }
-   ],
-   "intro": "Data scientists explore that governed data in notebooks, with the languages they already know. Their work slows down when features are rebuilt for each project and results cannot be reproduced. The Feature Store shares each feature across teams, MLflow and AutoML track and speed up the experiments, and AI Runtime provides GPUs when the data outgrows one machine. The team ends up with models it can reproduce, while many new uses start from models trained by others. How do you serve and control any model, your own or a provider's?"
-  },
-  {
-   "num": 4,
-   "title": "Model access and governance",
-   "handoff": "Every model, hosted on Databricks or at a provider, is now served the same way. Many use cases need a model that can also look up company data and call tools. How do you build agents?",
-   "points": [
-    {
-     "id": "4.1",
-     "title": "Model serving",
-     "lead": "",
-     "effect": "Putting a model into production no longer needs its own infrastructure.",
-     "challenge": "Each kind of model needs its own serving system, provisioned by hand, with access control split across them. Idle machines keep costing money.",
-     "pivot": "Model Serving replaces these systems with one serverless service.",
-     "bullets": [
-      "Model Serving handles both cases with one kind of endpoint.",
-      "Custom models, foundation models and external models are served behind serverless endpoints with the same API.",
-      "Endpoints scale with demand, down to zero.",
-      "They can be billed per token, with provisioned throughput, or in batch.",
-      "Features from the Feature Store are looked up at serving time."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "AI Platform / ML lifecycle",
-        "Model Serving"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "4.2",
-     "title": "Foundation models and their lifecycle",
-     "lead": "For large language models, teams need to know which models are available behind those endpoints.",
-     "effect": "Teams can use the best model for each task, from any of the main providers.",
-     "challenge": "Depending on one provider creates lock-in, token spend grows unpredictably, and models from different providers are tested piece by piece.",
-     "pivot": "Foundation Model APIs remove the dependency on any single provider.",
-     "bullets": [
-      "Foundation Model APIs give access through one API to models from providers that include Anthropic, OpenAI, Google and Meta.",
-      "They are billed per token or with reserved capacity.",
-      "The catalog changes often.",
-      "New versions arrive and older ones are retired.",
-      "Databricks publishes the supported models and their retirement dates.",
-      "Because applications call the same API for every model, moving to a newer model stays a small change."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Foundation Models & LLM access",
-        "Foundation Model APIs"
-       ]
-      },
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Foundation Models & LLM access",
-        "Model versions"
-       ]
-      },
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Foundation Models & LLM access",
-        "Model lifecycle churn (Oct)"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "4.3",
-     "title": "Model fine-tuning",
-     "lead": "Sometimes a general model does not know the company's vocabulary or tasks well enough.",
-     "effect": "Adapting a model to company data takes less GPU memory and is paid by the minute.",
-     "challenge": "Full fine-tuning needs large amounts of GPU memory and is expensive and slow. Once tuned, the model often sits apart from the systems that serve the others.",
-     "pivot": "Model fine-tuning makes this adaptation lighter and keeps it on the platform.",
-     "bullets": [
-      "Fine-tuning adapts an open model to company data with LoRA, QLoRA or full fine-tuning, on serverless GPUs.",
-      "The tuned model is logged in MLflow and served like any other model."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "AI Platform / ML lifecycle",
-        "Model fine-tuning"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "4.4",
-     "title": "External models",
-     "lead": "Some teams also call models that are hosted directly at a provider.",
-     "effect": "Calls to outside models are tracked and audited like every other model call.",
-     "challenge": "API keys end up scattered across code and team members, and these calls bypass security, with no view of what they cost.",
-     "pivot": "External model services bring these calls under the same control.",
-     "bullets": [
-      "These models are registered as external models, with their keys stored centrally, so their calls go through the same Model Serving endpoints as every other model."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Foundation Models & LLM access",
-        "External model services"
-       ]
-      }
-     ]
-    }
-   ],
-   "intro": "Serving those models is the next step. Without one way to do it, every model and every provider brings its own system, keys and costs. Model Serving puts every model behind the same kind of endpoint, Foundation Model APIs reach the main providers through one API, fine-tuning adapts open models to the company's needs, and external models go through the same control. Every model is now served the same way, and many uses need one that can also look up company data and call tools. How do you build agents?"
-  },
-  {
-   "num": 5,
-   "title": "Building agents",
-   "handoff": "The agent can now use company data and tools, and keep memory across conversations. Before it reaches users, it has to be trusted. How do you know it is right?",
-   "points": [
-    {
-     "id": "5.1",
-     "title": "Batch AI in SQL and pipelines",
-     "lead": "",
-     "effect": "Teams apply AI to large volumes of data and documents without moving them out of the platform.",
-     "challenge": "Running a model over company data usually means sending the data to an outside service, building separate pipelines for documents and splitting the work into batches by hand. What comes back is unstructured.",
-     "pivot": "AI Functions do this work where the data already is.",
-     "bullets": [
-      "AI Functions call a model from SQL or from a pipeline to classify, extract or summarize data and documents at scale.",
-      "The first step needs no agent.",
-      "The results come back with a fixed schema, and the data stays in Unity Catalog."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Agents / Agent Bricks",
-        "AI Functions"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "5.2",
-     "title": "Retrieval and document question answering",
-     "lead": "An agent answers questions as they come. To answer well, it first has to find the right information.",
-     "effect": "Agents answer from the company's own documents, with sources that can be checked.",
-     "challenge": "Search indexes are built and kept in sync by hand, and generic retrieval misses what a document means. Answers then cite sources that are missing or false.",
-     "pivot": "AI Search and Knowledge Assistant ground the answers in the right documents.",
-     "bullets": [
-      "AI Search indexes documents and tables for vector and keyword search, keeps the index in sync with the Delta tables, and returns citations.",
-      "Knowledge Assistant packaged this into a question-answering agent over documents that could be set up in minutes.",
-      "It is now moving into Genie Agents."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "AI Platform / ML lifecycle",
-        "AI Search (ex-Vector Search)"
-       ]
-      },
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Agents / Agent Bricks",
-        "Knowledge Assistant"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "5.3",
-     "title": "Tool access through MCP",
-     "lead": "Answering from documents only reads data. Many tasks also need actions, such as running a query, opening a ticket or changing code. Each of these tools needs a connection and permissions.",
-     "effect": "Agents reach the company's tools through one governed route instead of one-off connections.",
-     "challenge": "Teams write a custom connector for each tool and host the servers themselves, credentials pile up across agents, and tool use stays hidden.",
-     "pivot": "Managed MCP servers and MCP Services turn each tool into a governed connection.",
-     "bullets": [
-      "The Model Context Protocol (MCP) is the standard way for an agent to call tools.",
-      "Databricks runs managed MCP servers for its own services, such as Genie, AI Search and SQL.",
-      "Connectors give governed access to Google Workspace, Microsoft 365, Slack and GitHub.",
-      "Teams can register their own MCP servers or host them as Databricks Apps.",
-      "Every tool is a Unity Catalog object, so permissions and audit work the same way as for data."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "MCP integration",
-        "Managed MCP servers"
-       ]
-      },
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "MCP integration",
-        "External connectors"
-       ]
-      },
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "MCP integration",
-        "MCP Services + custom MCP"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "5.4",
-     "title": "Custom agents, memory and sandbox",
-     "lead": "An agent combines retrieval and tools with its own logic.",
-     "effect": "Developers build the agent they need, and it remembers its users and runs its code safely.",
-     "challenge": "Agent platforms often impose the framework and the model, and leave sessions and memory to be handled by hand. Users repeat their instructions in each conversation, and the code an agent writes is untrusted.",
-     "pivot": "Custom agents, managed memory and Databricks Sandbox take these limits away.",
-     "bullets": [
-      "Custom agents are written in code with frameworks such as LangGraph, LangChain or the OpenAI SDK.",
-      "They can use any model on Model Serving and any MCP tool.",
-      "Managed memory, stored in Lakebase, lets an agent remember context across conversations.",
-      "Databricks Sandbox runs the code an agent writes in an isolated environment, with scoped access to data."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Agents / Agent Bricks",
-        "Custom Agents"
-       ]
-      },
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Agents / Agent Bricks",
-        "Managed memory & sessions"
-       ]
-      },
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Agents / Agent Bricks",
-        "Databricks Sandbox"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "5.5",
-     "title": "Multi-agent orchestration",
-     "lead": "Some tasks are too large for one agent.",
-     "effect": "Large tasks are shared across specialized agents and come back as one answer.",
-     "challenge": "Routing work between agents by hand gives disconnected answers, and a chain of agents can bypass a user's data permissions.",
-     "pivot": "The Supervisor Agent takes over the routing.",
-     "bullets": [
-      "A supervisor agent splits a task across several agents and keeps each user's data permissions.",
-      "It is moving into Genie Agents as well."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Agents / Agent Bricks",
-        "Supervisor Agent"
-       ]
-      }
-     ]
-    }
-   ],
-   "intro": "An agent starts from the company's own data. It has to find the right information, use tools, remember what it learned and run code without putting data at risk. AI Functions bring models to the data in SQL, AI Search and Knowledge Assistant find the right documents, MCP connects tools under Unity Catalog, custom agents get managed memory and Databricks Sandbox, and the Supervisor Agent shares out large tasks. The agent can now use company data and tools, and before it reaches users, it has to be trusted. How do you know it is right?"
-  },
-  {
-   "num": 6,
-   "title": "Evaluating agents",
-   "handoff": "The agent's answers can now be measured and reviewed. Data, models, agents and tools also need one set of rules for who may use what, and for what can go wrong. How is all of it governed?",
-   "points": [
-    {
-     "id": "6.1",
-     "title": "Tracing",
-     "lead": "",
-     "effect": "Operators see inside every agent request, step by step, including what it costs.",
-     "challenge": "Agent chains are opaque to the people who run them. When an answer is wrong, the failing step is hard to isolate, and the cost of each request is unknown.",
-     "pivot": "MLflow 3 makes each request visible.",
-     "bullets": [
-      "MLflow traces every request through the agent.",
-      "It records each model call, tool call and retrieval step, with inputs, outputs, latency and tokens, and it works with more than 30 agent frameworks.",
-      "When an answer is wrong, the trace shows the step where it went wrong."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "AI Platform / ML lifecycle",
-        "MLflow 3 for GenAI"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "6.2",
-     "title": "Evaluation and prompt versioning",
-     "lead": "A trace shows one request. Judging quality needs a score across many requests.",
-     "effect": "Teams know whether a new agent version is better before it ships.",
-     "challenge": "Without quality metrics, traces are reviewed by hand and versions cannot be compared. Prompts change without a record, and staging and production drift apart.",
-     "pivot": "Agent evaluation scores the answers, and the Prompt Registry versions the prompts.",
-     "bullets": [
-      "Agent evaluation applies LLM judges and custom scorers to traces.",
-      "It runs in batch before a release and continuously on live traffic.",
-      "Each agent version gets its own evaluation run, so versions can be compared.",
-      "Prompts are versioned in the Prompt Registry with staging and production aliases, so a prompt change is tracked like a code change."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Agents / Agent Bricks",
-        "Agent evaluation & monitoring"
-       ]
-      },
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "AI Platform / ML lifecycle",
-        "MLflow Prompt Registry"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "6.3",
-     "title": "Expert review and labeling",
-     "lead": "An LLM judge is only useful if its scores match what experts would say.",
-     "effect": "What domain experts know becomes the standard the agent is judged against.",
-     "challenge": "Without ground truth, agent quality is a matter of opinion. Experts label answers in spreadsheets that are not linked to the traces, and their criteria drift from one session to the next.",
-     "pivot": "Review Apps connect the experts to the agent.",
-     "bullets": [
-      "Review Apps let domain experts test the agent in a chat interface and label its answers.",
-      "The labels attach to the traces and become evaluation datasets.",
-      "They are also used to align the judges with the experts."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Governance for AI",
-        "Review Apps"
-       ]
-      }
-     ]
-    }
-   ],
-   "intro": "Knowing that an agent is right starts with seeing what it does. Without that, a wrong answer cannot be traced, quality is a matter of opinion, and a prompt change can go unnoticed. MLflow 3 traces every request step by step, agent evaluation scores the answers of each version, the Prompt Registry versions the prompts, and Review Apps bring the experts' judgment in. Quality is now measured before each release, and data, models, agents and tools also need rules for who may use what. How is all of it governed?"
-  },
-  {
-   "num": 7,
-   "title": "Governance",
-   "handoff": "Data, models, agents and tools are now governed with one set of rules. Most of the people who need them do not write code. How do business users get to them?",
-   "points": [
-    {
-     "id": "7.1",
-     "title": "Unity Catalog for AI assets",
-     "lead": "",
-     "effect": "Each model, agent and tool can be traced to the data behind it and to everyone who used it.",
-     "challenge": "Models, agents and functions are not governed as assets of their own, permissions are enforced differently across them, and external credentials are scattered. Nobody knows which data feeds which model.",
-     "pivot": "Unity Catalog extends to these assets.",
-     "bullets": [
-      "Unity Catalog governs models, agents, tools and credentials in the same way as tables and files.",
-      "Each of them is a Unity Catalog object with permissions, lineage and an audit trail.",
-      "Lineage follows the chain from data to model to agent.",
-      "Credentials for external services are stored in the catalog and encrypted."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Governance for AI",
-        "Unity Catalog for AI assets"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "7.2",
-     "title": "Control of AI traffic with Unity Gateway",
-     "lead": "The catalog sets who may use each asset. Each model call and each tool call also needs control at the moment it happens.",
-     "effect": "Every model and tool call is controlled and logged in one place.",
-     "challenge": "Each team connects to model providers on its own, so nobody sees who calls which model or what it costs. Prompts and responses go through without guardrails, and nothing is logged for an audit.",
-     "pivot": "Unity Gateway puts this traffic under one control plane.",
-     "bullets": [
-      "Unity Gateway sits in front of all model and tool traffic and is built on Unity Catalog.",
-      "It sets who may call which model and tracks usage per user and team.",
-      "Budgets cap spend.",
-      "Guardrails apply to every prompt and response, and every request is logged for audit."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Governance for AI",
-        "Unity Gateway"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "7.3",
-     "title": "AI security risks and controls",
-     "lead": "Permissions and guardrails address known risks. A security team also needs the full list of risks and the control that covers each one.",
-     "bullets": [
-      "The Databricks AI Security Framework lists the risks of AI systems and the controls that address them.",
-      "Version 3.0 covers 97 risks and 73 controls, including 35 risks specific to agents.",
-      "The controls include least-privilege tool access in Unity Catalog, sandboxed code execution, guardrails in Unity Gateway, and human review."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Governance for AI",
-        "DASF v3.0"
-       ]
-      }
-     ]
-    }
-   ],
-   "intro": "Governance has to cover all of it at once. Models, agents and tools often sit outside the rules that govern data, calls to models go unchecked, and the risks of AI are not mapped. Unity Catalog governs them the same way as tables, Unity Gateway controls and logs every model and tool call, and the Databricks AI Security Framework links each risk to the control that covers it. Data, models, agents and tools are now governed with one set of rules, but most of the people who need them do not write code. How do business users get to them?"
-  },
-  {
-   "num": 8,
-   "title": "AI for business users",
-   "handoff": "No-code covers the common needs. Developers build the rest, such as custom applications, agents and pipelines. What do builders get?",
-   "points": [
-    {
-     "id": "8.1",
-     "title": "Natural-language questions on company data",
-     "lead": "",
-     "effect": "Business users get answers from company data without writing SQL.",
-     "challenge": "Most people who need data do not write SQL. Their questions queue up at the data team, and the answer often comes after the decision.",
-     "pivot": "Genie One gives them a front door to the data.",
-     "bullets": [
-      "Genie One lets business users ask questions in plain language.",
-      "They get answers from governed company data, with citations and with their own permissions applied.",
-      "When a dashboard or an agent already answers the question, Genie One sends the user there."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Genie / AI.BI family",
-        "Genie One"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "8.2",
-     "title": "Shared business definitions",
-     "lead": "An answer is only trusted if \"revenue\" or \"active customer\" means the same thing as in the official reports.",
-     "effect": "Every answer uses the company's certified definition of each metric.",
-     "challenge": "Metrics are defined differently across dashboards, queries and teams, and business context is scattered across documents, chats and tickets. An AI can then pick an obsolete or draft definition.",
-     "pivot": "Genie Ontology is the layer that grounds Genie in these definitions.",
-     "bullets": [
-      "Genie Ontology holds those definitions.",
-      "Each KPI is defined once, as a metric view in Unity Catalog.",
-      "The ontology also learns business context from existing dashboards, queries and pipelines.",
-      "It ranks sources by certification, usage and freshness, so Genie answers from certified definitions first."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Genie / AI.BI family",
-        "Genie Ontology"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "8.3",
-     "title": "No-code assistants built by domain experts",
-     "lead": "Once the definitions are shared, domain experts can package what they know for others.",
-     "effect": "The knowledge of each business area becomes available to everyone in it.",
-     "challenge": "Business knowledge stays with a few experts, and dashboards only answer the questions they were built for. Deeper analysis is spread across separate tools.",
-     "pivot": "Genie Agents turn that expertise into a shared assistant.",
-     "bullets": [
-      "Genie Agents let a domain expert build a no-code assistant for a business area.",
-      "The assistant can follow up on questions, run multi-step analyses and explain its reasoning, and it can be embedded in other applications.",
-      "Knowledge Assistant and the supervisor agent are moving into Genie Agents."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Genie / AI.BI family",
-        "Genie Agents"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "8.4",
-     "title": "AI-assisted dashboards and spreadsheets",
-     "lead": "Many users still work in dashboards and spreadsheets.",
-     "effect": "Analysts and business users go from a question to a governed dashboard on their own.",
-     "challenge": "Building a dashboard takes SQL and specialist skills, so requests wait. Meanwhile, analysis done in spreadsheets is cut off from the governed data and unaudited.",
-     "pivot": "AI/BI Dashboards and Row Zero bring the assistant into both.",
-     "bullets": [
-      "An AI/BI dashboard can be built from a plain-language request.",
-      "The assistant finds the tables, writes the queries and picks the charts, and the author approves each step.",
-      "Row Zero, announced, brings the same governed data into a spreadsheet, with Genie writing the queries behind the formulas."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Genie / AI.BI family",
-        "AI/BI Dashboards (Lakeview)"
-       ]
-      },
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Domain-specific AI",
-        "Row Zero / Genie ZeroOps"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "8.5",
-     "title": "No-code app generation",
-     "lead": "When the same question comes back every week, it is worth turning into a small application.",
-     "effect": "Business teams turn an idea into a working app in minutes.",
-     "challenge": "Building an app takes software engineering skills, and every change needs a developer and a new deployment.",
-     "pivot": "Genie App Builder lets the team describe the app instead.",
-     "bullets": [
-      "Genie App Builder generates a Databricks App from a plain-language description, within the limits the admins set."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Genie / AI.BI family",
-        "Genie App Builder"
-       ]
-      }
-     ]
-    }
-   ],
-   "intro": "Business users depend on analysts for every question, and the same metric can mean different things from one report to the next. Genie One lets them ask in plain language and answers with their own permissions, and Genie Ontology makes each answer use the certified definition. Genie Agents, AI/BI Dashboards, Row Zero and Genie App Builder carry the same help into assistants, dashboards, spreadsheets and small apps. No-code now covers the common needs, and developers build the rest. What do builders get?"
-  },
-  {
-   "num": 9,
-   "title": "Developer tools",
-   "handoff": "Databricks uses the same platform components to build complete applications for specific business domains. What comes ready-made?",
-   "points": [
-    {
-     "id": "9.1",
-     "title": "Application hosting",
-     "lead": "",
-     "effect": "Data and AI applications run on the platform itself, next to the governed data.",
-     "challenge": "A data or AI application usually runs on separate infrastructure, with its own identity management and secrets. It sits apart from the governed data, and access control and audit trails are hard to put in place.",
-     "pivot": "Databricks Apps brings these applications onto the platform.",
-     "bullets": [
-      "Developers build applications with the frameworks they already use, such as Streamlit, Gradio, React or FastAPI, and deploy them as Databricks Apps.",
-      "The apps run serverless on the platform.",
-      "They sign users in with the platform's identity and read data through Unity Catalog with each user's permissions.",
-      "Custom MCP servers run the same way.",
-      "App Spaces give admins one place to govern who deploys and uses which app."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Developer productivity",
-        "Databricks Apps + App Spaces"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "9.2",
-     "title": "Coding assistant",
-     "lead": "Hosting is now handled. Writing the code still takes most of the time.",
-     "effect": "Developers write less repetitive code, with the same assistant in every tool.",
-     "challenge": "Much of that code is repetitive boilerplate, developers switch between separate tools for notebooks, SQL, pipelines and dashboards, and tuning SQL is hard for non-experts.",
-     "pivot": "Genie Code takes on that work.",
-     "bullets": [
-      "Genie Code is the AI assistant inside notebooks, the SQL editor, pipelines and dashboards.",
-      "It writes and explains code from plain-language requests.",
-      "A command-line version, in beta, brings it into the terminal and into CI pipelines."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Developer productivity",
-        "Genie Code"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "9.3",
-     "title": "Agent development kit and coding-agent harnesses",
-     "lead": "Custom agents are code as well, and they need a project structure.",
-     "effect": "Teams build agents on a ready structure, with their tools governed and audited.",
-     "challenge": "Developers scaffold each agent and its tool connections by hand, and the integrations they create are not audited. Each coding-agent tool is its own isolated world, so content is copied between them by hand.",
-     "pivot": "The AI Dev Kit and Omnigent give this work a common base.",
-     "bullets": [
-      "The AI Dev Kit gives developers templates and scaffolding for agents, and a set of tools governed in Unity Catalog.",
-      "Databricks uses the same kit for its own internal coding agents.",
-      "Developers who already work with coding agents such as Claude, Codex or Cursor can put them behind one interface with Omnigent, with shared context and central policies."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Developer productivity",
-        "AI Dev Kit + internal coding agents (Isaac)"
-       ]
-      },
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Agents / Agent Bricks",
-        "Omnigent"
-       ]
-      }
-     ]
-    }
-   ],
-   "intro": "Developers build the rest on the same platform. Each application usually needs its own infrastructure, identity and secrets, and much of the code is repetitive. Databricks Apps hosts applications next to the governed data, App Spaces governs who deploys and uses them, Genie Code writes and explains code in every tool, and the AI Dev Kit and Omnigent give agent development a common base. Databricks builds with these same components, up to complete applications for specific business domains. What comes ready-made?"
-  },
-  {
-   "num": 10,
-   "title": "Domain applications",
-   "handoff": "Both applications are built from the same parts: data on the lakehouse, governance in Unity Catalog, and agents. Whether a company builds its own applications or uses ready-made ones, every model and agent then runs in production for years. How do you run it?",
-   "points": [
-    {
-     "id": "10.1",
-     "title": "Customer data application",
-     "lead": "",
-     "effect": "Campaigns and personalization run on governed customer profiles that stay current.",
-     "challenge": "Each system holds its own part of the customer, often duplicated and without lineage, and audiences are built and activated by hand.",
-     "pivot": "CustomerLake gives the platform a ready-made answer for customer data.",
-     "bullets": [
-      "CustomerLake, in private preview, builds customer 360 profiles on the lakehouse.",
-      "It joins transactions, behavior and engagement into one profile per customer.",
-      "AI-assisted identity resolution merges duplicate records.",
-      "Campaign agents create and activate audiences, and a real-time profile API feeds personalization."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Domain-specific AI",
-        "CustomerLake"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "10.2",
-     "title": "Security operations application",
-     "lead": "CustomerLake applies the platform to customer data. The same pattern applies to security data.",
-     "effect": "Security teams keep all their logs and investigate faster.",
-     "challenge": "Security telemetry is split across separate tools, threat hunting and triage are manual, and detection rules are hard to version and test.",
-     "pivot": "Lakewatch adds agents to security operations.",
-     "bullets": [
-      "Lakewatch, in private preview, runs security operations on the lakehouse.",
-      "It keeps security, IT and business logs in one place at object-storage cost, so they no longer have to be deleted early.",
-      "Autonomous agents investigate alerts and help write detection rules, which are versioned and tested like code."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "Domain-specific AI",
-        "Lakewatch"
-       ]
-      }
-     ]
-    }
-   ],
-   "intro": "Some of these applications come ready-made. Customer data and security logs each sit in their own silo, with duplicate records, separate tools and logs deleted to save cost. CustomerLake builds one governed profile per customer and lets agents run the campaigns, and Lakewatch keeps the logs on the lakehouse and investigates alerts with agents. Whether the organization builds its applications or uses ready-made ones, every model and agent then runs in production for years. How do you run it?"
-  },
-  {
-   "num": 11,
-   "title": "Production operations",
-   "handoff": "",
-   "points": [
-    {
-     "id": "11.1",
-     "title": "Model registry",
-     "lead": "",
-     "effect": "Teams always know which model version is in production and where it came from.",
-     "challenge": "Model versions go untracked, promotions are manual and error-prone, and the link between a model and its training data gets lost. Without a shared view across workspaces, teams rebuild models that already exist.",
-     "pivot": "The Model Registry in Unity Catalog keeps this history and governs every model.",
-     "bullets": [
-      "Every model in production is registered in Unity Catalog with its versions, its aliases such as champion and challenger, and its lineage back to the training data.",
-      "Promoting a new version means moving an alias, and model update triggers or deployment jobs can start the next steps automatically."
-     ],
-     "refs": [
-      {
-       "tree": "ai",
-       "path": [
-        "Databricks AI",
-        "AI Platform / ML lifecycle",
-        "MLflow Model Registry"
-       ]
-      },
-      {
-       "tree": "ds",
-       "path": [
-        "Databricks Data Science",
-        "Deploy & serve",
-        "Model Registry & governance"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "11.2",
-     "title": "Production serving",
-     "lead": "A registered version then has to serve traffic.",
-     "effect": "Production traffic can grow without anyone resizing the infrastructure.",
-     "challenge": "Models end up spread across several serving platforms, scaled by hand, with no central view of what is deployed.",
-     "pivot": "Model Serving runs them all from one place.",
-     "bullets": [
-      "Model Serving endpoints run the registered version, for real-time requests and for batch scoring.",
-      "They handle more than 25,000 queries per second with low added latency, and they scale with demand."
-     ],
-     "refs": [
-      {
-       "tree": "ds",
-       "path": [
-        "Databricks Data Science",
-        "Deploy & serve",
-        "Model Serving & batch inference"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "11.3",
-     "title": "Monitoring and drift detection",
-     "lead": "Once a model is serving, its inputs change over time and its quality can drift.",
-     "bullets": [
-      "Inference tables log every request and response.",
-      "Lakehouse Monitoring profiles those tables, detects drift in data and in predictions, and raises alerts.",
-      "The same monitoring covers data quality and agents."
-     ],
-     "refs": [
-      {
-       "tree": "ds",
-       "path": [
-        "Databricks Data Science",
-        "Operate",
-        "Monitoring & evaluation"
-       ]
-      }
-     ]
-    },
-    {
-     "id": "11.4",
-     "title": "MLOps and CI/CD",
-     "lead": "When monitoring shows a problem, the fix has to reach production safely, and the same way every time.",
-     "bullets": [
-      "MLOps Stacks and Declarative Automation Bundles describe code, jobs, models and their environments as files in Git.",
-      "Lakeflow Jobs run the pipelines.",
-      "Each change goes from development to production through that automated path."
-     ],
-     "refs": [
-      {
-       "tree": "ds",
-       "path": [
-        "Databricks Data Science",
-        "Operate",
-        "MLOps & CI/CD"
-       ]
-      }
-     ]
-    }
-   ],
-   "intro": "Running it means keeping track of every version. Models drift as their inputs change, and each fix has to reach production the same way every time. The Model Registry in Unity Catalog records each version and its lineage, Model Serving runs the registered version at scale, Lakehouse Monitoring detects drift and raises alerts, and MLOps Stacks and bundles carry each change from development to production. Each model and agent now runs, is watched and is updated in production for as long as it is used."
+  ],
+  "appendix": {
+    "title": "capability map by section"
   }
- ]
 }

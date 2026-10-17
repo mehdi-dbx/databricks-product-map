@@ -6,10 +6,10 @@
    "sub": "Mosaic AI",
    "children": [
     {
-     "n": "Feature Store",
+     "n": "Feature Engineering in Unity Catalog",
      "s": "GA",
      "c": "ok",
-     "note": "Feature Store manages governed features for training and serving, with an online store on Lakebase.",
+     "note": "Feature Engineering in Unity Catalog manages governed features for training and serving, with an online store on Lakebase.",
      "children": [
       {
        "n": "Online Feature Store on Lakebase",
@@ -89,8 +89,8 @@
        "type": "primitive"
       },
       {
-       "n": "Feature Store lookup",
-       "note": "Provides real-time feature enrichment during inference by serving features directly from Feature Store.",
+       "n": "Feature lookup",
+       "note": "Provides real-time feature enrichment during inference by serving features directly from the online feature store.",
        "type": "primitive"
       },
       {
@@ -272,7 +272,7 @@
      "solves_conf": "ok"
     },
     {
-     "n": "MLflow Model Registry",
+     "n": "Models in Unity Catalog",
      "s": "GA",
      "c": "ok",
      "note": "Manages model versions, aliases for production stages, and Unity Catalog lineage.",
@@ -535,10 +535,10 @@
      "solves_conf": "ok"
     },
     {
-     "n": "Model fine-tuning",
+     "n": "Fine-tuning (on AI Runtime)",
      "s": "PuP",
      "c": "ok",
-     "note": "Efficient model adaptation via QLoRA, LoRA, and full fine-tuning on serverless GPUs.",
+     "note": "Fine-tuning runs on AI Runtime, with QLoRA, LoRA or full fine-tuning on serverless GPUs. Foundation Model Fine-tuning was removed on Aug 14, 2026.",
      "children": [
       {
        "n": "LoRA fine-tuning",
@@ -569,7 +569,7 @@
      "docs": [
       "https://docs.databricks.com/aws/en/machine-learning/ai-runtime/"
      ],
-     "since": "GA",
+     "since": "Foundation Model Fine-tuning removed Aug 14 2026; fine-tuning runs on AI Runtime (Public Preview)",
      "deck": null,
      "type": "feature",
      "solves": [
@@ -912,8 +912,8 @@
        "type": "primitive"
       },
       {
-       "n": "Agent Server & DurableAgentServer",
-       "note": "Crash-recoverable, background execution, state persistence.",
+       "n": "AgentKit & Agent Runtime",
+       "note": "AgentKit, a durable agent server, runs agents on Agent Runtime (Databricks Apps). Agents deployed on Model Serving, MLflow AgentServer and LongRunningAgentServer are legacy since Oct 5, 2026.",
        "type": "primitive"
       },
       {
@@ -1117,7 +1117,7 @@
      "docs": [
       "https://docs.databricks.com/aws/en/agents/agent-bricks/multi-agent-supervisor"
      ],
-     "since": "GA (Legacy; transition to Custom Agents)",
+     "since": "Legacy since Oct 12 2026; Supervisor API end of life Sep 30 2026",
      "deck": null,
      "children": [
       {
@@ -1184,7 +1184,7 @@
      "docs": [
       "https://docs.databricks.com/aws/en/agents/agent-bricks/knowledge-assistant"
      ],
-     "since": "GA (Legacy; recommend Genie Agents)",
+     "since": "Legacy since Oct 12 2026",
      "deck": null,
      "children": [
       {
@@ -2481,7 +2481,7 @@
      "n": "AI Dev Kit + internal coding agents (Isaac)",
      "c": "ok",
      "new": true,
-     "note": "AI Dev Kit provides scaffolding and unified UC-governed tools for agent development.",
+     "note": "AI Dev Kit is a field GitHub project with no docs page. It provides scaffolding and unified UC-governed tools for agent development.",
      "children": [
       {
        "n": "Scaffolding templates",
@@ -2509,9 +2509,7 @@
        "type": "primitive"
       }
      ],
-     "docs": [
-      "https://docs.databricks.com/aws/en/release-notes/product/2026/october"
-     ],
+     "docs": [],
      "since": "Open source (Field Engineering); Genie Code CLI Beta (Oct 6 2026)",
      "deck": "how-databricks-runs-coding-agents-deep-distillation-ai-dev-tools-isaac-uc-governed-mcps",
      "type": "feature",
@@ -3241,12 +3239,12 @@
        "type": "primitive"
       },
       {
-       "n": "Lakehouse Monitoring",
+       "n": "Data Quality Monitoring",
        "note": "Baseline trust signals and data-quality metrics over time.",
        "type": "primitive"
       },
       {
-       "n": "Data-quality monitoring",
+       "n": "Anomaly detection",
        "note": "Continuous AI-driven anomaly detection and alerts.",
        "type": "primitive"
       },
@@ -3427,7 +3425,7 @@
      "n": "LTAP",
      "s": "Announced",
      "c": "verify",
-     "note": "LTAP combines transactional processing and analytics in a unified lakehouse platform.",
+     "note": "LTAP is an architecture that Lakebase capabilities deliver. It combines transactional processing and analytics in a unified lakehouse platform.",
      "children": [
       {
        "n": "Lakebase transactional layer",

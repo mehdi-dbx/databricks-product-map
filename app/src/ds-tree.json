@@ -385,7 +385,7 @@
    "n": "Feature engineering",
    "children": [
     {
-     "n": "Feature Store",
+     "n": "Feature Engineering in Unity Catalog",
      "s": "GA",
      "c": "ok",
      "note": "Governed feature engineering, storage, and online/offline serving.",
@@ -625,7 +625,7 @@
      "solves_conf": "ok"
     }
    ],
-   "note": "Databricks Feature Store manages governed features for training and serving with point-in-time correctness."
+   "note": "Feature Engineering in Unity Catalog manages governed features for training and serving with point-in-time correctness."
   },
   {
    "n": "Experimentation & AutoML",
@@ -1400,7 +1400,7 @@
      "solves_conf": "ok"
     },
     {
-     "n": "Model Registry & governance",
+     "n": "Models in Unity Catalog",
      "s": "GA",
      "c": "ok",
      "note": "Model versioning, aliases, and lineage in Unity Catalog.",
@@ -1737,7 +1737,7 @@
        "type": "primitive"
       },
       {
-       "n": "Data Profiling (Lakehouse Monitoring)",
+       "n": "Data Profiling (Data Quality Monitoring)",
        "note": "Data Profiling automatically calculates quality metrics with baseline and window comparisons for drift detection.",
        "docs": [
         "https://docs.databricks.com/aws/en/data-governance/unity-catalog/data-quality-monitoring/data-profiling/"
