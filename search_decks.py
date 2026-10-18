@@ -14,7 +14,7 @@ searches = {
 # Read and search the deck index
 results = {k: [] for k in searches.keys()}
 
-with open('/Users/mehdi.lamrani/code/Report/AmadeusAI/.swarm/illus-hunt/deck-index.jsonl') as f:
+with open('/Users/mehdi.lamrani/code/AIFeatureMap/.swarm/illus-hunt/deck-index.jsonl') as f:
     for line in f:
         slide = json.loads(line)
         text = (slide.get('text', '') or '').lower()

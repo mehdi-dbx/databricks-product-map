@@ -11,7 +11,7 @@ search_terms = {
 
 results = {k: [] for k in search_terms}
 
-with open('/Users/mehdi.lamrani/code/Report/AmadeusAI/run/docs-inventory/pages.json') as f:
+with open('/Users/mehdi.lamrani/code/AIFeatureMap/run/docs-inventory/pages.json') as f:
     for line in f:
         page = json.loads(line)
         path = page.get('path', '').lower()

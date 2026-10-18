@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /Users/mehdi.lamrani/code/Report/AmadeusAI/.swarm/illus-hunt
+cd /Users/mehdi.lamrani/code/AIFeatureMap/.swarm/illus-hunt
 
 # Fetch documentation pages and extract images
 echo "Fetching docs pages..."

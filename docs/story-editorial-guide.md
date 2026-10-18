@@ -284,7 +284,7 @@ The conclusion is that agents write drafts. The main session reviews every item 
 
 ```
 You add three sentences to each point of a chapter of the Story tab of an internal
-Databricks field app. Repository: /Users/mehdi.lamrani/code/Report/AmadeusAI. Work from its root.
+Databricks field app. Repository: /Users/mehdi.lamrani/code/AIFeatureMap. Work from its root.
 
 Chapter: {N}. Points: {ids} ({count} points). Work folder: /tmp/story-ch{N}/.
 

@@ -9,7 +9,7 @@ search_terms = {
     "2.5": ["unity catalog", "data quality", "classification", "anomaly"],
 }
 
-with open('/Users/mehdi.lamrani/code/Report/AmadeusAI/run/docs-inventory/pages.json') as f:
+with open('/Users/mehdi.lamrani/code/AIFeatureMap/run/docs-inventory/pages.json') as f:
     full_data = json.load(f)
 
 pages = full_data.get('pages', [])

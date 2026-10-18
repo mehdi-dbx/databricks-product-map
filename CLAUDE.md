@@ -9,7 +9,7 @@ An internal Databricks field app, `ai-tree-mindmap`. It has four tabs: AI Ecosys
 - Deploy only when asked:
   - `databricks sync app /Workspace/Users/mehdi.lamrani@databricks.com/ai-tree-mindmap --profile fevm-agent --full`
   - then `databricks apps deploy ai-tree-mindmap --source-code-path /Workspace/Users/mehdi.lamrani@databricks.com/ai-tree-mindmap --profile fevm-agent`
-- GitHub: `mehdi-dbx/databricks-product-map`, a private repo.
+- GitHub: `mehdi-dbx/databricks-product-map`, a public repo.
   - Commit and push only when asked.
   - To push, switch to the `mehdi-dbx` gh account, then switch back to `mehdi-lamrani_data`.
 

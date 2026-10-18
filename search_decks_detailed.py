@@ -26,7 +26,7 @@ point_queries = {
 
 results_by_point = {k: {} for k in point_queries.keys()}
 
-with open('/Users/mehdi.lamrani/code/Report/AmadeusAI/.swarm/illus-hunt/deck-index.jsonl') as f:
+with open('/Users/mehdi.lamrani/code/AIFeatureMap/.swarm/illus-hunt/deck-index.jsonl') as f:
     for line in f:
         slide = json.loads(line)
         text = (slide.get('text', '') or '').lower()
